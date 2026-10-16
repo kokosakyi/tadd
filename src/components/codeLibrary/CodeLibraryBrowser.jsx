@@ -3,7 +3,7 @@ import {
   Search, BookOpen, Table, FileText, CheckCircle2, ExternalLink, 
   Filter, Layers, Info, ArrowRight, Bookmark, Hash, CornerDownRight, 
   ChevronLeft, ChevronRight, BookMarked, X, RefreshCw, Library, ArrowLeft,
-  Star, Copy, Check, Calculator, Columns
+  Star, Copy, Check, Calculator, Columns, Menu
 } from 'lucide-react';
 import { 
   searchCodeRegistry, 
@@ -75,6 +75,9 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
 
   // Copy feedback state: clause.id or table.id
   const [copiedId, setCopiedId] = useState(null);
+
+  // Mobile Table of Contents drawer state (for screens < 1024px)
+  const [mobileTocOpen, setMobileTocOpen] = useState(false);
 
   // Bookmarks persisted in localStorage
   const [bookmarks, setBookmarks] = useState(() => {
@@ -682,8 +685,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
       {viewMode === 'book' && (
         <div
           key={`book_reader_${selectedStandard}`}
-          className="animate-book-open"
-          style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}
+          className="animate-book-open book-reader-layout"
         >
           
           {/* Persistent Hierarchical Table of Contents Sidebar */}
@@ -697,14 +699,19 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
             onSelectSection={(sec) => {
               setSelectedSection(sec);
               setClausePage(1);
+              setMobileTocOpen(false);
             }}
             selectedSubsectionPrefix={selectedSubsectionPrefix}
             onSelectSubsectionPrefix={(prefix) => {
               setSelectedSubsectionPrefix(prefix);
               setClausePage(1);
+              setMobileTocOpen(false);
             }}
             activeTab={activeTab}
-            onSelectTab={(tab) => setActiveTab(tab)}
+            onSelectTab={(tab) => {
+              setActiveTab(tab);
+              setMobileTocOpen(false);
+            }}
             onSelectClause={(cl) => {
               setSelectedStandard(cl.standardId);
               setSelectedSection(cl.section || 'all');
@@ -713,6 +720,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
               setHighlightedClauseId(cl.id);
               setActiveTab('clauses');
               setClausePage(1);
+              setMobileTocOpen(false);
               saveHistory({
                 standardId: cl.standardId,
                 tab: 'clauses',
@@ -728,6 +736,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                 setSelectedStandard(tbl.standardId);
                 setSelectedTableId(tbl.id);
                 setActiveTab('tables');
+                setMobileTocOpen(false);
                 saveHistory({
                   standardId: tbl.standardId,
                   tab: 'tables',
@@ -740,13 +749,53 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
             selectedTableId={selectedTableId}
             highlightedClauseId={highlightedClauseId}
             bookmarks={bookmarks}
-            onOpenBookmark={handleOpenBookmark}
-            onBackToShelf={() => setViewMode('library')}
+            onOpenBookmark={(bm) => {
+              handleOpenBookmark(bm);
+              setMobileTocOpen(false);
+            }}
+            onBackToShelf={() => {
+              setViewMode('library');
+              setMobileTocOpen(false);
+            }}
+            isMobileOpen={mobileTocOpen}
+            onCloseMobile={() => setMobileTocOpen(false)}
           />
 
           {/* Main Book Reading Column */}
-          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%' }}>
             
+            {/* Mobile Table of Contents Quick Toggle Bar (Visible strictly on mobile/tablet < 1024px) */}
+            <div className="mobile-toc-bar">
+              <button
+                type="button"
+                onClick={() => setMobileTocOpen(true)}
+                className="mobile-toc-toggle-btn"
+                aria-label="Open Table of Contents"
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', minWidth: 0 }}>
+                  <div style={{ background: 'rgba(56, 189, 248, 0.15)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '6px', padding: '0.3rem', display: 'flex', color: 'var(--accent-cyan)' }}>
+                    <Menu size={16} />
+                  </div>
+                  <div style={{ textAlign: 'left', minWidth: 0 }}>
+                    <div style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--accent-cyan)' }}>
+                      Table of Contents
+                    </div>
+                    <div style={{ fontSize: '0.84rem', fontWeight: '600', color: 'var(--text-main)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      {selectedSubsectionPrefix
+                        ? `Subsection ${selectedSubsectionPrefix}`
+                        : selectedSection !== 'all'
+                        ? selectedSection
+                        : activeBookMeta ? `${activeBookMeta.code} — All Sections` : 'All Volumes'}
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-cyan)', fontSize: '0.78rem', fontWeight: '600', flexShrink: 0 }}>
+                  <span>Browse</span>
+                  <ChevronRight size={15} />
+                </div>
+              </button>
+            </div>
+
             {/* Active Book Control Header */}
             <div 
               className="glass-panel" 
@@ -899,7 +948,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
               </div>
 
               {/* Book Content Tabs */}
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div className="book-content-tabs">
                 <button
                   onClick={() => setActiveTab('clauses')}
                   className={activeTab === 'clauses' ? 'btn-primary' : 'btn-secondary'}

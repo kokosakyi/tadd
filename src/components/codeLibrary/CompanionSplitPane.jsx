@@ -31,6 +31,16 @@ export default function CompanionSplitPane({
 }) {
   const [copied, setCopied] = React.useState(false);
 
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose?.();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!companionItem) return null;
 
   const handleCopyCitation = (textToCopy) => {
@@ -49,37 +59,29 @@ export default function CompanionSplitPane({
     const citationString = `[${tableData.standardName}-${tableData.edition}, ${tableData.number}: ${tableData.title}]`;
 
     return (
-      <aside
-        key={`table_${tableData.id}`}
-        className="glass-panel animate-split-pane"
-        aria-label={`Companion Inspector: ${tableData.number}`}
-        style={{
-          width: '460px',
-          flexShrink: 0,
-          borderRadius: '14px',
-          border: '1px solid rgba(16, 185, 129, 0.45)',
-          boxShadow: '0 12px 32px rgba(0, 0, 0, 0.5)',
-          display: 'flex',
-          flexDirection: 'column',
-          maxHeight: 'calc(100vh - 120px)',
-          position: 'sticky',
-          top: '1rem',
-          overflow: 'hidden',
-          background: 'var(--bg-secondary)'
-        }}
-      >
-        {/* Top Inspector Bar */}
-        <div
+      <>
+        <div className="companion-split-backdrop" onClick={onClose} aria-hidden="true" />
+        <aside
+          key={`table_${tableData.id}`}
+          className="glass-panel animate-split-pane companion-split-pane"
+          aria-label={`Companion Inspector: ${tableData.number}`}
           style={{
-            padding: '0.85rem 1.1rem',
-            borderBottom: '1px solid var(--border-color)',
-            background: 'rgba(16, 185, 129, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '0.5rem'
+            border: '1px solid rgba(16, 185, 129, 0.45)',
+            background: 'var(--bg-secondary)'
           }}
         >
+          {/* Top Inspector Bar */}
+          <div
+            style={{
+              padding: '0.85rem 1.1rem',
+              borderBottom: '1px solid var(--border-color)',
+              background: 'rgba(16, 185, 129, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '0.5rem'
+            }}
+          >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
             <Table size={16} color="#10b981" />
             <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '800', fontSize: '0.85rem', color: '#10b981' }}>
@@ -222,6 +224,7 @@ export default function CompanionSplitPane({
           )}
         </div>
       </aside>
+    </>
     );
   }
 
@@ -234,36 +237,28 @@ export default function CompanionSplitPane({
   const citationString = `[${cl.standardName}-${cl.edition}, Cl. ${cl.clauseNumber}] "${cl.title}" — ${cl.text}`;
 
   return (
-    <aside
-      key={`clause_${cl.id}`}
-      className="glass-panel animate-split-pane"
-      aria-label={`Companion Inspector: Clause ${cl.clauseNumber}`}
-      style={{
-        width: '420px',
-        flexShrink: 0,
-        borderRadius: '14px',
-        border: '1px solid rgba(56, 189, 248, 0.45)',
-        boxShadow: '0 12px 32px rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        flexDirection: 'column',
-        maxHeight: 'calc(100vh - 120px)',
-        position: 'sticky',
-        top: '1rem',
-        overflow: 'hidden',
-        background: 'var(--bg-secondary)'
-      }}
-    >
-      <div
+    <>
+      <div className="companion-split-backdrop" onClick={onClose} aria-hidden="true" />
+      <aside
+        key={`clause_${cl.id}`}
+        className="glass-panel animate-split-pane companion-split-pane"
+        aria-label={`Companion Inspector: Clause ${cl.clauseNumber}`}
         style={{
-          padding: '0.85rem 1.1rem',
-          borderBottom: '1px solid var(--border-color)',
-          background: 'rgba(56, 189, 248, 0.1)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '0.5rem'
+          border: '1px solid rgba(56, 189, 248, 0.45)',
+          background: 'var(--bg-secondary)'
         }}
       >
+        <div
+          style={{
+            padding: '0.85rem 1.1rem',
+            borderBottom: '1px solid var(--border-color)',
+            background: 'rgba(56, 189, 248, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '0.5rem'
+          }}
+        >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', minWidth: 0 }}>
           <FileText size={16} color="var(--accent-cyan)" />
           <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '800', fontSize: '0.85rem', color: 'var(--accent-cyan)' }}>
@@ -404,5 +399,6 @@ export default function CompanionSplitPane({
         )}
       </div>
     </aside>
+  </>
   );
 }

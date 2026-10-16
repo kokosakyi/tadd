@@ -39,10 +39,8 @@ export default function LibraryHallView({
       
       {/* Library Welcome Banner */}
       <div 
-        className="glass-panel" 
+        className="glass-panel library-banner" 
         style={{ 
-          padding: '2rem 2.25rem', 
-          borderRadius: '16px', 
           border: '1px solid var(--border-color)',
           background: 'radial-gradient(ellipse at top, rgba(56, 189, 248, 0.08) 0%, rgba(15, 23, 42, 0.6) 80%)',
           position: 'relative',
@@ -55,32 +53,32 @@ export default function LibraryHallView({
               <Sparkles size={13} />
               <span>Digital Standards Library Repository</span>
             </div>
-            <h1 style={{ fontSize: '1.85rem', fontWeight: '800', color: 'var(--text-main)', margin: '0 0 0.6rem', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.85rem)', fontWeight: '800', color: 'var(--text-main)', margin: '0 0 0.6rem', letterSpacing: '-0.02em' }}>
               CSA Overhead Systems Code Library
             </h1>
-            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
               Welcome to the official digitized volumes of the Canadian Standards Association (CSA) overhead powerline and structural design codes. Select a book volume to open its interactive E-Book reader, hierarchical Table of Contents, side-by-side table inspector, and engineering citation tools.
             </p>
           </div>
 
           {/* Quick Collection Stats Counters */}
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', minWidth: '110px', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-cyan)' }}>{standards.length}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Book Volumes</div>
+          <div className="library-stats-grid">
+            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+              <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-cyan)' }}>{standards.length}</div>
+              <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Book Volumes</div>
               <span style={{ display: 'none' }} aria-hidden="true">3</span>
             </div>
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', minWidth: '110px', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#10b981' }}>{totalClauses}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Clauses</div>
+            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+              <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#10b981' }}>{totalClauses}</div>
+              <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Clauses</div>
             </div>
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', minWidth: '110px', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#f59e0b' }}>{totalTables}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Tables</div>
+            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+              <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#f59e0b' }}>{totalTables}</div>
+              <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Tables</div>
             </div>
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', minWidth: '110px', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#c084fc' }}>{totalDefinitions}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Glossary Terms</div>
+            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+              <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#c084fc' }}>{totalDefinitions}</div>
+              <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Glossary Terms</div>
             </div>
           </div>
         </div>
@@ -147,15 +145,8 @@ export default function LibraryHallView({
           </div>
         </div>
 
-        {/* 3-Column Library Shelf Grid */}
-        <div 
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-            gap: '2rem',
-            perspective: '1200px'
-          }}
-        >
+        {/* Responsive Library Shelf Grid */}
+        <div className="library-shelf-grid">
           {standards.map((book, bIdx) => {
             const isHovered = hoveredBookId === book.id;
             const accentColor = book.id === 'c22_3_no1' 
@@ -197,28 +188,21 @@ export default function LibraryHallView({
                 <div 
                   className="book-3d-stage"
                   style={{ 
-                    padding: '2rem 1.5rem 1.5rem', 
                     background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.35) 100%)',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     cursor: 'pointer',
-                    position: 'relative',
-                    perspective: '950px'
+                    position: 'relative'
                   }}
                   onClick={() => onOpenBook(book.id)}
                   title={`Open Volume: ${book.code}`}
                 >
                   {/* Book 3D Wrapper */}
                   <div
+                    className="book-3d-cover-wrapper"
                     style={{
-                      width: '210px',
-                      height: '290px',
-                      position: 'relative',
                       transform: isHovered ? 'rotateY(-15deg) rotateX(2deg) scale(1.035)' : 'rotateY(-4deg)',
-                      transformOrigin: 'left center',
-                      transformStyle: 'preserve-3d',
-                      transition: 'transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), filter 0.26s ease',
                       filter: isHovered ? 'drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.7))' : 'drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.5))'
                     }}
                   >
@@ -270,7 +254,7 @@ export default function LibraryHallView({
                 </div>
 
                 {/* Shelf Info & Meta */}
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div className="library-book-card-body">
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
                       <span style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
@@ -400,7 +384,7 @@ export default function LibraryHallView({
       />
 
       {/* Bookmarked & Pinned Reference Shelf */}
-      <div className="glass-panel" style={{ padding: '1.5rem 1.75rem', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+      <div className="glass-panel library-pinned-shelf" style={{ borderRadius: '14px', border: '1px solid var(--border-color)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <Star size={18} fill="#f59e0b" color="#f59e0b" />

@@ -107,9 +107,8 @@ export default function LessonsLearnedReader({
       
       {/* Lesson Header Hero Card */}
       <div
-        className="glass-panel"
+        className="glass-panel lesson-hero-card"
         style={{
-          padding: '1.5rem 1.75rem',
           borderRadius: '16px',
           border: '1px solid rgba(245, 158, 11, 0.3)',
           background: 'radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.75) 100%)',
@@ -332,9 +331,8 @@ export default function LessonsLearnedReader({
           return (
             <div
               key={`turn_${tIdx}`}
-              className="glass-panel"
+              className="glass-panel dialogue-turn-card"
               style={{
-                padding: '1.4rem 1.6rem',
                 borderRadius: '16px',
                 border: isJunior
                   ? '1px solid rgba(56, 189, 248, 0.35)'

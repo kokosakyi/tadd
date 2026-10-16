@@ -629,4 +629,329 @@ button {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================================================== */
+/* RESPONSIVE MOBILE LAYOUT STYLES: BOOKS SHELF & TOC READER                  */
+/* ========================================================================== */
+
+/* Reader Layout Container */
+.book-reader-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .book-reader-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Table of Contents Sidebar: Sticky Desktop & Responsive Off-Canvas Mobile Drawer */
+.book-toc-sidebar {
+  width: 310px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  position: sticky;
+  top: 1rem;
+  overflow: hidden;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.book-toc-backdrop {
+  display: none;
+}
+
+.book-toc-mobile-close-btn {
+  display: none !important;
+}
+
+.mobile-toc-bar {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .book-toc-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: min(88vw, 340px) !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 16px 16px 0 !important;
+    border-left: none !important;
+    z-index: 1000 !important;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.75) !important;
+    transform: translateX(-105%);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
+    visibility: hidden;
+    overscroll-behavior: contain;
+    background: var(--bg-secondary) !important;
+  }
+
+  .book-toc-sidebar.mobile-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .book-toc-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    animation: fadeIn 0.2s ease forwards;
+  }
+
+  .book-toc-mobile-close-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
+
+  .mobile-toc-bar {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-toc-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.95rem;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .mobile-toc-toggle-btn:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* Companion Split Pane Inspector: Desktop Sticky & Mobile Modal Overlay */
+.companion-split-pane {
+  width: 460px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  position: sticky;
+  top: 1rem;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.companion-split-backdrop {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .companion-split-pane {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: min(94vw, 540px) !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 16px 0 0 16px !important;
+    border-right: none !important;
+    z-index: 1050 !important;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.75) !important;
+    overscroll-behavior: contain;
+  }
+
+  .companion-split-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1040;
+    animation: fadeIn 0.2s ease forwards;
+  }
+}
+
+/* Library Hall Bookshelf Responsive Styles */
+.library-banner {
+  padding: 2rem 2.25rem;
+}
+
+.library-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.library-shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  perspective: 1200px;
+}
+
+.book-3d-stage {
+  padding: 2rem 1.5rem 1.5rem;
+  perspective: 950px;
+}
+
+.book-3d-cover-wrapper {
+  width: 210px;
+  height: 290px;
+  position: relative;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), filter 0.26s ease;
+}
+
+.library-book-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.library-pinned-shelf {
+  padding: 1.5rem 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .library-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .library-banner {
+    padding: 1.25rem 1rem !important;
+    border-radius: 12px !important;
+  }
+
+  .library-shelf-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    perspective: none !important;
+  }
+
+  .book-3d-stage {
+    padding: 1.25rem 1rem 1rem !important;
+    perspective: none !important;
+  }
+
+  .library-book-card-body {
+    padding: 1rem !important;
+  }
+
+  .library-pinned-shelf {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .library-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .library-stats-card {
+    padding: 0.75rem 0.65rem !important;
+  }
+
+  .library-stats-card .stats-number {
+    font-size: 1.35rem !important;
+  }
+
+  .library-stats-card .stats-label {
+    font-size: 0.68rem !important;
+  }
+
+  .book-3d-cover-wrapper {
+    width: 175px !important;
+    height: 242px !important;
+  }
+
+  .book-3d-cover-wrapper svg {
+    width: 175px !important;
+    height: 242px !important;
+  }
+}
+
+/* Book Content Tabs: Horizontal Touch-Scroll on Mobile */
+.book-content-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .book-content-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.35rem;
+    scrollbar-width: thin;
+  }
+
+  .book-content-tabs > button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* Lessons Learned Dialogue Reader Mobile Styles */
+.lesson-hero-card {
+  padding: 1.5rem 1.75rem;
+}
+
+.dialogue-turn-card {
+  padding: 1.4rem 1.6rem;
+}
+
+@media (max-width: 640px) {
+  .lesson-hero-card {
+    padding: 1rem 0.85rem !important;
+  }
+
+  .dialogue-turn-card {
+    padding: 1rem 0.85rem !important;
+    gap: 0.75rem !important;
+  }
+}
+
+
 

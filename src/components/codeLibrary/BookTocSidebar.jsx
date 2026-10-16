@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ChevronRight,
   ChevronDown,
@@ -9,7 +9,8 @@ import {
   BookOpen,
   FolderOpen,
   Folder,
-  Layers
+  Layers,
+  X
 } from 'lucide-react';
 import BookCoverSvg from './BookCoverSvg';
 
@@ -124,11 +125,25 @@ export default function BookTocSidebar({
   highlightedClauseId,
   bookmarks = [],
   onOpenBookmark,
-  onBackToShelf
+  onBackToShelf,
+  isMobileOpen = false,
+  onCloseMobile
 }) {
   const [expandedSections, setExpandedSections] = useState(() => new Set());
   const [expandedSubsections, setExpandedSubsections] = useState(() => new Set());
   const [tablesExpanded, setTablesExpanded] = useState(false);
+
+  // Close drawer on Escape
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onCloseMobile?.();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileOpen, onCloseMobile]);
 
   const tocTree = useMemo(
     () => buildBookTocTree(clauses, tables, definitions, selectedStandard),
@@ -176,79 +191,90 @@ export default function BookTocSidebar({
   }, [bookmarks, selectedStandard]);
 
   return (
-    <aside
-      className="glass-panel"
-      aria-label="Book Table of Contents Sidebar"
-      style={{
-        width: '310px',
-        flexShrink: 0,
-        borderRadius: '14px',
-        border: '1px solid var(--border-color)',
-        display: 'flex',
-        flexDirection: 'column',
-        maxHeight: 'calc(100vh - 120px)',
-        position: 'sticky',
-        top: '1rem',
-        overflow: 'hidden'
-      }}
-    >
-      {/* Book Spine & Mini Cover Header */}
-      <div
-        style={{
-          padding: '1rem 1.1rem',
-          borderBottom: '1px solid var(--border-color)',
-          background: 'rgba(15, 23, 42, 0.55)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.85rem'
-        }}
+    <>
+      {isMobileOpen && (
+        <div
+          className="book-toc-backdrop"
+          onClick={onCloseMobile}
+          aria-hidden="true"
+        />
+      )}
+      <aside
+        className={`glass-panel book-toc-sidebar ${isMobileOpen ? 'mobile-open' : ''}`}
+        aria-label="Book Table of Contents Sidebar"
       >
-        {selectedStandard !== 'all' ? (
-          <div
-            onClick={onBackToShelf}
-            style={{
-              width: '46px',
-              height: '64px',
-              flexShrink: 0,
-              borderRadius: '4px',
-              overflow: 'hidden',
-              cursor: 'pointer',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
-            }}
-            title="Return to Library Shelf"
-          >
-            <BookCoverSvg standardId={selectedStandard} width="46px" height="64px" />
-          </div>
-        ) : (
-          <div
-            style={{
-              width: '46px',
-              height: '64px',
-              flexShrink: 0,
-              borderRadius: '6px',
-              background: 'rgba(56, 189, 248, 0.12)',
-              border: '1px solid var(--accent-cyan)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-          >
-            <BookOpen size={20} color="var(--accent-cyan)" />
-          </div>
-        )}
+        {/* Book Spine & Mini Cover Header */}
+        <div
+          style={{
+            padding: '1rem 1.1rem',
+            borderBottom: '1px solid var(--border-color)',
+            background: 'rgba(15, 23, 42, 0.55)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.85rem'
+          }}
+        >
+          {selectedStandard !== 'all' ? (
+            <div
+              onClick={() => {
+                onBackToShelf?.();
+                onCloseMobile?.();
+              }}
+              style={{
+                width: '46px',
+                height: '64px',
+                flexShrink: 0,
+                borderRadius: '4px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+              }}
+              title="Return to Library Shelf"
+            >
+              <BookCoverSvg standardId={selectedStandard} width="46px" height="64px" />
+            </div>
+          ) : (
+            <div
+              style={{
+                width: '46px',
+                height: '64px',
+                flexShrink: 0,
+                borderRadius: '6px',
+                background: 'rgba(56, 189, 248, 0.12)',
+                border: '1px solid var(--accent-cyan)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <BookOpen size={20} color="var(--accent-cyan)" />
+            </div>
+          )}
 
-        <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ fontSize: '0.68rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: accentColor }}>
-            {activeBookMeta ? `Edition ${activeBookMeta.edition}` : 'Omnibus Index'}
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <div style={{ fontSize: '0.68rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: accentColor }}>
+              {activeBookMeta ? `Edition ${activeBookMeta.edition}` : 'Omnibus Index'}
+            </div>
+            <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-main)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {activeBookMeta ? activeBookMeta.code : 'All CSA Volumes'}
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {activeBookMeta ? activeBookMeta.title : 'Combined 3-Book Index'}
+            </div>
           </div>
-          <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-main)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-            {activeBookMeta ? activeBookMeta.code : 'All CSA Volumes'}
-          </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-            {activeBookMeta ? activeBookMeta.title : 'Combined 3-Book Index'}
-          </div>
+
+          {onCloseMobile && (
+            <button
+              type="button"
+              onClick={onCloseMobile}
+              className="book-toc-mobile-close-btn"
+              aria-label="Close Table of Contents"
+              title="Close Table of Contents"
+            >
+              <X size={18} />
+            </button>
+          )}
         </div>
-      </div>
 
       {/* Scrollable TOC Tree */}
       <div style={{ flex: 1, overflowY: 'auto', padding: '0.75rem' }}>
@@ -261,6 +287,7 @@ export default function BookTocSidebar({
               onSelectSection('all');
               if (onSelectSubsectionPrefix) onSelectSubsectionPrefix(null);
               onSelectTab('clauses');
+              onCloseMobile?.();
             }}
             style={{
               width: '100%',
@@ -306,7 +333,10 @@ export default function BookTocSidebar({
                 <button
                   key={i}
                   type="button"
-                  onClick={() => onOpenBookmark && onOpenBookmark(bm)}
+                  onClick={() => {
+                    onOpenBookmark && onOpenBookmark(bm);
+                    onCloseMobile?.();
+                  }}
                   style={{
                     width: '100%',
                     display: 'flex',
@@ -382,6 +412,7 @@ export default function BookTocSidebar({
                       if (!expandedSections.has(sec.sectionName)) {
                         toggleSection(sec.sectionName);
                       }
+                      onCloseMobile?.();
                     }}
                     style={{
                       flex: 1,
@@ -456,6 +487,7 @@ export default function BookTocSidebar({
                                 onSelectSection(sec.sectionName);
                                 if (onSelectSubsectionPrefix) onSelectSubsectionPrefix(sub.key);
                                 onSelectTab('clauses');
+                                onCloseMobile?.();
                               }}
                               style={{
                                 flex: 1,
@@ -494,7 +526,10 @@ export default function BookTocSidebar({
                                   <button
                                     key={cl.id}
                                     type="button"
-                                    onClick={() => onSelectClause && onSelectClause(cl)}
+                                    onClick={() => {
+                                      if (onSelectClause) onSelectClause(cl);
+                                      onCloseMobile?.();
+                                    }}
                                     style={{
                                       background: isClActive ? 'rgba(56, 189, 248, 0.2)' : 'none',
                                       border: 'none',
@@ -556,6 +591,7 @@ export default function BookTocSidebar({
               onClick={() => {
                 onSelectTab('tables');
                 setTablesExpanded(true);
+                onCloseMobile?.();
               }}
               style={{
                 flex: 1,
@@ -590,7 +626,10 @@ export default function BookTocSidebar({
                   <button
                     key={tbl.id}
                     type="button"
-                    onClick={() => onSelectTable && onSelectTable(tbl.id)}
+                    onClick={() => {
+                      if (onSelectTable) onSelectTable(tbl.id);
+                      onCloseMobile?.();
+                    }}
                     style={{
                       background: isSelected ? 'rgba(16, 185, 129, 0.18)' : 'none',
                       border: 'none',
@@ -625,7 +664,10 @@ export default function BookTocSidebar({
         <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.5rem' }}>
           <button
             type="button"
-            onClick={() => onSelectTab('definitions')}
+            onClick={() => {
+              onSelectTab('definitions');
+              onCloseMobile?.();
+            }}
             style={{
               width: '100%',
               display: 'flex',
@@ -654,5 +696,6 @@ export default function BookTocSidebar({
 
       </div>
     </aside>
+  </>
   );
 }

@@ -228,5 +228,44 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     fireEvent.click(screen.getByText('Return to Library Shelf'));
     expect(screen.getByText('Standard Volumes & Editions')).toBeDefined();
   });
+
+  it('supports mobile view table of contents toggle drawer and responsive layout elements', async () => {
+    const { default: CodeLibraryBrowser } = await import('../src/components/codeLibrary/CodeLibraryBrowser.jsx');
+    const { container } = render(<CodeLibraryBrowser />);
+
+    // Open CSA O15 volume
+    fireEvent.click(screen.getByText('Read Volume (CSA O15)'));
+
+    // Verify mobile TOC toggle button exists
+    const mobileToggleBtn = screen.getByLabelText('Open Table of Contents');
+    expect(mobileToggleBtn).toBeDefined();
+
+    // Initially mobile TOC drawer is not open (no backdrop in DOM)
+    expect(container.querySelector('.book-toc-backdrop')).toBeNull();
+
+    // Click to open mobile TOC drawer
+    fireEvent.click(mobileToggleBtn);
+
+    // Backdrop should now be visible and sidebar has .mobile-open
+    const backdrop = container.querySelector('.book-toc-backdrop');
+    expect(backdrop).not.toBeNull();
+    const sidebar = screen.getByLabelText('Book Table of Contents Sidebar');
+    expect(sidebar.classList.contains('mobile-open')).toBe(true);
+
+    // Close button should be present inside drawer
+    const closeBtn = screen.getByLabelText('Close Table of Contents');
+    expect(closeBtn).toBeDefined();
+
+    // Clicking close button dismisses drawer
+    fireEvent.click(closeBtn);
+    expect(container.querySelector('.book-toc-backdrop')).toBeNull();
+    expect(sidebar.classList.contains('mobile-open')).toBe(false);
+
+    // Open again and click backdrop to dismiss
+    fireEvent.click(mobileToggleBtn);
+    expect(container.querySelector('.book-toc-backdrop')).not.toBeNull();
+    fireEvent.click(container.querySelector('.book-toc-backdrop'));
+    expect(container.querySelector('.book-toc-backdrop')).toBeNull();
+  });
 });
 
