@@ -8,8 +8,10 @@ description: Architecture, data schemas, and verification rules for the Digitize
 Use this skill when modifying or extending the digitized CSA standards (`src/data/csa/`), the code registry (`src/core/code/`), or the E-Book Code Library UI (`src/components/codeLibrary/`).
 
 ## 1. Corpus Baseline Counts
+- **Total Volumes**: **4** (`c22_3_no1`, `c22_3_60826`, `csa_o15`, `pls_cadd_lessons`)
 - **Total Clauses**: **792** (`c22_3_no1`: 500, `c22_3_60826`: 206, `csa_o15`: 86)
 - **Total Digitized Tables**: **83** (`c22_3_no1`: 31, `c22_3_60826`: 47, `csa_o15`: 5)
+- **PLS-CADD Lessons Learned**: **14 Lessons** (5 categories, 28 dialogue exchanges between Alex Rivera EIT & Dan Miller P.Eng, 14 takeaways)
 - **Total Definitions**: **150+**
 
 ## 2. The 5 Digitized Table Schemas (`UniversalTableRenderer.jsx`)
@@ -33,3 +35,9 @@ Never write ad-hoc `<table>` markup that only checks `details.columns`. All 83 t
 ## 3. Search & Clause Hygiene Rules
 - **Empty Search Order**: When `searchQuery` is empty, clauses must remain sorted by `naturalClauseCompare(a.clauseNumber, b.clauseNumber)`.
 - **OCR Split-Number Guardrail**: When importing or editing clauses in `src/data/csa/digitized/clauses_*.js`, verify that lines beginning with engineering numbers (`2.5%`, `1.0 kN`, `2.2 kN`) are merged into their parent clause text rather than emitted as standalone clause objects.
+
+## 4. Mobile Responsive Reader Invariants
+- **BookTocSidebar Drawer**: On viewports `< 1024px`, the TOC renders as an off-canvas drawer (`.book-toc-sidebar.mobile-open`). Requires `.book-toc-backdrop`, an accessible close button, and auto-dismiss on node selection.
+- **CompanionSplitPane Sheet**: In mobile mode, split inspectors display as an overlay modal (`min(94vw, 540px)`) rather than squeezing the primary reader text.
+- **Mobile Trigger Bar**: `CodeLibraryBrowser.jsx` exposes a `.mobile-toc-bar` toggle button when the sidebar is collapsed or on mobile.
+

@@ -33,6 +33,13 @@ This runs the full test suite (`vitest run`) and builds the production bundle (`
 
 ---
 
+## Responsive & Mobile Viewport Invariants
+- **Off-Canvas Drawers & Modal Sheets**: Sidebars (`BookTocSidebar`) and inspector panes (`CompanionSplitPane`) must never rely on rigid desktop split-pane widths on screens `< 1024px`. They must collapse into off-canvas sliding drawers or overlay sheets with backdrop dimming, header close buttons, and `Escape` key listeners.
+- **Touch-Friendly Tab Scrollers**: Multi-item tab or pill navigators ($\ge 4$ options) must support horizontal single-line touch scrolling (`overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none;`) to prevent vertical header distortion.
+- **3D Grid & Card Viewports**: Multi-card grids and 3D perspective shelves must use fluid breakpoint rules down to mobile viewports (320px–375px) without producing horizontal window blowout.
+
+---
+
 ## Engineering Calculation Invariants
 - **Finite Math**: Structural and climatic functions must never produce `NaN`, `Infinity`, or negative dimensions unless explicitly part of a signed differential margin.
 - **Audit Trace**: Pure domain engines must output an immutable calculation audit trace (`trace.calcId`, `steps`, `citations`, `inputs`, `result`).
@@ -44,4 +51,11 @@ This runs the full test suite (`vitest run`) and builds the production bundle (`
 - **Universal Table Rendering**: Always use `UniversalTableRenderer.jsx` to render digitized CSA tables. Never assume a table has `details.columns` or array-based `row.cells`—all 5 table schemas (Matrix keyed-by-`col.id`, Table 31 9-column COV grades, Table 1 paired swing arrays, Multi-Section `{ metric, imperial }` objects, and Object-Array rows) must be supported.
 - **Zero `[object Object]` & Zero Silent Truncation**: Nested cell objects (`{ m, baseM, formula, footnotes }`, `{ display }`, `{ min, max }`, `{ normal, logNormal }`) must be formatted via `formatTableCellValue()`. Large engineering tables (e.g., Table CA.1 with 682 weather stations) must provide filtering/pagination and a "Show All" option rather than hard-slicing rows.
 - **Default Clause Ordering**: When the search query is empty, clauses must always be ordered by `naturalClauseCompare` (hierarchical numeric order `0, 1, 1.1, 2...`), never by cross-reference count or arbitrary relevance score.
+
+---
+
+## Deployment & CI/CD Invariants
+- **Automated Continuous Deployment**: `netlify deploy --allow-anonymous` is strictly for one-off ephemeral previews. Continuous Deployment on `git push` requires linking the GitHub repository via the Netlify Web UI (`app.netlify.com`) with OAuth webhooks or via authenticated CLI (`netlify init`).
+- **Artifact Cleanliness**: Keep `.netlify/` and build caches untracked in `.gitignore`.
+
 
