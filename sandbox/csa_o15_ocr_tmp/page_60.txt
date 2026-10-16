@@ -1,0 +1,125 @@
+Table A.I (Concluded)
+Strength values derived from references
+Site no. (see
+Table A.2)
+19, 20
+19, 20
+19, 20
+5.
+o
+Species
+Pine, Southern yellowS
+Average*
+Spruce, White
+Average*
+Treatment
+(see
+Clause A.8)
+Nil
+411
+611
+134
+154
+154
+No. of poles in
+MOR,
+sample
+20
+70
+50
+50
+20
+53
+53
+53
+Length, ft psi
+31
+31
+26
+26
+26
+25
+30
+30
+30
+55
+35
+35
+35
+9543
+8752
+5747
+7902
+7821
+8129
+4961
+4911
+4936
+4420
+Sl, psi
+994
+1196
+974
+1018
+1897
+1192
+951
+685
+825
+680
+MOE,
+1000 psi
+2123 **
+1885tt
+1173
+1272
+1507$*
+1724
+1061
+986
+1023
+902
+S2, 1000
+psi
+285tt
+178
+184
+471$$
+208
+192
+134
+178
+157
+Ref. no. (see
+Clause A.9)
+10
+10
+20
+20
+10
+4
+4
+4
+* The samples listed below the "Average" row for a particular species are those excluded from the calculation of the average. See Clause A.5forfurther information.
+t Information not available.
+$ The moisture content of many poles in this sample was less than the fibre saturation point for the species.
+5 Steam conditioning of poles can reduce bending strength. Southern yellow pine poles or other species used in Canada should be treated in accordance with the CAN/CSA-080
+Series of Standards.
+** Based on ten specimens.
+tt Based on 59 specimens.
+Based on 169 specimens.
+Notes:
+1)
+2)
+3)
+4)
+This database contains Canadian, U.S., and European data determined by institutions considered to be without bias; the test reports are held by Forintek
+Canada Corp. (Western Laboratory).
+See Clauses A. 2, A.5, A.8, and A.9 and Table A.2 for explanations of the material appearing in this Table.
+The following conversion factors may be used with this Table:
+a) 1 MPa = 145.038 psi; and
+b) 1m -3.28084 ft.
+MOR is the average modulus of rupture at the groundline cross-section in pounds per square inch or, if that value is not available, the average extreme
+fibre stress at the failing cross-section. Sl is the standard deviation of the MOR from which the coefficient of variation equal to S2 (100)/MOR may be
+calculated. MOE is the average modulus of elasticity in 103 pounds per square inch. S2 is the standard deviation of the MOE from which the coefficient of
+variation equal to 32 (100)/MOE may be calculated.

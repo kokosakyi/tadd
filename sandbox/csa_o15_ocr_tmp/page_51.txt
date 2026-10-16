@@ -1,0 +1,49 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+standard deviation from the average value will Include about 68% of cases, ± 2 standard deviations from
+the average will include about 95% of cases, and ± 3 standard deviations from the average will include
+about 99.7% of cases. Thus, from a sample of poles having an average modulus of rupture of 552 bar
+(8000 psi) and a standard deviation of 69 bar (1000 psi), the strengths of 68% of the sample can be
+expected to fall within the range of 483 to 621 bar (7000 to 9000 psi), 95% within the range of 414 to
+690 bar (6000 to 10 000 psi), and 99.7% within the range of 345 to 758 bar (5000 to 11 000 psi).
+A.4 Coefficient of variation
+If a coefficient of variation for any sample is desired, it may be calculated by expressing the appropriate
+standard deviation as a percentage of the average value.
+A.5 Sample exclusions
+Some samples in Table A.I have been excluded from the weighted species averages in the rows labelled
+"Average" because they were considered extraordinary on account of length, kerfing, treatment,
+moisture content, or decay.
+A.6 Moisture content
+The moisture content of most specimens when tested was above the fibre saturation point, as required
+by ASTM [)1036, which has been used since 1949 for the testing of utility poles. The fibre saturation
+point is the moisture content level at which swelling of the wood ceases or shrinkage begins. A moisture
+content above the fibre saturation point is a condition at the groundline recognized as the best
+approximation for the purposes of this Standard.
+A.7 Additional data
+Further information on the samples listed in Table A.I and on the derivation of the numbers in that
+Table is archived at Forintek Canada Corp.
+A.8 Seasoning and treatment numbers
+A.8.1
+"Nil" in the "Treatment" column in Table A.I means no preservative treatment. Some of the samples
+were tested in the green condition or in a condition of moisture content greater than the fibre
+saturation point. Other samples were seasoned and then butt soaked before they were tested for
+bending strength.
+A.8.2
+The treatment codes in Table A.I consist of three digits, as follows:
+a)
+b)
+The first digit refers to seasoning:
+i) O means no seasoning or unknown;
+ii) I means air drying;
+iii) 3 means Boultonizing or boiling under vacuum;
+iv) 4 means steaming; and
+v) 6 means kiln drying.
+The second digit refers to the chemical used.
+i) O means no preservative treatment or unknown;
+ii) 1 means 100% creosote;
+iii) 3 means pentachlorophenol;
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [
+45

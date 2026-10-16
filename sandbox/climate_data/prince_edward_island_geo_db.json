@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Prince Edward Island",
+    "total_stations": 4,
+    "description": "Geoclimatic database for Prince Edward Island stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Charlottetown",
+      "elevation": 5,
+      "latitude": 46.23,
+      "longitude": -63.13,
+      "min_temp": -22,
+      "wind_50yr": 112,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Souris",
+      "elevation": 5,
+      "latitude": 46.35,
+      "longitude": -62.25,
+      "min_temp": -21,
+      "wind_50yr": 114,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Summerside",
+      "elevation": 10,
+      "latitude": 46.4,
+      "longitude": -63.78,
+      "min_temp": -22,
+      "wind_50yr": 114,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Tignish",
+      "elevation": 10,
+      "latitude": 46.95,
+      "longitude": -64.03,
+      "min_temp": -22,
+      "wind_50yr": 122,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+CAN/CSA-015-15
+Class
+Wood utility poles and reinforcing stubs
+Table E.8
+Dimensions of red pine poles (fibre stress 41 MPa)
+(See Clause E.I.)
+Minimum circumference
+at top, cm
+Length of
+pole, m
+6.1
+7.6
+9.1
+10.7
+12.2
+13.7
+15.2
+16.8
+18.3
+19.8
+69
+58
+53
+48
+43
+Groundline
+distance
+from butt,
+1.2
+1.5
+1.7
+1.8
+1.8
+2.0
+2.1
+2.3
+2.4
+2.6
+Minimum circumference at 1.8 m from butt,
+83
+92
+99
+106
+112
+117
+122
+126
+131
+135
+78
+85
+93
+98
+104
+109
+115
+118
+122
+126
+73
+79
+87
+92
+97
+102
+107
+111
+115
+117
+68
+74
+80
+85
+90
+94
+99
+103
+107
+109
+62
+69
+74
+79
+84
+88
+92
+57
+64
+69
+73
+78
+82
+38
+cm
+54
+59
+64
+68
+38
+51
+56
+61
+65
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to
+scars, straightness, etc.
+Notes:
+1) There is evidence to suggest that red pine poles of average strength lower than 41 MPa can be obtained from
+certain areas of the United States.
+2) The loads specified in Table B.I should be corrected by a factor of 0.95 for red pine.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+73

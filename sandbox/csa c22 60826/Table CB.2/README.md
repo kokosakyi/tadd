@@ -1,0 +1,5 @@
+# Table CB.2: Conductor loads per pole (N)
+
+- **Governing Standard**: CSA C22.3 No. 60826-10 (R2015) / IEC 60826:2003 (Design criteria of overhead transmission lines)
+- **Associated Clauses & Annexes**: Annex CB, Clause CB.3.7
+- **Extracted Data Model**: `src/data/csa/c22_3_60826/tableCB2.js`

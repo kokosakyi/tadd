@@ -1,0 +1,77 @@
+Table E.II (Concluded)
+Class
+Minimum circumference at top,
+94
+1--14
+89
+84
+79
+HI
+74
+in
+Length of
+pole, m
+32.0
+33.5
+35.1
+36.6
+38.1
+99
+69
+Groundline
+distance from
+butt, m*
+3.4
+3.7
+3.7
+3.7
+3.7
+64
+151
+153
+156
+158
+160
+58
+53
+48
+43
+38
+Minimum circumference at 1.8 m from butt, cm
+219
+223
+226
+230
+233
+210
+213
+216
+220
+223
+200
+203
+207
+210
+213
+191
+194
+197
+200
+203
+181
+184
+187
+189
+192
+171
+174
+176
+179
+182
+161
+163
+166
+169
+171
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to scars, straightness, etc.
+Note: See Note 3) to Table E.3 for the classification of interior Douglas fir.

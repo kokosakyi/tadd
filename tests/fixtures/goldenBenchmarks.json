@@ -1,0 +1,51 @@
+{
+  "weatherCriteriaBenchmark": {
+    "input": {
+      "province": "Ontario",
+      "location": "Ottawa (City Hall)",
+      "returnPeriod": 150,
+      "district": "Heavy",
+      "conductorDiameterMm": 28.14,
+      "isTransmission": true
+    },
+    "expected": {
+      "stationWind50": 90,
+      "stationIce50": 30,
+      "scaledWindWT": 99.0,
+      "scaledIceTT": 36.0,
+      "governedDesignIceMm": 53.82,
+      "minimumCasesCount": 8
+    }
+  },
+  "verticalClearanceBenchmark": {
+    "input": {
+      "rowId": "road_vehicular",
+      "operatingVoltageKv": 138,
+      "ownerOverlayId": "hydro_one",
+      "attachmentHeightM": 14.0,
+      "midspanSagM": 3.0
+    },
+    "expected": {
+      "baseTableClearanceM": 5.5,
+      "modifiersM": 0,
+      "csaRequiredM": 5.5,
+      "ownerBufferM": 0.3,
+      "designRequiredClearanceM": 5.8,
+      "actualClearanceM": 10.5,
+      "clearanceMarginM": 4.7,
+      "status": "PASS"
+    }
+  },
+  "woodPoleBenchmark": {
+    "input": {
+      "speciesCode": "WC",
+      "poleLengthM": 13.7,
+      "poleClass": "3",
+      "grade": 2
+    },
+    "expected": {
+      "isPassing": false,
+      "recommendedClass": "5"
+    }
+  }
+}

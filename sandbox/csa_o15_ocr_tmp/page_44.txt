@@ -1,0 +1,91 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table 14
+Dimensions of eastern white cedar reinforcing stubs (fibre stress 3700 psi)
+(See Clauses 4.1.2, 5.2, C.4, and E.I.)
+Minimum circumference at 6 ft from butt, in
+Length of
+stub, ft
+10
+11
+13
+15.5
+Class Z
+44.5
+51.0
+56.0
+58.5
+Class Y
+38.5
+44.0
+49.0
+51.0
+Table 15
+Class X
+33.0
+37.5
+41.5
+Class W
+28.0
+32.0
+Dimensions of spruce and eastern white pine reinforcing stubs
+(fibre stress 4900 psi)
+(See Clauses 4.1.2, 5.2, C.4, and E.I.)
+Minimum circumference at 6 ft from butt, in
+Length of
+stub, ft
+10
+11
+13
+15.5
+Class Z
+40.5
+51.0
+53.0
+Class Y
+35.0
+40.0
+44.0
+46.0
+Table 16
+Class X
+30.0
+34.0
+37.5
+39.5
+Class W
+25.5
+29.0
+Dimensions of amabilis fir reinforcing stubs (fibre stress 5400 psi)
+(See Clauses 4.1.2, 5.2, C.4, and E.I.)
+Minimum circumference at 6 ft from butt, in
+Length of
+stub, ft
+10
+11
+13
+15.5
+19.5
+January 2015
+H W WE wyt
+Class Z
+39.0
+44.5
+49.0
+51.0
+56.5
+Class Y
+34.0
+38.5
+42.5
+44.5
+49.0
+0 2015 CSA Group
+pruirwiiAQ
+Class X
+29.0
+33.0
+36.5
+Class W
+24.5
+38

@@ -1,0 +1,112 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table E.5
+Dimensions of spruce and eastern white pine poles (fibre stress 34 MPa)
+(See Clause E.I.)
+Class
+Minimum circumference at
+top, cm
+Length of
+pole, m
+6.1
+7.6
+9.1
+10.7
+12.2
+13.7
+15.2
+16.8
+18.3
+19.8
+69
+64
+58
+53
+48
+Groundline
+distance from
+butt, m*
+1.2
+1.5
+1.7
+1.8
+1.8
+2.0
+2.1
+2.3
+2.4
+2.6
+Minimum circumference at 1.8 m from butt,
+90
+99
+108
+115
+122
+128
+134
+140
+145
+149
+84
+93
+101
+108
+114
+120
+126
+131
+136
+140
+78
+87
+94
+101
+107
+112
+117
+122
+126
+131
+72
+80
+87
+94
+99
+104
+109
+113
+117
+121
+67
+74
+81
+87
+92
+96
+101
+105
+43
+cm
+62
+69
+75
+80
+85
+89
+93
+97
+38
+57
+64
+69
+74
+79
+83
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to
+scars, straightness, etc.
+Note: See Note 2) to TableE.3 on eastern white pine
+January 2?! 5
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+68

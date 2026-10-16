@@ -1,0 +1,55 @@
+Legal Notice for Standards
+Canadian Standards Association (operating as "CSA Group") develops standards through a consensus standards development process approved
+by the Standards Council of Canada. This process brings together volunteers representing varied viewpoints and interests to achieve consensus
+and develop a standard. Although CSA Group administers the process and establishes rules to promote fairness in achieving consensus, it does
+not independently test, evaluate, or verify the content of standards.
+Disclaimer and exclusion of liability
+This document is provided without any representations, warranties, or conditions of any kind, express or implied, including, without limitation,
+implied warranties or conditions concerning this document's fitness for a particular purpose or use, its merchantability, or its non-infringement
+of any third party's intellectual property rights. CSA Group does not warrant the accuracy, completeness, or currency of any of the information
+published in this document. CSA Group makes no representations or warranties regarding this document's compliance with any applicable
+statute, rule, or regulation.
+IN NO EVENT SHALL CSA GROUP, ITS VOLUNTEERS, MEMBERS, SUBSIDIARIES, OR AFFILIATED COMPANIES, OR THEIR EMPLOYEES, DIRECTORS,
+OR OFFICERS, BE LIABLE FOR ANY DIRECT, INDIRECT, OR INCIDENTAL DAMAGES, INJURY, LOSS, COSTS, OR EXPENSES, HOWSOEVER CAUSED,
+INCLUDING BUT NOT LIMITED TO SPECIAL OR CONSEQUENTIAL DAMAGES, LOST REVENUE, BUSINESS INTERRUPTION, LOST OR DAMAGED
+DATA, OR ANY OTHER COMMERCIAL OR ECONOMIC LOSS, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER
+THEORY OF LIABILITY, ARISING OUT OF OR RESULTING FROM ACCESS TO OR POSSESSION OR USE OF THIS DOCUMENT, EVEN IF CSA GROUP
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, INJURY, LOSS, COSTS, OR EXPENSES.
+In publishing and making this document available, CSA Group is not undertaking to render professional or other services for or on behalf Of any
+person or entity or to perform any duty owed by any person or entity to another person or entity. The information in this document is directed
+to those who have the appropriate degree of experience to use and apply its contents, and CSA Group accepts no responsibility whatsoever
+arising in any way from any and all use of or reliance on the information contained in this document.
+CSA Group is a private not for-profit company that publishes voluntary standards and related documents. CSA Group has no power, nor does it
+undertake, to enforce compliance with the contents Of the standards or other documents it publishes.
+Intellectual property rights and ownership
+As between CSA Group and the users of this document (whether it be in printed or electronic form), CSA Group is the owner, or the authorized
+licensee, of all works contained herein that are protected by copyright, all trade-marks (except as otherwise noted to the contrary), and all
+inventions and trade secrets that may be contained in this document, whether or not such inventions and trade secrets are protected by
+patents and applications for patents. Without limitation, the unauthorized use, modification, copying, or disclosure of this document may
+violate laws that protect CSA Group's and/or others' intellectual property and may give rise to a right in CSA Group and/or others to seek legal
+redress for such use, modification, copying, or disclosure. To the extent permitted by licence or by law, CSA Group reserves all intellectual
+property rights in this document.
+Patent rights
+Attention is drawn to the possibility that some of the elements of this standard may be the subject of patent rights. CSA Group shall not be
+held responsible for identifying any or all such patent rights. Users of this standard are expressly advised that determination of the validity of
+any such patent rights is entirely their own responsibility.
+Authorized use of this document
+This document is being provided by CSA Group for informational and non-commercial use only. The user of this document is authorized to do
+only the following:
+If this document is in electronic form:
+• load this document onto a computer for the sole purpose of reviewing it;
+• search and browse this document; and
+• print this document if it is in PDF format.
+Limited copies of this document in print or paper form may be distributed only to persons who are authorized by CSA Group to have such
+copies, and only if this Legal Notice appears on each such copy.
+In addition, users may not and may not permit others to
+• alter this document in any way or remove this Legal Notice from the attached standard;
+• sell this document without authorization from CSA Group; or
+make an electronic copy of this document.
+If you do not agree with any of the terms and conditions contained in this Legal Notice, you may not load or use this document or make any
+copies of the contents hereof, and if you do make such copies, you are required to destroy them immediately. Use of this document
+constitutes your acceptance of the terms and conditions of this Legal Notice.
+H W WE wyt
+CSA
+Group
+pruirwiiAQ

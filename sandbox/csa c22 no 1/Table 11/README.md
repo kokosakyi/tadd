@@ -1,0 +1,1 @@
+# Table 11: Minimum separation of equipment and clearances of conductors from swimming pools\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.7.5, A.5.7.5, Figure 1\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table11.js`\n

@@ -1,0 +1,57 @@
+CAN/CSA-015-15
+6.6.3
+Wood utility poles and reinforcing stubs
+Loading irons and cant hooks shall not be used on the roofed surface of any pole.
+6.6.4
+Poles shall not be dropped or otherwise roughly handled.
+6.7 Storage
+When it is necessary to store poles, they shall be stacked on treated skids of such dimensions and
+arranged so as to support the poles without producing noticeable distortion in any of them. The height
+of the piles shall be limited to avoid damage to poles in the bottom layers. Poles shall be piled and
+supported in such a manner that all poles are at least 0.31 m (I ft) above the general ground level. No
+vegetation or decaying wood shall be permitted underneath stored poles.
+6.8 Inspection
+All poles may be subject to inspection by inspectors appointed by the purchaser. Such inspectors shall
+have the power to reject any pole that does not comply with the requirements of this Standard.
+Table 1
+Maximum knot sizes
+(See Clauses 3, 4.4.7 and E.I.)
+Maximum knot sizes
+Diameter of any single knot, in
+Classes H6 to
+Length of pole, ft
+45 and shorter
+50 and longer
+Length of pole, ft
+30 and shorter
+31-49
+50 and longer
+January 2015
+H W WE wyt
+3
+4
+5
+Classes 4 to 7
+3
+5
+Table 2
+Sum of diameters of all knots in
+any length of I ft
+All classes
+One-third of the average
+circumference of the same 1 ft
+section or 8 In, whichever is greater,
+but not to exceed 12 in
+One-third of the average
+circumference of the same 1 ft
+section or 10 in, whichever is greater,
+but not to exceed 14 in
+Maximum spiral grain
+(See Clauses 4.4.11 and E.I.)
+Maximum twist of grain permitted
+1 complete twist in any IO ft length
+I complete twist in any 16 ft length
+I complete twist in any 20 ft length
+0 2015 CSA Group
+pruirwiiAQ
+19

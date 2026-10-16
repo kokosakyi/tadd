@@ -1,0 +1,44 @@
+CAN/CSA-015-15
+Annex A (informative)
+Database for classification stresses
+Notes:
+1) This Annex is not a mandatory part of this Standard.
+Wood utility poles and reinforcing stubs
+2) The strength values specified in this Annex are expressed in yard/pound units, i.e., in the form in which they
+were originally derived.
+A.I Objective
+The objective of this Annex is to present a database for classification stresses (see Table A.I) considered
+to be representative of material that is available to the Canadian market.
+A.2 Definitions
+The following definitions apply in this Annex:
+Note: The following definitions provide a guide to the column headings in Table A.I. The abbreviations in
+parentheses following the defined terms reflect the abbreviations in the column headings. See also Note 4) to Table
+A.I.
+Length — the nominal length of poles in the sample. The testing span is smaller and generally in
+accordance with ASTM D1036.
+Modulus of elasticity (MOE) — the average modulus of elasticity in 69 bar (103 lbs/in2) units calculated,
+in most cases, in accordance with ASTM D1036.
+Modulus of rupture (MOR) — the average modulus of rupture or maximum breaking stress in pounds
+per square inch.
+Note: Users should not infer that all poles broke at the groundline. Many broke at a smaller cross-section where
+the calculated extreme fibre stress was usually less, but might have been greater, than that at the groundline
+cross-section.
+Reference number (Ref. no.) — the number assigned in this Annex's bibliography (see Clause A.9) to
+the document on which the related information in Table A.I is based.
+Standard deviation — a statistical measure of variability.
+Sl — the standard deviation of the modulus of rupture found in the sample.
+S2 — the standard deviation of the modulus of elasticity found in the sample.
+Site number (Site no.) — the site or pole yard from which the sample was obtained (see Table A.2). For
+some sites, additional identifying information can be found in the applicable document referenced in
+Clause A.9.
+Treatment — the code (see Clause A.8) describing the conditioning and treatment of poles before
+strength testing.
+Note: Further information can be found in the applicable document referenced in Clause A.9.
+A.3 Strength determination
+A reasonable estimate of the percentage of a sample of poles having strengths falling within a specific
+range can be obtained using normal probability theory. On this basis, the range expressed by ± 1
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+44

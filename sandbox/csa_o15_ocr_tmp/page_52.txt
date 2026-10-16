@@ -1,0 +1,77 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+c)
+iv) 5 means ACA; and
+v) 8 means unknown.
+The third digit refers to the method of treatment:
+i)
+ii)
+iii)
+iv)
+v)
+vi)
+O means no method of treatment or unknown;
+I means Rueping process;
+2 means Lowry process;
+3 means butt treatment;
+4 means Bethel process; and
+6 means thermal treatment.
+A.9 References
+The following references apply to the "Ref. no." column in Table A.I:
+1)
+2)
+3)
+4)
+5)
+6)
+7)
+8)
+9)
+10)
+11)
+12)
+13)
+15)
+16)
+17)
+Alexander, J.B. 1934. The strength of lodgepole pine telephone poles. Western Forest Products
+Laboratory Circular 42. Vancouver.
+The strength of telephone poles of eastern cedar, red pine and Jack pine. 1947. Eastern Forest
+Products Laboratory Circular 31 (revised). Ottawa.
+Aplin, E.N. 1967. The strength of red pine poles. Eastern Forest Products Laboratory Report
+OP-X-IO. Ottawa.
+Fox, S.P. 1977. Unpublished data on strength of ACA- and PCP-treated white spruce, western
+hemlock, and amabilis fir. Western Forest Products Laboratory. Vancouver.
+McGowan, W.M. 1960. The strength of Douglas fir telephone poles. Western Forest Products
+Laboratory Technical Note No. 15. Vancouver.
+McGowan, W.M. 1962. The strength of western hemlock power and communication poles. Western
+Forest Products Laboratory Technical Note No. 27. Vancouver.
+McGowan, W.M., and W.J. Smith. 1965. Strength and related properties of western red cedar poles.
+Western Forest Products Laboratory Publication 1108. Vancouver.
+Platt, J.C. 1958. Strength tests of Jack pine poles. Ontario Hydro Report 58-149.
+Platt, J.C. 1958. The strength of wood poles: Western red cedar and red pine. Ontario Hydro Report
+58-206.
+Wood, L.W., E.G.O. Erickson, and A.W. Dohr. 1960. Strength and related properties of wood poles
+(final report). ASTM Wood Pole Research Program. Philadelphia: American Society for Testing and
+Materials.
+Behr, E.A., B.M. Radcliffe, and K.O. Wilkins. 1965. Strength of plantation grown and second growth
+red pine poles. Michigan agriculture export statistics, quarterly bulletin. 48:296—319.
+Kennedy, D.E., and W.E. Wakefield. 1948. The strength of Jack pine poles infected with pocket rot.
+Dominion Forest Service Circular 65. Ottawa: Department of Mines and Resources, Forest Products
+Laboratory.
+Jessome, A.P. 1955. An Investigation of the bending strength of 25 foot red pine poles by the
+machine test method. Forest Products Laboratory Project 0-74-1, Progress Report 3. Ottawa:
+Department of Northern Affairs and Natural Resources.
+Jessome, A.P. 1960. An investigation of the bending strength of 35 foot untreated lodgepole pine
+poles by the machine test method. Forest Products Laboratory Project 0-74-1, Progress Report 5.
+Ottawa: Department of Northern Affairs and Natural Resources.
+Stewart, D.L. 1928. Mechanical strength of red pine poles. Bell Telephone.
+Fox, S.P. Unpublished data by W.M. McGowan on the strength of new and used western red cedar
+poles.
+McElhannay, T.A., and R.S. Perry. 1928. Report on tests of the relative strength of green-cut and
+fire-killed western cedar pole timber. Forest Service Circular No. 22. Ottawa. Department of the
+Interior.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [

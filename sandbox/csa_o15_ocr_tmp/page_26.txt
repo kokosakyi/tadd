@@ -1,0 +1,82 @@
+Table 3
+Strength and stiffness properties by species
+(See Clauses 4.1.1, 4.1.2, B.I.I, and E.I and Tables 5, 7, 10, 11, 13, and 23.)
+o
+5.
+Common name
+Cedar
+Eastern white
+Western red
+Yellow
+Fir
+Douglas
+Coastal
+Interior
+Amabilis
+Hemlock
+Western
+Larch
+Western
+Pine
+Eastern white
+Jack
+Lodgepole
+Ponderosa
+Botanical name
+Thuja occidentalis
+Thuja plicata
+Chamaecyparis
+nootkatensis
+Pseudotsuga menziesii
+Abies amabilis
+Tsuga heterophylla
+Larix occidentalis
+Pinus strobus
+Pinus banksiana
+Pinus contorta
+Pinus ponderosa
+Fibre stress,
+3700
+5600
+6600
+8000
+6800
+5400
+6800
+8000
+4900
+6400
+6600
+5600
+Fibre stress
+coefficient of
+variation, %
+18
+19
+15
+15
+18
+17
+17
+20
+13
+Modulus of
+elasticity,
+1000 psi
+1120
+2030
+1220
+1390
+1885
+1190
+Modulus of
+elasticity
+coefficient of
+variation, %
+14
+11
+19
+15
+20
+14
+(Continued)

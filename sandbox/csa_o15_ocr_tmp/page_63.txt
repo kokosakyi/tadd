@@ -1,0 +1,42 @@
+CAN/CSA-015-15
+Annex B (informative)
+Classification procedure for poles
+Note: This Annex is not a mandatory part of this Standard.
+B.I Derivation
+B.I.I
+Wood utility poles and reinforcing stubs
+The minimum circumferences specified in Tables 4 to 13 have been calculated in order for each species
+in a given class to develop groundline stresses approximately equal to those specified in Table 3 when a
+given horizontal load is applied 0.61 m (2 ft) from the top of the pole. The horizontal loads used in the
+calculations for separating the thirteen classes are specified in Table B.I.
+B.I.2
+In making the calculations, it was assumed that the pole is used as a simple cantilever and that the
+maximum fibre stress in the pole subjected to the bending moment applied will occur at the groundline.
+The circumference at the groundline was calculated using the standard engineering formula. This value
+was then used to calculate the required circumference 1.83 m (6 ft) from the butt using a calculated
+taper per foot of length between the groundline and 1.83 m (6 ft) from the butt. The calculated
+circumference 1.83 m (6 ft) from the butt was rounded to the nearest 13 mm (1/2 in).
+Note: A calculated taper is the difference between the minimum top circumference and the groundline
+circumference divided by the length between them.
+B.I.3
+The assumption that the maximum fibre stress in the pole occurs at the groundline is theoretically
+correct, provided that the circumference at the groundline is not more than 1-1/2 times the
+circumference at the point of loading. If the circumference at the groundline is more than 1-1/2 times
+the circumference at the point of loading, theoretically the maximum fibre stress in the pole occurs
+above the groundline at the point where the circumference is 1-1/2 times that at the point of loading
+(not necessarily the circumference 0.61 m (2 ft) from the top). When the load is not applied 0.61 m (2
+ft) from the top, it is necessary for the class of pole to be determined by making separate calculations
+from the specific loads to be supported.
+Unless other information is available to substantiate the actual taper of the pole for a given species,
+these calculations should be based on the taper determined by the difference in circumference
+between the specified top dimension and the groundline dimension divided by the distance in feet
+between the two measurements.
+B.2 Shrinkage
+The dimensions specified in Tables 4 to 13 are the minimum dimensions of the poles when offered to
+the purchaser, regardless of the state of seasoning. While it is recognized that some shrinkage will occur
+in seasoning, it is known that the dimensional loss is offset by an increase in fibre strength.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [
+57

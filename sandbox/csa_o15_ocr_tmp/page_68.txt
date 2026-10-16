@@ -1,0 +1,44 @@
+CAN/CSA-015-15
+Annex E (informative)
+Wood utility poles and reinforcing stubs
+SI (metric) versions of Tables 1 to 23
+Note: This informative Annex has been written in mandatory language for users working with Sl units. Users of this
+Standard should note that pole lengths given in Sl units differ slightly in length from their imperial counterparts.
+E.I
+Tables E.I to E. 23 provide Sl (metric) equivalents for Tables 1 to 23.
+The dimensions specified in Tables 4 to 23 have been converted to Sl units in Tables E.4 to E.23 by
+recalculating the theoretical circumference at 1.83 m (6 ft) from the butt in yard/pound units. The
+results have then been converted to centimetres and rounded to the nearest centimetre. This is
+thought to be more accurate than converting the values in Tables 4 to 23, which are rounded to the
+nearest 13 mm (1/2 in).
+In cases of dispute, the dimensions specified in Tables I to 23 should govern.
+Table E.I
+Maximum knot sizes
+(See Clause E.I.)
+Maximum knot sizes
+Diameter of any single knot, mm
+Length of pole, m
+13.7 and shorter
+15.2 and longer
+January 2015
+H W WE wyt
+Classes H6 to 3
+102
+127
+Classes 4 to 7
+76
+127
+0 2015 CSA Group
+pruirwiiAQ
+Sum of diameters of all knots in
+any length of 0.3 m
+All classes
+One-third of the average
+circumference of the same 0.3 m
+section or 203 mm, whichever is
+greater, but not to exceed 31 cm
+One-third of the average
+circumference of the same 0.3 m
+section or 254 mm, whichever is
+greater, but not to exceed 36 cm
+62

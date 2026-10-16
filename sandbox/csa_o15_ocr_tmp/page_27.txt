@@ -1,0 +1,69 @@
+Table 3 (Continued)
+Common name
+Red
+Scots
+Southern yellow
+Spruce
+Notes:
+Botanical name
+Pinus resinosa
+Pinus sylvestris
+Fibre stress,
+6000
+7800
+7800
+4900
+Fibre stress
+coefficient of
+variation, %
+17
+14
+24
+17
+Modulus of
+elasticity,
+1000 psi
+1290
+1520
+1595
+1030
+Modulus of
+elasticity
+coefficient of
+variation, %
+14
+18
+29
+o
+5.
+1)
+2)
+3)
+4)
+5)
+6)
+7)
+The fibre stresses are stresses for the purposes of classification and are close approximations to the average bending strengths (MOR) specified in Table
+A.I for poles 20 to 35 ft in length.
+The bending strengths specified in Table A.I are derived from specimens whose moisture contents at the groundline were above the fibre saturation point
+at the time of testing to failure. This condition is recognized as the best approximation for the purposes of this Standard. Furthermore, the average moduli
+of elasticity specified in this Table are derived from poles of any length that were unseasoned or completely submerged in water for some time before
+testing, as described in the publications referenced in Clause A.9.
+The strength of poles longer than 50 ft can be less, as indicated in Annex A.
+Fibre stress for several species was based on limited test information or results from one test site; therefore, the Subcommittee is uncertain of the
+adequacy of the pole dimensions for these species and recommends that further tests be performed to supplement the database. Notes concerning fibre
+stress accompany Tables 3 and E.3.
+Other criteria related to the classification of poles are as follows:
+a) The taper for determining the circumference at the classification point should be the difference between the minimum top circumference and the
+circumference at the theoretical groundline, divided by the length between them.
+b) The loading point should be O. 61 m (2 ft) from the pole top.
+c) The classification point should be 1.83 m (6 ft) from the butt.
+d) The term "class" as used in this Standard does not refer to quality limitations or defects ofa pole or reinforcing stub; it is used to differentiate poles
+and stubs on the basis of their potential force-resisting capabilities.
+Pole test data for yellow cedar, eastern white pine, and ponderosa pine were not available; hence, the values specified in this Table approximate the
+average strengths of small, clear bending specimens, as described in the publications referenced in Clause A.9.
+Samples of Douglas fir poles taken from coastal areas of British Columbia and from the Cascade Mountains region of Oregon have significantly higher
+average strengths than those taken from Rocky Mountain or interior areas. Thus, only Douglas fir poles taken from the western slopes of the Coast and
+Cascade Mountains (as defined by the Atlas of Canada and the National Atlas of the United States) shall be classified as coastal Douglas fir. All other
+Douglas fir poles shall be classified as interior Douglas fir.
+(Continued)

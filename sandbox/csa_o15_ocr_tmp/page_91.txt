@@ -1,0 +1,38 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table E.23
+Dimensions of western larch and coastal Douglas fir reinforcing stubs
+(fibre stress 55 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+5.9
+Class Z
+87
+99
+109
+113
+125
+Class Y
+75
+86
+94
+98
+109
+Class X
+64
+73
+80
+Note: See Note 3) to Table E.3 for the classification of coastal Douglas fir.
+Class W
+54
+85
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ

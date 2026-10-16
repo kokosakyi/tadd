@@ -1,0 +1,87 @@
+Table E.6 (Concluded)
+Class
+Minimum
+circumference at top,
+99
+94
+89
+84
+79
+HI
+74
+o
+cm
+Length of
+pole, m
+30.5
+32.0
+33.5
+35.1
+36.6
+38.1
+69
+171
+174
+177
+180
+182
+185
+64
+160
+163
+166
+168
+171
+173
+58
+53
+48
+43
+38
+Groundline
+distance
+from butt,
+3.4
+3.4
+3.7
+3.7
+3.7
+3.7
+Minimum circumference at 1.8 m from butt, cm
+232
+237
+241
+245
+248
+252
+222
+227
+231
+234
+238
+241
+212
+217
+220
+224
+227
+230
+202
+206
+210
+213
+216
+219
+192
+196
+199
+202
+205
+208
+181
+185
+188
+191
+194
+197
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to scars, straightness, etc.

@@ -1,0 +1,39 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Figure 2
+Measurement of short crook in poles
+(See Clauses 3 and 4.4.12.)
+Deviation
+Axis of section
+below the crook
+(5 ft)
+or less
+Axis Of section
+above the crook
+Axis Of pole
+a) Case 1: Reference axes are approximately parallel
+Deviation
+4_
+Midpoint (axis) Of crook
+1.52m —H
+(5 ft)
+or less
+b) Case 2: Axes of sections above and below the crook coincide or
+Axis of section
+below the crook
+are practically coincident
+Deviation
+1.52m —l
+(5 ft)
+Midpoint of X-section at the
+or less
+upper boundary Of short crook
+c) Case 3: Axis of the section above the short crook is not parallel to or
+coincident with the axis below the crook
+Note: The three cases shown in this Figure are typical and are intended to establish the principle of measuring
+short crooks. There can be other cases not exactly like those illustrated.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+42

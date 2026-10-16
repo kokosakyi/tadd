@@ -1,0 +1,1 @@
+# Table 29: Minimum grades of construction for joint use\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 6.3.1, 6.3.4, 7.8.1.1, 7.8.2.1, 7.8.2.4, 7.9.1, A.7.8.2, A.8.1\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table29.js`\n

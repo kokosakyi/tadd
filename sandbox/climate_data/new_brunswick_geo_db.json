@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "New Brunswick",
+    "total_stations": 17,
+    "description": "Geoclimatic database for New Brunswick stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Alma",
+      "elevation": 5,
+      "latitude": 45.6,
+      "longitude": -64.95,
+      "min_temp": -23,
+      "wind_50yr": 104,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bathurst",
+      "elevation": 10,
+      "latitude": 47.6,
+      "longitude": -65.65,
+      "min_temp": -26,
+      "wind_50yr": 100,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Campbellton",
+      "elevation": 30,
+      "latitude": 48.0,
+      "longitude": -66.67,
+      "min_temp": -28,
+      "wind_50yr": 98,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Edmundston",
+      "elevation": 160,
+      "latitude": 47.37,
+      "longitude": -68.33,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fredericton",
+      "elevation": 15,
+      "latitude": 45.95,
+      "longitude": -66.65,
+      "min_temp": -27,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gagetown",
+      "elevation": 20,
+      "latitude": 45.79,
+      "longitude": -66.16,
+      "min_temp": -26,
+      "wind_50yr": 95,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Grand Falls",
+      "elevation": 115,
+      "latitude": 47.05,
+      "longitude": -67.73,
+      "min_temp": -30,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Miramichi",
+      "elevation": 5,
+      "latitude": 47.03,
+      "longitude": -65.47,
+      "min_temp": -26,
+      "wind_50yr": 96,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Moncton",
+      "elevation": 20,
+      "latitude": 46.1,
+      "longitude": -64.78,
+      "min_temp": -25,
+      "wind_50yr": 106,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Oromocto",
+      "elevation": 20,
+      "latitude": 45.84,
+      "longitude": -66.48,
+      "min_temp": -26,
+      "wind_50yr": 93,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sackville",
+      "elevation": 15,
+      "latitude": 45.88,
+      "longitude": -64.37,
+      "min_temp": -24,
+      "wind_50yr": 105,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saint Andrews",
+      "elevation": 35,
+      "latitude": 45.07,
+      "longitude": -67.05,
+      "min_temp": -24,
+      "wind_50yr": 98,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saint George",
+      "elevation": 35,
+      "latitude": 45.13,
+      "longitude": -66.82,
+      "min_temp": -23,
+      "wind_50yr": 98,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saint John",
+      "elevation": 5,
+      "latitude": 45.27,
+      "longitude": -66.05,
+      "min_temp": -24,
+      "wind_50yr": 100,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Shippagan",
+      "elevation": 5,
+      "latitude": 47.73,
+      "longitude": -64.7,
+      "min_temp": -24,
+      "wind_50yr": 119,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. Stephen",
+      "elevation": 20,
+      "latitude": 45.2,
+      "longitude": -67.28,
+      "min_temp": -26,
+      "wind_50yr": 96,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Woodstock",
+      "elevation": 60,
+      "latitude": 46.16,
+      "longitude": -67.6,
+      "min_temp": -29,
+      "wind_50yr": 89,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    }
+  ]
+}

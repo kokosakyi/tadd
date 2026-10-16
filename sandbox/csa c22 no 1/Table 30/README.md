@@ -1,0 +1,1 @@
+# Table 30: Deterministic weather loads\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 7.2, 7.3.1, 7.3.5, 7.5.1, 7.6.2.1, A.7.3, Annex C\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table30.js`\n

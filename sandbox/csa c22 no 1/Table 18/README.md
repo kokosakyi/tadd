@@ -1,0 +1,1 @@
+# Table 18: Minimum vertical separations between supply-line conductors attached to the same supporting structure, ac\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clause 5.9.2.1\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table18.js`\n

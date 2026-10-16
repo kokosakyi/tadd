@@ -1,0 +1,57 @@
+CAN/CSA-015-15
+4.2 Prohibited defects
+All poles shall be free of the following defects:
+Wood utility poles and reinforcing stubs
+a)
+b)
+c)
+d)
+e)
+f)
+g)
+h)
+i)
+j)
+k)
+bird holes;
+cracks;
+dead streaks, except as permitted in Clause 4.4.3;
+decay, except as permitted by Clauses 4.4.4 and 4.4.5;
+double sweep or reverse sweep in reinforcing stubs (see Clause 4.4.12);
+plugged holes, except increment borer holes;
+hollow heart in butts or tops, except as permitted by Clause 4.4.5;
+marine borer damage;
+nails, spikes, and other metal not specifically authorized by the purchaser;
+short crook (see Clause 4.4.12); and
+splits in the top.
+4.3 Permitted defects
+The following defects shall be permitted:
+a)
+checks that result from normal seasoning conditions and that extend not deeper than the depth of
+pith (see Clause 4.4.1 for limitations on two or more checks that become contiguous at the pith);
+b) fire-kill, provided that there is no char;
+c) firm red heart; and
+d) sap stain that is not accompanied by decay.
+4.4 Limited defects
+4.4.1 Contiguous checks, through-checks, and splits
+Contiguous checks, through-checks, or splits in the butt surface shall be permitted, provided that their
+height from the butt along the side surface does not exceed 0.61 m (2 ft).
+4.4.2 Compression wood
+The outer 2.54 cm (1 in) of all poles shall be free of compression wood visible on either end.
+4.4.3 Dead streaks
+A single sound dead streak, not wider than one-quarter of the circumference of the pole measured at
+the widest point of the dead streak, shall be permitted in cedar poles only.
+4.4.4 Decay in knots
+Decay shall be permitted in knots, provided that it is not associated with heart rot.
+4.4.5 Defective butts
+Hollowing of the butt caused by "splinter pulling" in felling the tree shall be permitted, provided that
+the area of such a hollow is less than 10% of the butt area. Hollow heart and decay shall be permitted in
+cedar poles only, provided that the aggregate area of hollow heart and decay does not exceed 10% of
+the butt area and that the depth of the hollow does not exceed 0.61 m (2 ft), measured from the butt
+surface. Decay in the butt within 5.1 cm (2 in) of the pole surface shall be permitted in cedar poles only,
+provided that the total area of decay does not exceed 6.45 cm2 (I in2).
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+13

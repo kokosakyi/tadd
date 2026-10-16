@@ -1,0 +1,1 @@
+# Table 22: Minimum separations or clearances in any direction from supply conductors to other supply plant attached to the same supporting structure\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.9.5, A.5.9.5\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table22.js`\n

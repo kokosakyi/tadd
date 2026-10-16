@@ -1,0 +1,49 @@
+CAN/CSA-015-15
+6.2 Sawing
+Wood utility poles and reinforcing stubs
+Poles shall be sawed neatly at the top and at the butt along planes that shall not be out of square with
+the axis of the pole by more than 10% of the diameter of the sawed surface. There may be bevelling at
+the edge of the sawed butt surface not wider than 10% of the butt diameter.
+6.3 Trimming
+Completely overgrown knots rising more than 25 mm (1 in) above the pole surface, branch stubs, and
+partially overgrown knots shall be trimmed close. Completely overgrown knots less than 25 mm (1 in)
+high need not be trimmed.
+6.4 Framing
+All poles shall be roofed, gained, and bored as specified by the purchaser before full-length treatment.
+All gains of a notch or slab type shall be cut on the face of the pole, and the gained surfaces shall be in
+parallel planes.
+6.5 Markings
+6.5.1 Butt marking
+The following marks shall be stamped or branded legibly on the butt end of each pole or be included on
+a metal tag affixed thereto:
+a)
+the supplier's code or trademark;
+b) code letters denoting the pole species (see Clause 6.5.3); and
+c)
+the class and length of the pole.
+Marks stamped or branded on the butt end shall be not less than 16 mm (5/8 in) high. Marks on metal
+tags shall be not less than 3.2 mm (1/8) in high.
+6.5.2 Side marking
+6.5.2.1
+Not more than one month before treatment, the following marks, not less than 16 mm (5/8) in high,
+shall be branded legibly and permanently on the face of each pole:
+the supplier's code or trademark;
+b) the plant location and the last two numerals of the year of treatment;
+c)
+code letters denoting the country of origin (for imported poles) and pole species (see Clause 6.5.3);
+d) the class and length of the pole; and
+e) following the species code letters [see Item c)], the appropriate code letter to denote the type of
+preservative, as specified in the CAN/CSA-080 Series of Standards.
+Note: Subject to agreement between the supplier and purchaser, die-stamped metal tags affixed to the pole face
+may be used in place of brands to designate side marking information. If metal tags are used, the code letters
+specified in Item c) should be not less than 1/8 in high.
+6.5.2.2
+The bottom of the side mark shall be located on the face of the pole at 3.05 m ± 0.05 m (IO ft ± 2 in)
+from the butt of poles 15.2 m (50 ft) or less in length, and at 4.27 m ± 0.05 m (14 ft ± 2 in) from the butt
+of poles 16.8 m (55 ft) or more in length. In the case of 3.05 m (10 ft), 3.35 m (11 ft), and 3.96 m (13 ft)
+stubs, the mark should be 0.31 m (1 ft) from the top.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+17

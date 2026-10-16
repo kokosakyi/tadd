@@ -1,0 +1,1 @@
+# Table 31: Minimum load factors for non-linear analysis of structures\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 7.4.2, 7.5.2, 7.6.4, 7.7.2, 7.8.1.2, 8.1.3, 8.3.10.1, 8.3.12.2, A.7.4.2\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table31.js`\n

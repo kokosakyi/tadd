@@ -1,0 +1,33 @@
+CAN/CSA-015-15
+Annex D (informative)
+Ordering information
+Note: This Annex is not a mandatory part of this Standard.
+D.I
+Wood utility poles and reinforcing stubs
+Poles and reinforcing stubs should be ordered by the piece and the following information should be
+provided.
+a)
+b)
+c)
+d)
+e)
+f)
+g)
+quantity;
+species;
+length;
+class;
+preservative;
+net retention of the preservative and CSA Standards or other references; and
+roofing, gaining, and boring.
+Note: A sample order is as follows: quantity, species, length, and class; poles classified in accordance with this
+Standard and treated with (kg/m3) preservative in accordance with the CAN/CSA-080 Series of Standards; details
+of roofing, gaining, and boring.
+D.2
+Complete and detailed instructions should be given to the supplier whenever the requirements of this
+Standard are modified to meet special conditions.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+61

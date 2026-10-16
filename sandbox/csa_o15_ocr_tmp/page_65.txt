@@ -1,0 +1,48 @@
+CAN/CSA-015-15
+Annex C (informative)
+Wood utility poles and reinforcing stubs
+Classification procedure for reinforcing stubs
+Note: This Annex is not a mandatory part of this Standard.
+C.I Classification
+Four classes of reinforcing stubs were adopted for use with Class I to Class 8 poles. The adopted classes
+of reinforcing stubs and associated classes of poles are as follows:
+Class of stub
+z
+x
+w
+C.2 Lengths
+Class of associated poles
+I and 2
+3 and 4
+5 and 6
+7 and 8
+Five lengths of reinforcing stubs were adopted, as follows:
+Length of stub,
+ft
+10
+11
+13
+15.5
+19.5
+C.3 Size determination
+Length of associated poles,
+ft
+20, 25, 30
+35, 40
+45, 50
+55
+60, 70
+It is recognized that a pole will be stub reinforced usually after it has served a substantial part of its
+physical life. Consequently, a stub should have a life at least equal to the remaining life of the pole.
+Experience has indicated that this result will generally be met by selecting a reinforcing stub whose
+circumference at 1.83 m (6 ft) from the butt is approximately 51 mm (2 in) less than the circumference
+at 1.83 m (6 ft) from the butt of a new replacement pole adequate to support the load. From these
+selected bases, the dimensions of new stubs have been determined, the length and the groundline
+circumference being designed to develop the strength of the longest pole of the highest class with
+which the stub is intended to be associated. For example, a 3.05 m (IO ft) Class Z stub is designed to
+develop the expected remaining strength of a 9.1 (30 ft) Class I pole.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [
+59

@@ -1,0 +1,1 @@
+# Table 25: Minimum clearances from guys to plant of another system\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.11.2.1, A.5.11.2, Figure A.8\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table25.js`\n

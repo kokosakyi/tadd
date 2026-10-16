@@ -1,0 +1,95 @@
+Table 7 (Concluded)
+Class
+Minimum
+circumference at top,
+37
+35
+33
+31
+HI
+29
+o
+in
+Length
+of pole,
+100
+105
+110
+115
+120
+125
+39
+Groundline
+27
+65.0
+66.0
+67.5
+68.5
+69.5
+70.5
+25
+61.0
+62.0
+63.0
+64.0
+65.0
+66.0
+23
+21
+19
+17
+15
+distance
+from butt,
+11
+12
+12
+12
+12
+12
+Minimum circumference at 6 ft from butt, in
+87.5
+89.5
+91.0
+92.5
+94.0
+95.0
+84.0
+85.5
+87.0
+88.5
+90.0
+91.5
+80.5
+82.0
+83.5
+84.5
+86.0
+87.5
+76.5
+78.0
+79.5
+80.5
+82.0
+83.0
+72.5
+74.0
+75.5
+76.5
+78.0
+79.0
+68.0
+70.0
+71.5
+72.5
+74.0
+75.0
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to scars, straightness, etc.
+Notes:
+1)
+2)
+3)
+For marketing purposes, yellow cedar can be considered the same as western red cedar on a dimensional basis only, but such poles shall be identified by
+actual species.
+See Note 2) to Table 3 on Ponderosa pine.
+The loads specified in Table B.I should be corrected by a factor of 0.95 for western red cedar.

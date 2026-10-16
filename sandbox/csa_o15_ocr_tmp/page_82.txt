@@ -1,0 +1,75 @@
+Table E.IO (Concluded)
+Class
+Minimum circumference at top, cm
+99
+94
+89
+84
+79
+HI
+74
+69
+64
+cm
+155
+158
+160
+163
+58
+53
+48
+43
+38
+38
+Length of pole, m
+33.5
+35.1
+36.6
+38.1
+Groundline
+distance from
+butt, m *
+3.7
+3.7
+3.7
+3.7
+Minimum circumference at 1.8 m from butt,
+225
+229
+233
+235
+215
+219
+223
+225
+206
+209
+212
+215
+196
+200
+202
+205
+176
+178
+192
+195
+165
+168
+170
+184
+165
+168
+170
+173
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to scars, straightness, etc.
+Notes:
+1)
+2)
+3)
+4)
+For marketing purposes, yellow cedar can be considered the same as western red cedar on a dimensional basis only, but such poles shall be identified by
+actual species.
+See Note 2) to Table E.3 on yellow cedar.
+Lodgepole pine poles will not normally include Classes HI to H6, nor be taller than 15.2 m.
+There is evidence to suggest that lodgepole pine poles of average strength lower than 46 MPa can be obtained from certain areas of the United States.

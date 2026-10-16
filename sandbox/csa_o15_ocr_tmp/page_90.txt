@@ -1,0 +1,97 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table E.20
+Dimensions of yellow cedar and lodgepole pine reinforcing stubs
+(fibre stress 46 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+5.9
+Class Z
+93
+106
+116
+121
+134
+Class Y
+80
+92
+101
+105
+116
+Table E.21
+Class X
+68
+78
+86
+Class W
+58
+Dimensions of western hemlock and interior Douglas fir reinforcing stubs
+(fibre stress 47 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+5.9
+Class Z
+92
+107
+115
+120
+133
+Class Y
+80
+91
+100
+104
+115
+Table E.22
+Class X
+68
+77
+85
+Class W
+57
+Dimensions of southern yellow and Scots pine reinforcing stubs
+(fibre stress 54 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+January 2015
+H W WE wyt
+Class Z
+88
+100
+110
+114
+Class Y
+76
+86
+95
+99
+0 2015 CSA Group
+pruirwiiAQ
+Class X
+64
+74
+81
+85
+Class W
+54
+64
+69
+84

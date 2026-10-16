@@ -1,0 +1,124 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table E.12
+Dimensions of southern yellow and Scots pine poles (fibre stress 54 MPa)
+(See Clause E.I.)
+Class
+Minimum circumference at
+1
+69
+2
+64
+3
+58
+4
+53
+5
+48
+6
+43
+top, cm
+Length of
+pole, m
+6.1
+7.6
+9.1
+10.7
+12.2
+13.7
+15.2
+16.8
+18.3
+19.8
+Groundline
+distance from
+butt, m*
+1.2
+1.5
+1.7
+1.8
+1.8
+2.0
+2.1
+2.3
+2.4
+2.6
+Minimum circumference at 1.8 m from butt, cm
+78
+86
+93
+99
+105
+110
+115
+119
+123
+127
+73
+80
+87
+93
+98
+103
+107
+112
+116
+119
+68
+75
+81
+86
+91
+96
+100
+104
+108
+111
+63
+69
+75
+80
+85
+89
+93
+97
+100
+103
+58
+64
+69
+74
+79
+82
+86
+90
+54
+59
+64
+69
+73
+76
+80
+7
+38
+50
+55
+59
+64
+67
+71
+74
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to
+scars, straightness, etc.
+Note: For southern yellow pine, the average number of annual growth rings measured on the butt in the outer
+5 cm of poles having a circumference of 95 cm or less at 1.8 m from the butt, and in the outer 7.5 cm of poles
+having a circumference of more than 90 cm at 1.8 m from the butt, shall be not less than 12 and 18 rings,
+respectively. However, pole butts with 8 to IO and 12 to 15 rings, respectively, shall be acceptable if 50% or more
+latewood is present.
+As an alternative, these ring count and latewood measurements may be made on an increment core taken at 1.8 m
+from the butt directly above the place where the average number of annual rings is indicated on the butt surface.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+79

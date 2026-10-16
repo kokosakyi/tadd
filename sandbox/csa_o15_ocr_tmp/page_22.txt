@@ -1,0 +1,42 @@
+CAN/CSA-015-15
+5 Dimensions
+5.1 Poles
+5.1.1 General
+Wood utility poles and reinforcing stubs
+Poles shall be classified according to species, length, and minimum circumferential measurements as
+specified in Tables 4 to 13.
+5.1.2 Length
+Poles 45 ft in length or shorter shall be not more than 76 mm (3 in) shorter or 76 mm (3 in) longer than
+the nominal length. Poles 15.24 m (50 ft) or more in length shall be not more than 76 mm (3 in) shorter
+or 152 mm (6 in) longer than the nominal length. Length shall be measured between the extreme ends
+of the pole.
+5.1.3 Circumference
+The minimum circumferences at 1.83 m (6 ft) from the butt and at the top, for each length and class of
+pole, are listed in Tables 4 to 13. The circumference at 1.83 (6 ft) from the butt of a pole shall be not
+more than 178 mm (7 in) or 20% larger than the specified minimum, whichever is greater. The top
+circumferential requirement shall apply at a point corresponding to the minimum length permitted for
+the pole.
+5.1.4 Classification method
+After the species and length of a pole are determined, its class shall be determined by measuring
+circumferences at two cross-sections: the top and 1.83 m (6 ft) from the butt. The latter dimension shall
+determine the class of the pole by reference to the applicable table in Tables 4 to 13, provided that its
+top (measured at the minimum length point) is large enough. Otherwise, the circumference at the top
+shall determine the class, provided that the circumference at 1.83 m (6 ft) from the butt does not
+exceed the specified minimum by more than 178 mm (7 in) or 20%, whichever is greater.
+5.2 Reinforcing stub circumference
+The minimum circumference at 1.83 m (6 ft) from the butt, for each length and class of stub, shall be as
+specified in Tables 14 to 23.
+6 Quality of work and finish, markings, handling, storage, and inspection
+6.1 Bark removal
+6.1.1
+The outer bark shall be completely removed from all poles. No patch of inner bark more than 25 mm (1
+in) wide and 152 mm (6 in) long shall be left on the pole surface between the top and 0.61 m (2 ft)
+below the groundline.
+6.1.2
+In shaving poles, the depth of cut shall be not more than necessary to remove inner bark. There shall be
+no abrupt changes in the contour of the pole surface between the groundline and top sections.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [
+16

@@ -1,0 +1,40 @@
+CAN/CSA-015-15
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Wood utility poles and reinforcing stubs
+O Introduction
+This Standard covers all commercial pole species used in Canada. Since there is an exchange of poles
+between Canada, Europe, and the United States, this Standard also includes the imported species of
+Scots pine and southern yellow pine and harmonizes some of the physical attributes with other
+countries' standards.
+During the development of the 2015 edition of this Standard, the Subcommittee agreed that published
+pole test data sets that are not included in Table A.I of this Standard will be analyzed and, if deemed
+appropriate, the fibre stress and stiffness of the species in Table 3 Will be updated accordingly in the
+next edition.
+1 Scope
+1.1
+This Standard covers material, manufacturing, and class dimensional requirements for seasoned wood
+poles and reinforcing stubs that are primarily intended for the support of electrical power or
+communication lines.
+1.2
+This Standard does not cover requirements for wood poles intended for use in structures such as
+bridges and buildings.
+1.3
+This Standard does not cover requirements for the preservative treatment of poles or the conditioning
+of poles prior to treatment. Such requirements are detailed in the CAN/CSA-080 Series of Standards
+unless otherwise specified.
+The values given in SI units are the units of record for the purposes of this Standard. The values given in
+parentheses are for information and comparison only. Tables I to 23 are written in yard/pound units
+and equivalent SI (metric) versions are provided in Annex E.
+1.5
+In this Standard, "shall" is used to express a requirement, i.e., a provision that the user is obliged to
+satisfy in order to comply with the standard; "should" is used to express a recommendation or that
+which is advised but not required; and "may" is used to express an option or that which is permissible
+within the limits of the standard.
+Notes accompanying clauses do not include requirements or alternative requirements; the purpose of a
+note accompanying a clause is to separate from the text explanatory or informative material.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ [
+9

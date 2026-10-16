@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Northwest Territories",
+    "total_stations": 17,
+    "description": "Geoclimatic database for Northwest Territories stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Aklavik",
+      "elevation": 5,
+      "latitude": 68.23,
+      "longitude": -135.01,
+      "min_temp": -44,
+      "wind_50yr": 100,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Echo Bay / Port Radium",
+      "elevation": 195,
+      "latitude": 66.05,
+      "longitude": -117.88,
+      "min_temp": -44,
+      "wind_50yr": 99,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort Good Hope",
+      "elevation": 100,
+      "latitude": 66.29,
+      "longitude": -128.63,
+      "min_temp": -45,
+      "wind_50yr": 89,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort McPherson",
+      "elevation": 25,
+      "latitude": 67.43,
+      "longitude": -134.88,
+      "min_temp": -46,
+      "wind_50yr": 90,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort Providence",
+      "elevation": 150,
+      "latitude": 61.35,
+      "longitude": -117.65,
+      "min_temp": -43,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort Resolution",
+      "elevation": 160,
+      "latitude": 61.19,
+      "longitude": -113.67,
+      "min_temp": -42,
+      "wind_50yr": 93,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort Simpson",
+      "elevation": 120,
+      "latitude": 61.93,
+      "longitude": -121.35,
+      "min_temp": -44,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Fort Smith",
+      "elevation": 205,
+      "latitude": 60.0,
+      "longitude": -111.88,
+      "min_temp": -43,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Hay River",
+      "elevation": 45,
+      "latitude": 60.85,
+      "longitude": -115.73,
+      "min_temp": -41,
+      "wind_50yr": 89,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Inuvik",
+      "elevation": 45,
+      "latitude": 68.35,
+      "longitude": -133.72,
+      "min_temp": -45,
+      "wind_50yr": 100,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Mould Bay",
+      "elevation": 5,
+      "latitude": 76.23,
+      "longitude": -119.33,
+      "min_temp": -46,
+      "wind_50yr": 114,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Norman Wells",
+      "elevation": 65,
+      "latitude": 65.28,
+      "longitude": -126.85,
+      "min_temp": -45,
+      "wind_50yr": 89,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Rae–Edzo",
+      "elevation": 160,
+      "latitude": 62.83,
+      "longitude": -116.05,
+      "min_temp": -44,
+      "wind_50yr": 103,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Tungsten",
+      "elevation": 1340,
+      "latitude": 61.95,
+      "longitude": -128.27,
+      "min_temp": -51,
+      "wind_50yr": 90,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Ulukhaqtuuq/Holman",
+      "elevation": 10,
+      "latitude": 70.73,
+      "longitude": -117.75,
+      "min_temp": -41,
+      "wind_50yr": 120,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Wrigley",
+      "elevation": 80,
+      "latitude": 63.23,
+      "longitude": -123.47,
+      "min_temp": -44,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Yellowknife",
+      "elevation": 160,
+      "latitude": 62.48,
+      "longitude": -114.35,
+      "min_temp": -44,
+      "wind_50yr": 103,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    }
+  ]
+}

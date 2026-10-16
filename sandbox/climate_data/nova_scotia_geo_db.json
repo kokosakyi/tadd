@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Nova Scotia",
+    "total_stations": 25,
+    "description": "Geoclimatic database for Nova Scotia stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Amherst",
+      "elevation": 25,
+      "latitude": 45.83,
+      "longitude": -64.2,
+      "min_temp": -24,
+      "wind_50yr": 104,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Antigonish",
+      "elevation": 10,
+      "latitude": 45.62,
+      "longitude": -62.0,
+      "min_temp": -20,
+      "wind_50yr": 109,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bridgewater",
+      "elevation": 10,
+      "latitude": 44.38,
+      "longitude": -64.52,
+      "min_temp": -17,
+      "wind_50yr": 106,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Canso",
+      "elevation": 5,
+      "latitude": 45.33,
+      "longitude": -61.0,
+      "min_temp": -15,
+      "wind_50yr": 118,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dartmouth",
+      "elevation": 10,
+      "latitude": 44.67,
+      "longitude": -63.57,
+      "min_temp": -18,
+      "wind_50yr": 110,
+      "ice_50yr": 31,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Debert",
+      "elevation": 45,
+      "latitude": 45.43,
+      "longitude": -63.47,
+      "min_temp": -24,
+      "wind_50yr": 104,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Digby",
+      "elevation": 35,
+      "latitude": 44.62,
+      "longitude": -65.77,
+      "min_temp": -17,
+      "wind_50yr": 110,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Greenwood (CFB)",
+      "elevation": 28,
+      "latitude": 44.98,
+      "longitude": -64.9,
+      "min_temp": -20,
+      "wind_50yr": 110,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Halifax",
+      "elevation": 55,
+      "latitude": 44.65,
+      "longitude": -63.6,
+      "min_temp": -18,
+      "wind_50yr": 110,
+      "ice_50yr": 31,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kentville",
+      "elevation": 25,
+      "latitude": 45.08,
+      "longitude": -64.5,
+      "min_temp": -20,
+      "wind_50yr": 110,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Liverpool",
+      "elevation": 20,
+      "latitude": 44.03,
+      "longitude": -64.72,
+      "min_temp": -18,
+      "wind_50yr": 118,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lockeport",
+      "elevation": 5,
+      "latitude": 43.7,
+      "longitude": -65.12,
+      "min_temp": -16,
+      "wind_50yr": 117,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Louisburg",
+      "elevation": 5,
+      "latitude": 45.92,
+      "longitude": -59.98,
+      "min_temp": -17,
+      "wind_50yr": 121,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lunenburg",
+      "elevation": 25,
+      "latitude": 44.38,
+      "longitude": -64.32,
+      "min_temp": -17,
+      "wind_50yr": 108,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "New Glasgow",
+      "elevation": 30,
+      "latitude": 45.58,
+      "longitude": -62.65,
+      "min_temp": -21,
+      "wind_50yr": 109,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "North Sydney",
+      "elevation": 20,
+      "latitude": 46.22,
+      "longitude": -60.25,
+      "min_temp": -19,
+      "wind_50yr": 110,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pictou",
+      "elevation": 25,
+      "latitude": 45.68,
+      "longitude": -62.72,
+      "min_temp": -21,
+      "wind_50yr": 109,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Hawkesbury",
+      "elevation": 40,
+      "latitude": 45.62,
+      "longitude": -61.35,
+      "min_temp": -19,
+      "wind_50yr": 109,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Springhill",
+      "elevation": 185,
+      "latitude": 45.65,
+      "longitude": -64.05,
+      "min_temp": -23,
+      "wind_50yr": 104,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Stewiacke",
+      "elevation": 25,
+      "latitude": 45.13,
+      "longitude": -63.35,
+      "min_temp": -22,
+      "wind_50yr": 106,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sydney",
+      "elevation": 5,
+      "latitude": 46.15,
+      "longitude": -60.18,
+      "min_temp": -19,
+      "wind_50yr": 110,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Tatamagouche",
+      "elevation": 25,
+      "latitude": 45.72,
+      "longitude": -63.3,
+      "min_temp": -23,
+      "wind_50yr": 109,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Truro",
+      "elevation": 25,
+      "latitude": 45.37,
+      "longitude": -63.27,
+      "min_temp": -22,
+      "wind_50yr": 104,
+      "ice_50yr": 29,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wolfville",
+      "elevation": 35,
+      "latitude": 45.08,
+      "longitude": -64.37,
+      "min_temp": -21,
+      "wind_50yr": 110,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Yarmouth",
+      "elevation": 10,
+      "latitude": 43.83,
+      "longitude": -66.12,
+      "min_temp": -16,
+      "wind_50yr": 112,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+# Table 19: Vertical spacings between supply-line conductors of 0 to 750 V on vertical brackets\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clause 5.9.2.2\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table19.js`\n

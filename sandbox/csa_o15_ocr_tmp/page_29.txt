@@ -1,0 +1,99 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table 4
+Dimensions of eastern white cedar poles (fibre stress 3700 psi)
+(See Clauses 4.1.2, 5.1.1, 5.1.3, 5.1.4, B.I.I, B.2, and E.I.)
+Class
+Minimum circumference at
+top, in
+Length of
+pole, ft
+20
+25
+30
+35
+40
+45
+50
+55
+65
+27
+25
+23
+21
+19
+17
+Groundline
+distance from
+butt, ft*
+5.5
+6.5
+7.5
+8.5
+Minimum circumference at 6 ft from butt, in
+38.5
+43.0
+46.5
+50.0
+53.0
+55.5
+58.0
+60.5
+62.5
+64.5
+36.0
+40.0
+43.5
+47.0
+49.5
+52.0
+54.5
+56.5
+58.5
+60.5
+33.5
+37.5
+40.5
+43.5
+46.0
+48.5
+51.0
+53.0
+54.5
+56.5
+31.0
+34.5
+38.0
+40.5
+43.0
+45.0
+47.0
+49.0
+51.0
+52.5
+28.5
+32.0
+35.0
+37.5
+39.5
+41.5
+43.5
+26.5
+29.5
+32.5
+34.5
+36.5
+38.5
+15
+24.5
+27.5
+30.0
+32.0
+34.0
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to
+scars, straightness, etc.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+23

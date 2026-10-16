@@ -1,0 +1,92 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+Table E.17
+Dimensions of western red cedar and ponderosa pine reinforcing stubs
+(fibre stress 39 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+5.9
+Class Z
+98
+112
+123
+128
+142
+Class Y
+85
+97
+107
+112
+123
+Table E.18
+Class X
+72
+83
+91
+Class W
+61
+Dimensions of red pine reinforcing stubs (fibre stress 41 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+Class Z
+96
+109
+120
+125
+Class Y
+83
+95
+105
+109
+Table E.19
+Class X
+71
+81
+89
+93
+Class W
+60
+69
+76
+Dimensions of Jack pine reinforcing stubs (fibre stress 44 MPa)
+(See Clause E.I.)
+Minimum circumference at 1.8 m from butt, cm
+Length of
+stub, m
+3.0
+3.4
+4.0
+4.7
+January 2015
+H W WE wyt
+Class Z
+94
+107
+118
+123
+Class Y
+81
+94
+102
+106
+0 2015 CSA Group
+pruirwiiAQ
+Class X
+69
+79
+87
+Class W
+58
+83

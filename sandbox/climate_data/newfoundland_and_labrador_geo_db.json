@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Newfoundland and Labrador",
+    "total_stations": 18,
+    "description": "Geoclimatic database for Newfoundland and Labrador stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Argentia",
+      "elevation": 15,
+      "latitude": 47.3,
+      "longitude": -53.98,
+      "min_temp": -14,
+      "wind_50yr": 130,
+      "ice_50yr": 35,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Bonavista",
+      "elevation": 15,
+      "latitude": 48.65,
+      "longitude": -53.12,
+      "min_temp": -16,
+      "wind_50yr": 140,
+      "ice_50yr": 40,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Buchans",
+      "elevation": 255,
+      "latitude": 48.82,
+      "longitude": -56.87,
+      "min_temp": -27,
+      "wind_50yr": 115,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cape Harrison",
+      "elevation": 5,
+      "latitude": 54.78,
+      "longitude": -57.95,
+      "min_temp": -31,
+      "wind_50yr": 130,
+      "ice_50yr": 35,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Cape Race",
+      "elevation": 5,
+      "latitude": 46.65,
+      "longitude": -53.07,
+      "min_temp": -13,
+      "wind_50yr": 154,
+      "ice_50yr": 45,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Channel–Port aux Basques",
+      "elevation": 5,
+      "latitude": 47.57,
+      "longitude": -59.15,
+      "min_temp": -15,
+      "wind_50yr": 133,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Corner Brook",
+      "elevation": 35,
+      "latitude": 48.95,
+      "longitude": -57.95,
+      "min_temp": -18,
+      "wind_50yr": 111,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gander",
+      "elevation": 125,
+      "latitude": 48.98,
+      "longitude": -54.59,
+      "min_temp": -20,
+      "wind_50yr": 117,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Grand Bank",
+      "elevation": 5,
+      "latitude": 47.1,
+      "longitude": -55.77,
+      "min_temp": -15,
+      "wind_50yr": 130,
+      "ice_50yr": 35,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Grand Falls",
+      "elevation": 60,
+      "latitude": 48.93,
+      "longitude": -55.67,
+      "min_temp": -29,
+      "wind_50yr": 100,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Happy Valley–Goose Bay",
+      "elevation": 15,
+      "latitude": 53.32,
+      "longitude": -60.37,
+      "min_temp": -32,
+      "wind_50yr": 98,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Labrador City",
+      "elevation": 550,
+      "latitude": 52.95,
+      "longitude": -66.92,
+      "min_temp": -38,
+      "wind_50yr": 95,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. Anthony",
+      "elevation": 10,
+      "latitude": 51.37,
+      "longitude": -55.58,
+      "min_temp": -27,
+      "wind_50yr": 138,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. John’s",
+      "elevation": 65,
+      "latitude": 47.57,
+      "longitude": -52.72,
+      "min_temp": -16,
+      "wind_50yr": 138,
+      "ice_50yr": 42,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Stephenville",
+      "elevation": 25,
+      "latitude": 48.55,
+      "longitude": -58.58,
+      "min_temp": -18,
+      "wind_50yr": 114,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Twin Falls",
+      "elevation": 425,
+      "latitude": 53.5,
+      "longitude": -64.53,
+      "min_temp": -37,
+      "wind_50yr": 95,
+      "ice_50yr": 17,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wabana",
+      "elevation": 75,
+      "latitude": 47.63,
+      "longitude": -52.95,
+      "min_temp": -17,
+      "wind_50yr": 130,
+      "ice_50yr": 40,
+      "loading_district": "Severe"
+    },
+    {
+      "location": "Wabush",
+      "elevation": 550,
+      "latitude": 52.92,
+      "longitude": -66.87,
+      "min_temp": -38,
+      "wind_50yr": 95,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    }
+  ]
+}

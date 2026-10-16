@@ -1,0 +1,1 @@
+# Table 16: Minimum design clearances between conductors of one line and supporting structures of another line\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.8.3.1, 5.8.3.2, 5.8.3.3\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table16.js`\n

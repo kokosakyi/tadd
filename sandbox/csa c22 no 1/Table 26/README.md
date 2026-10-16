@@ -1,0 +1,1 @@
+# Table 26: Minimum clearance or separation between guys and other plant attached to the joint-use structure\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.11.2.2, A.5.11.2, Figure A.8\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table26.js`\n

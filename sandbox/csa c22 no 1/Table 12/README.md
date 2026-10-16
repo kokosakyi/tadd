@@ -1,0 +1,1 @@
+# Table 12: Minimum horizontal separations from supply equipment to buildings\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.7.6, A.5.7.6\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table12.js`\n

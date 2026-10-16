@@ -1,0 +1,65 @@
+Table E.13 (Concluded)
+Class
+Minimum circumference at top, cm
+99
+94
+89
+84
+79
+HI
+74
+69
+64
+cm
+145
+148
+150
+151
+58
+53
+48
+43
+38
+Length of pole, m
+33.5
+35.1
+36.6
+38.1
+Groundline
+distance
+from butt, m*
+3.7
+3.7
+3.7
+3.7
+Minimum circumference at 1.8 m from butt,
+209
+212
+216
+219
+200
+203
+206
+210
+191
+195
+197
+200
+182
+184
+188
+191
+173
+176
+178
+181
+164
+167
+169
+172
+154
+156
+159
+162
+* These distances are for use only when a definition of groundline is necessary to apply requirements relating to scars, straightness, etc.
+Note: See Note 3) to Table E.3 for the classification of coastal Douglas fir.

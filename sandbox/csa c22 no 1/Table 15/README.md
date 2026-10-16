@@ -1,0 +1,1 @@
+# Table 15: Clearances between conductors supported by different structures but not crossing each other — Clearance increments to be added to horizontal displacement\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.8.2, A.5.8.2\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table15.js`\n

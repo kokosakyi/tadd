@@ -1,0 +1,39 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+ii) one-tenth of the pole diameter at the location of the damage if such diameter is more than
+0.25 m (10 in).
+4.4.9 Shakes in butts
+Shakes in the butt end surface extending through an arc of not more than 900 shall be permitted.
+Shakes extending through an arc of more than 900 shall be permitted if they are inside a circle, the
+centre of which corresponds to the centre of the butt surface and the diameter of which corresponds to
+one-half of the average butt diameter.
+4.4.10 Shakes in tops
+Shakes in the top end surface shall be permitted in poles that are to be given full-length preservative
+treatment, provided that the diameter of the shake does not exceed one-half of the diameter of the top
+of the pole.
+4.4.11 Spiral grain
+Spiral grain (twist grain) shall be permitted within the limits specified in Table 2.
+4.4.12 Crooks and sweep
+Crooks other than short crooks shall be permitted in poles. Sweep shall be permitted, provided that a
+straight line connecting the midpoint at the groundline with the midpoint at the top shall not, at any
+intermediate point, pass through the surface of the pole. Double or reverse sweep shall not be
+permitted in reinforcing stubs. (See Figures I and 2.)
+4.4.13 Rate of growth
+4.4.13.1
+Except as specified in Clause 4.4.13.2, the rate of growth measured on the butt in the outer 51 mm
+(2 in) of poles having a circumference of 0.95 m (37.5 in) or less at 1.83 m (6 ft) from the butt, and in
+the outer 76 mm (3 in) of poles having a circumference of more than 0.95 m (37.5 in) at 1.83 m (6 ft)
+from the butt, shall be not less than 6 rings per 2.54 cm (1 in).
+4.4.13.2
+Poles with 4 and 5 rings per 2.54 cm (1 in) shall be acceptable if 50% or more summerwood is present.
+4.4.13.3
+As an alternative to Clause 4.4.13.1, the ring count and summerwood measurements may be made on
+an increment core taken at 1.83 m (6 ft) from the butt directly above the place where the average
+growth is indicated on the butt surface.
+Note: ANSI 05. TR.OI provides accurate photographic references for the limited and prohibited defects noted in this
+Standard.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+15

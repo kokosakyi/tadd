@@ -1,0 +1,6181 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "description": "Geoclimatic database of Canadian stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice.",
+    "units": {
+      "elevation": "meters (m)",
+      "latitude": "degrees North",
+      "longitude": "degrees West (negative)",
+      "min_temperature": "degrees Celsius (°C)",
+      "reference_wind_speed": "kilometers per hour (km/h)",
+      "reference_ice_thickness": "millimeters (mm)"
+    },
+    "total_stations": 682
+  },
+  "provinces": {
+    "British Columbia": [
+      {
+        "location": "100 Mile House",
+        "elevation": 1040,
+        "latitude": 51.65,
+        "longitude": -121.28,
+        "min_temp": -32,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Abbotsford",
+        "elevation": 70,
+        "latitude": 49.05,
+        "longitude": -122.33,
+        "min_temp": -10,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Agassiz",
+        "elevation": 15,
+        "latitude": 49.23,
+        "longitude": -121.77,
+        "min_temp": -11,
+        "wind_50yr": 99,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Alberni",
+        "elevation": 12,
+        "latitude": 49.27,
+        "longitude": -124.8,
+        "min_temp": -8,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ashcroft",
+        "elevation": 305,
+        "latitude": 50.72,
+        "longitude": -121.28,
+        "min_temp": -27,
+        "wind_50yr": 92,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Bamfield",
+        "elevation": 20,
+        "latitude": 48.83,
+        "longitude": -125.13,
+        "min_temp": -4,
+        "wind_50yr": 106,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Beatton River",
+        "elevation": 840,
+        "latitude": 57.38,
+        "longitude": -121.4,
+        "min_temp": -39,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Bella Bella",
+        "elevation": 25,
+        "latitude": 52.16,
+        "longitude": -128.14,
+        "min_temp": -7,
+        "wind_50yr": 106,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Bella Coola",
+        "elevation": 40,
+        "latitude": 52.37,
+        "longitude": -126.75,
+        "min_temp": -18,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Burns Lake",
+        "elevation": 755,
+        "latitude": 54.23,
+        "longitude": -125.75,
+        "min_temp": -34,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Cache Creek",
+        "elevation": 455,
+        "latitude": 50.8,
+        "longitude": -121.32,
+        "min_temp": -27,
+        "wind_50yr": 93,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Campbell River",
+        "elevation": 20,
+        "latitude": 50.02,
+        "longitude": -125.24,
+        "min_temp": -7,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Carmi",
+        "elevation": 845,
+        "latitude": 49.5,
+        "longitude": -119.12,
+        "min_temp": -26,
+        "wind_50yr": 92,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Castlegar",
+        "elevation": 430,
+        "latitude": 49.32,
+        "longitude": -117.67,
+        "min_temp": -20,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Chetwynd",
+        "elevation": 605,
+        "latitude": 55.7,
+        "longitude": -121.63,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Chilliwack",
+        "elevation": 10,
+        "latitude": 49.17,
+        "longitude": -121.95,
+        "min_temp": -11,
+        "wind_50yr": 99,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Comox",
+        "elevation": 15,
+        "latitude": 49.68,
+        "longitude": -124.93,
+        "min_temp": -9,
+        "wind_50yr": 104,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Courtenay",
+        "elevation": 10,
+        "latitude": 49.68,
+        "longitude": -124.98,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Cranbrook",
+        "elevation": 910,
+        "latitude": 49.5,
+        "longitude": -115.77,
+        "min_temp": -28,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Crescent Valley",
+        "elevation": 585,
+        "latitude": 49.45,
+        "longitude": -117.55,
+        "min_temp": -20,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Crofton",
+        "elevation": 5,
+        "latitude": 48.87,
+        "longitude": -123.65,
+        "min_temp": -6,
+        "wind_50yr": 87,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dawson Creek",
+        "elevation": 665,
+        "latitude": 55.77,
+        "longitude": -120.23,
+        "min_temp": -40,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dease Lake",
+        "elevation": 800,
+        "latitude": 58.44,
+        "longitude": -130.0,
+        "min_temp": -40,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dog Creek",
+        "elevation": 450,
+        "latitude": 51.58,
+        "longitude": -122.3,
+        "min_temp": -30,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Duncan",
+        "elevation": 10,
+        "latitude": 48.78,
+        "longitude": -123.7,
+        "min_temp": -8,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Elko",
+        "elevation": 1065,
+        "latitude": 49.3,
+        "longitude": -115.12,
+        "min_temp": -31,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fernie",
+        "elevation": 1010,
+        "latitude": 49.5,
+        "longitude": -115.07,
+        "min_temp": -30,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Nelson",
+        "elevation": 465,
+        "latitude": 58.83,
+        "longitude": -122.7,
+        "min_temp": -42,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort St. John",
+        "elevation": 685,
+        "latitude": 56.25,
+        "longitude": -120.85,
+        "min_temp": -37,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Glacier",
+        "elevation": 1145,
+        "latitude": 51.27,
+        "longitude": -117.52,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Gold River",
+        "elevation": 120,
+        "latitude": 49.78,
+        "longitude": -126.05,
+        "min_temp": -11,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Golden",
+        "elevation": 790,
+        "latitude": 51.3,
+        "longitude": -116.97,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Grand Forks",
+        "elevation": 565,
+        "latitude": 49.03,
+        "longitude": -118.45,
+        "min_temp": -22,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Greenwood",
+        "elevation": 745,
+        "latitude": 49.1,
+        "longitude": -118.68,
+        "min_temp": -23,
+        "wind_50yr": 87,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Hope",
+        "elevation": 40,
+        "latitude": 49.38,
+        "longitude": -121.44,
+        "min_temp": -15,
+        "wind_50yr": 110,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Jordan River",
+        "elevation": 20,
+        "latitude": 48.42,
+        "longitude": -124.05,
+        "min_temp": -3,
+        "wind_50yr": 111,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kamloops",
+        "elevation": 355,
+        "latitude": 50.67,
+        "longitude": -120.32,
+        "min_temp": -25,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kaslo",
+        "elevation": 545,
+        "latitude": 49.92,
+        "longitude": -116.92,
+        "min_temp": -20,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kelowna",
+        "elevation": 350,
+        "latitude": 49.88,
+        "longitude": -119.48,
+        "min_temp": -20,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kimberley",
+        "elevation": 1090,
+        "latitude": 49.68,
+        "longitude": -115.98,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kitimat Plant",
+        "elevation": 15,
+        "latitude": 54.05,
+        "longitude": -128.63,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Kitimat Townsite",
+        "elevation": 130,
+        "latitude": 54.07,
+        "longitude": -128.65,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Ladysmith",
+        "elevation": 80,
+        "latitude": 48.99,
+        "longitude": -123.82,
+        "min_temp": -9,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Langford",
+        "elevation": 80,
+        "latitude": 48.45,
+        "longitude": -123.5,
+        "min_temp": -6,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lillooet",
+        "elevation": 245,
+        "latitude": 50.68,
+        "longitude": -121.93,
+        "min_temp": -23,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lytton",
+        "elevation": 325,
+        "latitude": 50.23,
+        "longitude": -121.57,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Mackenzie",
+        "elevation": 765,
+        "latitude": 55.3,
+        "longitude": -123.08,
+        "min_temp": -38,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Masset",
+        "elevation": 10,
+        "latitude": 54.02,
+        "longitude": -132.1,
+        "min_temp": -7,
+        "wind_50yr": 118,
+        "ice_50yr": 10
+      },
+      {
+        "location": "McBride",
+        "elevation": 730,
+        "latitude": 53.3,
+        "longitude": -120.17,
+        "min_temp": -32,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "McLeod Lake",
+        "elevation": 695,
+        "latitude": 54.98,
+        "longitude": -123.03,
+        "min_temp": -37,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Merritt",
+        "elevation": 570,
+        "latitude": 50.1,
+        "longitude": -120.78,
+        "min_temp": -27,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Mission City",
+        "elevation": 45,
+        "latitude": 49.13,
+        "longitude": -122.3,
+        "min_temp": -11,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Montrose",
+        "elevation": 615,
+        "latitude": 49.08,
+        "longitude": -117.58,
+        "min_temp": -18,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Nakusp",
+        "elevation": 445,
+        "latitude": 50.23,
+        "longitude": -117.8,
+        "min_temp": -22,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Nanaimo",
+        "elevation": 15,
+        "latitude": 49.17,
+        "longitude": -123.93,
+        "min_temp": -8,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Nelson",
+        "elevation": 600,
+        "latitude": 49.48,
+        "longitude": -117.28,
+        "min_temp": -20,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ocean Falls",
+        "elevation": 10,
+        "latitude": 52.35,
+        "longitude": -127.7,
+        "min_temp": -12,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Osoyoos",
+        "elevation": 285,
+        "latitude": 49.03,
+        "longitude": -119.5,
+        "min_temp": -17,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Parksville",
+        "elevation": 40,
+        "latitude": 49.32,
+        "longitude": -124.33,
+        "min_temp": -6,
+        "wind_50yr": 190,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Penticton",
+        "elevation": 350,
+        "latitude": 49.5,
+        "longitude": -119.58,
+        "min_temp": -17,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Port Alberni",
+        "elevation": 15,
+        "latitude": 49.23,
+        "longitude": -124.8,
+        "min_temp": -8,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Port Alice",
+        "elevation": 25,
+        "latitude": 50.38,
+        "longitude": -127.45,
+        "min_temp": -6,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Port Hardy",
+        "elevation": 5,
+        "latitude": 50.7,
+        "longitude": -127.42,
+        "min_temp": -7,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Port McNeill",
+        "elevation": 5,
+        "latitude": 50.58,
+        "longitude": -127.1,
+        "min_temp": -7,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Port Renfrew",
+        "elevation": 20,
+        "latitude": 48.56,
+        "longitude": -124.4,
+        "min_temp": -5,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Powell River",
+        "elevation": 10,
+        "latitude": 49.83,
+        "longitude": -124.52,
+        "min_temp": -9,
+        "wind_50yr": 107,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Prince George",
+        "elevation": 580,
+        "latitude": 53.92,
+        "longitude": -122.75,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Prince Rupert",
+        "elevation": 20,
+        "latitude": 54.32,
+        "longitude": -130.32,
+        "min_temp": -15,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Princeton",
+        "elevation": 655,
+        "latitude": 49.5,
+        "longitude": -120.51,
+        "min_temp": -29,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Qualicum Beach",
+        "elevation": 10,
+        "latitude": 49.35,
+        "longitude": -124.45,
+        "min_temp": -9,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Queen Charlotte City",
+        "elevation": 35,
+        "latitude": 53.26,
+        "longitude": -132.08,
+        "min_temp": -8,
+        "wind_50yr": 118,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Quesnel",
+        "elevation": 475,
+        "latitude": 52.98,
+        "longitude": -122.48,
+        "min_temp": -33,
+        "wind_50yr": 84,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Revelstoke",
+        "elevation": 440,
+        "latitude": 50.98,
+        "longitude": -118.2,
+        "min_temp": -23,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Salmon Arm",
+        "elevation": 425,
+        "latitude": 50.7,
+        "longitude": -119.28,
+        "min_temp": -24,
+        "wind_50yr": 93,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Sandspit",
+        "elevation": 5,
+        "latitude": 53.25,
+        "longitude": -131.82,
+        "min_temp": -6,
+        "wind_50yr": 133,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Sechelt",
+        "elevation": 25,
+        "latitude": 49.47,
+        "longitude": -123.75,
+        "min_temp": -8,
+        "wind_50yr": 104,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Sidney",
+        "elevation": 10,
+        "latitude": 48.65,
+        "longitude": -123.4,
+        "min_temp": -6,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Smith River",
+        "elevation": 660,
+        "latitude": 59.88,
+        "longitude": -126.43,
+        "min_temp": -47,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Smithers",
+        "elevation": 500,
+        "latitude": 54.78,
+        "longitude": -127.17,
+        "min_temp": -31,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Sooke",
+        "elevation": 20,
+        "latitude": 48.38,
+        "longitude": -123.72,
+        "min_temp": -3,
+        "wind_50yr": 104,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Squamish",
+        "elevation": 5,
+        "latitude": 49.7,
+        "longitude": -123.15,
+        "min_temp": -11,
+        "wind_50yr": 106,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Stewart",
+        "elevation": 10,
+        "latitude": 55.93,
+        "longitude": -129.98,
+        "min_temp": -20,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Tahsis",
+        "elevation": 25,
+        "latitude": 49.93,
+        "longitude": -126.65,
+        "min_temp": -6,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Taylor",
+        "elevation": 515,
+        "latitude": 56.2,
+        "longitude": -120.69,
+        "min_temp": -37,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Terrace",
+        "elevation": 60,
+        "latitude": 54.52,
+        "longitude": -128.6,
+        "min_temp": -21,
+        "wind_50yr": 90,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Tofino",
+        "elevation": 10,
+        "latitude": 49.12,
+        "longitude": -125.88,
+        "min_temp": -4,
+        "wind_50yr": 117,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Trail",
+        "elevation": 440,
+        "latitude": 49.1,
+        "longitude": -117.7,
+        "min_temp": -18,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ucluelet",
+        "elevation": 5,
+        "latitude": 48.93,
+        "longitude": -125.55,
+        "min_temp": -4,
+        "wind_50yr": 124,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Burnaby SFU)",
+        "elevation": 330,
+        "latitude": 49.28,
+        "longitude": -122.92,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Cloverdale)",
+        "elevation": 10,
+        "latitude": 49.1,
+        "longitude": -122.73,
+        "min_temp": -10,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Haney)",
+        "elevation": 10,
+        "latitude": 49.22,
+        "longitude": -122.6,
+        "min_temp": -11,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Ladner)",
+        "elevation": 3,
+        "latitude": 49.08,
+        "longitude": -123.08,
+        "min_temp": -8,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Langley)",
+        "elevation": 15,
+        "latitude": 49.1,
+        "longitude": -122.65,
+        "min_temp": -10,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (New Westminster)",
+        "elevation": 10,
+        "latitude": 49.22,
+        "longitude": -122.92,
+        "min_temp": -10,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (North Vancouver)",
+        "elevation": 135,
+        "latitude": 49.32,
+        "longitude": -123.07,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Richmond)",
+        "elevation": 5,
+        "latitude": 49.17,
+        "longitude": -123.1,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Surrey)",
+        "elevation": 90,
+        "latitude": 49.16,
+        "longitude": -122.79,
+        "min_temp": -10,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (City Hall)",
+        "elevation": 40,
+        "latitude": 49.25,
+        "longitude": -123.12,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (Granville)",
+        "elevation": 120,
+        "latitude": 49.23,
+        "longitude": -123.14,
+        "min_temp": -8,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vancouver (West Vancouver)",
+        "elevation": 45,
+        "latitude": 49.33,
+        "longitude": -123.17,
+        "min_temp": -9,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vernon",
+        "elevation": 405,
+        "latitude": 50.3,
+        "longitude": -119.27,
+        "min_temp": -23,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Victoria",
+        "elevation": 10,
+        "latitude": 48.43,
+        "longitude": -123.37,
+        "min_temp": -6,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Victoria Gonzales Hts",
+        "elevation": 65,
+        "latitude": 48.42,
+        "longitude": -123.32,
+        "min_temp": -6,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Victoria Mt Tolmie",
+        "elevation": 125,
+        "latitude": 48.47,
+        "longitude": -123.33,
+        "min_temp": -8,
+        "wind_50yr": 119,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Whistler",
+        "elevation": 665,
+        "latitude": 50.12,
+        "longitude": -122.96,
+        "min_temp": -23,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "White Rock",
+        "elevation": 30,
+        "latitude": 49.02,
+        "longitude": -122.8,
+        "min_temp": -7,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Williams Lake",
+        "elevation": 615,
+        "latitude": 52.13,
+        "longitude": -122.15,
+        "min_temp": -33,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Youbou",
+        "elevation": 200,
+        "latitude": 48.88,
+        "longitude": -124.2,
+        "min_temp": -8,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      }
+    ],
+    "Alberta": [
+      {
+        "location": "Athabasca",
+        "elevation": 515,
+        "latitude": 54.72,
+        "longitude": -113.28,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Banff",
+        "elevation": 1400,
+        "latitude": 51.17,
+        "longitude": -115.57,
+        "min_temp": -33,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Barrhead",
+        "elevation": 645,
+        "latitude": 54.13,
+        "longitude": -114.4,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Beaverlodge",
+        "elevation": 730,
+        "latitude": 55.22,
+        "longitude": -119.43,
+        "min_temp": -39,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Brooks",
+        "elevation": 760,
+        "latitude": 50.58,
+        "longitude": -111.88,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Calgary",
+        "elevation": 1045,
+        "latitude": 51.05,
+        "longitude": -114.08,
+        "min_temp": -32,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Campsie",
+        "elevation": 660,
+        "latitude": 54.13,
+        "longitude": -114.65,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Camrose",
+        "elevation": 740,
+        "latitude": 53.02,
+        "longitude": -112.83,
+        "min_temp": -35,
+        "wind_50yr": 93,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Canmore",
+        "elevation": 1320,
+        "latitude": 51.09,
+        "longitude": -115.35,
+        "min_temp": -33,
+        "wind_50yr": 91,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Cardston",
+        "elevation": 1130,
+        "latitude": 49.2,
+        "longitude": -113.3,
+        "min_temp": -32,
+        "wind_50yr": 127,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Claresholm",
+        "elevation": 1030,
+        "latitude": 50.03,
+        "longitude": -113.58,
+        "min_temp": -32,
+        "wind_50yr": 115,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Cold Lake",
+        "elevation": 540,
+        "latitude": 54.45,
+        "longitude": -110.17,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Coleman",
+        "elevation": 1320,
+        "latitude": 49.63,
+        "longitude": -114.5,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Coronation",
+        "elevation": 790,
+        "latitude": 52.08,
+        "longitude": -111.45,
+        "min_temp": -34,
+        "wind_50yr": 91,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Cowley",
+        "elevation": 1175,
+        "latitude": 49.57,
+        "longitude": -114.08,
+        "min_temp": -32,
+        "wind_50yr": 140,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Drumheller",
+        "elevation": 685,
+        "latitude": 51.47,
+        "longitude": -112.7,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Edmonton",
+        "elevation": 645,
+        "latitude": 53.55,
+        "longitude": -113.47,
+        "min_temp": -33,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Edson",
+        "elevation": 920,
+        "latitude": 53.58,
+        "longitude": -116.43,
+        "min_temp": -37,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Embarras Portage",
+        "elevation": 220,
+        "latitude": 58.45,
+        "longitude": -111.47,
+        "min_temp": -43,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fairview",
+        "elevation": 670,
+        "latitude": 56.07,
+        "longitude": -118.38,
+        "min_temp": -40,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort MacLeod",
+        "elevation": 945,
+        "latitude": 49.72,
+        "longitude": -113.42,
+        "min_temp": -32,
+        "wind_50yr": 125,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort McMurray",
+        "elevation": 255,
+        "latitude": 56.73,
+        "longitude": -111.38,
+        "min_temp": -40,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Saskatchewan",
+        "elevation": 610,
+        "latitude": 53.72,
+        "longitude": -113.22,
+        "min_temp": -35,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Vermilion",
+        "elevation": 270,
+        "latitude": 58.4,
+        "longitude": -116.0,
+        "min_temp": -43,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Grande Prairie",
+        "elevation": 650,
+        "latitude": 55.17,
+        "longitude": -118.8,
+        "min_temp": -39,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Habay",
+        "elevation": 335,
+        "latitude": 58.83,
+        "longitude": -118.73,
+        "min_temp": -43,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Hardisty",
+        "elevation": 615,
+        "latitude": 52.67,
+        "longitude": -111.3,
+        "min_temp": -36,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "High River",
+        "elevation": 1040,
+        "latitude": 50.58,
+        "longitude": -113.87,
+        "min_temp": -32,
+        "wind_50yr": 109,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Hinton",
+        "elevation": 990,
+        "latitude": 53.4,
+        "longitude": -117.58,
+        "min_temp": -38,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Jasper",
+        "elevation": 1060,
+        "latitude": 52.88,
+        "longitude": -118.08,
+        "min_temp": -34,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Keg River",
+        "elevation": 420,
+        "latitude": 57.75,
+        "longitude": -117.62,
+        "min_temp": -42,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lac la Biche",
+        "elevation": 560,
+        "latitude": 54.77,
+        "longitude": -111.97,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lacombe",
+        "elevation": 855,
+        "latitude": 52.47,
+        "longitude": -113.73,
+        "min_temp": -36,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lethbridge",
+        "elevation": 910,
+        "latitude": 49.7,
+        "longitude": -112.82,
+        "min_temp": -32,
+        "wind_50yr": 109,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Manning",
+        "elevation": 465,
+        "latitude": 56.92,
+        "longitude": -117.62,
+        "min_temp": -41,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Medicine Hat",
+        "elevation": 705,
+        "latitude": 50.05,
+        "longitude": -110.67,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Peace River",
+        "elevation": 330,
+        "latitude": 56.23,
+        "longitude": -117.28,
+        "min_temp": -40,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Pincher Creek",
+        "elevation": 1130,
+        "latitude": 49.48,
+        "longitude": -113.95,
+        "min_temp": -32,
+        "wind_50yr": 140,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ranfurly",
+        "elevation": 670,
+        "latitude": 53.42,
+        "longitude": -111.68,
+        "min_temp": -37,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Red Deer",
+        "elevation": 855,
+        "latitude": 52.27,
+        "longitude": -113.8,
+        "min_temp": -35,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Rocky Mountain House",
+        "elevation": 985,
+        "latitude": 52.37,
+        "longitude": -114.92,
+        "min_temp": -34,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Slave Lake",
+        "elevation": 590,
+        "latitude": 55.28,
+        "longitude": -114.77,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Stettler",
+        "elevation": 820,
+        "latitude": 52.32,
+        "longitude": -112.72,
+        "min_temp": -34,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Stony Plain",
+        "elevation": 710,
+        "latitude": 53.53,
+        "longitude": -114.0,
+        "min_temp": -35,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Suffield",
+        "elevation": 755,
+        "latitude": 50.2,
+        "longitude": -111.17,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Taber",
+        "elevation": 815,
+        "latitude": 49.78,
+        "longitude": -112.15,
+        "min_temp": -33,
+        "wind_50yr": 109,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Turner Valley",
+        "elevation": 1215,
+        "latitude": 50.67,
+        "longitude": -114.28,
+        "min_temp": -32,
+        "wind_50yr": 100,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Valleyview",
+        "elevation": 700,
+        "latitude": 55.07,
+        "longitude": -117.28,
+        "min_temp": -40,
+        "wind_50yr": 98,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vegreville",
+        "elevation": 635,
+        "latitude": 53.5,
+        "longitude": -112.05,
+        "min_temp": -37,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Vermilion",
+        "elevation": 580,
+        "latitude": 53.37,
+        "longitude": -110.85,
+        "min_temp": -38,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Wagner",
+        "elevation": 585,
+        "latitude": 55.35,
+        "longitude": -114.98,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Wainwright",
+        "elevation": 675,
+        "latitude": 52.82,
+        "longitude": -110.87,
+        "min_temp": -36,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Wetaskiwin",
+        "elevation": 760,
+        "latitude": 52.97,
+        "longitude": -113.37,
+        "min_temp": -35,
+        "wind_50yr": 93,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Whitecourt",
+        "elevation": 690,
+        "latitude": 54.15,
+        "longitude": -115.68,
+        "min_temp": -36,
+        "wind_50yr": 91,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Wimborne",
+        "elevation": 975,
+        "latitude": 51.87,
+        "longitude": -113.58,
+        "min_temp": -34,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      }
+    ],
+    "Saskatchewan": [
+      {
+        "location": "Assiniboia",
+        "elevation": 740,
+        "latitude": 49.63,
+        "longitude": -105.98,
+        "min_temp": -34,
+        "wind_50yr": 100,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Battrum",
+        "elevation": 700,
+        "latitude": 50.55,
+        "longitude": -108.33,
+        "min_temp": -34,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Biggar",
+        "elevation": 645,
+        "latitude": 52.07,
+        "longitude": -108.0,
+        "min_temp": -36,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Broadview",
+        "elevation": 600,
+        "latitude": 50.37,
+        "longitude": -102.58,
+        "min_temp": -35,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dafoe",
+        "elevation": 530,
+        "latitude": 51.75,
+        "longitude": -104.53,
+        "min_temp": -37,
+        "wind_50yr": 91,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dundurn",
+        "elevation": 525,
+        "latitude": 51.82,
+        "longitude": -106.5,
+        "min_temp": -37,
+        "wind_50yr": 102,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Estevan",
+        "elevation": 565,
+        "latitude": 49.13,
+        "longitude": -102.98,
+        "min_temp": -34,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Hudson Bay",
+        "elevation": 370,
+        "latitude": 52.85,
+        "longitude": -102.38,
+        "min_temp": -38,
+        "wind_50yr": 88,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Humboldt",
+        "elevation": 565,
+        "latitude": 52.2,
+        "longitude": -105.12,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Island Falls",
+        "elevation": 305,
+        "latitude": 55.53,
+        "longitude": -102.35,
+        "min_temp": -41,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kamsack",
+        "elevation": 455,
+        "latitude": 51.57,
+        "longitude": -101.9,
+        "min_temp": -37,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kindersley",
+        "elevation": 685,
+        "latitude": 51.47,
+        "longitude": -109.17,
+        "min_temp": -35,
+        "wind_50yr": 102,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Lloydminster",
+        "elevation": 645,
+        "latitude": 53.28,
+        "longitude": -110.0,
+        "min_temp": -37,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Maple Creek",
+        "elevation": 765,
+        "latitude": 49.92,
+        "longitude": -109.48,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Meadow Lake",
+        "elevation": 480,
+        "latitude": 54.13,
+        "longitude": -108.43,
+        "min_temp": -40,
+        "wind_50yr": 88,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Melfort",
+        "elevation": 455,
+        "latitude": 52.87,
+        "longitude": -104.62,
+        "min_temp": -38,
+        "wind_50yr": 88,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Melville",
+        "elevation": 550,
+        "latitude": 50.92,
+        "longitude": -102.8,
+        "min_temp": -36,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Moose Jaw",
+        "elevation": 545,
+        "latitude": 50.4,
+        "longitude": -105.53,
+        "min_temp": -34,
+        "wind_50yr": 108,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Nipawin",
+        "elevation": 365,
+        "latitude": 53.37,
+        "longitude": -104.0,
+        "min_temp": -39,
+        "wind_50yr": 88,
+        "ice_50yr": 10
+      },
+      {
+        "location": "North Battleford",
+        "elevation": 545,
+        "latitude": 52.78,
+        "longitude": -108.28,
+        "min_temp": -36,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Prince Albert",
+        "elevation": 435,
+        "latitude": 53.2,
+        "longitude": -105.77,
+        "min_temp": -40,
+        "wind_50yr": 88,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Qu'Appelle",
+        "elevation": 645,
+        "latitude": 50.55,
+        "longitude": -103.88,
+        "min_temp": -36,
+        "wind_50yr": 98,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Regina",
+        "elevation": 575,
+        "latitude": 50.45,
+        "longitude": -104.62,
+        "min_temp": -36,
+        "wind_50yr": 105,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Rosetown",
+        "elevation": 595,
+        "latitude": 51.55,
+        "longitude": -108.0,
+        "min_temp": -36,
+        "wind_50yr": 105,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Saskatoon",
+        "elevation": 500,
+        "latitude": 52.12,
+        "longitude": -106.63,
+        "min_temp": -37,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Scott",
+        "elevation": 645,
+        "latitude": 52.37,
+        "longitude": -108.83,
+        "min_temp": -36,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Strasbourg",
+        "elevation": 545,
+        "latitude": 51.07,
+        "longitude": -104.95,
+        "min_temp": -36,
+        "wind_50yr": 98,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Swift Current",
+        "elevation": 750,
+        "latitude": 50.28,
+        "longitude": -107.8,
+        "min_temp": -34,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Uranium City",
+        "elevation": 265,
+        "latitude": 59.57,
+        "longitude": -108.62,
+        "min_temp": -44,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Weyburn",
+        "elevation": 575,
+        "latitude": 49.67,
+        "longitude": -103.85,
+        "min_temp": -35,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Yorkton",
+        "elevation": 510,
+        "latitude": 51.22,
+        "longitude": -102.47,
+        "min_temp": -37,
+        "wind_50yr": 95,
+        "ice_50yr": 10
+      }
+    ],
+    "Manitoba": [
+      {
+        "location": "Beausejour",
+        "elevation": 245,
+        "latitude": 50.07,
+        "longitude": -96.52,
+        "min_temp": -35,
+        "wind_50yr": 96,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Boissevain",
+        "elevation": 510,
+        "latitude": 49.23,
+        "longitude": -100.05,
+        "min_temp": -34,
+        "wind_50yr": 108,
+        "ice_50yr": 14
+      },
+      {
+        "location": "Brandon",
+        "elevation": 395,
+        "latitude": 49.83,
+        "longitude": -99.95,
+        "min_temp": -35,
+        "wind_50yr": 99,
+        "ice_50yr": 14
+      },
+      {
+        "location": "Churchill",
+        "elevation": 10,
+        "latitude": 58.75,
+        "longitude": -94.12,
+        "min_temp": -40,
+        "wind_50yr": 109,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Dauphin",
+        "elevation": 295,
+        "latitude": 51.15,
+        "longitude": -100.05,
+        "min_temp": -35,
+        "wind_50yr": 90,
+        "ice_50yr": 13
+      },
+      {
+        "location": "Flin Flon",
+        "elevation": 300,
+        "latitude": 54.77,
+        "longitude": -101.88,
+        "min_temp": -40,
+        "wind_50yr": 80,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Gimli",
+        "elevation": 220,
+        "latitude": 50.64,
+        "longitude": -96.99,
+        "min_temp": -36,
+        "wind_50yr": 90,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Island Lake",
+        "elevation": 240,
+        "latitude": 53.87,
+        "longitude": -94.67,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Lac du Bonnet",
+        "elevation": 260,
+        "latitude": 50.27,
+        "longitude": -96.06,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Lynn Lake",
+        "elevation": 350,
+        "latitude": 56.85,
+        "longitude": -101.05,
+        "min_temp": -42,
+        "wind_50yr": 80,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Morden",
+        "elevation": 300,
+        "latitude": 49.18,
+        "longitude": -98.1,
+        "min_temp": -33,
+        "wind_50yr": 108,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Neepawa",
+        "elevation": 365,
+        "latitude": 50.23,
+        "longitude": -99.47,
+        "min_temp": -34,
+        "wind_50yr": 99,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Pine Falls",
+        "elevation": 220,
+        "latitude": 50.57,
+        "longitude": -96.22,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Portage la Prairie",
+        "elevation": 260,
+        "latitude": 50.0,
+        "longitude": -98.29,
+        "min_temp": -33,
+        "wind_50yr": 99,
+        "ice_50yr": 14
+      },
+      {
+        "location": "Rivers",
+        "elevation": 465,
+        "latitude": 50.03,
+        "longitude": -100.23,
+        "min_temp": -36,
+        "wind_50yr": 99,
+        "ice_50yr": 13
+      },
+      {
+        "location": "Sandilands",
+        "elevation": 365,
+        "latitude": 49.36,
+        "longitude": -96.3,
+        "min_temp": -34,
+        "wind_50yr": 89,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Selkirk",
+        "elevation": 225,
+        "latitude": 50.15,
+        "longitude": -96.87,
+        "min_temp": -35,
+        "wind_50yr": 96,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Split Lake",
+        "elevation": 175,
+        "latitude": 56.25,
+        "longitude": -96.1,
+        "min_temp": -40,
+        "wind_50yr": 89,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Steinbach",
+        "elevation": 270,
+        "latitude": 49.53,
+        "longitude": -96.68,
+        "min_temp": -35,
+        "wind_50yr": 95,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Swan River",
+        "elevation": 335,
+        "latitude": 52.14,
+        "longitude": -101.27,
+        "min_temp": -37,
+        "wind_50yr": 89,
+        "ice_50yr": 14
+      },
+      {
+        "location": "The Pas",
+        "elevation": 270,
+        "latitude": 53.87,
+        "longitude": -101.25,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Thompson",
+        "elevation": 205,
+        "latitude": 55.79,
+        "longitude": -97.86,
+        "min_temp": -43,
+        "wind_50yr": 87,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Virden",
+        "elevation": 435,
+        "latitude": 49.86,
+        "longitude": -100.93,
+        "min_temp": -35,
+        "wind_50yr": 99,
+        "ice_50yr": 14
+      },
+      {
+        "location": "Winnipeg",
+        "elevation": 235,
+        "latitude": 49.89,
+        "longitude": -97.15,
+        "min_temp": -35,
+        "wind_50yr": 99,
+        "ice_50yr": 16
+      }
+    ],
+    "Ontario": [
+      {
+        "location": "Ottawa (City Hall)",
+        "elevation": 70,
+        "latitude": 45.42,
+        "longitude": -75.69,
+        "min_temp": -27,
+        "wind_50yr": 90,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Toronto (City Hall)",
+        "elevation": 90,
+        "latitude": 43.65,
+        "longitude": -79.38,
+        "min_temp": -20,
+        "wind_50yr": 100,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Kingston",
+        "elevation": 80,
+        "latitude": 44.23,
+        "longitude": -76.48,
+        "min_temp": -24,
+        "wind_50yr": 103,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Hamilton",
+        "elevation": 90,
+        "latitude": 43.25,
+        "longitude": -79.86,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "London",
+        "elevation": 245,
+        "latitude": 42.98,
+        "longitude": -81.23,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Windsor",
+        "elevation": 185,
+        "latitude": 42.3,
+        "longitude": -83.02,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Sudbury",
+        "elevation": 275,
+        "latitude": 46.5,
+        "longitude": -81.0,
+        "min_temp": -30,
+        "wind_50yr": 90,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Thunder Bay",
+        "elevation": 210,
+        "latitude": 48.4,
+        "longitude": -89.32,
+        "min_temp": -33,
+        "wind_50yr": 93,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Sault Ste. Marie",
+        "elevation": 190,
+        "latitude": 46.52,
+        "longitude": -84.33,
+        "min_temp": -28,
+        "wind_50yr": 100,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Ailsa Craig",
+        "elevation": 230,
+        "latitude": 43.13,
+        "longitude": -81.55,
+        "min_temp": -19,
+        "wind_50yr": 106,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Ajax",
+        "elevation": 95,
+        "latitude": 43.85,
+        "longitude": -79.03,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Alexandria",
+        "elevation": 80,
+        "latitude": 45.32,
+        "longitude": -74.63,
+        "min_temp": -26,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Alliston",
+        "elevation": 220,
+        "latitude": 44.15,
+        "longitude": -79.87,
+        "min_temp": -25,
+        "wind_50yr": 92,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Almonte",
+        "elevation": 120,
+        "latitude": 45.23,
+        "longitude": -76.2,
+        "min_temp": -28,
+        "wind_50yr": 87,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Armstrong",
+        "elevation": 340,
+        "latitude": 50.3,
+        "longitude": -89.03,
+        "min_temp": -40,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Arnprior",
+        "elevation": 85,
+        "latitude": 45.43,
+        "longitude": -76.35,
+        "min_temp": -29,
+        "wind_50yr": 89,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Atikokan",
+        "elevation": 400,
+        "latitude": 48.75,
+        "longitude": -91.62,
+        "min_temp": -35,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Attawapiskat",
+        "elevation": 10,
+        "latitude": 52.93,
+        "longitude": -82.43,
+        "min_temp": -39,
+        "wind_50yr": 96,
+        "ice_50yr": 17
+      },
+      {
+        "location": "Aurora",
+        "elevation": 270,
+        "latitude": 44.0,
+        "longitude": -79.47,
+        "min_temp": -23,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Bancroft",
+        "elevation": 365,
+        "latitude": 45.05,
+        "longitude": -77.85,
+        "min_temp": -31,
+        "wind_50yr": 85,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Barrie",
+        "elevation": 245,
+        "latitude": 44.4,
+        "longitude": -79.67,
+        "min_temp": -26,
+        "wind_50yr": 90,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Barriefield",
+        "elevation": 100,
+        "latitude": 44.23,
+        "longitude": -76.47,
+        "min_temp": -24,
+        "wind_50yr": 103,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Beaverton",
+        "elevation": 240,
+        "latitude": 44.43,
+        "longitude": -79.15,
+        "min_temp": -26,
+        "wind_50yr": 90,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Belleville",
+        "elevation": 90,
+        "latitude": 44.17,
+        "longitude": -77.38,
+        "min_temp": -24,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Belmont",
+        "elevation": 260,
+        "latitude": 42.88,
+        "longitude": -81.08,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Bowmanville",
+        "elevation": 95,
+        "latitude": 43.91,
+        "longitude": -78.68,
+        "min_temp": -22,
+        "wind_50yr": 104,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Bracebridge",
+        "elevation": 310,
+        "latitude": 45.03,
+        "longitude": -79.3,
+        "min_temp": -28,
+        "wind_50yr": 89,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Bradford",
+        "elevation": 240,
+        "latitude": 44.12,
+        "longitude": -79.57,
+        "min_temp": -25,
+        "wind_50yr": 92,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Brampton",
+        "elevation": 215,
+        "latitude": 43.68,
+        "longitude": -79.77,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Brantford",
+        "elevation": 205,
+        "latitude": 43.13,
+        "longitude": -80.27,
+        "min_temp": -20,
+        "wind_50yr": 98,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Brighton",
+        "elevation": 95,
+        "latitude": 44.03,
+        "longitude": -77.73,
+        "min_temp": -23,
+        "wind_50yr": 104,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Brockville",
+        "elevation": 85,
+        "latitude": 44.59,
+        "longitude": -75.68,
+        "min_temp": -25,
+        "wind_50yr": 100,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Burk’s Falls",
+        "elevation": 305,
+        "latitude": 45.62,
+        "longitude": -79.4,
+        "min_temp": -28,
+        "wind_50yr": 80,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Burlington",
+        "elevation": 80,
+        "latitude": 43.32,
+        "longitude": -79.8,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Cambridge",
+        "elevation": 295,
+        "latitude": 43.38,
+        "longitude": -80.32,
+        "min_temp": -20,
+        "wind_50yr": 90,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Campbellford",
+        "elevation": 150,
+        "latitude": 44.3,
+        "longitude": -77.8,
+        "min_temp": -26,
+        "wind_50yr": 96,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Cannington",
+        "elevation": 255,
+        "latitude": 44.35,
+        "longitude": -79.03,
+        "min_temp": -26,
+        "wind_50yr": 90,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Carleton Place",
+        "elevation": 135,
+        "latitude": 45.13,
+        "longitude": -76.15,
+        "min_temp": -27,
+        "wind_50yr": 87,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Cavan",
+        "elevation": 200,
+        "latitude": 44.2,
+        "longitude": -78.47,
+        "min_temp": -25,
+        "wind_50yr": 96,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Centralia",
+        "elevation": 260,
+        "latitude": 43.28,
+        "longitude": -81.47,
+        "min_temp": -19,
+        "wind_50yr": 100,
+        "ice_50yr": 21
+      },
+      {
+        "location": "CFB Borden",
+        "elevation": 225,
+        "latitude": 44.27,
+        "longitude": -79.88,
+        "min_temp": -25,
+        "wind_50yr": 92,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Chapleau",
+        "elevation": 425,
+        "latitude": 47.83,
+        "longitude": -83.4,
+        "min_temp": -38,
+        "wind_50yr": 80,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Chatham",
+        "elevation": 180,
+        "latitude": 42.4,
+        "longitude": -82.18,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Chesley",
+        "elevation": 275,
+        "latitude": 44.28,
+        "longitude": -81.08,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Clinton",
+        "elevation": 280,
+        "latitude": 43.62,
+        "longitude": -81.53,
+        "min_temp": -19,
+        "wind_50yr": 105,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Coboconk",
+        "elevation": 270,
+        "latitude": 44.65,
+        "longitude": -78.8,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Cobourg",
+        "elevation": 90,
+        "latitude": 43.97,
+        "longitude": -78.17,
+        "min_temp": -23,
+        "wind_50yr": 105,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Cochrane",
+        "elevation": 245,
+        "latitude": 49.07,
+        "longitude": -81.02,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 17
+      },
+      {
+        "location": "Colborne",
+        "elevation": 105,
+        "latitude": 44.0,
+        "longitude": -77.88,
+        "min_temp": -23,
+        "wind_50yr": 105,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Collingwood",
+        "elevation": 190,
+        "latitude": 44.48,
+        "longitude": -80.22,
+        "min_temp": -23,
+        "wind_50yr": 93,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Cornwall",
+        "elevation": 35,
+        "latitude": 45.03,
+        "longitude": -74.73,
+        "min_temp": -25,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Corunna",
+        "elevation": 185,
+        "latitude": 42.88,
+        "longitude": -82.43,
+        "min_temp": -18,
+        "wind_50yr": 103,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Deep River",
+        "elevation": 145,
+        "latitude": 46.1,
+        "longitude": -77.5,
+        "min_temp": -32,
+        "wind_50yr": 89,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Deseronto",
+        "elevation": 85,
+        "latitude": 44.2,
+        "longitude": -77.05,
+        "min_temp": -24,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Dorchester",
+        "elevation": 260,
+        "latitude": 42.98,
+        "longitude": -81.07,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Dorion",
+        "elevation": 200,
+        "latitude": 48.78,
+        "longitude": -88.53,
+        "min_temp": -35,
+        "wind_50yr": 93,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Dresden",
+        "elevation": 185,
+        "latitude": 42.58,
+        "longitude": -82.18,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Dryden",
+        "elevation": 370,
+        "latitude": 49.78,
+        "longitude": -92.75,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Dundalk",
+        "elevation": 525,
+        "latitude": 44.17,
+        "longitude": -80.39,
+        "min_temp": -24,
+        "wind_50yr": 98,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Dunnville",
+        "elevation": 175,
+        "latitude": 42.9,
+        "longitude": -79.62,
+        "min_temp": -17,
+        "wind_50yr": 102,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Durham",
+        "elevation": 340,
+        "latitude": 44.17,
+        "longitude": -80.82,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Dutton",
+        "elevation": 225,
+        "latitude": 42.67,
+        "longitude": -81.5,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Earlton",
+        "elevation": 245,
+        "latitude": 47.72,
+        "longitude": -79.82,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Edison",
+        "elevation": 365,
+        "latitude": 49.8,
+        "longitude": -93.55,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Elliot Lake",
+        "elevation": 380,
+        "latitude": 46.38,
+        "longitude": -82.66,
+        "min_temp": -28,
+        "wind_50yr": 92,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Elmvale",
+        "elevation": 220,
+        "latitude": 44.58,
+        "longitude": -79.87,
+        "min_temp": -26,
+        "wind_50yr": 90,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Embro",
+        "elevation": 310,
+        "latitude": 43.15,
+        "longitude": -80.9,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Englehart",
+        "elevation": 205,
+        "latitude": 47.82,
+        "longitude": -79.87,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Espanola",
+        "elevation": 220,
+        "latitude": 46.25,
+        "longitude": -81.77,
+        "min_temp": -27,
+        "wind_50yr": 98,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Exeter",
+        "elevation": 265,
+        "latitude": 43.35,
+        "longitude": -81.48,
+        "min_temp": -19,
+        "wind_50yr": 100,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Fenelon Falls",
+        "elevation": 260,
+        "latitude": 44.53,
+        "longitude": -78.75,
+        "min_temp": -27,
+        "wind_50yr": 90,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Fergus",
+        "elevation": 400,
+        "latitude": 43.7,
+        "longitude": -80.37,
+        "min_temp": -22,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Forest",
+        "elevation": 215,
+        "latitude": 43.1,
+        "longitude": -82.0,
+        "min_temp": -18,
+        "wind_50yr": 104,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Fort Erie",
+        "elevation": 180,
+        "latitude": 42.9,
+        "longitude": -78.93,
+        "min_temp": -17,
+        "wind_50yr": 102,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Fort Erie (Ridgeway)",
+        "elevation": 190,
+        "latitude": 42.88,
+        "longitude": -79.05,
+        "min_temp": -17,
+        "wind_50yr": 102,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Fort Frances",
+        "elevation": 340,
+        "latitude": 48.61,
+        "longitude": -93.39,
+        "min_temp": -35,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Gananoque",
+        "elevation": 80,
+        "latitude": 44.33,
+        "longitude": -76.17,
+        "min_temp": -24,
+        "wind_50yr": 103,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Geraldton",
+        "elevation": 345,
+        "latitude": 49.73,
+        "longitude": -86.95,
+        "min_temp": -39,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Glencoe",
+        "elevation": 215,
+        "latitude": 42.75,
+        "longitude": -81.72,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Goderich",
+        "elevation": 185,
+        "latitude": 43.75,
+        "longitude": -81.72,
+        "min_temp": -18,
+        "wind_50yr": 111,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Gore Bay",
+        "elevation": 205,
+        "latitude": 45.92,
+        "longitude": -82.47,
+        "min_temp": -26,
+        "wind_50yr": 100,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Graham",
+        "elevation": 495,
+        "latitude": 49.25,
+        "longitude": -90.57,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Gravenhurst (Muskoka Airport)",
+        "elevation": 255,
+        "latitude": 44.92,
+        "longitude": -79.37,
+        "min_temp": -28,
+        "wind_50yr": 88,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Grimsby",
+        "elevation": 85,
+        "latitude": 43.2,
+        "longitude": -79.57,
+        "min_temp": -18,
+        "wind_50yr": 102,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Guelph",
+        "elevation": 340,
+        "latitude": 43.55,
+        "longitude": -80.25,
+        "min_temp": -21,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Guthrie",
+        "elevation": 280,
+        "latitude": 44.47,
+        "longitude": -79.55,
+        "min_temp": -26,
+        "wind_50yr": 90,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Haileybury",
+        "elevation": 210,
+        "latitude": 47.45,
+        "longitude": -79.63,
+        "min_temp": -35,
+        "wind_50yr": 89,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Haldimand (Caledonia)",
+        "elevation": 190,
+        "latitude": 43.07,
+        "longitude": -79.93,
+        "min_temp": -20,
+        "wind_50yr": 100,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Haldimand (Hagersville)",
+        "elevation": 215,
+        "latitude": 42.97,
+        "longitude": -80.05,
+        "min_temp": -19,
+        "wind_50yr": 102,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Haliburton",
+        "elevation": 335,
+        "latitude": 45.05,
+        "longitude": -78.52,
+        "min_temp": -29,
+        "wind_50yr": 89,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Halton Hills (Georgetown)",
+        "elevation": 255,
+        "latitude": 43.65,
+        "longitude": -79.92,
+        "min_temp": -21,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Hanover",
+        "elevation": 270,
+        "latitude": 44.15,
+        "longitude": -81.03,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Hastings",
+        "elevation": 200,
+        "latitude": 44.3,
+        "longitude": -77.95,
+        "min_temp": -26,
+        "wind_50yr": 96,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Hawkesbury",
+        "elevation": 50,
+        "latitude": 45.6,
+        "longitude": -74.62,
+        "min_temp": -27,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Hearst",
+        "elevation": 245,
+        "latitude": 49.68,
+        "longitude": -83.67,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Honey Harbour",
+        "elevation": 180,
+        "latitude": 44.87,
+        "longitude": -79.82,
+        "min_temp": -26,
+        "wind_50yr": 93,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Hornepayne",
+        "elevation": 360,
+        "latitude": 49.22,
+        "longitude": -84.78,
+        "min_temp": -40,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Huntsville",
+        "elevation": 335,
+        "latitude": 45.33,
+        "longitude": -79.22,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Ingersoll",
+        "elevation": 280,
+        "latitude": 43.03,
+        "longitude": -80.88,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Iroquois Falls",
+        "elevation": 275,
+        "latitude": 48.77,
+        "longitude": -80.68,
+        "min_temp": -36,
+        "wind_50yr": 87,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Jellicoe",
+        "elevation": 330,
+        "latitude": 49.68,
+        "longitude": -87.52,
+        "min_temp": -39,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Kapuskasing",
+        "elevation": 245,
+        "latitude": 49.42,
+        "longitude": -82.43,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Kemptville",
+        "elevation": 90,
+        "latitude": 45.02,
+        "longitude": -75.64,
+        "min_temp": -27,
+        "wind_50yr": 87,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Kenora",
+        "elevation": 370,
+        "latitude": 49.82,
+        "longitude": -94.43,
+        "min_temp": -35,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Killaloe",
+        "elevation": 185,
+        "latitude": 45.55,
+        "longitude": -77.42,
+        "min_temp": -31,
+        "wind_50yr": 89,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Kincardine",
+        "elevation": 190,
+        "latitude": 44.18,
+        "longitude": -81.63,
+        "min_temp": -19,
+        "wind_50yr": 111,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Kinmount",
+        "elevation": 295,
+        "latitude": 44.78,
+        "longitude": -78.65,
+        "min_temp": -28,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Kirkland Lake",
+        "elevation": 325,
+        "latitude": 48.15,
+        "longitude": -80.03,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Kitchener",
+        "elevation": 335,
+        "latitude": 43.45,
+        "longitude": -80.48,
+        "min_temp": -21,
+        "wind_50yr": 91,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Kitchenuhmaykoosib",
+        "elevation": 215,
+        "latitude": 53.83,
+        "longitude": -90.0,
+        "min_temp": -40,
+        "wind_50yr": 95,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Lakefield",
+        "elevation": 240,
+        "latitude": 44.43,
+        "longitude": -78.27,
+        "min_temp": -26,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Lansdowne House",
+        "elevation": 240,
+        "latitude": 52.23,
+        "longitude": -87.88,
+        "min_temp": -40,
+        "wind_50yr": 85,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Leamington",
+        "elevation": 190,
+        "latitude": 42.08,
+        "longitude": -82.57,
+        "min_temp": -17,
+        "wind_50yr": 99,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Lindsay",
+        "elevation": 265,
+        "latitude": 44.35,
+        "longitude": -78.73,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Lion’s Head",
+        "elevation": 185,
+        "latitude": 44.98,
+        "longitude": -81.25,
+        "min_temp": -21,
+        "wind_50yr": 104,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Listowel",
+        "elevation": 380,
+        "latitude": 43.73,
+        "longitude": -80.95,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Lucan",
+        "elevation": 300,
+        "latitude": 43.18,
+        "longitude": -81.4,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Maitland",
+        "elevation": 85,
+        "latitude": 44.63,
+        "longitude": -75.62,
+        "min_temp": -25,
+        "wind_50yr": 100,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Markdale",
+        "elevation": 425,
+        "latitude": 44.32,
+        "longitude": -80.65,
+        "min_temp": -22,
+        "wind_50yr": 96,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Markham",
+        "elevation": 175,
+        "latitude": 43.87,
+        "longitude": -79.27,
+        "min_temp": -23,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Martin",
+        "elevation": 485,
+        "latitude": 49.25,
+        "longitude": -91.13,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Matheson",
+        "elevation": 265,
+        "latitude": 48.53,
+        "longitude": -80.47,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 19
+      },
+      {
+        "location": "Mattawa",
+        "elevation": 165,
+        "latitude": 46.32,
+        "longitude": -78.7,
+        "min_temp": -31,
+        "wind_50yr": 85,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Midland",
+        "elevation": 190,
+        "latitude": 44.75,
+        "longitude": -79.88,
+        "min_temp": -26,
+        "wind_50yr": 93,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Milton",
+        "elevation": 200,
+        "latitude": 43.52,
+        "longitude": -79.88,
+        "min_temp": -20,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Milverton",
+        "elevation": 370,
+        "latitude": 43.57,
+        "longitude": -80.92,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Minden",
+        "elevation": 270,
+        "latitude": 44.92,
+        "longitude": -78.73,
+        "min_temp": -29,
+        "wind_50yr": 89,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Mississauga",
+        "elevation": 160,
+        "latitude": 43.58,
+        "longitude": -79.65,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Mississauga Port Credit",
+        "elevation": 75,
+        "latitude": 43.55,
+        "longitude": -79.58,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Mitchell",
+        "elevation": 335,
+        "latitude": 43.47,
+        "longitude": -81.2,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Moosonee",
+        "elevation": 10,
+        "latitude": 51.32,
+        "longitude": -80.72,
+        "min_temp": -38,
+        "wind_50yr": 89,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Morrisburg",
+        "elevation": 75,
+        "latitude": 44.9,
+        "longitude": -75.18,
+        "min_temp": -25,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Mount Forest",
+        "elevation": 420,
+        "latitude": 43.98,
+        "longitude": -80.73,
+        "min_temp": -24,
+        "wind_50yr": 96,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Nakina",
+        "elevation": 325,
+        "latitude": 50.17,
+        "longitude": -86.7,
+        "min_temp": -38,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Nanticoke (Jarvis)",
+        "elevation": 205,
+        "latitude": 42.88,
+        "longitude": -80.1,
+        "min_temp": -18,
+        "wind_50yr": 104,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Nanticoke (Port Dover)",
+        "elevation": 180,
+        "latitude": 42.78,
+        "longitude": -80.2,
+        "min_temp": -17,
+        "wind_50yr": 104,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Napanee",
+        "elevation": 90,
+        "latitude": 44.25,
+        "longitude": -76.95,
+        "min_temp": -24,
+        "wind_50yr": 99,
+        "ice_50yr": 26
+      },
+      {
+        "location": "New Liskeard",
+        "elevation": 180,
+        "latitude": 47.5,
+        "longitude": -79.67,
+        "min_temp": -35,
+        "wind_50yr": 89,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Newcastle",
+        "elevation": 115,
+        "latitude": 43.92,
+        "longitude": -78.58,
+        "min_temp": -22,
+        "wind_50yr": 104,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Newmarket",
+        "elevation": 185,
+        "latitude": 44.05,
+        "longitude": -79.47,
+        "min_temp": -24,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Niagara Falls",
+        "elevation": 210,
+        "latitude": 43.1,
+        "longitude": -79.07,
+        "min_temp": -18,
+        "wind_50yr": 100,
+        "ice_50yr": 25
+      },
+      {
+        "location": "North Bay",
+        "elevation": 210,
+        "latitude": 46.32,
+        "longitude": -79.47,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Norwood",
+        "elevation": 225,
+        "latitude": 44.38,
+        "longitude": -77.98,
+        "min_temp": -26,
+        "wind_50yr": 96,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Oakville",
+        "elevation": 90,
+        "latitude": 43.45,
+        "longitude": -79.68,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Orangeville",
+        "elevation": 430,
+        "latitude": 43.92,
+        "longitude": -80.1,
+        "min_temp": -23,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Orillia",
+        "elevation": 230,
+        "latitude": 44.62,
+        "longitude": -79.42,
+        "min_temp": -27,
+        "wind_50yr": 90,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Oshawa",
+        "elevation": 110,
+        "latitude": 43.9,
+        "longitude": -78.85,
+        "min_temp": -21,
+        "wind_50yr": 104,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Ottawa (Barrhaven)",
+        "elevation": 98,
+        "latitude": 45.28,
+        "longitude": -75.76,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Ottawa (Kanata)",
+        "elevation": 98,
+        "latitude": 45.31,
+        "longitude": -75.91,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Ottawa (M-C Int’l Airport)",
+        "elevation": 125,
+        "latitude": 45.32,
+        "longitude": -75.67,
+        "min_temp": -27,
+        "wind_50yr": 90,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Ottawa (Orleans)",
+        "elevation": 70,
+        "latitude": 45.48,
+        "longitude": -75.52,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Owen Sound",
+        "elevation": 215,
+        "latitude": 44.57,
+        "longitude": -80.93,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Pagwa River",
+        "elevation": 185,
+        "latitude": 50.02,
+        "longitude": -85.22,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Paris",
+        "elevation": 245,
+        "latitude": 43.2,
+        "longitude": -80.38,
+        "min_temp": -20,
+        "wind_50yr": 98,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Parkhill",
+        "elevation": 205,
+        "latitude": 43.15,
+        "longitude": -81.68,
+        "min_temp": -18,
+        "wind_50yr": 100,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Parry Sound",
+        "elevation": 215,
+        "latitude": 45.35,
+        "longitude": -80.03,
+        "min_temp": -26,
+        "wind_50yr": 93,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Pelham (Fonthill)",
+        "elevation": 230,
+        "latitude": 43.03,
+        "longitude": -79.28,
+        "min_temp": -17,
+        "wind_50yr": 100,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Pembroke",
+        "elevation": 125,
+        "latitude": 45.82,
+        "longitude": -77.12,
+        "min_temp": -31,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Penetanguishene",
+        "elevation": 220,
+        "latitude": 44.78,
+        "longitude": -79.92,
+        "min_temp": -26,
+        "wind_50yr": 93,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Perth",
+        "elevation": 130,
+        "latitude": 44.9,
+        "longitude": -76.25,
+        "min_temp": -27,
+        "wind_50yr": 87,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Petawawa",
+        "elevation": 135,
+        "latitude": 45.9,
+        "longitude": -77.33,
+        "min_temp": -31,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Peterborough",
+        "elevation": 200,
+        "latitude": 44.3,
+        "longitude": -78.32,
+        "min_temp": -25,
+        "wind_50yr": 96,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Petrolia",
+        "elevation": 195,
+        "latitude": 42.87,
+        "longitude": -82.15,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Pickering (Dunbarton)",
+        "elevation": 85,
+        "latitude": 43.82,
+        "longitude": -79.1,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Picton",
+        "elevation": 95,
+        "latitude": 44.0,
+        "longitude": -77.13,
+        "min_temp": -23,
+        "wind_50yr": 105,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Plattsville",
+        "elevation": 300,
+        "latitude": 43.3,
+        "longitude": -80.62,
+        "min_temp": -21,
+        "wind_50yr": 98,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Point Alexander",
+        "elevation": 150,
+        "latitude": 46.13,
+        "longitude": -77.57,
+        "min_temp": -32,
+        "wind_50yr": 89,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Port Burwell",
+        "elevation": 195,
+        "latitude": 42.65,
+        "longitude": -80.82,
+        "min_temp": -17,
+        "wind_50yr": 103,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Port Colborne",
+        "elevation": 180,
+        "latitude": 42.9,
+        "longitude": -79.23,
+        "min_temp": -17,
+        "wind_50yr": 102,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Port Elgin",
+        "elevation": 205,
+        "latitude": 44.43,
+        "longitude": -81.4,
+        "min_temp": -19,
+        "wind_50yr": 111,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Port Hope",
+        "elevation": 100,
+        "latitude": 43.95,
+        "longitude": -78.3,
+        "min_temp": -23,
+        "wind_50yr": 104,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Port Perry",
+        "elevation": 270,
+        "latitude": 44.1,
+        "longitude": -78.95,
+        "min_temp": -24,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Port Stanley",
+        "elevation": 180,
+        "latitude": 42.67,
+        "longitude": -81.22,
+        "min_temp": -17,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Prescott",
+        "elevation": 90,
+        "latitude": 44.72,
+        "longitude": -75.52,
+        "min_temp": -25,
+        "wind_50yr": 100,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Princeton",
+        "elevation": 280,
+        "latitude": 43.17,
+        "longitude": -80.53,
+        "min_temp": -20,
+        "wind_50yr": 98,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Raith",
+        "elevation": 475,
+        "latitude": 48.83,
+        "longitude": -89.93,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Rayside-Balfour (Chelmsford)",
+        "elevation": 270,
+        "latitude": 46.58,
+        "longitude": -81.2,
+        "min_temp": -30,
+        "wind_50yr": 90,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Red Lake",
+        "elevation": 360,
+        "latitude": 51.05,
+        "longitude": -93.82,
+        "min_temp": -37,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Renfrew",
+        "elevation": 115,
+        "latitude": 45.47,
+        "longitude": -76.68,
+        "min_temp": -30,
+        "wind_50yr": 89,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Richmond Hill",
+        "elevation": 230,
+        "latitude": 43.87,
+        "longitude": -79.45,
+        "min_temp": -23,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Rockland",
+        "elevation": 50,
+        "latitude": 45.55,
+        "longitude": -75.29,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Sarnia",
+        "elevation": 190,
+        "latitude": 42.97,
+        "longitude": -82.38,
+        "min_temp": -18,
+        "wind_50yr": 103,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Schreiber",
+        "elevation": 310,
+        "latitude": 48.8,
+        "longitude": -87.25,
+        "min_temp": -36,
+        "wind_50yr": 93,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Seaforth",
+        "elevation": 310,
+        "latitude": 43.55,
+        "longitude": -81.4,
+        "min_temp": -19,
+        "wind_50yr": 100,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Shelburne",
+        "elevation": 495,
+        "latitude": 44.08,
+        "longitude": -80.2,
+        "min_temp": -24,
+        "wind_50yr": 94,
+        "ice_50yr": 14
+      },
+      {
+        "location": "Simcoe",
+        "elevation": 210,
+        "latitude": 42.83,
+        "longitude": -80.3,
+        "min_temp": -19,
+        "wind_50yr": 101,
+        "ice_50yr": 33
+      },
+      {
+        "location": "Sioux Lookout",
+        "elevation": 375,
+        "latitude": 50.07,
+        "longitude": -91.98,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Smiths Falls",
+        "elevation": 130,
+        "latitude": 44.9,
+        "longitude": -76.02,
+        "min_temp": -27,
+        "wind_50yr": 87,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Smithville",
+        "elevation": 185,
+        "latitude": 43.1,
+        "longitude": -79.55,
+        "min_temp": -18,
+        "wind_50yr": 100,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Smooth Rock Falls",
+        "elevation": 235,
+        "latitude": 49.28,
+        "longitude": -81.63,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 16
+      },
+      {
+        "location": "South River",
+        "elevation": 355,
+        "latitude": 45.83,
+        "longitude": -79.38,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Southampton",
+        "elevation": 180,
+        "latitude": 44.48,
+        "longitude": -81.38,
+        "min_temp": -19,
+        "wind_50yr": 109,
+        "ice_50yr": 20
+      },
+      {
+        "location": "St. Catharines",
+        "elevation": 105,
+        "latitude": 43.17,
+        "longitude": -79.25,
+        "min_temp": -18,
+        "wind_50yr": 102,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St. Mary’s",
+        "elevation": 310,
+        "latitude": 43.25,
+        "longitude": -81.13,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St. Thomas",
+        "elevation": 225,
+        "latitude": 42.78,
+        "longitude": -81.2,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Stirling",
+        "elevation": 120,
+        "latitude": 44.3,
+        "longitude": -77.55,
+        "min_temp": -25,
+        "wind_50yr": 95,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Stratford",
+        "elevation": 360,
+        "latitude": 43.37,
+        "longitude": -80.95,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Strathroy",
+        "elevation": 225,
+        "latitude": 42.95,
+        "longitude": -81.63,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Sturgeon Falls",
+        "elevation": 205,
+        "latitude": 46.37,
+        "longitude": -79.92,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Sundridge",
+        "elevation": 340,
+        "latitude": 45.77,
+        "longitude": -79.4,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Tavistock",
+        "elevation": 340,
+        "latitude": 43.32,
+        "longitude": -80.83,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Temagami",
+        "elevation": 300,
+        "latitude": 47.07,
+        "longitude": -79.78,
+        "min_temp": -33,
+        "wind_50yr": 89,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Thamesford",
+        "elevation": 280,
+        "latitude": 43.07,
+        "longitude": -81.0,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Thedford",
+        "elevation": 205,
+        "latitude": 43.15,
+        "longitude": -81.85,
+        "min_temp": -18,
+        "wind_50yr": 106,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Tillsonburg",
+        "elevation": 215,
+        "latitude": 42.85,
+        "longitude": -80.73,
+        "min_temp": -19,
+        "wind_50yr": 100,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Timmins",
+        "elevation": 300,
+        "latitude": 48.47,
+        "longitude": -81.33,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Timmins (Porcupine)",
+        "elevation": 295,
+        "latitude": 48.5,
+        "longitude": -81.17,
+        "min_temp": -36,
+        "wind_50yr": 89,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Etobicoke",
+        "elevation": 160,
+        "latitude": 43.7,
+        "longitude": -79.57,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "North York",
+        "elevation": 175,
+        "latitude": 43.77,
+        "longitude": -79.42,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Scarborough",
+        "elevation": 180,
+        "latitude": 43.78,
+        "longitude": -79.25,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Toronto (LBP Int’l Airport)",
+        "elevation": 170,
+        "latitude": 43.68,
+        "longitude": -79.61,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Trenton",
+        "elevation": 80,
+        "latitude": 44.1,
+        "longitude": -77.58,
+        "min_temp": -24,
+        "wind_50yr": 103,
+        "ice_50yr": 21
+      },
+      {
+        "location": "Trout Creek",
+        "elevation": 330,
+        "latitude": 45.98,
+        "longitude": -79.37,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Uxbridge",
+        "elevation": 275,
+        "latitude": 44.1,
+        "longitude": -79.12,
+        "min_temp": -24,
+        "wind_50yr": 98,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Vaughan (Woodbridge)",
+        "elevation": 165,
+        "latitude": 43.78,
+        "longitude": -79.6,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Vittoria",
+        "elevation": 215,
+        "latitude": 42.77,
+        "longitude": -80.32,
+        "min_temp": -17,
+        "wind_50yr": 103,
+        "ice_50yr": 33
+      },
+      {
+        "location": "Walkerton",
+        "elevation": 275,
+        "latitude": 44.12,
+        "longitude": -81.15,
+        "min_temp": -20,
+        "wind_50yr": 99,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Wallaceburg",
+        "elevation": 180,
+        "latitude": 42.6,
+        "longitude": -82.38,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Waterloo",
+        "elevation": 330,
+        "latitude": 43.47,
+        "longitude": -80.52,
+        "min_temp": -21,
+        "wind_50yr": 91,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Watford",
+        "elevation": 240,
+        "latitude": 42.95,
+        "longitude": -81.88,
+        "min_temp": -19,
+        "wind_50yr": 99,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Wawa",
+        "elevation": 290,
+        "latitude": 47.98,
+        "longitude": -84.78,
+        "min_temp": -36,
+        "wind_50yr": 90,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Welland",
+        "elevation": 180,
+        "latitude": 42.98,
+        "longitude": -79.25,
+        "min_temp": -17,
+        "wind_50yr": 100,
+        "ice_50yr": 28
+      },
+      {
+        "location": "West Lorne",
+        "elevation": 215,
+        "latitude": 42.6,
+        "longitude": -81.6,
+        "min_temp": -18,
+        "wind_50yr": 99,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Whitby",
+        "elevation": 85,
+        "latitude": 43.87,
+        "longitude": -78.93,
+        "min_temp": -22,
+        "wind_50yr": 104,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Whitby (Brooklin)",
+        "elevation": 160,
+        "latitude": 43.95,
+        "longitude": -78.95,
+        "min_temp": -22,
+        "wind_50yr": 99,
+        "ice_50yr": 20
+      },
+      {
+        "location": "White River",
+        "elevation": 375,
+        "latitude": 48.6,
+        "longitude": -85.28,
+        "min_temp": -42,
+        "wind_50yr": 83,
+        "ice_50yr": 13
+      },
+      {
+        "location": "Wiarton",
+        "elevation": 185,
+        "latitude": 44.75,
+        "longitude": -81.15,
+        "min_temp": -21,
+        "wind_50yr": 100,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Wingham",
+        "elevation": 310,
+        "latitude": 43.88,
+        "longitude": -81.32,
+        "min_temp": -20,
+        "wind_50yr": 106,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Woodstock",
+        "elevation": 300,
+        "latitude": 43.13,
+        "longitude": -80.75,
+        "min_temp": -21,
+        "wind_50yr": 99,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Wyoming",
+        "elevation": 215,
+        "latitude": 42.95,
+        "longitude": -82.12,
+        "min_temp": -18,
+        "wind_50yr": 100,
+        "ice_50yr": 24
+      }
+    ],
+    "Quebec": [
+      {
+        "location": "Montreal (City Hall)",
+        "elevation": 20,
+        "latitude": 45.51,
+        "longitude": -73.55,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Quebec (City)",
+        "elevation": 120,
+        "latitude": 46.8,
+        "longitude": -71.23,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Sherbrooke",
+        "elevation": 185,
+        "latitude": 45.42,
+        "longitude": -71.9,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Trois-Rivieres",
+        "elevation": 25,
+        "latitude": 46.35,
+        "longitude": -72.55,
+        "min_temp": -28,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Saguenay (Chicoutimi)",
+        "elevation": 10,
+        "latitude": 48.43,
+        "longitude": -71.07,
+        "min_temp": -32,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Val-d'Or",
+        "elevation": 310,
+        "latitude": 48.1,
+        "longitude": -77.78,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Acton-Vale",
+        "elevation": 95,
+        "latitude": 45.65,
+        "longitude": -72.57,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Alma",
+        "elevation": 110,
+        "latitude": 48.55,
+        "longitude": -71.65,
+        "min_temp": -33,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Amos",
+        "elevation": 295,
+        "latitude": 48.57,
+        "longitude": -78.12,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 16
+      },
+      {
+        "location": "Asbestos",
+        "elevation": 245,
+        "latitude": 45.77,
+        "longitude": -71.93,
+        "min_temp": -28,
+        "wind_50yr": 80,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Aylmer",
+        "elevation": 90,
+        "latitude": 45.4,
+        "longitude": -75.83,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Baie-Comeau",
+        "elevation": 60,
+        "latitude": 49.22,
+        "longitude": -68.15,
+        "min_temp": -29,
+        "wind_50yr": 106,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Baie-Saint-Paul",
+        "elevation": 20,
+        "latitude": 47.44,
+        "longitude": -70.51,
+        "min_temp": -29,
+        "wind_50yr": 99,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Beauport",
+        "elevation": 45,
+        "latitude": 46.87,
+        "longitude": -71.18,
+        "min_temp": -29,
+        "wind_50yr": 98,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Bedford",
+        "elevation": 55,
+        "latitude": 45.12,
+        "longitude": -72.98,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Beloeil",
+        "elevation": 25,
+        "latitude": 45.57,
+        "longitude": -73.2,
+        "min_temp": -26,
+        "wind_50yr": 91,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Brome",
+        "elevation": 210,
+        "latitude": 45.2,
+        "longitude": -72.57,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Brossard",
+        "elevation": 15,
+        "latitude": 45.45,
+        "longitude": -73.47,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Buckingham",
+        "elevation": 130,
+        "latitude": 45.58,
+        "longitude": -75.42,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Campbell’s Bay",
+        "elevation": 115,
+        "latitude": 45.73,
+        "longitude": -76.6,
+        "min_temp": -30,
+        "wind_50yr": 85,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Chambly",
+        "elevation": 20,
+        "latitude": 45.45,
+        "longitude": -73.28,
+        "min_temp": -26,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Coaticook",
+        "elevation": 295,
+        "latitude": 45.13,
+        "longitude": -71.8,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Contrecœur",
+        "elevation": 10,
+        "latitude": 45.85,
+        "longitude": -73.23,
+        "min_temp": -27,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Cowansville",
+        "elevation": 120,
+        "latitude": 45.2,
+        "longitude": -72.75,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Deux-Montagnes",
+        "elevation": 25,
+        "latitude": 45.53,
+        "longitude": -73.88,
+        "min_temp": -27,
+        "wind_50yr": 91,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Dolbeau",
+        "elevation": 120,
+        "latitude": 48.88,
+        "longitude": -72.23,
+        "min_temp": -34,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Drummondville",
+        "elevation": 85,
+        "latitude": 45.88,
+        "longitude": -72.48,
+        "min_temp": -28,
+        "wind_50yr": 89,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Farnham",
+        "elevation": 60,
+        "latitude": 45.28,
+        "longitude": -72.98,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Fort-Coulonge",
+        "elevation": 110,
+        "latitude": 45.85,
+        "longitude": -76.73,
+        "min_temp": -30,
+        "wind_50yr": 85,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Gagnon",
+        "elevation": 545,
+        "latitude": 51.93,
+        "longitude": -68.17,
+        "min_temp": -36,
+        "wind_50yr": 93,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Gaspé",
+        "elevation": 55,
+        "latitude": 48.83,
+        "longitude": -64.48,
+        "min_temp": -26,
+        "wind_50yr": 100,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Gatineau",
+        "elevation": 95,
+        "latitude": 45.5,
+        "longitude": -75.65,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Gracefield",
+        "elevation": 175,
+        "latitude": 46.1,
+        "longitude": -76.05,
+        "min_temp": -31,
+        "wind_50yr": 85,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Granby",
+        "elevation": 120,
+        "latitude": 45.4,
+        "longitude": -72.73,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Harrington-Harbour",
+        "elevation": 30,
+        "latitude": 50.5,
+        "longitude": -59.48,
+        "min_temp": -29,
+        "wind_50yr": 127,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Havre-St-Pierre",
+        "elevation": 5,
+        "latitude": 50.23,
+        "longitude": -63.6,
+        "min_temp": -29,
+        "wind_50yr": 119,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Hemmingford",
+        "elevation": 75,
+        "latitude": 45.05,
+        "longitude": -73.58,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Hull",
+        "elevation": 65,
+        "latitude": 45.43,
+        "longitude": -75.73,
+        "min_temp": -28,
+        "wind_50yr": 90,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Iberville",
+        "elevation": 35,
+        "latitude": 45.35,
+        "longitude": -73.23,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Inukjuak",
+        "elevation": 5,
+        "latitude": 58.48,
+        "longitude": -78.1,
+        "min_temp": -38,
+        "wind_50yr": 109,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Joliette",
+        "elevation": 45,
+        "latitude": 46.02,
+        "longitude": -73.45,
+        "min_temp": -28,
+        "wind_50yr": 90,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Kuujjuaq",
+        "elevation": 25,
+        "latitude": 58.1,
+        "longitude": -68.4,
+        "min_temp": -39,
+        "wind_50yr": 117,
+        "ice_50yr": 12
+      },
+      {
+        "location": "Kuujjuarapik",
+        "elevation": 20,
+        "latitude": 55.28,
+        "longitude": -77.75,
+        "min_temp": -38,
+        "wind_50yr": 105,
+        "ice_50yr": 12
+      },
+      {
+        "location": "La Pocatière",
+        "elevation": 55,
+        "latitude": 47.37,
+        "longitude": -70.04,
+        "min_temp": -26,
+        "wind_50yr": 99,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Lachute",
+        "elevation": 65,
+        "latitude": 45.65,
+        "longitude": -74.33,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Lac-Mégantic",
+        "elevation": 420,
+        "latitude": 45.58,
+        "longitude": -70.88,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 23
+      },
+      {
+        "location": "La-Malbaie",
+        "elevation": 25,
+        "latitude": 47.65,
+        "longitude": -70.15,
+        "min_temp": -28,
+        "wind_50yr": 104,
+        "ice_50yr": 26
+      },
+      {
+        "location": "La-Tuque",
+        "elevation": 165,
+        "latitude": 47.43,
+        "longitude": -72.78,
+        "min_temp": -32,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Lennoxville",
+        "elevation": 155,
+        "latitude": 45.37,
+        "longitude": -71.85,
+        "min_temp": -30,
+        "wind_50yr": 80,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Léry",
+        "elevation": 30,
+        "latitude": 45.35,
+        "longitude": -73.8,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Loretteville",
+        "elevation": 100,
+        "latitude": 46.85,
+        "longitude": -71.35,
+        "min_temp": -29,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Louiseville",
+        "elevation": 15,
+        "latitude": 46.25,
+        "longitude": -72.95,
+        "min_temp": -28,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Magog",
+        "elevation": 215,
+        "latitude": 45.27,
+        "longitude": -72.13,
+        "min_temp": -28,
+        "wind_50yr": 80,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Malartic",
+        "elevation": 325,
+        "latitude": 48.13,
+        "longitude": -78.13,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Maniwaki",
+        "elevation": 180,
+        "latitude": 46.38,
+        "longitude": -75.97,
+        "min_temp": -32,
+        "wind_50yr": 84,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Masson",
+        "elevation": 50,
+        "latitude": 45.53,
+        "longitude": -75.42,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Matane",
+        "elevation": 5,
+        "latitude": 48.85,
+        "longitude": -67.53,
+        "min_temp": -26,
+        "wind_50yr": 110,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Mont-Joli",
+        "elevation": 90,
+        "latitude": 48.58,
+        "longitude": -68.18,
+        "min_temp": -26,
+        "wind_50yr": 108,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Mont-Laurier",
+        "elevation": 225,
+        "latitude": 46.55,
+        "longitude": -75.5,
+        "min_temp": -32,
+        "wind_50yr": 83,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Montmagny",
+        "elevation": 10,
+        "latitude": 46.98,
+        "longitude": -70.55,
+        "min_temp": -28,
+        "wind_50yr": 99,
+        "ice_50yr": 29
+      },
+      {
+        "location": "Beaconsfield",
+        "elevation": 25,
+        "latitude": 45.43,
+        "longitude": -73.87,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Dorval",
+        "elevation": 25,
+        "latitude": 45.45,
+        "longitude": -73.75,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Laval",
+        "elevation": 35,
+        "latitude": 45.58,
+        "longitude": -73.75,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Montréal (City Hall)",
+        "elevation": 20,
+        "latitude": 45.51,
+        "longitude": -73.55,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Montréal-Est",
+        "elevation": 25,
+        "latitude": 45.63,
+        "longitude": -73.52,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Montréal-Nord",
+        "elevation": 20,
+        "latitude": 45.6,
+        "longitude": -73.63,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Outremont",
+        "elevation": 105,
+        "latitude": 45.52,
+        "longitude": -73.62,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Pierrefonds",
+        "elevation": 25,
+        "latitude": 45.48,
+        "longitude": -73.87,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "St-Lambert",
+        "elevation": 15,
+        "latitude": 45.5,
+        "longitude": -73.5,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "St-Laurent",
+        "elevation": 45,
+        "latitude": 45.5,
+        "longitude": -73.67,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Ste-Anne-de-Bellevue",
+        "elevation": 35,
+        "latitude": 45.42,
+        "longitude": -73.93,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Verdun",
+        "elevation": 20,
+        "latitude": 45.45,
+        "longitude": -73.57,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Nicolet (Gentilly)",
+        "elevation": 15,
+        "latitude": 46.4,
+        "longitude": -72.28,
+        "min_temp": -28,
+        "wind_50yr": 98,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Nitchequon",
+        "elevation": 545,
+        "latitude": 53.21,
+        "longitude": -70.91,
+        "min_temp": -41,
+        "wind_50yr": 90,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Noranda",
+        "elevation": 305,
+        "latitude": 48.25,
+        "longitude": -79.02,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Percé",
+        "elevation": 5,
+        "latitude": 48.53,
+        "longitude": -64.22,
+        "min_temp": -24,
+        "wind_50yr": 120,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Pincourt",
+        "elevation": 25,
+        "latitude": 45.38,
+        "longitude": -73.98,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Plessisville",
+        "elevation": 145,
+        "latitude": 46.22,
+        "longitude": -71.78,
+        "min_temp": -28,
+        "wind_50yr": 89,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Port-Cartier",
+        "elevation": 20,
+        "latitude": 50.02,
+        "longitude": -66.87,
+        "min_temp": -30,
+        "wind_50yr": 110,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Puvinrituq",
+        "elevation": 5,
+        "latitude": 60.03,
+        "longitude": -77.28,
+        "min_temp": -38,
+        "wind_50yr": 117,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ancienne-Lorette",
+        "elevation": 35,
+        "latitude": 46.78,
+        "longitude": -71.38,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Lévis",
+        "elevation": 50,
+        "latitude": 46.8,
+        "longitude": -71.18,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Québec",
+        "elevation": 120,
+        "latitude": 46.8,
+        "longitude": -71.23,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Sillery",
+        "elevation": 10,
+        "latitude": 46.77,
+        "longitude": -71.25,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Ste-Foy",
+        "elevation": 115,
+        "latitude": 46.78,
+        "longitude": -71.28,
+        "min_temp": -28,
+        "wind_50yr": 96,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Richmond",
+        "elevation": 150,
+        "latitude": 45.67,
+        "longitude": -72.15,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Rimouski",
+        "elevation": 30,
+        "latitude": 48.43,
+        "longitude": -68.55,
+        "min_temp": -27,
+        "wind_50yr": 108,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Rivière-du-Loup",
+        "elevation": 55,
+        "latitude": 47.83,
+        "longitude": -69.53,
+        "min_temp": -27,
+        "wind_50yr": 106,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Roberval",
+        "elevation": 100,
+        "latitude": 48.52,
+        "longitude": -72.23,
+        "min_temp": -33,
+        "wind_50yr": 91,
+        "ice_50yr": 23
+      },
+      {
+        "location": "Rock-Island",
+        "elevation": 160,
+        "latitude": 45.04,
+        "longitude": -72.1,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 20
+      },
+      {
+        "location": "Rosemère",
+        "elevation": 25,
+        "latitude": 45.63,
+        "longitude": -73.8,
+        "min_temp": -26,
+        "wind_50yr": 95,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Rouyn",
+        "elevation": 300,
+        "latitude": 48.23,
+        "longitude": -79.02,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Saguenay",
+        "elevation": 10,
+        "latitude": 48.43,
+        "longitude": -71.07,
+        "min_temp": -32,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Saguenay (Bagotville)",
+        "elevation": 5,
+        "latitude": 48.35,
+        "longitude": -70.88,
+        "min_temp": -33,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Saguenay (Jonquière)",
+        "elevation": 135,
+        "latitude": 48.42,
+        "longitude": -71.22,
+        "min_temp": -32,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Saguenay (Kénogami)",
+        "elevation": 140,
+        "latitude": 48.42,
+        "longitude": -71.25,
+        "min_temp": -32,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Saint-Eustache",
+        "elevation": 35,
+        "latitude": 45.56,
+        "longitude": -73.9,
+        "min_temp": -27,
+        "wind_50yr": 91,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Saint-Jean-sur-Richelieu",
+        "elevation": 35,
+        "latitude": 45.31,
+        "longitude": -73.26,
+        "min_temp": -26,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Salaberry-de-Valleyfield",
+        "elevation": 50,
+        "latitude": 45.25,
+        "longitude": -74.13,
+        "min_temp": -25,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Schefferville",
+        "elevation": 550,
+        "latitude": 54.8,
+        "longitude": -66.83,
+        "min_temp": -39,
+        "wind_50yr": 102,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Senneterre",
+        "elevation": 310,
+        "latitude": 48.38,
+        "longitude": -77.23,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Sept-Îles",
+        "elevation": 5,
+        "latitude": 50.2,
+        "longitude": -66.38,
+        "min_temp": -31,
+        "wind_50yr": 110,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Shawinigan",
+        "elevation": 60,
+        "latitude": 46.55,
+        "longitude": -72.75,
+        "min_temp": -29,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Shawville",
+        "elevation": 170,
+        "latitude": 45.6,
+        "longitude": -76.48,
+        "min_temp": -30,
+        "wind_50yr": 89,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Sorel",
+        "elevation": 10,
+        "latitude": 46.03,
+        "longitude": -73.12,
+        "min_temp": -27,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Ste-Agathe-des-Monts",
+        "elevation": 360,
+        "latitude": 46.05,
+        "longitude": -74.28,
+        "min_temp": -30,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "St-Félicien",
+        "elevation": 105,
+        "latitude": 48.65,
+        "longitude": -72.45,
+        "min_temp": -34,
+        "wind_50yr": 91,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St-Georges-de-Cacouna",
+        "elevation": 35,
+        "latitude": 47.92,
+        "longitude": -69.5,
+        "min_temp": -27,
+        "wind_50yr": 106,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St-Hubert",
+        "elevation": 25,
+        "latitude": 45.5,
+        "longitude": -73.42,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 32
+      },
+      {
+        "location": "St-Hubert-de-Rivière-du- Loup",
+        "elevation": 310,
+        "latitude": 47.82,
+        "longitude": -69.15,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St-Hyacinthe",
+        "elevation": 35,
+        "latitude": 45.62,
+        "longitude": -72.95,
+        "min_temp": -27,
+        "wind_50yr": 89,
+        "ice_50yr": 30
+      },
+      {
+        "location": "St-Jérôme",
+        "elevation": 95,
+        "latitude": 45.78,
+        "longitude": -74.0,
+        "min_temp": -28,
+        "wind_50yr": 91,
+        "ice_50yr": 30
+      },
+      {
+        "location": "St-Jovite",
+        "elevation": 230,
+        "latitude": 46.12,
+        "longitude": -74.6,
+        "min_temp": -31,
+        "wind_50yr": 86,
+        "ice_50yr": 25
+      },
+      {
+        "location": "St-Lazare-Hudson",
+        "elevation": 60,
+        "latitude": 45.4,
+        "longitude": -74.14,
+        "min_temp": -26,
+        "wind_50yr": 98,
+        "ice_50yr": 30
+      },
+      {
+        "location": "St-Nicolas",
+        "elevation": 65,
+        "latitude": 46.7,
+        "longitude": -71.4,
+        "min_temp": -28,
+        "wind_50yr": 98,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Sutton",
+        "elevation": 185,
+        "latitude": 45.1,
+        "longitude": -72.62,
+        "min_temp": -27,
+        "wind_50yr": 80,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Tadoussac",
+        "elevation": 65,
+        "latitude": 48.15,
+        "longitude": -69.72,
+        "min_temp": -28,
+        "wind_50yr": 108,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Témiscaming",
+        "elevation": 240,
+        "latitude": 46.72,
+        "longitude": -79.1,
+        "min_temp": -32,
+        "wind_50yr": 85,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Terrebonne",
+        "elevation": 20,
+        "latitude": 45.69,
+        "longitude": -73.63,
+        "min_temp": -27,
+        "wind_50yr": 94,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Thetford Mines",
+        "elevation": 330,
+        "latitude": 46.08,
+        "longitude": -71.3,
+        "min_temp": -28,
+        "wind_50yr": 80,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Thurso",
+        "elevation": 50,
+        "latitude": 45.6,
+        "longitude": -75.25,
+        "min_temp": -28,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Trois-Rivières",
+        "elevation": 25,
+        "latitude": 46.35,
+        "longitude": -72.55,
+        "min_temp": -28,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Val-d’Or",
+        "elevation": 310,
+        "latitude": 48.1,
+        "longitude": -77.78,
+        "min_temp": -36,
+        "wind_50yr": 80,
+        "ice_50yr": 18
+      },
+      {
+        "location": "Varennes",
+        "elevation": 15,
+        "latitude": 45.68,
+        "longitude": -73.43,
+        "min_temp": -26,
+        "wind_50yr": 95,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Verchères",
+        "elevation": 15,
+        "latitude": 45.78,
+        "longitude": -73.35,
+        "min_temp": -26,
+        "wind_50yr": 99,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Victoriaville",
+        "elevation": 125,
+        "latitude": 46.05,
+        "longitude": -71.97,
+        "min_temp": -28,
+        "wind_50yr": 89,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Ville-Marie",
+        "elevation": 200,
+        "latitude": 47.33,
+        "longitude": -79.43,
+        "min_temp": -34,
+        "wind_50yr": 89,
+        "ice_50yr": 22
+      }
+    ],
+    "New Brunswick": [
+      {
+        "location": "Fredericton",
+        "elevation": 15,
+        "latitude": 45.95,
+        "longitude": -66.65,
+        "min_temp": -27,
+        "wind_50yr": 92,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Moncton",
+        "elevation": 20,
+        "latitude": 46.1,
+        "longitude": -64.78,
+        "min_temp": -25,
+        "wind_50yr": 106,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Saint John",
+        "elevation": 5,
+        "latitude": 45.27,
+        "longitude": -66.05,
+        "min_temp": -24,
+        "wind_50yr": 100,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Alma",
+        "elevation": 5,
+        "latitude": 45.6,
+        "longitude": -64.95,
+        "min_temp": -23,
+        "wind_50yr": 104,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Bathurst",
+        "elevation": 10,
+        "latitude": 47.6,
+        "longitude": -65.65,
+        "min_temp": -26,
+        "wind_50yr": 100,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Campbellton",
+        "elevation": 30,
+        "latitude": 48.0,
+        "longitude": -66.67,
+        "min_temp": -28,
+        "wind_50yr": 98,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Edmundston",
+        "elevation": 160,
+        "latitude": 47.37,
+        "longitude": -68.33,
+        "min_temp": -29,
+        "wind_50yr": 80,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Gagetown",
+        "elevation": 20,
+        "latitude": 45.79,
+        "longitude": -66.16,
+        "min_temp": -26,
+        "wind_50yr": 95,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Grand Falls",
+        "elevation": 115,
+        "latitude": 47.05,
+        "longitude": -67.73,
+        "min_temp": -30,
+        "wind_50yr": 89,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Miramichi",
+        "elevation": 5,
+        "latitude": 47.03,
+        "longitude": -65.47,
+        "min_temp": -26,
+        "wind_50yr": 96,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Oromocto",
+        "elevation": 20,
+        "latitude": 45.84,
+        "longitude": -66.48,
+        "min_temp": -26,
+        "wind_50yr": 93,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Sackville",
+        "elevation": 15,
+        "latitude": 45.88,
+        "longitude": -64.37,
+        "min_temp": -24,
+        "wind_50yr": 105,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Saint Andrews",
+        "elevation": 35,
+        "latitude": 45.07,
+        "longitude": -67.05,
+        "min_temp": -24,
+        "wind_50yr": 98,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Saint George",
+        "elevation": 35,
+        "latitude": 45.13,
+        "longitude": -66.82,
+        "min_temp": -23,
+        "wind_50yr": 98,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Shippagan",
+        "elevation": 5,
+        "latitude": 47.73,
+        "longitude": -64.7,
+        "min_temp": -24,
+        "wind_50yr": 119,
+        "ice_50yr": 28
+      },
+      {
+        "location": "St. Stephen",
+        "elevation": 20,
+        "latitude": 45.2,
+        "longitude": -67.28,
+        "min_temp": -26,
+        "wind_50yr": 96,
+        "ice_50yr": 25
+      },
+      {
+        "location": "Woodstock",
+        "elevation": 60,
+        "latitude": 46.16,
+        "longitude": -67.6,
+        "min_temp": -29,
+        "wind_50yr": 89,
+        "ice_50yr": 23
+      }
+    ],
+    "Nova Scotia": [
+      {
+        "location": "Halifax",
+        "elevation": 55,
+        "latitude": 44.65,
+        "longitude": -63.6,
+        "min_temp": -18,
+        "wind_50yr": 110,
+        "ice_50yr": 31
+      },
+      {
+        "location": "Sydney",
+        "elevation": 5,
+        "latitude": 46.15,
+        "longitude": -60.18,
+        "min_temp": -19,
+        "wind_50yr": 110,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Amherst",
+        "elevation": 25,
+        "latitude": 45.83,
+        "longitude": -64.2,
+        "min_temp": -24,
+        "wind_50yr": 104,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Antigonish",
+        "elevation": 10,
+        "latitude": 45.62,
+        "longitude": -62.0,
+        "min_temp": -20,
+        "wind_50yr": 109,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Bridgewater",
+        "elevation": 10,
+        "latitude": 44.38,
+        "longitude": -64.52,
+        "min_temp": -17,
+        "wind_50yr": 106,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Canso",
+        "elevation": 5,
+        "latitude": 45.33,
+        "longitude": -61.0,
+        "min_temp": -15,
+        "wind_50yr": 118,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Dartmouth",
+        "elevation": 10,
+        "latitude": 44.67,
+        "longitude": -63.57,
+        "min_temp": -18,
+        "wind_50yr": 110,
+        "ice_50yr": 31
+      },
+      {
+        "location": "Debert",
+        "elevation": 45,
+        "latitude": 45.43,
+        "longitude": -63.47,
+        "min_temp": -24,
+        "wind_50yr": 104,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Digby",
+        "elevation": 35,
+        "latitude": 44.62,
+        "longitude": -65.77,
+        "min_temp": -17,
+        "wind_50yr": 110,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Greenwood (CFB)",
+        "elevation": 28,
+        "latitude": 44.98,
+        "longitude": -64.9,
+        "min_temp": -20,
+        "wind_50yr": 110,
+        "ice_50yr": 22
+      },
+      {
+        "location": "Kentville",
+        "elevation": 25,
+        "latitude": 45.08,
+        "longitude": -64.5,
+        "min_temp": -20,
+        "wind_50yr": 110,
+        "ice_50yr": 26
+      },
+      {
+        "location": "Liverpool",
+        "elevation": 20,
+        "latitude": 44.03,
+        "longitude": -64.72,
+        "min_temp": -18,
+        "wind_50yr": 118,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Lockeport",
+        "elevation": 5,
+        "latitude": 43.7,
+        "longitude": -65.12,
+        "min_temp": -16,
+        "wind_50yr": 117,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Louisburg",
+        "elevation": 5,
+        "latitude": 45.92,
+        "longitude": -59.98,
+        "min_temp": -17,
+        "wind_50yr": 121,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Lunenburg",
+        "elevation": 25,
+        "latitude": 44.38,
+        "longitude": -64.32,
+        "min_temp": -17,
+        "wind_50yr": 108,
+        "ice_50yr": 30
+      },
+      {
+        "location": "New Glasgow",
+        "elevation": 30,
+        "latitude": 45.58,
+        "longitude": -62.65,
+        "min_temp": -21,
+        "wind_50yr": 109,
+        "ice_50yr": 30
+      },
+      {
+        "location": "North Sydney",
+        "elevation": 20,
+        "latitude": 46.22,
+        "longitude": -60.25,
+        "min_temp": -19,
+        "wind_50yr": 110,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Pictou",
+        "elevation": 25,
+        "latitude": 45.68,
+        "longitude": -62.72,
+        "min_temp": -21,
+        "wind_50yr": 109,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Port Hawkesbury",
+        "elevation": 40,
+        "latitude": 45.62,
+        "longitude": -61.35,
+        "min_temp": -19,
+        "wind_50yr": 109,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Springhill",
+        "elevation": 185,
+        "latitude": 45.65,
+        "longitude": -64.05,
+        "min_temp": -23,
+        "wind_50yr": 104,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Stewiacke",
+        "elevation": 25,
+        "latitude": 45.13,
+        "longitude": -63.35,
+        "min_temp": -22,
+        "wind_50yr": 106,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Tatamagouche",
+        "elevation": 25,
+        "latitude": 45.72,
+        "longitude": -63.3,
+        "min_temp": -23,
+        "wind_50yr": 109,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Truro",
+        "elevation": 25,
+        "latitude": 45.37,
+        "longitude": -63.27,
+        "min_temp": -22,
+        "wind_50yr": 104,
+        "ice_50yr": 29
+      },
+      {
+        "location": "Wolfville",
+        "elevation": 35,
+        "latitude": 45.08,
+        "longitude": -64.37,
+        "min_temp": -21,
+        "wind_50yr": 110,
+        "ice_50yr": 27
+      },
+      {
+        "location": "Yarmouth",
+        "elevation": 10,
+        "latitude": 43.83,
+        "longitude": -66.12,
+        "min_temp": -16,
+        "wind_50yr": 112,
+        "ice_50yr": 25
+      }
+    ],
+    "Prince Edward Island": [
+      {
+        "location": "Charlottetown",
+        "elevation": 5,
+        "latitude": 46.23,
+        "longitude": -63.13,
+        "min_temp": -22,
+        "wind_50yr": 112,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Souris",
+        "elevation": 5,
+        "latitude": 46.35,
+        "longitude": -62.25,
+        "min_temp": -21,
+        "wind_50yr": 114,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Summerside",
+        "elevation": 10,
+        "latitude": 46.4,
+        "longitude": -63.78,
+        "min_temp": -22,
+        "wind_50yr": 114,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Tignish",
+        "elevation": 10,
+        "latitude": 46.95,
+        "longitude": -64.03,
+        "min_temp": -22,
+        "wind_50yr": 122,
+        "ice_50yr": 30
+      }
+    ],
+    "Newfoundland and Labrador": [
+      {
+        "location": "St. John's",
+        "elevation": 65,
+        "latitude": 47.57,
+        "longitude": -52.72,
+        "min_temp": -16,
+        "wind_50yr": 138,
+        "ice_50yr": 42
+      },
+      {
+        "location": "Gander",
+        "elevation": 125,
+        "latitude": 48.98,
+        "longitude": -54.59,
+        "min_temp": -20,
+        "wind_50yr": 117,
+        "ice_50yr": 30
+      },
+      {
+        "location": "Labrador City",
+        "elevation": 550,
+        "latitude": 52.95,
+        "longitude": -66.92,
+        "min_temp": -38,
+        "wind_50yr": 95,
+        "ice_50yr": 15
+      },
+      {
+        "location": "Argentia",
+        "elevation": 15,
+        "latitude": 47.3,
+        "longitude": -53.98,
+        "min_temp": -14,
+        "wind_50yr": 130,
+        "ice_50yr": 35
+      },
+      {
+        "location": "Bonavista",
+        "elevation": 15,
+        "latitude": 48.65,
+        "longitude": -53.12,
+        "min_temp": -16,
+        "wind_50yr": 140,
+        "ice_50yr": 40
+      },
+      {
+        "location": "Buchans",
+        "elevation": 255,
+        "latitude": 48.82,
+        "longitude": -56.87,
+        "min_temp": -27,
+        "wind_50yr": 115,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Cape Harrison",
+        "elevation": 5,
+        "latitude": 54.78,
+        "longitude": -57.95,
+        "min_temp": -31,
+        "wind_50yr": 130,
+        "ice_50yr": 35
+      },
+      {
+        "location": "Cape Race",
+        "elevation": 5,
+        "latitude": 46.65,
+        "longitude": -53.07,
+        "min_temp": -13,
+        "wind_50yr": 154,
+        "ice_50yr": 45
+      },
+      {
+        "location": "Channel–Port aux Basques",
+        "elevation": 5,
+        "latitude": 47.57,
+        "longitude": -59.15,
+        "min_temp": -15,
+        "wind_50yr": 133,
+        "ice_50yr": 32
+      },
+      {
+        "location": "Corner Brook",
+        "elevation": 35,
+        "latitude": 48.95,
+        "longitude": -57.95,
+        "min_temp": -18,
+        "wind_50yr": 111,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Grand Bank",
+        "elevation": 5,
+        "latitude": 47.1,
+        "longitude": -55.77,
+        "min_temp": -15,
+        "wind_50yr": 130,
+        "ice_50yr": 35
+      },
+      {
+        "location": "Grand Falls",
+        "elevation": 60,
+        "latitude": 48.93,
+        "longitude": -55.67,
+        "min_temp": -29,
+        "wind_50yr": 100,
+        "ice_50yr": 28
+      },
+      {
+        "location": "Happy Valley–Goose Bay",
+        "elevation": 15,
+        "latitude": 53.32,
+        "longitude": -60.37,
+        "min_temp": -32,
+        "wind_50yr": 98,
+        "ice_50yr": 20
+      },
+      {
+        "location": "St. Anthony",
+        "elevation": 10,
+        "latitude": 51.37,
+        "longitude": -55.58,
+        "min_temp": -27,
+        "wind_50yr": 138,
+        "ice_50yr": 30
+      },
+      {
+        "location": "St. John’s",
+        "elevation": 65,
+        "latitude": 47.57,
+        "longitude": -52.72,
+        "min_temp": -16,
+        "wind_50yr": 138,
+        "ice_50yr": 42
+      },
+      {
+        "location": "Stephenville",
+        "elevation": 25,
+        "latitude": 48.55,
+        "longitude": -58.58,
+        "min_temp": -18,
+        "wind_50yr": 114,
+        "ice_50yr": 24
+      },
+      {
+        "location": "Twin Falls",
+        "elevation": 425,
+        "latitude": 53.5,
+        "longitude": -64.53,
+        "min_temp": -37,
+        "wind_50yr": 95,
+        "ice_50yr": 17
+      },
+      {
+        "location": "Wabana",
+        "elevation": 75,
+        "latitude": 47.63,
+        "longitude": -52.95,
+        "min_temp": -17,
+        "wind_50yr": 130,
+        "ice_50yr": 40
+      },
+      {
+        "location": "Wabush",
+        "elevation": 550,
+        "latitude": 52.92,
+        "longitude": -66.87,
+        "min_temp": -38,
+        "wind_50yr": 95,
+        "ice_50yr": 15
+      }
+    ],
+    "Yukon": [
+      {
+        "location": "Whitehorse",
+        "elevation": 655,
+        "latitude": 60.72,
+        "longitude": -135.05,
+        "min_temp": -43,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Aishihik",
+        "elevation": 920,
+        "latitude": 61.6,
+        "longitude": -137.52,
+        "min_temp": -46,
+        "wind_50yr": 85,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Dawson",
+        "elevation": 330,
+        "latitude": 64.07,
+        "longitude": -139.42,
+        "min_temp": -51,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Destruction Bay",
+        "elevation": 815,
+        "latitude": 61.25,
+        "longitude": -138.8,
+        "min_temp": -45,
+        "wind_50yr": 117,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Faro",
+        "elevation": 670,
+        "latitude": 62.23,
+        "longitude": -133.36,
+        "min_temp": -47,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Haines Junction",
+        "elevation": 600,
+        "latitude": 60.78,
+        "longitude": -137.54,
+        "min_temp": -47,
+        "wind_50yr": 87,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Snag",
+        "elevation": 595,
+        "latitude": 62.4,
+        "longitude": -140.37,
+        "min_temp": -53,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Teslin",
+        "elevation": 690,
+        "latitude": 60.17,
+        "longitude": -132.72,
+        "min_temp": -44,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Watson Lake",
+        "elevation": 685,
+        "latitude": 60.13,
+        "longitude": -128.71,
+        "min_temp": -48,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      }
+    ],
+    "Northwest Territories": [
+      {
+        "location": "Yellowknife",
+        "elevation": 160,
+        "latitude": 62.48,
+        "longitude": -114.35,
+        "min_temp": -44,
+        "wind_50yr": 103,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Aklavik",
+        "elevation": 5,
+        "latitude": 68.23,
+        "longitude": -135.01,
+        "min_temp": -44,
+        "wind_50yr": 100,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Echo Bay / Port Radium",
+        "elevation": 195,
+        "latitude": 66.05,
+        "longitude": -117.88,
+        "min_temp": -44,
+        "wind_50yr": 99,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Good Hope",
+        "elevation": 100,
+        "latitude": 66.29,
+        "longitude": -128.63,
+        "min_temp": -45,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort McPherson",
+        "elevation": 25,
+        "latitude": 67.43,
+        "longitude": -134.88,
+        "min_temp": -46,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Providence",
+        "elevation": 150,
+        "latitude": 61.35,
+        "longitude": -117.65,
+        "min_temp": -43,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Resolution",
+        "elevation": 160,
+        "latitude": 61.19,
+        "longitude": -113.67,
+        "min_temp": -42,
+        "wind_50yr": 93,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Simpson",
+        "elevation": 120,
+        "latitude": 61.93,
+        "longitude": -121.35,
+        "min_temp": -44,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Fort Smith",
+        "elevation": 205,
+        "latitude": 60.0,
+        "longitude": -111.88,
+        "min_temp": -43,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Hay River",
+        "elevation": 45,
+        "latitude": 60.85,
+        "longitude": -115.73,
+        "min_temp": -41,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Inuvik",
+        "elevation": 45,
+        "latitude": 68.35,
+        "longitude": -133.72,
+        "min_temp": -45,
+        "wind_50yr": 100,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Mould Bay",
+        "elevation": 5,
+        "latitude": 76.23,
+        "longitude": -119.33,
+        "min_temp": -46,
+        "wind_50yr": 114,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Norman Wells",
+        "elevation": 65,
+        "latitude": 65.28,
+        "longitude": -126.85,
+        "min_temp": -45,
+        "wind_50yr": 89,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Rae–Edzo",
+        "elevation": 160,
+        "latitude": 62.83,
+        "longitude": -116.05,
+        "min_temp": -44,
+        "wind_50yr": 103,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Tungsten",
+        "elevation": 1340,
+        "latitude": 61.95,
+        "longitude": -128.27,
+        "min_temp": -51,
+        "wind_50yr": 90,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Ulukhaqtuuq/Holman",
+        "elevation": 10,
+        "latitude": 70.73,
+        "longitude": -117.75,
+        "min_temp": -41,
+        "wind_50yr": 120,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Wrigley",
+        "elevation": 80,
+        "latitude": 63.23,
+        "longitude": -123.47,
+        "min_temp": -44,
+        "wind_50yr": 80,
+        "ice_50yr": 10
+      }
+    ],
+    "Nunavut": [
+      {
+        "location": "Iqaluit",
+        "elevation": 45,
+        "latitude": 63.73,
+        "longitude": -68.5,
+        "min_temp": -41,
+        "wind_50yr": 114,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Alert",
+        "elevation": 5,
+        "latitude": 82.48,
+        "longitude": -62.25,
+        "min_temp": -44,
+        "wind_50yr": 130,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Arctic Bay",
+        "elevation": 15,
+        "latitude": 73.03,
+        "longitude": -85.17,
+        "min_temp": -44,
+        "wind_50yr": 111,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Arviat",
+        "elevation": 5,
+        "latitude": 61.12,
+        "longitude": -94.05,
+        "min_temp": -41,
+        "wind_50yr": 114,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Baker Lake",
+        "elevation": 5,
+        "latitude": 64.32,
+        "longitude": -96.02,
+        "min_temp": -44,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Eureka",
+        "elevation": 5,
+        "latitude": 79.98,
+        "longitude": -85.95,
+        "min_temp": -48,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Igluligaarjuk/ Chesterfield Inlet",
+        "elevation": 10,
+        "latitude": 63.33,
+        "longitude": -90.7,
+        "min_temp": -41,
+        "wind_50yr": 112,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Iqaluktuuttiaq/ Cambridge Bay",
+        "elevation": 15,
+        "latitude": 69.12,
+        "longitude": -105.03,
+        "min_temp": -44,
+        "wind_50yr": 110,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Isachsen",
+        "elevation": 10,
+        "latitude": 78.78,
+        "longitude": -103.53,
+        "min_temp": -48,
+        "wind_50yr": 117,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kangiqiniq/Rankin Inlet",
+        "elevation": 10,
+        "latitude": 62.82,
+        "longitude": -92.08,
+        "min_temp": -42,
+        "wind_50yr": 117,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kanngiqtugaapik/ Clyde River",
+        "elevation": 5,
+        "latitude": 70.45,
+        "longitude": -68.57,
+        "min_temp": -42,
+        "wind_50yr": 127,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Kugluktuk",
+        "elevation": 10,
+        "latitude": 67.83,
+        "longitude": -115.08,
+        "min_temp": -43,
+        "wind_50yr": 102,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Nottingham Island",
+        "elevation": 30,
+        "latitude": 63.1,
+        "longitude": -78.0,
+        "min_temp": -39,
+        "wind_50yr": 133,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Resolute",
+        "elevation": 25,
+        "latitude": 74.68,
+        "longitude": -94.9,
+        "min_temp": -43,
+        "wind_50yr": 119,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Resolution Island",
+        "elevation": 5,
+        "latitude": 61.3,
+        "longitude": -64.88,
+        "min_temp": -34,
+        "wind_50yr": 166,
+        "ice_50yr": 10
+      },
+      {
+        "location": "Salliq/Coral Harbour",
+        "elevation": 15,
+        "latitude": 64.13,
+        "longitude": -83.17,
+        "min_temp": -42,
+        "wind_50yr": 118,
+        "ice_50yr": 10
+      }
+    ]
+  }
+}

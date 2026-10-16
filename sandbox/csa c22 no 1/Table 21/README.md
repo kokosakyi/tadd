@@ -1,0 +1,1 @@
+# Table 21: Minimum in-span vertical clearances between supply conductors of different circuits that are attached to the same supporting structure\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.9.2.4, A.5.9.2.4\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table21.js`\n

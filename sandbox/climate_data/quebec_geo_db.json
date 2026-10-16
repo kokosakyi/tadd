@@ -1,0 +1,1230 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Quebec",
+    "total_stations": 122,
+    "description": "Geoclimatic database for Quebec stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Acton-Vale",
+      "elevation": 95,
+      "latitude": 45.65,
+      "longitude": -72.57,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Alma",
+      "elevation": 110,
+      "latitude": 48.55,
+      "longitude": -71.65,
+      "min_temp": -33,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Amos",
+      "elevation": 295,
+      "latitude": 48.57,
+      "longitude": -78.12,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 16,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Asbestos",
+      "elevation": 245,
+      "latitude": 45.77,
+      "longitude": -71.93,
+      "min_temp": -28,
+      "wind_50yr": 80,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Aylmer",
+      "elevation": 90,
+      "latitude": 45.4,
+      "longitude": -75.83,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Baie-Comeau",
+      "elevation": 60,
+      "latitude": 49.22,
+      "longitude": -68.15,
+      "min_temp": -29,
+      "wind_50yr": 106,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Baie-Saint-Paul",
+      "elevation": 20,
+      "latitude": 47.44,
+      "longitude": -70.51,
+      "min_temp": -29,
+      "wind_50yr": 99,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Beauport",
+      "elevation": 45,
+      "latitude": 46.87,
+      "longitude": -71.18,
+      "min_temp": -29,
+      "wind_50yr": 98,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bedford",
+      "elevation": 55,
+      "latitude": 45.12,
+      "longitude": -72.98,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Beloeil",
+      "elevation": 25,
+      "latitude": 45.57,
+      "longitude": -73.2,
+      "min_temp": -26,
+      "wind_50yr": 91,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brome",
+      "elevation": 210,
+      "latitude": 45.2,
+      "longitude": -72.57,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brossard",
+      "elevation": 15,
+      "latitude": 45.45,
+      "longitude": -73.47,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Buckingham",
+      "elevation": 130,
+      "latitude": 45.58,
+      "longitude": -75.42,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Campbell’s Bay",
+      "elevation": 115,
+      "latitude": 45.73,
+      "longitude": -76.6,
+      "min_temp": -30,
+      "wind_50yr": 85,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Chambly",
+      "elevation": 20,
+      "latitude": 45.45,
+      "longitude": -73.28,
+      "min_temp": -26,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Coaticook",
+      "elevation": 295,
+      "latitude": 45.13,
+      "longitude": -71.8,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Contrecœur",
+      "elevation": 10,
+      "latitude": 45.85,
+      "longitude": -73.23,
+      "min_temp": -27,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cowansville",
+      "elevation": 120,
+      "latitude": 45.2,
+      "longitude": -72.75,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Deux-Montagnes",
+      "elevation": 25,
+      "latitude": 45.53,
+      "longitude": -73.88,
+      "min_temp": -27,
+      "wind_50yr": 91,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dolbeau",
+      "elevation": 120,
+      "latitude": 48.88,
+      "longitude": -72.23,
+      "min_temp": -34,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Drummondville",
+      "elevation": 85,
+      "latitude": 45.88,
+      "longitude": -72.48,
+      "min_temp": -28,
+      "wind_50yr": 89,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Farnham",
+      "elevation": 60,
+      "latitude": 45.28,
+      "longitude": -72.98,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fort-Coulonge",
+      "elevation": 110,
+      "latitude": 45.85,
+      "longitude": -76.73,
+      "min_temp": -30,
+      "wind_50yr": 85,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gagnon",
+      "elevation": 545,
+      "latitude": 51.93,
+      "longitude": -68.17,
+      "min_temp": -36,
+      "wind_50yr": 93,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gaspé",
+      "elevation": 55,
+      "latitude": 48.83,
+      "longitude": -64.48,
+      "min_temp": -26,
+      "wind_50yr": 100,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gatineau",
+      "elevation": 95,
+      "latitude": 45.5,
+      "longitude": -75.65,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gracefield",
+      "elevation": 175,
+      "latitude": 46.1,
+      "longitude": -76.05,
+      "min_temp": -31,
+      "wind_50yr": 85,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Granby",
+      "elevation": 120,
+      "latitude": 45.4,
+      "longitude": -72.73,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Harrington-Harbour",
+      "elevation": 30,
+      "latitude": 50.5,
+      "longitude": -59.48,
+      "min_temp": -29,
+      "wind_50yr": 127,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Havre-St-Pierre",
+      "elevation": 5,
+      "latitude": 50.23,
+      "longitude": -63.6,
+      "min_temp": -29,
+      "wind_50yr": 119,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hemmingford",
+      "elevation": 75,
+      "latitude": 45.05,
+      "longitude": -73.58,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hull",
+      "elevation": 65,
+      "latitude": 45.43,
+      "longitude": -75.73,
+      "min_temp": -28,
+      "wind_50yr": 90,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Iberville",
+      "elevation": 35,
+      "latitude": 45.35,
+      "longitude": -73.23,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Inukjuak",
+      "elevation": 5,
+      "latitude": 58.48,
+      "longitude": -78.1,
+      "min_temp": -38,
+      "wind_50yr": 109,
+      "ice_50yr": 12,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Joliette",
+      "elevation": 45,
+      "latitude": 46.02,
+      "longitude": -73.45,
+      "min_temp": -28,
+      "wind_50yr": 90,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kuujjuaq",
+      "elevation": 25,
+      "latitude": 58.1,
+      "longitude": -68.4,
+      "min_temp": -39,
+      "wind_50yr": 117,
+      "ice_50yr": 12,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kuujjuarapik",
+      "elevation": 20,
+      "latitude": 55.28,
+      "longitude": -77.75,
+      "min_temp": -38,
+      "wind_50yr": 105,
+      "ice_50yr": 12,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "La Pocatière",
+      "elevation": 55,
+      "latitude": 47.37,
+      "longitude": -70.04,
+      "min_temp": -26,
+      "wind_50yr": 99,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lachute",
+      "elevation": 65,
+      "latitude": 45.65,
+      "longitude": -74.33,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lac-Mégantic",
+      "elevation": 420,
+      "latitude": 45.58,
+      "longitude": -70.88,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "La-Malbaie",
+      "elevation": 25,
+      "latitude": 47.65,
+      "longitude": -70.15,
+      "min_temp": -28,
+      "wind_50yr": 104,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "La-Tuque",
+      "elevation": 165,
+      "latitude": 47.43,
+      "longitude": -72.78,
+      "min_temp": -32,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lennoxville",
+      "elevation": 155,
+      "latitude": 45.37,
+      "longitude": -71.85,
+      "min_temp": -30,
+      "wind_50yr": 80,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Léry",
+      "elevation": 30,
+      "latitude": 45.35,
+      "longitude": -73.8,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Loretteville",
+      "elevation": 100,
+      "latitude": 46.85,
+      "longitude": -71.35,
+      "min_temp": -29,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Louiseville",
+      "elevation": 15,
+      "latitude": 46.25,
+      "longitude": -72.95,
+      "min_temp": -28,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Magog",
+      "elevation": 215,
+      "latitude": 45.27,
+      "longitude": -72.13,
+      "min_temp": -28,
+      "wind_50yr": 80,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Malartic",
+      "elevation": 325,
+      "latitude": 48.13,
+      "longitude": -78.13,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Maniwaki",
+      "elevation": 180,
+      "latitude": 46.38,
+      "longitude": -75.97,
+      "min_temp": -32,
+      "wind_50yr": 84,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Masson",
+      "elevation": 50,
+      "latitude": 45.53,
+      "longitude": -75.42,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Matane",
+      "elevation": 5,
+      "latitude": 48.85,
+      "longitude": -67.53,
+      "min_temp": -26,
+      "wind_50yr": 110,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mont-Joli",
+      "elevation": 90,
+      "latitude": 48.58,
+      "longitude": -68.18,
+      "min_temp": -26,
+      "wind_50yr": 108,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mont-Laurier",
+      "elevation": 225,
+      "latitude": 46.55,
+      "longitude": -75.5,
+      "min_temp": -32,
+      "wind_50yr": 83,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Montmagny",
+      "elevation": 10,
+      "latitude": 46.98,
+      "longitude": -70.55,
+      "min_temp": -28,
+      "wind_50yr": 99,
+      "ice_50yr": 29,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Beaconsfield",
+      "elevation": 25,
+      "latitude": 45.43,
+      "longitude": -73.87,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dorval",
+      "elevation": 25,
+      "latitude": 45.45,
+      "longitude": -73.75,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Laval",
+      "elevation": 35,
+      "latitude": 45.58,
+      "longitude": -73.75,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Montréal (City Hall)",
+      "elevation": 20,
+      "latitude": 45.51,
+      "longitude": -73.55,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Montréal-Est",
+      "elevation": 25,
+      "latitude": 45.63,
+      "longitude": -73.52,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Montréal-Nord",
+      "elevation": 20,
+      "latitude": 45.6,
+      "longitude": -73.63,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Outremont",
+      "elevation": 105,
+      "latitude": 45.52,
+      "longitude": -73.62,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pierrefonds",
+      "elevation": 25,
+      "latitude": 45.48,
+      "longitude": -73.87,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Lambert",
+      "elevation": 15,
+      "latitude": 45.5,
+      "longitude": -73.5,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Laurent",
+      "elevation": 45,
+      "latitude": 45.5,
+      "longitude": -73.67,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ste-Anne-de-Bellevue",
+      "elevation": 35,
+      "latitude": 45.42,
+      "longitude": -73.93,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Verdun",
+      "elevation": 20,
+      "latitude": 45.45,
+      "longitude": -73.57,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Nicolet (Gentilly)",
+      "elevation": 15,
+      "latitude": 46.4,
+      "longitude": -72.28,
+      "min_temp": -28,
+      "wind_50yr": 98,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Nitchequon",
+      "elevation": 545,
+      "latitude": 53.21,
+      "longitude": -70.91,
+      "min_temp": -41,
+      "wind_50yr": 90,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Noranda",
+      "elevation": 305,
+      "latitude": 48.25,
+      "longitude": -79.02,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Percé",
+      "elevation": 5,
+      "latitude": 48.53,
+      "longitude": -64.22,
+      "min_temp": -24,
+      "wind_50yr": 120,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pincourt",
+      "elevation": 25,
+      "latitude": 45.38,
+      "longitude": -73.98,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Plessisville",
+      "elevation": 145,
+      "latitude": 46.22,
+      "longitude": -71.78,
+      "min_temp": -28,
+      "wind_50yr": 89,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port-Cartier",
+      "elevation": 20,
+      "latitude": 50.02,
+      "longitude": -66.87,
+      "min_temp": -30,
+      "wind_50yr": 110,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Puvinrituq",
+      "elevation": 5,
+      "latitude": 60.03,
+      "longitude": -77.28,
+      "min_temp": -38,
+      "wind_50yr": 117,
+      "ice_50yr": 10,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ancienne-Lorette",
+      "elevation": 35,
+      "latitude": 46.78,
+      "longitude": -71.38,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lévis",
+      "elevation": 50,
+      "latitude": 46.8,
+      "longitude": -71.18,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Québec",
+      "elevation": 120,
+      "latitude": 46.8,
+      "longitude": -71.23,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sillery",
+      "elevation": 10,
+      "latitude": 46.77,
+      "longitude": -71.25,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ste-Foy",
+      "elevation": 115,
+      "latitude": 46.78,
+      "longitude": -71.28,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Richmond",
+      "elevation": 150,
+      "latitude": 45.67,
+      "longitude": -72.15,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rimouski",
+      "elevation": 30,
+      "latitude": 48.43,
+      "longitude": -68.55,
+      "min_temp": -27,
+      "wind_50yr": 108,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rivière-du-Loup",
+      "elevation": 55,
+      "latitude": 47.83,
+      "longitude": -69.53,
+      "min_temp": -27,
+      "wind_50yr": 106,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Roberval",
+      "elevation": 100,
+      "latitude": 48.52,
+      "longitude": -72.23,
+      "min_temp": -33,
+      "wind_50yr": 91,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rock-Island",
+      "elevation": 160,
+      "latitude": 45.04,
+      "longitude": -72.1,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rosemère",
+      "elevation": 25,
+      "latitude": 45.63,
+      "longitude": -73.8,
+      "min_temp": -26,
+      "wind_50yr": 95,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rouyn",
+      "elevation": 300,
+      "latitude": 48.23,
+      "longitude": -79.02,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saguenay",
+      "elevation": 10,
+      "latitude": 48.43,
+      "longitude": -71.07,
+      "min_temp": -32,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saguenay (Bagotville)",
+      "elevation": 5,
+      "latitude": 48.35,
+      "longitude": -70.88,
+      "min_temp": -33,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saguenay (Jonquière)",
+      "elevation": 135,
+      "latitude": 48.42,
+      "longitude": -71.22,
+      "min_temp": -32,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saguenay (Kénogami)",
+      "elevation": 140,
+      "latitude": 48.42,
+      "longitude": -71.25,
+      "min_temp": -32,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saint-Eustache",
+      "elevation": 35,
+      "latitude": 45.56,
+      "longitude": -73.9,
+      "min_temp": -27,
+      "wind_50yr": 91,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Saint-Jean-sur-Richelieu",
+      "elevation": 35,
+      "latitude": 45.31,
+      "longitude": -73.26,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Salaberry-de-Valleyfield",
+      "elevation": 50,
+      "latitude": 45.25,
+      "longitude": -74.13,
+      "min_temp": -25,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Schefferville",
+      "elevation": 550,
+      "latitude": 54.8,
+      "longitude": -66.83,
+      "min_temp": -39,
+      "wind_50yr": 102,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Senneterre",
+      "elevation": 310,
+      "latitude": 48.38,
+      "longitude": -77.23,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sept-Îles",
+      "elevation": 5,
+      "latitude": 50.2,
+      "longitude": -66.38,
+      "min_temp": -31,
+      "wind_50yr": 110,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Shawinigan",
+      "elevation": 60,
+      "latitude": 46.55,
+      "longitude": -72.75,
+      "min_temp": -29,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Shawville",
+      "elevation": 170,
+      "latitude": 45.6,
+      "longitude": -76.48,
+      "min_temp": -30,
+      "wind_50yr": 89,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sherbrooke",
+      "elevation": 185,
+      "latitude": 45.42,
+      "longitude": -71.9,
+      "min_temp": -30,
+      "wind_50yr": 80,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sorel",
+      "elevation": 10,
+      "latitude": 46.03,
+      "longitude": -73.12,
+      "min_temp": -27,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ste-Agathe-des-Monts",
+      "elevation": 360,
+      "latitude": 46.05,
+      "longitude": -74.28,
+      "min_temp": -30,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Félicien",
+      "elevation": 105,
+      "latitude": 48.65,
+      "longitude": -72.45,
+      "min_temp": -34,
+      "wind_50yr": 91,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Georges-de-Cacouna",
+      "elevation": 35,
+      "latitude": 47.92,
+      "longitude": -69.5,
+      "min_temp": -27,
+      "wind_50yr": 106,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Hubert",
+      "elevation": 25,
+      "latitude": 45.5,
+      "longitude": -73.42,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 32,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Hubert-de-Rivière-du- Loup",
+      "elevation": 310,
+      "latitude": 47.82,
+      "longitude": -69.15,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Hyacinthe",
+      "elevation": 35,
+      "latitude": 45.62,
+      "longitude": -72.95,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Jérôme",
+      "elevation": 95,
+      "latitude": 45.78,
+      "longitude": -74.0,
+      "min_temp": -28,
+      "wind_50yr": 91,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Jovite",
+      "elevation": 230,
+      "latitude": 46.12,
+      "longitude": -74.6,
+      "min_temp": -31,
+      "wind_50yr": 86,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Lazare-Hudson",
+      "elevation": 60,
+      "latitude": 45.4,
+      "longitude": -74.14,
+      "min_temp": -26,
+      "wind_50yr": 98,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St-Nicolas",
+      "elevation": 65,
+      "latitude": 46.7,
+      "longitude": -71.4,
+      "min_temp": -28,
+      "wind_50yr": 98,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sutton",
+      "elevation": 185,
+      "latitude": 45.1,
+      "longitude": -72.62,
+      "min_temp": -27,
+      "wind_50yr": 80,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Tadoussac",
+      "elevation": 65,
+      "latitude": 48.15,
+      "longitude": -69.72,
+      "min_temp": -28,
+      "wind_50yr": 108,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Témiscaming",
+      "elevation": 240,
+      "latitude": 46.72,
+      "longitude": -79.1,
+      "min_temp": -32,
+      "wind_50yr": 85,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Terrebonne",
+      "elevation": 20,
+      "latitude": 45.69,
+      "longitude": -73.63,
+      "min_temp": -27,
+      "wind_50yr": 94,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Thetford Mines",
+      "elevation": 330,
+      "latitude": 46.08,
+      "longitude": -71.3,
+      "min_temp": -28,
+      "wind_50yr": 80,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Thurso",
+      "elevation": 50,
+      "latitude": 45.6,
+      "longitude": -75.25,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Trois-Rivières",
+      "elevation": 25,
+      "latitude": 46.35,
+      "longitude": -72.55,
+      "min_temp": -28,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Val-d’Or",
+      "elevation": 310,
+      "latitude": 48.1,
+      "longitude": -77.78,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Varennes",
+      "elevation": 15,
+      "latitude": 45.68,
+      "longitude": -73.43,
+      "min_temp": -26,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Verchères",
+      "elevation": 15,
+      "latitude": 45.78,
+      "longitude": -73.35,
+      "min_temp": -26,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Victoriaville",
+      "elevation": 125,
+      "latitude": 46.05,
+      "longitude": -71.97,
+      "min_temp": -28,
+      "wind_50yr": 89,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ville-Marie",
+      "elevation": 200,
+      "latitude": 47.33,
+      "longitude": -79.43,
+      "min_temp": -34,
+      "wind_50yr": 89,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    }
+  ]
+}

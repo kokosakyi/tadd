@@ -1,0 +1,1 @@
+# Table 23: Minimum vertical separations at a joint-use structure\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.10.1.1, 5.10.1.6, 5.10.1.7, 5.10.6.2, A.5.10.1, Figures A.6, A.7\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table23.js`\n

@@ -1,0 +1,60 @@
+CAN/CSA-015-15
+Wood utility poles and reinforcing stubs
+6.5.3 Code letters for country of origin and pole species
+The following code letters shall be used to designate the country of origin of an imported pole and the
+species of pole. The code letter for the country of origin shall precede the code letters for the species
+on all imported poles except those of southern yellow pine:
+Country of origin
+Finland
+Norway
+Sweden
+United States
+Code letter
+s-
+Species
+Cedar
+Eastern white
+Western red
+Yellow
+Fir
+Amabilis
+Douglas
+Hemlock
+Western
+Larch
+western
+Pine
+Eastern white
+Jack
+Lodgepole
+Ponderosa
+Red
+Scots
+Southern yellow
+Spruce
+Black
+Engelmann
+Red
+Sitka
+White
+Code letters
+EC
+wc
+YC
+WH
+WL
+pp
+scp
+ws
+ES
+ss
+6.6 Handling of poles and reinforcing stubs
+6.6.1
+Treated material shall not be dragged along the ground.
+6.6.2
+Cant hooks, pole tongs, or other tools shall not be applied to the groundline section of any pole.
+January 2015
+H W WE wyt
+0 2015 CSA Group
+pruirwiiAQ
+18

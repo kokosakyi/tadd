@@ -1,0 +1,1 @@
+# Table 14: Minimum vertical clearances for crossings over aerial tramways\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.8.1.1, 5.7.9\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table14.js`\n

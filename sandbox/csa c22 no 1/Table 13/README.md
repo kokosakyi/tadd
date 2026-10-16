@@ -1,0 +1,1 @@
+# Table 13: Minimum design vertical clearances between wires crossing each other and supported by different supporting structures\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.8.1.1, 5.8.1.2, 5.8.1.3, A.5.8.1, A.5.8.1.3\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table13.js`\n

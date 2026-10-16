@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Yukon",
+    "total_stations": 9,
+    "description": "Geoclimatic database for Yukon stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Aishihik",
+      "elevation": 920,
+      "latitude": 61.6,
+      "longitude": -137.52,
+      "min_temp": -46,
+      "wind_50yr": 85,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Dawson",
+      "elevation": 330,
+      "latitude": 64.07,
+      "longitude": -139.42,
+      "min_temp": -51,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Destruction Bay",
+      "elevation": 815,
+      "latitude": 61.25,
+      "longitude": -138.8,
+      "min_temp": -45,
+      "wind_50yr": 117,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Faro",
+      "elevation": 670,
+      "latitude": 62.23,
+      "longitude": -133.36,
+      "min_temp": -47,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Haines Junction",
+      "elevation": 600,
+      "latitude": 60.78,
+      "longitude": -137.54,
+      "min_temp": -47,
+      "wind_50yr": 87,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Snag",
+      "elevation": 595,
+      "latitude": 62.4,
+      "longitude": -140.37,
+      "min_temp": -53,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Teslin",
+      "elevation": 690,
+      "latitude": 60.17,
+      "longitude": -132.72,
+      "min_temp": -44,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Watson Lake",
+      "elevation": 685,
+      "latitude": 60.13,
+      "longitude": -128.71,
+      "min_temp": -48,
+      "wind_50yr": 80,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    },
+    {
+      "location": "Whitehorse",
+      "elevation": 655,
+      "latitude": 60.72,
+      "longitude": -135.05,
+      "min_temp": -43,
+      "wind_50yr": 85,
+      "ice_50yr": 10,
+      "loading_district": "Medium B"
+    }
+  ]
+}

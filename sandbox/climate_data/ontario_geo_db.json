@@ -1,0 +1,2310 @@
+{
+  "metadata": {
+    "source": "CAN/CSA-C22.3 No. 60826-10 Table CA.1 (Weather Data)",
+    "province": "Ontario",
+    "total_stations": 230,
+    "description": "Geoclimatic database for Ontario stations containing elevation, coordinates, low temperature, 50-year wind, and 50-year ice."
+  },
+  "stations": [
+    {
+      "location": "Ailsa Craig",
+      "elevation": 230,
+      "latitude": 43.13,
+      "longitude": -81.55,
+      "min_temp": -19,
+      "wind_50yr": 106,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ajax",
+      "elevation": 95,
+      "latitude": 43.85,
+      "longitude": -79.03,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Alexandria",
+      "elevation": 80,
+      "latitude": 45.32,
+      "longitude": -74.63,
+      "min_temp": -26,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Alliston",
+      "elevation": 220,
+      "latitude": 44.15,
+      "longitude": -79.87,
+      "min_temp": -25,
+      "wind_50yr": 92,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Almonte",
+      "elevation": 120,
+      "latitude": 45.23,
+      "longitude": -76.2,
+      "min_temp": -28,
+      "wind_50yr": 87,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Armstrong",
+      "elevation": 340,
+      "latitude": 50.3,
+      "longitude": -89.03,
+      "min_temp": -40,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Arnprior",
+      "elevation": 85,
+      "latitude": 45.43,
+      "longitude": -76.35,
+      "min_temp": -29,
+      "wind_50yr": 89,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Atikokan",
+      "elevation": 400,
+      "latitude": 48.75,
+      "longitude": -91.62,
+      "min_temp": -35,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Attawapiskat",
+      "elevation": 10,
+      "latitude": 52.93,
+      "longitude": -82.43,
+      "min_temp": -39,
+      "wind_50yr": 96,
+      "ice_50yr": 17,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Aurora",
+      "elevation": 270,
+      "latitude": 44.0,
+      "longitude": -79.47,
+      "min_temp": -23,
+      "wind_50yr": 99,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bancroft",
+      "elevation": 365,
+      "latitude": 45.05,
+      "longitude": -77.85,
+      "min_temp": -31,
+      "wind_50yr": 85,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Barrie",
+      "elevation": 245,
+      "latitude": 44.4,
+      "longitude": -79.67,
+      "min_temp": -26,
+      "wind_50yr": 90,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Barriefield",
+      "elevation": 100,
+      "latitude": 44.23,
+      "longitude": -76.47,
+      "min_temp": -24,
+      "wind_50yr": 103,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Beaverton",
+      "elevation": 240,
+      "latitude": 44.43,
+      "longitude": -79.15,
+      "min_temp": -26,
+      "wind_50yr": 90,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Belleville",
+      "elevation": 90,
+      "latitude": 44.17,
+      "longitude": -77.38,
+      "min_temp": -24,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Belmont",
+      "elevation": 260,
+      "latitude": 42.88,
+      "longitude": -81.08,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bowmanville",
+      "elevation": 95,
+      "latitude": 43.91,
+      "longitude": -78.68,
+      "min_temp": -22,
+      "wind_50yr": 104,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bracebridge",
+      "elevation": 310,
+      "latitude": 45.03,
+      "longitude": -79.3,
+      "min_temp": -28,
+      "wind_50yr": 89,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Bradford",
+      "elevation": 240,
+      "latitude": 44.12,
+      "longitude": -79.57,
+      "min_temp": -25,
+      "wind_50yr": 92,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brampton",
+      "elevation": 215,
+      "latitude": 43.68,
+      "longitude": -79.77,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brantford",
+      "elevation": 205,
+      "latitude": 43.13,
+      "longitude": -80.27,
+      "min_temp": -20,
+      "wind_50yr": 98,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brighton",
+      "elevation": 95,
+      "latitude": 44.03,
+      "longitude": -77.73,
+      "min_temp": -23,
+      "wind_50yr": 104,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Brockville",
+      "elevation": 85,
+      "latitude": 44.59,
+      "longitude": -75.68,
+      "min_temp": -25,
+      "wind_50yr": 100,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Burk\u2019s Falls",
+      "elevation": 305,
+      "latitude": 45.62,
+      "longitude": -79.4,
+      "min_temp": -28,
+      "wind_50yr": 80,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Burlington",
+      "elevation": 80,
+      "latitude": 43.32,
+      "longitude": -79.8,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cambridge",
+      "elevation": 295,
+      "latitude": 43.38,
+      "longitude": -80.32,
+      "min_temp": -20,
+      "wind_50yr": 90,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Campbellford",
+      "elevation": 150,
+      "latitude": 44.3,
+      "longitude": -77.8,
+      "min_temp": -26,
+      "wind_50yr": 96,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cannington",
+      "elevation": 255,
+      "latitude": 44.35,
+      "longitude": -79.03,
+      "min_temp": -26,
+      "wind_50yr": 90,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Carleton Place",
+      "elevation": 135,
+      "latitude": 45.13,
+      "longitude": -76.15,
+      "min_temp": -27,
+      "wind_50yr": 87,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cavan",
+      "elevation": 200,
+      "latitude": 44.2,
+      "longitude": -78.47,
+      "min_temp": -25,
+      "wind_50yr": 96,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Centralia",
+      "elevation": 260,
+      "latitude": 43.28,
+      "longitude": -81.47,
+      "min_temp": -19,
+      "wind_50yr": 100,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "CFB Borden",
+      "elevation": 225,
+      "latitude": 44.27,
+      "longitude": -79.88,
+      "min_temp": -25,
+      "wind_50yr": 92,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Chapleau",
+      "elevation": 425,
+      "latitude": 47.83,
+      "longitude": -83.4,
+      "min_temp": -38,
+      "wind_50yr": 80,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Chatham",
+      "elevation": 180,
+      "latitude": 42.4,
+      "longitude": -82.18,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Chesley",
+      "elevation": 275,
+      "latitude": 44.28,
+      "longitude": -81.08,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Clinton",
+      "elevation": 280,
+      "latitude": 43.62,
+      "longitude": -81.53,
+      "min_temp": -19,
+      "wind_50yr": 105,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Coboconk",
+      "elevation": 270,
+      "latitude": 44.65,
+      "longitude": -78.8,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cobourg",
+      "elevation": 90,
+      "latitude": 43.97,
+      "longitude": -78.17,
+      "min_temp": -23,
+      "wind_50yr": 105,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cochrane",
+      "elevation": 245,
+      "latitude": 49.07,
+      "longitude": -81.02,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 17,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Colborne",
+      "elevation": 105,
+      "latitude": 44.0,
+      "longitude": -77.88,
+      "min_temp": -23,
+      "wind_50yr": 105,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Collingwood",
+      "elevation": 190,
+      "latitude": 44.48,
+      "longitude": -80.22,
+      "min_temp": -23,
+      "wind_50yr": 93,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Cornwall",
+      "elevation": 35,
+      "latitude": 45.03,
+      "longitude": -74.73,
+      "min_temp": -25,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Corunna",
+      "elevation": 185,
+      "latitude": 42.88,
+      "longitude": -82.43,
+      "min_temp": -18,
+      "wind_50yr": 103,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Deep River",
+      "elevation": 145,
+      "latitude": 46.1,
+      "longitude": -77.5,
+      "min_temp": -32,
+      "wind_50yr": 89,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Deseronto",
+      "elevation": 85,
+      "latitude": 44.2,
+      "longitude": -77.05,
+      "min_temp": -24,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dorchester",
+      "elevation": 260,
+      "latitude": 42.98,
+      "longitude": -81.07,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dorion",
+      "elevation": 200,
+      "latitude": 48.78,
+      "longitude": -88.53,
+      "min_temp": -35,
+      "wind_50yr": 93,
+      "ice_50yr": 16,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dresden",
+      "elevation": 185,
+      "latitude": 42.58,
+      "longitude": -82.18,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dryden",
+      "elevation": 370,
+      "latitude": 49.78,
+      "longitude": -92.75,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dundalk",
+      "elevation": 525,
+      "latitude": 44.17,
+      "longitude": -80.39,
+      "min_temp": -24,
+      "wind_50yr": 98,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dunnville",
+      "elevation": 175,
+      "latitude": 42.9,
+      "longitude": -79.62,
+      "min_temp": -17,
+      "wind_50yr": 102,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Durham",
+      "elevation": 340,
+      "latitude": 44.17,
+      "longitude": -80.82,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Dutton",
+      "elevation": 225,
+      "latitude": 42.67,
+      "longitude": -81.5,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Earlton",
+      "elevation": 245,
+      "latitude": 47.72,
+      "longitude": -79.82,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Edison",
+      "elevation": 365,
+      "latitude": 49.8,
+      "longitude": -93.55,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Elliot Lake",
+      "elevation": 380,
+      "latitude": 46.38,
+      "longitude": -82.66,
+      "min_temp": -28,
+      "wind_50yr": 92,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Elmvale",
+      "elevation": 220,
+      "latitude": 44.58,
+      "longitude": -79.87,
+      "min_temp": -26,
+      "wind_50yr": 90,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Embro",
+      "elevation": 310,
+      "latitude": 43.15,
+      "longitude": -80.9,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Englehart",
+      "elevation": 205,
+      "latitude": 47.82,
+      "longitude": -79.87,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Espanola",
+      "elevation": 220,
+      "latitude": 46.25,
+      "longitude": -81.77,
+      "min_temp": -27,
+      "wind_50yr": 98,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Exeter",
+      "elevation": 265,
+      "latitude": 43.35,
+      "longitude": -81.48,
+      "min_temp": -19,
+      "wind_50yr": 100,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fenelon Falls",
+      "elevation": 260,
+      "latitude": 44.53,
+      "longitude": -78.75,
+      "min_temp": -27,
+      "wind_50yr": 90,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fergus",
+      "elevation": 400,
+      "latitude": 43.7,
+      "longitude": -80.37,
+      "min_temp": -22,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Forest",
+      "elevation": 215,
+      "latitude": 43.1,
+      "longitude": -82.0,
+      "min_temp": -18,
+      "wind_50yr": 104,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fort Erie",
+      "elevation": 180,
+      "latitude": 42.9,
+      "longitude": -78.93,
+      "min_temp": -17,
+      "wind_50yr": 102,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fort Erie (Ridgeway)",
+      "elevation": 190,
+      "latitude": 42.88,
+      "longitude": -79.05,
+      "min_temp": -17,
+      "wind_50yr": 102,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Fort Frances",
+      "elevation": 340,
+      "latitude": 48.61,
+      "longitude": -93.39,
+      "min_temp": -35,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gananoque",
+      "elevation": 80,
+      "latitude": 44.33,
+      "longitude": -76.17,
+      "min_temp": -24,
+      "wind_50yr": 103,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Geraldton",
+      "elevation": 345,
+      "latitude": 49.73,
+      "longitude": -86.95,
+      "min_temp": -39,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Glencoe",
+      "elevation": 215,
+      "latitude": 42.75,
+      "longitude": -81.72,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Goderich",
+      "elevation": 185,
+      "latitude": 43.75,
+      "longitude": -81.72,
+      "min_temp": -18,
+      "wind_50yr": 111,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gore Bay",
+      "elevation": 205,
+      "latitude": 45.92,
+      "longitude": -82.47,
+      "min_temp": -26,
+      "wind_50yr": 100,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Graham",
+      "elevation": 495,
+      "latitude": 49.25,
+      "longitude": -90.57,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Gravenhurst (Muskoka Airport)",
+      "elevation": 255,
+      "latitude": 44.92,
+      "longitude": -79.37,
+      "min_temp": -28,
+      "wind_50yr": 88,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Grimsby",
+      "elevation": 85,
+      "latitude": 43.2,
+      "longitude": -79.57,
+      "min_temp": -18,
+      "wind_50yr": 102,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Guelph",
+      "elevation": 340,
+      "latitude": 43.55,
+      "longitude": -80.25,
+      "min_temp": -21,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Guthrie",
+      "elevation": 280,
+      "latitude": 44.47,
+      "longitude": -79.55,
+      "min_temp": -26,
+      "wind_50yr": 90,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Haileybury",
+      "elevation": 210,
+      "latitude": 47.45,
+      "longitude": -79.63,
+      "min_temp": -35,
+      "wind_50yr": 89,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Haldimand (Caledonia)",
+      "elevation": 190,
+      "latitude": 43.07,
+      "longitude": -79.93,
+      "min_temp": -20,
+      "wind_50yr": 100,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Haldimand (Hagersville)",
+      "elevation": 215,
+      "latitude": 42.97,
+      "longitude": -80.05,
+      "min_temp": -19,
+      "wind_50yr": 102,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Haliburton",
+      "elevation": 335,
+      "latitude": 45.05,
+      "longitude": -78.52,
+      "min_temp": -29,
+      "wind_50yr": 89,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Halton Hills (Georgetown)",
+      "elevation": 255,
+      "latitude": 43.65,
+      "longitude": -79.92,
+      "min_temp": -21,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hamilton",
+      "elevation": 90,
+      "latitude": 43.25,
+      "longitude": -79.86,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hanover",
+      "elevation": 270,
+      "latitude": 44.15,
+      "longitude": -81.03,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hastings",
+      "elevation": 200,
+      "latitude": 44.3,
+      "longitude": -77.95,
+      "min_temp": -26,
+      "wind_50yr": 96,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hawkesbury",
+      "elevation": 50,
+      "latitude": 45.6,
+      "longitude": -74.62,
+      "min_temp": -27,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hearst",
+      "elevation": 245,
+      "latitude": 49.68,
+      "longitude": -83.67,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Honey Harbour",
+      "elevation": 180,
+      "latitude": 44.87,
+      "longitude": -79.82,
+      "min_temp": -26,
+      "wind_50yr": 93,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Hornepayne",
+      "elevation": 360,
+      "latitude": 49.22,
+      "longitude": -84.78,
+      "min_temp": -40,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Huntsville",
+      "elevation": 335,
+      "latitude": 45.33,
+      "longitude": -79.22,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ingersoll",
+      "elevation": 280,
+      "latitude": 43.03,
+      "longitude": -80.88,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Iroquois Falls",
+      "elevation": 275,
+      "latitude": 48.77,
+      "longitude": -80.68,
+      "min_temp": -36,
+      "wind_50yr": 87,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Jellicoe",
+      "elevation": 330,
+      "latitude": 49.68,
+      "longitude": -87.52,
+      "min_temp": -39,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kapuskasing",
+      "elevation": 245,
+      "latitude": 49.42,
+      "longitude": -82.43,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kemptville",
+      "elevation": 90,
+      "latitude": 45.02,
+      "longitude": -75.64,
+      "min_temp": -27,
+      "wind_50yr": 87,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kenora",
+      "elevation": 370,
+      "latitude": 49.82,
+      "longitude": -94.43,
+      "min_temp": -35,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Killaloe",
+      "elevation": 185,
+      "latitude": 45.55,
+      "longitude": -77.42,
+      "min_temp": -31,
+      "wind_50yr": 89,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kincardine",
+      "elevation": 190,
+      "latitude": 44.18,
+      "longitude": -81.63,
+      "min_temp": -19,
+      "wind_50yr": 111,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kingston",
+      "elevation": 80,
+      "latitude": 44.23,
+      "longitude": -76.48,
+      "min_temp": -24,
+      "wind_50yr": 103,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kinmount",
+      "elevation": 295,
+      "latitude": 44.78,
+      "longitude": -78.65,
+      "min_temp": -28,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kirkland Lake",
+      "elevation": 325,
+      "latitude": 48.15,
+      "longitude": -80.03,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kitchener",
+      "elevation": 335,
+      "latitude": 43.45,
+      "longitude": -80.48,
+      "min_temp": -21,
+      "wind_50yr": 91,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Kitchenuhmaykoosib",
+      "elevation": 215,
+      "latitude": 53.83,
+      "longitude": -90.0,
+      "min_temp": -40,
+      "wind_50yr": 95,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lakefield",
+      "elevation": 240,
+      "latitude": 44.43,
+      "longitude": -78.27,
+      "min_temp": -26,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lansdowne House",
+      "elevation": 240,
+      "latitude": 52.23,
+      "longitude": -87.88,
+      "min_temp": -40,
+      "wind_50yr": 85,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Leamington",
+      "elevation": 190,
+      "latitude": 42.08,
+      "longitude": -82.57,
+      "min_temp": -17,
+      "wind_50yr": 99,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lindsay",
+      "elevation": 265,
+      "latitude": 44.35,
+      "longitude": -78.73,
+      "min_temp": -26,
+      "wind_50yr": 89,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lion\u2019s Head",
+      "elevation": 185,
+      "latitude": 44.98,
+      "longitude": -81.25,
+      "min_temp": -21,
+      "wind_50yr": 104,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Listowel",
+      "elevation": 380,
+      "latitude": 43.73,
+      "longitude": -80.95,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "London",
+      "elevation": 245,
+      "latitude": 42.98,
+      "longitude": -81.23,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Lucan",
+      "elevation": 300,
+      "latitude": 43.18,
+      "longitude": -81.4,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Maitland",
+      "elevation": 85,
+      "latitude": 44.63,
+      "longitude": -75.62,
+      "min_temp": -25,
+      "wind_50yr": 100,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Markdale",
+      "elevation": 425,
+      "latitude": 44.32,
+      "longitude": -80.65,
+      "min_temp": -22,
+      "wind_50yr": 96,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Markham",
+      "elevation": 175,
+      "latitude": 43.87,
+      "longitude": -79.27,
+      "min_temp": -23,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Martin",
+      "elevation": 485,
+      "latitude": 49.25,
+      "longitude": -91.13,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Matheson",
+      "elevation": 265,
+      "latitude": 48.53,
+      "longitude": -80.47,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 19,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mattawa",
+      "elevation": 165,
+      "latitude": 46.32,
+      "longitude": -78.7,
+      "min_temp": -31,
+      "wind_50yr": 85,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Midland",
+      "elevation": 190,
+      "latitude": 44.75,
+      "longitude": -79.88,
+      "min_temp": -26,
+      "wind_50yr": 93,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Milton",
+      "elevation": 200,
+      "latitude": 43.52,
+      "longitude": -79.88,
+      "min_temp": -20,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Milverton",
+      "elevation": 370,
+      "latitude": 43.57,
+      "longitude": -80.92,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Minden",
+      "elevation": 270,
+      "latitude": 44.92,
+      "longitude": -78.73,
+      "min_temp": -29,
+      "wind_50yr": 89,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mississauga",
+      "elevation": 160,
+      "latitude": 43.58,
+      "longitude": -79.65,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mississauga Port Credit",
+      "elevation": 75,
+      "latitude": 43.55,
+      "longitude": -79.58,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mitchell",
+      "elevation": 335,
+      "latitude": 43.47,
+      "longitude": -81.2,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Moosonee",
+      "elevation": 10,
+      "latitude": 51.32,
+      "longitude": -80.72,
+      "min_temp": -38,
+      "wind_50yr": 89,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Morrisburg",
+      "elevation": 75,
+      "latitude": 44.9,
+      "longitude": -75.18,
+      "min_temp": -25,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Mount Forest",
+      "elevation": 420,
+      "latitude": 43.98,
+      "longitude": -80.73,
+      "min_temp": -24,
+      "wind_50yr": 96,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Nakina",
+      "elevation": 325,
+      "latitude": 50.17,
+      "longitude": -86.7,
+      "min_temp": -38,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Nanticoke (Jarvis)",
+      "elevation": 205,
+      "latitude": 42.88,
+      "longitude": -80.1,
+      "min_temp": -18,
+      "wind_50yr": 104,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Nanticoke (Port Dover)",
+      "elevation": 180,
+      "latitude": 42.78,
+      "longitude": -80.2,
+      "min_temp": -17,
+      "wind_50yr": 104,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Napanee",
+      "elevation": 90,
+      "latitude": 44.25,
+      "longitude": -76.95,
+      "min_temp": -24,
+      "wind_50yr": 99,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "New Liskeard",
+      "elevation": 180,
+      "latitude": 47.5,
+      "longitude": -79.67,
+      "min_temp": -35,
+      "wind_50yr": 89,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Newcastle",
+      "elevation": 115,
+      "latitude": 43.92,
+      "longitude": -78.58,
+      "min_temp": -22,
+      "wind_50yr": 104,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Newmarket",
+      "elevation": 185,
+      "latitude": 44.05,
+      "longitude": -79.47,
+      "min_temp": -24,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Niagara Falls",
+      "elevation": 210,
+      "latitude": 43.1,
+      "longitude": -79.07,
+      "min_temp": -18,
+      "wind_50yr": 100,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "North Bay",
+      "elevation": 210,
+      "latitude": 46.32,
+      "longitude": -79.47,
+      "min_temp": -30,
+      "wind_50yr": 80,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Norwood",
+      "elevation": 225,
+      "latitude": 44.38,
+      "longitude": -77.98,
+      "min_temp": -26,
+      "wind_50yr": 96,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Oakville",
+      "elevation": 90,
+      "latitude": 43.45,
+      "longitude": -79.68,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Orangeville",
+      "elevation": 430,
+      "latitude": 43.92,
+      "longitude": -80.1,
+      "min_temp": -23,
+      "wind_50yr": 92,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Orillia",
+      "elevation": 230,
+      "latitude": 44.62,
+      "longitude": -79.42,
+      "min_temp": -27,
+      "wind_50yr": 90,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Oshawa",
+      "elevation": 110,
+      "latitude": 43.9,
+      "longitude": -78.85,
+      "min_temp": -21,
+      "wind_50yr": 104,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ottawa (Barrhaven)",
+      "elevation": 98,
+      "latitude": 45.28,
+      "longitude": -75.76,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ottawa (City Hall)",
+      "elevation": 70,
+      "latitude": 45.42,
+      "longitude": -75.69,
+      "min_temp": -27,
+      "wind_50yr": 90,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ottawa (Kanata)",
+      "elevation": 98,
+      "latitude": 45.31,
+      "longitude": -75.91,
+      "min_temp": -27,
+      "wind_50yr": 89,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ottawa (M-C Int\u2019l Airport)",
+      "elevation": 125,
+      "latitude": 45.32,
+      "longitude": -75.67,
+      "min_temp": -27,
+      "wind_50yr": 90,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Ottawa (Orleans)",
+      "elevation": 70,
+      "latitude": 45.48,
+      "longitude": -75.52,
+      "min_temp": -28,
+      "wind_50yr": 96,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Owen Sound",
+      "elevation": 215,
+      "latitude": 44.57,
+      "longitude": -80.93,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pagwa River",
+      "elevation": 185,
+      "latitude": 50.02,
+      "longitude": -85.22,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Paris",
+      "elevation": 245,
+      "latitude": 43.2,
+      "longitude": -80.38,
+      "min_temp": -20,
+      "wind_50yr": 98,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Parkhill",
+      "elevation": 205,
+      "latitude": 43.15,
+      "longitude": -81.68,
+      "min_temp": -18,
+      "wind_50yr": 100,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Parry Sound",
+      "elevation": 215,
+      "latitude": 45.35,
+      "longitude": -80.03,
+      "min_temp": -26,
+      "wind_50yr": 93,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pelham (Fonthill)",
+      "elevation": 230,
+      "latitude": 43.03,
+      "longitude": -79.28,
+      "min_temp": -17,
+      "wind_50yr": 100,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pembroke",
+      "elevation": 125,
+      "latitude": 45.82,
+      "longitude": -77.12,
+      "min_temp": -31,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Penetanguishene",
+      "elevation": 220,
+      "latitude": 44.78,
+      "longitude": -79.92,
+      "min_temp": -26,
+      "wind_50yr": 93,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Perth",
+      "elevation": 130,
+      "latitude": 44.9,
+      "longitude": -76.25,
+      "min_temp": -27,
+      "wind_50yr": 87,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Petawawa",
+      "elevation": 135,
+      "latitude": 45.9,
+      "longitude": -77.33,
+      "min_temp": -31,
+      "wind_50yr": 89,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Peterborough",
+      "elevation": 200,
+      "latitude": 44.3,
+      "longitude": -78.32,
+      "min_temp": -25,
+      "wind_50yr": 96,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Petrolia",
+      "elevation": 195,
+      "latitude": 42.87,
+      "longitude": -82.15,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Pickering (Dunbarton)",
+      "elevation": 85,
+      "latitude": 43.82,
+      "longitude": -79.1,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Picton",
+      "elevation": 95,
+      "latitude": 44.0,
+      "longitude": -77.13,
+      "min_temp": -23,
+      "wind_50yr": 105,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Plattsville",
+      "elevation": 300,
+      "latitude": 43.3,
+      "longitude": -80.62,
+      "min_temp": -21,
+      "wind_50yr": 98,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Point Alexander",
+      "elevation": 150,
+      "latitude": 46.13,
+      "longitude": -77.57,
+      "min_temp": -32,
+      "wind_50yr": 89,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Burwell",
+      "elevation": 195,
+      "latitude": 42.65,
+      "longitude": -80.82,
+      "min_temp": -17,
+      "wind_50yr": 103,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Colborne",
+      "elevation": 180,
+      "latitude": 42.9,
+      "longitude": -79.23,
+      "min_temp": -17,
+      "wind_50yr": 102,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Elgin",
+      "elevation": 205,
+      "latitude": 44.43,
+      "longitude": -81.4,
+      "min_temp": -19,
+      "wind_50yr": 111,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Hope",
+      "elevation": 100,
+      "latitude": 43.95,
+      "longitude": -78.3,
+      "min_temp": -23,
+      "wind_50yr": 104,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Perry",
+      "elevation": 270,
+      "latitude": 44.1,
+      "longitude": -78.95,
+      "min_temp": -24,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Port Stanley",
+      "elevation": 180,
+      "latitude": 42.67,
+      "longitude": -81.22,
+      "min_temp": -17,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Prescott",
+      "elevation": 90,
+      "latitude": 44.72,
+      "longitude": -75.52,
+      "min_temp": -25,
+      "wind_50yr": 100,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Princeton",
+      "elevation": 280,
+      "latitude": 43.17,
+      "longitude": -80.53,
+      "min_temp": -20,
+      "wind_50yr": 98,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Raith",
+      "elevation": 475,
+      "latitude": 48.83,
+      "longitude": -89.93,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rayside-Balfour (Chelmsford)",
+      "elevation": 270,
+      "latitude": 46.58,
+      "longitude": -81.2,
+      "min_temp": -30,
+      "wind_50yr": 90,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Red Lake",
+      "elevation": 360,
+      "latitude": 51.05,
+      "longitude": -93.82,
+      "min_temp": -37,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Renfrew",
+      "elevation": 115,
+      "latitude": 45.47,
+      "longitude": -76.68,
+      "min_temp": -30,
+      "wind_50yr": 89,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Richmond Hill",
+      "elevation": 230,
+      "latitude": 43.87,
+      "longitude": -79.45,
+      "min_temp": -23,
+      "wind_50yr": 99,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Rockland",
+      "elevation": 50,
+      "latitude": 45.55,
+      "longitude": -75.29,
+      "min_temp": -28,
+      "wind_50yr": 95,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sarnia",
+      "elevation": 190,
+      "latitude": 42.97,
+      "longitude": -82.38,
+      "min_temp": -18,
+      "wind_50yr": 103,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sault Ste. Marie",
+      "elevation": 190,
+      "latitude": 46.52,
+      "longitude": -84.33,
+      "min_temp": -28,
+      "wind_50yr": 100,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Schreiber",
+      "elevation": 310,
+      "latitude": 48.8,
+      "longitude": -87.25,
+      "min_temp": -36,
+      "wind_50yr": 93,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Seaforth",
+      "elevation": 310,
+      "latitude": 43.55,
+      "longitude": -81.4,
+      "min_temp": -19,
+      "wind_50yr": 100,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Shelburne",
+      "elevation": 495,
+      "latitude": 44.08,
+      "longitude": -80.2,
+      "min_temp": -24,
+      "wind_50yr": 94,
+      "ice_50yr": 14,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Simcoe",
+      "elevation": 210,
+      "latitude": 42.83,
+      "longitude": -80.3,
+      "min_temp": -19,
+      "wind_50yr": 101,
+      "ice_50yr": 33,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sioux Lookout",
+      "elevation": 375,
+      "latitude": 50.07,
+      "longitude": -91.98,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 15,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Smiths Falls",
+      "elevation": 130,
+      "latitude": 44.9,
+      "longitude": -76.02,
+      "min_temp": -27,
+      "wind_50yr": 87,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Smithville",
+      "elevation": 185,
+      "latitude": 43.1,
+      "longitude": -79.55,
+      "min_temp": -18,
+      "wind_50yr": 100,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Smooth Rock Falls",
+      "elevation": 235,
+      "latitude": 49.28,
+      "longitude": -81.63,
+      "min_temp": -36,
+      "wind_50yr": 80,
+      "ice_50yr": 16,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "South River",
+      "elevation": 355,
+      "latitude": 45.83,
+      "longitude": -79.38,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Southampton",
+      "elevation": 180,
+      "latitude": 44.48,
+      "longitude": -81.38,
+      "min_temp": -19,
+      "wind_50yr": 109,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. Catharines",
+      "elevation": 105,
+      "latitude": 43.17,
+      "longitude": -79.25,
+      "min_temp": -18,
+      "wind_50yr": 102,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. Mary\u2019s",
+      "elevation": 310,
+      "latitude": 43.25,
+      "longitude": -81.13,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "St. Thomas",
+      "elevation": 225,
+      "latitude": 42.78,
+      "longitude": -81.2,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Stirling",
+      "elevation": 120,
+      "latitude": 44.3,
+      "longitude": -77.55,
+      "min_temp": -25,
+      "wind_50yr": 95,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Stratford",
+      "elevation": 360,
+      "latitude": 43.37,
+      "longitude": -80.95,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Strathroy",
+      "elevation": 225,
+      "latitude": 42.95,
+      "longitude": -81.63,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sturgeon Falls",
+      "elevation": 205,
+      "latitude": 46.37,
+      "longitude": -79.92,
+      "min_temp": -30,
+      "wind_50yr": 80,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sudbury",
+      "elevation": 275,
+      "latitude": 46.5,
+      "longitude": -81.0,
+      "min_temp": -30,
+      "wind_50yr": 90,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Sundridge",
+      "elevation": 340,
+      "latitude": 45.77,
+      "longitude": -79.4,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Tavistock",
+      "elevation": 340,
+      "latitude": 43.32,
+      "longitude": -80.83,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 27,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Temagami",
+      "elevation": 300,
+      "latitude": 47.07,
+      "longitude": -79.78,
+      "min_temp": -33,
+      "wind_50yr": 89,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Thamesford",
+      "elevation": 280,
+      "latitude": 43.07,
+      "longitude": -81.0,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Thedford",
+      "elevation": 205,
+      "latitude": 43.15,
+      "longitude": -81.85,
+      "min_temp": -18,
+      "wind_50yr": 106,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Thunder Bay",
+      "elevation": 210,
+      "latitude": 48.4,
+      "longitude": -89.32,
+      "min_temp": -33,
+      "wind_50yr": 93,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Tillsonburg",
+      "elevation": 215,
+      "latitude": 42.85,
+      "longitude": -80.73,
+      "min_temp": -19,
+      "wind_50yr": 100,
+      "ice_50yr": 30,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Timmins",
+      "elevation": 300,
+      "latitude": 48.47,
+      "longitude": -81.33,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Timmins (Porcupine)",
+      "elevation": 295,
+      "latitude": 48.5,
+      "longitude": -81.17,
+      "min_temp": -36,
+      "wind_50yr": 89,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Etobicoke",
+      "elevation": 160,
+      "latitude": 43.7,
+      "longitude": -79.57,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "North York",
+      "elevation": 175,
+      "latitude": 43.77,
+      "longitude": -79.42,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Scarborough",
+      "elevation": 180,
+      "latitude": 43.78,
+      "longitude": -79.25,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Toronto (City Hall)",
+      "elevation": 90,
+      "latitude": 43.65,
+      "longitude": -79.38,
+      "min_temp": -20,
+      "wind_50yr": 100,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Toronto (LBP Int\u2019l Airport)",
+      "elevation": 170,
+      "latitude": 43.68,
+      "longitude": -79.61,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Trenton",
+      "elevation": 80,
+      "latitude": 44.1,
+      "longitude": -77.58,
+      "min_temp": -24,
+      "wind_50yr": 103,
+      "ice_50yr": 21,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Trout Creek",
+      "elevation": 330,
+      "latitude": 45.98,
+      "longitude": -79.37,
+      "min_temp": -29,
+      "wind_50yr": 80,
+      "ice_50yr": 22,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Uxbridge",
+      "elevation": 275,
+      "latitude": 44.1,
+      "longitude": -79.12,
+      "min_temp": -24,
+      "wind_50yr": 98,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Vaughan (Woodbridge)",
+      "elevation": 165,
+      "latitude": 43.78,
+      "longitude": -79.6,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Vittoria",
+      "elevation": 215,
+      "latitude": 42.77,
+      "longitude": -80.32,
+      "min_temp": -17,
+      "wind_50yr": 103,
+      "ice_50yr": 33,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Walkerton",
+      "elevation": 275,
+      "latitude": 44.12,
+      "longitude": -81.15,
+      "min_temp": -20,
+      "wind_50yr": 99,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wallaceburg",
+      "elevation": 180,
+      "latitude": 42.6,
+      "longitude": -82.38,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Waterloo",
+      "elevation": 330,
+      "latitude": 43.47,
+      "longitude": -80.52,
+      "min_temp": -21,
+      "wind_50yr": 91,
+      "ice_50yr": 26,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Watford",
+      "elevation": 240,
+      "latitude": 42.95,
+      "longitude": -81.88,
+      "min_temp": -19,
+      "wind_50yr": 99,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wawa",
+      "elevation": 290,
+      "latitude": 47.98,
+      "longitude": -84.78,
+      "min_temp": -36,
+      "wind_50yr": 90,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Welland",
+      "elevation": 180,
+      "latitude": 42.98,
+      "longitude": -79.25,
+      "min_temp": -17,
+      "wind_50yr": 100,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "West Lorne",
+      "elevation": 215,
+      "latitude": 42.6,
+      "longitude": -81.6,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Whitby",
+      "elevation": 85,
+      "latitude": 43.87,
+      "longitude": -78.93,
+      "min_temp": -22,
+      "wind_50yr": 104,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Whitby (Brooklin)",
+      "elevation": 160,
+      "latitude": 43.95,
+      "longitude": -78.95,
+      "min_temp": -22,
+      "wind_50yr": 99,
+      "ice_50yr": 20,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "White River",
+      "elevation": 375,
+      "latitude": 48.6,
+      "longitude": -85.28,
+      "min_temp": -42,
+      "wind_50yr": 83,
+      "ice_50yr": 13,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wiarton",
+      "elevation": 185,
+      "latitude": 44.75,
+      "longitude": -81.15,
+      "min_temp": -21,
+      "wind_50yr": 100,
+      "ice_50yr": 18,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Windsor",
+      "elevation": 185,
+      "latitude": 42.3,
+      "longitude": -83.02,
+      "min_temp": -18,
+      "wind_50yr": 99,
+      "ice_50yr": 25,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wingham",
+      "elevation": 310,
+      "latitude": 43.88,
+      "longitude": -81.32,
+      "min_temp": -20,
+      "wind_50yr": 106,
+      "ice_50yr": 23,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Woodstock",
+      "elevation": 300,
+      "latitude": 43.13,
+      "longitude": -80.75,
+      "min_temp": -21,
+      "wind_50yr": 99,
+      "ice_50yr": 28,
+      "loading_district": "Heavy"
+    },
+    {
+      "location": "Wyoming",
+      "elevation": 215,
+      "latitude": 42.95,
+      "longitude": -82.12,
+      "min_temp": -18,
+      "wind_50yr": 100,
+      "ice_50yr": 24,
+      "loading_district": "Heavy"
+    }
+  ]
+}

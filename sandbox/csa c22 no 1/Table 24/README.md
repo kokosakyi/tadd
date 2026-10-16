@@ -1,0 +1,1 @@
+# Table 24: Minimum in-span vertical clearances between supply and communication conductors\n\n- **Governing Standard**: CSA C22.3 No. 1-15 (Overhead Systems)\n- **Associated Clauses & Annexes**: Clauses 5.10.3.2, 5.10.3.3, A.5.10.3\n- **Extracted Data Model**: `src/data/csa/c22_3_no1/table24.js`\n
