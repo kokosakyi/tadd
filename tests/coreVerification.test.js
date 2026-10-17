@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine.js';
-import { calculateClimaticCriteria, exportLoadCaseMatrixCsv } from '../src/core/weather/weatherEngine.js';
-import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine.js';
-import { searchCodeRegistry } from '../src/core/code/codeLibraryRegistry.js';
+import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine';
+import { calculateClimaticCriteria, exportLoadCaseMatrixCsv } from '../src/core/weather/weatherEngine';
+import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine';
+import { searchCodeRegistry } from '../src/core/code/codeLibraryRegistry';
+
 
 describe('Core Verification Test Suite', () => {
   it('searches Code Library Registry properly', () => {

@@ -14,7 +14,8 @@ import {
   getTable
 } from '../src/data/csa/digitized/index.js';
 
-import { getTableDetails } from '../src/core/code/tableContentResolver.js';
+import { getTableDetails } from '../src/core/code/tableContentResolver.ts';
+
 
 console.log('=== Digitized CSA Code-as-Data Test Suite ===');
 

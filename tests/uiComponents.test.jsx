@@ -166,8 +166,9 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
   });
 
   it('UniversalTableRenderer renders all 83 digitized tables completely with zero [object Object] or blank tables', async () => {
-    const { ALL_TABLES } = await import('../src/core/code/codeLibraryRegistry.js');
-    const { getTableDetails } = await import('../src/core/code/tableContentResolver.js');
+    const { ALL_TABLES } = await import('../src/core/code/codeLibraryRegistry');
+    const { getTableDetails } = await import('../src/core/code/tableContentResolver');
+
     const { default: UniversalTableRenderer } = await import('../src/components/codeLibrary/UniversalTableRenderer.jsx');
 
     expect(ALL_TABLES.length).toBe(83);

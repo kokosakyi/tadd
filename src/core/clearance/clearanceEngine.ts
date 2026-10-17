@@ -5,9 +5,11 @@
 
 import { resolveTable2Clearance } from '../../utils/csaTable2Resolver.js';
 import { TABLE_2_ROWS } from '../../data/csa/c22_3_no1/table2.js';
-import { createTraceRecord } from '../trace/calcTrace.js';
+import { createTraceRecord } from '../trace/calcTrace';
+import type { UtilityOverlay, VerticalClearanceInput } from '../../types/clearance';
+import type { CalcStep } from '../../types/trace';
 
-export const UTILITY_OVERLAYS = [
+export const UTILITY_OVERLAYS: UtilityOverlay[] = [
   { id: 'csa_std', label: 'CSA Base Standard (No Buffer)', bufferM: 0.0, description: 'Direct CSA C22.3 No. 1 baseline' },
   { id: 'hydro_one', label: 'Hydro One / Ontario Standard (+0.3 m)', bufferM: 0.3, description: 'Ontario distributor safety & re-sag buffer' },
   { id: 'bc_hydro', label: 'BC Hydro Standard (+0.5 m)', bufferM: 0.5, description: 'BC Hydro design clearance buffer' },
@@ -31,8 +33,9 @@ export function calculateVerticalClearance({
   thermalSagBufferM = 0.3,
   iceWindSagBufferM = 0.5,
   siteOptions = {}
-}) {
-  const row = TABLE_2_ROWS.find((r) => r.id === rowId) || TABLE_2_ROWS[0];
+}: VerticalClearanceInput = {}) {
+  const tableRows = TABLE_2_ROWS as Array<{ id: string; label: string; [key: string]: any }>;
+  const row = tableRows.find((r) => r.id === rowId) || tableRows[0];
   const overlay = UTILITY_OVERLAYS.find((o) => o.id === ownerOverlayId) || UTILITY_OVERLAYS[0];
   const ownerBuffer = ownerOverlayId === 'custom' ? Number(customBufferM) || 0 : overlay.bufferM;
 
@@ -44,9 +47,9 @@ export function calculateVerticalClearance({
     project: {}
   });
 
-  const baseTableClearanceM = t2Result.baseM || 0;
-  const modifiersM = t2Result.modifiersM || 0;
-  const csaRequiredM = t2Result.finalM || baseTableClearanceM;
+  const baseTableClearanceM: number = t2Result.baseM || 0;
+  const modifiersM: number = t2Result.modifiersM || 0;
+  const csaRequiredM: number = t2Result.finalM || baseTableClearanceM;
 
   // 2. Add Owner Overlay Buffer
   const designRequiredClearanceM = Number((csaRequiredM + ownerBuffer).toFixed(3));
@@ -74,7 +77,7 @@ export function calculateVerticalClearance({
   const actualClearanceM = Math.min(thermalActualClearanceM, iceActualClearanceM);
   const clearanceMarginM = Number((actualClearanceM - designRequiredClearanceM).toFixed(3));
 
-  let status = 'PASS';
+  let status: 'PASS' | 'MARGINAL' | 'VIOLATION' = 'PASS';
   if (clearanceMarginM < 0 && clearanceMarginM >= -0.3) {
     status = 'MARGINAL';
   } else if (clearanceMarginM < -0.3) {
@@ -82,7 +85,7 @@ export function calculateVerticalClearance({
   }
 
   // 5. Construct Audit Trace
-  const steps = [
+  const steps: CalcStep[] = [
     {
       op: 'lookup',
       ref: `Table 2, row "${row.id}", Col. ${t2Result.columnId}`,
@@ -146,6 +149,7 @@ export function calculateVerticalClearance({
       thermalTotalReqM,
       iceTotalReqM,
       governingSagCondition,
+      governingRequiredM,
       actualClearanceM,
       clearanceMarginM,
       status

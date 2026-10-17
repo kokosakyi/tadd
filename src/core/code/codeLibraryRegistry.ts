@@ -29,6 +29,9 @@ import {
   searchLessons
 } from '../../data/lessons/plsCaddLessons.js';
 
+
+import type { CsaClause, CsaTable, CsaDefinition, StandardBookMeta, PlsLesson } from '../../types/csaCode';
+
 export {
   ALL_TABLES,
   TABLES_MAP,
@@ -43,39 +46,40 @@ export {
 };
 
 // Re-export core CSA clauses directly for tests asserting exact 792 CSA clause count
-export const ALL_CLAUSES = CSA_ALL_CLAUSES;
+export const ALL_CLAUSES: CsaClause[] = CSA_ALL_CLAUSES as unknown as CsaClause[];
 
 /**
  * Format a PLS lesson into a clause-compatible object for unified reader / search views
  */
-export function formatLessonAsClause(lesson) {
+export function formatLessonAsClause(lesson: PlsLesson | null): CsaClause | null {
   if (!lesson) return null;
   return {
     id: lesson.id,
     clauseNumber: lesson.clauseNumber,
     title: lesson.title,
-    text: lesson.dialogue.map(d => `${d.name} (${d.role}):\n${d.text}`).join('\n\n'),
+    text: lesson.dialogue.map((d: { name: string; role: string; text: string }) => `${d.name} (${d.role}):\n${d.text}`).join('\n\n'),
     section: lesson.section,
     standardId: 'pls_cadd_lessons',
     standardName: 'PLS-CADD Lessons Learned',
-    isLesson: true,
-    lesson,
+    edition: '2026',
+    page: 1,
     tablesReferenced: [],
-    crossReferences: lesson.csaCitations || []
+    clausesReferenced: lesson.csaCitations || []
   };
 }
 
-export const ALL_LESSON_CLAUSES = PLS_LESSONS.map(formatLessonAsClause);
+export const ALL_LESSON_CLAUSES: (CsaClause | null)[] = (PLS_LESSONS as PlsLesson[]).map(formatLessonAsClause);
+
 
 /**
  * All books available in the Reference Library Hall
  */
-export const ALL_LIBRARY_BOOKS = [
-  ...CSA_STANDARDS.filter(s => s.id !== 'all'),
+export const ALL_LIBRARY_BOOKS: StandardBookMeta[] = [
+  ...CSA_STANDARDS.filter((s: { id: string }) => s.id !== 'all'),
   PLS_BOOK_META
 ];
 
-export const CODE_EDITIONS = ALL_LIBRARY_BOOKS.map(s => ({
+export const CODE_EDITIONS = ALL_LIBRARY_BOOKS.map((s) => ({
   id: s.id,
   standard: s.code,
   edition: s.edition,
@@ -98,9 +102,9 @@ export const REGISTERED_TABLES = ALL_TABLES;
 /**
  * Get distinct sections for a standard or all standards, sorted alphabetically per project rules
  */
-export function getStandardSections(standardId = 'all') {
+export function getStandardSections(standardId = 'all'): string[] {
   if (standardId === 'pls_cadd_lessons') {
-    return [...PLS_SECTIONS].sort((a, b) => a.localeCompare(b));
+    return [...PLS_SECTIONS].sort((a: string, b: string) => a.localeCompare(b));
   }
   return getCsaStandardSections(standardId);
 }
@@ -108,7 +112,7 @@ export function getStandardSections(standardId = 'all') {
 /**
  * Unified clause lookup handling CSA clauses and PLS lessons
  */
-export function getClause(standardId = 'all', clauseNumber = '') {
+export function getClause(standardId = 'all', clauseNumber = ''): CsaClause | null {
   if (standardId === 'pls_cadd_lessons' || String(clauseNumber).startsWith('pls_lesson_')) {
     const lesson = getLesson(clauseNumber);
     return lesson ? formatLessonAsClause(lesson) : null;
@@ -123,18 +127,36 @@ export function getClause(standardId = 'all', clauseNumber = '') {
   return null;
 }
 
+export interface SearchCodeFilters {
+  standardId?: string;
+  section?: string;
+  [key: string]: unknown;
+}
+
+export interface SearchCodeResult {
+  clauses: CsaClause[];
+  tables: CsaTable[];
+  definitions: CsaDefinition[];
+  totalCounts: {
+    clauses: number;
+    tables: number;
+    definitions: number;
+  };
+  crossSectionClauseCount: number;
+}
+
 /**
  * Unified queryable search across CSA standards and PLS-CADD lessons
  */
-export function searchCodeRegistry(query = '', filters = {}) {
+export function searchCodeRegistry(query = '', filters: SearchCodeFilters = {}): SearchCodeResult {
   const { standardId = 'all', section = 'all' } = filters;
 
   if (standardId === 'pls_cadd_lessons') {
-    let matchedLessons = searchLessons(query);
+    let matchedLessons: PlsLesson[] = searchLessons(query);
     if (section !== 'all') {
-      matchedLessons = matchedLessons.filter(l => l.section === section);
+      matchedLessons = matchedLessons.filter((l) => l.section === section);
     }
-    const clauses = matchedLessons.map(formatLessonAsClause);
+    const clauses = matchedLessons.map(formatLessonAsClause).filter((c): c is CsaClause => c !== null);
     return {
       clauses,
       tables: [],
@@ -151,18 +173,20 @@ export function searchCodeRegistry(query = '', filters = {}) {
   const result = searchDigitizedCode(query, filters);
 
   // If searching across all standards and query is present, include matched PLS lessons
-  let combinedClauses = result.clauses;
+  let combinedClauses: CsaClause[] = result.clauses as unknown as CsaClause[];
   if (standardId === 'all' && query.trim()) {
-    const matchedLessons = searchLessons(query).map(formatLessonAsClause);
+    const matchedLessons = (searchLessons(query) as PlsLesson[])
+      .map(formatLessonAsClause)
+      .filter((c: CsaClause | null): c is CsaClause => c !== null);
     if (matchedLessons.length > 0) {
-      combinedClauses = [...result.clauses, ...matchedLessons];
+      combinedClauses = [...(result.clauses as unknown as CsaClause[]), ...matchedLessons];
     }
   }
 
   return {
     clauses: combinedClauses,
-    tables: result.tables,
-    definitions: result.definitions,
+    tables: result.tables as unknown as CsaTable[],
+    definitions: result.definitions as unknown as CsaDefinition[],
     totalCounts: {
       ...result.totalCounts,
       clauses: combinedClauses.length
@@ -170,3 +194,4 @@ export function searchCodeRegistry(query = '', filters = {}) {
     crossSectionClauseCount: result.crossSectionClauseCount || 0
   };
 }
+

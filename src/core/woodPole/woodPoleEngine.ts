@@ -10,7 +10,9 @@ import {
   calculateResistingMoment
 } from '../../utils/woodPoleLoadingEngine.js';
 import { getAllO15Species, getAllO15PoleClasses } from '../../data/csa/o15/index.js';
-import { createTraceRecord } from '../trace/calcTrace.js';
+import { createTraceRecord } from '../trace/calcTrace';
+import type { WoodPoleInput } from '../../types/woodPole';
+import type { CalcStep } from '../../types/trace';
 
 export { getAllO15Species, getAllO15PoleClasses };
 
@@ -31,7 +33,7 @@ export function calculateWoodPoleStructural({
     { name: 'Neutral / Secondary', heightM: 9.8, count: 1, diameterMm: 12.0, tensionN: 4500 },
     { name: 'Telecom Bundle (Joint Use)', heightM: 7.5, count: 1, diameterMm: 25.0, tensionN: 3500 }
   ]
-}) {
+}: WoodPoleInput = {}) {
   const poleCalc = calculatePoleLoading({
     speciesCode,
     poleLengthM: Number(poleLengthM),
@@ -44,13 +46,16 @@ export function calculateWoodPoleStructural({
     attachments
   });
 
+  const embedmentM = poleCalc.geometry?.embedmentM ?? (poleCalc as any).embedmentM ?? 0;
+
+
   // Build Audit Trace Record
-  const steps = [
+  const steps: CalcStep[] = [
     {
       op: 'formula',
       ref: 'CSA C22.3 No. 1 Embedment',
       description: 'Standard pole embedment: 10% of length + 0.6 m',
-      value: poleCalc.embedmentM,
+      value: embedmentM,
       unit: 'm'
     },
     {
@@ -71,7 +76,7 @@ export function calculateWoodPoleStructural({
       op: 'multiplier',
       ref: `CSA C22.3 No. 1 Table 31 (Grade ${grade})`,
       description: `Overload Capacity Factors: Transverse Wind=${poleCalc.factors?.ocfWind}x, Wire Tension=${poleCalc.factors?.ocfAngle}x`,
-      value: { ocfWind: poleCalc.factors?.ocfWind, ocfAngle: poleCalc.factors?.ocfAngle },
+      value: `ocfWind=${poleCalc.factors?.ocfWind}, ocfAngle=${poleCalc.factors?.ocfAngle}`,
       unit: 'factor'
     },
     {

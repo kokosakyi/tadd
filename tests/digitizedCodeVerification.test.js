@@ -8,7 +8,8 @@ import {
   getClause,
   getTable
 } from '../src/data/csa/digitized/index.js';
-import { getTableDetails } from '../src/core/code/tableContentResolver.js';
+import { getTableDetails } from '../src/core/code/tableContentResolver';
+
 
 describe('Digitized CSA Code-as-Data Verification Test Suite', () => {
   it('verifies standard collections counts', () => {

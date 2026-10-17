@@ -3,10 +3,11 @@
  * Validates pure mathematical engines and audit trace record schemas.
  */
 
-import { calculateVerticalClearance, UTILITY_OVERLAYS } from '../src/core/clearance/clearanceEngine.js';
-import { calculateClimaticCriteria, exportLoadCaseMatrixCsv } from '../src/core/weather/weatherEngine.js';
-import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine.js';
-import { searchCodeRegistry, CORE_CLAUSES, REGISTERED_TABLES } from '../src/core/code/codeLibraryRegistry.js';
+import { calculateVerticalClearance, UTILITY_OVERLAYS } from '../src/core/clearance/clearanceEngine.ts';
+import { calculateClimaticCriteria, exportLoadCaseMatrixCsv } from '../src/core/weather/weatherEngine.ts';
+import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine.ts';
+import { searchCodeRegistry, CORE_CLAUSES, REGISTERED_TABLES } from '../src/core/code/codeLibraryRegistry.ts';
+
 
 console.log('--- 1. Testing Code Library Registry ---');
 const searchResult = searchCodeRegistry('Table 2');

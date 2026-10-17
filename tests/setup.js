@@ -22,6 +22,9 @@ if (typeof window !== 'undefined') {
     };
   };
 
+  // Mock window.scrollTo
+  window.scrollTo = typeof vi !== 'undefined' ? vi.fn() : () => {};
+
   // Leaflet container element mocks
   if (window.HTMLDivElement) {
     if (!window.HTMLDivElement.prototype.getBoundingClientRect) {

@@ -14,7 +14,9 @@ import {
   DETERMINISTIC_MINIMUMS
 } from '../../utils/weatherCriteriaEngine.js';
 import { generateUnifiedLoadCaseMatrix } from '../../utils/loadCaseMatrixEngine.js';
-import { createTraceRecord } from '../trace/calcTrace.js';
+import { createTraceRecord } from '../trace/calcTrace';
+import type { WeatherCriteriaInput } from '../../types/weather';
+import type { CalcStep } from '../../types/trace';
 
 export { RETURN_PERIOD_FACTORS, DETERMINISTIC_MINIMUMS };
 
@@ -33,7 +35,7 @@ export function calculateClimaticCriteria({
   isBundled = false,
   rulingSpanM = 250,
   hasDampers = true
-}) {
+}: WeatherCriteriaInput = {}) {
   // 1. Station Data
   const stationData = queryModule1GeoDB(province, location) || {
     location,
@@ -98,19 +100,19 @@ export function calculateClimaticCriteria({
   );
 
   // 8. Build Audit Trace
-  const steps = [
+  const steps: CalcStep[] = [
     {
       op: 'lookup',
       ref: 'CSA C22.3 No. 60826 Table CA.1',
       description: `Station 50-yr wind (${w50} km/h) & ice (${t50} mm) for ${stationData.location}`,
-      value: { w50, t50 },
+      value: `${w50} km/h, ${t50} mm`,
       unit: 'km/h, mm'
     },
     {
       op: 'multiplier',
       ref: `Return Period Scaling (${returnPeriod}-yr)`,
       description: `Wind factor Tw=${scalingResult.Tw?.toFixed(2) || '1.00'}, Ice factor Ti=${scalingResult.Ti?.toFixed(2) || '1.00'}`,
-      value: { w_T: scalingResult.w_T, t_T: scalingResult.t_T },
+      value: `w_T=${scalingResult.w_T}, t_T=${scalingResult.t_T}`,
       unit: 'km/h, mm'
     },
     {
@@ -151,9 +153,10 @@ export function calculateClimaticCriteria({
       q0_wind_Pa: physicsResult.q0_extreme,
       governed_ice_mm: guardrailResult.governed_t_design,
       governed_wind_Pa: guardrailResult.governed_q0,
-      initialTensionLimitKn: tensionResult.initial_unloaded_tension_limit_kN,
-      finalTensionLimitKn: tensionResult.final_unloaded_tension_limit_kN
+      initialTensionLimitKn: (tensionResult as any).initial_unloaded_tension_limit_kN ?? tensionResult.maxInitialUnloadedTensionKn,
+      finalTensionLimitKn: (tensionResult as any).final_unloaded_tension_limit_kN ?? tensionResult.maxFinalUnloadedTensionKn
     },
+
     citations: [
       'CAN/CSA-C22.3 No. 60826-10 Table CA.1',
       'CAN/CSA-C22.3 No. 60826-10 Clauses 6.2–6.4',
@@ -179,7 +182,7 @@ export function calculateClimaticCriteria({
 /**
  * Export load case matrix to CSV string
  */
-export function exportLoadCaseMatrixCsv(matrix = []) {
+export function exportLoadCaseMatrixCsv(matrix: Array<Record<string, unknown>> = []): string {
   const headers = ['Case ID', 'Standard Code', 'Case Name', 'Description', 'Type', 'Radial Ice (mm)', 'Wind Pressure (Pa)', 'Temperature (°C)', 'Load Factors / OCF', 'Governing Use'];
   const rows = matrix.map((m) => [
     `"${m.id}"`,

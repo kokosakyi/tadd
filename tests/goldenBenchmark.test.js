@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import benchmarks from './fixtures/goldenBenchmarks.json';
-import { calculateClimaticCriteria } from '../src/core/weather/weatherEngine.js';
-import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine.js';
-import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine.js';
+import { calculateClimaticCriteria } from '../src/core/weather/weatherEngine';
+import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine';
+import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine';
+
 
 describe('Golden Benchmark Verification Suite', () => {
   it('matches reference benchmark for climatic criteria scaling and load cases', () => {

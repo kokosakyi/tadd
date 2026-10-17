@@ -1,7 +1,35 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { UTILITY_OVERLAYS } from '../core/clearance/clearanceEngine.js';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { UTILITY_OVERLAYS } from '../core/clearance/clearanceEngine';
+import type { UtilityOverlay } from '../types/clearance';
 
-export const CANADIAN_PROVINCES = [
+export interface ProjectItem {
+  id: string;
+  name: string;
+  code?: string;
+  facilityType?: 'Distribution' | 'Transmission' | 'Joint-Use';
+  operatingVoltageKv?: number;
+  province?: string;
+  ownerOverlayId?: string;
+  customBufferM?: number;
+  pinnedSnapshot?: string;
+  createdAt?: string;
+  [key: string]: unknown;
+}
+
+export interface ProjectContextValue {
+  projects: ProjectItem[];
+  activeProject: ProjectItem;
+  createProject: (projectData: Partial<ProjectItem>) => ProjectItem;
+  updateActiveProject: (updates: Partial<ProjectItem>) => void;
+  switchProject: (projectId: string) => void;
+  deleteProject: (projectId: string) => void;
+  isProjectWizardOpen: boolean;
+  setIsProjectWizardOpen: (open: boolean) => void;
+  provinces: string[];
+  overlays: UtilityOverlay[];
+}
+
+export const CANADIAN_PROVINCES: string[] = [
   'Alberta',
   'British Columbia',
   'Manitoba',
@@ -17,11 +45,11 @@ export const CANADIAN_PROVINCES = [
   'Yukon'
 ].sort((a, b) => a.localeCompare(b));
 
-const DEFAULT_PROJECT = {
+const DEFAULT_PROJECT: ProjectItem = {
   id: 'prj-default-01',
   name: 'Ontario 44kV Feeder Standard',
   code: 'LND-2026-001',
-  facilityType: 'Distribution', // 'Distribution' | 'Transmission' | 'Joint-Use'
+  facilityType: 'Distribution',
   operatingVoltageKv: 44.0,
   province: 'Ontario',
   ownerOverlayId: 'hydro_one',
@@ -30,10 +58,10 @@ const DEFAULT_PROJECT = {
   createdAt: new Date().toISOString()
 };
 
-const ProjectContext = createContext(null);
+const ProjectContext = createContext<ProjectContextValue | null>(null);
 
-export function ProjectProvider({ children }) {
-  const [projects, setProjects] = useState(() => {
+export function ProjectProvider({ children }: { children: ReactNode }) {
+  const [projects, setProjects] = useState<ProjectItem[]>(() => {
     try {
       const saved = localStorage.getItem('linedesk_ca_projects');
       if (saved) {
@@ -46,7 +74,7 @@ export function ProjectProvider({ children }) {
     return [DEFAULT_PROJECT];
   });
 
-  const [activeProjectId, setActiveProjectId] = useState(() => {
+  const [activeProjectId, setActiveProjectId] = useState<string>(() => {
     try {
       const savedId = localStorage.getItem('linedesk_ca_active_project_id');
       if (savedId) return savedId;
@@ -54,7 +82,7 @@ export function ProjectProvider({ children }) {
     return DEFAULT_PROJECT.id;
   });
 
-  const [isProjectWizardOpen, setIsProjectWizardOpen] = useState(false);
+  const [isProjectWizardOpen, setIsProjectWizardOpen] = useState<boolean>(false);
 
   // Sync projects to localStorage
   useEffect(() => {
@@ -72,9 +100,10 @@ export function ProjectProvider({ children }) {
 
   const activeProject = projects.find((p) => p.id === activeProjectId) || projects[0] || DEFAULT_PROJECT;
 
-  const createProject = (projectData) => {
-    const newProject = {
+  const createProject = (projectData: Partial<ProjectItem>): ProjectItem => {
+    const newProject: ProjectItem = {
       id: `prj-${Date.now()}`,
+      name: projectData.name || 'Untitled Project',
       createdAt: new Date().toISOString(),
       pinnedSnapshot: 'C22.3-1:2020 / 60826-10 (Verified Snapshot)',
       ...projectData
@@ -84,19 +113,19 @@ export function ProjectProvider({ children }) {
     return newProject;
   };
 
-  const updateActiveProject = (updates) => {
+  const updateActiveProject = (updates: Partial<ProjectItem>) => {
     setProjects((prev) =>
       prev.map((p) => (p.id === activeProjectId ? { ...p, ...updates } : p))
     );
   };
 
-  const switchProject = (projectId) => {
+  const switchProject = (projectId: string) => {
     if (projects.some((p) => p.id === projectId)) {
       setActiveProjectId(projectId);
     }
   };
 
-  const deleteProject = (projectId) => {
+  const deleteProject = (projectId: string) => {
     if (projects.length <= 1) return; // Keep at least one project
     const remaining = projects.filter((p) => p.id !== projectId);
     setProjects(remaining);
@@ -128,7 +157,7 @@ export function ProjectProvider({ children }) {
   );
 }
 
-export function useProject() {
+export function useProject(): ProjectContextValue {
   const ctx = useContext(ProjectContext);
   if (!ctx) throw new Error('useProject must be used within a ProjectProvider');
   return ctx;

@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
 import { calculateModule2RPScaling, calculateModule3Physics } from '../src/utils/weatherCriteriaEngine.js';
-import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine.js';
-import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine.js';
+import { calculateVerticalClearance } from '../src/core/clearance/clearanceEngine';
+import { calculateWoodPoleStructural } from '../src/core/woodPole/woodPoleEngine';
+
 
 describe('Engineering Calculation Harness - Property-Based & Fuzz Invariants', () => {
   it('scaling wind and ice returns finite positive numbers across valid return periods', () => {

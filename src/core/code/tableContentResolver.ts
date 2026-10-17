@@ -20,26 +20,34 @@ import {
 } from '../../data/csa/o15/index.js';
 
 import { TABLES_MAP } from '../../data/csa/digitized/index.js';
+import type { CsaTable } from '../../types/csaCode';
+
+export interface TableDetailsResult extends CsaTable {
+  details?: Record<string, unknown> | null;
+}
 
 /**
  * Get full data model for any of the 83 digitized tables
- * @param {string} tableId e.g. 'c22_3_no1_table2', 'c22_3_60826_tableCA1', 'csa_o15_table3'
+ * @param tableId e.g. 'c22_3_no1_table2', 'c22_3_60826_tableCA1', 'csa_o15_table3'
  */
-export function getTableDetails(tableId) {
+export function getTableDetails(tableId: string): TableDetailsResult | null {
   if (!tableId) return null;
-  const tblMeta = TABLES_MAP[tableId] || Object.values(TABLES_MAP).find(t => t.id === tableId || t.key === tableId);
+  const tablesMap = TABLES_MAP as Record<string, any>;
+  const tblMeta = tablesMap[tableId] || Object.values(tablesMap).find((t: any) => {
+    return t.id === tableId || t.key === tableId;
+  });
   if (!tblMeta) return null;
 
   const stdId = tblMeta.standardId;
   const key = tblMeta.key; // e.g. 'table2', 'tableCA1', 'table3'
 
-  let data = null;
+  let data: Record<string, unknown> | null = null;
 
   if (stdId === 'c22_3_no1') {
-    data = CSA_C22_3_NO1_TABLES_DATA[key] || null;
+    data = (CSA_C22_3_NO1_TABLES_DATA as Record<string, any>)[key] || null;
   } else if (stdId === 'c22_3_60826') {
-    // 60826 uses keys like 'Table 1', 'Table CA.1', etc.
-    const mapped = CSA_60826_TABLES[tblMeta.number] || CSA_60826_TABLES[key];
+    const tables60826 = CSA_60826_TABLES as Record<string, any>;
+    const mapped = tables60826[tblMeta.number] || tables60826[key];
     if (mapped) {
       data = {
         meta: mapped.meta,
