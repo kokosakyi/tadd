@@ -49,28 +49,28 @@ export default function Dashboard({ onNavigate }) {
         style={{
           padding: '1.75rem',
           borderRadius: '16px',
-          background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
-          border: '1px solid rgba(56, 189, 248, 0.2)'
+          border: '1px solid var(--border-color)',
+          boxShadow: 'var(--shadow-glass)'
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.25rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-              <span className="badge badge-info" style={{ fontSize: '0.75rem' }}>
+              <span className="badge badge-info" style={{ fontSize: '0.75rem', borderRadius: '6px', padding: '0.2rem 0.55rem' }}>
                 ACTIVE DESIGN PROJECT
               </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
                 {activeProject?.code}
               </span>
             </div>
-            <h1 style={{ fontSize: '1.85rem', fontWeight: 'bold', color: 'var(--text-main)', margin: '0 0 0.5rem' }}>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-main)', margin: '0 0 0.5rem', letterSpacing: '-0.02em' }}>
               {activeProject?.name}
             </h1>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              <div><strong>Facility:</strong> {activeProject?.facilityType} ({activeProject?.operatingVoltageKv} kV)</div>
-              <div><strong>Province:</strong> {activeProject?.province}</div>
-              <div><strong>Overlay:</strong> {activeProject?.ownerOverlayId?.replace('_', ' ').toUpperCase()}</div>
-              <div><strong>Snapshot:</strong> {activeProject?.pinnedSnapshot}</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              <div><strong style={{ color: 'var(--text-main)' }}>Facility:</strong> {activeProject?.facilityType} ({activeProject?.operatingVoltageKv} kV)</div>
+              <div><strong style={{ color: 'var(--text-main)' }}>Province:</strong> {activeProject?.province}</div>
+              <div><strong style={{ color: 'var(--text-main)' }}>Overlay:</strong> {activeProject?.ownerOverlayId?.replace('_', ' ').toUpperCase()}</div>
+              <div><strong style={{ color: 'var(--text-main)' }}>Snapshot:</strong> {activeProject?.pinnedSnapshot}</div>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export default function Dashboard({ onNavigate }) {
             type="button"
             onClick={() => setIsProjectWizardOpen(true)}
             className="btn-primary"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.65rem 1.15rem' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.65rem 1.15rem', borderRadius: '10px' }}
           >
             <FolderPlus size={18} />
             <span>Setup New Project</span>
@@ -88,25 +88,24 @@ export default function Dashboard({ onNavigate }) {
 
       {/* Overview Intro */}
       <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: 'var(--text-main)', marginBottom: '0.5rem' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.4rem', letterSpacing: '-0.015em' }}>
           Engineering Workflow Modules
         </h2>
-        <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.5 }}>
           Execute unit-aware, verified calculations conforming to the CSA C22.3 standards family. Every result produces an immutable audit trace record.
         </p>
       </div>
 
       {/* Modules Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
         {workflowModules.map((m, idx) => {
           const Icon = m.icon;
           return (
             <div
               key={m.id}
               onClick={() => onNavigate(m.id)}
-              className="glass-panel glass-card-lift animate-stagger-item"
+              className="glass-panel"
               style={{
-                '--stagger-index': idx,
                 padding: '1.75rem',
                 borderRadius: '16px',
                 cursor: 'pointer',
@@ -114,13 +113,16 @@ export default function Dashboard({ onNavigate }) {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 border: '1px solid var(--border-color)',
-                position: 'relative'
+                position: 'relative',
+                transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(56, 189, 248, 0.4)';
-                e.currentTarget.style.boxShadow = '0 12px 24px -10px rgba(0, 0, 0, 0.5)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.borderColor = 'var(--accent-cyan)';
+                e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
               }}
               onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.borderColor = 'var(--border-color)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
@@ -129,34 +131,34 @@ export default function Dashboard({ onNavigate }) {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
                   <div
                     style={{
-                      width: '46px',
-                      height: '46px',
+                      width: '44px',
+                      height: '44px',
                       borderRadius: '12px',
                       background: m.color,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#fff',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
                     }}
                   >
-                    <Icon size={24} />
+                    <Icon size={22} />
                   </div>
-                  <span className="badge" style={{ fontSize: '0.7rem', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-muted)' }}>
+                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: 'var(--bg-inset)', color: 'var(--text-muted)', fontWeight: 500 }}>
                     {m.phase}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.2rem', fontWeight: '600', color: 'var(--text-main)', marginBottom: '0.65rem' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.65rem' }}>
                   {m.title}
                 </h3>
 
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   {m.description}
                 </p>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-cyan)', fontWeight: '600', fontSize: '0.85rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.85rem' }}>
                 <span>Launch Engine</span>
                 <ArrowRight size={16} />
               </div>

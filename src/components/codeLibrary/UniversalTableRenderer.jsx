@@ -194,21 +194,21 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
           {sectionTitle}
         </div>
       )}
-      <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize }}>
+      <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-card, 16px)', background: 'var(--bg-card)' }}>
+        <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, fontSize }}>
           <thead>
-            <tr style={{ background: 'rgba(15, 23, 42, 0.85)', borderBottom: '2px solid var(--border-color)' }}>
+            <tr style={{ background: 'var(--bg-card)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid var(--border-color)' }}>
               {hasCrossingClass && (
-                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--accent-cyan)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--accent-blue)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Class
                 </th>
               )}
               {hasVoltageRange && (
-                <th style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-cyan)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+                <th style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-blue)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Voltage Range
                 </th>
               )}
-              <th style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-cyan)', fontWeight: '700', borderRight: '1px solid var(--border-color)', minWidth: '180px' }}>
+              <th style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-blue)', fontWeight: '600', borderBottom: '1px solid var(--border-color)', minWidth: '180px' }}>
                 Classification / Conductor or Location
               </th>
               {columns.map((col, idx) => {
@@ -217,10 +217,10 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                 const colFn = typeof col === 'object' && Array.isArray(col.footnotes) && col.footnotes.length > 0 ? ` [${col.footnotes.join(', ')}]` : '';
 
                 return (
-                  <th key={idx} style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '600', borderRight: '1px solid var(--border-color)' }}>
+                  <th key={idx} style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-muted)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                     <div>{colLabel}{colFn}</div>
                     {colSub && colSub !== colLabel && (
-                      <div style={{ fontSize: '0.68rem', fontWeight: '400', color: 'var(--text-muted)', marginTop: '0.15rem' }}>
+                      <div style={{ fontSize: '0.68rem', fontWeight: '400', color: 'var(--text-dim)', marginTop: '0.15rem' }}>
                         {colSub}
                       </div>
                     )}
@@ -228,7 +228,7 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                 );
               })}
               {hasRuleOrAdder && (
-                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '600' }}>
+                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-muted)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Voltage Adder / Formula
                 </th>
               )}
@@ -278,33 +278,33 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                 <tr
                   key={rIdx}
                   style={{
-                    background: isKeyRow ? 'rgba(6, 182, 212, 0.1)' : rIdx % 2 === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.02)',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                    background: isKeyRow ? 'rgba(10, 132, 255, 0.08)' : rIdx % 2 === 0 ? 'transparent' : 'var(--bg-zebra)',
+                    transition: 'background 0.12s ease'
                   }}
                 >
                   {hasCrossingClass && (
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '700', color: 'var(--accent-cyan)', borderRight: '1px solid var(--border-color)' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--accent-blue)', borderBottom: '1px solid var(--border-subtle)', fontVariantNumeric: 'tabular-nums' }}>
                       {row.crossingClass || '—'}
                     </td>
                   )}
                   {hasVoltageRange && (
-                    <td style={{ padding: cellPad, color: 'var(--text-secondary)', fontWeight: '600', borderRight: '1px solid var(--border-color)', whiteSpace: 'nowrap' }}>
+                    <td style={{ padding: cellPad, color: 'var(--text-muted)', fontWeight: '500', borderBottom: '1px solid var(--border-subtle)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>
                       {row.voltageRange || '—'}
                     </td>
                   )}
-                  <td style={{ padding: cellPad, color: isKeyRow ? 'var(--accent-cyan)' : 'var(--text-main)', fontWeight: isKeyRow ? '700' : '500', borderRight: '1px solid var(--border-color)' }}>
+                  <td style={{ padding: cellPad, color: isKeyRow ? 'var(--accent-blue)' : 'var(--text-main)', fontWeight: isKeyRow ? '600' : '400', borderBottom: '1px solid var(--border-subtle)' }}>
                     <div>
                       {rowLabel}
-                      {rowFn && <span style={{ color: 'var(--accent-cyan)', fontSize: '0.72rem', fontWeight: '600' }}>{rowFn}</span>}
+                      {rowFn && <span style={{ color: 'var(--accent-blue)', fontSize: '0.72rem', fontWeight: '600' }}>{rowFn}</span>}
                     </div>
                     {row.description && row.description !== rowLabel && (
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>{row.description}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.15rem' }}>{row.description}</div>
                     )}
                     {row.rule && (
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>{row.rule}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.15rem' }}>{row.rule}</div>
                     )}
                     {row.notes && (
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>{row.notes}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.15rem' }}>{row.notes}</div>
                     )}
                   </td>
                   {cellValues.map((rawCell, cIdx) => {
@@ -316,9 +316,10 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                         style={{
                           padding: cellPad,
                           textAlign: 'center',
-                          color: isMuted ? 'var(--text-muted)' : 'var(--text-secondary)',
-                          fontWeight: isMuted ? '400' : '600',
-                          borderRight: '1px solid var(--border-color)'
+                          color: isMuted ? 'var(--text-dim)' : 'var(--text-main)',
+                          fontWeight: isMuted ? '400' : '500',
+                          borderBottom: '1px solid var(--border-subtle)',
+                          fontVariantNumeric: 'tabular-nums lining-nums'
                         }}
                       >
                         {formatted}
@@ -326,7 +327,7 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                     );
                   })}
                   {hasRuleOrAdder && (
-                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.74rem' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.74rem', borderBottom: '1px solid var(--border-subtle)', fontVariantNumeric: 'tabular-nums' }}>
                       {row.adderFormula || (row.adderPerKvOver22_m !== undefined ? `+${row.adderPerKvOver22_m} m/kV` : '—')}
                     </td>
                   )}
@@ -424,9 +425,9 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
           flexWrap: 'wrap',
           gap: '0.65rem',
           padding: '0.55rem 0.75rem',
-          background: 'rgba(15, 23, 42, 0.6)',
+          background: 'var(--bg-inset)',
           border: '1px solid var(--border-color)',
-          borderRadius: '8px'
+          borderRadius: 'var(--radius-input, 10px)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, minWidth: '200px' }}>
             <Search size={14} color="var(--text-muted)" />
@@ -441,7 +442,8 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
                 color: 'var(--text-main)',
                 fontSize: '0.78rem',
                 width: '100%',
-                outline: 'none'
+                outline: 'none',
+                padding: 0
               }}
             />
           </div>
@@ -481,7 +483,7 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
               type="button"
               onClick={() => setShowAll((s) => !s)}
               className="btn-secondary"
-              style={{ padding: '0.22rem 0.55rem', fontSize: '0.72rem', color: 'var(--accent-cyan)' }}
+              style={{ padding: '0.22rem 0.55rem', fontSize: '0.72rem', color: 'var(--accent-blue)' }}
             >
               {showAll ? 'Paginate (50/page)' : `Show All (${filteredRows.length})`}
             </button>
@@ -489,19 +491,19 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
         </div>
       )}
 
-      <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize }}>
+      <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-card, 16px)', background: 'var(--bg-card)' }}>
+        <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, fontSize }}>
           <thead>
-            <tr style={{ background: 'rgba(15, 23, 42, 0.85)', borderBottom: '2px solid var(--border-color)' }}>
+            <tr style={{ background: 'var(--bg-card)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid var(--border-color)' }}>
               {columns.map((col, idx) => (
                 <th
                   key={col}
                   style={{
                     padding: cellPad,
                     textAlign: idx === 0 ? 'left' : 'center',
-                    color: idx === 0 ? 'var(--accent-cyan)' : 'var(--text-main)',
-                    fontWeight: '700',
-                    borderRight: idx < columns.length - 1 ? '1px solid var(--border-color)' : 'none'
+                    color: idx === 0 ? 'var(--accent-blue)' : 'var(--text-muted)',
+                    fontWeight: '600',
+                    borderBottom: '1px solid var(--border-color)'
                   }}
                 >
                   {formatColumnHeader(col)}
@@ -514,22 +516,24 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
               <tr
                 key={rIdx}
                 style={{
-                  background: rIdx % 2 === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.02)',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                  background: rIdx % 2 === 0 ? 'transparent' : 'var(--bg-zebra)',
+                  transition: 'background 0.12s ease'
                 }}
               >
                 {columns.map((col, cIdx) => {
                   const formatted = formatTableCellValue(row[col]);
                   const isFirst = cIdx === 0;
+                  const isMuted = formatted === '—' || formatted.startsWith('N/A');
                   return (
                     <td
                       key={col}
                       style={{
                         padding: cellPad,
                         textAlign: isFirst ? 'left' : 'center',
-                        color: isFirst ? 'var(--text-main)' : formatted === '—' ? 'var(--text-muted)' : 'var(--text-secondary)',
-                        fontWeight: isFirst ? '600' : '400',
-                        borderRight: cIdx < columns.length - 1 ? '1px solid var(--border-color)' : 'none'
+                        color: isFirst ? 'var(--text-main)' : isMuted ? 'var(--text-dim)' : 'var(--text-main)',
+                        fontWeight: isFirst ? '500' : '400',
+                        borderBottom: '1px solid var(--border-subtle)',
+                        fontVariantNumeric: 'tabular-nums lining-nums'
                       }}
                     >
                       {formatted}
@@ -608,39 +612,39 @@ export default function UniversalTableRenderer({ table, compact = false }) {
       {/* CASE 1: CSA C22.3 No. 1 Table 31 (Overload & Strength Factors)      */}
       {/* =================================================================== */}
       {table.key === 'table31' && Array.isArray(rows) ? (
-        <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize }}>
+        <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-card, 16px)', background: 'var(--bg-card)' }}>
+          <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, fontSize }}>
             <thead>
-              <tr style={{ background: 'rgba(15, 23, 42, 0.9)', borderBottom: '1px solid var(--border-color)' }}>
-                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-cyan)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+              <tr style={{ background: 'var(--bg-card)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid var(--border-color)' }}>
+                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'left', color: 'var(--accent-blue)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Load Type / Condition
                 </th>
-                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-muted)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Category
                 </th>
-                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: '#10b981', fontWeight: '700', borderRight: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: 'var(--status-pass)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Grade 1 Construction
                 </th>
-                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: '#38bdf8', fontWeight: '700', borderRight: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: 'var(--accent-cyan)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Grade 2 Construction
                 </th>
-                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: '#f59e0b', fontWeight: '700', borderRight: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+                <th colSpan={3} style={{ padding: cellPad, textAlign: 'center', color: 'var(--status-marginal)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Grade 3 Construction
                 </th>
-                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'left', color: 'var(--text-muted)', fontWeight: '600' }}>
+                <th rowSpan={2} style={{ padding: cellPad, textAlign: 'left', color: 'var(--text-dim)', fontWeight: '500', borderBottom: '1px solid var(--border-color)' }}>
                   Notes
                 </th>
               </tr>
-              <tr style={{ background: 'rgba(15, 23, 42, 0.75)', borderBottom: '2px solid var(--border-color)', fontSize: '0.7rem' }}>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>10–15%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>10–15%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>10–15%</th>
-                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
+              <tr style={{ background: 'var(--bg-card)', borderBottom: '1px solid var(--border-color)', fontSize: '0.72rem' }}>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>10–15%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>10–15%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≤ 10%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>10–15%</th>
+                <th style={{ padding: '0.35rem 0.5rem', textAlign: 'center', color: 'var(--text-dim)', borderBottom: '1px solid var(--border-color)' }}>COV ≥ 15%</th>
               </tr>
             </thead>
             <tbody>
@@ -649,26 +653,26 @@ export default function UniversalTableRenderer({ table, compact = false }) {
                 const g2 = row.grades?.find((g) => g.grade === 2) || {};
                 const g3 = row.grades?.find((g) => g.grade === 3) || {};
                 return (
-                  <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', background: idx % 2 === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.02)' }}>
-                    <td style={{ padding: cellPad, fontWeight: '600', color: 'var(--text-main)', borderRight: '1px solid var(--border-color)' }}>
+                  <tr key={idx} style={{ borderBottom: '1px solid var(--border-subtle)', background: idx % 2 === 0 ? 'transparent' : 'var(--bg-zebra)' }}>
+                    <td style={{ padding: cellPad, fontWeight: '500', color: 'var(--text-main)' }}>
                       <div>{row.loadType || row.description}</div>
                       {row.description && row.loadType && row.description !== row.loadType && (
-                        <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '400' }}>{row.description}</div>
+                        <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', fontWeight: '400' }}>{row.description}</div>
                       )}
                     </td>
-                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-secondary)', borderRight: '1px solid var(--border-color)', textTransform: 'capitalize' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-muted)', textTransform: 'capitalize' }}>
                       {row.category || '—'}
                     </td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#10b981', borderRight: '1px solid var(--border-color)' }}>{g1.cov_le_10 ?? row.grade1 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#10b981', borderRight: '1px solid var(--border-color)' }}>{g1.cov_10_to_15 ?? row.grade1 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '700', color: '#10b981', borderRight: '1px solid var(--border-color)' }}>{g1.cov_ge_15 ?? row.grade1 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#38bdf8', borderRight: '1px solid var(--border-color)' }}>{g2.cov_le_10 ?? row.grade2 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#38bdf8', borderRight: '1px solid var(--border-color)' }}>{g2.cov_10_to_15 ?? row.grade2 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '700', color: '#38bdf8', borderRight: '1px solid var(--border-color)' }}>{g2.cov_ge_15 ?? row.grade2 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#f59e0b', borderRight: '1px solid var(--border-color)' }}>{g3.cov_le_10 ?? row.grade3 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: '#f59e0b', borderRight: '1px solid var(--border-color)' }}>{g3.cov_10_to_15 ?? row.grade3 ?? '—'}</td>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '700', color: '#f59e0b', borderRight: '1px solid var(--border-color)' }}>{g3.cov_ge_15 ?? row.grade3 ?? '—'}</td>
-                    <td style={{ padding: cellPad, fontSize: '0.73rem', color: 'var(--text-muted)' }}>{row.notes || '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-pass)', fontVariantNumeric: 'tabular-nums' }}>{g1.cov_le_10 ?? row.grade1 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-pass)', fontVariantNumeric: 'tabular-nums' }}>{g1.cov_10_to_15 ?? row.grade1 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-pass)', fontVariantNumeric: 'tabular-nums' }}>{g1.cov_ge_15 ?? row.grade1 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--accent-blue)', fontVariantNumeric: 'tabular-nums' }}>{g2.cov_le_10 ?? row.grade2 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--accent-blue)', fontVariantNumeric: 'tabular-nums' }}>{g2.cov_10_to_15 ?? row.grade2 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--accent-blue)', fontVariantNumeric: 'tabular-nums' }}>{g2.cov_ge_15 ?? row.grade2 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-marginal)', fontVariantNumeric: 'tabular-nums' }}>{g3.cov_le_10 ?? row.grade3 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-marginal)', fontVariantNumeric: 'tabular-nums' }}>{g3.cov_10_to_15 ?? row.grade3 ?? '—'}</td>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--status-marginal)', fontVariantNumeric: 'tabular-nums' }}>{g3.cov_ge_15 ?? row.grade3 ?? '—'}</td>
+                    <td style={{ padding: cellPad, fontSize: '0.73rem', color: 'var(--text-dim)' }}>{row.notes || '—'}</td>
                   </tr>
                 );
               })}
@@ -679,17 +683,17 @@ export default function UniversalTableRenderer({ table, compact = false }) {
       /* CASE 2: CSA C22.3 No. 1 Table 1 (Conductor Swing Curve Factors)     */
       /* =================================================================== */
       table.key === 'table1' && rows && rows.non_sheltered ? (
-        <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize }}>
+        <div style={{ overflowX: 'auto', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-card, 16px)', background: 'var(--bg-card)' }}>
+          <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, fontSize }}>
             <thead>
-              <tr style={{ background: 'rgba(15, 23, 42, 0.85)', borderBottom: '2px solid var(--border-color)' }}>
-                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--accent-cyan)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+              <tr style={{ background: 'var(--bg-card)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid var(--border-color)' }}>
+                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--accent-blue)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   D/W Ratio (mm / N/m)
                 </th>
-                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '700', borderRight: '1px solid var(--border-color)' }}>
+                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Swing Factor — Non-Sheltered Line
                 </th>
-                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '700' }}>
+                <th style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
                   Swing Factor — Partially Sheltered Line
                 </th>
               </tr>
@@ -698,14 +702,14 @@ export default function UniversalTableRenderer({ table, compact = false }) {
               {rows.non_sheltered.map((nsRow, idx) => {
                 const psRow = rows.partially_sheltered?.find((r) => r.dw === nsRow.dw) || rows.partially_sheltered?.[idx];
                 return (
-                  <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', background: idx % 2 === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.02)' }}>
-                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '700', color: 'var(--accent-cyan)', borderRight: '1px solid var(--border-color)' }}>
+                  <tr key={idx} style={{ borderBottom: '1px solid var(--border-subtle)', background: idx % 2 === 0 ? 'transparent' : 'var(--bg-zebra)' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', fontWeight: '600', color: 'var(--accent-blue)', fontVariantNumeric: 'tabular-nums' }}>
                       {nsRow.dw}
                     </td>
-                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-secondary)', fontWeight: '600', borderRight: '1px solid var(--border-color)' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '500', fontVariantNumeric: 'tabular-nums' }}>
                       {nsRow.factor}
                     </td>
-                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-secondary)', fontWeight: '600' }}>
+                    <td style={{ padding: cellPad, textAlign: 'center', color: 'var(--text-main)', fontWeight: '500', fontVariantNumeric: 'tabular-nums' }}>
                       {psRow ? psRow.factor : '—'}
                     </td>
                   </tr>

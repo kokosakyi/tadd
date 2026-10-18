@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function Module4GuardrailCard({ module4Result }) {
+export default function Module4GuardrailCard({ module4Result: propResult, governedResults }) {
+  const module4Result = propResult || governedResults;
   if (!module4Result) return null;
 
   const districts = [
@@ -11,16 +12,16 @@ export default function Module4GuardrailCard({ module4Result }) {
   ];
 
   return (
-    <div className="glass-panel card-padding" style={{ marginTop: '1.5rem' }}>
+    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="module-badge">M4</div>
+          <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M4</div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+            <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
               Deterministic Safety Guardrail (CSA C22.3 No. 1-15 Table 30)
             </h3>
-            <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-secondary)' }}>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
               Compares statistical reliability calculations against statutory legal minimum load floors.
             </p>
           </div>
@@ -28,13 +29,13 @@ export default function Module4GuardrailCard({ module4Result }) {
 
         {/* Active District Badge */}
         <div style={{
-          padding: '0.4rem 0.85rem',
+          padding: '0.35rem 0.75rem',
           borderRadius: '8px',
-          background: 'rgba(148, 163, 184, 0.15)',
+          background: 'var(--bg-inset)',
           border: '1px solid var(--border-color)',
-          color: 'var(--text-muted)',
-          fontWeight: 'bold',
-          fontSize: '0.85rem'
+          color: 'var(--text-main)',
+          fontWeight: 600,
+          fontSize: '0.8rem'
         }}>
           Active District: {module4Result.district || 'Heavy'} (Table 30 Floor)
         </div>
@@ -45,84 +46,76 @@ export default function Module4GuardrailCard({ module4Result }) {
         
         {/* Wind Pressure Governing Card */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          padding: '1.25rem',
+          background: 'var(--bg-inset)',
+          padding: '1.15rem',
           borderRadius: '12px',
-          border: module4Result.windGovernedByLegal ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid var(--border-color)',
+          border: module4Result.windGovernedByLegal ? '1px solid rgba(244, 63, 94, 0.4)' : '1px solid var(--border-color)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.5rem'
+          gap: '0.4rem'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
               Design Wind Pressure (q_final)
             </span>
-            <span style={{
-              fontSize: '0.7rem',
-              padding: '0.15rem 0.5rem',
-              borderRadius: '4px',
-              fontWeight: 'bold',
-              background: module4Result.windGovernedByLegal ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)',
-              color: module4Result.windGovernedByLegal ? '#f87171' : '#34d399'
-            }}>
-              {module4Result.windGovernedByLegal ? '⚠ Legal Floor Governs' : '✓ Reliability Governs'}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 600 }}>
+              <span className={`status-dot ${module4Result.windGovernedByLegal ? 'marginal' : 'pass'}`} />
+              <span style={{ color: module4Result.windGovernedByLegal ? 'var(--status-marginal)' : 'var(--status-pass)' }}>
+                {module4Result.windGovernedByLegal ? 'Legal Floor Governs' : 'Reliability Governs'}
+              </span>
+            </div>
           </div>
 
-          <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>
-            {module4Result.governed_q0.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>Pa</span>
+          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
+            {module4Result.governed_q0.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>Pa</span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.35rem', borderTop: '1px dashed var(--border-color)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Module 3 Calculated (q₀):</span>
-              <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{module4Result.q0_extreme.toFixed(1)} Pa</span>
+              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.q0_extreme.toFixed(1)} Pa</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Table 30 Minimum (q_min):</span>
-              <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{module4Result.minWindPa.toFixed(1)} Pa</span>
+              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.minWindPa.toFixed(1)} Pa</span>
             </div>
           </div>
         </div>
 
         {/* Ice Thickness Governing Card */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          padding: '1.25rem',
+          background: 'var(--bg-inset)',
+          padding: '1.15rem',
           borderRadius: '12px',
-          border: module4Result.iceGovernedByLegal ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid var(--border-color)',
+          border: module4Result.iceGovernedByLegal ? '1px solid rgba(244, 63, 94, 0.4)' : '1px solid var(--border-color)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.5rem'
+          gap: '0.4rem'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
               Design Ice Thickness (t_final)
             </span>
-            <span style={{
-              fontSize: '0.7rem',
-              padding: '0.15rem 0.5rem',
-              borderRadius: '4px',
-              fontWeight: 'bold',
-              background: module4Result.iceGovernedByLegal ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)',
-              color: module4Result.iceGovernedByLegal ? '#f87171' : '#34d399'
-            }}>
-              {module4Result.iceGovernedByLegal ? '⚠ Legal Floor Governs' : '✓ Reliability Governs'}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 600 }}>
+              <span className={`status-dot ${module4Result.iceGovernedByLegal ? 'marginal' : 'pass'}`} />
+              <span style={{ color: module4Result.iceGovernedByLegal ? 'var(--status-marginal)' : 'var(--status-pass)' }}>
+                {module4Result.iceGovernedByLegal ? 'Legal Floor Governs' : 'Reliability Governs'}
+              </span>
+            </div>
           </div>
 
-          <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>
-            {module4Result.governed_t_design.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>mm</span>
+          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
+            {module4Result.governed_t_design.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>mm</span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.35rem', borderTop: '1px dashed var(--border-color)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Module 3 Calculated (t_design):</span>
-              <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{module4Result.t_design.toFixed(1)} mm</span>
+              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.t_design.toFixed(1)} mm</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Table 30 Minimum (t_min):</span>
-              <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{module4Result.minIceMm.toFixed(1)} mm</span>
+              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.minIceMm.toFixed(1)} mm</span>
             </div>
           </div>
         </div>
@@ -131,24 +124,24 @@ export default function Module4GuardrailCard({ module4Result }) {
 
       {/* CSA Table 30 Reference Table */}
       <div style={{
-        background: 'rgba(255, 255, 255, 0.02)',
+        background: 'var(--bg-inset)',
         borderRadius: '12px',
-        padding: '1.25rem',
+        padding: '1.15rem',
         border: '1px solid var(--border-color)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-          <h4 style={{ margin: 0, fontSize: '0.95rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <h4 style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600 }}>
             CSA C22.3 No. 1-15 Table 30 Loading Districts Floor Reference
           </h4>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Statutory Legal Base Floor
           </span>
         </div>
 
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.825rem', textAlign: 'left' }}>
+          <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem', textAlign: 'left' }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid var(--border-color)', color: 'var(--text-secondary)' }}>
+              <tr style={{ color: 'var(--text-muted)' }}>
                 <th style={{ padding: '0.5rem 0.75rem' }}>District</th>
                 <th style={{ padding: '0.5rem 0.75rem' }}>Min Radial Ice (t_min)</th>
                 <th style={{ padding: '0.5rem 0.75rem' }}>Min Wind Pressure (q_min)</th>
@@ -163,17 +156,16 @@ export default function Module4GuardrailCard({ module4Result }) {
                   <tr
                     key={d.name}
                     style={{
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                      background: isActive ? 'rgba(148, 163, 184, 0.08)' : 'transparent'
+                      background: isActive ? 'var(--bg-hover-row)' : 'transparent'
                     }}
                   >
-                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold', color: isActive ? 'var(--accent-cyan)' : 'var(--text-primary)' }}>
+                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: 600, color: isActive ? 'var(--accent-cyan)' : 'var(--text-main)' }}>
                       {d.name} {isActive && '▸'}
                     </td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600' }}>{d.ice}</td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600' }}>{d.wind}</td>
-                    <td style={{ padding: '0.5rem 0.75rem' }}>{d.temp}</td>
-                    <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>{d.desc}</td>
+                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.ice}</td>
+                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.wind}</td>
+                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.temp}</td>
+                    <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-muted)' }}>{d.desc}</td>
                   </tr>
                 );
               })}

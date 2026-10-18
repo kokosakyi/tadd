@@ -1,25 +1,27 @@
 import React from 'react';
 
 export default function Module5TensionLimitsCard({
-  module5Result,
+  module5Result: propResult,
+  tensionLimits,
   hasDampers,
   setHasDampers,
   isBundled,
   setIsBundled
 }) {
+  const module5Result = propResult || tensionLimits;
   if (!module5Result) return null;
 
   return (
-    <div className="glass-panel card-padding" style={{ marginTop: '1.5rem' }}>
+    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="module-badge">M5</div>
+          <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M5</div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+            <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
               Conductor Tension & Aeolian Vibration Engine (CSA C22.3 Cl. 8.7)
             </h3>
-            <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-secondary)' }}>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
               Establishes catenary limits (C = H/w) for aeolian vibration protection and sets RTS percentage safety limits.
             </p>
           </div>
@@ -27,25 +29,27 @@ export default function Module5TensionLimitsCard({
 
         {/* Quick Toggles */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {/* Dampers Toggle */}
-          <button
-            type="button"
-            className={`btn ${hasDampers ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setHasDampers(!hasDampers)}
-            style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '6px' }}
-          >
-            {hasDampers ? 'Vibration Dampers Installed' : 'No Dampers Installed'}
-          </button>
+          {setHasDampers && (
+            <button
+              type="button"
+              className={`btn ${hasDampers ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setHasDampers(!hasDampers)}
+              style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '8px' }}
+            >
+              {hasDampers ? 'Vibration Dampers Installed' : 'No Dampers Installed'}
+            </button>
+          )}
 
-          {/* Bundle Toggle */}
-          <button
-            type="button"
-            className={`btn ${isBundled ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setIsBundled(!isBundled)}
-            style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '6px' }}
-          >
-            {isBundled ? 'Bundled Phase (2200m Base)' : 'Single Conductor (2000m Base)'}
-          </button>
+          {setIsBundled && (
+            <button
+              type="button"
+              className={`btn ${isBundled ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setIsBundled(!isBundled)}
+              style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '8px' }}
+            >
+              {isBundled ? 'Bundled Phase (2200m Base)' : 'Single Conductor (2000m Base)'}
+            </button>
+          )}
         </div>
       </div>
 
@@ -54,8 +58,8 @@ export default function Module5TensionLimitsCard({
         
         {/* Allowable Catenary Constant */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          padding: '1.25rem',
+          background: 'var(--bg-inset)',
+          padding: '1.15rem',
           borderRadius: '12px',
           border: '1px solid var(--border-color)',
           display: 'flex',
@@ -63,31 +67,31 @@ export default function Module5TensionLimitsCard({
           gap: '0.4rem'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
               Allowable Catenary Constant (C_max)
             </span>
             {module5Result.spanReductionApplied ? (
-              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', fontWeight: 'bold' }}>
+              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(244, 63, 94, 0.15)', color: 'var(--status-violation)', fontWeight: 'bold' }}>
                 Table 33 Reduced (S ≤ {module5Result.rulingSpanM}m)
               </span>
             ) : (
-              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', fontWeight: 'bold' }}>
+              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(16, 185, 129, 0.15)', color: 'var(--status-pass)', fontWeight: 'bold' }}>
                 Full Base (S &gt; 400m)
               </span>
             )}
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>
-            {module5Result.maxCatenary.toFixed(0)} <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>m</span>
+          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
+            {module5Result.maxCatenary.toFixed(0)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>m</span>
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
             Base Limit: {module5Result.baseCatenary} m | C = H / w
           </div>
         </div>
 
         {/* Aeolian Initial Tension Limit */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          padding: '1.25rem',
+          background: 'var(--bg-inset)',
+          padding: '1.15rem',
           borderRadius: '12px',
           border: '1px solid var(--border-color)',
           display: 'flex',
@@ -95,25 +99,25 @@ export default function Module5TensionLimitsCard({
           gap: '0.4rem'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
               Aeolian Initial Tension (H_vibe)
             </span>
-            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', fontWeight: 'bold' }}>
+            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(56, 189, 248, 0.15)', color: 'var(--accent-cyan)', fontWeight: 'bold' }}>
               w = {module5Result.conductorWeightNm} N/m
             </span>
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>
-            {module5Result.aeolianTensionLimitKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>kN</span>
+          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
+            {module5Result.aeolianTensionLimitKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>kN</span>
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
             H_vibe = C_max ({module5Result.maxCatenary}m) × w ({module5Result.conductorWeightNm}N/m)
           </div>
         </div>
 
         {/* Peak Loaded Tension Limit */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          padding: '1.25rem',
+          background: 'var(--bg-inset)',
+          padding: '1.15rem',
           borderRadius: '12px',
           border: '1px solid var(--border-color)',
           display: 'flex',
@@ -121,15 +125,15 @@ export default function Module5TensionLimitsCard({
           gap: '0.4rem'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
               Peak Loaded Limit (60% RTS)
             </span>
             <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(148, 163, 184, 0.15)', color: 'var(--text-muted)', fontWeight: 'bold' }}>
               RTS = {module5Result.rtsKn} kN
             </span>
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>
-            {module5Result.maxLoadedTensionKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>kN</span>
+          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
+            {module5Result.maxLoadedTensionKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>kN</span>
           </div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Safety Factor ≥ 1.67 under governing wind/ice
@@ -140,22 +144,22 @@ export default function Module5TensionLimitsCard({
 
       {/* Cable Tension Criteria Table */}
       <div style={{
-        background: 'rgba(255, 255, 255, 0.02)',
+        background: 'var(--bg-inset)',
         borderRadius: '12px',
-        padding: '1.25rem',
+        padding: '1.15rem',
         border: '1px solid var(--border-color)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-          <h4 style={{ margin: 0, fontSize: '0.95rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <h4 style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600 }}>
             PLS-CADD Cable Tension Limits (Criteria &gt; Cable Tensions)
           </h4>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             CSA C22.3 No. 1-15 Tables 33 &amp; 34
           </span>
         </div>
 
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.825rem', textAlign: 'left' }}>
+          <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem', textAlign: 'left' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid var(--border-color)', color: 'var(--text-secondary)' }}>
                 <th style={{ padding: '0.5rem 0.75rem' }}>Weather Case</th>

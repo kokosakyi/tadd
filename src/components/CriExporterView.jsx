@@ -24,37 +24,37 @@ export default function CriExporterView({ criText, fileName = 'Ottawa_150Yr_Crit
   };
 
   return (
-    <div className="glass-panel card-padding" style={{ marginTop: '1.5rem' }}>
+    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px', marginTop: '1.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="module-badge">M6</div>
+          <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M6</div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+            <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
               PLS-CADD ASCII Criteria (.cri) Publisher (Module 6)
             </h3>
-            <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-secondary)' }}>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
               Windows-standard plain ASCII text criteria file formatted with metric units (cm ice) for direct PLS-CADD ingestion.
             </p>
           </div>
         </div>
 
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <button className="btn btn-secondary" onClick={handleCopy} style={{ padding: '0.4rem 0.85rem', fontSize: '0.825rem' }}>
+          <button className="btn-secondary" onClick={handleCopy} style={{ padding: '0.35rem 0.75rem', fontSize: '0.8rem', borderRadius: '8px' }}>
             {copied ? '✓ Copied to Clipboard!' : 'Copy ASCII Text'}
           </button>
-          <button className="btn btn-primary" onClick={handleDownload} style={{ padding: '0.4rem 0.85rem', fontSize: '0.825rem' }}>
+          <button className="btn-primary" onClick={handleDownload} style={{ padding: '0.35rem 0.75rem', fontSize: '0.8rem', borderRadius: '8px' }}>
             Export {fileName}
           </button>
         </div>
       </div>
 
       <pre style={{
-        background: '#0d1117',
-        color: '#c9d1d9',
-        padding: '1.25rem',
-        borderRadius: '8px',
-        fontSize: '0.85rem',
-        fontFamily: 'ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, Monaco, "Courier New", monospace',
+        background: 'var(--bg-inset)',
+        color: 'var(--text-main)',
+        padding: '1.15rem',
+        borderRadius: '12px',
+        fontSize: '0.825rem',
+        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
         overflowX: 'auto',
         border: '1px solid var(--border-color)',
         maxHeight: '420px',
@@ -63,7 +63,6 @@ export default function CriExporterView({ criText, fileName = 'Ottawa_150Yr_Crit
         whiteSpace: 'pre',
         tabSize: 4
       }}>
-        {criText}
       </pre>
 
       {/* Module Explanation */}

@@ -109,41 +109,44 @@ export default function LoadCaseMatrixView({
       </div>
 
       {/* Table */}
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', fontSize: '0.825rem', borderCollapse: 'collapse' }}>
+      <div style={{ overflowX: 'auto', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+        <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem' }}>
           <thead>
-            <tr style={{ borderBottom: '1px solid var(--border-color)', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.02)' }}>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Case ID</th>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Code Citation</th>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Load Case Name</th>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Design Type</th>
-              <th style={{ textAlign: 'right', padding: '8px' }}>Radial Ice</th>
-              <th style={{ textAlign: 'right', padding: '8px' }}>Wind Press.</th>
-              <th style={{ textAlign: 'right', padding: '8px' }}>Temp</th>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Factors / OCF</th>
-              <th style={{ textAlign: 'left', padding: '8px' }}>Governing Application</th>
+            <tr>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Case ID</th>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Code Citation</th>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Load Case Name</th>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Design Type</th>
+              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Radial Ice</th>
+              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Wind Press.</th>
+              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Temp</th>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Factors / OCF</th>
+              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Governing Application</th>
             </tr>
           </thead>
           <tbody>
             {filteredCases.map((c) => (
-              <tr key={c.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                <td style={{ padding: '8px', fontWeight: '600', color: '#38bdf8' }}>{c.id}</td>
-                <td style={{ padding: '8px', color: 'var(--text-muted)' }}>{c.code}</td>
-                <td style={{ padding: '8px', fontWeight: '500', color: 'var(--text-main)' }}>{c.name}</td>
-                <td style={{ padding: '8px' }}>
-                  <span className="badge" style={{
-                    fontSize: '0.7rem',
-                    background: c.type.includes('Strength') ? 'rgba(244, 63, 94, 0.15)' : 'rgba(56, 189, 248, 0.15)',
-                    color: c.type.includes('Strength') ? '#f43f5e' : '#38bdf8'
+              <tr key={c.id}>
+                <td style={{ padding: '10px 12px', fontWeight: 600, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums' }}>{c.id}</td>
+                <td style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{c.code}</td>
+                <td style={{ padding: '10px 12px', fontWeight: 500, color: 'var(--text-main)' }}>{c.name}</td>
+                <td style={{ padding: '10px 12px' }}>
+                  <span style={{
+                    fontSize: '0.75rem',
+                    padding: '0.2rem 0.55rem',
+                    borderRadius: '6px',
+                    fontWeight: 600,
+                    background: c.type.includes('Strength') ? 'rgba(244, 63, 94, 0.12)' : 'rgba(56, 189, 248, 0.12)',
+                    color: c.type.includes('Strength') ? 'var(--status-violation)' : 'var(--accent-cyan)'
                   }}>
                     {c.type}
                   </span>
                 </td>
-                <td style={{ textAlign: 'right', padding: '8px' }}>{c.iceMm} mm</td>
-                <td style={{ textAlign: 'right', padding: '8px' }}>{c.windPa} Pa</td>
-                <td style={{ textAlign: 'right', padding: '8px' }}>{c.tempC} °C</td>
-                <td style={{ padding: '8px', color: 'var(--text-muted)' }}>{c.ocf}</td>
-                <td style={{ padding: '8px', color: 'var(--text-main)' }}>{c.governingUse}</td>
+                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.iceMm} mm</td>
+                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.windPa} Pa</td>
+                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.tempC} °C</td>
+                <td style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{c.ocf}</td>
+                <td style={{ padding: '10px 12px', color: 'var(--text-main)' }}>{c.governingUse}</td>
               </tr>
             ))}
           </tbody>

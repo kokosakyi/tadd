@@ -99,16 +99,16 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
     <div style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       
       {/* View Header */}
-      <div className="glass-panel" style={{ padding: '1.25rem 1.5rem', borderRadius: '12px' }}>
+      <div className="glass-panel" style={{ padding: '1.25rem 1.5rem', borderRadius: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Wind size={22} color="var(--accent-cyan)" />
-              <h2 style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--text-main)', margin: 0 }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-main)', margin: 0, letterSpacing: '-0.015em' }}>
                 Weather Criteria, Climatic Map & Load Case Matrix (A3 / A4 / M2)
               </h2>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.2rem 0 0' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.25rem 0 0' }}>
               682-station Canadian geoclimatic database, CSA C22.3 No. 60826 reliability scaling, and unified load cases.
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
             <button
               onClick={handleExportCsv}
               className="btn-primary"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.825rem', borderRadius: '10px' }}
               title="Download unified load case matrix as CSV"
             >
               <FileSpreadsheet size={16} />
@@ -147,6 +147,7 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
         citiesInProvince={citiesInProvince}
         selectedCity={selectedCity}
         setSelectedCity={setSelectedCity}
+        stationData={stationData}
         geoData={geoData}
         returnPeriod={returnPeriod}
         setReturnPeriod={setReturnPeriod}
@@ -179,7 +180,8 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
         />
         <Module3PhysicsCard
           physicsResults={physicsResult}
-          returnPeriod={returnPeriod}
+          isTransmission={isTransmission}
+          setIsTransmission={setIsTransmission}
         />
         <Module4GuardrailCard
           governedResults={guardrailResult}
@@ -187,14 +189,10 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
         />
         <Module5TensionLimitsCard
           tensionLimits={tensionResult}
-          conductor={{
-            rtsKn,
-            conductorWeightNm,
-            diameter: conductorDiameter,
-            rulingSpan,
-            hasDampers,
-            isBundled
-          }}
+          hasDampers={hasDampers}
+          setHasDampers={setHasDampers}
+          isBundled={isBundled}
+          setIsBundled={setIsBundled}
         />
       </div>
 

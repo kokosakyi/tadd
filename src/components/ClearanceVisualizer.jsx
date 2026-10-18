@@ -134,46 +134,49 @@ export default function ClearanceVisualizer({ calculationResult, categoryObj, un
   };
 
   return (
-    <div className="glass-panel animate-fade-in" style={{ padding: '1.25rem', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div className="glass-panel animate-fade-in" style={{ padding: '1.25rem', borderRadius: '16px', height: '100%', display: 'flex', flexDirection: 'column' }}>
       
       {/* Header Bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Eye size={20} color="var(--accent-cyan)" />
-          <h2 style={{ fontSize: '1.1rem', margin: 0, color: 'var(--text-main)' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 600, margin: 0, color: 'var(--text-main)' }}>
             Dynamic 2D Clearance Profile Visualizer
-          </h2>
+          </h3>
         </div>
 
         {/* Status Badge */}
-        <div className={`badge badge-${status.toLowerCase()}`} style={{ fontSize: '0.85rem', padding: '0.4rem 0.85rem' }}>
-          {status === 'PASS' && <CheckCircle2 size={16} />}
-          {status === 'WARNING' && <AlertTriangle size={16} />}
-          {status === 'FAIL' && <XCircle size={16} />}
-          <span>CSA CLEARANCE: {status}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.8rem', fontWeight: 600, padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'var(--bg-inset)', border: '1px solid var(--border-color)' }}>
+          <span className={`status-dot ${status === 'PASS' ? 'pass' : status === 'WARNING' ? 'marginal' : 'violation'}`} />
+          <span style={{ color: status === 'PASS' ? 'var(--status-pass)' : status === 'WARNING' ? 'var(--status-marginal)' : 'var(--status-violation)' }}>
+            CSA CLEARANCE: {status}
+          </span>
         </div>
       </div>
 
       {/* Layer Toggles */}
-      <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.85rem', flexWrap: 'wrap' }}>
         <button
+          type="button"
           className="btn-secondary"
           onClick={() => setShowEnvelope(!showEnvelope)}
-          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderColor: showEnvelope ? 'var(--accent-cyan)' : 'var(--border-color)' }}
+          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderRadius: '8px', borderColor: showEnvelope ? 'var(--accent-cyan)' : 'var(--border-color)', background: showEnvelope ? 'var(--bg-card)' : 'transparent' }}
         >
-          <Layers size={14} /> Envelope Zone
+          <Layers size={13} style={{ marginRight: '0.3rem' }} /> Envelope Zone
         </button>
         <button
+          type="button"
           className="btn-secondary"
           onClick={() => setShowDimensions(!showDimensions)}
-          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderColor: showDimensions ? 'var(--accent-cyan)' : 'var(--border-color)' }}
+          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderRadius: '8px', borderColor: showDimensions ? 'var(--accent-cyan)' : 'var(--border-color)', background: showDimensions ? 'var(--bg-card)' : 'transparent' }}
         >
-          <Maximize2 size={14} /> Dimensions
+          <Maximize2 size={13} style={{ marginRight: '0.3rem' }} /> Dimensions
         </button>
         <button
+          type="button"
           className="btn-secondary"
           onClick={() => setShowCatCurve(!showCatCurve)}
-          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderColor: showCatCurve ? 'var(--accent-cyan)' : 'var(--border-color)' }}
+          style={{ padding: '0.3rem 0.65rem', fontSize: '0.75rem', borderRadius: '8px', borderColor: showCatCurve ? 'var(--accent-cyan)' : 'var(--border-color)', background: showCatCurve ? 'var(--bg-card)' : 'transparent' }}
         >
           Sag Curve
         </button>
@@ -183,7 +186,7 @@ export default function ClearanceVisualizer({ calculationResult, categoryObj, un
       <div style={{
         flex: 1,
         background: 'radial-gradient(circle at center, #1e293b 0%, #0f172a 100%)',
-        borderRadius: '10px',
+        borderRadius: '12px',
         border: '1px solid var(--border-color)',
         position: 'relative',
         overflow: 'hidden',
