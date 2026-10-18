@@ -779,7 +779,7 @@ export default function UniversalTableRenderer({ table, compact = false }) {
 
       {/* General Notes Block */}
       {rawNotes && (
-        <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '0.75rem 1rem' }}>
+        <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '0.75rem 1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-muted)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>
             <Info size={13} />
             <span>Notes to {table.number}:</span>

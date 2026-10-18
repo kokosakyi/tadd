@@ -26,11 +26,11 @@ export default function EditionsTab({ standards = [] }) {
           </p>
           
           <div style={{ display: 'flex', gap: '0.75rem', borderTop: '1px solid var(--border-color)', paddingTop: '0.85rem' }}>
-            <div style={{ flex: '1', textAlign: 'center', background: 'rgba(255, 255, 255, 0.03)', padding: '0.5rem', borderRadius: '6px' }}>
+            <div style={{ flex: '1', textAlign: 'center', background: 'var(--bg-inset)', padding: '0.5rem', borderRadius: '6px' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--accent-cyan)' }}>{ed.clauseCount}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Digitized Clauses</div>
             </div>
-            <div style={{ flex: '1', textAlign: 'center', background: 'rgba(255, 255, 255, 0.03)', padding: '0.5rem', borderRadius: '6px' }}>
+            <div style={{ flex: '1', textAlign: 'center', background: 'var(--bg-inset)', padding: '0.5rem', borderRadius: '6px' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#10b981' }}>{ed.tableCount}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Digitized Tables</div>
             </div>

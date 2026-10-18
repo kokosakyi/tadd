@@ -109,9 +109,6 @@ export default function LessonsLearnedReader({
       <div
         className="glass-panel lesson-hero-card"
         style={{
-          borderRadius: '16px',
-          border: '1px solid rgba(245, 158, 11, 0.3)',
-          background: 'radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.75) 100%)',
           display: 'flex',
           flexDirection: 'column',
           gap: '1rem',
@@ -331,22 +328,7 @@ export default function LessonsLearnedReader({
           return (
             <div
               key={`turn_${tIdx}`}
-              className="glass-panel dialogue-turn-card"
-              style={{
-                borderRadius: '16px',
-                border: isJunior
-                  ? '1px solid rgba(56, 189, 248, 0.35)'
-                  : '1px solid rgba(245, 158, 11, 0.35)',
-                background: isJunior
-                  ? 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(8, 47, 73, 0.25) 100%)'
-                  : 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(69, 26, 3, 0.2) 100%)',
-                boxShadow: isJunior
-                  ? '0 4px 16px rgba(56, 189, 248, 0.05)'
-                  : '0 4px 16px rgba(245, 158, 11, 0.05)',
-                display: 'flex',
-                gap: '1.1rem',
-                alignItems: 'flex-start'
-              }}
+              className={`glass-panel dialogue-turn-card ${isJunior ? 'junior' : 'senior'}`}
             >
               {/* Character Avatar Icon */}
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.35rem', flexShrink: 0 }}>
@@ -391,16 +373,8 @@ export default function LessonsLearnedReader({
                   </span>
                 </div>
 
-                {/* Body Text */}
-                <div
-                  style={{
-                    fontSize: '0.92rem',
-                    lineHeight: 1.7,
-                    color: '#e2e8f0',
-                    whiteSpace: 'pre-wrap',
-                    wordBreak: 'break-word'
-                  }}
-                >
+                {/* Body Text with High Readability */}
+                <div className="dialogue-body-text">
                   {turn.text}
                 </div>
               </div>
@@ -411,18 +385,7 @@ export default function LessonsLearnedReader({
 
       {/* Senior Engineer's Field Rule of Thumb Callout */}
       {currentLesson.proTip && (
-        <div
-          className="glass-panel"
-          style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '14px',
-            border: '1px solid rgba(245, 158, 11, 0.4)',
-            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 23, 42, 0.6) 100%)',
-            display: 'flex',
-            gap: '1rem',
-            alignItems: 'flex-start'
-          }}
-        >
+        <div className="glass-panel lesson-protip-card">
           <div
             style={{
               background: 'rgba(245, 158, 11, 0.2)',
@@ -439,7 +402,7 @@ export default function LessonsLearnedReader({
             <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#f59e0b', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
               Dan's Field Rule of Thumb & Pro-Tip
             </div>
-            <p style={{ fontSize: '0.88rem', color: '#f1f5f9', lineHeight: 1.55, margin: 0, fontWeight: '500' }}>
+            <p className="lesson-protip-text">
               {currentLesson.proTip}
             </p>
           </div>
@@ -468,15 +431,7 @@ export default function LessonsLearnedReader({
             {currentLesson.plsCommands.map((cmd, cIdx) => (
               <div
                 key={`cmd_${cIdx}`}
-                style={{
-                  background: 'rgba(15, 23, 42, 0.6)',
-                  border: '1px solid rgba(56, 189, 248, 0.2)',
-                  borderRadius: '6px',
-                  padding: '0.35rem 0.6rem',
-                  fontSize: '0.78rem',
-                  fontFamily: 'monospace',
-                  color: 'var(--accent-cyan)'
-                }}
+                className="lesson-pill-item command"
               >
                 {cmd}
               </div>
@@ -494,17 +449,7 @@ export default function LessonsLearnedReader({
             {currentLesson.csaCitations.map((cit, citIdx) => (
               <div
                 key={`cit_${citIdx}`}
-                style={{
-                  background: 'rgba(15, 23, 42, 0.6)',
-                  border: '1px solid rgba(16, 185, 129, 0.2)',
-                  borderRadius: '6px',
-                  padding: '0.35rem 0.6rem',
-                  fontSize: '0.78rem',
-                  color: '#e2e8f0',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between'
-                }}
+                className="lesson-pill-item citation"
               >
                 <span>{cit}</span>
               </div>

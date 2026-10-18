@@ -190,7 +190,7 @@ export default function ClauseListTab({
                       onClick={() => handleCopyCitation(cl.id, formattedCitation)}
                       title="Copy Engineering Citation & Excerpt"
                       style={{
-                        background: 'rgba(255, 255, 255, 0.05)',
+                        background: 'var(--bg-inset)',
                         border: '1px solid var(--border-color)',
                         borderRadius: '6px',
                         padding: '0.22rem 0.5rem',
@@ -218,7 +218,7 @@ export default function ClauseListTab({
                       })}
                       aria-label={`Bookmark Clause ${cl.clauseNumber}`}
                       style={{
-                        background: bookmarked ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                        background: bookmarked ? 'rgba(245, 158, 11, 0.15)' : 'var(--bg-inset)',
                         border: bookmarked ? '1px solid rgba(245, 158, 11, 0.4)' : '1px solid var(--border-color)',
                         borderRadius: '6px',
                         padding: '0.22rem 0.5rem',
@@ -263,10 +263,10 @@ export default function ClauseListTab({
                     margin: '0.65rem 0',
                     padding: '0.65rem 0.85rem',
                     borderRadius: '8px',
-                    background: 'rgba(239, 68, 68, 0.1)',
+                    background: 'rgba(239, 68, 68, 0.12)',
                     border: '1px solid rgba(239, 68, 68, 0.3)',
                     fontSize: '0.82rem',
-                    color: '#fca5a5'
+                    color: 'var(--accent-rose)'
                   }}>
                     <strong>Canadian National Deviation:</strong> {cl.canadianDeviation}
                   </div>
@@ -274,7 +274,7 @@ export default function ClauseListTab({
 
                 {/* Interactive Cross-References & Referenced Tables Footer */}
                 {((cl.tablesReferenced && cl.tablesReferenced.length > 0) || (cl.crossReferences && cl.crossReferences.length > 0)) && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', marginTop: '0.65rem', paddingTop: '0.65rem', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', marginTop: '0.65rem', paddingTop: '0.65rem', borderTop: '1px solid var(--border-color)' }}>
                     
                     {/* Tables Referenced (Opens Split-Pane Inspector) */}
                     {cl.tablesReferenced && cl.tablesReferenced.length > 0 && (

@@ -4,7 +4,7 @@ import L from 'leaflet';
 import { MapPin, Navigation, Info, ExternalLink } from 'lucide-react';
 import geoData from '../data/csaGeoDatabase.json';
 
-// Helper component to center map when selected station changes
+// Helper component to center map when selected station changes & invalidate size on viewport changes
 function MapRecenter({ center, zoom }) {
   const map = useMap();
   React.useEffect(() => {
@@ -12,6 +12,21 @@ function MapRecenter({ center, zoom }) {
       map.flyTo(center, zoom || map.getZoom(), { duration: 1.2 });
     }
   }, [center, zoom, map]);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+    }, 150);
+    const handleResize = () => {
+      map.invalidateSize();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [map]);
+
   return null;
 }
 
@@ -103,13 +118,13 @@ export default function CanadaWeatherMap({
         </div>
       </div>
 
-      {/* Map Container */}
-      <div style={{ height: '360px', width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)', position: 'relative' }}>
+      {/* Map Container - Expanded to at least 50% viewport height */}
+      <div style={{ height: 'max(52vh, 480px)', minHeight: '50vh', width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)', position: 'relative' }}>
         <MapContainer
           center={mapCenter}
           zoom={currentStation ? 7 : 4}
           scrollWheelZoom={true}
-          style={{ height: '100%', width: '100%', background: '#1e293b' }}
+          style={{ height: '100%', width: '100%', background: 'var(--bg-card)' }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

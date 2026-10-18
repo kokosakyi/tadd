@@ -40,12 +40,6 @@ export default function LibraryHallView({
       {/* Library Welcome Banner */}
       <div 
         className="glass-panel library-banner" 
-        style={{ 
-          border: '1px solid var(--border-color)',
-          background: 'radial-gradient(ellipse at top, rgba(56, 189, 248, 0.08) 0%, rgba(15, 23, 42, 0.6) 80%)',
-          position: 'relative',
-          overflow: 'hidden'
-        }}
       >
         <div style={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div style={{ maxWidth: '680px' }}>
@@ -63,20 +57,20 @@ export default function LibraryHallView({
 
           {/* Quick Collection Stats Counters */}
           <div className="library-stats-grid">
-            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+            <div className="library-stats-card">
               <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-cyan)' }}>{standards.length}</div>
               <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Book Volumes</div>
               <span style={{ display: 'none' }} aria-hidden="true">3</span>
             </div>
-            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+            <div className="library-stats-card">
               <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#10b981' }}>{totalClauses}</div>
               <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Clauses</div>
             </div>
-            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+            <div className="library-stats-card">
               <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#f59e0b' }}>{totalTables}</div>
               <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Tables</div>
             </div>
-            <div className="library-stats-card" style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem 1.25rem', textAlign: 'center' }}>
+            <div className="library-stats-card">
               <div className="stats-number" style={{ fontSize: '1.6rem', fontWeight: '800', color: '#c084fc' }}>{totalDefinitions}</div>
               <div className="stats-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Glossary Terms</div>
             </div>
@@ -187,14 +181,6 @@ export default function LibraryHallView({
                 {/* Book Cover Stage with 3D Book Presentation */}
                 <div 
                   className="book-3d-stage"
-                  style={{ 
-                    background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.35) 100%)',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
                   onClick={() => onOpenBook(book.id)}
                   title={`Open Volume: ${book.code}`}
                 >
@@ -227,24 +213,12 @@ export default function LibraryHallView({
 
                   {/* Open Reader Floating Action Pill */}
                   <div
+                    className="book-open-btn-pill"
                     style={{
-                      position: 'absolute',
-                      bottom: '1rem',
-                      background: 'rgba(15, 23, 42, 0.85)',
-                      backdropFilter: 'blur(8px)',
                       border: `1px solid ${accentColor}`,
                       color: accentColor,
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '20px',
-                      fontSize: '0.78rem',
-                      fontWeight: '700',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
                       opacity: isHovered ? 1 : 0.85,
-                      translate: isHovered ? '0 -3px' : '0 0',
-                      transition: 'opacity 0.2s ease, translate 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)'
+                      translate: isHovered ? '0 -3px' : '0 0'
                     }}
                   >
                     <BookOpen size={14} />
@@ -281,18 +255,8 @@ export default function LibraryHallView({
                     {/* Quick Stats Grid */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.65rem', marginBottom: '0.75rem' }}>
                       <div 
+                        className="book-quick-stat"
                         onClick={() => onOpenBook(book.id, 'clauses')}
-                        style={{ 
-                          background: 'rgba(255, 255, 255, 0.03)', 
-                          border: '1px solid rgba(255, 255, 255, 0.07)',
-                          borderRadius: '8px', 
-                          padding: '0.6rem 0.75rem', 
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.6rem',
-                          transition: 'background 0.2s ease'
-                        }}
                         title={`Browse ${book.clauseCount} ${book.isDialogueBook ? 'lessons' : 'clauses'} in ${book.code}`}
                       >
                         <FileText size={16} color={accentColor} />
@@ -303,18 +267,8 @@ export default function LibraryHallView({
                       </div>
 
                       <div 
+                        className="book-quick-stat"
                         onClick={() => onOpenBook(book.id, 'tables')}
-                        style={{ 
-                          background: 'rgba(255, 255, 255, 0.03)', 
-                          border: '1px solid rgba(255, 255, 255, 0.07)',
-                          borderRadius: '8px', 
-                          padding: '0.6rem 0.75rem', 
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.6rem',
-                          transition: 'background 0.2s ease'
-                        }}
                         title={`Browse ${book.tableCount} tables in ${book.code}`}
                       >
                         <Table size={16} color="#10b981" />
@@ -373,15 +327,7 @@ export default function LibraryHallView({
       </div>
 
       {/* Library Shelf Bottom Platform */}
-      <div 
-        style={{ 
-          height: '14px', 
-          background: 'linear-gradient(to bottom, #1e293b, #0f172a)', 
-          borderRadius: '4px', 
-          border: '1px solid var(--border-color)',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.6)'
-        }} 
-      />
+      <div className="library-shelf-platform" />
 
       {/* Bookmarked & Pinned Reference Shelf */}
       <div className="glass-panel library-pinned-shelf" style={{ borderRadius: '14px', border: '1px solid var(--border-color)' }}>
@@ -406,17 +352,7 @@ export default function LibraryHallView({
             {bookmarks.map((bm, idx) => (
               <div
                 key={`${bm.type}_${bm.id}_${idx}`}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '0.6rem',
-                  padding: '0.75rem 0.9rem',
-                  borderRadius: '10px',
-                  background: 'rgba(15, 23, 42, 0.6)',
-                  border: '1px solid rgba(245, 158, 11, 0.3)',
-                  transition: 'all 0.2s ease'
-                }}
+                className="library-pinned-card"
               >
                 <button
                   type="button"

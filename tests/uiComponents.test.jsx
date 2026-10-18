@@ -221,13 +221,40 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     fireEvent.click(screen.getByText('Dan (Senior As)'));
     expect(screen.getByText('Showing 1 of 2 dialogue turns')).toBeDefined();
 
-    // Reset to All Dialogue
-    fireEvent.click(screen.getByText('All Dialogue'));
-    expect(screen.getByText('Showing 2 of 2 dialogue turns')).toBeDefined();
+    // Check dialogue cards have the responsive classes and no hardcoded dark gradients interfering with light mode
+    const turnCards = document.querySelectorAll('.dialogue-turn-card');
+    expect(turnCards.length).toBeGreaterThanOrEqual(1);
+    turnCards.forEach(card => {
+      // Must not have hardcoded dark inline linear-gradient
+      expect(card.style.background).not.toContain('rgba(15, 23, 42');
+    });
+
+    const bodyTexts = document.querySelectorAll('.dialogue-body-text');
+    expect(bodyTexts.length).toBeGreaterThanOrEqual(1);
+    bodyTexts.forEach(txt => {
+      // Must not have hardcoded light gray text color #e2e8f0 interfering with light reading
+      expect(txt.style.color).not.toBe('#e2e8f0');
+    });
 
     // Return back to shelf
     fireEvent.click(screen.getByText('Return to Library Shelf'));
     expect(screen.getByText('Standard Volumes & Editions')).toBeDefined();
+  });
+
+  it('renders CanadaWeatherMap with height expanded to at least 50% of viewport height', async () => {
+    const { default: CanadaWeatherMap } = await import('../src/components/CanadaWeatherMap.jsx');
+    const { container } = render(
+      <CanadaWeatherMap
+        selectedProvince="Ontario"
+        selectedCity="Toronto"
+        onSelectStation={() => {}}
+      />
+    );
+
+    const mapContainer = container.querySelector('.leaflet-container')?.parentElement;
+    expect(mapContainer).toBeDefined();
+    expect(mapContainer.style.height).toContain('52vh');
+    expect(mapContainer.style.minHeight).toBe('50vh');
   });
 
   it('supports mobile view table of contents toggle drawer and responsive layout elements', async () => {

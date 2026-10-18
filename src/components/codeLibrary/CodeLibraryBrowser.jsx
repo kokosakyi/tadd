@@ -575,7 +575,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                       setViewMode('book');
                     }}
                     style={{
-                      background: isSelected ? 'rgba(56, 189, 248, 0.2)' : 'rgba(255,255,255,0.04)',
+                      background: isSelected ? 'rgba(56, 189, 248, 0.2)' : 'var(--bg-inset)',
                       border: isSelected ? `1px solid ${vol.color}` : '1px solid var(--border-color)',
                       borderRadius: '20px',
                       padding: '0.2rem 0.6rem',

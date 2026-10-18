@@ -143,7 +143,7 @@ export default function TableReaderTab({
                   `[${currentTable.standardName}-${currentTable.edition}, ${currentTable.number}: ${currentTable.title}]`
                 )}
                 style={{
-                  background: 'rgba(255,255,255,0.05)',
+                  background: 'var(--bg-inset)',
                   border: '1px solid var(--border-color)',
                   borderRadius: '6px',
                   padding: '0.35rem 0.65rem',
@@ -169,7 +169,7 @@ export default function TableReaderTab({
                   title: currentTable.title
                 })}
                 style={{
-                  background: isBookmarked('table', currentTable.id) ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255,255,255,0.05)',
+                  background: isBookmarked('table', currentTable.id) ? 'rgba(245, 158, 11, 0.15)' : 'var(--bg-inset)',
                   border: isBookmarked('table', currentTable.id) ? '1px solid rgba(245, 158, 11, 0.4)' : '1px solid var(--border-color)',
                   borderRadius: '6px',
                   padding: '0.35rem 0.65rem',
@@ -218,7 +218,7 @@ export default function TableReaderTab({
                       gap: '0.4rem',
                       padding: '0.35rem 0.75rem',
                       borderRadius: '6px',
-                      background: 'rgba(15, 23, 42, 0.6)',
+                      background: 'var(--bg-inset)',
                       border: '1px solid rgba(6, 182, 212, 0.35)',
                       color: 'var(--text-main)',
                       fontSize: '0.82rem',
