@@ -86,4 +86,41 @@ describe('Engineering Calculation Harness - Property-Based & Fuzz Invariants', (
       )
     );
   });
+
+  it('dual-standard (CSA & ANSI) multi-segment wood pole engine preserves monotonic taper and finite buckling invariants', () => {
+    fc.assert(
+      fc.property(
+        fc.constantFrom('CSA', 'ANSI'),
+        fc.constantFrom('WC', 'DF', 'JP', 'LP', 'SYP'),
+        fc.float({ min: 10.0, max: 28.0, noNaN: true }),
+        fc.constantFrom('H2', 'H1', '1', '2', '3', '4', '5'),
+        fc.boolean(),
+        fc.boolean(),
+        (standard, speciesCode, poleLengthM, poleClass, enablePDelta, enableHeightAdjustment) => {
+          const res = calculateWoodPoleStructural({
+            standard,
+            speciesCode,
+            poleLengthM,
+            poleClass,
+            enablePDelta,
+            enableHeightAdjustment
+          });
+
+          expect(res.elevationProfile.length).toBeGreaterThan(5);
+          expect(Number.isFinite(res.buckling.criticalBucklingLoadLbs)).toBe(true);
+          expect(res.buckling.criticalBucklingLoadLbs).toBeGreaterThan(0);
+          expect(Number.isFinite(res.buckling.amplificationFactor)).toBe(true);
+          expect(res.buckling.amplificationFactor).toBeGreaterThanOrEqual(1.0);
+
+          for (let i = 1; i < res.elevationProfile.length; i++) {
+            const prev = res.elevationProfile[i - 1];
+            const curr = res.elevationProfile[i];
+            expect(curr.diameterIn).toBeGreaterThanOrEqual(prev.diameterIn);
+            expect(curr.sectionModulusIn3).toBeGreaterThanOrEqual(prev.sectionModulusIn3);
+            expect(Number.isFinite(curr.usagePercent)).toBe(true);
+          }
+        }
+      )
+    );
+  });
 });
