@@ -1095,7 +1095,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="w/t \text{ & } (w/t)_{\lim}" />
+                    <Latex math="w/t \text{ \& } (w/t)_{\lim}" />
                   </span>
                   <span className="calc-eq-purpose-label">Flat-width ratio and compact local buckling limit — Eq. (3.7-1)</span>
                 </div>
@@ -1144,7 +1144,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="\frac{KL}{r} \text{ & } C_c" />
+                    <Latex math="\frac{KL}{r} \text{ \& } C_c" />
                   </span>
                   <span className="calc-eq-purpose-label">Effective slenderness ratio (Table 3.4-1) &amp; elastic/inelastic column threshold — Eq. (3.6-2)</span>
                 </div>
@@ -1156,7 +1156,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="F_a \text{ & } P_a" />
+                    <Latex math="F_a \text{ \& } P_a" />
                   </span>
                   <span className="calc-eq-purpose-label">Design compressive stress and member compression capacity — Eqs. (3.6-1) &amp; (3.6-3)</span>
                 </div>
@@ -1417,7 +1417,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="d_h \text{ & } A_n" />
+                    <Latex math="d_h \text{ \& } A_n" />
                   </span>
                   <span className="calc-eq-purpose-label">Effective hole diameter and staggered net cross-sectional area</span>
                 </div>
@@ -1429,7 +1429,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="F_t \text{ & } P_t" />
+                    <Latex math="F_t \text{ \& } P_t" />
                   </span>
                   <span className="calc-eq-purpose-label">Design tensile stress and net section tension capacity</span>
                 </div>
@@ -1445,7 +1445,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="A_v, A_t \text{ & } P_{bs}" />
+                    <Latex math="A_v, A_t \text{ \& } P_{bs}" />
                   </span>
                   <span className="calc-eq-purpose-label">Block shear rupture capacity — Eq. (3.10-1)</span>
                 </div>
@@ -1457,7 +1457,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="A_s, P_{\text{rod}} \text{ & } P_{\text{guy}}" />
+                    <Latex math="A_s, P_{\text{rod}} \text{ \& } P_{\text{guy}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Threaded rod stress area Eq. (3.10-2) and guy strand design strength Sec. 3.10.5</span>
                 </div>
@@ -1632,7 +1632,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="M_y, M_e \text{ & } M_b" />
+                    <Latex math="M_y, M_e \text{ \& } M_b" />
                   </span>
                   <span className="calc-eq-purpose-label">Equal-leg angle yield moment and lateral-torsional buckling moment — Eqs. (3.14-5)–(3.14-11)</span>
                 </div>
@@ -1652,7 +1652,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="\text{Eq. (3.12-1) & (3.12-2)}" />
+                    <Latex math="\text{Eq. (3.12-1) \& (3.12-2)}" />
                   </span>
                   <span className="calc-eq-purpose-label">Beam-column stability and cross-section yield interaction</span>
                 </div>
@@ -1664,7 +1664,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="F_v \text{ & } V_n" />
+                    <Latex math="F_v \text{ \& } V_n" />
                   </span>
                   <span className="calc-eq-purpose-label">Beam web shear stress and shear capacity — Eqs. (3.15-1)–(3.15-3)</span>
                 </div>
@@ -1896,7 +1896,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="A_s, V_{\text{bolt}} \text{ & } T_{\text{bolt}}" />
+                    <Latex math="A_s, V_{\text{bolt}} \text{ \& } T_{\text{bolt}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Tensile stress area Eq. (4.3-1), bolt shear Sec. 4.3.2 &amp; bolt tension Sec. 4.3.3</span>
                 </div>
@@ -1908,7 +1908,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="F_{t(v)} \text{ & } P_{\text{brg}}" />
+                    <Latex math="F_{t(v)} \text{ \& } P_{\text{brg}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Combined shear + tension elliptical interaction Eq. (4.3-2) &amp; bearing capacity Sec. 4.4</span>
                 </div>
@@ -1924,7 +1924,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="e_{\min}, s_{\min} \text{ & } f_{\min}" />
+                    <Latex math="e_{\min}, s_{\min} \text{ \& } f_{\min}" />
                   </span>
                   <span className="calc-eq-purpose-label">Minimum end distance Eqs. (4.5-1)–(4.5-3), center spacing Eq. (4.5-5) &amp; edge distance Eqs. (4.5-6)–(4.5-7)</span>
                 </div>
@@ -1936,7 +1936,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="P_{\text{hole}} \text{ & } P_{\text{wear}}" />
+                    <Latex math="P_{\text{hole}} \text{ \& } P_{\text{wear}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Guy/insulator attachment hole capacity Eqs. (4.6-1)–(4.6-2) &amp; everyday wear limit</span>
                 </div>
@@ -2131,7 +2131,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="A_a \text{ & } A_{s,\text{req}}" />
+                    <Latex math="A_a \text{ \& } A_{s,\text{req}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Stub angle area Eq. (7.4-1) and anchor bolt shear-friction area Eqs. (7.4-2)–(7.4-4)</span>
                 </div>
@@ -2159,7 +2159,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               <div className="calc-eq-item">
                 <div className="calc-eq-meta">
                   <span className="calc-eq-var-badge">
-                    <Latex math="Q_n \text{ & } P_{\text{angle}}" />
+                    <Latex math="Q_n \text{ \& } P_{\text{angle}}" />
                   </span>
                   <span className="calc-eq-purpose-label">Headed stud connector Eq. (7.6-1) and angle shear connector Eqs. (7.6-2)–(7.6-3)</span>
                 </div>

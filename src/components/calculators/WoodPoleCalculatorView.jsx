@@ -997,7 +997,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Diameters Evaluation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">D_t &amp; D_b</span>
+                      <span className="calc-eq-var-badge"><Latex math="D_t \text{ \& } D_b" /></span>
                       <span className="calc-eq-purpose-label">Tip &amp; butt diameters converted from circumference (ANSI Table 2 / CSA Table 4)</span>
                     </div>
                     <Latex block>
@@ -1008,7 +1008,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Taper Rate */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">T_taper</span>
+                      <span className="calc-eq-var-badge"><Latex math="T_{\text{taper}}" /></span>
                       <span className="calc-eq-purpose-label">Shaft taper rate per foot of pole height</span>
                     </div>
                     <Latex block>
@@ -1019,7 +1019,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Groundline Diameter & Section Modulus */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">D_GL &amp; S_GL</span>
+                      <span className="calc-eq-var-badge"><Latex math="D_{\text{GL}} \text{ \& } S_{\text{GL}}" /></span>
                       <span className="calc-eq-purpose-label">Groundline base diameter &amp; section modulus at embedment transition</span>
                     </div>
                     <Latex block>
@@ -1035,7 +1035,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Material Adjustment Formulation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_5% & k_ht(z)' : 'M_r(z)'}</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math={isAnsi ? 'MOR_{5\\%} \\text{ \\& } k_{\\text{ht}}(z)' : 'M_r(z)'} />
+                      </span>
                       <span className="calc-eq-purpose-label">{isAnsi ? '5th-percentile characteristic strength & ASCE 141 height factor' : 'Factored resisting moment capacity with species reduction'}</span>
                     </div>
                     <Latex block>
@@ -1048,7 +1050,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Standard Base Fiber Stress */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_50% & COV' : 'f_b & k_species'}</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math={isAnsi ? 'MOR_{50\\%} \\text{ \\& } COV' : 'f_b \\text{ \\& } k_{\\text{species}}'} />
+                      </span>
                       <span className="calc-eq-purpose-label">{isAnsi ? 'Mean Modulus of Rupture & designated standard variance' : 'Code specified fiber stress & species factor'}</span>
                     </div>
                     <Latex block>
@@ -1061,7 +1065,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Lower Exclusion Limit Evaluation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_5%' : 'f_b (Factored)'}</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math={isAnsi ? 'MOR_{5\\%}' : 'f_b\\text{ (Factored)}'} />
+                      </span>
                       <span className="calc-eq-purpose-label">{isAnsi ? '5% Lower Exclusion Limit fiber stress (LEL)' : 'Base factored allowable bending strength'}</span>
                     </div>
                     <Latex block>
@@ -1074,7 +1080,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Critical Section Allowable Stress */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">k_ht &amp; σ_allow</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math="k_{\text{ht}} \text{ \& } \sigma_{\text{allow}}" />
+                      </span>
                       <span className="calc-eq-purpose-label">Height factor &amp; final allowable design stress at governing critical elevation</span>
                     </div>
                     <Latex block>
@@ -1090,7 +1098,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Primary Moment Integration Equation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">M_prim(z)</span>
+                      <span className="calc-eq-var-badge"><Latex math="M_{\text{prim}}(z)" /></span>
                       <span className="calc-eq-purpose-label">Continuous integration of transverse attachment forces, eccentricities &amp; distributed pole wind</span>
                     </div>
                     <Latex block>
@@ -1101,7 +1109,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Critical Section Moment */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">M_prim(z_crit)</span>
+                      <span className="calc-eq-var-badge"><Latex math="M_{\text{prim}}(z_{\text{crit}})" /></span>
                       <span className="calc-eq-purpose-label">Primary bending moment acting at the governing critical station</span>
                     </div>
                     <Latex block>
@@ -1112,7 +1120,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Groundline Primary Moment */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">M_prim(z_GL)</span>
+                      <span className="calc-eq-var-badge"><Latex math="M_{\text{prim}}(z_{\text{GL}})" /></span>
                       <span className="calc-eq-purpose-label">Primary bending moment at groundline base before P-Delta amplification</span>
                     </div>
                     <Latex block>
@@ -1128,7 +1136,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Effective Section Formulation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">D_eff, I_eff, P'_cr</span>
+                      <span className="calc-eq-var-badge"><Latex math="D_{\text{eff}}, I_{\text{eff}}, P'_{\text{cr}}" /></span>
                       <span className="calc-eq-purpose-label">Effective geometric diameter, second moment of area &amp; base Euler critical load</span>
                     </div>
                     <Latex block>
@@ -1139,7 +1147,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Gere-Carter Factor & Amplification Formulation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">P*, P_cr, AF_PΔ</span>
+                      <span className="calc-eq-var-badge"><Latex math="P^*, P_{\text{cr}}, AF_{P\Delta}" /></span>
                       <span className="calc-eq-purpose-label">Gere-Carter taper stiffness modifier &amp; non-linear second-order moment amplification</span>
                     </div>
                     <Latex block>
@@ -1150,7 +1158,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Effective Diameter & Inertia Evaluation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">D_eff &amp; I_eff</span>
+                      <span className="calc-eq-var-badge"><Latex math="D_{\text{eff}} \text{ \& } I_{\text{eff}}" /></span>
                       <span className="calc-eq-purpose-label">Computed equivalent cylindrical section properties</span>
                     </div>
                     <Latex block>
@@ -1161,7 +1169,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Critical Buckling Load */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">P_cr</span>
+                      <span className="calc-eq-var-badge"><Latex math="P_{\text{cr}}" /></span>
                       <span className="calc-eq-purpose-label">Gere-Carter adjusted elastic cantilever column stability threshold</span>
                     </div>
                     <Latex block>
@@ -1172,7 +1180,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* P-Delta Amplification Factor */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">AF_PΔ</span>
+                      <span className="calc-eq-var-badge"><Latex math="AF_{P\Delta}" /></span>
                       <span className="calc-eq-purpose-label">Second-order deflection multiplier applied to primary bending moments</span>
                     </div>
                     <Latex block>
@@ -1188,7 +1196,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Interaction Formulation */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">{isAnsi ? 'f_a, f_b, U(z)' : 'M_f, M_r, U(z)'}</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math={isAnsi ? 'f_a, f_b, U(z)' : 'M_f, M_r, U(z)'} />
+                      </span>
                       <span className="calc-eq-purpose-label">{isAnsi ? 'Combined axial compression plus amplified bending interaction' : 'Factored moment vs resisting moment ratio'}</span>
                     </div>
                     <Latex block>
@@ -1201,7 +1211,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Stresses at Critical Section */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">{isAnsi ? 'f_b(z_crit) & f_a(z_crit)' : 'M_f(z_crit) & M_r(z_crit)'}</span>
+                      <span className="calc-eq-var-badge">
+                        <Latex math={isAnsi ? 'f_b(z_{\\text{crit}}) \\text{ \\& } f_a(z_{\\text{crit}})' : 'M_f(z_{\\text{crit}}) \\text{ \\& } M_r(z_{\\text{crit}})'} />
+                      </span>
                       <span className="calc-eq-purpose-label">Internal forces and stress components evaluated at peak critical elevation</span>
                     </div>
                     <Latex block>
@@ -1215,7 +1227,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   <div className="calc-eq-item" style={{ borderLeftColor: critSeg.usagePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)' }}>
                     <div className="calc-eq-meta">
                       <span className="calc-eq-var-badge" style={{ color: critSeg.usagePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)', background: critSeg.usagePercent <= 100 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.12)', borderColor: critSeg.usagePercent <= 100 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.25)' }}>
-                        U(z_crit) — GOVERNING
+                        <Latex math="U(z_{\text{crit}})" /> — GOVERNING
                       </span>
                       <span className="calc-eq-purpose-label">Maximum structural capacity utilization across the entire pole shaft</span>
                     </div>
@@ -1229,7 +1241,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   {/* Groundline Base Section Check */}
                   <div className="calc-eq-item">
                     <div className="calc-eq-meta">
-                      <span className="calc-eq-var-badge">U(z_GL)</span>
+                      <span className="calc-eq-var-badge"><Latex math="U(z_{\text{GL}})" /></span>
                       <span className="calc-eq-purpose-label">Groundline base section comparison check</span>
                     </div>
                     <Latex block>

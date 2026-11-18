@@ -1,4 +1,5 @@
 import React from 'react';
+import Latex from './common/Latex';
 
 export default function Module3PhysicsCard({ module3Result: propResult, physicsResults, isTransmission, setIsTransmission }) {
   const module3Result = propResult || physicsResults;
@@ -189,21 +190,21 @@ export default function Module3PhysicsCard({ module3Result: propResult, physicsR
         <summary>Design Calculation — Physics Engine</summary>
         <div className="calc-body">
           <div className="calc-step">
-            <div className="calc-label">Extreme Wind-Only Dynamic Pressure (q₀)</div>
+            <div className="calc-label">Extreme Wind-Only Dynamic Pressure (<Latex math="q_0" />)</div>
             <div className="calc-formula">q₀ = 0.5 × ρ × τ × (W_T / 3.6)²</div>
             <div className="calc-formula">
               q₀ = 0.5 × 1.225 × 1.04 × ({module3Result.w_T.toFixed(1)} / 3.6)² = <span className="calc-result">{module3Result.q0_extreme.toFixed(2)} Pa</span>
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Spatial &amp; Height Adjusted Design Ice (t_design)</div>
+            <div className="calc-label">Spatial &amp; Height Adjusted Design Ice (<Latex math="t_{\text{design}}" />)</div>
             <div className="calc-formula">t_design = t_T × S_a × K_h</div>
             <div className="calc-formula">
               t_design = {module3Result.t_T.toFixed(1)} × {module3Result.sa.toFixed(1)} × {module3Result.kh.toFixed(2)} = <span className="calc-result">{module3Result.t_design.toFixed(2)} mm</span>
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Radial Glaze Ice Unit Weight (g_R)</div>
+            <div className="calc-label">Radial Glaze Ice Unit Weight (<Latex math="g_R" />)</div>
             <div className="calc-formula">g_R = 0.0277 × t_design × (t_design + d)</div>
             <div className="calc-formula">
               g_R = 0.0277 × {module3Result.t_design.toFixed(1)} × ({module3Result.t_design.toFixed(1)} + {module3Result.condDiameterMm}) = <span className="calc-result">{module3Result.g_R.toFixed(2)} N/m</span>

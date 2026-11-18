@@ -1,4 +1,5 @@
 import React from 'react';
+import Latex from './common/Latex';
 
 export default function Module5TensionLimitsCard({
   module5Result: propResult,
@@ -190,7 +191,7 @@ export default function Module5TensionLimitsCard({
         <summary>Design Calculation — Tension &amp; Catenary Limits</summary>
         <div className="calc-body">
           <div className="calc-step">
-            <div className="calc-label">Base Catenary Constant (C_base)</div>
+            <div className="calc-label">Base Catenary Constant (<Latex math="C_{\text{base}}" />)</div>
             <div className="calc-formula">
               Dampers: {hasDampers ? 'Installed' : 'Not Installed'} | Configuration: {isBundled ? 'Bundled' : 'Single'}
             </div>
@@ -214,7 +215,7 @@ export default function Module5TensionLimitsCard({
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Aeolian Vibration Initial Tension (H_vibe)</div>
+            <div className="calc-label">Aeolian Vibration Initial Tension (<Latex math="H_{\text{vibe}}" />)</div>
             <div className="calc-formula">
               H_vibe = C_max × w / 1000 = {module5Result.maxCatenary} × {module5Result.conductorWeightNm} / 1000 = <span className="calc-result">{module5Result.aeolianTensionLimitKn.toFixed(2)} kN</span>
             </div>

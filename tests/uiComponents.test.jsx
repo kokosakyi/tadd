@@ -363,13 +363,16 @@ describe('UI Component Test Suite - iOS 26 Liquid Glass Shell & Navigation', () 
     fireEvent.click(desktopTowerBtn);
     expect(desktopTowerBtn.getAttribute('aria-current')).toBe('page');
     expect(await screen.findByText(/ASCE\/SEI 10-15 Latticed Steel Tower Design Engine/i)).toBeDefined();
+    expect(container.querySelectorAll('.katex-error').length).toBe(0);
 
     // Verify sub-module tabs and benchmark presets work
     fireEvent.click(screen.getByRole('tab', { name: /Tension & Block Shear/i }));
     expect(await screen.findByText(/ASCE 10-15 Section 3.10 Tension & Block Shear Capacities/i)).toBeDefined();
+    expect(container.querySelectorAll('.katex-error').length).toBe(0);
 
     fireEvent.click(screen.getByText(/Table C4-1: 3\/4" A394 Bolt/i));
     expect(await screen.findByText(/ASCE 10-15 Chapter 4 Bolt & Spacing Verification/i)).toBeDefined();
+    expect(container.querySelectorAll('.katex-error').length).toBe(0);
 
     // Verify workspace glass panels exist
     expect(container.querySelectorAll('.glass-panel').length).toBeGreaterThan(2);

@@ -1,4 +1,5 @@
 import React from 'react';
+import Latex from './common/Latex';
 
 export default function Module2RPScalingCard({ module2Result, scalingResults, w50, t50 }) {
   const res = module2Result || scalingResults;
@@ -70,25 +71,25 @@ export default function Module2RPScalingCard({ module2Result, scalingResults, w5
         <summary>Design Calculation — Return Period Scaling</summary>
         <div className="calc-body">
           <div className="calc-step">
-            <div className="calc-label">Wind Scaling Factor (Tw)</div>
+            <div className="calc-label">Wind Scaling Factor (<Latex math="T_w" />)</div>
             <div className="calc-formula">
               Tw = Table CA.2 interpolation for T = {res.returnPeriod || 150} yr → <span className="calc-result">{res.Tw.toFixed(4)}</span>
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Ice Scaling Factor (Ti)</div>
+            <div className="calc-label">Ice Scaling Factor (<Latex math="T_i" />)</div>
             <div className="calc-formula">
               Ti = Table CA.2 interpolation for T = {res.returnPeriod || 150} yr → <span className="calc-result">{res.Ti.toFixed(4)}</span>
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Scaled Design Wind Speed (W_T)</div>
+            <div className="calc-label">Scaled Design Wind Speed (<Latex math="W_T" />)</div>
             <div className="calc-formula">
               W_T = W50 × Tw = {effW50} × {res.Tw.toFixed(3)} = <span className="calc-result">{res.w_T.toFixed(2)} km/h</span>
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Scaled Design Ice Thickness (t_T)</div>
+            <div className="calc-label">Scaled Design Ice Thickness (<Latex math="t_T" />)</div>
             <div className="calc-formula">
               t_T = t50 × Ti = {effT50} × {res.Ti.toFixed(3)} = <span className="calc-result">{res.t_T.toFixed(2)} mm</span>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Latex from './common/Latex';
 
 export default function Module4GuardrailCard({ module4Result: propResult, governedResults }) {
   const module4Result = propResult || governedResults;
@@ -166,7 +167,7 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
         <summary>Design Calculation — Deterministic Guardrail Comparison</summary>
         <div className="calc-body">
           <div className="calc-step">
-            <div className="calc-label">Governing Wind Pressure (q_final)</div>
+            <div className="calc-label">Governing Wind Pressure (<Latex math="q_{\text{final}}" />)</div>
             <div className="calc-formula">q_final = max(q₀_calc, q_min)</div>
             <div className="calc-formula">
               q_final = max({module4Result.q0_extreme.toFixed(1)}, {module4Result.minWindPa.toFixed(1)}) = <span className="calc-result">{module4Result.governed_q0.toFixed(1)} Pa</span>
@@ -176,7 +177,7 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
             </div>
           </div>
           <div className="calc-step">
-            <div className="calc-label">Governing Ice Thickness (t_final)</div>
+            <div className="calc-label">Governing Ice Thickness (<Latex math="t_{\text{final}}" />)</div>
             <div className="calc-formula">t_final = max(t_design, t_min)</div>
             <div className="calc-formula">
               t_final = max({module4Result.t_design.toFixed(1)}, {module4Result.minIceMm.toFixed(1)}) = <span className="calc-result">{module4Result.governed_t_design.toFixed(1)} mm</span>
