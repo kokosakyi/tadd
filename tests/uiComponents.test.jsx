@@ -312,6 +312,21 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     expect(blockContainer.querySelector('.latex-block-eq')).not.toBeNull();
     expect(blockContainer.querySelector('.katex-display')).not.toBeNull();
   });
+
+  it('renders ASCE 10-15 clauses and tables with proper KaTeX math equations', async () => {
+    const { default: CodeLibraryBrowser } = await import('../src/components/codeLibrary/CodeLibraryBrowser.jsx');
+    const { container } = render(<CodeLibraryBrowser />);
+
+    // Open ASCE 10-15 volume
+    fireEvent.click(screen.getByText('Read Volume (ASCE 10-15)'));
+
+    // Search for Clause 3.6 (Design Compression equations Eq. 3.6-1, 3.6-2, 3.6-3)
+    const searchBox = screen.getByRole('searchbox');
+    fireEvent.change(searchBox, { target: { value: '3.6' } });
+
+    expect(container.querySelectorAll('.katex').length).toBeGreaterThan(3);
+    expect(container.querySelectorAll('.latex-block-eq').length).toBeGreaterThanOrEqual(3);
+  });
 });
 
 describe('UI Component Test Suite - iOS 26 Liquid Glass Shell & Navigation', () => {

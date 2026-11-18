@@ -5,7 +5,6 @@ import {
   Moon,
   Plus,
   FolderKanban,
-  ShieldCheck,
   BookOpen,
   Ruler,
   Wind,
@@ -16,10 +15,10 @@ import { useProject } from '../../context/ProjectContext';
 import { useUnits } from '../../context/UnitContext';
 
 export const NAV_ITEMS = [
-  { id: 'dashboard', label: 'Workflow Hub', mobileLabel: 'Hub', icon: LayoutDashboard },
+  { id: 'dashboard', label: 'Home', mobileLabel: 'Home', icon: LayoutDashboard },
   { id: 'clearance', label: 'Clearances', mobileLabel: 'Clearance', icon: Ruler },
-  { id: 'weather', label: 'Weather & Criteria', mobileLabel: 'Weather', icon: Wind },
-  { id: 'wood_pole', label: 'Pole Loading', mobileLabel: 'Poles', icon: TreePine },
+  { id: 'weather', label: 'Weather Criteria', mobileLabel: 'Weather', icon: Wind },
+  { id: 'wood_pole', label: 'Pole Sizing', mobileLabel: 'Poles', icon: TreePine },
   { id: 'code_library', label: 'Code Library', mobileLabel: 'Library', icon: BookOpen }
 ];
 
@@ -74,9 +73,9 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
           >
             <div
               style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '14px',
+                width: '40px',
+                height: '40px',
+                borderRadius: '13px',
                 background: 'var(--accent-primary)',
                 border: '1px solid rgba(255, 255, 255, 0.42)',
                 display: 'flex',
@@ -87,52 +86,36 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
                   'inset 0 1.5px 0 0 rgba(255, 255, 255, 0.55), 0 8px 20px -4px rgba(14, 165, 233, 0.45)'
               }}
             >
-              <Zap size={21} color="#ffffff" />
+              <Zap size={20} color="#ffffff" />
             </div>
             <div style={{ minWidth: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
-                <span
-                  style={{
-                    fontSize: '1.12rem',
-                    fontWeight: 700,
-                    color: 'var(--text-main)',
-                    letterSpacing: '-0.025em'
-                  }}
-                >
-                  LineDesk <span style={{ color: 'var(--accent-cyan)' }}>CA</span>
-                </span>
-                <span className="badge badge-info" style={{ fontSize: '0.62rem', padding: '0.14rem 0.48rem' }}>
-                  CSA
-                </span>
-              </div>
+              <span
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  color: 'var(--text-main)',
+                  letterSpacing: '-0.025em',
+                  display: 'block'
+                }}
+              >
+                LineDesk <span style={{ color: 'var(--accent-cyan)' }}>CA</span>
+              </span>
               <p
                 style={{
                   fontSize: '0.71rem',
                   color: 'var(--text-muted)',
-                  margin: '0.1rem 0 0',
+                  margin: '0.08rem 0 0',
                   letterSpacing: '-0.01em',
                   lineHeight: 1.3
                 }}
               >
-                CSA C22.3 &amp; O15 T&amp;D Suite
+                Overhead T&amp;D Suite
               </p>
             </div>
           </div>
 
           {/* Primary Workspace Modules */}
-          <div style={{ marginTop: '1.15rem' }}>
-            <div
-              style={{
-                fontSize: '0.68rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--text-muted)',
-                padding: '0 0.55rem 0.5rem'
-              }}
-            >
-              Workspace
-            </div>
+          <div style={{ marginTop: '1rem' }}>
             <nav className="sidebar-nav-list" aria-label="Primary Workspace Modules">
               {NAV_ITEMS.map((item) => {
                 const Icon = item.icon;
@@ -163,14 +146,14 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.75rem',
-            marginTop: '1.25rem',
-            paddingTop: '1rem',
+            gap: '0.65rem',
+            marginTop: '1rem',
+            paddingTop: '0.9rem',
             borderTop: '1px solid var(--border-subtle)'
           }}
         >
           {/* Active Project Frosted Capsule Well */}
-          <div className="glass-inset" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+          <div className="glass-inset" style={{ padding: '0.65rem 0.7rem', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.4rem' }}>
               <span
                 style={{
@@ -183,17 +166,17 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
                 }}
               >
                 <FolderKanban size={13} color="var(--accent-cyan)" />
-                Active Project
+                Project
               </span>
               <button
                 type="button"
                 onClick={() => setIsProjectWizardOpen(true)}
                 className="btn-secondary"
-                style={{ padding: '0.22rem 0.58rem', fontSize: '0.7rem', gap: '0.25rem' }}
-                title="Create a new engineering project (M1 Wizard)"
+                style={{ padding: '0.18rem 0.52rem', fontSize: '0.68rem', gap: '0.2rem' }}
+                title="Create a new engineering project"
               >
-                <Plus size={12} />
-                <span>New Project</span>
+                <Plus size={11} />
+                <span>New</span>
               </button>
             </div>
 
@@ -202,10 +185,10 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
               value={activeProject?.id || ''}
               onChange={(e) => switchProject(e.target.value)}
               style={{
-                padding: '0.46rem 2rem 0.46rem 0.68rem',
-                fontSize: '0.78rem',
+                padding: '0.42rem 1.85rem 0.42rem 0.6rem',
+                fontSize: '0.76rem',
                 fontWeight: 600,
-                borderRadius: '12px'
+                borderRadius: '10px'
               }}
               title="Active Engineering Project"
             >
@@ -215,22 +198,6 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
                 </option>
               ))}
             </select>
-
-            <div
-              className="badge badge-pass"
-              style={{
-                width: '100%',
-                justifyContent: 'center',
-                padding: '0.28rem 0.55rem',
-                fontSize: '0.68rem'
-              }}
-              title="Pinned Code Library Snapshot"
-            >
-              <ShieldCheck size={12} style={{ flexShrink: 0 }} />
-              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {activeProject?.pinnedSnapshot || 'C22.3-1:2020'}
-              </span>
-            </div>
           </div>
 
           {/* Unit Segmented Pill & Theme Button */}
@@ -274,12 +241,12 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
       {/* Mobile Compact Liquid Glass Top Bar (< 1024px) */}
       <header className="glass-mobile-topbar">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', minWidth: 0 }}>
             <div
               style={{
-                width: '34px',
-                height: '34px',
-                borderRadius: '11px',
+                width: '32px',
+                height: '32px',
+                borderRadius: '10px',
                 background: 'var(--accent-primary)',
                 border: '1px solid rgba(255, 255, 255, 0.4)',
                 display: 'flex',
@@ -289,18 +256,11 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
                 boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
               }}
             >
-              <Zap size={17} color="#ffffff" />
+              <Zap size={16} color="#ffffff" />
             </div>
-            <div style={{ minWidth: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                <span style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-                  LineDesk <span style={{ color: 'var(--accent-cyan)' }}>CA</span>
-                </span>
-                <span className="badge badge-info" style={{ fontSize: '0.6rem', padding: '0.1rem 0.42rem' }}>
-                  CSA C22.3 / O15
-                </span>
-              </div>
-            </div>
+            <span style={{ fontSize: '0.96rem', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
+              LineDesk <span style={{ color: 'var(--accent-cyan)' }}>CA</span>
+            </span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.38rem', flexShrink: 0 }}>
@@ -345,27 +305,6 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
               {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
             </button>
           </div>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <select
-            aria-label="Active Engineering Project (Mobile)"
-            value={activeProject?.id || ''}
-            onChange={(e) => switchProject(e.target.value)}
-            style={{
-              flex: 1,
-              padding: '0.42rem 2rem 0.42rem 0.65rem',
-              fontSize: '0.78rem',
-              fontWeight: 600,
-              borderRadius: '12px'
-            }}
-          >
-            {sortedProjects.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.name} ({p.operatingVoltageKv} kV - {p.province})
-              </option>
-            ))}
-          </select>
         </div>
       </header>
     </>

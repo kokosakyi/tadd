@@ -11,19 +11,19 @@ export const TABLE_C4_1_META = {
   standard: 'ASCE 10-15',
   title: 'A394 Type 0 Bolt Connecting A36 Steel — End, Rolled Edge, and Center-to-Center Distances',
   unit: 'in., ksi, kip',
-  evaluatedAt: 'Bolt diameter d = 0.75 in., Single shear through threads (16.65 kip), Nut point-to-point c = 1.3 in., A36 Fu = 58.0 ksi, Bearing stress = 1.5 Fu = 87.0 ksi',
+  evaluatedAt: 'Bolt diameter $d = 0.75\\text{ in.}$, Single shear through threads ($16.65\\text{ kip}$), Nut point-to-point $c = 1.3\\text{ in.}$, A36 $F_u = 58.0\\text{ ksi}$, Bearing stress $= 1.5 F_u = 87.0\\text{ ksi}$',
   references: ['4.4', '4.5.1', '4.5.2', '4.5.3', 'C4.4', 'C4.5.1', 'C4.5.2', 'C4.5.3'],
   notes: [
-    'Eq. (4.5-1): e = 1.2 P / (Fu t) — governs for member thicknesses up through 5/16 in. (6.9 mm).',
-    'Eq. (4.5-2): e = 1.3 d — governs for member thicknesses from 3/8 in. (9.5 mm) through 9/16 in. (14.3 mm), and for drilled holes at 7/8 in. and above.',
-    'Eq. (4.5-3): e = t + d / 2 — governs punched holes for thicknesses from 5/8 in. (15.9 mm) through 13/16 in. (20.6 mm). Does not apply if holes are drilled.',
-    'Eq. (4.5-5): s_min = 1.2 P / (Fu t) + 0.6 d — center-to-center hole spacing along line of transmitted force.',
-    'Suggested erection spacing = nut point-to-point dimension c + 3/8 in. (0.375 in.) = 1.3 + 0.375 = 1.67 in.',
-    'Eq. (4.5-6): f_min = 0.85 e_min for a rolled edge (add 1/16 in. [1.6 mm] per Eq. 4.5-7 for a sheared or mechanically guided flame-cut edge).'
+    'Eq. (4.5-1): $e = \\frac{1.2 P}{F_u t}$ — governs for member thicknesses up through $5/16\\text{ in.}$ ($6.9\\text{ mm}$).',
+    'Eq. (4.5-2): $e = 1.3 d$ — governs for member thicknesses from $3/8\\text{ in.}$ ($9.5\\text{ mm}$) through $9/16\\text{ in.}$ ($14.3\\text{ mm}$), and for drilled holes at $7/8\\text{ in.}$ and above.',
+    'Eq. (4.5-3): $e = t + \\frac{d}{2}$ — governs punched holes for thicknesses from $5/8\\text{ in.}$ ($15.9\\text{ mm}$) through $13/16\\text{ in.}$ ($20.6\\text{ mm}$). Does not apply if holes are drilled.',
+    'Eq. (4.5-5): $s_{\\min} = \\frac{1.2 P}{F_u t} + 0.6 d$ — center-to-center hole spacing along line of transmitted force.',
+    'Suggested erection spacing $= c + 3/8\\text{ in.} = 1.3 + 0.375 = 1.67\\text{ in.}$',
+    'Eq. (4.5-6): $f_{\\min} = 0.85 e_{\\min}$ for a rolled edge (add $1/16\\text{ in.}$ [$1.6\\text{ mm}$] per Eq. (4.5-7) for a sheared or mechanically guided flame-cut edge).'
   ],
   footnotes: {
-    'a': 'P limited by single shear strength (through threads) of bolt (16.65 kip).',
-    'b': 't = 13/16 in. is the suggested maximum punching thickness (13/16-in. diameter hole in A36 steel). Distance shown for 7/8 in., 15/16 in., and 1 in. is for drilled holes.'
+    'a': '$P$ limited by single shear strength (through threads) of bolt ($16.65\\text{ kip}$).',
+    'b': '$t = 13/16\\text{ in.}$ is the suggested maximum punching thickness ($13/16\\text{-in.}$ diameter hole in A36 steel). Distance shown for $7/8\\text{ in.}$, $15/16\\text{ in.}$, and $1\\text{ in.}$ is for drilled holes.'
   }
 };
 

@@ -9,12 +9,12 @@ export const TABLE_C2_1_META = {
   standard: 'ASCE 10-15',
   title: 'Potential Horizontal Plan Bracing and Diaphragm Locations (Fig. C2-1)',
   unit: 'ft (m)',
-  evaluatedAt: 'Self-Supporting Latticed Steel Transmission Towers (For towers > 200 ft [61 m] or heavy dead-end towers, max diaphragm interval = 75 ft [23 m])',
+  evaluatedAt: 'Self-Supporting Latticed Steel Transmission Towers (For towers $> 200\\text{ ft}$ [$61\\text{ m}$] or heavy dead-end towers, max diaphragm interval $= 75\\text{ ft}$ [$23\\text{ m}$])',
   references: ['2.3', 'C2.3', '3.7.4.3', '3.7.4.4'],
   notes: [
     'Horizontal bracing in the face of the tower, with an internal diaphragm, provides rigidity and distributes shear and torsional forces.',
     'Plan bracing without internal cross-diaphragm diagonals provides inadequate torsional rigidity unless triangulated.',
-    'For structures taller than 200 ft (61 m) or heavy dead-end towers, horizontal bracing with a diaphragm is suggested at intervals not exceeding 75 ft (23 m).'
+    'For structures taller than $200\\text{ ft}$ ($61\\text{ m}$) or heavy dead-end towers, horizontal bracing with a diaphragm is suggested at intervals $\\le 75\\text{ ft}$ ($23\\text{ m}$).'
   ]
 };
 
@@ -52,7 +52,7 @@ export const ASCE_10_15_TABLE_C2_1_ROWS = [
   {
     locationId: '6',
     towerLevel: 'Intermediate Tower Body Level',
-    diaphragmRequirement: 'Suggested at intervals <= 75 ft (23 m)',
+    diaphragmRequirement: 'Suggested at intervals $\\le 75\\text{ ft}$ ($23\\text{ m}$)',
     engineeringComments: 'When diaphragm is omitted and the horizontal member is continuous, the horizontal member can be treated as a redundant member per Section 3.7.4.3. Horizontal deflection should also be considered when tower face width is large.'
   },
   {

@@ -1,5 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { Search, ChevronLeft, ChevronRight, Info, Layers } from 'lucide-react';
+import HighlightMatches from './HighlightMatches';
+
+function renderMathText(val) {
+  const str = formatTableCellValue(val);
+  if (typeof str === 'string' && str.includes('$')) {
+    return <HighlightMatches text={str} />;
+  }
+  return str;
+}
 
 /**
  * Human-readable column header formatter for camelCase / snake_case keys
@@ -322,7 +331,7 @@ function MatrixSubTable({ columns, rows, compact = false, sectionTitle = null })
                           fontVariantNumeric: 'tabular-nums lining-nums'
                         }}
                       >
-                        {formatted}
+                        {renderMathText(formatted)}
                       </td>
                     );
                   })}
@@ -536,7 +545,7 @@ function ObjectArrayTable({ rows, compact = false, sectionTitle = null }) {
                         fontVariantNumeric: 'tabular-nums lining-nums'
                       }}
                     >
-                      {formatted}
+                      {renderMathText(formatted)}
                     </td>
                   );
                 })}
@@ -563,9 +572,9 @@ export default function UniversalTableRenderer({ table, compact = false }) {
   const cellPad = compact ? '0.45rem 0.6rem' : '0.6rem 0.8rem';
   const fontSize = compact ? '0.74rem' : '0.8rem';
 
-  // Consolidate notes and footnotes without duplication
-  const rawNotes = table.notes || meta.notes;
-  const rawFootnotes = table.footnotes || meta.footnotes || details.footnotes;
+  // Consolidate notes and footnotes without duplication (prefer live module meta.notes / meta.footnotes)
+  const rawNotes = meta.notes || table.notes;
+  const rawFootnotes = meta.footnotes || details.footnotes || table.footnotes;
   const showSeparateFootnotes =
     rawFootnotes &&
     typeof rawFootnotes === 'object' &&
@@ -590,7 +599,7 @@ export default function UniversalTableRenderer({ table, compact = false }) {
           {meta.evaluatedAt && (
             <div>
               <strong style={{ color: 'var(--accent-cyan)' }}>Evaluated Condition: </strong>
-              {meta.evaluatedAt}
+              {renderMathText(meta.evaluatedAt)}
             </div>
           )}
           {meta.datum && (
@@ -770,7 +779,7 @@ export default function UniversalTableRenderer({ table, compact = false }) {
           <ul style={{ margin: 0, paddingLeft: '1.15rem', fontSize: compact ? '0.74rem' : '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
             {Object.entries(rawFootnotes).map(([k, val]) => (
               <li key={k} style={{ marginBottom: '0.2rem' }}>
-                <strong style={{ color: 'var(--accent-cyan)' }}>[{k}]</strong> {formatTableCellValue(val)}
+                <strong style={{ color: 'var(--accent-cyan)' }}>[{k}]</strong> {renderMathText(val)}
               </li>
             ))}
           </ul>
@@ -787,20 +796,20 @@ export default function UniversalTableRenderer({ table, compact = false }) {
           {Array.isArray(rawNotes) ? (
             <ul style={{ margin: 0, paddingLeft: '1.15rem', fontSize: compact ? '0.74rem' : '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
               {rawNotes.map((note, idx) => (
-                <li key={idx} style={{ marginBottom: '0.2rem' }}>{formatTableCellValue(note)}</li>
+                <li key={idx} style={{ marginBottom: '0.2rem' }}>{renderMathText(note)}</li>
               ))}
             </ul>
           ) : typeof rawNotes === 'object' ? (
             <ul style={{ margin: 0, paddingLeft: '1.15rem', fontSize: compact ? '0.74rem' : '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
               {Object.entries(rawNotes).map(([k, val]) => (
                 <li key={k} style={{ marginBottom: '0.2rem' }}>
-                  <strong>({k})</strong> {formatTableCellValue(val)}
+                  <strong>({k})</strong> {renderMathText(val)}
                 </li>
               ))}
             </ul>
           ) : (
             <p style={{ margin: 0, fontSize: compact ? '0.74rem' : '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-              {String(rawNotes)}
+              {renderMathText(rawNotes)}
             </p>
           )}
         </div>

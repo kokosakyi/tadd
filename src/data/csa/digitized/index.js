@@ -81,6 +81,23 @@ import {
 } from '../o15/index.js';
 import { ASCE_10_15_TABLES } from '../../asce/asce_10_15/index.js';
 
+function stripLatexForSearch(str) {
+  if (!str || !str.includes('$')) return '';
+  return str
+    .replace(/\$\$/g, ' ')
+    .replace(/\$/g, ' ')
+    .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '$1/$2')
+    .replace(/\\(?:left|right|text|mathrm|mathbf|quad|qquad|,|;)\b/g, ' ')
+    .replace(/\\le\b/g, '<=')
+    .replace(/\\ge\b/g, '>=')
+    .replace(/\\times\b/g, '*')
+    .replace(/\\cdot\b/g, '*')
+    .replace(/\\pm\b/g, '+/-')
+    .replace(/\\([a-zA-Z]+)/g, '$1')
+    .replace(/[_^{}]/g, '')
+    .toLowerCase();
+}
+
 // Pre-index table search text for comprehensive table searching
 const TABLE_SEARCH_CORPUS = new Map();
 
@@ -146,7 +163,8 @@ for (const t of CSA_ALL_TABLES) {
     }
   }
 
-  TABLE_SEARCH_CORPUS.set(t.id, parts.join(' ').toLowerCase());
+  const rawJoined = parts.join(' ');
+  TABLE_SEARCH_CORPUS.set(t.id, `${rawJoined.toLowerCase()} ${stripLatexForSearch(rawJoined)}`);
 }
 
 // Canadian / US engineering spelling normalization
@@ -309,7 +327,7 @@ export function searchDigitizedCode(query = '', filters = {}) {
       let score = 0;
       const cNum = c.clauseNumber.toLowerCase();
       const cTitle = c.title.toLowerCase();
-      const cText = c.text.toLowerCase();
+      const cText = `${c.text.toLowerCase()} ${stripLatexForSearch(c.text)}`;
       const cSec = (c.section || '').toLowerCase();
       const cStd = c.standardName.toLowerCase();
       const cDev = (c.canadianDeviation || '').toLowerCase();

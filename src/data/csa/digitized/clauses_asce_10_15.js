@@ -72,7 +72,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Definitions",
     "section": "1.0 General",
     "page": 1,
-    "text": "Block shear: A combination of shear and tensile failure through the end connection of a member caused by high bolt forces acting on the material; also called rupture.\nDeformed bars: Steel bars meeting the requirements of ACI 318 (1983) for reinforcing bars.\nDesign-factored load: Unfactored load multiplied by a specified load factor to establish the design load on a structure.\nDownthrust: The downward vertical component of the loads on a foundation.\nEngineer of record (EOR): Prime design professional, engineering firm, or organization that is legally responsible for the tower design.\nLeg member: A primary member that serves as the main corner support member of a structure; sometimes called a post member.\nLine security: Criteria established to prevent a progressive (cascade) failure of structures.\nLoad factor: A multiplier used with the assumed loading condition, or unfactored load, to establish the design-factored load.\nPrimary members: Tension or compression members that carry the loads on the structure to the foundation.\nRedundant members: Members that reduce the unbraced length of primary members by providing intermediate support.\nShear friction: For anchor bolts with the base assembly resting on concrete, shear is usually transferred from the base assembly to the concrete through bearing of the bolt at the surface forming a concrete wedge; translation of the wedge under the shear force cannot occur without an upward thrust of the wedge on the base assembly; this thrust induces a clamping force, and this mechanism is called shear friction.\nSnug-tight: The tightness that exists when all plies in a joint are in firm contact. This tightness may be attained by a few impacts of an impact wrench or the full effort of a worker using an ordinary spud wrench. The connecting plies must be solidly seated against each other but not necessarily in continuous contact.\nTension-only member: Member with L/r greater than 300, which is assumed to be unable to resist compression.\nTest engineer: The individual who has charge over the physical testing of the prototype structure.\nUnfactored load: Load on a structure caused by an assumed loading condition on the wires and/or the structure; the assumed loading condition is usually identified by a combination of wind and/or ice and a temperature condition.\nUplift: The upward vertical component of the loads on a foundation.",
+    "text": "Block shear: A combination of shear and tensile failure through the end connection of a member caused by high bolt forces acting on the material; also called rupture.\nDeformed bars: Steel bars meeting the requirements of ACI 318 (1983) for reinforcing bars.\nDesign-factored load: Unfactored load multiplied by a specified load factor to establish the design load on a structure.\nDownthrust: The downward vertical component of the loads on a foundation.\nEngineer of record (EOR): Prime design professional, engineering firm, or organization that is legally responsible for the tower design.\nLeg member: A primary member that serves as the main corner support member of a structure; sometimes called a post member.\nLine security: Criteria established to prevent a progressive (cascade) failure of structures.\nLoad factor: A multiplier used with the assumed loading condition, or unfactored load, to establish the design-factored load.\nPrimary members: Tension or compression members that carry the loads on the structure to the foundation.\nRedundant members: Members that reduce the unbraced length of primary members by providing intermediate support.\nShear friction: For anchor bolts with the base assembly resting on concrete, shear is usually transferred from the base assembly to the concrete through bearing of the bolt at the surface forming a concrete wedge; translation of the wedge under the shear force cannot occur without an upward thrust of the wedge on the base assembly; this thrust induces a clamping force, and this mechanism is called shear friction.\nSnug-tight: The tightness that exists when all plies in a joint are in firm contact. This tightness may be attained by a few impacts of an impact wrench or the full effort of a worker using an ordinary spud wrench. The connecting plies must be solidly seated against each other but not necessarily in continuous contact.\nTension-only member: Member with $\\frac{L}{r} > 300$, which is assumed to be unable to resist compression.\nTest engineer: The individual who has charge over the physical testing of the prototype structure.\nUnfactored load: Load on a structure caused by an assumed loading condition on the wires and/or the structure; the assumed loading condition is usually identified by a combination of wind and/or ice and a temperature condition.\nUplift: The upward vertical component of the loads on a foundation.",
     "tablesReferenced": [],
     "crossReferences": [
       "2.2",
@@ -296,7 +296,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Slenderness Ratios",
     "section": "3.0 Design of Members",
     "page": 5,
-    "text": "Limiting slenderness ratios for members carrying calculated compressive stress shall be the following: for leg members: L/r <= 150; for other members: KL/r <= 200. The slenderness ratio KL/r for redundant members shall not exceed 250. The slenderness ratio L/r for tension-only members detailed with draw shall be greater than 300 but less than or equal to 500.",
+    "text": "Limiting slenderness ratios for members carrying calculated compressive stress shall be the following: for leg members: $\\frac{L}{r} \\le 150$; for other members: $\\frac{KL}{r} \\le 200$. The slenderness ratio $\\frac{KL}{r}$ for redundant members shall not exceed $250$. The slenderness ratio $\\frac{L}{r}$ for tension-only members detailed with draw shall be $300 < \\frac{L}{r} \\le 500$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -323,7 +323,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Properties of Sections",
     "section": "3.0 Design of Members",
     "page": 5,
-    "text": "Section properties, such as area, moment of inertia, radius of gyration, section modulus, and the like, shall be based on the gross cross section, except where a reduced cross section or a net cross section is specified. The reduced cross section shall consist of all fully effective elements plus those whose widths must be considered reduced in accordance with Section 3.9.3. If all elements are fully effective, the reduced cross section and the gross cross section are identical. Net cross section is defined in Section 3.10.1.\nTypical cross sections are shown in Fig. C3-1 of the Commentary of Chapter 3. The x- and y-axes are principal axes for all cross sections shown except the angle, for which the principal axes are u and z, with u being the axis of symmetry for equal leg angles.\nFig. 3-1(a) shows the method of determining w/t, the ratio of flat width to thickness of a member element. For hot-rolled sections, w is the distance from the edge of the fillet to the extreme fiber, whereas for cold-formed members it is the distance shown in Fig. 3-1(b). A larger bend radius can be used in fabrication, but for design purposes w shall be based on a maximum inside-bend radius of two times the element thickness.",
+    "text": "Section properties, such as area, moment of inertia, radius of gyration, section modulus, and the like, shall be based on the gross cross section, except where a reduced cross section or a net cross section is specified. The reduced cross section shall consist of all fully effective elements plus those whose widths must be considered reduced in accordance with Section 3.9.3. If all elements are fully effective, the reduced cross section and the gross cross section are identical. Net cross section is defined in Section 3.10.1.\nTypical cross sections are shown in Fig. C3-1 of the Commentary of Chapter 3. The $x$- and $y$-axes are principal axes for all cross sections shown except the angle, for which the principal axes are $u$ and $z$, with $u$ being the axis of symmetry for equal leg angles.\nFig. 3-1(a) shows the method of determining $w/t$, the ratio of flat width to thickness of a member element. For hot-rolled sections, $w$ is the distance from the edge of the fillet to the extreme fiber, whereas for cold-formed members it is the distance shown in Fig. 3-1(b). A larger bend radius can be used in fabrication, but for design purposes $w$ shall be based on a maximum inside-bend radius of $2t$ (two times the element thickness).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.7.1",
@@ -342,7 +342,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Compression",
     "section": "3.0 Design of Members",
     "page": 5,
-    "text": "The design compressive stress Fa on the gross cross-sectional area, or on the reduced area where specified, of axially loaded compression members shall be the following:\n- Eq. (3.6-1): Fa = [1 - (1/2) * ((KL/r) / Cc)^2] * Fy   for KL/r <= Cc\n- Eq. (3.6-2): Fa = (pi^2 * E) / (KL/r)^2   for KL/r > Cc\n- Eq. (3.6-3): Cc = pi * sqrt(2 * E / Fy)\nwhere:\nFy = minimum guaranteed yield stress;\nE = modulus of elasticity (29,000 ksi [200,000 MPa]);\nL = unbraced length;\nr = radius of gyration;\nK = effective length coefficient; and\nCc = column slenderness ratio separating elastic and inelastic buckling.",
+    "text": "The design compressive stress $F_a$ on the gross cross-sectional area, or on the reduced area where specified, of axially loaded compression members shall be the following:\n- Eq. (3.6-1): $$F_a = \\left[1 - \\frac{1}{2}\\left(\\frac{KL/r}{C_c}\\right)^2\\right] F_y \\quad \\text{for } \\frac{KL}{r} \\le C_c$$\n- Eq. (3.6-2): $$F_a = \\frac{\\pi^2 E}{(KL/r)^2} \\quad \\text{for } \\frac{KL}{r} > C_c$$\n- Eq. (3.6-3): $$C_c = \\pi \\sqrt{\\frac{2E}{F_y}}$$\nwhere:\n$F_y$ = minimum guaranteed yield stress;\n$E$ = modulus of elasticity ($29{,}000\\text{ ksi}$ [$200{,}000\\text{ MPa}$]);\n$L$ = unbraced length;\n$r$ = radius of gyration;\n$K$ = effective length coefficient; and\n$C_c$ = column slenderness ratio separating elastic and inelastic buckling.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -397,7 +397,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Maximum w/t Ratio",
     "section": "3.0 Design of Members",
     "page": 5,
-    "text": "The ratio w/t, where w = flat width and t = thickness of leg, shall not exceed 25; see Fig. 3-1.",
+    "text": "The ratio $\\frac{w}{t} \\le 25$, where $w$ = flat width and $t$ = thickness of leg; see Fig. 3-1.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -414,7 +414,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Compressive Stress",
     "section": "3.0 Design of Members",
     "page": 6,
-    "text": "The design compressive stress on the gross cross-sectional area shall be the value of Fa according to Section 3.6, provided that the largest value of w/t does not exceed the limiting value given by Eq. (3.7-1).",
+    "text": "The design compressive stress on the gross cross-sectional area shall be the value of $F_a$ according to Section 3.6, provided that the largest value of $w/t$ does not exceed the limiting value $(w/t)_{\\lim}$ given by Eq. (3.7-1).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -431,7 +431,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Determination of Fa",
     "section": "3.0 Design of Members",
     "page": 6,
-    "text": "If w/t as defined in Section 3.7.1 exceeds (w/t)_lim given by:\n- Eq. (3.7-1): (w/t)_lim = 80 * Psi / sqrt(Fy)\nthe design stress Fa shall be the value according to Section 3.6 with Fy in Eqs. (3.6-1) and (3.6-3) replaced with Fcr given by:\n- Eq. (3.7-2): Fcr = [1.677 - 0.677 * (w/t) / (w/t)_lim] * Fy   for (w/t)_lim <= w/t <= 144 * Psi / sqrt(Fy)\n- Eq. (3.7-3): Fcr = (0.0332 * pi^2 * E) / (w/t)^2   for w/t > 144 * Psi / sqrt(Fy)\nFor Eqs. (3.7-1) through (3.7-3), Psi = 1 for Fy in ksi and 2.62 for Fy in MPa.",
+    "text": "If $w/t$ as defined in Section 3.7.1 exceeds $(w/t)_{\\lim}$ given by:\n- Eq. (3.7-1): $$\\left(\\frac{w}{t}\\right)_{\\lim} = \\frac{80 \\Psi}{\\sqrt{F_y}}$$\nthe design stress $F_a$ shall be the value according to Section 3.6 with $F_y$ in Eqs. (3.6-1) and (3.6-3) replaced with $F_{cr}$ given by:\n- Eq. (3.7-2): $$F_{cr} = \\left[1.677 - 0.677 \\frac{w/t}{(w/t)_{\\lim}}\\right] F_y \\quad \\text{for } \\left(\\frac{w}{t}\\right)_{\\lim} \\le \\frac{w}{t} \\le \\frac{144 \\Psi}{\\sqrt{F_y}}$$\n- Eq. (3.7-3): $$F_{cr} = \\frac{0.0332 \\pi^2 E}{(w/t)^2} \\quad \\text{for } \\frac{w}{t} > \\frac{144 \\Psi}{\\sqrt{F_y}}$$\nFor Eqs. (3.7-1) through (3.7-3), $\\Psi = 1$ for $F_y$ in ksi and $\\Psi = 2.62$ for $F_y$ in MPa.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -479,7 +479,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Leg Members",
     "section": "3.0 Design of Members",
     "page": 6,
-    "text": "For leg members bolted in both faces at connections:\n- Eq. (3.7-4): KL/r = L/r   for 0 <= L/r <= 150\nFor leg members of equal leg angles, having no change in member load between panels, used with staggered bracing, the controlling L/r values shall be as shown in Fig. 3-2: (a) Leg controlled by L/rz (supported in both faces at the same elevation every four panels), (b) Leg controlled by (1.2 L)/rx (supported in both faces at the same elevation every four panels), or (c) Leg controlled by (1.2 L)/rx (for these configurations, some rolling of the leg will occur; eccentricities at leg splices shall be minimized and thicker leg sections shall be properly butt-spliced). The controlling L/r values in Fig. 3-2 shall be used with K = 1 as specified by Eq. (3.7-4).",
+    "text": "For leg members bolted in both faces at connections:\n- Eq. (3.7-4): $$\\frac{KL}{r} = \\frac{L}{r} \\quad \\text{for } 0 \\le \\frac{L}{r} \\le 150$$\nFor leg members of equal leg angles, having no change in member load between panels, used with staggered bracing, the controlling $L/r$ values shall be as shown in Fig. 3-2: (a) Leg controlled by $L/r_z$ (supported in both faces at the same elevation every four panels), (b) Leg controlled by $1.2 L / r_x$ (supported in both faces at the same elevation every four panels), or (c) Leg controlled by $1.2 L / r_x$ (for these configurations, some rolling of the leg will occur; eccentricities at leg splices shall be minimized and thicker leg sections shall be properly butt-spliced). The controlling $L/r$ values in Fig. 3-2 shall be used with $K = 1$ as specified by Eq. (3.7-4).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -505,7 +505,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Other Compression Members",
     "section": "3.0 Design of Members",
     "page": 6,
-    "text": "For members with a concentric load at both ends of the unsupported panel:\n- Eq. (3.7-5): KL/r = L/r;   0 <= L/r <= 120\nFor members with a concentric load at one end and normal framing eccentricity at the other end of the unsupported panel:\n- Eq. (3.7-6): KL/r = 30 + 0.75 * (L/r);   0 <= L/r <= 120\nFor members with normal framing eccentricities at both ends of the unsupported panel:\n- Eq. (3.7-7): KL/r = 60 + 0.5 * (L/r);   0 <= L/r <= 120\nFor members unrestrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-8): KL/r = L/r;   120 <= L/r <= 200\nFor members partially restrained against rotation at one end of the unsupported panel:\n- Eq. (3.7-9): KL/r = 28.6 + 0.762 * (L/r);   120 <= L/r <= 225\nFor members partially restrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-10): KL/r = 46.2 + 0.615 * (L/r);   120 <= L/r <= 250",
+    "text": "For members with a concentric load at both ends of the unsupported panel:\n- Eq. (3.7-5): $$\\frac{KL}{r} = \\frac{L}{r} \\quad \\left(0 \\le \\frac{L}{r} \\le 120\\right)$$\nFor members with a concentric load at one end and normal framing eccentricity at the other end of the unsupported panel:\n- Eq. (3.7-6): $$\\frac{KL}{r} = 30 + 0.75\\left(\\frac{L}{r}\\right) \\quad \\left(0 \\le \\frac{L}{r} \\le 120\\right)$$\nFor members with normal framing eccentricities at both ends of the unsupported panel:\n- Eq. (3.7-7): $$\\frac{KL}{r} = 60 + 0.5\\left(\\frac{L}{r}\\right) \\quad \\left(0 \\le \\frac{L}{r} \\le 120\\right)$$\nFor members unrestrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-8): $$\\frac{KL}{r} = \\frac{L}{r} \\quad \\left(120 \\le \\frac{L}{r} \\le 200\\right)$$\nFor members partially restrained against rotation at one end of the unsupported panel:\n- Eq. (3.7-9): $$\\frac{KL}{r} = 28.6 + 0.762\\left(\\frac{L}{r}\\right) \\quad \\left(120 \\le \\frac{L}{r} \\le 225\\right)$$\nFor members partially restrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-10): $$\\frac{KL}{r} = 46.2 + 0.615\\left(\\frac{L}{r}\\right) \\quad \\left(120 \\le \\frac{L}{r} \\le 250\\right)$$",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -531,7 +531,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Redundant Members",
     "section": "3.0 Design of Members",
     "page": 6,
-    "text": "For members with a concentric load at both ends of the unsupported panel, use Eq. (3.7-5).\nFor members with a concentric load at one end and normal framing eccentricity at the other end of the unsupported panel, use Eq. (3.7-6).\nFor members with normal framing eccentricities at both ends of the unsupported panel, use Eq. (3.7-7).\nIf members are unrestrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-11): KL/r = L/r;   120 <= L/r <= 250\nIf members are partially restrained against rotation at one end of the unsupported panel:\n- Eq. (3.7-12): KL/r = 28.6 + 0.762 * (L/r);   120 <= L/r <= 290\nIf members are partially restrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-13): KL/r = 46.2 + 0.615 * (L/r);   120 <= L/r <= 330",
+    "text": "For members with a concentric load at both ends of the unsupported panel, use Eq. (3.7-5).\nFor members with a concentric load at one end and normal framing eccentricity at the other end of the unsupported panel, use Eq. (3.7-6).\nFor members with normal framing eccentricities at both ends of the unsupported panel, use Eq. (3.7-7).\nIf members are unrestrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-11): $$\\frac{KL}{r} = \\frac{L}{r} \\quad \\left(120 \\le \\frac{L}{r} \\le 250\\right)$$\nIf members are partially restrained against rotation at one end of the unsupported panel:\n- Eq. (3.7-12): $$\\frac{KL}{r} = 28.6 + 0.762\\left(\\frac{L}{r}\\right) \\quad \\left(120 \\le \\frac{L}{r} \\le 290\\right)$$\nIf members are partially restrained against rotation at both ends of the unsupported panel:\n- Eq. (3.7-13): $$\\frac{KL}{r} = 46.2 + 0.615\\left(\\frac{L}{r}\\right) \\quad \\left(120 \\le \\frac{L}{r} \\le 330\\right)$$",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -563,7 +563,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Unsupported Length with Varying Forces",
     "section": "3.0 Design of Members",
     "page": 7,
-    "text": "When the magnitude of the force in a member (P1 and P2) changes over the unsupported length (L) of equal subpanels of a truss that is not braced normal to the plane of the truss, the effective length factor for buckling perpendicular to the plane of the truss shall be determined as:\n- Eq. (3.7-14a): K' = 0.75 + 0.25 * (P2 / P1)   where P1 >= P2 and both are compression forces\nor\n- Eq. (3.7-14b): K' = 0.75 - 0.25 * (P2 / P1)   where P1 = compression force and P2 = tension force\nThe effect of partial joint restraint is accounted for by Eqs. (3.7-14a) and (3.7-14b). Additional adjustment may be required for eccentric loading (as a result of normal framing eccentricities) using Eqs. (3.7-6) and (3.7-7), where KL/r = K(K'L/r).\nWhen out-of-plane support is provided and the load in the member (P1 and P2) changes over the supported length (L), each subpanel of the member shall be designed as an individual member with due consideration of any eccentricities when selecting the value of KL/r.",
+    "text": "When the magnitude of the force in a member ($P_1$ and $P_2$) changes over the unsupported length ($L$) of equal subpanels of a truss that is not braced normal to the plane of the truss, the effective length factor for buckling perpendicular to the plane of the truss shall be determined as:\n- Eq. (3.7-14a): $$K' = 0.75 + 0.25\\left(\\frac{P_2}{P_1}\\right) \\quad \\text{where } P_1 \\ge P_2 \\text{ (both compression forces)}$$\nor\n- Eq. (3.7-14b): $$K' = 0.75 - 0.25\\left(\\frac{P_2}{P_1}\\right) \\quad \\text{where } P_1 = \\text{compression force and } P_2 = \\text{tension force}$$\nThe effect of partial joint restraint is accounted for by Eqs. (3.7-14a) and (3.7-14b). Additional adjustment may be required for eccentric loading (as a result of normal framing eccentricities) using Eqs. (3.7-6) and (3.7-7), where $\\frac{KL}{r} = K\\left(\\frac{K'L}{r}\\right)$.\nWhen out-of-plane support is provided and the load in the member ($P_1$ and $P_2$) changes over the supported length ($L$), each subpanel of the member shall be designed as an individual member with due consideration of any eccentricities when selecting the value of $KL/r$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -657,7 +657,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Maximum w/t Ratio",
     "section": "3.0 Design of Members",
     "page": 7,
-    "text": "The ratio w/t of the leg shall not exceed 60; see Fig. 3-1.",
+    "text": "The ratio $\\frac{w}{t} \\le 60$ of the leg; see Fig. 3-1.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -674,7 +674,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Compressive Stress",
     "section": "3.0 Design of Members",
     "page": 7,
-    "text": "The design compressive stress on the gross cross-sectional area shall be the value of Fa according to Section 3.6, provided the width-to-thickness ratio of the leg w/t <= 220 * Psi / sqrt(Fa), where Psi = 1 for Fy in ksi and 2.62 for Fy in MPa. If w/t exceeds 220 * Psi / sqrt(Fa), the design shall be based on a reduced area, according to Sections 3.5 and 3.9.3.1.",
+    "text": "The design compressive stress on the gross cross-sectional area shall be the value of $F_a$ according to Section 3.6, provided the width-to-thickness ratio of the leg satisfies $\\frac{w}{t} \\le \\frac{220 \\Psi}{\\sqrt{F_a}}$, where $\\Psi = 1$ for $F_y$ in ksi and $\\Psi = 2.62$ for $F_y$ in MPa. If $\\frac{w}{t} > \\frac{220 \\Psi}{\\sqrt{F_a}}$, the design shall be based on a reduced area, according to Sections 3.5 and 3.9.3.1.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -693,7 +693,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Equivalent Radius of Gyration",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "The design stress defined in Section 3.8.2 shall be computed for the larger of KL/rz and KL/rtf, where rtf is an equivalent radius of gyration given by:\n- Eq. (3.8-1): (2 / rtf^2) = (1 / rt^2 + 1 / ru^2) + sqrt((1 / rt^2 - 1 / ru^2)^2 + 4 * (uo / (ru * rt * rps))^2)\nwhere:\n- Eq. (3.8-2): rt = sqrt([Cw + 0.04 * J * (Kt * L)^2] / Ips)\nCw = warping constant;\nJ = St. Venant torsion constant;\nKt = effective length coefficient for warping restraint;\nL = unbraced length of member;\nru = radius of gyration about u-axis;\nuo = distance between shear center and centroid;\nrps = sqrt(Ips / A) = polar radius of gyration about shear center;\nIps = Iu + Iz + A * uo^2 = polar moment of inertia about shear center;\nIu = moment of inertia about u-axis;\nIz = moment of inertia about z-axis; and\nA = area of cross section.\nValues of KL/rz and KL/rtf shall be determined in accordance with Section 3.7.4, using Kt = 1 to compute rt by Eq. (3.8-2).",
+    "text": "The design stress defined in Section 3.8.2 shall be computed for the larger of $KL/r_z$ and $KL/r_{tf}$, where $r_{tf}$ is an equivalent radius of gyration given by:\n- Eq. (3.8-1): $$\\frac{2}{r_{tf}^2} = \\left(\\frac{1}{r_t^2} + \\frac{1}{r_u^2}\\right) + \\sqrt{\\left(\\frac{1}{r_t^2} - \\frac{1}{r_u^2}\\right)^2 + 4\\left(\\frac{u_o}{r_u r_t r_{ps}}\\right)^2}$$\nwhere:\n- Eq. (3.8-2): $$r_t = \\sqrt{\\frac{C_w + 0.04 J (K_t L)^2}{I_{ps}}}$$\n$C_w$ = warping constant;\n$J$ = St. Venant torsion constant;\n$K_t$ = effective length coefficient for warping restraint;\n$L$ = unbraced length of member;\n$r_u$ = radius of gyration about $u$-axis;\n$u_o$ = distance between shear center and centroid;\n$r_{ps} = \\sqrt{I_{ps} / A}$ = polar radius of gyration about shear center;\n$I_{ps} = I_u + I_z + A u_o^2$ = polar moment of inertia about shear center;\n$I_u$ = moment of inertia about $u$-axis;\n$I_z$ = moment of inertia about $z$-axis; and\n$A$ = area of cross section.\nValues of $KL/r_z$ and $KL/r_{tf}$ shall be determined in accordance with Section 3.7.4, using $K_t = 1$ to compute $r_t$ by Eq. (3.8-2).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.7.4",
@@ -715,7 +715,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Minimum Lip Depth",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "The minimum depth d of a lip at the angle theta with the leg (Fig. 3-3) shall be determined by:\n- Eq. (3.8-3): d = (2.8 * t / (sin(theta))^(2/3)) * [(w/t)^2 - (4000 * Psi / Fy)]^(1/6) >= (4.8 * t) / (sin(theta))^(2/3)\nwhere:\nPsi = 1 for Fy in ksi and 6.89 for Fy in MPa; and\nw/t = flat width to thickness ratio of the leg.\nThe ratio w'/t of the lip (shown in Fig. 3-3) shall not exceed 72 * Psi / sqrt(Fy), where Psi = 1 for Fy in ksi and 2.62 for Fy in MPa.",
+    "text": "The minimum depth $d$ of a lip at the angle $\\theta$ with the leg (Fig. 3-3) shall be determined by:\n- Eq. (3.8-3): $$d = \\frac{2.8 t}{(\\sin\\theta)^{2/3}} \\left[\\left(\\frac{w}{t}\\right)^2 - \\frac{4000 \\Psi}{F_y}\\right]^{1/6} \\ge \\frac{4.8 t}{(\\sin\\theta)^{2/3}}$$\nwhere:\n$\\Psi = 1$ for $F_y$ in ksi and $\\Psi = 6.89$ for $F_y$ in MPa; and\n$w/t$ = flat width to thickness ratio of the leg.\nThe ratio $\\frac{w'}{t}$ of the lip (shown in Fig. 3-3) shall not exceed $\\frac{72 \\Psi}{\\sqrt{F_y}}$, where $\\Psi = 1$ for $F_y$ in ksi and $\\Psi = 2.62$ for $F_y$ in MPa.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.8.1",
@@ -759,7 +759,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Compressive Stress",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "The design compressive stress on the gross cross-sectional area, or on the reduced area defined in Section 3.5 if w/t for any element exceeds the limit in Section 3.9.3.1 for which b = w, shall be the value of Fa according to Section 3.6. Radii of gyration used to determine Fa shall be computed for the gross cross section, and limiting values of w/t and the effective widths of elements defined in Section 3.9.3.1 shall be determined with f = Fa.\nIf a reduced area applies and the force P does not act at the center of gravity of the reduced area, the resulting moment shall be taken into account according to Section 3.12.",
+    "text": "The design compressive stress on the gross cross-sectional area, or on the reduced area defined in Section 3.5 if $w/t$ for any element exceeds the limit in Section 3.9.3.1 for which $b = w$, shall be the value of $F_a$ according to Section 3.6. Radii of gyration used to determine $F_a$ shall be computed for the gross cross section, and limiting values of $w/t$ and the effective widths of elements defined in Section 3.9.3.1 shall be determined with $f = F_a$.\nIf a reduced area applies and the force $P$ does not act at the center of gravity of the reduced area, the resulting moment shall be taken into account according to Section 3.12.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -778,7 +778,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Maximum w/t Ratio",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "The ratio w/t of flat width to thickness shall not exceed 60 for elements supported on both longitudinal edges and 25 for elements supported on only one longitudinal edge; see Fig. 3-1.",
+    "text": "The ratio $\\frac{w}{t}$ of flat width to thickness shall not exceed $60$ for elements supported on both longitudinal edges and $25$ for elements supported on only one longitudinal edge; see Fig. 3-1.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -816,7 +816,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Uniformly Compressed Elements",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "For Eqs. (3.9-1) through (3.9-6), Psi = 1 for f in ksi and 2.62 for f in MPa.\n(a) The effective width b of an element supported on only one longitudinal edge shall be taken as follows:\n- Eq. (3.9-1): b = w   if w/t <= 72 * Psi / sqrt(f)\n- Eq. (3.9-2): b = (103 * Psi / sqrt(f)) * [1 - (22 * Psi) / ((w/t) * sqrt(f))] * t   if w/t > 72 * Psi / sqrt(f)\nwhere f = compressive stress in an element computed for compression members as prescribed in Section 3.9.1 and for members in bending in Section 3.14.1. The effective width shall be taken adjacent to the supported edge.\n(b) The effective width b of an element supported on both longitudinal edges shall be taken as follows:\n- Eq. (3.9-3): b = w   if w/t <= 220 * Psi / sqrt(f)\n- Eq. (3.9-4): b = (325 * Psi / sqrt(f)) * [1 - (71 * Psi) / ((w/t) * sqrt(f))] * t   if w/t > 220 * Psi / sqrt(f)\nexcept that for flanges of square and rectangular sections:\n- Eq. (3.9-5): b = w   if w/t <= 240 * Psi / sqrt(f)\n- Eq. (3.9-6): b = (325 * Psi / sqrt(f)) * [1 - (63 * Psi) / ((w/t) * sqrt(f))] * t   if w/t > 240 * Psi / sqrt(f)\nThe portion of the element considered removed to obtain the effective width shall be taken symmetrically about the centerline.",
+    "text": "For Eqs. (3.9-1) through (3.9-6), $\\Psi = 1$ for $f$ in ksi and $\\Psi = 2.62$ for $f$ in MPa.\n(a) The effective width $b$ of an element supported on only one longitudinal edge shall be taken as follows:\n- Eq. (3.9-1): $$b = w \\quad \\text{if } \\frac{w}{t} \\le \\frac{72 \\Psi}{\\sqrt{f}}$$\n- Eq. (3.9-2): $$b = \\frac{103 \\Psi}{\\sqrt{f}} \\left[1 - \\frac{22 \\Psi}{(w/t)\\sqrt{f}}\\right] t \\quad \\text{if } \\frac{w}{t} > \\frac{72 \\Psi}{\\sqrt{f}}$$\nwhere $f$ = compressive stress in an element computed for compression members as prescribed in Section 3.9.1 and for members in bending in Section 3.14.1. The effective width shall be taken adjacent to the supported edge.\n(b) The effective width $b$ of an element supported on both longitudinal edges shall be taken as follows:\n- Eq. (3.9-3): $$b = w \\quad \\text{if } \\frac{w}{t} \\le \\frac{220 \\Psi}{\\sqrt{f}}$$\n- Eq. (3.9-4): $$b = \\frac{325 \\Psi}{\\sqrt{f}} \\left[1 - \\frac{71 \\Psi}{(w/t)\\sqrt{f}}\\right] t \\quad \\text{if } \\frac{w}{t} > \\frac{220 \\Psi}{\\sqrt{f}}$$\nexcept that for flanges of square and rectangular sections:\n- Eq. (3.9-5): $$b = w \\quad \\text{if } \\frac{w}{t} \\le \\frac{240 \\Psi}{\\sqrt{f}}$$\n- Eq. (3.9-6): $$b = \\frac{325 \\Psi}{\\sqrt{f}} \\left[1 - \\frac{63 \\Psi}{(w/t)\\sqrt{f}}\\right] t \\quad \\text{if } \\frac{w}{t} > \\frac{240 \\Psi}{\\sqrt{f}}$$\nThe portion of the element considered removed to obtain the effective width shall be taken symmetrically about the centerline.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.8.2",
@@ -836,7 +836,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Elements with Stress Gradient",
     "section": "3.0 Design of Members",
     "page": 8,
-    "text": "For Eqs. (3.9-7) and (3.9-8), Psi = 1 for f1 in ksi and 2.62 for f1 in MPa.\n(a) The effective width b of an element supported on only one longitudinal edge shall be determined as in Section 3.9.3.1(a), using for f the maximum compressive stress in the element.\n(b) The effective widths b1 and b2 (Fig. 3-4) of an element supported on both longitudinal edges shall be determined as follows:\n- Eq. (3.9-7): b2 = w / 2   if w/t <= 110 * C * Psi / sqrt(f1)\n- Eq. (3.9-8): b2 = (82 * C * Psi / sqrt(f1)) * [1 - (36 * C * Psi) / ((w/t) * sqrt(f1))] * t   if w/t > 110 * C * Psi / sqrt(f1)\n- Eq. (3.9-9): b1 = b2 / [1.5 - 0.5 * (f2 / f1)]\nwhere:\nC = 2 + 0.75 * [1 - (f2 / f1)]^2;\nf1 = compressive stress shown in Fig. 3-4, to be taken positive; and\nf2 = stress shown in Fig. 3-4; positive indicates compression, negative indicates tension.\nThe stresses f1 and f2 shall be based on the reduced section, and f1 shall be the larger if f2 is compressive. If the sum of the calculated values of b1 and b2 exceeds the compressive part of the element, the element is fully effective.",
+    "text": "For Eqs. (3.9-7) and (3.9-8), $\\Psi = 1$ for $f_1$ in ksi and $\\Psi = 2.62$ for $f_1$ in MPa.\n(a) The effective width $b$ of an element supported on only one longitudinal edge shall be determined as in Section 3.9.3.1(a), using for $f$ the maximum compressive stress in the element.\n(b) The effective widths $b_1$ and $b_2$ (Fig. 3-4) of an element supported on both longitudinal edges shall be determined as follows:\n- Eq. (3.9-7): $$b_2 = \\frac{w}{2} \\quad \\text{if } \\frac{w}{t} \\le \\frac{110 C \\Psi}{\\sqrt{f_1}}$$\n- Eq. (3.9-8): $$b_2 = \\frac{82 C \\Psi}{\\sqrt{f_1}} \\left[1 - \\frac{36 C \\Psi}{(w/t)\\sqrt{f_1}}\\right] t \\quad \\text{if } \\frac{w}{t} > \\frac{110 C \\Psi}{\\sqrt{f_1}}$$\n- Eq. (3.9-9): $$b_1 = \\frac{b_2}{1.5 - 0.5(f_2 / f_1)}$$\nwhere:\n$$C = 2 + 0.75\\left[1 - \\frac{f_2}{f_1}\\right]^2$$\n$f_1$ = compressive stress shown in Fig. 3-4, to be taken positive; and\n$f_2$ = stress shown in Fig. 3-4; positive indicates compression, negative indicates tension.\nThe stresses $f_1$ and $f_2$ shall be based on the reduced section, and $f_1$ shall be the larger if $f_2$ is compressive. If the sum of the calculated values of $b_1$ and $b_2$ exceeds the compressive part of the element, the element is fully effective.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.9.3.1",
@@ -854,7 +854,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Doubly Symmetric Open Cross Sections",
     "section": "3.0 Design of Members",
     "page": 9,
-    "text": "Members with doubly symmetric open cross sections (such as a wide flange) whose unsupported length for torsional buckling exceeds the unsupported length for flexural buckling about the weak axis shall be checked for torsional buckling as well as for flexural buckling. The design torsional-buckling stress is the value of Fa according to Section 3.6, using the radius of gyration rt of Eq. (3.8-2) computed for the gross cross section.",
+    "text": "Members with doubly symmetric open cross sections (such as a wide flange) whose unsupported length for torsional buckling exceeds the unsupported length for flexural buckling about the weak axis shall be checked for torsional buckling as well as for flexural buckling. The design torsional-buckling stress is the value of $F_a$ according to Section 3.6, using the radius of gyration $r_t$ of Eq. (3.8-2) computed for the gross cross section.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -872,7 +872,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Singly Symmetric Open Cross Sections",
     "section": "3.0 Design of Members",
     "page": 9,
-    "text": "Members with singly symmetric open cross sections (such as 60-degree angle or channel) shall be checked for flexural buckling in the plane of symmetry and for torsional-flexural buckling. The design torsional-flexural buckling stress is the value of Fa according to Section 3.6, using the radius of gyration rtf of Eq. (3.8-1) computed for the gross cross section. (Note that rt and rtf refer to the principal axes u, z of angles.)",
+    "text": "Members with singly symmetric open cross sections (such as 60-degree angle or channel) shall be checked for flexural buckling in the plane of symmetry and for torsional-flexural buckling. The design torsional-flexural buckling stress is the value of $F_a$ according to Section 3.6, using the radius of gyration $r_{tf}$ of Eq. (3.8-1) computed for the gross cross section. (Note that $r_t$ and $r_{tf}$ refer to the principal axes $u, z$ of angles.)",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -893,7 +893,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Point-Symmetric Open Cross Sections",
     "section": "3.0 Design of Members",
     "page": 9,
-    "text": "Members with point-symmetric open cross sections (such as cruciform) shall be checked for torsional buckling as well as flexural buckling. The design torsional-flexural buckling stress is the value of Fa according to Section 3.6, using the radius of gyration rt of Eq. (3.8-2), computed for the gross cross section.",
+    "text": "Members with point-symmetric open cross sections (such as cruciform) shall be checked for torsional buckling as well as flexural buckling. The design torsional-flexural buckling stress is the value of $F_a$ according to Section 3.6, using the radius of gyration $r_t$ of Eq. (3.8-2), computed for the gross cross section.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -998,7 +998,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Tensile Stress",
     "section": "3.0 Design of Members",
     "page": 9,
-    "text": "The design tensile stress Ft on concentrically loaded tension members shall be Fy on the net cross-sectional area An, where An is the gross cross-sectional area Ag (the sum of the products of the thickness and the gross width of each element as measured normal to the axis of the member) minus the loss due to holes or other openings at the section being investigated. If there is a chain of holes in a diagonal or zigzag line, the net width of an element shall be determined by deducting from the gross width the sum of the diameters of all the holes in the chain and adding for each gauge space in the chain the quantity s^2 / (4g), where s = longitudinal spacing (pitch) and g = transverse spacing (gauge) of any two consecutive holes. The critical net cross-sectional area An is obtained from that chain which gives the least net width.\nIn computing net area for tension, the diameter of a bolt hole that has been punched shall be taken as 1/16 in. (1.6 mm) greater than the nominal diameter of the hole. For bolt holes that have been drilled or subpunched and reamed, the nominal diameter of the hole may be used.\nPlain and lipped angles bolted in both legs at both ends shall be considered to be concentrically loaded.",
+    "text": "The design tensile stress $F_t$ on concentrically loaded tension members shall be $F_y$ on the net cross-sectional area $A_n$, where $A_n$ is the gross cross-sectional area $A_g$ (the sum of the products of the thickness and the gross width of each element as measured normal to the axis of the member) minus the loss due to holes or other openings at the section being investigated. If there is a chain of holes in a diagonal or zigzag line, the net width of an element shall be determined by deducting from the gross width the sum of the diameters of all the holes in the chain and adding for each gauge space in the chain the quantity $\\frac{s^2}{4g}$, where $s$ = longitudinal spacing (pitch) and $g$ = transverse spacing (gauge) of any two consecutive holes. The critical net cross-sectional area $A_n$ is obtained from that chain which gives the least net width.\nIn computing net area for tension, the diameter of a bolt hole that has been punched shall be taken as $1/16\\text{ in.}$ ($1.6\\text{ mm}$) greater than the nominal diameter of the hole. For bolt holes that have been drilled or subpunched and reamed, the nominal diameter of the hole may be used.\nPlain and lipped angles bolted in both legs at both ends shall be considered to be concentrically loaded.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -1015,7 +1015,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Angle Members",
     "section": "3.0 Design of Members",
     "page": 9,
-    "text": "The design tensile stress Ft on the net area of plain and lipped angles connected by one leg shall be 0.9 * Fy. If the legs are unequal and the short leg is connected, the unconnected leg shall be considered to be the same size as the connected leg. If the centroid of the bolt pattern on the connected leg is outside the center of gravity of the angle, the connection shall be checked for rupture (also called block shear) by the following equation:\n- Eq. (3.10-1): P = 0.60 * Av * Fu + At * Fy\nwhere:\nP = design tensile force on connection;\nFy = specified minimum yield strength of the member;\nFu = specified minimum tensile strength of the member;\nAv = minimum net area in shear along a line of transmitted force, t * (a + 2b), see Fig. 3-5; and\nAt = minimum net area in tension from the hole to the toe of the angle perpendicular to the line of force, t * c, see Fig. 3-5.\nIn computing net area for tension and net area for shear, the diameter of a bolt hole that has been punched shall be taken as 1/16 in. (1.6 mm) greater than the nominal diameter of the hole. For bolt holes that have been drilled or subpunched and reamed, the nominal diameter of the hole may be used.",
+    "text": "The design tensile stress $F_t$ on the net area of plain and lipped angles connected by one leg shall be $0.9 F_y$. If the legs are unequal and the short leg is connected, the unconnected leg shall be considered to be the same size as the connected leg. If the centroid of the bolt pattern on the connected leg is outside the center of gravity of the angle, the connection shall be checked for rupture (also called block shear) by the following equation:\n- Eq. (3.10-1): $$P = 0.60 A_v F_u + A_t F_y$$\nwhere:\n$P$ = design tensile force on connection;\n$F_y$ = specified minimum yield strength of the member;\n$F_u$ = specified minimum tensile strength of the member;\n$A_v = t(a + 2b)$ = minimum net area in shear along a line of transmitted force, see Fig. 3-5; and\n$A_t = t \\cdot c$ = minimum net area in tension from the hole to the toe of the angle perpendicular to the line of force, see Fig. 3-5.\nIn computing net area for tension and net area for shear, the diameter of a bolt hole that has been punched shall be taken as $1/16\\text{ in.}$ ($1.6\\text{ mm}$) greater than the nominal diameter of the hole. For bolt holes that have been drilled or subpunched and reamed, the nominal diameter of the hole may be used.",
     "tablesReferenced": [],
     "crossReferences": [
       "1.3",
@@ -1050,7 +1050,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Threaded Rods and Anchor Bolts",
     "section": "3.0 Design of Members",
     "page": 10,
-    "text": "Threaded-rod members shall have a minimum guaranteed yield Fy. The design tensile stress Ft on the stress area As shall be Fy. As is given by:\n- Eq. (3.10-2): As = (pi / 4) * (d - 0.974 / n)^2\nwhere:\nd = nominal diameter; and\nn = number of threads per unit of length.\nAnchor bolts shall have a minimum guaranteed yield Fy. See Sections 4.3.2 through 4.3.4 and Chapter 7 for design requirements.",
+    "text": "Threaded-rod members shall have a minimum guaranteed yield $F_y$. The design tensile stress $F_t$ on the stress area $A_s$ shall be $F_y$. $A_s$ is given by:\n- Eq. (3.10-2): $$A_s = \\frac{\\pi}{4}\\left(d - \\frac{0.974}{n}\\right)^2$$\nwhere:\n$d$ = nominal diameter; and\n$n$ = number of threads per unit of length.\nAnchor bolts shall have a minimum guaranteed yield $F_y$. See Sections 4.3.2 through 4.3.4 and Chapter 7 for design requirements.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -1109,7 +1109,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Axial Compression and Bending",
     "section": "3.0 Design of Members",
     "page": 10,
-    "text": "Eccentricity of load on angle members is provided for in Sections 3.7.4.2 and 3.8.3. Other members subjected to both axial compression and bending shall be proportioned to satisfy the following equations:\n- Eq. (3.12-1): (P / Pa) + [Cm * Mx / Max] * [1 / (1 - P / Pex)] + [Cm * My / May] * [1 / (1 - P / Pey)] <= 1\n- Eq. (3.12-2): (P / Py) + (Mx / Max) + (My / May) <= 1\nwhere:\nCm = coefficient defined below;\nP = axial compression;\nPa = design axial compression according to Section 3.6;\nPy = axial compression at yield (= Fy * A);\nPex = pi^2 * E * Ix / (Kx * Lx)^2;\nPey = pi^2 * E * Iy / (Ky * Ly)^2;\nIx, Iy = moments of inertia about the x- and y-axes;\nKx*Lx, Ky*Ly = effective lengths in the corresponding planes of bending;\nMx, My = moments about the x- and y-axes, respectively; and\nMax, May = corresponding allowable moments according to Section 3.14 computed with Cb = 1 if Section 3.14.4 applies.\nIf there are transverse loads between points of support, Mx and My in Eq. (3.12-1) are the maximum moments between these points, whereas in Eq. (3.12-2) they are the larger of the moments at these points. If there are no transverse loads between points of support, Mx and My in both Eq. (3.12-1) and Eq. (3.12-2) are the larger of the values of Mx and My at these points.\nFor restrained members with no lateral displacement of one end relative to the other, and with no transverse loads in the plane of bending between supports, Cm = 0.6 - 0.4 * (M1 / M2), where M1 is the smaller end moment and (M1 / M2) is positive when bending is in reverse (S) curvature and negative when it is in single curvature. If there are transverse loads between supports, Cm = 1 for members with unrestrained ends and 0.85 if the ends are restrained.",
+    "text": "Eccentricity of load on angle members is provided for in Sections 3.7.4.2 and 3.8.3. Other members subjected to both axial compression and bending shall be proportioned to satisfy the following equations:\n- Eq. (3.12-1): $$\\frac{P}{P_a} + \\left[\\frac{C_m M_x}{M_{ax}}\\right]\\left[\\frac{1}{1 - P/P_{ex}}\\right] + \\left[\\frac{C_m M_y}{M_{ay}}\\right]\\left[\\frac{1}{1 - P/P_{ey}}\\right] \\le 1$$\n- Eq. (3.12-2): $$\\frac{P}{P_y} + \\frac{M_x}{M_{ax}} + \\frac{M_y}{M_{ay}} \\le 1$$\nwhere:\n$C_m$ = coefficient defined below;\n$P$ = axial compression;\n$P_a$ = design axial compression according to Section 3.6;\n$P_y = F_y A$ = axial compression at yield;\n$P_{ex} = \\frac{\\pi^2 E I_x}{(K_x L_x)^2}$;\n$P_{ey} = \\frac{\\pi^2 E I_y}{(K_y L_y)^2}$;\n$I_x, I_y$ = moments of inertia about the $x$- and $y$-axes;\n$K_x L_x, K_y L_y$ = effective lengths in the corresponding planes of bending;\n$M_x, M_y$ = moments about the $x$- and $y$-axes, respectively; and\n$M_{ax}, M_{ay}$ = corresponding allowable moments according to Section 3.14 computed with $C_b = 1$ if Section 3.14.4 applies.\nIf there are transverse loads between points of support, $M_x$ and $M_y$ in Eq. (3.12-1) are the maximum moments between these points, whereas in Eq. (3.12-2) they are the larger of the moments at these points. If there are no transverse loads between points of support, $M_x$ and $M_y$ in both Eq. (3.12-1) and Eq. (3.12-2) are the larger of the values of $M_x$ and $M_y$ at these points.\nFor restrained members with no lateral displacement of one end relative to the other, and with no transverse loads in the plane of bending between supports, $C_m = 0.6 - 0.4(M_1 / M_2)$, where $M_1$ is the smaller end moment and $(M_1 / M_2)$ is positive when bending is in reverse (S) curvature and negative when it is in single curvature. If there are transverse loads between supports, $C_m = 1$ for members with unrestrained ends and $C_m = 0.85$ if the ends are restrained.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -1130,7 +1130,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Axial Tension and Bending",
     "section": "3.0 Design of Members",
     "page": 10,
-    "text": "Eccentricity of load on angle members is provided for in Section 3.10.2. Other members subjected to both axial tension and bending shall be proportioned to satisfy the following formula:\n- Eq. (3.13-1): (P / Pa) + (Mx / Max) + (My / May) <= 1\nwhere:\nP = axial tension;\nPa = design axial tension according to Section 3.10;\nMx, My = the moments about the x- and y-axes, respectively; and\nMax, May = the corresponding allowable moments according to Section 3.14.",
+    "text": "Eccentricity of load on angle members is provided for in Section 3.10.2. Other members subjected to both axial tension and bending shall be proportioned to satisfy the following formula:\n- Eq. (3.13-1): $$\\frac{P}{P_a} + \\frac{M_x}{M_{ax}} + \\frac{M_y}{M_{ay}} \\le 1$$\nwhere:\n$P$ = axial tension;\n$P_a$ = design axial tension according to Section 3.10;\n$M_x, M_y$ = the moments about the $x$- and $y$-axes, respectively; and\n$M_{ax}, M_{ay}$ = the corresponding allowable moments according to Section 3.14.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.10",
@@ -1223,7 +1223,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "I, Channel, and Cruciform Sections",
     "section": "3.0 Design of Members",
     "page": 11,
-    "text": "The design bending stress Fb on the extreme fiber in compression for doubly symmetric I sections, singly symmetric channels, and singly or doubly symmetric cruciform sections in bending about the x-axis (the x-axis is to be taken perpendicular to the web of the I and channel, but may be either principal axis for the cruciform) and not supported against lateral buckling, shall be the value of Fa according to Section 3.6 with K and r given by:\n- Eq. (3.14-1): K = Ky / sqrt(Cb);   r = (sqrt(Iy) / Sx) * sqrt(Cw + 0.04 * J * (Kt * L / Ky)^2)\nwhere:\nKy = effective-length coefficient for y-axis bending;\nKt = effective-length coefficient for warping restraint;\nIy = moment of inertia about y-axis;\nSx = x-axis section modulus;\nCw = warping constant (for I section, Cw = 0.25 * d^2 * Iy; approximation for channel is Cw = 0.15 * d^2 * Iy; for cruciform section Cw = 0, where d = section depth);\nJ = St. Venant torsion constant; and\nL = unbraced length.\nFor members with moments M1 and M2 at the ends of the unbraced length:\n- Eq. (3.14-2): Cb = 1.75 - 1.05 * (M1 / M2) + 0.3 * (M1 / M2)^2 <= 2.3\nwhere M1 is the smaller end moment and M1/M2 is positive when bending is in reverse (S) curvature and negative when it is in single curvature. For members for which the moment within a significant portion of the unbraced length equals or exceeds the larger of the end moments, and for unbraced cantilevers, Cb = 1.\nThe design stress on the extreme fiber in compression for the I section in bending about the y-axis shall be taken equal to Fy; for channels, see Section 3.14.7(b).",
+    "text": "The design bending stress $F_b$ on the extreme fiber in compression for doubly symmetric I sections, singly symmetric channels, and singly or doubly symmetric cruciform sections in bending about the $x$-axis (the $x$-axis is to be taken perpendicular to the web of the I and channel, but may be either principal axis for the cruciform) and not supported against lateral buckling, shall be the value of $F_a$ according to Section 3.6 with $K$ and $r$ given by:\n- Eq. (3.14-1): $$K = \\frac{K_y}{\\sqrt{C_b}}, \\quad r = \\frac{\\sqrt{I_y}}{S_x}\\sqrt{C_w + 0.04 J \\left(\\frac{K_t L}{K_y}\\right)^2}$$\nwhere:\n$K_y$ = effective-length coefficient for $y$-axis bending;\n$K_t$ = effective-length coefficient for warping restraint;\n$I_y$ = moment of inertia about $y$-axis;\n$S_x$ = $x$-axis section modulus;\n$C_w$ = warping constant (for I section, $C_w = 0.25 d^2 I_y$; approximation for channel is $C_w = 0.15 d^2 I_y$; for cruciform section $C_w = 0$, where $d$ = section depth);\n$J$ = St. Venant torsion constant; and\n$L$ = unbraced length.\nFor members with moments $M_1$ and $M_2$ at the ends of the unbraced length:\n- Eq. (3.14-2): $$C_b = 1.75 - 1.05\\left(\\frac{M_1}{M_2}\\right) + 0.3\\left(\\frac{M_1}{M_2}\\right)^2 \\le 2.3$$\nwhere $M_1$ is the smaller end moment and $M_1/M_2$ is positive when bending is in reverse (S) curvature and negative when it is in single curvature. For members for which the moment within a significant portion of the unbraced length equals or exceeds the larger of the end moments, and for unbraced cantilevers, $C_b = 1$.\nThe design stress on the extreme fiber in compression for the I section in bending about the $y$-axis shall be taken equal to $F_y$; for channels, see Section 3.14.7(b).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -1277,7 +1277,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Other Singly Symmetric Open Sections",
     "section": "3.0 Design of Members",
     "page": 11,
-    "text": "The design bending stress Fb on the extreme fiber in compression for members with singly symmetric open cross section and not supported against lateral buckling, other than those covered in Sections 3.14.4 and 3.14.6, shall be the value of Fa determined according to Section 3.6 as follows:\n(a) For members in bending about the axis of symmetry (the y-axis is to be taken as the axis of symmetry), use K = Ky / sqrt(Cb) and r from Eq. (3.14-1).\n(b) For members in bending about the x-axis (the axis perpendicular to the y-axis of symmetry), use K = Ky, and r given by:\n- Eq. (3.14-3): r = (sqrt(Cb * Iy) / Sxc) * [ +/- j * sqrt(Cb) + sqrt(j^2 * Cb + (Cw / Iy) + 0.04 * (J / Iy) * (Kt * L / Ky)^2) ]\nwhere:\n- Eq. (3.14-4): j = [ (1 / (2 * Ix)) * integral_A (x^2 + y^2) * y * dA ] - yo\nSxc = section modulus of compression flange about x-axis;\nyo = distance from centroid to shear center;\nA = area of cross section;\nIy = y-axis moment of inertia;\nIx = x-axis moment of inertia; and\nKy = effective-length coefficient for y-axis bending.\nThe positive direction of the y-axis must be taken so that the shear center coordinate yo is negative. The plus sign for the j term in Eq. (3.14-3) is to be used if the moment causes compression on the shear center side of the x-axis, and the minus sign if it causes tension.",
+    "text": "The design bending stress $F_b$ on the extreme fiber in compression for members with singly symmetric open cross section and not supported against lateral buckling, other than those covered in Sections 3.14.4 and 3.14.6, shall be the value of $F_a$ determined according to Section 3.6 as follows:\n(a) For members in bending about the axis of symmetry (the $y$-axis is to be taken as the axis of symmetry), use $K = K_y / \\sqrt{C_b}$ and $r$ from Eq. (3.14-1).\n(b) For members in bending about the $x$-axis (the axis perpendicular to the $y$-axis of symmetry), use $K = K_y$, and $r$ given by:\n- Eq. (3.14-3): $$r = \\frac{\\sqrt{C_b I_y}}{S_{xc}} \\left[ \\pm j\\sqrt{C_b} + \\sqrt{j^2 C_b + \\frac{C_w}{I_y} + 0.04\\frac{J}{I_y}\\left(\\frac{K_t L}{K_y}\\right)^2} \\right]$$\nwhere:\n- Eq. (3.14-4): $$j = \\left[ \\frac{1}{2 I_x} \\int_A (x^2 + y^2) y \\, dA \\right] - y_o$$\n$S_{xc}$ = section modulus of compression flange about $x$-axis;\n$y_o$ = distance from centroid to shear center;\n$A$ = area of cross section;\n$I_y$ = $y$-axis moment of inertia;\n$I_x$ = $x$-axis moment of inertia; and\n$K_y$ = effective-length coefficient for $y$-axis bending.\nThe positive direction of the $y$-axis must be taken so that the shear center coordinate $y_o$ is negative. The plus sign for the $j$ term in Eq. (3.14-3) is to be used if the moment causes compression on the shear center side of the $x$-axis, and the minus sign if it causes tension.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.6",
@@ -1296,7 +1296,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Equal Leg Angles",
     "section": "3.0 Design of Members",
     "page": 11,
-    "text": "Provided that the eccentricity of the load with respect to the shear center is not more than one-half of the leg width (Fig. 3-6), the allowable bending moment for a laterally unsupported equal leg angle shall be taken as the smaller of:\n(a) The moment Myt that produces tensile yield stress at the extreme fiber; or\n(b) The moment Mb that causes lateral buckling given by:\n- Eq. (3.14-5): If Me <= 0.5 * Myc,   Mb = Me\n- Eq. (3.14-6): If Me > 0.5 * Myc,   Mb = Myc * [1 - Myc / (4 * Me)]\nwhere Myc = moment causing compressive yield at extreme fiber, and Me = elastic critical moment:\nFor load perpendicular to a leg:\n- Eq. (3.14-7): Me = [0.66 * E * b^4 * t / (KL)^2] * [ sqrt(1 + 0.78 * (KL * t / b^2)^2) +/- 1 ]\nFor load at the angle theta with the z-axis (Fig. 3-6):\n- Eq. (3.14-8): Me = [2.33 * E * b^4 * t / ((1 + 3 * cos^2(theta)) * (KL)^2)] * [ sqrt(sin^2(theta) + [0.156 * (1 + 3 * cos^2(theta)) * (KL * t / b^2)^2]) +/- sin(theta) ]\nwhere b = width of leg - t/2; t = thickness of leg; L = unsupported length; and K = 1.0 if simply supported on the x- and y-axes at each end or 0.5 if fixed against rotation at each end.\nThe yield moments Myt and Myc are given by My:\n- Eq. (3.14-9) At the heel of the angle: My = Fy / (sin(theta) / Su)\n- Eq. (3.14-10) At the toe of the angle: My = Fy / [ +/- (sin(theta) / Su) +/- (cos(theta) / Sz) ]\n- Eq. (3.14-11) Centerline section moduli: Su = b^2 * t / 1.56,   Sz = b^2 * t / 2.12.",
+    "text": "Provided that the eccentricity of the load with respect to the shear center is not more than one-half of the leg width (Fig. 3-6), the allowable bending moment for a laterally unsupported equal leg angle shall be taken as the smaller of:\n(a) The moment $M_{yt}$ that produces tensile yield stress at the extreme fiber; or\n(b) The moment $M_b$ that causes lateral buckling given by:\n- Eq. (3.14-5): $$\\text{If } M_e \\le 0.5 M_{yc}, \\quad M_b = M_e$$\n- Eq. (3.14-6): $$\\text{If } M_e > 0.5 M_{yc}, \\quad M_b = M_{yc}\\left[1 - \\frac{M_{yc}}{4 M_e}\\right]$$\nwhere $M_{yc}$ = moment causing compressive yield at extreme fiber, and $M_e$ = elastic critical moment:\nFor load perpendicular to a leg:\n- Eq. (3.14-7): $$M_e = \\left[\\frac{0.66 E b^4 t}{(KL)^2}\\right] \\left[ \\sqrt{1 + 0.78\\left(\\frac{KL \\, t}{b^2}\\right)^2} \\pm 1 \\right]$$\nFor load at the angle $\\theta$ with the $z$-axis (Fig. 3-6):\n- Eq. (3.14-8): $$M_e = \\left[\\frac{2.33 E b^4 t}{(1 + 3\\cos^2\\theta)(KL)^2}\\right] \\left[ \\sqrt{\\sin^2\\theta + 0.156(1 + 3\\cos^2\\theta)\\left(\\frac{KL \\, t}{b^2}\\right)^2} \\pm \\sin\\theta \\right]$$\nwhere $b = \\text{width of leg} - t/2$; $t$ = thickness of leg; $L$ = unsupported length; and $K = 1.0$ if simply supported on the $x$- and $y$-axes at each end or $K = 0.5$ if fixed against rotation at each end.\nThe yield moments $M_{yt}$ and $M_{yc}$ are given by $M_y$:\n- Eq. (3.14-9) At the heel of the angle: $$M_y = \\frac{F_y}{\\sin\\theta / S_u}$$\n- Eq. (3.14-10) At the toe of the angle: $$M_y = \\frac{F_y}{\\pm \\frac{\\sin\\theta}{S_u} \\pm \\frac{\\cos\\theta}{S_z}}$$\n- Eq. (3.14-11) Centerline section moduli: $$S_u = \\frac{b^2 t}{1.56}, \\quad S_z = \\frac{b^2 t}{2.12}$$",
     "tablesReferenced": [],
     "crossReferences": [
       "3.14.1",
@@ -1331,7 +1331,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Beam Webs",
     "section": "3.0 Design of Members",
     "page": 12,
-    "text": "For Eqs. (3.15-1) through (3.15-3), Psi = 1 for Fy in ksi and 2.62 for Fy in MPa.\nThe ratio h/t of the depth of a beam web to its thickness shall not exceed 200. The design average shearing stress Fv on the gross area of a beam web shall not exceed the following:\n- Eq. (3.15-1): Fv = 0.58 * Fy   for h/t <= 255 * Psi / sqrt(Fy)\n- Eq. (3.15-2): Fv = 148 * Psi * sqrt(Fy) / (h/t)   for 255 * Psi / sqrt(Fy) < h/t <= 440 * Psi / sqrt(Fy)\n- Eq. (3.15-3): Fv = (0.5 * pi^2 * E) / (h/t)^2   for h/t > 440 * Psi / sqrt(Fy)",
+    "text": "For Eqs. (3.15-1) through (3.15-3), $\\Psi = 1$ for $F_y$ in ksi and $\\Psi = 2.62$ for $F_y$ in MPa.\nThe ratio $\\frac{h}{t}$ of the depth of a beam web to its thickness shall not exceed $200$. The design average shearing stress $F_v$ on the gross area of a beam web shall not exceed the following:\n- Eq. (3.15-1): $$F_v = 0.58 F_y \\quad \\text{for } \\frac{h}{t} \\le \\frac{255 \\Psi}{\\sqrt{F_y}}$$\n- Eq. (3.15-2): $$F_v = \\frac{148 \\Psi \\sqrt{F_y}}{h/t} \\quad \\text{for } \\frac{255 \\Psi}{\\sqrt{F_y}} < \\frac{h}{t} \\le \\frac{440 \\Psi}{\\sqrt{F_y}}$$\n- Eq. (3.15-3): $$F_v = \\frac{0.5 \\pi^2 E}{(h/t)^2} \\quad \\text{for } \\frac{h}{t} > \\frac{440 \\Psi}{\\sqrt{F_y}}$$",
     "tablesReferenced": [],
     "crossReferences": [
       "3.15",
@@ -1348,7 +1348,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Angles",
     "section": "3.0 Design of Members",
     "page": 12,
-    "text": "The shear components V1 and V2 of the applied shear V on single-angle beams (Fig. 3-7) shall satisfy the following equations:\n- Eq. (3.15-4): (3 * V1) / (2 * b1 * t) + (V * a * t) / J <= 0.58 * Fy\n- Eq. (3.15-5): (3 * V2) / (2 * b2 * t) + (V * a * t) / J <= 0.58 * Fy\nwhere:\nV1 = component of V in leg b1;\nV2 = component of V in leg b2;\na = distance of shear center to intersection of load plane with leg b2;\nb1, b2 = width of leg - t/2;\nt = thickness of leg;\nJ = St. Venant torsional constant = (b1 + b2) * t^3 / 3; and\nFy = yield stress.",
+    "text": "The shear components $V_1$ and $V_2$ of the applied shear $V$ on single-angle beams (Fig. 3-7) shall satisfy the following equations:\n- Eq. (3.15-4): $$\\frac{3 V_1}{2 b_1 t} + \\frac{V a t}{J} \\le 0.58 F_y$$\n- Eq. (3.15-5): $$\\frac{3 V_2}{2 b_2 t} + \\frac{V a t}{J} \\le 0.58 F_y$$\nwhere:\n$V_1$ = component of $V$ in leg $b_1$;\n$V_2$ = component of $V$ in leg $b_2$;\n$a$ = distance of shear center to intersection of load plane with leg $b_2$;\n$b_1, b_2 = \\text{width of leg} - t/2$;\n$t$ = thickness of leg;\n$J = \\frac{(b_1 + b_2) t^3}{3}$ = St. Venant torsional constant; and\n$F_y$ = yield stress.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.15"
@@ -1364,7 +1364,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Redundant Members",
     "section": "3.0 Design of Members",
     "page": 13,
-    "text": "Redundant members are used to provide intermediate bracing points to the primary members to reduce the unbraced length of these primary members.\nThe redundant bracing system shall be capable of resisting a force Pr in the plane containing both primary and redundant members, as determined by:\n- Eq. (3.16-1): Pr = [0.015 + (1 / 6000) * ((L/r) - 60)] * P\nwhere:\n0.015 * P <= Pr <= 0.025 * P\nand:\nP = The maximum calculated compression force in the supported primary member.\nL/r = The slenderness ratio of the supported primary member.\nThe resistance of redundant members at each node shall be combined vectorially, and the resultant resistance shall be greater than Pr. The design of redundant members shall be in accordance with Chapter 3.",
+    "text": "Redundant members are used to provide intermediate bracing points to the primary members to reduce the unbraced length of these primary members.\nThe redundant bracing system shall be capable of resisting a force $P_r$ in the plane containing both primary and redundant members, as determined by:\n- Eq. (3.16-1): $$P_r = \\left[0.015 + \\frac{1}{6000}\\left(\\frac{L}{r} - 60\\right)\\right] P$$\nwhere:\n$$0.015 P \\le P_r \\le 0.025 P$$\nand:\n$P$ = The maximum calculated compression force in the supported primary member.\n$L/r$ = The slenderness ratio of the supported primary member.\nThe resistance of redundant members at each node shall be combined vectorially, and the resultant resistance shall be greater than $P_r$. The design of redundant members shall be in accordance with Chapter 3.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -1601,7 +1601,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Bolt Shear Capacity",
     "section": "4.0 Design of Connections",
     "page": 15,
-    "text": "Design shear for A394 bolts shall be the shear strength tabulated in the ASTM specification.\nFor bolts that do not have an ASTM-specified shear strength, the design shear stress Fv on the effective area shall be 0.62 * Fu, where Fu is the specified minimum tensile strength of the bolt material. The effective area is the gross cross-sectional area of the bolt if threads are excluded from the shear plane or the root area if threads are in the shear plane.",
+    "text": "Design shear for A394 bolts shall be the shear strength tabulated in the ASTM specification.\nFor bolts that do not have an ASTM-specified shear strength, the design shear stress $F_v$ on the effective area shall be $0.62 F_u$, where $F_u$ is the specified minimum tensile strength of the bolt material. The effective area is the gross cross-sectional area of the bolt if threads are excluded from the shear plane or the root area if threads are in the shear plane.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -1628,7 +1628,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Bolt Tension Capacity",
     "section": "4.0 Design of Connections",
     "page": 15,
-    "text": "Bolts shall be proportioned so that the sum of the tensile stresses caused by the applied external load, and any tensile stress resulting from prying action, does not exceed the design tensile stress Ft, as follows:\n(a) For bolts that have a specified proof-load stress, Ft = ASTM proof-load stress by the length-measurement method.\n(b) For bolts with no specified proof-load stress, Ft = 0.6 * Fu.\nThe stress area As is given by:\n- Eq. (4.3-1): As = (pi / 4) * (d - 0.974 / n)^2\nwhere d = nominal diameter of the bolt; and n = number of threads per unit of length.",
+    "text": "Bolts shall be proportioned so that the sum of the tensile stresses caused by the applied external load, and any tensile stress resulting from prying action, does not exceed the design tensile stress $F_t$, as follows:\n(a) For bolts that have a specified proof-load stress, $F_t$ = ASTM proof-load stress by the length-measurement method.\n(b) For bolts with no specified proof-load stress, $F_t = 0.6 F_u$.\nThe stress area $A_s$ is given by:\n- Eq. (4.3-1): $$A_s = \\frac{\\pi}{4}\\left(d - \\frac{0.974}{n}\\right)^2$$\nwhere $d$ = nominal diameter of the bolt; and $n$ = number of threads per unit of length.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.10.4",
@@ -1646,7 +1646,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Bolts Subject to Combined Shear and Tension",
     "section": "4.0 Design of Connections",
     "page": 15,
-    "text": "For bolts subject to combined shear and tension, the design tensile stress Ft(v) shall be:\n- Eq. (4.3-2): Ft(v) = Ft * [1 - (fv / Fv)^2]^(1/2)\nwhere:\nFt = design tensile stress defined in Section 4.3.3;\nFv = design shear stress defined in Section 4.3.2; and\nfv = computed shear stress on effective area.\nThe combined tensile and shear stresses shall be taken at the same cross section in the bolt.",
+    "text": "For bolts subject to combined shear and tension, the design tensile stress $F_{t(v)}$ shall be:\n- Eq. (4.3-2): $$F_{t(v)} = F_t \\left[1 - \\left(\\frac{f_v}{F_v}\\right)^2\\right]^{1/2}$$\nwhere:\n$F_t$ = design tensile stress defined in Section 4.3.3;\n$F_v$ = design shear stress defined in Section 4.3.2; and\n$f_v$ = computed shear stress on effective area.\nThe combined tensile and shear stresses shall be taken at the same cross section in the bolt.",
     "tablesReferenced": [],
     "crossReferences": [
       "4.3.2",
@@ -1664,7 +1664,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Design Bearing Stress",
     "section": "4.0 Design of Connections",
     "page": 15,
-    "text": "The maximum bearing stress, calculated as the force on a bolt divided by the product of the bolt diameter times the thickness of the connected part, shall not exceed 1.5 times the specified minimum tensile strength Fu of the connected part or the bolt.",
+    "text": "The maximum bearing stress, calculated as $\\frac{P}{d \\cdot t}$ (the force on a bolt divided by the product of the bolt diameter times the thickness of the connected part), shall not exceed $1.5 F_u$ (1.5 times the specified minimum tensile strength $F_u$ of the connected part or the bolt).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -1717,7 +1717,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "End Distance",
     "section": "4.0 Design of Connections",
     "page": 15,
-    "text": "For stressed members (see Fig. C4-2), the distance e measured from the center of a hole to the end, whether this end is perpendicular or inclined to the line of force, shall not be less than the value of e_min, determined as the largest value of e from Eqs. (4.5-1) through (4.5-3):\n- Eq. (4.5-1): e = 1.2 * P / (Fu * t)\n- Eq. (4.5-2): e = 1.3 * d\n- Eq. (4.5-3): e = t + d / 2\nwhere:\nFu = specified minimum tensile strength of the connected part;\nt = thickness of the connected part;\nd = nominal diameter of bolt; and\nP = force transmitted by the bolt.\nFor redundant members, e_min shall be determined as the larger value of e from Eqs. (4.5-3) and (4.5-4):\n- Eq. (4.5-4): e = 1.2 * d\nEquation (4.5-3) does not apply for either stressed members or redundant members if the holes are drilled.",
+    "text": "For stressed members (see Fig. C4-2), the distance $e$ measured from the center of a hole to the end, whether this end is perpendicular or inclined to the line of force, shall not be less than the value of $e_{\\min}$, determined as the largest value of $e$ from Eqs. (4.5-1) through (4.5-3):\n- Eq. (4.5-1): $$e = \\frac{1.2 P}{F_u t}$$\n- Eq. (4.5-2): $$e = 1.3 d$$\n- Eq. (4.5-3): $$e = t + \\frac{d}{2}$$\nwhere:\n$F_u$ = specified minimum tensile strength of the connected part;\n$t$ = thickness of the connected part;\n$d$ = nominal diameter of bolt; and\n$P$ = force transmitted by the bolt.\nFor redundant members, $e_{\\min}$ shall be determined as the larger value of $e$ from Eqs. (4.5-3) and (4.5-4):\n- Eq. (4.5-4): $$e = 1.2 d$$\nEquation (4.5-3) does not apply for either stressed members or redundant members if the holes are drilled.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -1744,7 +1744,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Center-to-Center Bolt Hole Spacing",
     "section": "4.0 Design of Connections",
     "page": 16,
-    "text": "Along a line of transmitted force, the distances between centers of holes shall not be less than the value of s_min determined as:\n- Eq. (4.5-5): s_min = 1.2 * P / (Fu * t) + 0.6 * d",
+    "text": "Along a line of transmitted force, the distances between centers of holes shall not be less than the value of $s_{\\min}$ determined as:\n- Eq. (4.5-5): $$s_{\\min} = \\frac{1.2 P}{F_u t} + 0.6 d$$",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -1770,7 +1770,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Edge Distance",
     "section": "4.0 Design of Connections",
     "page": 16,
-    "text": "The distance f from the center of a hole to the edge of the member (see Fig. C4-2) shall not be less than the value of f_min given by the following:\nFor a rolled edge:\n- Eq. (4.5-6): f_min = 0.85 * e_min\nFor a sheared or mechanically guided flame-cut edge:\n- Eq. (4.5-7): f_min = 0.85 * e_min + 0.0625 * Psi\nwhere:\ne_min = end distance according to Section 4.5.1; and\nPsi = 1 for f_min in inches and 25.4 for f_min in millimeters.",
+    "text": "The distance $f$ from the center of a hole to the edge of the member (see Fig. C4-2) shall not be less than the value of $f_{\\min}$ given by the following:\nFor a rolled edge:\n- Eq. (4.5-6): $$f_{\\min} = 0.85 e_{\\min}$$\nFor a sheared or mechanically guided flame-cut edge:\n- Eq. (4.5-7): $$f_{\\min} = 0.85 e_{\\min} + 0.0625 \\Psi$$\nwhere:\n$e_{\\min}$ = end distance according to Section 4.5.1; and\n$\\Psi = 1$ for $f_{\\min}$ in inches and $\\Psi = 25.4$ for $f_{\\min}$ in millimeters.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -1796,7 +1796,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Attachment Holes",
     "section": "4.0 Design of Connections",
     "page": 16,
-    "text": "This section is valid for hole diameter to bolt diameter ratios <= 2. The force P for a bolt in an attachment hole shall be limited by the following:\n- Eq. (4.6-1): P <= 0.75 * (L - 0.5 * dh) * t * Fu\nor\n- Eq. (4.6-2): P <= 1.35 * d * t * Fu\nwhere:\nL = minimum distance from the center of the hole to any member edge;\nd = nominal diameter of bolt;\ndh = attachment hole diameter;\nt = member thickness; and\nFu = specified minimum tensile strength of the member.",
+    "text": "This section is valid for hole diameter to bolt diameter ratios $\\frac{d_h}{d} \\le 2$. The force $P$ for a bolt in an attachment hole shall be limited by the following:\n- Eq. (4.6-1): $$P \\le 0.75 (L - 0.5 d_h) t F_u$$\nor\n- Eq. (4.6-2): $$P \\le 1.35 d \\, t \\, F_u$$\nwhere:\n$L$ = minimum distance from the center of the hole to any member edge;\n$d$ = nominal diameter of bolt;\n$d_h$ = attachment hole diameter;\n$t$ = member thickness; and\n$F_u$ = specified minimum tensile strength of the member.",
     "tablesReferenced": [],
     "crossReferences": [
       "4.4",
@@ -2831,7 +2831,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Stub Angles in Concrete",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 21,
-    "text": "The stub angle, at the plane of the intersection with the concrete, shall be checked for a combination of tension plus shear and compression plus shear, as follows:\n- Eq. (7.4-1): Aa = (P / Fy) + (V / (0.75 * Fy))\nwhere:\nAa = gross area of stub angle, or net area, if there is a hole at the intersecting plane;\nP = tensile or compressive load on the stub angle;\nV = shear load parallel to the intersection plane; and\nFy = specified minimum yield strength of stub angle.",
+    "text": "The stub angle, at the plane of the intersection with the concrete, shall be checked for a combination of tension plus shear and compression plus shear, as follows:\n- Eq. (7.4-1): $$A_a = \\frac{P}{F_y} + \\frac{V}{0.75 F_y}$$\nwhere:\n$A_a$ = gross area of stub angle, or net area, if there is a hole at the intersecting plane;\n$P$ = tensile or compressive load on the stub angle;\n$V$ = shear load parallel to the intersection plane; and\n$F_y$ = specified minimum yield strength of stub angle.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -2855,7 +2855,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Anchor Bolts with Base Assembly in Contact with Concrete or Grout",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 21,
-    "text": "When the anchor bolt bases are subjected to uplift and shear loads, the shear load shall be assumed to be transferred to the concrete by shear friction based upon the clamping force of the anchor bolts. The area of steel required shall be:\n- Eq. (7.4-2): As = (T / Fy) + V / (mu * 0.85 * Fy)\nThe stress area through the threads is given by:\n- Eq. (7.4-3): As = (pi / 4) * (d - 0.974 / n)^2\nwhere T = tensile load on anchor bolt; V = shear load perpendicular to anchor bolts; Fy = specified minimum yield strength of anchor bolt; d = nominal diameter; n = number of threads per unit of length; and mu = coefficient of friction.\nThe values for mu (Fig. 7-2) are the following:\n(a) 0.9 for concrete or grout against as-rolled steel with the contact plane a full plate thickness below the concrete surface;\n(b) 0.7 for concrete or grout placed against as-rolled steel with contact plane coincidental with the contact surface; and\n(c) 0.55 for grouted conditions with the contact plane between grout and as-rolled steel above the concrete surface.\nWhen anchor bolt bases are subjected to a shear load or a combination of downthrust and shear loads, the anchor bolt area shall be checked by:\n- Eq. (7.4-4): As = (V - 0.3 * D) / (mu * 0.85 * Fy)\nwhere D = downthrust load.\nWhen shear lugs are attached to the base assembly to transfer the shear to the concrete, the area of the anchor bolt need not be checked by Eqs. (7.4-2) and (7.4-4). A combination of shear lugs and shear friction is not allowed.",
+    "text": "When the anchor bolt bases are subjected to uplift and shear loads, the shear load shall be assumed to be transferred to the concrete by shear friction based upon the clamping force of the anchor bolts. The area of steel required shall be:\n- Eq. (7.4-2): $$A_s = \\frac{T}{F_y} + \\frac{V}{\\mu \\cdot 0.85 F_y}$$\nThe stress area through the threads is given by:\n- Eq. (7.4-3): $$A_s = \\frac{\\pi}{4}\\left(d - \\frac{0.974}{n}\\right)^2$$\nwhere $T$ = tensile load on anchor bolt; $V$ = shear load perpendicular to anchor bolts; $F_y$ = specified minimum yield strength of anchor bolt; $d$ = nominal diameter; $n$ = number of threads per unit of length; and $\\mu$ = coefficient of friction.\nThe values for $\\mu$ (Fig. 7-2) are the following:\n(a) $\\mu = 0.9$ for concrete or grout against as-rolled steel with the contact plane a full plate thickness below the concrete surface;\n(b) $\\mu = 0.7$ for concrete or grout placed against as-rolled steel with contact plane coincidental with the contact surface; and\n(c) $\\mu = 0.55$ for grouted conditions with the contact plane between grout and as-rolled steel above the concrete surface.\nWhen anchor bolt bases are subjected to a shear load or a combination of downthrust and shear loads, the anchor bolt area shall be checked by:\n- Eq. (7.4-4): $$A_s = \\frac{V - 0.3 D}{\\mu \\cdot 0.85 F_y}$$\nwhere $D$ = downthrust load.\nWhen shear lugs are attached to the base assembly to transfer the shear to the concrete, the area of the anchor bolt need not be checked by Eqs. (7.4-2) and (7.4-4). A combination of shear lugs and shear friction is not allowed.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -2957,7 +2957,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Smooth Bar Anchor Bolts",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 23,
-    "text": "The anchorage value shall be limited by the pull-out strength of the concrete based on a uniform tensile stress, in ksi, of 0.126 * phi * sqrt(f'c) (in MPa, of 0.33 * phi * sqrt(f'c)), acting on an effective stress area that is defined by the projecting area of stress cones radiating toward the surface from the bearing edge of the anchors.\nThe effective area shall be limited by overlapping stress cones, by the intersection of the cones with concrete surfaces, by the bearing area of anchor heads, and by the overall thickness of the concrete. The angle for calculating projected area shall be 45 degrees. The phi-factor shall be 0.65 for an embedded anchor head. When there is more than one anchor bolt in a line, overlapping stress cones shall be taken into account in determining the effective area.\nThe anchor head can be a nut, bolt head, or plate. The bearing requirements of ACI 318 (1983) need not be met if the anchor head satisfies the following conditions:\n(a) The bearing area of the anchor head (excluding the area of the anchor bolt) is at least 1.5 times the area of the anchor bolt;\n(b) The thickness of the anchor head is at least equal to the greatest dimension from the outermost bearing edge of the anchor head to the face of the anchor bolt; and\n(c) The bearing area of the anchor head is approximately evenly distributed around the perimeter of the anchor bolt.",
+    "text": "The anchorage value shall be limited by the pull-out strength of the concrete based on a uniform tensile stress, in ksi, of $0.126 \\phi \\sqrt{f'_c}$ (in MPa, of $0.33 \\phi \\sqrt{f'_c}$), acting on an effective stress area that is defined by the projecting area of stress cones radiating toward the surface from the bearing edge of the anchors.\nThe effective area shall be limited by overlapping stress cones, by the intersection of the cones with concrete surfaces, by the bearing area of anchor heads, and by the overall thickness of the concrete. The angle for calculating projected area shall be $45^\\circ$. The resistance factor shall be $\\phi = 0.65$ for an embedded anchor head. When there is more than one anchor bolt in a line, overlapping stress cones shall be taken into account in determining the effective area.\nThe anchor head can be a nut, bolt head, or plate. The bearing requirements of ACI 318 (1983) need not be met if the anchor head satisfies the following conditions:\n(a) The bearing area of the anchor head (excluding the area of the anchor bolt) is at least $1.5$ times the area of the anchor bolt;\n(b) The thickness of the anchor head is at least equal to the greatest dimension from the outermost bearing edge of the anchor head to the face of the anchor bolt; and\n(c) The bearing area of the anchor head is approximately evenly distributed around the perimeter of the anchor bolt.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -2983,7 +2983,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Minimum Embedment for Anchor Bolts",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 23,
-    "text": "The minimum embedment depth shall be 12 * d * sqrt(Fu / (58 * Psi)) where:\nd = nominal diameter;\nFu = specified minimum tensile strength; and\nPsi = 1 for Fu in ksi and 6.89 for Fu in MPa.",
+    "text": "The minimum embedment depth shall be:\n$$L_{\\text{emb,min}} = 12 d \\sqrt{\\frac{F_u}{58 \\Psi}}$$\nwhere:\n$d$ = nominal diameter;\n$F_u$ = specified minimum tensile strength; and\n$\\Psi = 1$ for $F_u$ in ksi and $\\Psi = 6.89$ for $F_u$ in MPa.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -3050,7 +3050,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Stud Shear Connectors",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 23,
-    "text": "The capacity, Qn, of a stud shear connector [see Fig. 7-3(c)] shall be as given by Eq. (7.6-1), but not to exceed the value determined by Section 4.3.2:\n- Eq. (7.6-1): Qn = 0.5 * phi * Asc * sqrt(f'c * Ec)\nwhere:\nphi = 0.85;\nAsc = cross-sectional area of a stud shear connector;\nf'c = specified compressive strength of concrete; and\nEc = modulus of elasticity of concrete.\nValues of Qn from Eq. (7.6-1) are applicable only to concrete made with ASTM C33 aggregates. All AISC requirements (AISC 2011) for stud material and configuration, spacing, ratio of stud diameter to minimum thickness of material to which it is welded, and concrete properties and coverage shall be met.",
+    "text": "The capacity, $Q_n$, of a stud shear connector [see Fig. 7-3(c)] shall be as given by Eq. (7.6-1), but not to exceed the value determined by Section 4.3.2:\n- Eq. (7.6-1): $$Q_n = 0.5 \\phi A_{sc} \\sqrt{f'_c E_c}$$\nwhere:\n$\\phi = 0.85$;\n$A_{sc}$ = cross-sectional area of a stud shear connector;\n$f'_c$ = specified compressive strength of concrete; and\n$E_c$ = modulus of elasticity of concrete.\nValues of $Q_n$ from Eq. (7.6-1) are applicable only to concrete made with ASTM C33 aggregates. All AISC requirements (AISC 2011) for stud material and configuration, spacing, ratio of stud diameter to minimum thickness of material to which it is welded, and concrete properties and coverage shall be met.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -3076,7 +3076,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Angle Shear Connectors",
     "section": "7.0 Structural Members and Connections Used in Foundations",
     "page": 23,
-    "text": "The capacity, P, of angle shear connectors [see Fig. 7-3(b)] shall be determined by the following:\n- Eq. (7.6-2): P = 1.19 * f'c * b * (t + r + x / 2)\nand\n- Eq. (7.6-3): x = t * [Fy / (1.19 * f'c)]^(1/2) <= w - r - t\nwhere:\nf'c = specified compressive strength of concrete;\nb = length of angle shear connector;\nt = thickness of angle shear connector;\nr = radius of fillet;\nFy = specified minimum yield strength of steel; and\nw = width of angle shear connector leg.\nThe angle shear connector shall be located with its length symmetrical about the center of gravity of the stub angle leg. The connector shall be fastened to the stub with sufficient bolts or welds to take both shear and moment. The minimum center-to-center spacing of shear connectors shall be 2w.",
+    "text": "The capacity, $P$, of angle shear connectors [see Fig. 7-3(b)] shall be determined by the following:\n- Eq. (7.6-2): $$P = 1.19 f'_c b \\left(t + r + \\frac{x}{2}\\right)$$\nand\n- Eq. (7.6-3): $$x = t \\left[\\frac{F_y}{1.19 f'_c}\\right]^{1/2} \\le w - r - t$$\nwhere:\n$f'_c$ = specified compressive strength of concrete;\n$b$ = length of angle shear connector;\n$t$ = thickness of angle shear connector;\n$r$ = radius of fillet;\n$F_y$ = specified minimum yield strength of steel; and\n$w$ = width of angle shear connector leg.\nThe angle shear connector shall be located with its length symmetrical about the center of gravity of the stub angle leg. The connector shall be fastened to the stub with sufficient bolts or welds to take both shear and moment. The minimum center-to-center spacing of shear connectors shall be $2w$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -3356,7 +3356,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Material (Fu/Fy Ratio)",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 35,
-    "text": "A ratio of Fu / Fy >= 1.15 is suggested for steel used for members.",
+    "text": "A ratio of $\\frac{F_u}{F_y} \\ge 1.15$ is suggested for steel used for members.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC_11_1",
@@ -3396,7 +3396,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Slenderness Ratios & Aeolian Vibration",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 35,
-    "text": "Tension-only members (L/r >= 300) bow out-of-plane without permanent set when subjected to compression and return to their original position upon load removal.\nDamaging vibration of steel members in latticed towers usually occurs at steady wind speeds less than 20 mi/h (32 km/h). Tests on shapes with L/r <= 250 show that the possibility of damaging vibration is minimal (Carpena and Diana 1971). Tension-hanger members are prone to vibration, but L/r values as large as 375 have been used successfully. In areas of steady winds over extended periods (mountain passes or flat plains), allowable L/r values may need to be reduced, and blocking the outstanding leg of angles at connections should be avoided.",
+    "text": "Tension-only members ($L/r \\ge 300$) bow out-of-plane without permanent set when subjected to compression and return to their original position upon load removal.\nDamaging vibration of steel members in latticed towers usually occurs at steady wind speeds less than $20\\text{ mi/h}$ ($32\\text{ km/h}$). Tests on shapes with $L/r \\le 250$ show that the possibility of damaging vibration is minimal (Carpena and Diana 1971). Tension-hanger members are prone to vibration, but $L/r$ values as large as $375$ have been used successfully. In areas of steady winds over extended periods (mountain passes or flat plains), allowable $L/r$ values may need to be reduced, and blocking the outstanding leg of angles at connections should be avoided.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -3487,7 +3487,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Determination of Fa (Local Buckling)",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 36,
-    "text": "The flat-width-to-thickness ratio w/t that enables the leg to reach yield stress without local buckling is set at 80 / sqrt(Fy) for Fy in ksi (210 / sqrt(Fy) for Fy in MPa). Unequal-leg angles are designed by establishing the design stress based on the w/t value of the long leg (Gaylord and Wilhoite 1985).",
+    "text": "The flat-width-to-thickness ratio $w/t$ that enables the leg to reach yield stress without local buckling is set at $\\frac{80}{\\sqrt{F_y}}$ for $F_y$ in ksi ($\\frac{210}{\\sqrt{F_y}}$ for $F_y$ in MPa). Unequal-leg angles are designed by establishing the design stress based on the $w/t$ value of the long leg (Gaylord and Wilhoite 1985).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.7.3",
@@ -3504,7 +3504,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Effective Lengths & Partial Joint Restraint Evaluation",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 36,
-    "text": "For angles in compression (other than leg members bolted in both faces where K = 1), eccentricity of the connection is the predominant factor in the lower L/r range (L/r <= 120), whereas rotational restraint becomes the predominant factor in the higher L/r range (L/r > 120). The transition point is taken as L/r = 120.\nFig. C3-2 plots the normalized compression curves (Curves 1 through 6 from ASCE Manual of Practice No. 52):\n- Curve 1: Eq. (3.7-5), concentric both ends (0 <= L/r <= 120)\n- Curve 2: Eq. (3.7-6), concentric one end, normal eccentricity other end (0 <= L/r <= 120)\n- Curve 3: Eq. (3.7-7), normal framing eccentricities both ends (0 <= L/r <= 120)\n- Curve 4: Eq. (3.7-8), unrestrained both ends (L/r >= 120)\n- Curve 5: Eq. (3.7-9), partially restrained one end (L/r >= 120)\n- Curve 6: Eq. (3.7-10), partially restrained both ends (L/r >= 120)\nNormal framing eccentricity implies that the centroid of the bolt pattern is located between the heel of the angle and the centerline of the connected leg.\nTo justify using the partial rotational restraint values of KL/r in Eqs. (3.7-9), (3.7-10), (3.7-12), and (3.7-13), the following evaluation is suggested (see Fig. C3-3):\n(a) The restrained member should be connected to the restraining member with at least two bolts;\n(b) The restraining member should have a stiffness factor I/L in the stress plane (where I/L = r^2 * A / L = r * A / (L/r)) that equals or exceeds the sum of the stiffness factors in the stress plane of the restrained members connected to it; and\n(c) Angle members connected solely to a gusset plate should not be considered to have end restraint against rotation.",
+    "text": "For angles in compression (other than leg members bolted in both faces where $K = 1$), eccentricity of the connection is the predominant factor in the lower $L/r$ range ($L/r \\le 120$), whereas rotational restraint becomes the predominant factor in the higher $L/r$ range ($L/r > 120$). The transition point is taken as $L/r = 120$.\nFig. C3-2 plots the normalized compression curves (Curves 1 through 6 from ASCE Manual of Practice No. 52):\n- Curve 1: Eq. (3.7-5), concentric both ends ($0 \\le L/r \\le 120$)\n- Curve 2: Eq. (3.7-6), concentric one end, normal eccentricity other end ($0 \\le L/r \\le 120$)\n- Curve 3: Eq. (3.7-7), normal framing eccentricities both ends ($0 \\le L/r \\le 120$)\n- Curve 4: Eq. (3.7-8), unrestrained both ends ($L/r \\ge 120$)\n- Curve 5: Eq. (3.7-9), partially restrained one end ($L/r \\ge 120$)\n- Curve 6: Eq. (3.7-10), partially restrained both ends ($L/r \\ge 120$)\nNormal framing eccentricity implies that the centroid of the bolt pattern is located between the heel of the angle and the centerline of the connected leg.\nTo justify using the partial rotational restraint values of $KL/r$ in Eqs. (3.7-9), (3.7-10), (3.7-12), and (3.7-13), the following evaluation is suggested (see Fig. C3-3):\n(a) The restrained member should be connected to the restraining member with at least two bolts;\n(b) The restraining member should have a stiffness factor $\\frac{I}{L} = \\frac{r^2 A}{L} = \\frac{r A}{L/r}$ in the stress plane that equals or exceeds the sum of the stiffness factors in the stress plane of the restrained members connected to it; and\n(c) Angle members connected solely to a gusset plate should not be considered to have end restraint against rotation.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -3561,7 +3561,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Compression Members: Symmetrical Lipped Angles",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 38,
-    "text": "Lips increase the local buckling strength of angle legs, so torsional-flexural buckling must be checked using the equivalent radius of gyration rtf [Eq. (3.8-1)]. If the member is free to warp and rotate about the u-axis at each end, K = 1; if prevented at both ends, K = 0.5; if prevented at one end, K = 0.7. Mixed end conditions can be treated by replacing rt and ru in Eq. (3.8-1) with rt/Kt and ru/Ku, using Kt = 1 in Eq. (3.8-2) when computing adjusted KL/r values in Section 3.7.4.",
+    "text": "Lips increase the local buckling strength of angle legs, so torsional-flexural buckling must be checked using the equivalent radius of gyration $r_{tf}$ [Eq. (3.8-1)]. If the member is free to warp and rotate about the $u$-axis at each end, $K = 1$; if prevented at both ends, $K = 0.5$; if prevented at one end, $K = 0.7$. Mixed end conditions can be treated by replacing $r_t$ and $r_u$ in Eq. (3.8-1) with $r_t / K_t$ and $r_u / K_u$, using $K_t = 1$ in Eq. (3.8-2) when computing adjusted $KL/r$ values in Section 3.7.4.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.8",
@@ -3820,7 +3820,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Beam Webs in Shear",
     "section": "Commentary \u2014 C3.0 Design of Members",
     "page": 39,
-    "text": "The limiting web depth-to-thickness ratio h/t <= 200 matches the AISI (2008) specification limit for Fy = 60 ksi (413 MPa) and is adequate for steels with Fy <= 60 ksi. The design shear stresses match the AISC and AISI specifications multiplied by their respective factors of safety.",
+    "text": "The limiting web depth-to-thickness ratio $\\frac{h}{t} \\le 200$ matches the AISI (2008) specification limit for $F_y = 60\\text{ ksi}$ ($413\\text{ MPa}$) and is adequate for steels with $F_y \\le 60\\text{ ksi}$. The design shear stresses match the AISC and AISI specifications multiplied by their respective factors of safety.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.15.1"
@@ -3951,7 +3951,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Bolt Shear Capacity",
     "section": "Commentary \u2014 C4.0 Design of Connections",
     "page": 41,
-    "text": "Because tower bolts are installed to the snug-tight condition or a specified minimum torque, load transfer across a bolt is governed by direct shear rather than friction. ASTM A394 provides specified minimum shear values with threads included in or excluded from the shear plane. The design shear stress of 0.62 * Fu for other bolts is conservative (Kulak et al. 1988).",
+    "text": "Because tower bolts are installed to the snug-tight condition or a specified minimum torque, load transfer across a bolt is governed by direct shear rather than friction. ASTM A394 provides specified minimum shear values with threads included in or excluded from the shear plane. The design shear stress of $0.62 F_u$ for other bolts is conservative (Kulak et al. 1988).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -3974,7 +3974,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Bolt Tension Capacity",
     "section": "Commentary \u2014 C4.0 Design of Connections",
     "page": 41,
-    "text": "The ASTM proof-load stress is approximately equal to the bolt yield stress, and 0.6 * Fu is a conservative estimate when proof load is not specified. Exceeding the yield stress causes permanent stretch in the bolt, which can loosen the nut and cause loss of tightness in the joint.",
+    "text": "The ASTM proof-load stress is approximately equal to the bolt yield stress, and $0.6 F_u$ is a conservative estimate when proof load is not specified. Exceeding the yield stress causes permanent stretch in the bolt, which can loosen the nut and cause loss of tightness in the joint.",
     "tablesReferenced": [],
     "crossReferences": [
       "4.3.3"
@@ -4006,7 +4006,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Design Bearing Stress",
     "section": "Commentary \u2014 C4.0 Design of Connections",
     "page": 41,
-    "text": "Designs produced with bearing stresses <= 1.5 * Fu under factored loads have demonstrated satisfactory control over bolt-hole ovalization during full-scale tower tests.\nThe design bearing value on the bolts should also be checked if the tensile strength Fu of the member material exceeds the Fu value of the bolt\u2014for example, when an ASTM A394 Type 0 bolt (Fu = 74 ksi [510 MPa]) connects ASTM A572 Grade 65 steel (Fu = 80 ksi [551 MPa]). In that case, the full bolt diameter is used with design bearing stress equal to 1.5 * Fu of the bolt (Wilhoite 1986).",
+    "text": "Designs produced with bearing stresses $\\le 1.5 F_u$ under factored loads have demonstrated satisfactory control over bolt-hole ovalization during full-scale tower tests.\nThe design bearing value on the bolts should also be checked if the tensile strength $F_u$ of the member material exceeds the $F_u$ value of the bolt\u2014for example, when an ASTM A394 Type 0 bolt ($F_u = 74\\text{ ksi}$ [$510\\text{ MPa}$]) connects ASTM A572 Grade 65 steel ($F_u = 80\\text{ ksi}$ [$551\\text{ MPa}$]). In that case, the full bolt diameter is used with design bearing stress equal to $1.5 F_u$ of the bolt (Wilhoite 1986).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -4062,7 +4062,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: End Distance & Punching Thickness Guidelines",
     "section": "Commentary \u2014 C4.0 Design of Connections",
     "page": 41,
-    "text": "Eq. (4.5-1) provides the end distance required for strength (including a 1.2 factor for single-fastener connection uncertainties per Kulak et al. 1988). Eq. (4.5-2) (1.3d for stressed members; 1.2d in Eq. 4.5-4 for redundant members) is a practical lower bound. Eq. (4.5-3) (t + d/2) prevents hole breakout during punching of thick members and is not required when holes are drilled.\nThe following maximum punching thickness guidelines have been used satisfactorily:\n- For 36 ksi (248 MPa) yield steel: material thickness t <= hole diameter;\n- For 50 ksi (345 MPa) yield steel: material thickness t <= hole diameter - 1/16 in. (1.6 mm); and\n- For 65 ksi (448 MPa) yield steel: material thickness t <= hole diameter - 1/8 in. (3.2 mm).\nFig. C4-1 and Table C4-1 illustrate the governing end, edge, and center-to-center distances for a 3/4-in. A394 Type 0 bolt in A36 steel. Fig. C4-2 shows how e_min is measured when a member end is clipped at an angle.",
+    "text": "Eq. (4.5-1) provides the end distance required for strength (including a $1.2$ factor for single-fastener connection uncertainties per Kulak et al. 1988). Eq. (4.5-2) ($1.3 d$ for stressed members; $1.2 d$ in Eq. 4.5-4 for redundant members) is a practical lower bound. Eq. (4.5-3) ($t + d/2$) prevents hole breakout during punching of thick members and is not required when holes are drilled.\nThe following maximum punching thickness guidelines have been used satisfactorily:\n- For $36\\text{ ksi}$ ($248\\text{ MPa}$) yield steel: material thickness $t \\le d_h$ (hole diameter);\n- For $50\\text{ ksi}$ ($345\\text{ MPa}$) yield steel: material thickness $t \\le d_h - 1/16\\text{ in.}$ ($1.6\\text{ mm}$); and\n- For $65\\text{ ksi}$ ($448\\text{ MPa}$) yield steel: material thickness $t \\le d_h - 1/8\\text{ in.}$ ($3.2\\text{ mm}$).\nFig. C4-1 and Table C4-1 illustrate the governing end, edge, and center-to-center distances for a $3/4\\text{-in.}$ A394 Type 0 bolt in A36 steel. Fig. C4-2 shows how $e_{\\min}$ is measured when a member end is clipped at an angle.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC4_1",
@@ -4131,7 +4131,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Attachment Holes & Everyday Loading Wear Limit",
     "section": "Commentary \u2014 C4.0 Design of Connections",
     "page": 43,
-    "text": "Oversized attachment holes (dh <= 2d, Fig. C4-3) are commonly used for insulator strings, overhead ground wires, and guys, and are not used where connections experience load reversal. Eq. (4.6-1) was developed by replacing e in Eq. (4.5-1) with (L - 0.5 * dh), solving for P, and multiplying by 0.9. The dimension L perpendicular to the line of action of P may be reduced if analysis shows that the sum of tensile stress P/A and tensile bending stress does not exceed 0.67 * Fy.\nEq. (4.6-2) limits the bearing stress to 0.9 times the design value for standard holes (1.35 * d * t * Fu) to provide an additional factor for wear.\nFor everyday loading (bare weight of conductor at 60\u00b0F [16\u00b0C] final sag, plus steady prevailing wind where applicable), P should not exceed 0.5 * d * t * Fu to avoid indentation and excessive wear under sustained loading.",
+    "text": "Oversized attachment holes ($d_h \\le 2d$, Fig. C4-3) are commonly used for insulator strings, overhead ground wires, and guys, and are not used where connections experience load reversal. Eq. (4.6-1) was developed by replacing $e$ in Eq. (4.5-1) with $(L - 0.5 d_h)$, solving for $P$, and multiplying by $0.9$. The dimension $L$ perpendicular to the line of action of $P$ may be reduced if analysis shows that the sum of tensile stress $P/A$ and tensile bending stress does not exceed $0.67 F_y$.\nEq. (4.6-2) limits the bearing stress to $0.9$ times the design value for standard holes ($1.35 d \\, t \\, F_u$) to provide an additional factor for wear.\nFor everyday loading (bare weight of conductor at $60^\\circ\\text{F}$ [$16^\\circ\\text{C}$] final sag, plus steady prevailing wind where applicable), $P \\le 0.5 d \\, t \\, F_u$ to avoid indentation and excessive wear under sustained loading.",
     "tablesReferenced": [],
     "crossReferences": [
       "4.6"
@@ -4645,7 +4645,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Concrete Side Cover & Pier Reinforcing (ACI 349)",
     "section": "Commentary \u2014 C7.0 Foundations",
     "page": 49,
-    "text": "ACI 349 (1985) anchorage requirements are modified using the yield strength Fy of the anchorage material to ensure ductile steel failure prior to brittle concrete failure:\n- Eq. (C7.5-1) Side cover distance for tension to prevent lateral bursting for smooth anchor bolts: mt = 0.66 * d * sqrt(Fy / sqrt(f'c)) (with Fy and f'c in psi).\n- Eq. (C7.5-2) Side cover distance for anchorage shear: ms = 1.8 * d * sqrt(Fy / sqrt(f'c)) (with Fy and f'c in psi), where the bolt diameter required for shear only may be used, but not less than ms/3 for actual d or 4 in.\nEqs. (C7.5-1) and (C7.5-2) can also be used for stub angles using an equivalent diameter based on the net section of the stub angle.\nHorizontal ties and vertical pier reinforcing must intercept the assumed tension and shear failure cones as shown in Fig. C7-1 (Shipp and Haninger 1983).",
+    "text": "ACI 349 (1985) anchorage requirements are modified using the yield strength $F_y$ of the anchorage material to ensure ductile steel failure prior to brittle concrete failure:\n- Eq. (C7.5-1) Side cover distance for tension to prevent lateral bursting for smooth anchor bolts: $$m_t = 0.66 d \\sqrt{\\frac{F_y}{\\sqrt{f'_c}}} \\quad (F_y,\\, f'_c \\text{ in psi})$$\n- Eq. (C7.5-2) Side cover distance for anchorage shear: $$m_s = 1.8 d \\sqrt{\\frac{F_y}{\\sqrt{f'_c}}} \\quad (F_y,\\, f'_c \\text{ in psi})$$\nwhere the bolt diameter required for shear only may be used, but not less than $m_s / 3$ for actual $d$ or $4\\text{ in.}$\nEqs. (C7.5-1) and (C7.5-2) can also be used for stub angles using an equivalent diameter based on the net section of the stub angle.\nHorizontal ties and vertical pier reinforcing must intercept the assumed tension and shear failure cones as shown in Fig. C7-1 (Shipp and Haninger 1983).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -4718,7 +4718,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Commentary: Angle Shear Connectors",
     "section": "Commentary \u2014 C7.0 Foundations",
     "page": 49,
-    "text": "The values obtained using Eq. (7.6-2) [Fig. 7-3(b)] are based on initial yielding of the angle in bending at a stress of 1.19 * f'c in the concrete. The 1.19 constant is based on the concrete pier having an area at least four times as large as the bearing area of a pair of shear connector angles.",
+    "text": "The values obtained using Eq. (7.6-2) [Fig. 7-3(b)] are based on initial yielding of the angle in bending at a stress of $1.19 f'_c$ in the concrete. The $1.19$ constant is based on the concrete pier having an area at least four times as large as the bearing area of a pair of shear connector angles.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table7_2_1",
@@ -4808,7 +4808,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Appendix A: Notation",
     "section": "Appendix A \u2014 Notation",
     "page": 53,
-    "text": "Symbols used in ASCE/SEI 10-15 (with Customary and SI units):\n- A, Ag, An, As, Asc, At, Av = cross-sectional, gross, net, bolt tensile stress, stud shear connector, net tension, and net shear areas (in.^2) (mm^2)\n- a = distance from shear center to load plane (in.) (mm)\n- b, b1, b2 = effective design widths of elements, or width of leg - t/2 (in.) (mm)\n- C, Cb, Cc, Cm = stress gradient constant, bending moment coefficient, elastic/inelastic column slenderness limit, and beam-column interaction coefficient\n- Cw = warping constant of cross section (in.^6) (mm^6)\n- D = downthrust load on anchor bolts (kip) (N)\n- d, dh = nominal bolt diameter or minimum lip depth, and attachment hole diameter (in.) (mm)\n- E, Ec = modulus of elasticity of steel (29,000 ksi [200,000 MPa]) and concrete (ksi) (MPa)\n- e, e_min, f, f_min, s, s_min, g = actual and required end distance, edge distance, longitudinal pitch, and transverse gauge (in.) (mm)\n- Fa, Fb, Fcr, Ft, Ft(v), Fu, Fv, Fy = design axial compressive stress, design bending stress, local buckling critical stress, design tensile stress, combined shear/tension bolt stress, specified minimum tensile strength, design shear stress, and specified minimum yield stress (ksi) (MPa)\n- f'c = specified compressive strength of concrete at 28 days (ksi) (MPa)\n- I, Ips, Iu, Ix, Iy, Iz, J = moments of inertia and St. Venant torsional constant (in.^4) (mm^4)\n- j = section property for torsional-flexural buckling (in.) (mm)\n- K, Kt, Ku, Kx, Ky, K' = effective length factors\n- L, Lu, Lx, Ly, Lz, L' = unbraced lengths (in.) (mm)\n- Max, May, Mb, Me, Mx, My, Myc, Myt, M1, M2 = allowable, lateral buckling, elastic critical, applied, and yield bending moments (in.-kip) (mm-N)\n- P, Pa, Pex, Pey, Pr, Qn, T, V, V1, V2 = member/connector forces and capacities (kip) (N)\n- r, rps, rt, rtf, ru, rx, ry, rz = radii of gyration (in.) (mm)\n- S, Sxc = elastic section moduli (in.^3) (mm^3)\n- t, w, w' = element thickness, flat width of element, and flat width of edge stiffener (in.) (mm)\n- uo, xo, yo = distances between shear center and centroid (in.) (mm)\n- alpha, theta, mu, phi, Psi = bracing angle, lip/load angle, friction coefficient, resistance factor, and unit conversion factor",
+    "text": "Symbols used in ASCE/SEI 10-15 (with Customary and SI units):\n- $A, A_g, A_n, A_s, A_{sc}, A_t, A_v$ = cross-sectional, gross, net, bolt tensile stress, stud shear connector, net tension, and net shear areas ($\\text{in.}^2$) ($\\text{mm}^2$)\n- $a$ = distance from shear center to load plane (in.) (mm)\n- $b, b_1, b_2$ = effective design widths of elements, or width of leg $- t/2$ (in.) (mm)\n- $C, C_b, C_c, C_m$ = stress gradient constant, bending moment coefficient, elastic/inelastic column slenderness limit, and beam-column interaction coefficient\n- $C_w$ = warping constant of cross section ($\\text{in.}^6$) ($\\text{mm}^6$)\n- $D$ = downthrust load on anchor bolts (kip) (N)\n- $d, d_h$ = nominal bolt diameter or minimum lip depth, and attachment hole diameter (in.) (mm)\n- $E, E_c$ = modulus of elasticity of steel ($29{,}000\\text{ ksi}$ [$200{,}000\\text{ MPa}$]) and concrete (ksi) (MPa)\n- $e, e_{\\min}, f, f_{\\min}, s, s_{\\min}, g$ = actual and required end distance, edge distance, longitudinal pitch, and transverse gauge (in.) (mm)\n- $F_a, F_b, F_{cr}, F_t, F_{t(v)}, F_u, F_v, F_y$ = design axial compressive stress, design bending stress, local buckling critical stress, design tensile stress, combined shear/tension bolt stress, specified minimum tensile strength, design shear stress, and specified minimum yield stress (ksi) (MPa)\n- $f'_c$ = specified compressive strength of concrete at 28 days (ksi) (MPa)\n- $I, I_{ps}, I_u, I_x, I_y, I_z, J$ = moments of inertia and St. Venant torsional constant ($\\text{in.}^4$) ($\\text{mm}^4$)\n- $j$ = section property for torsional-flexural buckling (in.) (mm)\n- $K, K_t, K_u, K_x, K_y, K'$ = effective length factors\n- $L, L_u, L_x, L_y, L_z, L'$ = unbraced lengths (in.) (mm)\n- $M_{ax}, M_{ay}, M_b, M_e, M_x, M_y, M_{yc}, M_{yt}, M_1, M_2$ = allowable, lateral buckling, elastic critical, applied, and yield bending moments ($\\text{in.}\\cdot\\text{kip}$) ($\\text{mm}\\cdot\\text{N}$)\n- $P, P_a, P_{ex}, P_{ey}, P_r, Q_n, T, V, V_1, V_2$ = member/connector forces and capacities (kip) (N)\n- $r, r_{ps}, r_t, r_{tf}, r_u, r_x, r_y, r_z$ = radii of gyration (in.) (mm)\n- $S, S_{xc}$ = elastic section moduli ($\\text{in.}^3$) ($\\text{mm}^3$)\n- $t, w, w'$ = element thickness, flat width of element, and flat width of edge stiffener (in.) (mm)\n- $u_o, x_o, y_o$ = distances between shear center and centroid (in.) (mm)\n- $\\alpha, \\theta, \\mu, \\phi, \\Psi$ = bracing angle, lip/load angle, friction coefficient, resistance factor, and unit conversion factor",
     "tablesReferenced": [],
     "crossReferences": [
       "3.5",
@@ -4864,7 +4864,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 1: Equal Leg Angle with Symmetrical Bracing",
     "section": "Appendix B \u2014 Design Examples",
     "page": 55,
-    "text": "Evaluates tower leg angle capacity under symmetrical bracing (L/rz critical, concentric loading per Eq. 3.7-4):\n1. L8 x 8 x 9/16 (Fy = 36 ksi, w/t = 12.1 < (w/t)_lim = 13.3, rz = 1.59 in., A = 8.68 in.^2): For L = 121 in. (L/rz = 76), Fa = 29.5 ksi, Design strength = 256 kip. For L = 238 in. (L/rz = 150), Fa = 12.7 ksi, Design strength = 110 kip.\n2. L6 x 6 x 5/16 (Fy = 36 ksi, w/t = 16.6 > (w/t)_lim = 13.3, Fcr = 30.0 ksi, rz = 1.20 in., A = 3.65 in.^2): For L = 180 in. (L/rz = 150), Fa = 12.7 ksi, Design strength = 46.4 kip.\n3. L8 x 8 x 9/16 (Fy = 50 ksi, w/t = 12.1 > (w/t)_lim = 11.3, Fcr = 47.6 ksi): For L = 121 in. (L/rz = 76), Fa = 35.6 ksi, Design strength = 309 kip. For L = 238 in. (L/rz = 150), Fa = 12.7 ksi, Design strength = 110 kip.",
+    "text": "Evaluates tower leg angle capacity under symmetrical bracing ($L/r_z$ critical, concentric loading per Eq. 3.7-4):\n1. $\\text{L}8 \\times 8 \\times 9/16$ ($F_y = 36\\text{ ksi}$, $w/t = 12.1 < (w/t)_{\\lim} = 13.3$, $r_z = 1.59\\text{ in.}$, $A = 8.68\\text{ in.}^2$): For $L = 121\\text{ in.}$ ($L/r_z = 76$), $F_a = 29.5\\text{ ksi}$, Design strength $P = 256\\text{ kip}$. For $L = 238\\text{ in.}$ ($L/r_z = 150$), $F_a = 12.7\\text{ ksi}$, Design strength $P = 110\\text{ kip}$.\n2. $\\text{L}6 \\times 6 \\times 5/16$ ($F_y = 36\\text{ ksi}$, $w/t = 16.6 > (w/t)_{\\lim} = 13.3$, $F_{cr} = 30.0\\text{ ksi}$, $r_z = 1.20\\text{ in.}$, $A = 3.65\\text{ in.}^2$): For $L = 180\\text{ in.}$ ($L/r_z = 150$), $F_a = 12.7\\text{ ksi}$, Design strength $P = 46.4\\text{ kip}$.\n3. $\\text{L}8 \\times 8 \\times 9/16$ ($F_y = 50\\text{ ksi}$, $w/t = 12.1 > (w/t)_{\\lim} = 11.3$, $F_{cr} = 47.6\\text{ ksi}$): For $L = 121\\text{ in.}$ ($L/r_z = 76$), $F_a = 35.6\\text{ ksi}$, Design strength $P = 309\\text{ kip}$. For $L = 238\\text{ in.}$ ($L/r_z = 150$), $F_a = 12.7\\text{ ksi}$, Design strength $P = 110\\text{ kip}$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -4889,7 +4889,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 2: Effect of End Connections on Member Capacity",
     "section": "Appendix B \u2014 Design Examples",
     "page": 56,
-    "text": "Evaluates a compression strut L1-3/4 x 1-1/4 x 3/16 (rz = 0.27 in., A = 0.53 in.^2, Fy = 36 ksi) in a tension-only system:\n- For L = 32 in. (L/rz = 119 <= 120): Eccentricity in critical axis at both ends [Eq. (3.7-7)] gives KL/r = 60 + 0.5(119) = 119.5; Fa = 19.8 ksi, Design strength = 10.5 kip.\n- For L = 54 in. (L/rz = 200) with single-bolt connections (no restraint at ends, Eq. 3.7-8): KL/r = 200; Fa = 7.2 ksi, Design strength = 3.8 kip.\n- For L = 54 in. (L/rz = 200) with multiple-bolt connections (partial restraint at both ends, Eq. 3.7-10): KL/r = 46.2 + 0.615(200) = 169.2; Fa = 10.0 ksi, Design strength = 5.3 kip.",
+    "text": "Evaluates a compression strut $\\text{L}1\\text{-}3/4 \\times 1\\text{-}1/4 \\times 3/16$ ($r_z = 0.27\\text{ in.}$, $A = 0.53\\text{ in.}^2$, $F_y = 36\\text{ ksi}$) in a tension-only system:\n- For $L = 32\\text{ in.}$ ($L/r_z = 119 \\le 120$): Eccentricity in critical axis at both ends [Eq. (3.7-7)] gives $\\frac{KL}{r} = 60 + 0.5(119) = 119.5$; $F_a = 19.8\\text{ ksi}$, Design strength $P = 10.5\\text{ kip}$.\n- For $L = 54\\text{ in.}$ ($L/r_z = 200$) with single-bolt connections (no restraint at ends, Eq. 3.7-8): $\\frac{KL}{r} = 200$; $F_a = 7.2\\text{ ksi}$, Design strength $P = 3.8\\text{ kip}$.\n- For $L = 54\\text{ in.}$ ($L/r_z = 200$) with multiple-bolt connections (partial restraint at both ends, Eq. 3.7-10): $\\frac{KL}{r} = 46.2 + 0.615(200) = 169.2$; $F_a = 10.0\\text{ ksi}$, Design strength $P = 5.3\\text{ kip}$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -4914,7 +4914,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 3: Concentric Loading, Two-Angle Member",
     "section": "Appendix B \u2014 Design Examples",
     "page": 56,
-    "text": "Illustrates a back-to-back double-angle compression strut in a tension-only system where L/rx or L/ry is the critical factor under concentric loading: for L/r from 0 to 120, use Eq. (3.7-5); for L/r > 120, use Eq. (3.7-8) for single-bolt connections or Eq. (3.7-10) for multiple-bolt connections with partial restraint at both ends.",
+    "text": "Illustrates a back-to-back double-angle compression strut in a tension-only system where $L/r_x$ or $L/r_y$ is the critical factor under concentric loading: for $0 \\le L/r \\le 120$, use Eq. (3.7-5); for $L/r > 120$, use Eq. (3.7-8) for single-bolt connections or Eq. (3.7-10) for multiple-bolt connections with partial restraint at both ends.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -4938,7 +4938,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 4: K-Bracing, Two-Angle Member with Varying Forces",
     "section": "Appendix B \u2014 Design Examples",
     "page": 57,
-    "text": "Demonstrates in-plane (0.5 L / rx) and out-of-plane (L / ry) buckling checks for a K-braced horizontal strut not braced normal to the plane of the truss (Section 3.7.4.4):\n1. Both subpanels in compression (P1 = -5.6 kip, P2 = -3.3 kip): Eq. (3.7-14a) gives K' = 0.75 + 0.25 * (3.3 / 5.6) = 0.90.\n2. One subpanel in compression, one in tension (P1 = -44.6 kip, P2 = +2.2 kip): Eq. (3.7-14b) gives K' = 0.75 - 0.25 * (2.2 / 44.6) = 0.74.\n3. With normal framing eccentricity at both ends (L = 9.0 ft, ry = 1.38 in.): L' = K' * L = 0.74 * 9.0 = 6.66 ft; L'/ry = 57.9; Eq. (3.7-7) gives KL'/ry = 60 + 0.5(57.9) = 89.",
+    "text": "Demonstrates in-plane ($0.5 L / r_x$) and out-of-plane ($L / r_y$) buckling checks for a K-braced horizontal strut not braced normal to the plane of the truss (Section 3.7.4.4):\n1. Both subpanels in compression ($P_1 = -5.6\\text{ kip}$, $P_2 = -3.3\\text{ kip}$): Eq. (3.7-14a) gives $K' = 0.75 + 0.25(3.3 / 5.6) = 0.90$.\n2. One subpanel in compression, one in tension ($P_1 = -44.6\\text{ kip}$, $P_2 = +2.2\\text{ kip}$): Eq. (3.7-14b) gives $K' = 0.75 - 0.25(2.2 / 44.6) = 0.74$.\n3. With normal framing eccentricity at both ends ($L = 9.0\\text{ ft}$, $r_y = 1.38\\text{ in.}$): $L' = K' L = 0.74 \\times 9.0 = 6.66\\text{ ft}$; $L'/r_y = 57.9$; Eq. (3.7-7) gives $\\frac{KL'}{r_y} = 60 + 0.5(57.9) = 89$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -4963,7 +4963,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 5: Effect of Subdivided Panels and End Connections",
     "section": "Appendix B \u2014 Design Examples",
     "page": 58,
-    "text": "Evaluates a single-angle compression strut (L1-3/4 x 1-1/4 x 3/16, rz = 0.27 in., ry = 0.37 in., A = 0.53 in.^2, Fy = 36 ksi) braced at mid-length in one plane (0.5 L / rz or L / ry critical), comparing capacities for L = 44 in. (L/ry = 119, P = 10.5 kip) and L = 74 in. (L/ry = 200) with single-bolt ends (3.8 kip) vs. multiple-bolt ends (5.3 kip).",
+    "text": "Evaluates a single-angle compression strut ($\\text{L}1\\text{-}3/4 \\times 1\\text{-}1/4 \\times 3/16$, $r_z = 0.27\\text{ in.}$, $r_y = 0.37\\text{ in.}$, $A = 0.53\\text{ in.}^2$, $F_y = 36\\text{ ksi}$) braced at mid-length in one plane ($0.5 L / r_z$ or $L / r_y$ critical), comparing capacities for $L = 44\\text{ in.}$ ($L/r_y = 119$, $P = 10.5\\text{ kip}$) and $L = 74\\text{ in.}$ ($L/r_y = 200$) with single-bolt ends ($3.8\\text{ kip}$) vs. multiple-bolt ends ($5.3\\text{ kip}$).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -4986,7 +4986,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 6: Concentric Loading, Two-Angle Member, Subdivided Panels",
     "section": "Appendix B \u2014 Design Examples",
     "page": 58,
-    "text": "Defines the governing slenderness rules (0.5 L / rx or L / ry) for a concentrically loaded two-angle compression strut with a mid-panel intermediate brace under single-bolt vs. multiple-bolt end connections.",
+    "text": "Defines the governing slenderness rules ($0.5 L / r_x$ or $L / r_y$) for a concentrically loaded two-angle compression strut with a mid-panel intermediate brace under single-bolt vs. multiple-bolt end connections.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -5009,7 +5009,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 7: X-Brace Systems with No Intermediate Redundant Supports",
     "section": "Appendix B \u2014 Design Examples",
     "page": 59,
-    "text": "Specifies the governing in-plane and out-of-plane slenderness factors for tension/compression X-brace diagonals connected at the crossover point:\n1. When the tension diagonal has a force >= 20% of the compression diagonal force, the crossover point provides support resisting out-of-plane buckling (critical factor L1/rz or L1/rx,y).\n2. When the tension diagonal has a force < 20% of the compression diagonal force (or if both diagonals are in compression), the crossover point does not provide out-of-plane support (critical out-of-plane factor L3/rx,y over full diagonal length L3, or (L1 + 0.5 L2)/ry when unequal legs are used with the long leg connected).",
+    "text": "Specifies the governing in-plane and out-of-plane slenderness factors for tension/compression X-brace diagonals connected at the crossover point:\n1. When the tension diagonal has a force $\\ge 20\\%$ of the compression diagonal force, the crossover point provides support resisting out-of-plane buckling (critical factor $L_1/r_z$ or $L_1/r_{x,y}$).\n2. When the tension diagonal has a force $< 20\\%$ of the compression diagonal force (or if both diagonals are in compression), the crossover point does not provide out-of-plane support (critical out-of-plane factor $L_3/r_{x,y}$ over full diagonal length $L_3$, or $(L_1 + 0.5 L_2)/r_y$ when unequal legs are used with the long leg connected).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -5032,7 +5032,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 8: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 1",
     "section": "Appendix B \u2014 Design Examples",
     "page": 60,
-    "text": "Specifies governing slenderness factors (L1/rz, L2/rz, L1/rx,y, or L3/rx,y) and applicable KL/r equations for X-brace diagonals with intermediate redundant bracing when the tension diagonal force is >= 20% vs. < 20% of the compression diagonal force. No rotational end restraint is assumed in the segment between the crossover point and the intermediate redundant support point.",
+    "text": "Specifies governing slenderness factors ($L_1/r_z$, $L_2/r_z$, $L_1/r_{x,y}$, or $L_3/r_{x,y}$) and applicable $KL/r$ equations for X-brace diagonals with intermediate redundant bracing when the tension diagonal force is $\\ge 20\\%$ vs. $< 20\\%$ of the compression diagonal force. No rotational end restraint is assumed in the segment between the crossover point and the intermediate redundant support point.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -5056,7 +5056,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 9: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 2",
     "section": "Appendix B \u2014 Design Examples",
     "page": 60,
-    "text": "Specifies governing slenderness factors for X-brace diagonals with alternate intermediate redundant bracing geometry (L1 > L2 and L1 > L4) when the tension diagonal force is >= 20% vs. < 20% of the compression diagonal force.",
+    "text": "Specifies governing slenderness factors for X-brace diagonals with alternate intermediate redundant bracing geometry ($L_1 > L_2$ and $L_1 > L_4$) when the tension diagonal force is $\\ge 20\\%$ vs. $< 20\\%$ of the compression diagonal force.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -5080,7 +5080,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 10: Cold-Formed Angle",
     "section": "Appendix B \u2014 Design Examples",
     "page": 61,
-    "text": "Calculates the compression capacity of a 60-degree/90-degree cold-formed angle (Fy = 50 ksi, t = 0.135 in., w = 2.6775 in., w/t = 19.8, rz = 0.586 in., A = 0.777 in.^2):\n- Local buckling: (w/t)_lim = 80 / sqrt(50) = 11.3; 144 / sqrt(50) = 20.4. Since 11.3 < 19.8 < 20.4, Eq. (3.7-2) gives Fcr = [1.677 - 0.677 * (19.8 / 11.3)] * 50 = 24.6 ksi, and Cc = pi * sqrt(2 * 29,000 / 24.6) = 152.5.\n- At L = 117 in. (L/rz = 200 > Cc): Single-bolt connection [Eq. (3.7-8)] gives P = 5.6 kip; two-bolt connection [Eq. (3.7-10), KL/r = 169.2] gives P = 7.8 kip.\n- At L = 58.5 in. (L/rz = 100 < Cc): Two-bolt connection with eccentricities at both ends [Eq. (3.7-7), KL/r = 110] gives Fa = 18.2 ksi and P = 14.1 kip.",
+    "text": "Calculates the compression capacity of a 60-degree/90-degree cold-formed angle ($F_y = 50\\text{ ksi}$, $t = 0.135\\text{ in.}$, $w = 2.6775\\text{ in.}$, $w/t = 19.8$, $r_z = 0.586\\text{ in.}$, $A = 0.777\\text{ in.}^2$):\n- Local buckling: $(w/t)_{\\lim} = \\frac{80}{\\sqrt{50}} = 11.3$; $\\frac{144}{\\sqrt{50}} = 20.4$. Since $11.3 < 19.8 < 20.4$, Eq. (3.7-2) gives $F_{cr} = \\left[1.677 - 0.677\\left(\\frac{19.8}{11.3}\\right)\\right] \\times 50 = 24.6\\text{ ksi}$, and $C_c = \\pi\\sqrt{\\frac{2 \\times 29{,}000}{24.6}} = 152.5$.\n- At $L = 117\\text{ in.}$ ($L/r_z = 200 > C_c$): Single-bolt connection [Eq. (3.7-8)] gives $P = 5.6\\text{ kip}$; two-bolt connection [Eq. (3.7-10), $KL/r = 169.2$] gives $P = 7.8\\text{ kip}$.\n- At $L = 58.5\\text{ in.}$ ($L/r_z = 100 < C_c$): Two-bolt connection with eccentricities at both ends [Eq. (3.7-7), $KL/r = 110$] gives $F_a = 18.2\\text{ ksi}$ and $P = 14.1\\text{ kip}$.",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_table3_4_1",
@@ -5106,7 +5106,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 11: Cold-Formed Lipped Angle",
     "section": "Appendix B \u2014 Design Examples",
     "page": 62,
-    "text": "Calculates the compression capacity of a symmetrical cold-formed 3 in. x 3 in. x 0.135 in. lipped angle (Fy = 50 ksi, Cc = 106.9, A = 1.03 in.^2, w/t = 2.33 / 0.135 = 17.3, Cw = 0.441 in.^6, J = 0.00623 in.^4, Ips = 5.18 in.^4, rps = 2.24 in., ru = 1.32 in., rz = 0.773 in., uo = 1.64 in., L = 90 in.):\n- Minimum lip depth [Eq. (3.8-3) with theta = 90 deg]: d_min = 0.93 in. <= actual lip depth.\n- Equivalent radius of gyration [Eqs. (3.8-2) and (3.8-1)]: rt = 0.689 in., rtf = 0.639 in. < rz = 0.773 in., so torsional-flexural buckling governs (L/rtf = 90 / 0.639 = 141).\n- With two-bolt connections [Eq. (3.7-10)]: KL/rtf = 46.2 + 0.615(141) = 133 > Cc; Fa = 16.2 ksi; Design strength = 16.2 * 1.03 = 16.7 kip.",
+    "text": "Calculates the compression capacity of a symmetrical cold-formed $3\\text{ in.} \\times 3\\text{ in.} \\times 0.135\\text{ in.}$ lipped angle ($F_y = 50\\text{ ksi}$, $C_c = 106.9$, $A = 1.03\\text{ in.}^2$, $w/t = 2.33 / 0.135 = 17.3$, $C_w = 0.441\\text{ in.}^6$, $J = 0.00623\\text{ in.}^4$, $I_{ps} = 5.18\\text{ in.}^4$, $r_{ps} = 2.24\\text{ in.}$, $r_u = 1.32\\text{ in.}$, $r_z = 0.773\\text{ in.}$, $u_o = 1.64\\text{ in.}$, $L = 90\\text{ in.}$):\n- Minimum lip depth [Eq. (3.8-3) with $\\theta = 90^\\circ$]: $d_{\\min} = 0.93\\text{ in.} \\le \\text{actual lip depth}$.\n- Equivalent radius of gyration [Eqs. (3.8-2) and (3.8-1)]: $r_t = 0.689\\text{ in.}$, $r_{tf} = 0.639\\text{ in.} < r_z = 0.773\\text{ in.}$, so torsional-flexural buckling governs ($L/r_{tf} = 90 / 0.639 = 141$).\n- With two-bolt connections [Eq. (3.7-10)]: $\\frac{KL}{r_{tf}} = 46.2 + 0.615(141) = 133 > C_c$; $F_a = 16.2\\text{ ksi}$; Design strength $P = 16.2 \\times 1.03 = 16.7\\text{ kip}$.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.8.1",
@@ -5125,7 +5125,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 12: M-Section as Column Member",
     "section": "Appendix B \u2014 Design Examples",
     "page": 63,
-    "text": "Evaluates an M4 x 13 wide-flange column (Fy = 50 ksi, A = 3.81 in.^2, rx = 1.66 in., ry = 0.939 in., Sx = 5.24 in.^3, Cw = 11.06 in.^6, J = 0.19 in.^4, L = 96 in.):\n1. Concentrically loaded (Section 3.9.4): Torsional buckling rt = 1.56 in. > ry = 0.939 in., so weak-axis flexural buckling governs (L/ry = 102.2 < Cc = 106.9). Fa = 27.15 ksi, Design strength Pa = 103.4 kip.\n2. Connected on one flange at each end (2.0 in. eccentricity, P = 50 kip): Checked as a beam-column per Section 3.12 [Eq. (3.12-1)]. Lateral-torsional buckling [Eq. (3.14-1)] gives Fb = 43.6 ksi and Max = 228.5 in.-kip. Interaction ratio = 0.484 + 0.515 = 0.999 < 1.0 (acceptable for 50 kip; demonstrates the large capacity reduction caused by end eccentricity).",
+    "text": "Evaluates an $\\text{M}4 \\times 13$ wide-flange column ($F_y = 50\\text{ ksi}$, $A = 3.81\\text{ in.}^2$, $r_x = 1.66\\text{ in.}$, $r_y = 0.939\\text{ in.}$, $S_x = 5.24\\text{ in.}^3$, $C_w = 11.06\\text{ in.}^6$, $J = 0.19\\text{ in.}^4$, $L = 96\\text{ in.}$):\n1. Concentrically loaded (Section 3.9.4): Torsional buckling $r_t = 1.56\\text{ in.} > r_y = 0.939\\text{ in.}$, so weak-axis flexural buckling governs ($L/r_y = 102.2 < C_c = 106.9$). $F_a = 27.15\\text{ ksi}$, Design strength $P_a = 103.4\\text{ kip}$.\n2. Connected on one flange at each end ($2.0\\text{ in.}$ eccentricity, $P = 50\\text{ kip}$): Checked as a beam-column per Section 3.12 [Eq. (3.12-1)]. Lateral-torsional buckling [Eq. (3.14-1)] gives $F_b = 43.6\\text{ ksi}$ and $M_{ax} = 228.5\\text{ in.}\\cdot\\text{kip}$. Interaction ratio $= 0.484 + 0.515 = 0.999 < 1.0$ (acceptable for $50\\text{ kip}$; demonstrates the large capacity reduction caused by end eccentricity).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.9.4",
@@ -5144,7 +5144,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 13: Channel as Column",
     "section": "Appendix B \u2014 Design Examples",
     "page": 63,
-    "text": "Evaluates a cold-formed channel column (6 in. x 1.5 in. x 0.12 in., Fy = 36 ksi, A = 1.02 in.^2, rx = 2.06 in., ry = 0.48 in., L = 48 in.):\n1. Concentrically loaded (Section 3.9.5): Torsional-flexural rtf = 0.847 in. > ry = 0.48 in., so y-axis flexural buckling governs (L/ry = 100 < Cc = 126). Fa = 24.7 ksi; flange and web w/t are fully effective per Section 3.9.3.1; Design strength Pa = 25.2 kip.\n2. Connected to back of web (eccentricity e = 0.41 in. about y-axis): Interaction Eq. (3.12-1) gives a design strength of 8.7 kip (0.35 + 0.64 = 0.99 < 1.0).",
+    "text": "Evaluates a cold-formed channel column ($6\\text{ in.} \\times 1.5\\text{ in.} \\times 0.12\\text{ in.}$, $F_y = 36\\text{ ksi}$, $A = 1.02\\text{ in.}^2$, $r_x = 2.06\\text{ in.}$, $r_y = 0.48\\text{ in.}$, $L = 48\\text{ in.}$):\n1. Concentrically loaded (Section 3.9.5): Torsional-flexural $r_{tf} = 0.847\\text{ in.} > r_y = 0.48\\text{ in.}$, so $y$-axis flexural buckling governs ($L/r_y = 100 < C_c = 126$). $F_a = 24.7\\text{ ksi}$; flange and web $w/t$ are fully effective per Section 3.9.3.1; Design strength $P_a = 25.2\\text{ kip}$.\n2. Connected to back of web (eccentricity $e = 0.41\\text{ in.}$ about $y$-axis): Interaction Eq. (3.12-1) gives a design strength of $8.7\\text{ kip}$ ($0.35 + 0.64 = 0.99 < 1.0$).",
     "tablesReferenced": [],
     "crossReferences": [
       "3.9.3.1",
@@ -5163,7 +5163,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 14: T-Section as Column",
     "section": "Appendix B \u2014 Design Examples",
     "page": 64,
-    "text": "Evaluates a concentrically loaded T-section column (Fy = 50 ksi, A = 2.775 in.^2, rx = 1.491 in., ry = 1.504 in., L = 120 in.):\n- Torsional-flexural buckling [Eqs. (3.8-2) and (3.8-1) with y-axis as axis of symmetry] gives rt = 1.41 in. and rtf = 1.19 in. < rx, ry. Thus L/rtf = 120 / 1.19 = 100.8 < Cc = 106.9, and Fa = 27.7 ksi.\n- Stem element w/t = 13.96 > 72 / sqrt(27.7) = 13.68 [Eq. (3.9-1)], so effective width b reduces the cross-sectional area from 2.775 in.^2 to 2.755 in.^2. Design strength = 27.7 * 2.755 = 76.3 kip.",
+    "text": "Evaluates a concentrically loaded T-section column ($F_y = 50\\text{ ksi}$, $A = 2.775\\text{ in.}^2$, $r_x = 1.491\\text{ in.}$, $r_y = 1.504\\text{ in.}$, $L = 120\\text{ in.}$):\n- Torsional-flexural buckling [Eqs. (3.8-2) and (3.8-1) with $y$-axis as axis of symmetry] gives $r_t = 1.41\\text{ in.}$ and $r_{tf} = 1.19\\text{ in.} < r_x, r_y$. Thus $L/r_{tf} = 120 / 1.19 = 100.8 < C_c = 106.9$, and $F_a = 27.7\\text{ ksi}$.\n- Stem element $w/t = 13.96 > 72 / \\sqrt{27.7} = 13.68$ [Eq. (3.9-1)], so effective width $b$ reduces the cross-sectional area from $2.775\\text{ in.}^2$ to $2.755\\text{ in.}^2$. Design strength $P = 27.7 \\times 2.755 = 76.3\\text{ kip}$.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.8.3",
@@ -5181,7 +5181,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 15: Schifflerized Angle with Symmetrical Bracing",
     "section": "Appendix B \u2014 Design Examples",
     "page": 64,
-    "text": "Evaluates an L8 x 8 x 1/2 hot-rolled angle that has had its legs closed to 60 degrees (Schifflerized angle) with symmetrical bracing (L = 9.0 ft = 108 in., Fy = 36 ksi, A = 7.75 in.^2, ru = 2.40 in., rz = 1.83 in., rps = 3.58 in., J = 0.646 in.^4, Cw = 3.68 in.^6, Ips = 172 in.^4):\n- Per Sections 3.7 and 3.9.5, checked for flexural buckling about u- and z-axes and torsional-flexural buckling about the u-axis.\n- Eqs. (3.8-2) and (3.8-1) give rt = 1.33 in. and rtf = 1.216 in., so KL/rtf = 108 / 1.216 = 88.8 governs over KL/ru = 45.0 and KL/rz = 59.0.\n- Local buckling: w/t = 13.75 > (w/t)_lim = 13.3, giving Fcr = 35.2 ksi and Cc = 127.5. From Eq. (3.6-1), Fa = 26.7 ksi and Design strength = 26.7 * 7.75 = 206.9 kip.",
+    "text": "Evaluates an $\\text{L}8 \\times 8 \\times 1/2$ hot-rolled angle that has had its legs closed to 60 degrees (Schifflerized angle) with symmetrical bracing ($L = 9.0\\text{ ft} = 108\\text{ in.}$, $F_y = 36\\text{ ksi}$, $A = 7.75\\text{ in.}^2$, $r_u = 2.40\\text{ in.}$, $r_z = 1.83\\text{ in.}$, $r_{ps} = 3.58\\text{ in.}$, $J = 0.646\\text{ in.}^4$, $C_w = 3.68\\text{ in.}^6$, $I_{ps} = 172\\text{ in.}^4$):\n- Per Sections 3.7 and 3.9.5, checked for flexural buckling about $u$- and $z$-axes and torsional-flexural buckling about the $u$-axis.\n- Eqs. (3.8-2) and (3.8-1) give $r_t = 1.33\\text{ in.}$ and $r_{tf} = 1.216\\text{ in.}$, so $KL/r_{tf} = 108 / 1.216 = 88.8$ governs over $KL/r_u = 45.0$ and $KL/r_z = 59.0$.\n- Local buckling: $w/t = 13.75 > (w/t)_{\\lim} = 13.3$, giving $F_{cr} = 35.2\\text{ ksi}$ and $C_c = 127.5$. From Eq. (3.6-1), $F_a = 26.7\\text{ ksi}$ and Design strength $P = 26.7 \\times 7.75 = 206.9\\text{ kip}$.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.7",
@@ -5200,7 +5200,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 16: Schifflerized Angle with Unsymmetrical Bracing",
     "section": "Appendix B \u2014 Design Examples",
     "page": 65,
-    "text": "Evaluates a 60-degree Schifflerized angle L6 x 6 x 3/8 used as the lower chord of a triangular tower bridge with staggered panel points (L = 9.0 ft = 108 in., warping length = L/2 = 54 in., Ku = 0.5, Kz = 0.866, Fy = 36 ksi, A = 4.36 in.^2, ru = 1.84 in., rz = 1.44 in.):\n- Using mixed end conditions (Section C3.8), K' * L / rtf = 94.8 governs. Adjusting for normal framing eccentricities at both ends [Eq. (3.7-7)] gives KL/rtf = 60 + 0.5(94.8) = 107.4.\n- With w/t = 13.7 > 13.3, Fcr = 35.3 ksi, Cc = 127.3, Fa = 22.7 ksi, and Design strength = 22.7 * 4.36 = 99.0 kip.",
+    "text": "Evaluates a 60-degree Schifflerized angle $\\text{L}6 \\times 6 \\times 3/8$ used as the lower chord of a triangular tower bridge with staggered panel points ($L = 9.0\\text{ ft} = 108\\text{ in.}$, warping length $= L/2 = 54\\text{ in.}$, $K_u = 0.5$, $K_z = 0.866$, $F_y = 36\\text{ ksi}$, $A = 4.36\\text{ in.}^2$, $r_u = 1.84\\text{ in.}$, $r_z = 1.44\\text{ in.}$):\n- Using mixed end conditions (Section C3.8), $K' L / r_{tf} = 94.8$ governs. Adjusting for normal framing eccentricities at both ends [Eq. (3.7-7)] gives $\\frac{KL}{r_{tf}} = 60 + 0.5(94.8) = 107.4$.\n- With $w/t = 13.7 > 13.3$, $F_{cr} = 35.3\\text{ ksi}$, $C_c = 127.3$, $F_a = 22.7\\text{ ksi}$, and Design strength $P = 22.7 \\times 4.36 = 99.0\\text{ kip}$.",
     "tablesReferenced": [],
     "crossReferences": [
       "3.7",
@@ -5220,7 +5220,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "Example 17: j-Value Determination for Singly Symmetric Open Section",
     "section": "Appendix B \u2014 Design Examples",
     "page": 66,
-    "text": "Demonstrates the analytical evaluation of Eq. (3.14-4) to determine the monosymmetry section property j for a cold-formed channel (8 in. web x 2 in. flanges x 0.135 in. thick, Iy = 0.485 in.^4, shear center coordinate xo = -0.922 in.) bent about the axis perpendicular to its axis of symmetry (Section 3.14.7):\n- Dividing the channel into two flange rectangles (Areas 1 and 3) and one web rectangle (Area 2), the closed-form integral of (x^2 + y^2) * x * dA evaluates to 2.8533 - 1.9137 + 2.8533 = 3.79 in.^5.\n- Substituting into Eq. (3.14-4): j = [1 / (2 * 0.485)] * (3.79) - (-0.922) = 4.83 in.",
+    "text": "Demonstrates the analytical evaluation of Eq. (3.14-4) to determine the monosymmetry section property $j$ for a cold-formed channel ($8\\text{ in.}$ web $\\times 2\\text{ in.}$ flanges $\\times 0.135\\text{ in.}$ thick, $I_y = 0.485\\text{ in.}^4$, shear center coordinate $x_o = -0.922\\text{ in.}$) bent about the axis perpendicular to its axis of symmetry (Section 3.14.7):\n- Dividing the channel into two flange rectangles (Areas 1 and 3) and one web rectangle (Area 2), the closed-form integral $\\int_A (x^2 + y^2) x \\, dA$ evaluates to $2.8533 - 1.9137 + 2.8533 = 3.79\\text{ in.}^5$.\n- Substituting into Eq. (3.14-4): $$j = \\left[\\frac{1}{2 \\times 0.485}\\right](3.79) - (-0.922) = 4.83\\text{ in.}$$",
     "tablesReferenced": [],
     "crossReferences": [
       "3.14.7",
@@ -5481,7 +5481,7 @@ export const ASCE_10_15_CLAUSES = [
     "title": "ASTM and CSA Material Specifications Used in Older Towers",
     "section": "Appendix C \u2014 Guidelines for Existing Towers",
     "page": 68,
-    "text": "When original steel specifications are unknown on older towers, the following historical timeline applies (see Table C.11-1):\n- Pre-1960 (U.S.): Likely ASTM A7 steel (combined A7-36 and A9-36 in 1937; Fu = 60\u201372 ksi, Fy = 0.5 Fu >= 33 ksi).\n- 1960\u20131970 (U.S.): Either ASTM A7 (last listed as A7-61T) or ASTM A36 (first published as A36-60T in 1960; Fy = 36 ksi, Fu = 58\u201380 ksi). High-strength steels introduced in AISC 6th Ed. (1963) included ASTM A242, A440, A373-58T, and A441.\n- Post-1970 (U.S.): Minimum of ASTM A36 steel, plus ASTM A572 (introduced in ASTM in 1966, AISC 8th Ed. in 1980) and ASTM A588 (introduced in ASTM in 1968, AISC 7th Ed. in 1970).\n- Canada (1964\u2013Present): CSA introduced G40.12 steel in 1964 (Fu = 62 ksi, Fy = 44 ksi for angles < 3/4 in. thick, 40 ksi for thicker angles). Canadian suppliers currently use CSA G40.21 44W (300W) steel in lieu of A36 (Fu = 65\u201390 ksi, Fy = 44 ksi).",
+    "text": "When original steel specifications are unknown on older towers, the following historical timeline applies (see Table C.11-1):\n- Pre-1960 (U.S.): Likely ASTM A7 steel (combined A7-36 and A9-36 in 1937; $F_u = 60\\text{\u2013}72\\text{ ksi}$, $F_y = 0.5 F_u \\ge 33\\text{ ksi}$).\n- 1960\u20131970 (U.S.): Either ASTM A7 (last listed as A7-61T) or ASTM A36 (first published as A36-60T in 1960; $F_y = 36\\text{ ksi}$, $F_u = 58\\text{\u2013}80\\text{ ksi}$). High-strength steels introduced in AISC 6th Ed. (1963) included ASTM A242, A440, A373-58T, and A441.\n- Post-1970 (U.S.): Minimum of ASTM A36 steel, plus ASTM A572 (introduced in ASTM in 1966, AISC 8th Ed. in 1980) and ASTM A588 (introduced in ASTM in 1968, AISC 7th Ed. in 1970).\n- Canada (1964\u2013Present): CSA introduced G40.12 steel in 1964 ($F_u = 62\\text{ ksi}$, $F_y = 44\\text{ ksi}$ for angles $< 3/4\\text{ in.}$ thick, $40\\text{ ksi}$ for thicker angles). Canadian suppliers currently use CSA G40.21 44W (300W) steel in lieu of A36 ($F_u = 65\\text{\u2013}90\\text{ ksi}$, $F_y = 44\\text{ ksi}$).",
     "tablesReferenced": [
       {
         "tableId": "asce_10_15_tableC_11_1",

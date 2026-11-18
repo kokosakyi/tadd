@@ -13,6 +13,7 @@ import {
 import { getTableDetails } from '../../core/code/tableContentResolver';
 import { getClause, ALL_TABLES } from '../../core/code/codeLibraryRegistry';
 import UniversalTableRenderer from './UniversalTableRenderer';
+import HighlightMatches from './HighlightMatches';
 
 /**
  * CompanionSplitPane Component
@@ -357,10 +358,10 @@ export default function CompanionSplitPane({
           {cl.section} {cl.page > 0 ? `• Page ${cl.page}` : ''}
         </div>
         <h4 style={{ fontSize: '1.02rem', fontWeight: '700', color: 'var(--text-main)', margin: 0 }}>
-          {cl.title}
+          <HighlightMatches text={cl.title} />
         </h4>
         <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
-          {cl.text || 'See subsections under this clause heading.'}
+          <HighlightMatches text={cl.text || 'See subsections under this clause heading.'} />
         </div>
 
         {cl.tablesReferenced?.length > 0 && (

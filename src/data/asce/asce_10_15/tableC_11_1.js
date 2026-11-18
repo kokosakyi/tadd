@@ -9,11 +9,11 @@ export const TABLE_C_11_1_META = {
   standard: 'ASCE 10-15',
   title: 'Current and Historical Structural Steel & Fastener Specifications in Transmission Towers (Sec. 3.2 & App. C.11)',
   unit: 'ksi (MPa)',
-  evaluatedAt: 'Minimum guaranteed yield stress (Fy) and specified minimum tensile strength (Fu)',
+  evaluatedAt: 'Minimum guaranteed yield stress ($F_y$) and specified minimum tensile strength ($F_u$)',
   references: ['1.2', '3.2', '4.3.1', 'C3.1', 'C3.2', 'C.4', 'C.5', 'C.11'],
   notes: [
-    'Commentary C3.1 notes that ASCE 10-15 is suitable for steels with yield points up to 65 ksi (448 MPa).',
-    'Commentary C3.2 suggests a ratio of Fu / Fy >= 1.15 for steel used for members.',
+    'Commentary C3.1 notes that ASCE 10-15 is suitable for steels with yield points up to $F_y = 65\\text{ ksi}$ ($448\\text{ MPa}$).',
+    'Commentary C3.2 suggests a ratio of $F_u / F_y \\ge 1.15$ for steel used for members.',
     'Per Appendix C.11, towers fabricated prior to 1960 in the U.S. likely used ASTM A7 steel; between 1960 and 1970 either A7 or A36; and after 1970 a minimum of A36 steel.'
   ]
 };
@@ -23,7 +23,7 @@ export const ASCE_10_15_TABLE_C_11_1_ROWS = [
     specification: 'ASTM A7 (A7-36 to A7-61T)',
     eraOrAdoption: '1901 / 1937 – 1967 (Historical)',
     materialType: 'Carbon Structural Steel for Bridges & Buildings',
-    minYield_Fy_ksi: '33 (0.5 Fu, >= 33)',
+    minYield_Fy_ksi: '33 ($0.5 F_u \\ge 33$)',
     tensileStrength_Fu_ksi: '60 – 72',
     applicationNotes: 'Combined A7-36 and A9-36 in 1937; last listed in AISC 6th Ed. (1961). Common in pre-1960 towers.'
   },
@@ -41,7 +41,7 @@ export const ASCE_10_15_TABLE_C_11_1_ROWS = [
     materialType: 'High-Strength Low-Alloy Structural Steel',
     minYield_Fy_ksi: '42 – 50',
     tensileStrength_Fu_ksi: '63 – 70',
-    applicationNotes: 'Introduced in AISC 6th Ed. (1963) for low L/r compression members; atmospheric corrosion resistance.'
+    applicationNotes: 'Introduced in AISC 6th Ed. (1963) for low $L/r$ compression members; atmospheric corrosion resistance.'
   },
   {
     specification: 'ASTM A373-58T',
@@ -65,7 +65,7 @@ export const ASCE_10_15_TABLE_C_11_1_ROWS = [
     materialType: 'High-Strength Carbon-Manganese Steel',
     minYield_Fy_ksi: '42 – 50 (290–345 MPa)',
     tensileStrength_Fu_ksi: '60 – 100',
-    applicationNotes: 'Listed in Section 3.2 with 42,000 psi minimum yield point (also available in Grade 50/55).'
+    applicationNotes: 'Listed in Section 3.2 with $42{,}000\\text{ psi}$ minimum yield point (also available in Grade 50/55).'
   },
   {
     specification: 'ASTM A572 / A572M (Gr. 50, 60, 65)',
@@ -95,7 +95,7 @@ export const ASCE_10_15_TABLE_C_11_1_ROWS = [
     specification: 'CSA G40.12 (1964) / CSA G40.21 44W (300W)',
     eraOrAdoption: '1964 – Present (App. C.11)',
     materialType: 'Canadian Structural Quality Steel',
-    minYield_Fy_ksi: '44 (40 for >= 3/4 in.) [300 MPa]',
+    minYield_Fy_ksi: '44 ($40$ for $\\ge 3/4\\text{ in.}$) [300 MPa]',
     tensileStrength_Fu_ksi: '62 (G40.12) / 65–90 (G40.21)',
     applicationNotes: 'Standard structural steel used by Canadian tower suppliers in lieu of ASTM A36.'
   },
@@ -104,7 +104,7 @@ export const ASCE_10_15_TABLE_C_11_1_ROWS = [
     eraOrAdoption: 'Current (Sec. 4.3.1 & App. C.5)',
     materialType: 'Steel Transmission Tower Bolts (Zinc-Coated & Bare)',
     minYield_Fy_ksi: 'Proof load per ASTM A394',
-    tensileStrength_Fu_ksi: '74 (Type 0) / 120 (Type 1 & A325 <= 1 in.)',
-    applicationNotes: 'If connecting A572 Gr. 65 (Fu = 80 ksi) with A394 Type 0 bolts (Fu = 74 ksi), bolt Fu governs bearing (1.5 Fu).'
+    tensileStrength_Fu_ksi: '74 (Type 0) / 120 (Type 1 & A325 $\\le 1\\text{ in.}$)',
+    applicationNotes: 'If connecting A572 Gr. 65 ($F_u = 80\\text{ ksi}$) with A394 Type 0 bolts ($F_u = 74\\text{ ksi}$), bolt $F_u$ governs bearing ($1.5 F_u$).'
   }
 ];

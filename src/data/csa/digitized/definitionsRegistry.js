@@ -1645,7 +1645,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_asce10_tension_only_member",
     "term": "Tension-only member (ASCE 10-15)",
-    "definition": "Member with L/r greater than 300, which is assumed to be unable to resist compression.",
+    "definition": "Member with $\\frac{L}{r} > 300$, which is assumed to be unable to resist compression.",
     "standardId": "asce_10_15",
     "standardName": "ASCE 10-15",
     "clauseNumber": "1.3",

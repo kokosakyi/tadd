@@ -106,7 +106,7 @@ export default function ClearanceCalculatorView({ onOpenCitation }) {
                 <Ruler size={18} color="#ffffff" />
               </div>
               <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-                Vertical Clearance Engine &amp; Compliance (A2 / M3)
+                Vertical Clearance Engine &amp; Compliance
               </h2>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>

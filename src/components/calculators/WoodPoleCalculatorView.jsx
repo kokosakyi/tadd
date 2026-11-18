@@ -322,7 +322,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 <TreePine size={18} color="#ffffff" />
               </div>
               <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-                Wood Pole Loading &amp; Structural Sizing (A6 / M3)
+                Wood Pole Loading &amp; Structural Sizing
               </h2>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>
@@ -975,7 +975,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               </h3>
             </div>
 
-            <details className="calc-detail" open>
+            <details className="calc-detail">
               <summary>Design Calculation — 6-Stage Structural Derivation ({results.standard} Mode)</summary>
               <div className="calc-body">
                 
