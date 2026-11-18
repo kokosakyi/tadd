@@ -20,6 +20,7 @@ import {
   ALL_LESSON_CLAUSES
 } from '../../core/code/codeLibraryRegistry';
 import { getTableDetails } from '../../core/code/tableContentResolver';
+import { resolveCitationReference } from '../../core/code/citationResolver';
 import HighlightMatches from './HighlightMatches';
 import { getHighlightTerms, buildHighlightRegex } from '../../utils/textHighlight';
 import BookCoverSvg from './BookCoverSvg';
@@ -67,25 +68,61 @@ function getCalculatorTargetForClauseOrTable(standardId, clauseOrTableNum = '', 
   return null;
 }
 
-export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation = null, onClearCitation }) {
+export default function CodeLibraryBrowser({
+  onOpenCalculator,
+  initialCitation = null,
+  onClearCitation,
+  initialRouteParams = null,
+  onRouteParamsChange,
+  returnToView = null,
+  onReturnToCalculator
+}) {
   // Mode: 'library' (shelf hall overview of all books) | 'book' (interactive E-Book reader)
-  const [viewMode, setViewMode] = useState('library');
+  const [viewMode, setViewMode] = useState(() =>
+    initialRouteParams?.book || initialRouteParams?.q ? 'book' : 'library'
+  );
   
   // Navigation & Filter state
-  const [activeTab, setActiveTab] = useState('clauses'); // 'clauses' | 'tables' | 'definitions' | 'editions'
-  const [selectedStandard, setSelectedStandard] = useState('all');
+  const [activeTab, setActiveTab] = useState(() => initialRouteParams?.tab || 'clauses'); // 'clauses' | 'tables' | 'definitions' | 'editions'
+  const [selectedStandard, setSelectedStandard] = useState(() => initialRouteParams?.book || 'all');
   const [selectedSection, setSelectedSection] = useState('all');
   const [selectedSubsectionPrefix, setSelectedSubsectionPrefix] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(() => initialRouteParams?.q || '');
 
   // Companion Split-Pane state: { type: 'table' | 'clause', id: string, standardId?: string, clauseNumber?: string } | null
   const [companionItem, setCompanionItem] = useState(null);
+
+  // Desktop TOC collapse state (auto-collapses when CompanionSplitPane opens to prevent triple-column squeeze)
+  const [desktopTocCollapsed, setDesktopTocCollapsed] = useState(false);
 
   // Copy feedback state: clause.id or table.id
   const [copiedId, setCopiedId] = useState(null);
 
   // Mobile Table of Contents drawer state (for screens < 1024px)
   const [mobileTocOpen, setMobileTocOpen] = useState(false);
+
+  // Auto-collapse desktop Book TOC when Companion Split Pane opens; restore when it closes
+  useEffect(() => {
+    if (companionItem) {
+      setDesktopTocCollapsed(true);
+    } else {
+      setDesktopTocCollapsed(false);
+    }
+  }, [companionItem]);
+
+  // Sync deep-link state to URL hash parameters
+  useEffect(() => {
+    if (!onRouteParamsChange) return;
+    if (viewMode === 'book') {
+      onRouteParamsChange({
+        book: selectedStandard !== 'all' ? selectedStandard : '',
+        tab: activeTab !== 'clauses' ? activeTab : '',
+        q: searchQuery.trim() || ''
+      });
+    } else {
+      onRouteParamsChange({ book: '', tab: '', q: '' });
+    }
+  }, [viewMode, selectedStandard, activeTab, searchQuery, onRouteParamsChange]);
 
   // Bookmarks persisted in localStorage
   const [bookmarks, setBookmarks] = useState(() => {
@@ -266,65 +303,41 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
     }
   }, [searchQuery, prevSearchQuery, tables, sortedTableOptions, selectedTableId]);
 
-  // Handle external citation jumping (from calculators or trace viewers)
+  // Handle external citation jumping (from calculators, drawer, or trace viewers)
   useEffect(() => {
     if (!initialCitation) return;
 
-    const cit = String(initialCitation).trim();
-    if (!cit) return;
+    const resolved = resolveCitationReference(initialCitation);
+    if (!resolved) return;
 
-    const tableMatch = cit.match(/(?:table|tbl)\s*([a-z0-9\._-]+)/i);
-    let matchedTable = null;
-    if (tableMatch) {
-      const tNum = tableMatch[1].replace(/-/g, '.');
-      matchedTable = ALL_TABLES.find(t => 
-        t.number.toLowerCase().replace(/-/g, '.') === `table ${tNum}`.toLowerCase() ||
-        t.id.toLowerCase().includes(tNum.toLowerCase()) ||
-        t.key.toLowerCase() === `table${tNum}`.toLowerCase()
-      );
-    }
-
-    if (matchedTable) {
-      setSelectedStandard(matchedTable.standardId);
+    if (resolved.type === 'table' && resolved.table) {
+      setSelectedStandard(resolved.table.standardId);
       setSelectedSection('all');
       setSelectedSubsectionPrefix(null);
-      setSelectedTableId(matchedTable.id);
+      setSelectedTableId(resolved.table.id);
       setActiveTab('tables');
-      setSearchQuery(matchedTable.number);
+      setSearchQuery(resolved.table.number);
       setViewMode('book');
-      window.scrollTo({ top: 100, behavior: 'smooth' });
+      try { window.scrollTo({ top: 100, behavior: 'smooth' }); } catch { /* ignore in JSDOM */ }
+    } else if (resolved.type === 'clause' && resolved.clause) {
+      setSelectedStandard(resolved.clause.standardId);
+      setSelectedSection('all');
+      setSelectedSubsectionPrefix(null);
+      setSearchQuery(resolved.clause.clauseNumber);
+      setHighlightedClauseId(resolved.clause.id);
+      setActiveTab('clauses');
+      setClausePage(1);
+      setViewMode('book');
+      try { window.scrollTo({ top: 100, behavior: 'smooth' }); } catch { /* ignore in JSDOM */ }
     } else {
-      const clauseMatch = cit.match(/(?:cl(?:ause|\.)?)\s*([a-z0-9\._-]+)/i);
-      const clauseNum = clauseMatch ? clauseMatch[1] : null;
-
-      let stdId = 'all';
-      if (/c22\.?3\s*(?:no\.?\s*1|#1)/i.test(cit)) stdId = 'c22_3_no1';
-      else if (/60826/i.test(cit)) stdId = 'c22_3_60826';
-      else if (/o15/i.test(cit)) stdId = 'csa_o15';
-      else if (/asce|10-15/i.test(cit)) stdId = 'asce_10_15';
-
-      let matchedClause = null;
-      if (clauseNum) {
-        matchedClause = getClause(stdId, clauseNum) || getClause('all', clauseNum);
-      }
-
-      if (matchedClause) {
-        setSelectedStandard(matchedClause.standardId);
-        setSelectedSection('all');
-        setSelectedSubsectionPrefix(null);
-        setSearchQuery(matchedClause.clauseNumber);
-        setHighlightedClauseId(matchedClause.id);
-        setActiveTab('clauses');
-        setClausePage(1);
-      } else {
-        setSelectedSection('all');
-        setSelectedSubsectionPrefix(null);
-        setSearchQuery(cit);
-        setActiveTab('clauses');
-        setClausePage(1);
-      }
+      setSelectedStandard(resolved.standardId || 'all');
+      setSelectedSection('all');
+      setSelectedSubsectionPrefix(null);
+      setSearchQuery(resolved.query);
+      setActiveTab('clauses');
+      setClausePage(1);
       setViewMode('book');
-      window.scrollTo({ top: 100, behavior: 'smooth' });
+      try { window.scrollTo({ top: 100, behavior: 'smooth' }); } catch { /* ignore in JSDOM */ }
     }
 
     if (onClearCitation) {
@@ -507,162 +520,233 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
   return (
     <div style={{ maxWidth: '1420px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem', paddingBottom: '3rem' }}>
       
-      {/* Top Library Navigation Bar */}
-      <div 
-        className="glass-panel" 
-        style={{ 
-          padding: '0.85rem 1.25rem', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '0.85rem'
-        }}
-      >
-        {/* Left: View Mode Toggle & Book Volume Switcher Pills */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          <button
-            type="button"
-            onClick={() => setViewMode('library')}
-            className={viewMode === 'library' ? 'btn-primary' : 'btn-secondary'}
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.45rem', 
-              padding: '0.42rem 0.85rem', 
-              fontSize: '0.84rem',
-              fontWeight: '600'
-            }}
-          >
-            <Library size={16} />
-            <span>Library Shelf</span>
-          </button>
+      {/* Unified Sticky Library Navigation & Breadcrumb Bar */}
+      <div className="glass-panel code-library-sticky-bar">
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '0.7rem'
+          }}
+        >
+          {/* Left: Return-to-Calculator Breadcrumb, View Mode Toggle & Desktop TOC Toggle */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap', minWidth: 0 }}>
+            {returnToView && onReturnToCalculator && (
+              <button
+                type="button"
+                onClick={onReturnToCalculator}
+                className="btn-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.38rem',
+                  padding: '0.4rem 0.8rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 650
+                }}
+              >
+                <ArrowLeft size={14} />
+                <span>Back to {returnToView.label}</span>
+              </button>
+            )}
 
-          <button
-            type="button"
-            onClick={() => setViewMode('book')}
-            className={viewMode === 'book' ? 'btn-primary' : 'btn-secondary'}
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.45rem', 
-              padding: '0.42rem 0.85rem', 
-              fontSize: '0.84rem',
-              fontWeight: '600'
-            }}
-          >
-            <BookOpen size={16} />
-            <span>Book Reader {activeBookMeta ? `(${activeBookMeta.code})` : '(All Volumes)'}</span>
-          </button>
-
-          {/* When searching, show Volume Match Grouping Pills */}
-          {bookSearchMatchCounts && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', marginLeft: '0.4rem', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Matches by Book:</span>
-              {[
-                { id: 'all', code: 'All', color: 'var(--accent-cyan)' },
-                { id: 'c22_3_no1', code: 'C22.3 No. 1', color: '#38bdf8' },
-                { id: 'c22_3_60826', code: '60826', color: '#c084fc' },
-                { id: 'csa_o15', code: 'CSA O15', color: '#34d399' },
-                { id: 'asce_10_15', code: 'ASCE 10-15', color: '#fb7185' },
-                { id: 'pls_cadd_lessons', code: 'PLS-CADD', color: '#f59e0b' }
-              ].map(vol => {
-                const count = bookSearchMatchCounts[vol.id] || 0;
-                const isSelected = selectedStandard === vol.id;
-                return (
-                  <button
-                    key={vol.id}
-                    type="button"
-                    onClick={() => {
-                      setSelectedStandard(vol.id);
-                      setSelectedSection('all');
-                      setSelectedSubsectionPrefix(null);
-                      setClausePage(1);
-                      setViewMode('book');
-                    }}
-                    style={{
-                      background: isSelected ? 'rgba(56, 189, 248, 0.2)' : 'var(--bg-inset)',
-                      border: isSelected ? `1px solid ${vol.color}` : '1px solid var(--border-color)',
-                      borderRadius: '20px',
-                      padding: '0.2rem 0.6rem',
-                      fontSize: '0.73rem',
-                      fontWeight: isSelected ? '700' : '500',
-                      color: isSelected ? vol.color : 'var(--text-secondary)',
-                      cursor: 'pointer',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.3rem'
-                    }}
-                  >
-                    <span>{vol.code}</span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', opacity: 0.9 }}>({count})</span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
-
-        {/* Global Quick Search across all digitized books */}
-        <div style={{ position: 'relative', minWidth: '300px', flex: '1', maxWidth: '440px' }}>
-          <Search size={17} color="var(--text-muted)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)' }} />
-          <input
-            id="csa-library-search-input"
-            name="csa-library-search"
-            type="search"
-            role="searchbox"
-            aria-label="Search CSA Standards Library clauses, tables, and definitions"
-            autoComplete="off"
-            spellCheck="false"
-            placeholder="Search all books (e.g. 5.3.1.1, Table 2, Western Red Cedar)..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setSelectedSubsectionPrefix(null);
-              setClausePage(1);
-              if (viewMode === 'library' && e.target.value.trim()) {
-                setViewMode('book');
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Escape') {
-                setSearchQuery('');
-                setClausePage(1);
-              }
-            }}
-            style={{
-              width: '100%',
-              padding: '0.58rem 2.45rem 0.58rem 2.35rem',
-              borderRadius: '9999px',
-              fontSize: '0.88rem',
-              boxSizing: 'border-box'
-            }}
-          />
-          {searchQuery && (
             <button
               type="button"
-              onClick={() => { setSearchQuery(''); setClausePage(1); }}
-              aria-label="Clear search query"
+              onClick={() => setViewMode('library')}
+              className={viewMode === 'library' ? 'btn-primary' : 'btn-secondary'}
               style={{
-                position: 'absolute',
-                right: '0.75rem',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                background: 'transparent',
-                border: 'none',
-                boxShadow: 'none',
-                color: 'var(--text-muted)',
-                cursor: 'pointer',
-                padding: '4px',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                gap: '0.4rem',
+                padding: '0.4rem 0.8rem',
+                fontSize: '0.82rem',
+                fontWeight: 600
               }}
             >
-              <X size={15} />
+              <Library size={15} />
+              <span>Library Shelf</span>
             </button>
-          )}
+
+            <button
+              type="button"
+              onClick={() => setViewMode('book')}
+              className={viewMode === 'book' ? 'btn-primary' : 'btn-secondary'}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.4rem 0.8rem',
+                fontSize: '0.82rem',
+                fontWeight: 600
+              }}
+            >
+              <BookOpen size={15} />
+              <span>Book Reader {activeBookMeta ? `(${activeBookMeta.code})` : '(All Volumes)'}</span>
+            </button>
+
+            {viewMode === 'book' && (
+              <button
+                type="button"
+                onClick={() => setDesktopTocCollapsed((prev) => !prev)}
+                className="btn-secondary"
+                aria-label={desktopTocCollapsed ? 'Show Table of Contents' : 'Hide Table of Contents'}
+                title={desktopTocCollapsed ? 'Show Desktop Table of Contents' : 'Hide Desktop Table of Contents'}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  padding: '0.4rem 0.72rem',
+                  fontSize: '0.78rem'
+                }}
+              >
+                <Columns size={14} />
+                <span>{desktopTocCollapsed ? 'Show TOC' : 'Hide TOC'}</span>
+              </button>
+            )}
+          </div>
+
+          {/* Responsive Global Quick Search across all digitized books */}
+          <div className="code-library-search-wrap">
+            <Search size={17} color="var(--text-muted)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
+            <input
+              id="csa-library-search-input"
+              name="csa-library-search"
+              type="search"
+              role="searchbox"
+              aria-label="Search CSA Standards Library clauses, tables, and definitions"
+              autoComplete="off"
+              spellCheck="false"
+              placeholder="Search all books (e.g. 5.3.1.1, Table 2, Western Red Cedar)..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setSelectedSubsectionPrefix(null);
+                setClausePage(1);
+                if (viewMode === 'library' && e.target.value.trim()) {
+                  setViewMode('book');
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') {
+                  setSearchQuery('');
+                  setClausePage(1);
+                }
+              }}
+              style={{
+                width: '100%',
+                padding: '0.52rem 2.35rem 0.52rem 2.3rem',
+                borderRadius: '9999px',
+                fontSize: '0.86rem',
+                boxSizing: 'border-box'
+              }}
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => { setSearchQuery(''); setClausePage(1); }}
+                aria-label="Clear search query"
+                style={{
+                  position: 'absolute',
+                  right: '0.7rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'transparent',
+                  border: 'none',
+                  boxShadow: 'none',
+                  color: 'var(--text-muted)',
+                  cursor: 'pointer',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <X size={15} />
+              </button>
+            )}
+          </div>
         </div>
+
+        {/* Breadcrumb Trail (in book mode) & Volume Match Grouping Pills (when searching) */}
+        {(viewMode === 'book' || bookSearchMatchCounts) && (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', paddingTop: '0.45rem', borderTop: '1px solid var(--border-subtle)' }}>
+            {viewMode === 'book' && (
+              <nav aria-label="Library Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap', fontSize: '0.76rem', color: 'var(--text-muted)' }}>
+                <button
+                  type="button"
+                  onClick={() => setViewMode('library')}
+                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--accent-cyan)', fontWeight: 600, cursor: 'pointer', fontSize: 'inherit' }}
+                >
+                  Shelf
+                </button>
+                <ChevronRight size={12} />
+                <span style={{ color: 'var(--text-main)', fontWeight: 650 }}>
+                  {activeBookMeta ? activeBookMeta.code : 'All Volumes'}
+                </span>
+                {selectedSection !== 'all' && (
+                  <>
+                    <ChevronRight size={12} />
+                    <span style={{ color: 'var(--text-secondary)' }}>{selectedSection}</span>
+                  </>
+                )}
+                {selectedSubsectionPrefix && (
+                  <>
+                    <ChevronRight size={12} />
+                    <span className="mono" style={{ color: 'var(--accent-cyan)' }}>§{selectedSubsectionPrefix}</span>
+                  </>
+                )}
+              </nav>
+            )}
+
+            {bookSearchMatchCounts && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.32rem', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Matches:</span>
+                {[
+                  { id: 'all', code: 'All', color: 'var(--accent-cyan)' },
+                  { id: 'c22_3_no1', code: 'C22.3 No. 1', color: '#38bdf8' },
+                  { id: 'c22_3_60826', code: '60826', color: '#c084fc' },
+                  { id: 'csa_o15', code: 'CSA O15', color: '#34d399' },
+                  { id: 'asce_10_15', code: 'ASCE 10-15', color: '#fb7185' },
+                  { id: 'pls_cadd_lessons', code: 'PLS-CADD', color: '#f59e0b' }
+                ].map(vol => {
+                  const count = bookSearchMatchCounts[vol.id] || 0;
+                  const isSelected = selectedStandard === vol.id;
+                  return (
+                    <button
+                      key={vol.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedStandard(vol.id);
+                        setSelectedSection('all');
+                        setSelectedSubsectionPrefix(null);
+                        setClausePage(1);
+                        setViewMode('book');
+                      }}
+                      style={{
+                        background: isSelected ? 'rgba(56, 189, 248, 0.2)' : 'var(--bg-inset)',
+                        border: isSelected ? `1px solid ${vol.color}` : '1px solid var(--border-color)',
+                        borderRadius: '20px',
+                        padding: '0.18rem 0.55rem',
+                        fontSize: '0.71rem',
+                        fontWeight: isSelected ? '700' : '500',
+                        color: isSelected ? vol.color : 'var(--text-secondary)',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.28rem'
+                      }}
+                    >
+                      <span>{vol.code}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', opacity: 0.9 }}>({count})</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* ============================================================== */}
@@ -768,6 +852,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
             }}
             isMobileOpen={mobileTocOpen}
             onCloseMobile={() => setMobileTocOpen(false)}
+            isDesktopCollapsed={desktopTocCollapsed}
           />
 
           {/* Main Book Reading Column */}

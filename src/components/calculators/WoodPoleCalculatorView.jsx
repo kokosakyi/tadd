@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   TreePine,
   Plus,
@@ -9,10 +9,13 @@ import {
   Activity,
   Calculator,
   BookOpen,
-  Sparkles
+  Sparkles,
+  FileCheck,
+  RotateCcw
 } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 import { useUnits } from '../../context/UnitContext';
+import { useProjectScopedState } from '../../hooks/useProjectScopedState';
 import {
   calculateWoodPoleStructural,
   exportPoleElevationProfileCsv,
@@ -22,14 +25,133 @@ import {
 } from '../../core/woodPole/woodPoleEngine';
 import TraceViewer from '../common/TraceViewer';
 import Latex from '../common/Latex';
+import CalculatorWorkspaceShell from '../common/CalculatorWorkspaceShell';
 
-export default function WoodPoleCalculatorView({ onOpenCitation }) {
+const VALID_POLE_TABS = ['pole', 'loads', 'profile', 'trace'];
+
+const DEFAULT_ATTACHMENTS = [
+  {
+    id: 1,
+    name: 'Primary 3-Phase Conductor',
+    heightM: 11.5,
+    count: 3,
+    diameterMm: 15.0,
+    tensionN: 7000,
+    eccentricityM: 0,
+    distFromTipFt: 6.0,
+    transverseForceLbs: 792,
+    verticalForceLbs: 546,
+    eccentricityFt: 5.5
+  },
+  {
+    id: 2,
+    name: 'Neutral / Secondary Cable',
+    heightM: 9.8,
+    count: 1,
+    diameterMm: 12.0,
+    tensionN: 4500,
+    eccentricityM: 0,
+    distFromTipFt: 11.0,
+    transverseForceLbs: 792,
+    verticalForceLbs: 546,
+    eccentricityFt: -5.5
+  },
+  {
+    id: 3,
+    name: 'Telecom Bundle (Joint Use)',
+    heightM: 7.5,
+    count: 1,
+    diameterMm: 25.0,
+    tensionN: 3500,
+    eccentricityM: 0,
+    distFromTipFt: 16.0,
+    transverseForceLbs: 792,
+    verticalForceLbs: 546,
+    eccentricityFt: 5.5
+  }
+];
+
+export default function WoodPoleCalculatorView({ onOpenCitation, initialTab, onTabChange }) {
   const { activeProject } = useProject();
-  const { formatMoment } = useUnits();
+  const { unit, setUnit, formatMoment } = useUnits();
 
-  // Standard & Mode State
-  const [standard, setStandard] = useState('CSA'); // 'CSA' | 'ANSI'
-  const [loadInputMode, setLoadInputMode] = useState('line_physics'); // 'line_physics' | 'direct_loads'
+  const [activeTab, setActiveTab] = useState(() =>
+    initialTab && VALID_POLE_TABS.includes(initialTab) ? initialTab : 'pole'
+  );
+
+  useEffect(() => {
+    if (initialTab && VALID_POLE_TABS.includes(initialTab)) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
+
+  const handleSelectTab = (tabId) => {
+    setActiveTab(tabId);
+    onTabChange?.(tabId);
+  };
+
+  // Persisted per-project calculator state
+  const [formState, updateFormState, resetFormState] = useProjectScopedState(
+    activeProject?.id,
+    'wood_pole',
+    () => ({
+      standard: 'CSA',
+      loadInputMode: 'line_physics',
+      speciesCode: 'WC',
+      poleLengthM: 13.7,
+      poleClass: '3',
+      grade: 2,
+      strengthFactorPhi: 0.671,
+      enablePDelta: true,
+      enableHeightAdjustment: false,
+      windPressurePa: 400,
+      iceThicknessMm: 12.5,
+      windSpanM: 60,
+      lineAngleDeg: 0,
+      customTipCircIn: '',
+      customButtCircIn: '',
+      customEmbedmentFt: '',
+      attachments: DEFAULT_ATTACHMENTS
+    })
+  );
+
+  const {
+    standard,
+    loadInputMode,
+    speciesCode,
+    poleLengthM,
+    poleClass,
+    grade,
+    strengthFactorPhi,
+    enablePDelta,
+    enableHeightAdjustment,
+    windPressurePa,
+    iceThicknessMm,
+    windSpanM,
+    lineAngleDeg,
+    customTipCircIn,
+    customButtCircIn,
+    customEmbedmentFt,
+    attachments
+  } = formState;
+
+  const setStandard = (v) => updateFormState({ standard: v });
+  const setLoadInputMode = (v) => updateFormState({ loadInputMode: v });
+  const setSpeciesCode = (v) => updateFormState({ speciesCode: v });
+  const setPoleLengthM = (v) => updateFormState({ poleLengthM: v });
+  const setPoleClass = (v) => updateFormState({ poleClass: v });
+  const setGrade = (v) => updateFormState({ grade: v });
+  const setStrengthFactorPhi = (v) => updateFormState({ strengthFactorPhi: v });
+  const setEnablePDelta = (v) => updateFormState({ enablePDelta: v });
+  const setEnableHeightAdjustment = (v) => updateFormState({ enableHeightAdjustment: v });
+  const setWindPressurePa = (v) => updateFormState({ windPressurePa: v });
+  const setIceThicknessMm = (v) => updateFormState({ iceThicknessMm: v });
+  const setWindSpanM = (v) => updateFormState({ windSpanM: v });
+  const setLineAngleDeg = (v) => updateFormState({ lineAngleDeg: v });
+  const setCustomTipCircIn = (v) => updateFormState({ customTipCircIn: v });
+  const setCustomButtCircIn = (v) => updateFormState({ customButtCircIn: v });
+  const setCustomEmbedmentFt = (v) => updateFormState({ customEmbedmentFt: v });
+  const setAttachments = (v) => updateFormState({ attachments: v });
 
   // Species lists sorted alphabetically by commonName using localeCompare per project rules
   const csaSpeciesList = getAllO15Species().sort((a, b) => a.commonName.localeCompare(b.commonName));
@@ -38,67 +160,6 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
   const allPoleClasses = getAllO15PoleClasses().sort((a, b) =>
     String(a.class).localeCompare(String(b.class))
   );
-
-  // Calculation State
-  const [speciesCode, setSpeciesCode] = useState('WC');
-  const [poleLengthM, setPoleLengthM] = useState(13.7); // 45 ft
-  const [poleClass, setPoleClass] = useState('3');
-  const [grade, setGrade] = useState(2);
-  const [strengthFactorPhi, setStrengthFactorPhi] = useState(0.671);
-  const [enablePDelta, setEnablePDelta] = useState(true);
-  const [enableHeightAdjustment, setEnableHeightAdjustment] = useState(false);
-  const [windPressurePa, setWindPressurePa] = useState(400);
-  const [iceThicknessMm, setIceThicknessMm] = useState(12.5);
-  const [windSpanM, setWindSpanM] = useState(60);
-  const [lineAngleDeg, setLineAngleDeg] = useState(0);
-
-  // Optional custom circumferences (in inches) for exact benchmark or custom pole analysis
-  const [customTipCircIn, setCustomTipCircIn] = useState('');
-  const [customButtCircIn, setCustomButtCircIn] = useState('');
-  const [customEmbedmentFt, setCustomEmbedmentFt] = useState('');
-
-  // Attachments State
-  const [attachments, setAttachments] = useState([
-    {
-      id: 1,
-      name: 'Primary 3-Phase Conductor',
-      heightM: 11.5,
-      count: 3,
-      diameterMm: 15.0,
-      tensionN: 7000,
-      eccentricityM: 0,
-      distFromTipFt: 6.0,
-      transverseForceLbs: 792,
-      verticalForceLbs: 546,
-      eccentricityFt: 5.5
-    },
-    {
-      id: 2,
-      name: 'Neutral / Secondary Cable',
-      heightM: 9.8,
-      count: 1,
-      diameterMm: 12.0,
-      tensionN: 4500,
-      eccentricityM: 0,
-      distFromTipFt: 11.0,
-      transverseForceLbs: 792,
-      verticalForceLbs: 546,
-      eccentricityFt: -5.5
-    },
-    {
-      id: 3,
-      name: 'Telecom Bundle (Joint Use)',
-      heightM: 7.5,
-      count: 1,
-      diameterMm: 25.0,
-      tensionN: 3500,
-      eccentricityM: 0,
-      distFromTipFt: 16.0,
-      transverseForceLbs: 792,
-      verticalForceLbs: 546,
-      eccentricityFt: 5.5
-    }
-  ]);
 
   // Switch between CSA and ANSI standards with sensible defaults
   const handleSelectStandard = (nextStd) => {
@@ -298,80 +359,220 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
   const critSeg = results.criticalSection;
   const glSeg = results.groundlineSection;
 
-  return (
-    <div style={{ maxWidth: '1360px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      
-      {/* View Header & Standard Switcher */}
-      <div className="glass-panel" style={{ padding: '1.35rem 1.65rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-              <div
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.88))',
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
-                }}
-              >
-                <TreePine size={18} color="#ffffff" />
-              </div>
-              <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-                Wood Pole Loading &amp; Structural Sizing
-              </h2>
+  const poleTabs = [
+    { id: 'pole', label: '1. Pole & Standard', icon: Sliders },
+    { id: 'loads', label: `2. Loads & Attachments (${attachments.length})`, icon: Layers },
+    { id: 'profile', label: '3. Elevation Profile & Math', icon: Activity },
+    { id: 'trace', label: '4. Audit Trace', icon: FileCheck }
+  ];
+
+  const headerNode = (
+    <div className="glass-panel" style={{ padding: '1.25rem 1.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.9rem' }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <div
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.88))',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+              }}
+            >
+              <TreePine size={18} color="#ffffff" />
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>
-              {isAnsi
-                ? 'ANSI O5.1-2017 & ASCE Manual of Practice 141 — Discretized Non-Linear P-Delta, 5% LEL & Height-Adjusted Capacity.'
-                : 'CSA C22.3 No. 1 Table 31 OCFs & CSA O15 Fiber Stress — Groundline & Multi-Segment Taper Check.'}
-            </p>
+            <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
+              Wood Pole Loading &amp; Structural Sizing
+            </h2>
           </div>
+          <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', margin: '0.3rem 0 0' }}>
+            {isAnsi
+              ? 'ANSI O5.1-2017 & ASCE Manual of Practice 141 — Discretized Non-Linear P-Delta, 5% LEL & Height-Adjusted Capacity.'
+              : 'CSA C22.3 No. 1 Table 31 OCFs & CSA O15 Fiber Stress — Groundline & Multi-Segment Taper Check.'}
+          </p>
+        </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-            {/* Standard Toggle Pill */}
-            <div className="segmented-pill-bar">
-              <button
-                type="button"
-                className={`segmented-pill-btn ${!isAnsi ? 'active' : ''}`}
-                onClick={() => handleSelectStandard('CSA')}
-              >
-                CSA C22.3 / O15
-              </button>
-              <button
-                type="button"
-                className={`segmented-pill-btn ${isAnsi ? 'active' : ''}`}
-                onClick={() => handleSelectStandard('ANSI')}
-              >
-                ANSI O5.1 / ASCE 141
-              </button>
-            </div>
-
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', flexWrap: 'wrap' }}>
+          {/* Standard Toggle Pill */}
+          <div className="segmented-pill-bar">
             <button
               type="button"
-              onClick={isAnsi ? handleResetCsaDistribution : handleLoadAsceBenchmark}
-              className="btn-secondary"
-              style={{ fontSize: '0.76rem', padding: '0.42rem 0.88rem' }}
-              title="Switch between CSA 45ft Distribution and ASCE 141 75ft H1 Benchmark"
+              className={`segmented-pill-btn ${!isAnsi ? 'active' : ''}`}
+              onClick={() => handleSelectStandard('CSA')}
             >
-              <Sparkles size={14} color="var(--accent-cyan)" />
-              {isAnsi ? 'Load CSA 45ft Preset' : 'Load ASCE 75ft Benchmark'}
+              CSA C22.3 / O15
             </button>
-
-            <span className="badge badge-info">
-              {activeProject?.name || 'Standard'}
-            </span>
+            <button
+              type="button"
+              className={`segmented-pill-btn ${isAnsi ? 'active' : ''}`}
+              onClick={() => handleSelectStandard('ANSI')}
+            >
+              ANSI O5.1 / ASCE 141
+            </button>
           </div>
+
+          {!isAnsi && (
+            <div className="glass-inset" style={{ display: 'inline-flex', padding: '0.16rem', borderRadius: '9999px', gap: '0.12rem' }} role="group" aria-label="Moment Display Units">
+              <button
+                type="button"
+                onClick={() => setUnit('metric')}
+                className={unit === 'metric' ? 'btn-primary' : 'btn-secondary'}
+                style={{ padding: '0.22rem 0.55rem', fontSize: '0.72rem', border: 'none' }}
+              >
+                kN·m
+              </button>
+              <button
+                type="button"
+                onClick={() => setUnit('imperial')}
+                className={unit === 'imperial' ? 'btn-primary' : 'btn-secondary'}
+                style={{ padding: '0.22rem 0.55rem', fontSize: '0.72rem', border: 'none' }}
+              >
+                ft-lb
+              </button>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={isAnsi ? handleResetCsaDistribution : handleLoadAsceBenchmark}
+            className="btn-secondary"
+            style={{ fontSize: '0.75rem', padding: '0.38rem 0.8rem' }}
+            title="Switch between CSA 45ft Distribution and ASCE 141 75ft H1 Benchmark"
+          >
+            <Sparkles size={13} color="var(--accent-cyan)" />
+            {isAnsi ? 'Load CSA 45ft Preset' : 'Load ASCE 75ft Benchmark'}
+          </button>
+
+          <button
+            type="button"
+            onClick={resetFormState}
+            className="btn-secondary"
+            style={{ fontSize: '0.74rem', padding: '0.38rem 0.65rem', gap: '0.28rem' }}
+            title="Reset pole inputs to defaults"
+          >
+            <RotateCcw size={13} />
+            <span>Reset</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const summaryRailNode = (
+    <div className="glass-panel" style={{ padding: '1.15rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.6rem' }}>
+        <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)' }}>
+          Live Structural Summary
+        </span>
+        <span
+          className={`badge ${isPassing ? 'badge-success' : 'badge-danger'}`}
+          style={{ fontSize: '0.7rem', fontWeight: 700 }}
+        >
+          {isPassing ? 'PASS (ADEQUATE)' : 'OVERLOADED'}
+        </span>
+      </div>
+
+      {/* Utilization Bar */}
+      <div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.35rem' }}>
+          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 650 }}>
+            Governing Utilization
+          </span>
+          <span
+            className="mono"
+            style={{
+              fontSize: '1.45rem',
+              fontWeight: 750,
+              color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)'
+            }}
+          >
+            {results.utilization.percent}%
+          </span>
+        </div>
+        <div style={{ width: '100%', height: '8px', background: 'var(--bg-inset)', border: '1px solid var(--border-subtle)', borderRadius: '9999px', overflow: 'hidden' }}>
+          <div
+            style={{
+              width: `${Math.min(100, results.utilization.percent)}%`,
+              height: '100%',
+              background: isPassing ? 'var(--status-pass)' : 'var(--status-violation)',
+              borderRadius: '9999px',
+              transition: 'width 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+          />
+        </div>
+        <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>
+          Critical at H = <strong className="mono" style={{ color: 'var(--text-main)' }}>{critSeg.heightAboveGlFt} ft</strong> above GL ({results.utilization.criticalPercent}%)
         </div>
       </div>
 
-      {/* Main Responsive 2-Column Working Layout */}
-      <div className="calc-workspace-grid-wide">
-        {/* Left: Controls & Attachments */}
+      {/* 2x2 Key Metrics */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
+        <div className="glass-inset" style={{ padding: '0.65rem 0.78rem' }}>
+          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 650 }}>
+            Factored Moment (Mf)
+          </div>
+          <div className="mono" style={{ fontSize: '1.02rem', fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.18rem' }}>
+            {isAnsi ? `${results.moments.totalFactoredMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.totalFactoredMomentKNm)}
+          </div>
+          <div className="mono" style={{ fontSize: '0.69rem', color: 'var(--text-muted)' }}>
+            AF_PΔ = {results.buckling.amplificationFactor}×
+          </div>
+        </div>
+
+        <div className="glass-inset" style={{ padding: '0.65rem 0.78rem' }}>
+          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 650 }}>
+            Resisting Capacity (Mr)
+          </div>
+          <div className="mono" style={{ fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>
+            {isAnsi ? `${results.moments.resistingMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.resistingMomentKNm)}
+          </div>
+          <div className="mono" style={{ fontSize: '0.69rem', color: 'var(--text-muted)' }}>
+            S = {isAnsi ? `${results.geometry.sectionModulusIn3} in³` : `${results.geometry.sectionModulusM3} m³`}
+          </div>
+        </div>
+
+        <div className="glass-inset" style={{ padding: '0.65rem 0.78rem' }}>
+          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 650 }}>
+            Recommended Class
+          </div>
+          <div style={{ fontSize: '1.05rem', fontWeight: 750, color: 'var(--accent-cyan)', marginTop: '0.18rem' }}>
+            Class {results.classification.recommendedClass}
+          </div>
+          <div style={{ fontSize: '0.69rem', color: 'var(--text-muted)' }}>
+            Current: Class {poleClass} ({results.geometry.poleLengthFt} ft)
+          </div>
+        </div>
+
+        <div className="glass-inset" style={{ padding: '0.65rem 0.78rem' }}>
+          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 650 }}>
+            Groundline Check
+          </div>
+          <div className="mono" style={{ fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>
+            {results.utilization.groundlinePercent}%
+          </div>
+          <div className="mono" style={{ fontSize: '0.69rem', color: 'var(--text-muted)' }}>
+            Embed: {results.geometry.embedmentM} m ({results.geometry.embedmentFt} ft)
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <CalculatorWorkspaceShell
+      header={headerNode}
+      tabs={poleTabs}
+      activeTab={activeTab}
+      onSelectTab={handleSelectTab}
+      summaryRail={summaryRailNode}
+    >
+      {/* TAB 1: Pole Geometry, Material & Climatic Controls */}
+      {activeTab === 'pole' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', minWidth: 0 }}>
           {/* Structure Parameters Card */}
           <div className="glass-panel" style={{ padding: '1.4rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -540,8 +741,11 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               )}
             </div>
           </div>
+        </div>
+      )}
 
-          {/* Attachments Card with Load Mode Switcher */}
+      {/* TAB 2: Attachments & Cable Loads */}
+      {activeTab === 'loads' && (
           <div className="glass-panel" style={{ padding: '1.4rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.9rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -720,78 +924,11 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               ))}
             </div>
           </div>
-        </div>
+      )}
 
-        {/* Right: Results Summary, Critical vs Groundline Comparison & Step-by-Step Math */}
+      {/* TAB 3: Elevation Profile, Critical vs Groundline Comparison & Step-by-Step Math */}
+      {activeTab === 'profile' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', minWidth: 0 }}>
-          {/* Top 4 Key Metric Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '1rem' }}>
-            {/* Factored Groundline Moment */}
-            <div className="glass-panel" style={{ padding: '1.25rem' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
-                Factored Moment (Mf)
-              </div>
-              <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.28rem' }}>
-                {isAnsi ? `${results.moments.totalFactoredMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.totalFactoredMomentKNm)}
-              </div>
-              <div className="mono" style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                {isAnsi
-                  ? `AF_PΔ = ${results.buckling.amplificationFactor}× (${results.moments.totalFactoredMomentKNm} kN·m)`
-                  : `Wind OCF: ${results.factors.ocfWind}x | AF_PΔ: ${results.buckling.amplificationFactor}x`}
-              </div>
-            </div>
-
-            {/* Resisting Moment Capacity */}
-            <div className="glass-panel" style={{ padding: '1.25rem' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
-                Resisting Capacity (Mr)
-              </div>
-              <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.28rem' }}>
-                {isAnsi ? `${results.moments.resistingMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.resistingMomentKNm)}
-              </div>
-              <div className="mono" style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                Groundline S: {isAnsi ? `${results.geometry.sectionModulusIn3} in³` : `${results.geometry.sectionModulusM3} m³`}
-              </div>
-            </div>
-
-            {/* Governing Utilization Percentage */}
-            <div className="glass-panel" style={{ padding: '1.25rem' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
-                Utilization
-              </div>
-              <div
-                className="mono"
-                style={{
-                  fontSize: '1.55rem',
-                  fontWeight: 700,
-                  color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)',
-                  marginTop: '0.28rem'
-                }}
-              >
-                {results.utilization.percent}%
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontWeight: 650, marginTop: '0.35rem' }}>
-                <span className={`status-dot ${isPassing ? 'pass' : 'violation'}`} />
-                <span style={{ color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)' }}>
-                  {isPassing ? 'PASS (ADEQUATE)' : 'OVERLOADED'}
-                </span>
-              </div>
-            </div>
-
-            {/* Recommended Class */}
-            <div className="glass-panel" style={{ padding: '1.25rem' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
-                Recommended Class
-              </div>
-              <div style={{ fontSize: '1.38rem', fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.35rem' }}>
-                Class {results.classification.recommendedClass}
-              </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                Current: Class {poleClass} ({results.geometry.poleLengthFt} ft)
-              </div>
-            </div>
-          </div>
-
           {/* Critical Section vs Groundline Section Comparison + Elevation Profile Curve */}
           <div className="glass-panel" style={{ padding: '1.4rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
@@ -1355,11 +1492,12 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
           </div>
 
         </div>
-      </div>
+      )}
 
-      {/* Bottom: Live Engineering Audit Trace Card */}
-      <TraceViewer trace={results.trace} onOpenCitation={onOpenCitation} />
-
-    </div>
+      {/* TAB 4: Live Engineering Audit Trace Card */}
+      {activeTab === 'trace' && (
+        <TraceViewer trace={results.trace} onOpenCitation={onOpenCitation} />
+      )}
+    </CalculatorWorkspaceShell>
   );
 }

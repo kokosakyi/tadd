@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
   Activity,
   Sparkles,
@@ -10,6 +10,7 @@ import {
   Compass,
   Calculator
 } from 'lucide-react';
+import { useProject } from '../../context/ProjectContext';
 import {
   calculateAsce10Design,
   computeCompressiveStressFaKsi,
@@ -21,6 +22,7 @@ import {
 } from '../../core/asce10/asce10Engine';
 import TraceViewer from '../common/TraceViewer';
 import Latex from '../common/Latex';
+import CalculatorWorkspaceShell from '../common/CalculatorWorkspaceShell';
 
 const MEMBER_CATEGORIES = [
   { id: 'leg', label: 'Leg Member (Primary Compression, L/r <= 150)' },
@@ -69,7 +71,21 @@ const SUB_TABS = [
   { id: 'foundations', label: 'Foundations & Anchors (Ch. 7)' }
 ];
 
-export default function AsceTowerDesignView({ onOpenCitation }) {
+const VALID_ASCE_TABS = SUB_TABS.map((t) => t.id);
+
+export default function AsceTowerDesignView({ onOpenCitation, initialTab, onTabChange }) {
+  const { activeProject } = useProject();
+  const storageKey = `linedesk_ca_module_state_v1:${activeProject?.id || 'default'}:asce_tower`;
+
+  const savedSnapshot = useMemo(() => {
+    try {
+      const raw = typeof window !== 'undefined' && window.localStorage?.getItem(storageKey);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }, [storageKey]);
+
   // Alphabetically sorted selector lists per project rules
   const steelGrades = useMemo(
     () => getAllAsceSteelGrades().sort((a, b) => a.name.localeCompare(b.name)),
@@ -88,14 +104,31 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
     []
   );
 
-  const [activeTab, setActiveTab] = useState('compression');
-  const [activePresetId, setActivePresetId] = useState('ex1_leg');
+  const [activeTab, setActiveTabState] = useState(() =>
+    initialTab && VALID_ASCE_TABS.includes(initialTab)
+      ? initialTab
+      : savedSnapshot?.activeTab && VALID_ASCE_TABS.includes(savedSnapshot.activeTab)
+        ? savedSnapshot.activeTab
+        : 'compression'
+  );
+  const setActiveTab = (nextTab) => {
+    setActiveTabState(nextTab);
+    onTabChange?.(nextTab);
+  };
+
+  useEffect(() => {
+    if (initialTab && VALID_ASCE_TABS.includes(initialTab)) {
+      setActiveTabState(initialTab);
+    }
+  }, [initialTab]);
+
+  const [activePresetId, setActivePresetId] = useState(() => savedSnapshot?.activePresetId || 'ex1_leg');
 
   // Material & Section State
-  const [steelGradeId, setSteelGradeId] = useState('A572_50');
+  const [steelGradeId, setSteelGradeId] = useState(() => savedSnapshot?.steelGradeId || 'A572_50');
   const [angleTypeFilter, setAngleTypeFilter] = useState('ALL');
   const [sectionSearchQuery, setSectionSearchQuery] = useState('');
-  const [sectionId, setSectionId] = useState('SAE_8X8X0.5625');
+  const [sectionId, setSectionId] = useState(() => savedSnapshot?.sectionId || 'SAE_8X8X0.5625');
   const [sectionType, setSectionType] = useState('equal_angle');
   const [crossSectionType, setCrossSectionType] = useState('Single');
   const [isDoubleAngle, setIsDoubleAngle] = useState(false);
@@ -117,10 +150,10 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
   const [shearCenterDistUoIn, setShearCenterDistUoIn] = useState(1.64);
 
   // Compression & Slenderness State
-  const [memberCategory, setMemberCategory] = useState('leg');
-  const [bracingCurve, setBracingCurve] = useState('curve_1_leg');
-  const [unbracedLengthIn, setUnbracedLengthIn] = useState(121);
-  const [appliedCompressionKip, setAppliedCompressionKip] = useState(180);
+  const [memberCategory, setMemberCategory] = useState(() => savedSnapshot?.memberCategory || 'leg');
+  const [bracingCurve, setBracingCurve] = useState(() => savedSnapshot?.bracingCurve || 'curve_1_leg');
+  const [unbracedLengthIn, setUnbracedLengthIn] = useState(() => savedSnapshot?.unbracedLengthIn ?? 121);
+  const [appliedCompressionKip, setAppliedCompressionKip] = useState(() => savedSnapshot?.appliedCompressionKip ?? 180);
   const [enableSubpanelVaryingForce, setEnableSubpanelVaryingForce] = useState(false);
   const [subpanelForceP1Kip, setSubpanelForceP1Kip] = useState(180);
   const [subpanelForceP2Kip, setSubpanelForceP2Kip] = useState(120);
@@ -510,12 +543,53 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
     };
   }, [result.compression]);
 
+  // Persist core ASCE parameters per project across view switches
+  const didHydrateSectionRef = useRef(false);
+  useEffect(() => {
+    if (!didHydrateSectionRef.current && savedSnapshot?.sectionId && savedSnapshot.sectionId !== 'SAE_8X8X0.5625') {
+      didHydrateSectionRef.current = true;
+      handleSelectSection(savedSnapshot.sectionId);
+    } else {
+      didHydrateSectionRef.current = true;
+    }
+  }, [savedSnapshot]);
+
+  useEffect(() => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem(
+          storageKey,
+          JSON.stringify({
+            activeTab,
+            activePresetId,
+            steelGradeId,
+            sectionId,
+            memberCategory,
+            bracingCurve,
+            unbracedLengthIn,
+            appliedCompressionKip
+          })
+        );
+      }
+    } catch {
+      /* ignore storage errors */
+    }
+  }, [
+    storageKey,
+    activeTab,
+    activePresetId,
+    steelGradeId,
+    sectionId,
+    memberCategory,
+    bracingCurve,
+    unbracedLengthIn,
+    appliedCompressionKip
+  ]);
+
   const fmtKips = (val) => `${Number(val).toFixed(2)} kips (${(Number(val) * 4.44822).toFixed(1)} kN)`;
   const fmtKsi = (val) => `${Number(val).toFixed(2)} ksi (${(Number(val) * 6.89476).toFixed(1)} MPa)`;
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      {/* Module Header Banner */}
+  const headerNode = (
       <div
         className="glass-panel"
         style={{
@@ -528,7 +602,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
         }}
       >
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px', flexWrap: 'wrap' }}>
             <Compass size={20} color="var(--accent-primary)" />
             <h2 style={{ fontSize: '18px', fontWeight: 700, margin: 0 }}>
               ASCE/SEI 10-15 Latticed Steel Tower Design Engine
@@ -575,121 +649,110 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           ))}
         </div>
       </div>
+  );
 
-      {/* Top Executive Capacity KPI Strip */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
-          gap: '14px'
-        }}
-      >
-        <div className="glass-panel" style={{ padding: '16px 18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Compression Capacity (<Latex math="P_a = F_a A_e" />)
+  const summaryRailNode = (
+    <div className="glass-panel" style={{ padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '10px' }}>
+        <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+          Overall ASCE 10-15 Status
+        </span>
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            fontSize: '14px',
+            fontWeight: 800,
+            color:
+              result.overallStatus === 'PASS'
+                ? 'var(--accent-success)'
+                : result.overallStatus === 'MARGINAL'
+                ? 'var(--accent-warning)'
+                : 'var(--accent-danger)'
+          }}
+        >
+          {result.overallStatus === 'PASS' ? <CheckCircle2 size={16} /> : <AlertTriangle size={16} />}
+          {result.overallStatus}
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px' }}>
+        <div className="glass-inset" style={{ padding: '11px 13px' }}>
+          <div style={{ fontSize: '10.5px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+            Compression (<Latex math="P_a = F_a A_e" />)
           </div>
-          <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '4px' }}>
+          <div style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '3px' }}>
             {result.compression.capacityPaKip.toFixed(2)} kips
           </div>
-          <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-            <Latex math={`F_a = ${result.compression.faKsi.toFixed(2)}\\text{ ksi}`} /> • Util:{' '}
-            <strong
-              style={{
-                color: result.compression.utilizationPercent > 100 ? 'var(--accent-danger)' : 'var(--accent-success)'
-              }}
-            >
+          <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)', marginTop: '3px' }}>
+            <Latex math={`F_a = ${result.compression.faKsi.toFixed(2)}\\text{ ksi}`} /> •{' '}
+            <strong style={{ color: result.compression.utilizationPercent > 100 ? 'var(--accent-danger)' : 'var(--accent-success)' }}>
               {result.compression.utilizationPercent.toFixed(1)}%
             </strong>
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '16px 18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Tension &amp; Block Shear (<Latex math="\min(P_t, P_{bs})" />)
+        <div className="glass-inset" style={{ padding: '11px 13px' }}>
+          <div style={{ fontSize: '10.5px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+            Tension (<Latex math="\min(P_t, P_{bs})" />)
           </div>
-          <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '4px' }}>
+          <div style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '3px' }}>
             {result.tension.governingTensionCapacityKip.toFixed(2)} kips
           </div>
-          <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-            <Latex math={`A_n = ${result.tension.netAreaAnIn2.toFixed(3)}\\text{ in.}^2`} /> • Util:{' '}
-            <strong
-              style={{
-                color: result.tension.utilizationPercent > 100 ? 'var(--accent-danger)' : 'var(--accent-success)'
-              }}
-            >
+          <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)', marginTop: '3px' }}>
+            <Latex math={`A_n = ${result.tension.netAreaAnIn2.toFixed(3)}\\text{ in.}^2`} /> •{' '}
+            <strong style={{ color: result.tension.utilizationPercent > 100 ? 'var(--accent-danger)' : 'var(--accent-success)' }}>
               {result.tension.utilizationPercent.toFixed(1)}%
             </strong>
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '16px 18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Combined Axial + Bending (Sec. 3.12)
+        <div className="glass-inset" style={{ padding: '11px 13px' }}>
+          <div style={{ fontSize: '10.5px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+            Combined (Sec. 3.12)
           </div>
-          <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '4px' }}>
+          <div style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '3px' }}>
             {result.combinedAndBeams.interactionPercent.toFixed(1)}%
           </div>
-          <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-            <Latex math={`M_b = ${result.combinedAndBeams.lateralBucklingMomentMbInKip.toFixed(1)}\\text{ kip}\\cdot\\text{in.}`} /> •{' '}
-            <strong
-              style={{
-                color: result.combinedAndBeams.isPassing ? 'var(--accent-success)' : 'var(--accent-danger)'
-              }}
-            >
+          <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)', marginTop: '3px' }}>
+            <Latex math={`M_b = ${result.combinedAndBeams.lateralBucklingMomentMbInKip.toFixed(1)}`} /> •{' '}
+            <strong style={{ color: result.combinedAndBeams.isPassing ? 'var(--accent-success)' : 'var(--accent-danger)' }}>
               {result.combinedAndBeams.isPassing ? 'PASS' : 'OVERSTRESSED'}
             </strong>
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '16px 18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Bolted Connection (<Latex math={`n = ${numConnectionBolts}`} /> Bolts)
+        <div className="glass-inset" style={{ padding: '11px 13px' }}>
+          <div style={{ fontSize: '10.5px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+            Bolted Conn. (<Latex math={`n = ${numConnectionBolts}`} />)
           </div>
-          <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '4px' }}>
+          <div style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-primary)', marginTop: '3px' }}>
             {result.connections.governingConnectionCapacityKip.toFixed(2)} kips
           </div>
-          <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
+          <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)', marginTop: '3px' }}>
             <Latex math={`e_{\\min} = ${result.connections.eMinGoverningIn.toFixed(2)}\\text{ in.}`} /> •{' '}
-            <strong
-              style={{
-                color: result.connections.areDistancesCompliant
-                  ? 'var(--accent-success)'
-                  : 'var(--accent-warning)'
-              }}
-            >
-              {result.connections.areDistancesCompliant ? 'Spacing OK' : 'Check Spacing'}
+            <strong style={{ color: result.connections.areDistancesCompliant ? 'var(--accent-success)' : 'var(--accent-warning)' }}>
+              {result.connections.areDistancesCompliant ? 'Spacing OK' : 'Check'}
             </strong>
           </div>
         </div>
-
-        <div className="glass-panel" style={{ padding: '16px 18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Overall ASCE 10-15 Status
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              marginTop: '6px',
-              fontSize: '18px',
-              fontWeight: 800,
-              color:
-                result.overallStatus === 'PASS'
-                  ? 'var(--accent-success)'
-                  : result.overallStatus === 'MARGINAL'
-                  ? 'var(--accent-warning)'
-                  : 'var(--accent-danger)'
-            }}
-          >
-            {result.overallStatus === 'PASS' ? <CheckCircle2 size={20} /> : <AlertTriangle size={20} />}
-            {result.overallStatus}
-          </div>
-          <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-            Anchor Util: {result.foundations.anchorBoltUtilizationPercent.toFixed(1)}%
-          </div>
-        </div>
       </div>
+
+      <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-subtle)', paddingTop: '8px', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '6px' }}>
+        <span>Anchor Util: <strong className="mono">{result.foundations.anchorBoltUtilizationPercent.toFixed(1)}%</strong></span>
+        <span className="mono" style={{ color: 'var(--accent-cyan)' }}>{result.sectionProperties.designation}</span>
+      </div>
+    </div>
+  );
+
+  return (
+    <CalculatorWorkspaceShell
+      header={headerNode}
+      summaryRail={summaryRailNode}
+      belowSplit={<TraceViewer trace={result.trace} onOpenCitation={onOpenCitation} />}
+      maxWidth="1440px"
+    >
 
       {/* Shared Member & Material Bar + Sub-Module Tabs */}
       <div className="glass-panel" style={{ padding: '20px 24px' }}>
@@ -949,7 +1012,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '20px',
               alignItems: 'start'
             }}
@@ -997,7 +1060,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 145px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Unbraced Length <Latex math="L" /> (in.)
@@ -1047,7 +1110,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                   Apply Two-Subpanel Varying Axial Force Factor <Latex math="K'" /> (Sec. 3.7.4.4)
                 </label>
                 {enableSubpanelVaryingForce && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginTop: '10px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px', marginTop: '10px' }}>
                     <div className="input-group" style={{ margin: 0 }}>
                       <label className="input-label">
                         Subpanel Force <Latex math="P_1" /> (kips, +Comp)
@@ -1087,7 +1150,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                   Symmetrical Lipped Cold-Formed Angle Torsional-Flexural Check (<Latex math="r_{tf}" /> — Sec. 3.8)
                 </label>
                 {sectionType === 'lipped_angle' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', marginTop: '10px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 145px), 1fr))', gap: '10px', marginTop: '10px' }}>
                     <div className="input-group" style={{ margin: 0 }}>
                       <label className="input-label">
                         <Latex math="J\text{ (in.}^4\text{)}" />
@@ -1226,7 +1289,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               </div>
 
               {/* Key Equations & Results Breakdown */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '13px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px', fontSize: '13px' }}>
                 <div className="glass-inset" style={{ padding: '12px' }}>
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600 }}>
                     Flat-Width Ratio <Latex math="w/t" /> (Sec. 3.7.2)
@@ -1397,7 +1460,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '20px',
               alignItems: 'start'
             }}
@@ -1444,7 +1507,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Bolts Across Chain (<Latex math="n_h" />)
@@ -1501,7 +1564,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 <div style={{ fontSize: '12px', fontWeight: 700, marginBottom: '10px', color: 'var(--text-secondary)' }}>
                   Block Shear Rupture Path Geometry (Sec. 3.10.2, Eq. 3.10-1 &amp; Fig. 3-5)
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px' }}>
                   <div className="input-group" style={{ margin: 0 }}>
                     <label className="input-label">
                       End Distance <Latex math="a" /> (in.)
@@ -1559,7 +1622,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 ASCE 10-15 Section 3.10 Tension &amp; Block Shear Capacities
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '12px', fontSize: '13px' }}>
                 <div className="glass-inset" style={{ padding: '14px' }}>
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600 }}>
                     Net Section Area <Latex math="A_n" /> (Sec. 3.10.1)
@@ -1684,7 +1747,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '20px',
               alignItems: 'start'
             }}
@@ -1694,7 +1757,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 Combined Axial + Bending &amp; Equal-Leg Angle LTB Inputs
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Applied Moment <Latex math="M_x" /> (kip-in.)
@@ -1775,7 +1838,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 Interaction Ratios &amp; Lateral-Torsional Buckling (Sec. 3.12–3.15)
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '12px', fontSize: '13px' }}>
                 <div className="glass-inset" style={{ padding: '14px' }}>
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600 }}>
                     Compression + Bending Stability (Eq. 3.12-1)
@@ -1891,7 +1954,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '20px',
               alignItems: 'start'
             }}
@@ -1938,7 +2001,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 145px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Bolt Diameter <Latex math="d" /> (in.)
@@ -1978,7 +2041,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 145px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Actual End <Latex math="e" /> (in.)
@@ -2034,7 +2097,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 ASCE 10-15 Chapter 4 Bolt &amp; Spacing Verification
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '12px', fontSize: '13px' }}>
                 <div className="glass-inset" style={{ padding: '14px' }}>
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600 }}>
                     Bolt Shear Capacity (Sec. 4.3.2)
@@ -2163,7 +2226,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '20px',
               alignItems: 'start'
             }}
@@ -2192,7 +2255,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '10px' }}>
                 <div className="input-group">
                   <label className="input-label">
                     Concrete Strength <Latex math="f'_c" /> (ksi)
@@ -2274,7 +2337,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
                 ASCE 10-15 Chapter 7 Anchorage &amp; Shear Connector Capacities
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 165px), 1fr))', gap: '12px', fontSize: '13px' }}>
                 <div className="glass-inset" style={{ padding: '14px' }}>
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600 }}>
                     Stub Angle Utilization (Eq. 7.4-1)
@@ -2380,8 +2443,7 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
         </div>
       )}
 
-      {/* Calculation Audit Trace Viewer */}
-      <TraceViewer trace={result.trace} onOpenCitation={onOpenCitation} />
-    </div>
+      {/* Close CalculatorWorkspaceShell (TraceViewer rendered in belowSplit) */}
+    </CalculatorWorkspaceShell>
   );
 }

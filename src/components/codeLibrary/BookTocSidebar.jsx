@@ -127,7 +127,8 @@ export default function BookTocSidebar({
   onOpenBookmark,
   onBackToShelf,
   isMobileOpen = false,
-  onCloseMobile
+  onCloseMobile,
+  isDesktopCollapsed = false
 }) {
   const [expandedSections, setExpandedSections] = useState(() => new Set());
   const [expandedSubsections, setExpandedSubsections] = useState(() => new Set());
@@ -202,7 +203,7 @@ export default function BookTocSidebar({
         />
       )}
       <aside
-        className={`glass-panel book-toc-sidebar ${isMobileOpen ? 'mobile-open' : ''}`}
+        className={`glass-panel book-toc-sidebar${isMobileOpen ? ' mobile-open' : ''}${isDesktopCollapsed ? ' desktop-collapsed' : ''}`}
         aria-label="Book Table of Contents Sidebar"
       >
         {/* Book Spine & Mini Cover Header */}

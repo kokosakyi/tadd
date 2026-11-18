@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Sliders, Ruler } from 'lucide-react';
+import React from 'react';
+import { Sliders, Ruler, RotateCcw } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 import { useUnits } from '../../context/UnitContext';
+import { useProjectScopedState } from '../../hooks/useProjectScopedState';
 import { calculateVerticalClearance, UTILITY_OVERLAYS } from '../../core/clearance/clearanceEngine';
 import { TABLE_2_ROW_OPTIONS } from '../../data/csa/c22_3_no1/table2';
 import TraceViewer from '../common/TraceViewer';
@@ -23,33 +24,56 @@ const SORTED_OVERLAYS = [...UTILITY_OVERLAYS].sort((a, b) =>
 
 export default function ClearanceCalculatorView({ onOpenCitation }) {
   const { activeProject } = useProject();
-  const { unit, formatDistance } = useUnits();
+  const { unit, setUnit, formatDistance } = useUnits();
 
-  // Inputs State
-  const [rowId, setRowId] = useState(
-    SORTED_ROW_OPTIONS.find((r) => r.id === 'road_vehicular')?.id || SORTED_ROW_OPTIONS[0]?.id || 'road_vehicular'
+  // Persisted per-project inputs state
+  const [formState, updateFormState, resetFormState] = useProjectScopedState(
+    activeProject?.id,
+    'clearance',
+    () => ({
+      rowId:
+        SORTED_ROW_OPTIONS.find((r) => r.id === 'road_vehicular')?.id ||
+        SORTED_ROW_OPTIONS[0]?.id ||
+        'road_vehicular',
+      operatingVoltageKv: activeProject?.operatingVoltageKv || 25.0,
+      circuitKind: 'supply',
+      elevationMeters: 0,
+      ownerOverlayId:
+        activeProject?.ownerOverlayId || SORTED_OVERLAYS[0]?.id || 'csa_std',
+      customBufferM: activeProject?.customBufferM ?? 0.3,
+      attachmentHeightM: 12.0,
+      midspanSagM: 2.5,
+      obstacleHeightM: 0.0,
+      thermalSagBufferM: 0.3,
+      iceWindSagBufferM: 0.5
+    })
   );
-  const [operatingVoltageKv, setOperatingVoltageKv] = useState(activeProject?.operatingVoltageKv || 25.0);
-  const [circuitKind, setCircuitKind] = useState('supply');
-  const [elevationMeters, setElevationMeters] = useState(0);
-  const [ownerOverlayId, setOwnerOverlayId] = useState(
-    activeProject?.ownerOverlayId || SORTED_OVERLAYS[0]?.id || 'csa_std'
-  );
-  const [customBufferM, setCustomBufferM] = useState(activeProject?.customBufferM || 0.3);
-  const [attachmentHeightM, setAttachmentHeightM] = useState(12.0);
-  const [midspanSagM, setMidspanSagM] = useState(2.5);
-  const [obstacleHeightM, setObstacleHeightM] = useState(0.0);
-  const [thermalSagBufferM, setThermalSagBufferM] = useState(0.3);
-  const [iceWindSagBufferM, setIceWindSagBufferM] = useState(0.5);
 
-  // Sync with active project updates
-  useEffect(() => {
-    if (activeProject) {
-      if (activeProject.operatingVoltageKv) setOperatingVoltageKv(activeProject.operatingVoltageKv);
-      if (activeProject.ownerOverlayId) setOwnerOverlayId(activeProject.ownerOverlayId);
-      if (activeProject.customBufferM !== undefined) setCustomBufferM(activeProject.customBufferM);
-    }
-  }, [activeProject]);
+  const {
+    rowId,
+    operatingVoltageKv,
+    circuitKind,
+    elevationMeters,
+    ownerOverlayId,
+    customBufferM,
+    attachmentHeightM,
+    midspanSagM,
+    obstacleHeightM,
+    thermalSagBufferM,
+    iceWindSagBufferM
+  } = formState;
+
+  const setRowId = (v) => updateFormState({ rowId: v });
+  const setOperatingVoltageKv = (v) => updateFormState({ operatingVoltageKv: v });
+  const setCircuitKind = (v) => updateFormState({ circuitKind: v });
+  const setElevationMeters = (v) => updateFormState({ elevationMeters: v });
+  const setOwnerOverlayId = (v) => updateFormState({ ownerOverlayId: v });
+  const setCustomBufferM = (v) => updateFormState({ customBufferM: v });
+  const setAttachmentHeightM = (v) => updateFormState({ attachmentHeightM: v });
+  const setMidspanSagM = (v) => updateFormState({ midspanSagM: v });
+  const setObstacleHeightM = (v) => updateFormState({ obstacleHeightM: v });
+  const setThermalSagBufferM = (v) => updateFormState({ thermalSagBufferM: v });
+  const setIceWindSagBufferM = (v) => updateFormState({ iceWindSagBufferM: v });
 
   // Execute Clearance Engine
   const { result, trace } = calculateVerticalClearance({
@@ -114,8 +138,35 @@ export default function ClearanceCalculatorView({ onOpenCitation }) {
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Active Project:</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <div className="glass-inset" style={{ display: 'inline-flex', padding: '0.18rem', borderRadius: '9999px', gap: '0.15rem' }} role="group" aria-label="Display Units">
+              <button
+                type="button"
+                onClick={() => setUnit('metric')}
+                className={unit === 'metric' ? 'btn-primary' : 'btn-secondary'}
+                style={{ padding: '0.24rem 0.62rem', fontSize: '0.73rem', border: 'none' }}
+              >
+                Metric (m)
+              </button>
+              <button
+                type="button"
+                onClick={() => setUnit('imperial')}
+                className={unit === 'imperial' ? 'btn-primary' : 'btn-secondary'}
+                style={{ padding: '0.24rem 0.62rem', fontSize: '0.73rem', border: 'none' }}
+              >
+                Imperial (ft)
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={resetFormState}
+              className="btn-secondary"
+              style={{ padding: '0.32rem 0.68rem', fontSize: '0.74rem', gap: '0.3rem' }}
+              title="Reset inputs to active project defaults"
+            >
+              <RotateCcw size={13} />
+              <span>Reset</span>
+            </button>
             <span className="badge badge-info">{activeProject?.name || 'Standard'}</span>
           </div>
         </div>
@@ -286,8 +337,8 @@ export default function ClearanceCalculatorView({ onOpenCitation }) {
           </div>
         </div>
 
-        {/* Right: Results Summary & Interactive Visualizer */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', minWidth: 0 }}>
+        {/* Right: Sticky Results Summary & Interactive Visualizer */}
+        <div className="calc-sticky-rail" style={{ gap: '1.25rem' }}>
           {/* Key Metric Highlights */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(165px, 1fr))', gap: '1rem' }}>
             {/* Required Clearance */}
