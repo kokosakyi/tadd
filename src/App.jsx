@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 const ClearanceCalculatorView = lazy(() => import('./components/calculators/ClearanceCalculatorView'));
 const WeatherCriteriaView = lazy(() => import('./components/calculators/WeatherCriteriaView'));
 const WoodPoleCalculatorView = lazy(() => import('./components/calculators/WoodPoleCalculatorView'));
+const AsceTowerDesignView = lazy(() => import('./components/calculators/AsceTowerDesignView'));
 const CodeLibraryBrowser = lazy(() => import('./components/codeLibrary/CodeLibraryBrowser'));
 
 function ViewLoadingFallback() {
@@ -137,6 +138,10 @@ function AppContent() {
 
             {currentView === 'wood_pole' && (
               <WoodPoleCalculatorView onOpenCitation={handleOpenCitation} />
+            )}
+
+            {currentView === 'asce_tower' && (
+              <AsceTowerDesignView onOpenCitation={handleOpenCitation} />
             )}
 
             {currentView === 'code_library' && (

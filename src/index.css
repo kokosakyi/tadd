@@ -572,10 +572,10 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     translate: -50% 0;
     bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
-    width: min(calc(100vw - 1.25rem), 490px);
+    width: min(calc(100vw - 1.25rem), 520px);
     z-index: 950;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     align-items: center;
     gap: 0.25rem;
     padding: 0.38rem;

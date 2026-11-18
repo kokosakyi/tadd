@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ruler, Wind, TreePine, BookOpen, FolderPlus, ArrowRight } from 'lucide-react';
+import { Ruler, Wind, TreePine, Compass, BookOpen, FolderPlus, ArrowRight } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 
 export default function Dashboard({ onNavigate }) {
@@ -35,6 +35,16 @@ export default function Dashboard({ onNavigate }) {
       icon: TreePine,
       color: 'linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.88))',
       glow: 'rgba(245, 158, 11, 0.36)'
+    },
+    {
+      id: 'asce_tower',
+      badge: 'ASCE/SEI 10-15',
+      title: 'Latticed Steel Tower Design',
+      description:
+        'Calculate angle compression & local buckling, net section tension, block shear, bolted connections, and foundation anchorages.',
+      icon: Compass,
+      color: 'linear-gradient(135deg, rgba(244, 63, 94, 0.92), rgba(225, 29, 72, 0.88))',
+      glow: 'rgba(244, 63, 94, 0.36)'
     },
     {
       id: 'code_library',

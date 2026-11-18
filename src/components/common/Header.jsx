@@ -9,6 +9,7 @@ import {
   Ruler,
   Wind,
   TreePine,
+  Compass,
   LayoutDashboard
 } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
@@ -19,6 +20,7 @@ export const NAV_ITEMS = [
   { id: 'clearance', label: 'Clearances', mobileLabel: 'Clearance', icon: Ruler },
   { id: 'weather', label: 'Weather Criteria', mobileLabel: 'Weather', icon: Wind },
   { id: 'wood_pole', label: 'Pole Sizing', mobileLabel: 'Poles', icon: TreePine },
+  { id: 'asce_tower', label: 'Tower Design (ASCE 10)', mobileLabel: 'Towers', icon: Compass },
   { id: 'code_library', label: 'Code Library', mobileLabel: 'Library', icon: BookOpen }
 ];
 

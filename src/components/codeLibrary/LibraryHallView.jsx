@@ -160,7 +160,7 @@ export default function LibraryHallView({
               : book.id === 'csa_o15'
               ? { id: 'wood_pole', label: 'Wood Pole Structural Engine' }
               : book.id === 'asce_10_15'
-              ? { id: 'wood_pole', label: 'Structural Loading Engine' }
+              ? { id: 'asce_tower', label: 'ASCE 10-15 Tower Design Engine' }
               : { id: 'weather', label: 'AutoSag & Weather Criteria' };
 
             return (

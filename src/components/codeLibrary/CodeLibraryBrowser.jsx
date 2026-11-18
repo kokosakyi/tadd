@@ -44,6 +44,9 @@ function getCalculatorTargetForClauseOrTable(standardId, clauseOrTableNum = '', 
   const numStr = String(clauseOrTableNum || '').toLowerCase();
   const secStr = String(section || '').toLowerCase();
 
+  if (standardId === 'asce_10_15') {
+    return { id: 'asce_tower', label: 'ASCE 10-15 Tower Design Calculator' };
+  }
   if (standardId === 'csa_o15') {
     return { id: 'wood_pole', label: 'Wood Pole Calculator' };
   }
@@ -298,6 +301,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
       if (/c22\.?3\s*(?:no\.?\s*1|#1)/i.test(cit)) stdId = 'c22_3_no1';
       else if (/60826/i.test(cit)) stdId = 'c22_3_60826';
       else if (/o15/i.test(cit)) stdId = 'csa_o15';
+      else if (/asce|10-15/i.test(cit)) stdId = 'asce_10_15';
 
       let matchedClause = null;
       if (clauseNum) {
