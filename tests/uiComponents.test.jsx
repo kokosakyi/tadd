@@ -365,6 +365,16 @@ describe('UI Component Test Suite - iOS 26 Liquid Glass Shell & Navigation', () 
     expect(await screen.findByText(/ASCE\/SEI 10-15 Latticed Steel Tower Design Engine/i)).toBeDefined();
     expect(container.querySelectorAll('.katex-error').length).toBe(0);
 
+    // Verify Angle Section Excel Selector dynamically updates properties & capacities
+    const angleSelect = screen.getByLabelText(/Angle Section Designation/i);
+    expect(angleSelect.querySelectorAll('option').length).toBe(427);
+    fireEvent.change(angleSelect, { target: { value: 'DAL_6X4X0.5' } });
+    expect((await screen.findAllByText(/DAL 6X4X0.5 \(Double Unequal LBB\)/i)).length).toBeGreaterThanOrEqual(2);
+    expect(await screen.findByText(/Config: DoubleLBB/i)).toBeDefined();
+    expect(await screen.findByText(/Cl. 3.11 Max Stitch:/i)).toBeDefined();
+    expect(await screen.findByText(/9\.5 in\.²/i)).toBeDefined();
+    expect(await screen.findByText(/472\.8 N\/m/i)).toBeDefined();
+
     // Verify sub-module tabs and benchmark presets work
     fireEvent.click(screen.getByRole('tab', { name: /Tension & Block Shear/i }));
     expect(await screen.findByText(/ASCE 10-15 Section 3.10 Tension & Block Shear Capacities/i)).toBeDefined();

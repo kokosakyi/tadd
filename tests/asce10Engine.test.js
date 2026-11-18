@@ -3,6 +3,7 @@ import {
   calculateAsce10Design,
   computeEffectiveKLOverR,
   computeCompressiveStressFaKsi,
+  findAsceAngleSection,
   getAllAsceSteelGrades,
   getAllAsceAngleSections,
   getAllAsceBoltSpecs,
@@ -198,8 +199,16 @@ describe('ASCE/SEI 10-15 Latticed Steel Transmission Structure Design Engine', (
     expect(computeEffectiveKLOverR(150, 'curve_6_both_restrained')).toBeCloseTo(46.2 + 0.615 * 150, 2);
   });
 
-  it('maintains finite math invariants across all output fields', () => {
-    const result = calculateAsce10Design({});
+  it('maintains finite math invariants across all output fields and all 427 Excel angle sections', () => {
+    const sections = getAllAsceAngleSections();
+    expect(sections.length).toBe(427);
+    // Verify deterministic alphabetical ordering
+    for (let i = 1; i < sections.length; i += 1) {
+      expect(sections[i - 1].designation.localeCompare(sections[i].designation)).toBeLessThanOrEqual(0);
+    }
+    expect(findAsceAngleSection('L8x8x9/16')?.id).toBe('SAE_8X8X0.5625');
+    expect(findAsceAngleSection('DAL_6X4X0.5')?.crossSectionType).toBe('DoubleLBB');
+
     const checkFinite = (obj) => {
       for (const [key, val] of Object.entries(obj)) {
         if (key === 'trace') continue;
@@ -210,6 +219,31 @@ describe('ASCE/SEI 10-15 Latticed Steel Transmission Structure Design Engine', (
         }
       }
     };
-    checkFinite(result);
+
+    checkFinite(calculateAsce10Design({}));
+
+    // Sweep every single Excel angle section and verify dynamic finite computation
+    for (const sec of sections) {
+      const res = calculateAsce10Design({ sectionId: sec.id, unbracedLengthIn: 72 });
+      checkFinite(res);
+      expect(res.sectionProperties.sectionId).toBe(sec.id);
+      expect(res.sectionProperties.grossAreaIn2).toBeCloseTo(sec.areaIn2, 2);
+      expect(res.sectionProperties.wOverT).toBeCloseTo(sec.wOverTRatio, 1);
+      expect(res.sectionProperties.ixIn4).toBeGreaterThan(0);
+      expect(res.sectionProperties.iyIn4).toBeGreaterThan(0);
+      expect(res.sectionProperties.unitWeightPlf).toBeCloseTo(sec.unitWeightPlf, 1);
+      if (sec.isDoubleAngle) {
+        expect(res.sectionProperties.maxStitchSpacingIn).toBeGreaterThan(0);
+      } else {
+        expect(res.sectionProperties.maxStitchSpacingIn).toBeNull();
+      }
+    }
+
+    // Compare Single vs Double-Angle capacity and tension ply accounting
+    const singleLeg = calculateAsce10Design({ sectionId: 'SAE_8X8X0.5625', unbracedLengthIn: 96 });
+    const doubleLeg = calculateAsce10Design({ sectionId: 'DAE_8X8X0.5625', unbracedLengthIn: 96 });
+    expect(doubleLeg.sectionProperties.grossAreaIn2).toBeCloseTo(2 * singleLeg.sectionProperties.grossAreaIn2, 1);
+    expect(doubleLeg.compression.capacityPaKip).toBeGreaterThan(singleLeg.compression.capacityPaKip * 2);
+    expect(doubleLeg.tension.netTensionCapacityKip).toBeCloseTo(2 * singleLeg.tension.netTensionCapacityKip, 1);
   });
 });

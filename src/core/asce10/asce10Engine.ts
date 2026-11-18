@@ -11,6 +11,10 @@
  */
 
 import { createTraceRecord, formatCitation } from '../trace/calcTrace';
+import {
+  EXCEL_ANGLE_SECTIONS,
+  LEGACY_SECTION_ID_ALIASES
+} from '../../data/asce/angleSectionsDatabase';
 import type {
   AsceDesignInput,
   AsceDesignResult,
@@ -18,7 +22,10 @@ import type {
   AsceAngleSection,
   AsceBoltSpec,
   AsceBracingCurveId,
-  AsceMemberCategory
+  AsceCrossSectionType,
+  AsceMemberCategory,
+  AsceSectionPropertiesSummary,
+  AsceSectionType
 } from '../../types/asce10';
 
 const KIP_TO_KN = 4.4482216;
@@ -34,19 +41,18 @@ export const ASCE_STEEL_GRADES: AsceSteelGrade[] = [
   { id: 'A572_65', name: 'ASTM A572 Grade 65 HSLA Steel (Fy = 65 ksi)', spec: 'ASTM A572 Gr. 65', fyKsi: 65, fuKsi: 80, fyMPa: 448, fuMPa: 550 }
 ];
 
-export const ASCE_ANGLE_SECTIONS: AsceAngleSection[] = [
-  { id: 'L1.75x1.25x3/16', designation: 'L1-3/4 x 1-1/4 x 3/16 (Unequal Bracing Strut)', legLongIn: 1.75, legShortIn: 1.25, thicknessIn: 0.1875, filletRadiusIn: 0.1875, areaIn2: 0.53, rzIn: 0.27, rxIn: 0.55, ryIn: 0.37, ruIn: 0.61 },
-  { id: 'L2x2x3/16', designation: 'L2 x 2 x 3/16 (Equal Leg Angle)', legLongIn: 2.0, legShortIn: 2.0, thicknessIn: 0.1875, filletRadiusIn: 0.25, areaIn2: 0.715, rzIn: 0.391, rxIn: 0.612, ryIn: 0.612, ruIn: 0.774 },
-  { id: 'L2.5x2.5x1/4', designation: 'L2-1/2 x 2-1/2 x 1/4 (Equal Leg Angle)', legLongIn: 2.5, legShortIn: 2.5, thicknessIn: 0.25, filletRadiusIn: 0.25, areaIn2: 1.19, rzIn: 0.487, rxIn: 0.764, ryIn: 0.764, ruIn: 0.968 },
-  { id: 'L3x3x1/4', designation: 'L3 x 3 x 1/4 (Equal Leg Angle)', legLongIn: 3.0, legShortIn: 3.0, thicknessIn: 0.25, filletRadiusIn: 0.3125, areaIn2: 1.44, rzIn: 0.585, rxIn: 0.926, ryIn: 0.926, ruIn: 1.17 },
-  { id: 'L3.5x3.5x5/16', designation: 'L3-1/2 x 3-1/2 x 5/16 (Equal Leg Angle)', legLongIn: 3.5, legShortIn: 3.5, thicknessIn: 0.3125, filletRadiusIn: 0.375, areaIn2: 2.09, rzIn: 0.683, rxIn: 1.07, ryIn: 1.07, ruIn: 1.36 },
-  { id: 'L4x4x3/8', designation: 'L4 x 4 x 3/8 (Equal Leg Angle)', legLongIn: 4.0, legShortIn: 4.0, thicknessIn: 0.375, filletRadiusIn: 0.375, areaIn2: 2.86, rzIn: 0.779, rxIn: 1.23, ryIn: 1.23, ruIn: 1.55 },
-  { id: 'L5x5x3/8', designation: 'L5 x 5 x 3/8 (Equal Leg Angle)', legLongIn: 5.0, legShortIn: 5.0, thicknessIn: 0.375, filletRadiusIn: 0.5, areaIn2: 3.61, rzIn: 0.977, rxIn: 1.55, ryIn: 1.55, ruIn: 1.96 },
-  { id: 'L6x6x5/16', designation: 'L6 x 6 x 5/16 (ASCE Ex. 1 Slender Leg)', legLongIn: 6.0, legShortIn: 6.0, thicknessIn: 0.3125, filletRadiusIn: 0.5, areaIn2: 3.65, rzIn: 1.20, rxIn: 1.88, ryIn: 1.88, ruIn: 2.38 },
-  { id: 'L6x6x3/8', designation: 'L6 x 6 x 3/8 (ASCE Ex. 16 Chord Angle)', legLongIn: 6.0, legShortIn: 6.0, thicknessIn: 0.375, filletRadiusIn: 0.5, areaIn2: 4.36, rzIn: 1.19, rxIn: 1.87, ryIn: 1.87, ruIn: 2.36 },
-  { id: 'L8x8x1/2', designation: 'L8 x 8 x 1/2 (ASCE Ex. 15 Heavy Leg)', legLongIn: 8.0, legShortIn: 8.0, thicknessIn: 0.5, filletRadiusIn: 0.625, areaIn2: 7.75, rzIn: 1.59, rxIn: 2.50, ryIn: 2.50, ruIn: 3.16 },
-  { id: 'L8x8x9/16', designation: 'L8 x 8 x 9/16 (ASCE Ex. 1 Tower Leg)', legLongIn: 8.0, legShortIn: 8.0, thicknessIn: 0.5625, filletRadiusIn: 0.625, areaIn2: 8.68, rzIn: 1.59, rxIn: 2.49, ryIn: 2.49, ruIn: 3.15 }
-];
+export const ASCE_ANGLE_SECTIONS: AsceAngleSection[] = [...EXCEL_ANGLE_SECTIONS].sort((a, b) =>
+  a.designation.localeCompare(b.designation)
+);
+
+/**
+ * Resolves an angle section by exact Excel ID (e.g. 'SAE_8X8X0.5625') or legacy preset alias (e.g. 'L8x8x9/16').
+ */
+export function findAsceAngleSection(sectionId: string): AsceAngleSection | undefined {
+  if (!sectionId) return undefined;
+  const resolvedId = LEGACY_SECTION_ID_ALIASES[sectionId] || sectionId;
+  return ASCE_ANGLE_SECTIONS.find((s) => s.id === resolvedId);
+}
 
 export const ASCE_BOLT_SPECS: AsceBoltSpec[] = [
   { id: 'A394_T0', name: 'ASTM A394 Type 0 Tower Bolt (Fu = 74 ksi)', fuKsi: 74, fvThreadsKsi: 45.88, fvShankKsi: 45.88, ftProofKsi: 44.4 },
@@ -140,6 +146,41 @@ export function computeCompressiveStressFaKsi(klOverR: number, fcrKsi: number, e
   return { cc, faKsi: Math.max(0, faKsi), regime: 'elastic' };
 }
 
+function computeAngleElasticModuli(
+  legLongIn: number,
+  legShortIn: number,
+  t: number,
+  ixIn4: number,
+  iyIn4: number,
+  crossSectionType: AsceCrossSectionType
+): { sxIn3: number; syIn3: number } {
+  const safeT = Math.min(t, legLongIn * 0.49, legShortIn * 0.49);
+  if (crossSectionType === 'DoubleLBB') {
+    const a1 = legLongIn * safeT;
+    const a2 = Math.max(0, legShortIn - safeT) * safeT;
+    const yBar = (a1 * (legLongIn / 2) + a2 * (safeT / 2)) / Math.max(1e-6, a1 + a2);
+    const cyMax = Math.max(safeT, yBar, legLongIn - yBar);
+    const cxMax = Math.max(safeT, legShortIn);
+    return { sxIn3: ixIn4 / cyMax, syIn3: iyIn4 / cxMax };
+  }
+  if (crossSectionType === 'DoubleSBB') {
+    const a1 = legShortIn * safeT;
+    const a2 = Math.max(0, legLongIn - safeT) * safeT;
+    const yBar = (a1 * (legShortIn / 2) + a2 * (safeT / 2)) / Math.max(1e-6, a1 + a2);
+    const cyMax = Math.max(safeT, yBar, legShortIn - yBar);
+    const cxMax = Math.max(safeT, legLongIn);
+    return { sxIn3: ixIn4 / cyMax, syIn3: iyIn4 / cxMax };
+  }
+  const a1 = legLongIn * safeT;
+  const a2 = Math.max(0, legShortIn - safeT) * safeT;
+  const denom = Math.max(1e-6, a1 + a2);
+  const yBar = (a1 * (legLongIn / 2) + a2 * (safeT / 2)) / denom;
+  const xBar = (a1 * (safeT / 2) + a2 * ((legShortIn + safeT) / 2)) / denom;
+  const cyMax = Math.max(safeT, yBar, legLongIn - yBar);
+  const cxMax = Math.max(safeT, xBar, legShortIn - xBar);
+  return { sxIn3: ixIn4 / cyMax, syIn3: iyIn4 / cxMax };
+}
+
 /**
  * Main ASCE 10-15 Structural Design Calculation Engine
  */
@@ -149,16 +190,30 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
   const fuKsi = safeNum(input.fuKsi, steelGrade.fuKsi, 30, 150);
   const eKsi = safeNum(input.modulusEKsi, 29000, 10000, 35000);
 
-  const sectionType = input.sectionType || 'equal_angle';
-  const legWidthIn = safeNum(input.legWidthIn, 8.0, 0.5, 24);
+  const selectedSection = input.sectionId ? findAsceAngleSection(input.sectionId) : undefined;
+  const defaultSectionType: AsceSectionType = selectedSection
+    ? selectedSection.legLongIn === selectedSection.legShortIn
+      ? 'equal_angle'
+      : 'unequal_angle'
+    : 'equal_angle';
+  const sectionType = input.sectionType || defaultSectionType;
+  const crossSectionType: AsceCrossSectionType =
+    input.crossSectionType || selectedSection?.crossSectionType || 'Single';
+  const isDoubleAngle =
+    input.isDoubleAngle !== undefined
+      ? Boolean(input.isDoubleAngle)
+      : selectedSection?.isDoubleAngle ?? crossSectionType !== 'Single';
+  const plyCount = isDoubleAngle ? 2 : 1;
+
+  const legWidthIn = safeNum(input.legWidthIn, selectedSection?.legLongIn ?? 8.0, 0.5, 24);
   const shortLegWidthIn = safeNum(
     input.shortLegWidthIn,
-    sectionType === 'unequal_angle' ? 1.25 : legWidthIn,
+    selectedSection?.legShortIn ?? (sectionType === 'unequal_angle' ? 1.25 : legWidthIn),
     0.5,
     24
   );
-  const thicknessIn = safeNum(input.thicknessIn, 0.5625, 0.0625, 3.0);
-  const filletRadiusIn = safeNum(input.filletRadiusIn, 0.625, 0, 2.0);
+  const thicknessIn = safeNum(input.thicknessIn, selectedSection?.thicknessIn ?? 0.5625, 0.0625, 4.0);
+  const filletRadiusIn = safeNum(input.filletRadiusIn, selectedSection?.filletRadiusIn ?? 0.625, 0, 2.5);
   const isColdFormed = Boolean(input.isColdFormed);
   const bendMult = safeNum(input.bendRadiusMultiplier, 2.0, 0, 2.0); // Sec. 3.5 max inside bend radius = 2t
 
@@ -167,12 +222,12 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
     ? Math.max(0.1, legWidthIn - thicknessIn * (1 + bendMult))
     : Math.max(0.1, legWidthIn - thicknessIn - filletRadiusIn);
 
-  const defaultArea = (legWidthIn + shortLegWidthIn - thicknessIn) * thicknessIn;
-  const grossAreaIn2 = safeNum(input.grossAreaIn2, defaultArea, 0.05, 100);
-  const rzIn = safeNum(input.rzIn, Math.max(0.1, 0.198 * legWidthIn), 0.05, 15);
-  const rxIn = safeNum(input.rxIn, Math.max(0.1, 0.31 * legWidthIn), 0.05, 15);
-  const ryIn = safeNum(input.ryIn, Math.max(0.1, 0.31 * shortLegWidthIn), 0.05, 15);
-  const ruIn = safeNum(input.ruIn, Math.max(0.1, 0.39 * legWidthIn), 0.05, 15);
+  const defaultArea = plyCount * (legWidthIn + shortLegWidthIn - thicknessIn) * thicknessIn;
+  const grossAreaIn2 = safeNum(input.grossAreaIn2, selectedSection?.areaIn2 ?? defaultArea, 0.05, 250);
+  const rzIn = safeNum(input.rzIn, selectedSection?.rzIn ?? Math.max(0.1, 0.198 * legWidthIn), 0.05, 15);
+  const rxIn = safeNum(input.rxIn, selectedSection?.rxIn ?? Math.max(0.1, 0.31 * legWidthIn), 0.05, 15);
+  const ryIn = safeNum(input.ryIn, selectedSection?.ryIn ?? Math.max(0.1, 0.31 * shortLegWidthIn), 0.05, 15);
+  const ruIn = safeNum(input.ruIn, selectedSection?.ruIn ?? Math.max(0.1, 0.39 * legWidthIn), 0.05, 15);
 
   const memberCategory: AsceMemberCategory = input.memberCategory || 'leg';
   const bracingCurve: AsceBracingCurveId = input.bracingCurve || 'curve_1_leg';
@@ -338,10 +393,13 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
   // Sec. 3.10.2: If unequal legs and short leg is connected, unconnected leg treated as same size as connected leg
   const baseTensionGrossAreaIn2 =
     tensionConnType === 'short_leg_unequal' && legWidthIn > shortLegWidthIn
-      ? Math.max(0.05, grossAreaIn2 - (legWidthIn - shortLegWidthIn) * thicknessIn)
+      ? Math.max(0.05, grossAreaIn2 - plyCount * (legWidthIn - shortLegWidthIn) * thicknessIn)
       : grossAreaIn2;
 
-  const netAreaLossIn2 = Math.max(0, (numHolesAcrossChain * effectiveHoleDiamIn - staggerAdditionIn) * thicknessIn);
+  const netAreaLossIn2 = Math.max(
+    0,
+    (numHolesAcrossChain * effectiveHoleDiamIn - staggerAdditionIn) * thicknessIn * plyCount
+  );
   const netAreaAnIn2 = Math.max(0.05, baseTensionGrossAreaIn2 - netAreaLossIn2);
 
   // Sec. 3.10.1 & 3.10.2: Concentric (both legs) Ft = Fy; Single-leg angle Ft = 0.90 Fy
@@ -357,8 +415,8 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
 
   const grossShearLenIn = endDistAIn + Math.max(0, numBoltsInLine - 1) * spacingBIn;
   const shearHolesDeducted = (Math.max(0, numBoltsInLine - 1) + 0.5) * effectiveHoleDiamIn;
-  const netShearAreaAvIn2 = Math.max(0.05, thicknessIn * Math.max(0.1, grossShearLenIn - shearHolesDeducted));
-  const netTensionAreaAtIn2 = Math.max(0.05, thicknessIn * Math.max(0.1, toeDistCIn - 0.5 * effectiveHoleDiamIn));
+  const netShearAreaAvIn2 = Math.max(0.05, thicknessIn * plyCount * Math.max(0.1, grossShearLenIn - shearHolesDeducted));
+  const netTensionAreaAtIn2 = Math.max(0.05, thicknessIn * plyCount * Math.max(0.1, toeDistCIn - 0.5 * effectiveHoleDiamIn));
 
   const blockShearCapacityKip = 0.6 * netShearAreaAvIn2 * fuKsi + netTensionAreaAtIn2 * fyKsi;
 
@@ -508,7 +566,7 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
   // Bearing stress per Section 4.4 & Commentary C4.4: <= 1.5 * min(Fu_part, Fu_bolt)
   const governingFuForBearingKsi = Math.min(fuKsi, boltFuKsi);
   const allowableBearingStressKsi = 1.5 * governingFuForBearingKsi;
-  const singleBoltBearingCapacityKip = boltDiameterIn * thicknessIn * allowableBearingStressKsi;
+  const singleBoltBearingCapacityKip = boltDiameterIn * (thicknessIn * plyCount) * allowableBearingStressKsi;
   const totalBearingCapacityKip = numConnectionBolts * singleBoltBearingCapacityKip;
 
   const governingConnectionCapacityKip = Math.min(totalBoltShearCapacityKip, totalBearingCapacityKip);
@@ -761,7 +819,74 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
     ]
   });
 
+  const izIn4 = grossAreaIn2 * rzIn * rzIn;
+  const iuIn4 = grossAreaIn2 * ruIn * ruIn;
+  const { sxIn3, syIn3 } = computeAngleElasticModuli(
+    legWidthIn,
+    shortLegWidthIn,
+    thicknessIn,
+    ixIn4,
+    iyIn4,
+    crossSectionType
+  );
+  const unitWeightPlf = safeNum(
+    input.unitWeightPlf,
+    selectedSection?.unitWeightPlf ?? grossAreaIn2 * 3.4028,
+    0.1,
+    1000
+  );
+  const unitWeightNm = selectedSection?.unitWeightNm ?? unitWeightPlf / 0.068521766;
+  const memberWeightLb = unitWeightPlf * (unbracedLengthIn / 12);
+
+  let maxStitchSpacingIn: number | null = null;
+  if (isDoubleAngle) {
+    const singleMatch = selectedSection?.angleSize
+      ? ASCE_ANGLE_SECTIONS.find(
+          (s) => !s.isDoubleAngle && s.angleSize === selectedSection.angleSize
+        )
+      : undefined;
+    const singleRzIn = singleMatch?.rzIn ?? Math.max(0.1, 0.198 * shortLegWidthIn);
+    maxStitchSpacingIn = Math.min(unbracedLengthIn, 0.75 * effectiveKLOverR * singleRzIn);
+  }
+
+  const sectionProperties: AsceSectionPropertiesSummary = {
+    sectionId: selectedSection?.id || input.sectionId || 'CUSTOM',
+    designation:
+      selectedSection?.designation ||
+      `L${legWidthIn}x${shortLegWidthIn}x${thicknessIn} (${crossSectionType})`,
+    angleType: selectedSection?.angleType || 'CUSTOM',
+    crossSectionType,
+    isDoubleAngle,
+    legLongIn: round(legWidthIn, 4),
+    legShortIn: round(shortLegWidthIn, 4),
+    thicknessIn: round(thicknessIn, 4),
+    filletRadiusIn: round(filletRadiusIn, 4),
+    legLongCm: selectedSection?.legLongCm ?? round(legWidthIn * 2.54, 2),
+    legShortCm: selectedSection?.legShortCm ?? round(shortLegWidthIn * 2.54, 2),
+    thicknessCm: selectedSection?.thicknessCm ?? round(thicknessIn * 2.54, 3),
+    grossAreaIn2: round(grossAreaIn2, 3),
+    grossAreaCm2: selectedSection?.grossAreaCm2 ?? round(grossAreaIn2 * 6.4516, 2),
+    rxIn: round(rxIn, 3),
+    ryIn: round(ryIn, 3),
+    rzIn: round(rzIn, 3),
+    ruIn: round(ruIn, 3),
+    ixIn4: round(ixIn4, 3),
+    iyIn4: round(iyIn4, 3),
+    izIn4: round(izIn4, 3),
+    iuIn4: round(iuIn4, 3),
+    sxIn3: round(sxIn3, 3),
+    syIn3: round(syIn3, 3),
+    wOverT: round(wOverT, 2),
+    unitWeightPlf: round(unitWeightPlf, 2),
+    unitWeightNm: round(unitWeightNm, 1),
+    memberWeightLb: round(memberWeightLb, 1),
+    windWidthIn: selectedSection?.windWidthIn ?? round(legWidthIn, 3),
+    shortEdgeDistIn: selectedSection?.shortEdgeDistIn ?? round(shortLegWidthIn, 3),
+    maxStitchSpacingIn: maxStitchSpacingIn !== null ? round(maxStitchSpacingIn, 2) : null
+  };
+
   return {
+    sectionProperties,
     compression: {
       flatWidthWIn: round(flatWidthWIn, 4),
       wOverT: round(wOverT, 2),

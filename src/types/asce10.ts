@@ -23,9 +23,17 @@ export interface AsceSteelGrade {
   fuMPa: number;
 }
 
+export type AsceAngleType = 'SAE' | 'SAU' | 'SAW' | 'DAE' | 'DAL' | 'DAS';
+export type AsceCrossSectionType = 'Single' | 'DoubleLBB' | 'DoubleSBB';
+
 export interface AsceAngleSection {
   id: string;
   designation: string;
+  rowNumber?: number;
+  angleType?: AsceAngleType;
+  angleSize?: string;
+  crossSectionType?: AsceCrossSectionType;
+  isDoubleAngle?: boolean;
   legLongIn: number;
   legShortIn: number;
   thicknessIn: number;
@@ -35,6 +43,21 @@ export interface AsceAngleSection {
   rxIn: number;
   ryIn: number;
   ruIn: number;
+  wOverTRatio?: number;
+  unitWeightNm?: number;
+  unitWeightPlf?: number;
+  legLongCm?: number;
+  legShortCm?: number;
+  thicknessCm?: number;
+  grossAreaCm2?: number;
+  rxCm?: number;
+  ryCm?: number;
+  rzCm?: number;
+  windWidthCm?: number;
+  windWidthIn?: number;
+  shortEdgeDistCm?: number;
+  shortEdgeDistIn?: number;
+  optimizeCostFactor?: number;
 }
 
 export interface AsceBoltSpec {
@@ -49,10 +72,14 @@ export interface AsceBoltSpec {
 export interface AsceDesignInput {
   // 1. Material & Section Geometry
   steelGradeId?: string;
+  sectionId?: string;
   fyKsi?: number;
   fuKsi?: number;
   modulusEKsi?: number;
   sectionType?: AsceSectionType;
+  crossSectionType?: AsceCrossSectionType;
+  isDoubleAngle?: boolean;
+  unitWeightPlf?: number;
   legWidthIn?: number;
   shortLegWidthIn?: number;
   thicknessIn?: number;
@@ -148,7 +175,42 @@ export interface AsceDesignInput {
   connectorFilletRIn?: number;
 }
 
+export interface AsceSectionPropertiesSummary {
+  sectionId: string;
+  designation: string;
+  angleType: AsceAngleType | 'CUSTOM';
+  crossSectionType: AsceCrossSectionType;
+  isDoubleAngle: boolean;
+  legLongIn: number;
+  legShortIn: number;
+  thicknessIn: number;
+  filletRadiusIn: number;
+  legLongCm: number;
+  legShortCm: number;
+  thicknessCm: number;
+  grossAreaIn2: number;
+  grossAreaCm2: number;
+  rxIn: number;
+  ryIn: number;
+  rzIn: number;
+  ruIn: number;
+  ixIn4: number;
+  iyIn4: number;
+  izIn4: number;
+  iuIn4: number;
+  sxIn3: number;
+  syIn3: number;
+  wOverT: number;
+  unitWeightPlf: number;
+  unitWeightNm: number;
+  memberWeightLb: number;
+  windWidthIn: number;
+  shortEdgeDistIn: number;
+  maxStitchSpacingIn: number | null;
+}
+
 export interface AsceDesignResult {
+  sectionProperties: AsceSectionPropertiesSummary;
   compression: {
     flatWidthWIn: number;
     wOverT: number;

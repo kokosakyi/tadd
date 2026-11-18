@@ -13,6 +13,7 @@ import {
 import {
   calculateAsce10Design,
   computeCompressiveStressFaKsi,
+  findAsceAngleSection,
   getAllAsceSteelGrades,
   getAllAsceAngleSections,
   getAllAsceBoltSpecs,
@@ -50,6 +51,16 @@ const CONTACT_CONDITIONS = [
   { id: 'recessed_090', label: 'Base Recessed / Partially Embedded in Concrete (mu = 0.90)' }
 ].sort((a, b) => a.label.localeCompare(b.label));
 
+const ANGLE_TYPE_FILTER_OPTIONS = [
+  { id: 'ALL', label: 'All Angle Types (427 Excel Sections)' },
+  { id: 'DAE', label: 'DAE — Double Angle Equal (DoubleLBB)' },
+  { id: 'DAL', label: 'DAL — Double Angle Unequal (DoubleLBB)' },
+  { id: 'DAS', label: 'DAS — Double Angle Unequal (DoubleSBB)' },
+  { id: 'SAE', label: 'SAE — Single Angle Equal' },
+  { id: 'SAU', label: 'SAU — Single Angle Unequal' },
+  { id: 'SAW', label: 'SAW — Single Angle Welded Equal' }
+].sort((a, b) => a.label.localeCompare(b.label));
+
 const SUB_TABS = [
   { id: 'compression', label: 'Compression & Buckling (Sec. 3.6–3.9)' },
   { id: 'tension', label: 'Tension & Block Shear (Sec. 3.10)' },
@@ -82,17 +93,22 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
 
   // Material & Section State
   const [steelGradeId, setSteelGradeId] = useState('A572_50');
-  const [sectionId, setSectionId] = useState('L8x8x9/16');
+  const [angleTypeFilter, setAngleTypeFilter] = useState('ALL');
+  const [sectionSearchQuery, setSectionSearchQuery] = useState('');
+  const [sectionId, setSectionId] = useState('SAE_8X8X0.5625');
   const [sectionType, setSectionType] = useState('equal_angle');
+  const [crossSectionType, setCrossSectionType] = useState('Single');
+  const [isDoubleAngle, setIsDoubleAngle] = useState(false);
+  const [unitWeightPlf, setUnitWeightPlf] = useState(29.599);
   const [legWidthIn, setLegWidthIn] = useState(8.0);
   const [shortLegWidthIn, setShortLegWidthIn] = useState(8.0);
   const [thicknessIn, setThicknessIn] = useState(0.5625);
   const [filletRadiusIn, setFilletRadiusIn] = useState(0.625);
   const [grossAreaIn2, setGrossAreaIn2] = useState(8.68);
   const [rzIn, setRzIn] = useState(1.59);
-  const [rxIn, setRxIn] = useState(2.49);
-  const [ryIn, setRyIn] = useState(2.49);
-  const [ruIn, setRuIn] = useState(3.15);
+  const [rxIn, setRxIn] = useState(2.5);
+  const [ryIn, setRyIn] = useState(2.5);
+  const [ruIn, setRuIn] = useState(3.153);
   const [isColdFormed, setIsColdFormed] = useState(false);
   const [bendRadiusMultiplier, setBendRadiusMultiplier] = useState(2.0);
   const [warpingConstantCwIn6, setWarpingConstantCwIn6] = useState(0.441);
@@ -172,9 +188,25 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
     [boltSpecs, boltSpecId]
   );
 
+  const filteredAngleSections = useMemo(() => {
+    const q = sectionSearchQuery.trim().toLowerCase();
+    const matches = angleSections.filter((sec) => {
+      if (angleTypeFilter !== 'ALL' && sec.angleType !== angleTypeFilter) return false;
+      if (q && !sec.designation.toLowerCase().includes(q) && !sec.angleSize?.toLowerCase().includes(q)) {
+        return false;
+      }
+      return true;
+    });
+    const active = angleSections.find((s) => s.id === sectionId);
+    if (active && !matches.some((s) => s.id === active.id)) {
+      return [active, ...matches].sort((a, b) => a.designation.localeCompare(b.designation));
+    }
+    return matches;
+  }, [angleSections, angleTypeFilter, sectionSearchQuery, sectionId]);
+
   const handleSelectSection = (nextSecId) => {
-    setSectionId(nextSecId);
-    const sec = angleSections.find((s) => s.id === nextSecId);
+    const sec = findAsceAngleSection(nextSecId) || angleSections.find((s) => s.id === nextSecId);
+    setSectionId(sec ? sec.id : nextSecId);
     if (sec) {
       setLegWidthIn(sec.legLongIn);
       setShortLegWidthIn(sec.legShortIn);
@@ -185,6 +217,10 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
       setRxIn(sec.rxIn);
       setRyIn(sec.ryIn);
       setRuIn(sec.ruIn);
+      setCrossSectionType(sec.crossSectionType || 'Single');
+      setIsDoubleAngle(Boolean(sec.isDoubleAngle));
+      setUnitWeightPlf(sec.unitWeightPlf ?? sec.areaIn2 * 3.4028);
+      setWebDepthHIn(sec.legLongIn);
       setSectionType(sec.legLongIn === sec.legShortIn ? 'equal_angle' : 'unequal_angle');
     }
   };
@@ -192,6 +228,8 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
   // One-Click Benchmark Presets from ASCE 10-15 Appendix B & Table C4-1
   const applyPreset = (presetId) => {
     setActivePresetId(presetId);
+    setAngleTypeFilter('ALL');
+    setSectionSearchQuery('');
     if (presetId === 'ex1_leg') {
       setSteelGradeId('A572_50');
       handleSelectSection('L8x8x9/16');
@@ -280,7 +318,11 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
   const result = useMemo(() => {
     return calculateAsce10Design({
       steelGradeId,
+      sectionId,
       sectionType,
+      crossSectionType,
+      isDoubleAngle,
+      unitWeightPlf,
       legWidthIn,
       shortLegWidthIn,
       thicknessIn,
@@ -351,7 +393,11 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
     });
   }, [
     steelGradeId,
+    sectionId,
     sectionType,
+    crossSectionType,
+    isDoubleAngle,
+    unitWeightPlf,
     legWidthIn,
     shortLegWidthIn,
     thicknessIn,
@@ -675,7 +721,46 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
 
           <div className="input-group" style={{ margin: 0 }}>
             <label className="input-label">
-              Angle Section Designation (<Latex math="A_g, r_z" />)
+              Angle Type Filter (Excel Catalog)
+            </label>
+            <select
+              aria-label="Angle Type Filter"
+              className="select-field"
+              value={angleTypeFilter}
+              onChange={(e) => {
+                const nextType = e.target.value;
+                setAngleTypeFilter(nextType);
+                if (nextType !== 'ALL') {
+                  const firstMatch = angleSections.find((s) => s.angleType === nextType);
+                  if (firstMatch) handleSelectSection(firstMatch.id);
+                }
+              }}
+            >
+              {ANGLE_TYPE_FILTER_OPTIONS.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="input-group" style={{ margin: 0 }}>
+            <label className="input-label">
+              Search Section Size (e.g. 6X6, 8X8, 1.75)
+            </label>
+            <input
+              type="text"
+              aria-label="Search Angle Section"
+              placeholder="Filter size (e.g. 6X6X0.5)..."
+              className="input-field"
+              value={sectionSearchQuery}
+              onChange={(e) => setSectionSearchQuery(e.target.value)}
+            />
+          </div>
+
+          <div className="input-group" style={{ margin: 0 }}>
+            <label className="input-label">
+              Angle Section Designation ({filteredAngleSections.length} matches — <Latex math="A_g, r_z" />)
             </label>
             <select
               aria-label="Angle Section Designation"
@@ -683,9 +768,9 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               value={sectionId}
               onChange={(e) => handleSelectSection(e.target.value)}
             >
-              {angleSections.map((sec) => (
+              {filteredAngleSections.map((sec) => (
                 <option key={sec.id} value={sec.id}>
-                  {sec.designation} (A={sec.areaIn2} in², rz={sec.rzIn} in.)
+                  {sec.designation} — A={sec.areaIn2} in², rz={sec.rzIn} in., {sec.unitWeightPlf} lb/ft
                 </option>
               ))}
             </select>
@@ -715,6 +800,129 @@ export default function AsceTowerDesignView({ onOpenCitation }) {
               value={appliedTensionKip}
               onChange={(e) => setAppliedTensionKip(Number(e.target.value))}
             />
+          </div>
+        </div>
+
+        {/* Dynamic Angle Section Geometry & Computed Properties Summary */}
+        <div className="glass-inset" style={{ padding: '14px 16px', marginBottom: '16px' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: '8px',
+              marginBottom: '10px'
+            }}
+          >
+            <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)' }}>
+              Selected Section Properties: <span style={{ color: 'var(--accent-primary)' }}>{result.sectionProperties.designation}</span>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '11px', fontWeight: 600 }}>
+              <span
+                style={{
+                  padding: '2px 8px',
+                  borderRadius: '999px',
+                  background: 'var(--bg-elevated)',
+                  border: '1px solid var(--border-subtle)',
+                  color: 'var(--text-secondary)'
+                }}
+              >
+                Config: {result.sectionProperties.crossSectionType}
+              </span>
+              {result.sectionProperties.isDoubleAngle && result.sectionProperties.maxStitchSpacingIn !== null && (
+                <span
+                  style={{
+                    padding: '2px 8px',
+                    borderRadius: '999px',
+                    background: 'var(--bg-elevated)',
+                    border: '1px solid var(--border-subtle)',
+                    color: 'var(--accent-warning)'
+                  }}
+                >
+                  Cl. 3.11 Max Stitch: {result.sectionProperties.maxStitchSpacingIn} in.
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))',
+              gap: '10px',
+              fontSize: '12px'
+            }}
+          >
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                Dimensions (<Latex math="b_L \times b_S \times t" />)
+              </div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.legLongIn}&Prime; &times; {result.sectionProperties.legShortIn}&Prime; &times; {result.sectionProperties.thicknessIn}&Prime;
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                {result.sectionProperties.legLongCm} &times; {result.sectionProperties.legShortCm} &times; {result.sectionProperties.thicknessCm} cm
+              </div>
+            </div>
+
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                Gross Area (<Latex math="A_g" />)
+              </div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.grossAreaIn2} in.&sup2;
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                {result.sectionProperties.grossAreaCm2} cm&sup2; | <Latex math="w/t" />={result.sectionProperties.wOverT}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>Unit &amp; Member Weight</div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.unitWeightPlf} lb/ft
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                {result.sectionProperties.unitWeightNm} N/m ({result.sectionProperties.memberWeightLb} lb @ {unbracedLengthIn}&Prime;)
+              </div>
+            </div>
+
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                Radii (<Latex math="r_x, r_y, r_z, r_u" />)
+              </div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.rxIn} / {result.sectionProperties.ryIn} / {result.sectionProperties.rzIn} in.
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                <Latex math="r_u" />={result.sectionProperties.ruIn}&Prime;, fillet={result.sectionProperties.filletRadiusIn}&Prime;
+              </div>
+            </div>
+
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                Moments of Inertia (<Latex math="I_x, I_y, I_z" />)
+              </div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.ixIn4} / {result.sectionProperties.iyIn4} / {result.sectionProperties.izIn4} in.&#8308;
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                <Latex math="I_u" />={result.sectionProperties.iuIn4} in.&#8308;
+              </div>
+            </div>
+
+            <div>
+              <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                Moduli &amp; Wind (<Latex math="S_x, S_y" />)
+              </div>
+              <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                {result.sectionProperties.sxIn3} / {result.sectionProperties.syIn3} in.&sup3;
+              </div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+                Wind={result.sectionProperties.windWidthIn}&Prime;, Edge={result.sectionProperties.shortEdgeDistIn}&Prime;
+              </div>
+            </div>
           </div>
         </div>
 
