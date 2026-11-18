@@ -18,9 +18,9 @@ import {
 
 describe('CSA Digitized Code Search & Filter Engine', () => {
   it('loads all clauses, tables, and definitions properly', () => {
-    assert.strictEqual(ALL_CLAUSES.length, 792, 'Should have exactly 792 clauses');
-    assert.strictEqual(ALL_TABLES.length, 83, 'Should have exactly 83 tables');
-    assert.strictEqual(ALL_DEFINITIONS.length, 183, 'Should have exactly 183 definitions');
+    assert.strictEqual(ALL_CLAUSES.length, 1058, 'Should have exactly 1058 clauses');
+    assert.strictEqual(ALL_TABLES.length, 88, 'Should have exactly 88 tables');
+    assert.strictEqual(ALL_DEFINITIONS.length, 199, 'Should have exactly 199 definitions');
   });
 
   describe('Clause Number and Citation Parsing', () => {
@@ -222,9 +222,20 @@ describe('CSA Digitized Code Search & Filter Engine', () => {
 
     it('returns all items when search query is empty', () => {
       const res = searchDigitizedCode('');
-      assert.strictEqual(res.clauses.length, 792);
-      assert.strictEqual(res.tables.length, 83);
-      assert.strictEqual(res.definitions.length, 183);
+      assert.strictEqual(res.clauses.length, 1058);
+      assert.strictEqual(res.tables.length, 88);
+      assert.strictEqual(res.definitions.length, 199);
+    });
+
+    it('matches ASCE 10-15 clauses and tables', () => {
+      const resCl = searchDigitizedCode('ASCE 10-15 Cl. 3.7.4.2');
+      assert.ok(resCl.clauses.length > 0, 'Should find ASCE 10-15 clause 3.7.4.2');
+      assert.strictEqual(resCl.clauses[0].clauseNumber, '3.7.4.2');
+      assert.strictEqual(resCl.clauses[0].standardId, 'asce_10_15');
+
+      const resTbl = searchDigitizedCode('ASCE 10-15 Table C4-1');
+      assert.ok(resTbl.tables.length > 0, 'Should find ASCE 10-15 Table C4-1');
+      assert.strictEqual(resTbl.tables[0].id, 'asce_10_15_tableC4_1');
     });
   });
 

@@ -18,6 +18,7 @@ import {
   TABLE_B1_META as O15_TABLE_B1_META,
   TABLE_C1_META as O15_TABLE_C1_META
 } from '../../data/csa/o15/index.js';
+import { ASCE_10_15_TABLES } from '../../data/asce/asce_10_15/index.js';
 
 import { TABLES_MAP } from '../../data/csa/digitized/index.js';
 import type { CsaTable } from '../../types/csaCode';
@@ -66,6 +67,16 @@ export function getTableDetails(tableId: string): TableDetailsResult | null {
       data = { meta: O15_TABLE_B1_META, rows: CSA_O15_POLE_CLASSES, type: 'classes' };
     } else if (key === 'tableC1') {
       data = { meta: O15_TABLE_C1_META, rows: CSA_O15_STUB_CLASSES, type: 'stubs' };
+    }
+  } else if (stdId === 'asce_10_15') {
+    const tablesAsce = ASCE_10_15_TABLES as Record<string, any>;
+    const mapped = tablesAsce[key] || tablesAsce[tblMeta.number];
+    if (mapped) {
+      data = {
+        meta: mapped.meta,
+        rows: mapped.rows,
+        type: Array.isArray(mapped.rows) ? 'array' : 'object'
+      };
     }
   }
 

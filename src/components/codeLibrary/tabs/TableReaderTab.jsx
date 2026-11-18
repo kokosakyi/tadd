@@ -19,7 +19,7 @@ export default function TableReaderTab({
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       
       {/* Table Selector Dropdown & Key Presets */}
-      <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '12px' }}>
+      <div className="glass-panel" style={{ padding: '1.35rem 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
           <Table size={18} color="var(--accent-cyan)" />
           <span style={{ fontSize: '0.88rem', fontWeight: 'bold', color: 'var(--text-main)' }}>
@@ -29,11 +29,8 @@ export default function TableReaderTab({
             value={selectedTableId}
             onChange={(e) => setSelectedTableId(e.target.value)}
             style={{
-              padding: '0.45rem 0.85rem',
-              borderRadius: '8px',
-              border: '1px solid var(--border-color)',
-              background: 'var(--bg-secondary)',
-              color: 'var(--text-main)',
+              width: 'auto',
+              padding: '0.5rem 0.9rem',
               fontSize: '0.85rem',
               flex: '1',
               minWidth: '280px',
@@ -90,13 +87,21 @@ export default function TableReaderTab({
             >
               O15 Table 3 (Wood Species)
             </button>
+            <button
+              type="button"
+              onClick={() => { setSelectedStandard('asce_10_15'); setSelectedTableId('asce_10_15_tableC4_1'); setSearchQuery(''); }}
+              className={selectedTableId === 'asce_10_15_tableC4_1' ? 'btn-primary' : 'btn-secondary'}
+              style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+            >
+              ASCE 10-15 Table C4-1 (Tower Bolts)
+            </button>
           </div>
         </div>
       </div>
 
       {/* Table Viewer Card */}
       {currentTable && (
-        <div className="glass-panel" style={{ padding: '1.5rem', borderRadius: '14px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           
           {/* Table Title & Metadata Header */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>

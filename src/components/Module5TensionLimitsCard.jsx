@@ -12,16 +12,16 @@ export default function Module5TensionLimitsCard({
   if (!module5Result) return null;
 
   return (
-    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
+    <div className="glass-panel" style={{ padding: '1.45rem 1.65rem' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M5</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div className="module-badge">M5</div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
-              Conductor Tension & Aeolian Vibration Engine (CSA C22.3 Cl. 8.7)
+            <h3 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 660, color: 'var(--text-main)' }}>
+              Conductor Tension &amp; Aeolian Vibration Engine (CSA C22.3 Cl. 8.7)
             </h3>
-            <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
               Establishes catenary limits (C = H/w) for aeolian vibration protection and sets RTS percentage safety limits.
             </p>
           </div>
@@ -32,9 +32,9 @@ export default function Module5TensionLimitsCard({
           {setHasDampers && (
             <button
               type="button"
-              className={`btn ${hasDampers ? 'btn-primary' : 'btn-secondary'}`}
+              className={hasDampers ? 'btn-primary' : 'btn-secondary'}
               onClick={() => setHasDampers(!hasDampers)}
-              style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '8px' }}
+              style={{ padding: '0.4rem 0.9rem', fontSize: '0.77rem' }}
             >
               {hasDampers ? 'Vibration Dampers Installed' : 'No Dampers Installed'}
             </button>
@@ -43,9 +43,9 @@ export default function Module5TensionLimitsCard({
           {setIsBundled && (
             <button
               type="button"
-              className={`btn ${isBundled ? 'btn-primary' : 'btn-secondary'}`}
+              className={isBundled ? 'btn-primary' : 'btn-secondary'}
               onClick={() => setIsBundled(!isBundled)}
-              style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', borderRadius: '8px' }}
+              style={{ padding: '0.4rem 0.9rem', fontSize: '0.77rem' }}
             >
               {isBundled ? 'Bundled Phase (2200m Base)' : 'Single Conductor (2000m Base)'}
             </button>
@@ -55,105 +55,66 @@ export default function Module5TensionLimitsCard({
 
       {/* Primary Stat Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
-        
         {/* Allowable Catenary Constant */}
-        <div style={{
-          background: 'var(--bg-inset)',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          border: '1px solid var(--border-color)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+        <div className="glass-inset" style={{ padding: '1.15rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
               Allowable Catenary Constant (C_max)
             </span>
             {module5Result.spanReductionApplied ? (
-              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(244, 63, 94, 0.15)', color: 'var(--status-violation)', fontWeight: 'bold' }}>
-                Table 33 Reduced (S ≤ {module5Result.rulingSpanM}m)
-              </span>
+              <span className="badge badge-fail">Table 33 Reduced (S ≤ {module5Result.rulingSpanM}m)</span>
             ) : (
-              <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(16, 185, 129, 0.15)', color: 'var(--status-pass)', fontWeight: 'bold' }}>
-                Full Base (S &gt; 400m)
-              </span>
+              <span className="badge badge-pass">Full Base (S &gt; 400m)</span>
             )}
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
-            {module5Result.maxCatenary.toFixed(0)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>m</span>
+          <div className="mono" style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+            {module5Result.maxCatenary.toFixed(0)} <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>m</span>
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+          <div className="mono" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Base Limit: {module5Result.baseCatenary} m | C = H / w
           </div>
         </div>
 
         {/* Aeolian Initial Tension Limit */}
-        <div style={{
-          background: 'var(--bg-inset)',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          border: '1px solid var(--border-color)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+        <div className="glass-inset" style={{ padding: '1.15rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
               Aeolian Initial Tension (H_vibe)
             </span>
-            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(56, 189, 248, 0.15)', color: 'var(--accent-cyan)', fontWeight: 'bold' }}>
-              w = {module5Result.conductorWeightNm} N/m
-            </span>
+            <span className="badge badge-info">w = {module5Result.conductorWeightNm} N/m</span>
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
-            {module5Result.aeolianTensionLimitKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>kN</span>
+          <div className="mono" style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+            {module5Result.aeolianTensionLimitKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>kN</span>
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+          <div className="mono" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             H_vibe = C_max ({module5Result.maxCatenary}m) × w ({module5Result.conductorWeightNm}N/m)
           </div>
         </div>
 
         {/* Peak Loaded Tension Limit */}
-        <div style={{
-          background: 'var(--bg-inset)',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          border: '1px solid var(--border-color)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+        <div className="glass-inset" style={{ padding: '1.15rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
               Peak Loaded Limit (60% RTS)
             </span>
-            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem', borderRadius: '4px', background: 'rgba(148, 163, 184, 0.15)', color: 'var(--text-muted)', fontWeight: 'bold' }}>
-              RTS = {module5Result.rtsKn} kN
-            </span>
+            <span className="badge badge-neutral">RTS = {module5Result.rtsKn} kN</span>
           </div>
-          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
-            {module5Result.maxLoadedTensionKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>kN</span>
+          <div className="mono" style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+            {module5Result.maxLoadedTensionKn.toFixed(2)} <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>kN</span>
           </div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Safety Factor ≥ 1.67 under governing wind/ice
           </div>
         </div>
-
       </div>
 
       {/* Cable Tension Criteria Table */}
-      <div style={{
-        background: 'var(--bg-inset)',
-        borderRadius: '12px',
-        padding: '1.15rem',
-        border: '1px solid var(--border-color)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-          <h4 style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600 }}>
+      <div className="glass-inset" style={{ padding: '1.15rem 1.25rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.8rem' }}>
+          <h4 style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text-main)', fontWeight: 650 }}>
             PLS-CADD Cable Tension Limits (Criteria &gt; Cable Tensions)
           </h4>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
             CSA C22.3 No. 1-15 Tables 33 &amp; 34
           </span>
         </div>
@@ -161,63 +122,63 @@ export default function Module5TensionLimitsCard({
         <div style={{ overflowX: 'auto' }}>
           <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem', textAlign: 'left' }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid var(--border-color)', color: 'var(--text-secondary)' }}>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Weather Case</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Cable Condition</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Max Tension (% RTS)</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Max Catenary Constant</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Governing Limit Function</th>
+              <tr>
+                <th>Weather Case</th>
+                <th>Cable Condition</th>
+                <th>Max Tension (% RTS)</th>
+                <th>Max Catenary Constant</th>
+                <th>Governing Limit Function</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600', color: 'var(--text-primary)' }}>C1: Heavy Ice + Wind</td>
-                <td style={{ padding: '0.5rem 0.75rem' }}>Initial FE</td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
+              <tr>
+                <td style={{ fontWeight: 650, color: 'var(--text-main)' }}>C1: Heavy Ice + Wind</td>
+                <td>Initial FE</td>
+                <td className="mono" style={{ fontWeight: 650 }}>
                   60.0% RTS ({module5Result.maxLoadedTensionKn.toFixed(1)} kN)
                 </td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-muted)' }}>—</td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>Governing Peak Ice Load</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600', color: 'var(--text-primary)' }}>C2: Red. Ice + Wind</td>
-                <td style={{ padding: '0.5rem 0.75rem' }}>Initial FE</td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
-                  60.0% RTS ({module5Result.maxLoadedTensionKn.toFixed(1)} kN)
-                </td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-muted)' }}>—</td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>Governing Wind-on-Ice</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600', color: 'var(--text-primary)' }}>Extreme Wind Case</td>
-                <td style={{ padding: '0.5rem 0.75rem' }}>Initial FE</td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
-                  60.0% RTS ({module5Result.maxLoadedTensionKn.toFixed(1)} kN)
-                </td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-muted)' }}>—</td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>Governing Extreme Wind Load</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600', color: 'var(--text-primary)' }}>Everyday Cold (Jan)</td>
-                <td style={{ padding: '0.5rem 0.75rem' }}>Initial FE</td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
-                  20.0% RTS ({module5Result.maxInitialUnloadedTensionKn.toFixed(1)} kN)
-                </td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
-                  {module5Result.maxCatenary.toFixed(0)} m ({module5Result.aeolianTensionLimitKn.toFixed(1)} kN)
-                </td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>Aeolian Vibration Limit (Initial)</td>
+                <td style={{ color: 'var(--text-muted)' }}>—</td>
+                <td style={{ color: 'var(--text-secondary)' }}>Governing Peak Ice Load</td>
               </tr>
               <tr>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: '600', color: 'var(--text-primary)' }}>Everyday Cold (Jan)</td>
-                <td style={{ padding: '0.5rem 0.75rem' }}>Creep FE</td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
-                  15.0% RTS ({module5Result.maxFinalUnloadedTensionKn.toFixed(1)} kN)
+                <td style={{ fontWeight: 650, color: 'var(--text-main)' }}>C2: Red. Ice + Wind</td>
+                <td>Initial FE</td>
+                <td className="mono" style={{ fontWeight: 650 }}>
+                  60.0% RTS ({module5Result.maxLoadedTensionKn.toFixed(1)} kN)
                 </td>
-                <td style={{ padding: '0.5rem 0.75rem', fontWeight: 'bold' }}>
+                <td style={{ color: 'var(--text-muted)' }}>—</td>
+                <td style={{ color: 'var(--text-secondary)' }}>Governing Wind-on-Ice</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 650, color: 'var(--text-main)' }}>Extreme Wind Case</td>
+                <td>Initial FE</td>
+                <td className="mono" style={{ fontWeight: 650 }}>
+                  60.0% RTS ({module5Result.maxLoadedTensionKn.toFixed(1)} kN)
+                </td>
+                <td style={{ color: 'var(--text-muted)' }}>—</td>
+                <td style={{ color: 'var(--text-secondary)' }}>Governing Extreme Wind Load</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 650, color: 'var(--text-main)' }}>Everyday Cold (Jan)</td>
+                <td>Initial FE</td>
+                <td className="mono" style={{ fontWeight: 650 }}>
+                  20.0% RTS ({module5Result.maxInitialUnloadedTensionKn.toFixed(1)} kN)
+                </td>
+                <td className="mono" style={{ fontWeight: 650 }}>
                   {module5Result.maxCatenary.toFixed(0)} m ({module5Result.aeolianTensionLimitKn.toFixed(1)} kN)
                 </td>
-                <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-secondary)' }}>Vibration &amp; Creep Limit (Final)</td>
+                <td style={{ color: 'var(--text-secondary)' }}>Aeolian Vibration Limit (Initial)</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 650, color: 'var(--text-main)' }}>Everyday Cold (Jan)</td>
+                <td>Creep FE</td>
+                <td className="mono" style={{ fontWeight: 650 }}>
+                  15.0% RTS ({module5Result.maxFinalUnloadedTensionKn.toFixed(1)} kN)
+                </td>
+                <td className="mono" style={{ fontWeight: 650 }}>
+                  {module5Result.maxCatenary.toFixed(0)} m ({module5Result.aeolianTensionLimitKn.toFixed(1)} kN)
+                </td>
+                <td style={{ color: 'var(--text-secondary)' }}>Vibration &amp; Creep Limit (Final)</td>
               </tr>
             </tbody>
           </table>
@@ -226,7 +187,7 @@ export default function Module5TensionLimitsCard({
 
       {/* Design Calculation Detail */}
       <details className="calc-detail">
-        <summary>Design Calculation — Tension & Catenary Limits</summary>
+        <summary>Design Calculation — Tension &amp; Catenary Limits</summary>
         <div className="calc-body">
           <div className="calc-step">
             <div className="calc-label">Base Catenary Constant (C_base)</div>
@@ -281,10 +242,10 @@ export default function Module5TensionLimitsCard({
 
       {/* Module Explanation */}
       <details className="module-explainer">
-        <summary>Module 5 — Engineering Basis & CSA Reference</summary>
+        <summary>Module 5 — Engineering Basis &amp; CSA Reference</summary>
         <div className="explainer-body">
           <p>
-            <strong>Module 5: Conductor Tension & Aeolian Vibration Engine</strong> sets tension limits to
+            <strong>Module 5: Conductor Tension &amp; Aeolian Vibration Engine</strong> sets tension limits to
             protect conductors against long-term fatigue failure caused by wind-induced aeolian vibration
             (vortex shedding between 3 to 150 Hz) while respecting structural load limits.
           </p>

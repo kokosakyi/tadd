@@ -12,53 +12,45 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
   ];
 
   return (
-    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
+    <div className="glass-panel" style={{ padding: '1.45rem 1.65rem' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M4</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div className="module-badge">M4</div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
+            <h3 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 660, color: 'var(--text-main)' }}>
               Deterministic Safety Guardrail (CSA C22.3 No. 1-15 Table 30)
             </h3>
-            <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
               Compares statistical reliability calculations against statutory legal minimum load floors.
             </p>
           </div>
         </div>
 
         {/* Active District Badge */}
-        <div style={{
-          padding: '0.35rem 0.75rem',
-          borderRadius: '8px',
-          background: 'var(--bg-inset)',
-          border: '1px solid var(--border-color)',
-          color: 'var(--text-main)',
-          fontWeight: 600,
-          fontSize: '0.8rem'
-        }}>
+        <span className="badge badge-neutral" style={{ padding: '0.35rem 0.85rem', fontSize: '0.78rem' }}>
           Active District: {module4Result.district || 'Heavy'} (Table 30 Floor)
-        </div>
+        </span>
       </div>
 
       {/* Governing Comparison Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
-        
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
         {/* Wind Pressure Governing Card */}
-        <div style={{
-          background: 'var(--bg-inset)',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          border: module4Result.windGovernedByLegal ? '1px solid rgba(244, 63, 94, 0.4)' : '1px solid var(--border-color)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+        <div
+          className="glass-inset"
+          style={{
+            padding: '1.15rem 1.25rem',
+            borderColor: module4Result.windGovernedByLegal ? 'rgba(251, 191, 36, 0.42)' : undefined,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.4rem'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
               Design Wind Pressure (q_final)
             </span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 600 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 650 }}>
               <span className={`status-dot ${module4Result.windGovernedByLegal ? 'marginal' : 'pass'}`} />
               <span style={{ color: module4Result.windGovernedByLegal ? 'var(--status-marginal)' : 'var(--status-pass)' }}>
                 {module4Result.windGovernedByLegal ? 'Legal Floor Governs' : 'Reliability Governs'}
@@ -66,37 +58,38 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
             </div>
           </div>
 
-          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
-            {module4Result.governed_q0.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>Pa</span>
+          <div className="mono" style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+            {module4Result.governed_q0.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>Pa</span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.28rem', fontSize: '0.76rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Module 3 Calculated (q₀):</span>
-              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.q0_extreme.toFixed(1)} Pa</span>
+              <span className="mono" style={{ color: 'var(--text-main)', fontWeight: 650 }}>{module4Result.q0_extreme.toFixed(1)} Pa</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Table 30 Minimum (q_min):</span>
-              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.minWindPa.toFixed(1)} Pa</span>
+              <span className="mono" style={{ color: 'var(--text-main)', fontWeight: 650 }}>{module4Result.minWindPa.toFixed(1)} Pa</span>
             </div>
           </div>
         </div>
 
         {/* Ice Thickness Governing Card */}
-        <div style={{
-          background: 'var(--bg-inset)',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          border: module4Result.iceGovernedByLegal ? '1px solid rgba(244, 63, 94, 0.4)' : '1px solid var(--border-color)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+        <div
+          className="glass-inset"
+          style={{
+            padding: '1.15rem 1.25rem',
+            borderColor: module4Result.iceGovernedByLegal ? 'rgba(251, 191, 36, 0.42)' : undefined,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.4rem'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
               Design Ice Thickness (t_final)
             </span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 600 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 650 }}>
               <span className={`status-dot ${module4Result.iceGovernedByLegal ? 'marginal' : 'pass'}`} />
               <span style={{ color: module4Result.iceGovernedByLegal ? 'var(--status-marginal)' : 'var(--status-pass)' }}>
                 {module4Result.iceGovernedByLegal ? 'Legal Floor Governs' : 'Reliability Governs'}
@@ -104,36 +97,30 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
             </div>
           </div>
 
-          <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums' }}>
-            {module4Result.governed_t_design.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>mm</span>
+          <div className="mono" style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+            {module4Result.governed_t_design.toFixed(1)} <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>mm</span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.28rem', fontSize: '0.76rem', color: 'var(--text-muted)', paddingTop: '0.45rem', borderTop: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Module 3 Calculated (t_design):</span>
-              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.t_design.toFixed(1)} mm</span>
+              <span className="mono" style={{ color: 'var(--text-main)', fontWeight: 650 }}>{module4Result.t_design.toFixed(1)} mm</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Table 30 Minimum (t_min):</span>
-              <span style={{ color: 'var(--text-main)', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>{module4Result.minIceMm.toFixed(1)} mm</span>
+              <span className="mono" style={{ color: 'var(--text-main)', fontWeight: 650 }}>{module4Result.minIceMm.toFixed(1)} mm</span>
             </div>
           </div>
         </div>
-
       </div>
 
       {/* CSA Table 30 Reference Table */}
-      <div style={{
-        background: 'var(--bg-inset)',
-        borderRadius: '12px',
-        padding: '1.15rem',
-        border: '1px solid var(--border-color)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-          <h4 style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600 }}>
+      <div className="glass-inset" style={{ padding: '1.15rem 1.25rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.8rem' }}>
+          <h4 style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text-main)', fontWeight: 650 }}>
             CSA C22.3 No. 1-15 Table 30 Loading Districts Floor Reference
           </h4>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
             Statutory Legal Base Floor
           </span>
         </div>
@@ -141,31 +128,31 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
         <div style={{ overflowX: 'auto' }}>
           <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem', textAlign: 'left' }}>
             <thead>
-              <tr style={{ color: 'var(--text-muted)' }}>
-                <th style={{ padding: '0.5rem 0.75rem' }}>District</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Min Radial Ice (t_min)</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Min Wind Pressure (q_min)</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Design Temperature</th>
-                <th style={{ padding: '0.5rem 0.75rem' }}>Geographic Description</th>
+              <tr>
+                <th>District</th>
+                <th>Min Radial Ice (t_min)</th>
+                <th>Min Wind Pressure (q_min)</th>
+                <th>Design Temperature</th>
+                <th>Geographic Description</th>
               </tr>
             </thead>
             <tbody>
-              {districts.map(d => {
+              {districts.map((d) => {
                 const isActive = (module4Result.district || 'Heavy').toLowerCase() === d.name.toLowerCase();
                 return (
                   <tr
                     key={d.name}
                     style={{
-                      background: isActive ? 'var(--bg-hover-row)' : 'transparent'
+                      background: isActive ? 'var(--bg-hover-row)' : undefined
                     }}
                   >
-                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: 600, color: isActive ? 'var(--accent-cyan)' : 'var(--text-main)' }}>
+                    <td style={{ fontWeight: 650, color: isActive ? 'var(--accent-cyan)' : 'var(--text-main)' }}>
                       {d.name} {isActive && '▸'}
                     </td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.ice}</td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.wind}</td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontVariantNumeric: 'tabular-nums' }}>{d.temp}</td>
-                    <td style={{ padding: '0.5rem 0.75rem', color: 'var(--text-muted)' }}>{d.desc}</td>
+                    <td className="mono">{d.ice}</td>
+                    <td className="mono">{d.wind}</td>
+                    <td className="mono">{d.temp}</td>
+                    <td style={{ color: 'var(--text-muted)' }}>{d.desc}</td>
                   </tr>
                 );
               })}
@@ -180,9 +167,7 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
         <div className="calc-body">
           <div className="calc-step">
             <div className="calc-label">Governing Wind Pressure (q_final)</div>
-            <div className="calc-formula">
-              q_final = max(q₀_calc, q_min)
-            </div>
+            <div className="calc-formula">q_final = max(q₀_calc, q_min)</div>
             <div className="calc-formula">
               q_final = max({module4Result.q0_extreme.toFixed(1)}, {module4Result.minWindPa.toFixed(1)}) = <span className="calc-result">{module4Result.governed_q0.toFixed(1)} Pa</span>
             </div>
@@ -192,9 +177,7 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
           </div>
           <div className="calc-step">
             <div className="calc-label">Governing Ice Thickness (t_final)</div>
-            <div className="calc-formula">
-              t_final = max(t_design, t_min)
-            </div>
+            <div className="calc-formula">t_final = max(t_design, t_min)</div>
             <div className="calc-formula">
               t_final = max({module4Result.t_design.toFixed(1)}, {module4Result.minIceMm.toFixed(1)}) = <span className="calc-result">{module4Result.governed_t_design.toFixed(1)} mm</span>
             </div>
@@ -207,7 +190,7 @@ export default function Module4GuardrailCard({ module4Result: propResult, govern
 
       {/* Module Explanation */}
       <details className="module-explainer">
-        <summary>Module 4 — Engineering Basis & CSA Reference</summary>
+        <summary>Module 4 — Engineering Basis &amp; CSA Reference</summary>
         <div className="explainer-body">
           <p>
             <strong>Module 4: Deterministic Safety Guardrail</strong> compares the statistical reliability-based

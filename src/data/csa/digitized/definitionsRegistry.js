@@ -90,6 +90,15 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_block_shear",
+    "term": "Block shear (ASCE 10-15)",
+    "definition": "A combination of shear and tensile failure through the end connection of a member caused by high bolt forces acting on the material; also called rupture.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_bonding",
     "term": "Bonding",
     "definition": "the electrical interconnecting of metallic parts or conductors in order to maintain them at the same potential and achieve a desired distribution of currents within a grounding system.",
@@ -167,7 +176,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_60826_3_1_12",
     "term": "Clause 3.1.12 Definition",
-    "definition": "load factor γ γ γ γ factor to be multiplied by limit loads in order to design line components",
+    "definition": "load factor \u03b3 \u03b3 \u03b3 \u03b3 factor to be multiplied by limit loads in order to design line components",
     "standardId": "c22_3_60826",
     "standardName": "CSA C22.3 No. 60826",
     "clauseNumber": "3.1.12",
@@ -237,7 +246,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_60826_3_1_19",
     "term": "Clause 3.1.19 Definition",
-    "definition": "strength factor ΦΦ ΦΦ factor applied to the characteristic strength of a component",
+    "definition": "strength factor \u03a6\u03a6 \u03a6\u03a6 factor applied to the characteristic strength of a component",
     "standardId": "c22_3_60826",
     "standardName": "CSA C22.3 No. 60826",
     "clauseNumber": "3.1.19",
@@ -457,7 +466,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_o15_compression_wood",
     "term": "Compression wood",
-    "definition": "abnormal wood usually formed on the lower side of branches and the concave side of leaning trees. Note: It is characterized by an unusually high proportion of apparent latewood in the annual rings, with a gradual transition from earlywood (springwood) to latewood (summerwood). It has a lifeless appearance and exhibits a darker colour when wetted. Compared to normal wood, compression wood shrinks excessively lengthwise. Crack —",
+    "definition": "abnormal wood usually formed on the lower side of branches and the concave side of leaning trees. Note: It is characterized by an unusually high proportion of apparent latewood in the annual rings, with a gradual transition from earlywood (springwood) to latewood (summerwood). It has a lifeless appearance and exhibits a darker colour when wetted. Compared to normal wood, compression wood shrinks excessively lengthwise. Crack \u2014",
     "standardId": "csa_o15",
     "standardName": "CSA O15",
     "clauseNumber": "3",
@@ -563,6 +572,24 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_deformed_bars",
+    "term": "Deformed bars (ASCE 10-15)",
+    "definition": "Steel bars meeting the requirements of ACI 318 (1983) for reinforcing bars.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_design_factored_load",
+    "term": "Design-factored load (ASCE 10-15)",
+    "definition": "Unfactored load multiplied by a specified load factor to establish the design load on a structure.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_deterministic_design",
     "term": "Deterministic design",
     "definition": "a line design in which the load, strength, and load factors are specified and not necessarily related to statistical data.",
@@ -581,12 +608,30 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_downthrust",
+    "term": "Downthrust (ASCE 10-15)",
+    "definition": "The downward vertical component of the loads on a foundation.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_effectively_grounded",
     "term": "Effectively grounded",
     "definition": "permanently connected to earth through a ground connection of sufficiently low impedance and having sufficient current-carrying capacity to prevent the buildup of voltages that can result in undue hazard to connected equipment or to persons.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_eor",
+    "term": "Engineer of record (EOR)",
+    "definition": "Prime design professional, engineering firm, or organization that is legally responsible for the tower design.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {
@@ -799,7 +844,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_o15_insect_damage",
     "term": "Insect damage",
-    "definition": "damage that is the result of boring in the wood by insects or insect larvae (limits as defined in Clause 4-4.6). that portion of a branch or limb that has been surrounded by a subsequent growth of wood of Knot — the trunk or other portion of the tree.",
+    "definition": "damage that is the result of boring in the wood by insects or insect larvae (limits as defined in Clause 4-4.6). that portion of a branch or limb that has been surrounded by a subsequent growth of wood of Knot \u2014 the trunk or other portion of the tree.",
     "standardId": "csa_o15",
     "standardName": "CSA O15",
     "clauseNumber": "3",
@@ -878,6 +923,15 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_leg_member",
+    "term": "Leg member (Post member)",
+    "definition": "A primary member that serves as the main corner support member of a structure; sometimes called a post member.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_lightning_protection_wire",
     "term": "Lightning protection wire",
     "definition": "a grounded overhead wire used for lightning protection. Note: Lightning protection wires are usually located at or near the top of the supporting structure.",
@@ -914,6 +968,15 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_line_security",
+    "term": "Line security (ASCE 10-15)",
+    "definition": "Criteria established to prevent a progressive (cascade) failure of structures.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_linear_analysis",
     "term": "Linear analysis",
     "definition": "a structural analysis method that does not consider P-delta (secondary moment) effects of structure displacements.",
@@ -925,7 +988,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_no1_live",
     "term": "Live",
-    "definition": "electrically connected to a source of potential difference or electrically charged to have a potential that is significantly different from that of the surrounding earth. Note: In this Standard, the term “live” is sometimes used in place of “current-carrying” or “energized”.",
+    "definition": "electrically connected to a source of potential difference or electrically charged to have a potential that is significantly different from that of the surrounding earth. Note: In this Standard, the term \u201clive\u201d is sometimes used in place of \u201ccurrent-carrying\u201d or \u201cenergized\u201d.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
@@ -947,6 +1010,15 @@ export const CSA_DEFINITIONS = [
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_load_factor",
+    "term": "Load factor (ASCE 10-15)",
+    "definition": "A multiplier used with the assumed loading condition, or unfactored load, to establish the design-factored load.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {
@@ -1105,7 +1177,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_no1_ordinary_high_water_mark__ohwm_",
     "term": "Ordinary high-water mark (OHWM)",
-    "definition": "the limit or edge of the bed of a body of water. Note: In the survey industry, the line of vegetation along a body of water is used to identify the OHWM. In the case of non-tidal waters, the OHWM is sometimes known as the “bank” or “limit of the bank”.",
+    "definition": "the limit or edge of the bed of a body of water. Note: In the survey industry, the line of vegetation along a body of water is used to identify the OHWM. In the case of non-tidal waters, the OHWM is sometimes known as the \u201cbank\u201d or \u201climit of the bank\u201d.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
@@ -1132,7 +1204,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_no1_p_delta_effect",
     "term": "P-delta effect",
-    "definition": "the additional bending moment applied to a vertical pole by a vertical load, P, multiplied by the horizontal deflection, delta (δ), at its point of application, as measured from the vertical axis of the pole.",
+    "definition": "the additional bending moment applied to a vertical pole by a vertical load, P, multiplied by the horizontal deflection, delta (\u03b4), at its point of application, as measured from the vertical axis of the pole.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
@@ -1166,6 +1238,15 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_primary_members",
+    "term": "Primary members (ASCE 10-15)",
+    "definition": "Tension or compression members that carry the loads on the structure to the foundation.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_proximity",
     "term": "Proximity",
     "definition": "the relative location of lines such that the failure of a conductor or any part of the structure (such as overturning at the ground line) interferes with the normal use, operation, or maintenance of public or private property, plant, or other facilities, through contact or encroachment on minimum clearance requirements by the conductor or structure.",
@@ -1195,7 +1276,7 @@ export const CSA_DEFINITIONS = [
   {
     "id": "def_no1_rated_ampacity",
     "term": "Rated ampacity",
-    "definition": "the current that results in a temperature rise in a bare conductor of 60 °C above an ambient of 40 °C and, for a covered conductor, a rise of 40 °C above an ambient of 40 °C, with the following parameters: a) a wind velocity of 0.61 m/s; b) an emissivity of 0.5; c) full sunshine; d) a solar absorption coefficient of 0.5; and e) an elevation at sea level.",
+    "definition": "the current that results in a temperature rise in a bare conductor of 60 \u00b0C above an ambient of 40 \u00b0C and, for a covered conductor, a rise of 40 \u00b0C above an ambient of 40 \u00b0C, with the following parameters: a) a wind velocity of 0.61 m/s; b) an emissivity of 0.5; c) full sunshine; d) a solar absorption coefficient of 0.5; and e) an elevation at sea level.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
@@ -1226,6 +1307,15 @@ export const CSA_DEFINITIONS = [
     "standardId": "csa_o15",
     "standardName": "CSA O15",
     "clauseNumber": "3",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_redundant_members",
+    "term": "Redundant members (ASCE 10-15)",
+    "definition": "Members that reduce the unbraced length of primary members by providing intermediate support.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {
@@ -1328,12 +1418,30 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_shear_friction",
+    "term": "Shear friction (ASCE 10-15)",
+    "definition": "For anchor bolts with the base assembly resting on concrete, shear is usually transferred from the base assembly to the concrete through bearing of the bolt at the surface forming a concrete wedge; translation of the wedge under the shear force cannot occur without an upward thrust of the wedge on the base assembly; this thrust induces a clamping force, and this mechanism is called shear friction.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_o15_short_crook",
     "term": "Short crook",
     "definition": "a localized deviation from straightness that, within any section 1.52 m (5 ft) or less in length, is more than one-half the mean diameter of the crooked section (see Figure 2).",
     "standardId": "csa_o15",
     "standardName": "CSA O15",
     "clauseNumber": "3",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_snug_tight",
+    "term": "Snug-tight (ASCE 10-15)",
+    "definition": "The tightness that exists when all plies in a joint are in firm contact. This tightness may be attained by a few impacts of an impact wrench or the full effort of a worker using an ordinary spud wrench. The connecting plies must be solidly seated against each other but not necessarily in continuous contact.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {
@@ -1535,12 +1643,30 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_tension_only_member",
+    "term": "Tension-only member (ASCE 10-15)",
+    "definition": "Member with L/r greater than 300, which is assumed to be unable to resist compression.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_termination",
     "term": "Termination",
     "definition": "the termination of wire or cable attachments on a structure. Note: Termination is usually accomplished by means of dead-end construction.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_test_engineer",
+    "term": "Test engineer (ASCE 10-15)",
+    "definition": "The individual who has charge over the physical testing of the prototype structure.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {
@@ -1562,12 +1688,30 @@ export const CSA_DEFINITIONS = [
     "type": "definition"
   },
   {
+    "id": "def_asce10_unfactored_load",
+    "term": "Unfactored load (ASCE 10-15)",
+    "definition": "Load on a structure caused by an assumed loading condition on the wires and/or the structure; the assumed loading condition is usually identified by a combination of wind and/or ice and a temperature condition.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
+    "type": "definition"
+  },
+  {
     "id": "def_no1_unloaded_sag__as_applied_to_a_conductor_",
     "term": "Unloaded sag (as applied to a conductor)",
     "definition": "the sag of a conductor in the absence of an external load and at a specified conductor temperature.",
     "standardId": "c22_3_no1",
     "standardName": "CSA C22.3 No. 1",
     "clauseNumber": "3.1",
+    "type": "definition"
+  },
+  {
+    "id": "def_asce10_uplift",
+    "term": "Uplift (ASCE 10-15)",
+    "definition": "The upward vertical component of the loads on a foundation.",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "clauseNumber": "1.3",
     "type": "definition"
   },
   {

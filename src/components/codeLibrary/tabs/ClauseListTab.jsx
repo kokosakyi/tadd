@@ -36,17 +36,16 @@ export default function ClauseListTab({
       
       {/* Cross-section matches notice */}
       {selectedSection !== 'all' && crossSectionClauseCount > 0 && (
-        <div style={{
+        <div className="glass-inset" style={{
           background: 'rgba(234, 179, 8, 0.1)',
-          border: '1px solid rgba(234, 179, 8, 0.3)',
-          padding: '0.65rem 0.85rem',
-          borderRadius: '8px',
+          border: '1px solid rgba(234, 179, 8, 0.35)',
+          padding: '0.7rem 1rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '0.75rem'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: '#fef08a' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--accent-amber)' }}>
             <Info size={16} style={{ flexShrink: 0 }} />
             <span>Found <strong>{crossSectionClauseCount}</strong> matching clause(s) in other chapters.</span>
           </div>
@@ -54,7 +53,7 @@ export default function ClauseListTab({
             type="button"
             onClick={onSearchAllChapters}
             className="btn-primary"
-            style={{ fontSize: '0.75rem', padding: '0.25rem 0.55rem', whiteSpace: 'nowrap' }}
+            style={{ fontSize: '0.75rem', padding: '0.28rem 0.7rem', whiteSpace: 'nowrap' }}
           >
             Search All Chapters
           </button>
@@ -99,7 +98,7 @@ export default function ClauseListTab({
       {/* Clause Cards List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {paginatedClauses.length === 0 ? (
-          <div className="glass-panel" style={{ padding: '2.5rem', textAlign: 'center', color: 'var(--text-muted)', borderRadius: '12px' }}>
+          <div className="glass-panel" style={{ padding: '2.5rem', textAlign: 'center', color: 'var(--text-muted)' }}>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-main)', marginBottom: '0.75rem' }}>
               No clauses matched your query and filters.
             </p>
@@ -127,11 +126,10 @@ export default function ClauseListTab({
                 className={`glass-panel animate-stagger-item${isHighlighted ? ' clause-target-pulse' : ''}`}
                 style={{
                   '--stagger-index': cIdx,
-                  padding: '1.25rem 1.5rem',
-                  borderRadius: '12px',
-                  border: isHighlighted ? '2px solid var(--accent-cyan)' : '1px solid var(--border-color)',
-                  boxShadow: isHighlighted ? '0 0 16px rgba(6, 182, 212, 0.25)' : 'none',
-                  transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
+                  padding: '1.35rem 1.55rem',
+                  borderColor: isHighlighted ? 'var(--accent-cyan)' : undefined,
+                  boxShadow: isHighlighted ? 'var(--shadow-glass-hover), 0 0 20px rgba(56, 189, 248, 0.28)' : undefined,
+                  transition: 'border-color 0.2s ease, box-shadow 0.25s ease'
                 }}
               >
                 {/* Clause Header Row */}

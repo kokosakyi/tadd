@@ -10,13 +10,15 @@
 import { CSA_C22_3_NO1_CLAUSES } from './clauses_c22_3_no1.js';
 import { CSA_C22_3_60826_CLAUSES } from './clauses_c22_3_60826.js';
 import { CSA_O15_CLAUSES } from './clauses_csa_o15.js';
+import { ASCE_10_15_CLAUSES } from './clauses_asce_10_15.js';
 import { CSA_ALL_TABLES, CSA_TABLES_MAP } from './tablesRegistry.js';
 import { CSA_DEFINITIONS } from './definitionsRegistry.js';
 
 export const ALL_CLAUSES = [
   ...CSA_C22_3_NO1_CLAUSES,
   ...CSA_C22_3_60826_CLAUSES,
-  ...CSA_O15_CLAUSES
+  ...CSA_O15_CLAUSES,
+  ...ASCE_10_15_CLAUSES
 ];
 
 export const ALL_TABLES = CSA_ALL_TABLES;
@@ -26,7 +28,7 @@ export const ALL_DEFINITIONS = CSA_DEFINITIONS;
 export const CSA_STANDARDS = [
   {
     id: 'all',
-    title: 'All CSA Standards (C22.3 No. 1, 60826, O15)',
+    title: 'All Standards (CSA C22.3 No. 1, 60826, O15 & ASCE 10-15)',
     clauseCount: ALL_CLAUSES.length,
     tableCount: ALL_TABLES.length
   },
@@ -56,6 +58,15 @@ export const CSA_STANDARDS = [
     clauseCount: CSA_O15_CLAUSES.length,
     tableCount: 5,
     status: 'Adopted'
+  },
+  {
+    id: 'asce_10_15',
+    code: 'ASCE 10-15',
+    edition: '2015',
+    title: 'Design of Latticed Steel Transmission Structures',
+    clauseCount: ASCE_10_15_CLAUSES.length,
+    tableCount: 5,
+    status: 'Adopted'
   }
 ];
 
@@ -68,6 +79,7 @@ import {
   CSA_O15_POLE_CLASSES,
   CSA_O15_STUB_CLASSES
 } from '../o15/index.js';
+import { ASCE_10_15_TABLES } from '../../asce/asce_10_15/index.js';
 
 // Pre-index table search text for comprehensive table searching
 const TABLE_SEARCH_CORPUS = new Map();
@@ -127,6 +139,11 @@ for (const t of CSA_ALL_TABLES) {
     } else if (t.key === 'tableC1') {
       parts.push(CSA_O15_STUB_CLASSES.map(s => `Stub ${s.stubClass} ${s.momentKnM}`).join(' '));
     }
+  } else if (t.standardId === 'asce_10_15') {
+    const data = ASCE_10_15_TABLES[t.key];
+    if (data && data.rows) {
+      parts.push(JSON.stringify(data.rows));
+    }
   }
 
   TABLE_SEARCH_CORPUS.set(t.id, parts.join(' ').toLowerCase());
@@ -180,6 +197,8 @@ function parseSearchQuery(query) {
     standardHint = 'c22_3_60826';
   } else if (/\bo15\b|csa[- ]o15|wood utility poles/i.test(lower)) {
     standardHint = 'csa_o15';
+  } else if (/\basce\b|\b10-15\b|latticed steel/i.test(lower)) {
+    standardHint = 'asce_10_15';
   }
 
   // Detect clause range: e.g. "Clauses 6.2-6.4", "Clauses 6.2 to 6.4", "Cl. 6.2-6.4"
@@ -189,27 +208,27 @@ function parseSearchQuery(query) {
     targetClauseRange = { start: rangeMatch[1], end: rangeMatch[2] };
   }
 
-  // Detect single clause reference: e.g. "Cl. 5.3.1.1", "Clause 5.3.1", "5.3.1.1", "A.5.2.7"
+  // Detect single clause reference: e.g. "Cl. 5.3.1.1", "Clause 5.3.1", "5.3.1.1", "A.5.2.7", "C3.7.4"
   let targetClause = null;
   if (!targetClauseRange) {
     const clauseMatch = lower.match(/(?:cl(?:ause|\.)?)\s*([a-z0-9\._-]+)/i);
     if (clauseMatch) {
       targetClause = clauseMatch[1].replace(/[-_]/g, '.').toLowerCase();
-    } else if (/^(?:annex\s+)?([a-z]\.[0-9]+(?:\.[0-9]+)*)$/i.test(lower)) {
-      const m = lower.match(/^(?:annex\s+)?([a-z]\.[0-9]+(?:\.[0-9]+)*)$/i);
+    } else if (/^(?:annex\s+|commentary\s+)?([a-z][0-9]*\.[0-9]+(?:\.[0-9]+)*)$/i.test(lower)) {
+      const m = lower.match(/^(?:annex\s+|commentary\s+)?([a-z][0-9]*\.[0-9]+(?:\.[0-9]+)*)$/i);
       targetClause = m[1].toLowerCase();
     } else if (/^[0-9]+(?:\.[0-9]+)*(?:[a-z])?$/i.test(lower)) {
       targetClause = lower;
     }
   }
 
-  // Detect table reference: e.g. "Table 2", "Table CA.1", "Table CA-1", "Table 31", "tbl 31"
+  // Detect table reference: e.g. "Table 2", "Table CA.1", "Table CA-1", "Table 31", "tbl 31", "Table C4-1"
   let targetTable = null;
   const tableMatch = lower.match(/(?:table|tbl|tab\.?)\s*([a-z0-9\._-]+)/i);
   if (tableMatch) {
-    targetTable = tableMatch[1].replace(/-/g, '.').toLowerCase();
+    targetTable = tableMatch[1].replace(/[-_]/g, '.').toLowerCase();
   } else if (/^table\s+([a-z0-9\._-]+)$/i.test(lower)) {
-    targetTable = lower.replace(/^table\s+/, '').replace(/-/g, '.');
+    targetTable = lower.replace(/^table\s+/, '').replace(/[-_]/g, '.');
   }
 
   // Clean tokens (strip punctuation, exclude standard name noise and common stop words if other tokens exist)
@@ -217,6 +236,8 @@ function parseSearchQuery(query) {
     .replace(/(?:can\/)?csa[- ]c22\.?3[- ]no\.?[- ]?1(?::\d+)?/gi, ' ')
     .replace(/(?:can\/)?csa[- ]c22\.?3[- ](?:no\.?[- ]?)?60826(?:-\d+)?/gi, ' ')
     .replace(/(?:can\/)?csa[- ]o15(?:-\d+)?/gi, ' ')
+    .replace(/(?:asce(?:\/sei)?[- ]?)?10[- ]15/gi, ' ')
+    .replace(/\basce(?:\/sei)?(?:\s*-\s*10)?\b/gi, ' ')
     .replace(/[,\(\)\[\]"';:]/g, ' ');
 
   const rawTokens = stripped

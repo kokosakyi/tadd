@@ -1,5 +1,10 @@
 import React from 'react';
 
+const LINE_HEIGHT_OPTIONS = [
+  { value: 'distribution', label: 'Distribution (Mean Height ~10m, Kh=1.00)' },
+  { value: 'transmission', label: 'Transmission (Mean Height ~30m, Kh=1.15)' }
+].sort((a, b) => a.label.localeCompare(b.label));
+
 export default function Module1GeoDBForm({
   provinces,
   selectedProvince,
@@ -11,7 +16,6 @@ export default function Module1GeoDBForm({
   geoData,
   returnPeriod,
   setReturnPeriod,
-  returnPeriodFactors,
   district,
   setDistrict,
   deterministicMinimums,
@@ -19,28 +23,26 @@ export default function Module1GeoDBForm({
   setRulingSpan,
   conductorDiameter,
   setConductorDiameter,
-  hasDampers,
-  setHasDampers,
   isTransmission,
   setIsTransmission,
   rtsKn,
   setRtsKn,
   conductorWeightNm,
-  setConductorWeightNm,
-  isBundled,
-  setIsBundled
+  setConductorWeightNm
 }) {
   const activeStation = stationData || (geoData?.location ? geoData : null);
+  const sortedProvinces = [...provinces].sort((a, b) => a.localeCompare(b));
+  const sortedDistricts = Object.keys(deterministicMinimums).sort((a, b) => a.localeCompare(b));
 
   return (
-    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-        <div className="badge badge-info" style={{ fontWeight: 700, padding: '0.2rem 0.55rem', borderRadius: '6px' }}>M1</div>
+    <div className="glass-panel" style={{ padding: '1.45rem 1.65rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.35rem' }}>
+        <div className="module-badge">M1</div>
         <div>
-          <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-main)' }}>
+          <h3 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 660, color: 'var(--text-main)' }}>
             Geoclimatic Data Vault (CSA 60826 CA.1)
           </h3>
-          <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+          <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
             Select project location to retrieve 50-year baseline weather variables and snowpack thresholds.
           </p>
         </div>
@@ -49,169 +51,178 @@ export default function Module1GeoDBForm({
       <div className="form-grid">
         {/* Province Selector */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Province / Territory</label>
+          <label>Province / Territory</label>
           <select
-            className="form-select"
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
           >
-            {provinces.map(prov => (
-              <option key={prov} value={prov}>{prov}</option>
+            {sortedProvinces.map((prov) => (
+              <option key={prov} value={prov}>
+                {prov}
+              </option>
             ))}
           </select>
         </div>
 
         {/* City Selector */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Weather Station Location</label>
+          <label>Weather Station Location</label>
           <select
-            className="form-select"
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
           >
             {[...citiesInProvince]
               .sort((a, b) => a.location.localeCompare(b.location))
-              .map(c => (
-                <option key={c.location} value={c.location}>{c.location}</option>
+              .map((c) => (
+                <option key={c.location} value={c.location}>
+                  {c.location}
+                </option>
               ))}
           </select>
         </div>
 
         {/* Return Period Selector (Module 2) */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Target Return Period (Years)</label>
+          <label>Target Return Period (Years)</label>
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <input
               type="number"
-              className="form-input"
+              className="mono"
               value={returnPeriod}
               onChange={(e) => setReturnPeriod(Number(e.target.value))}
               min="25"
               max="500"
               step="1"
-              style={{ flex: 1, fontVariantNumeric: 'tabular-nums' }}
+              style={{ flex: 1 }}
             />
             <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>years</span>
           </div>
-          <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <p style={{ margin: '0.3rem 0 0', fontSize: '0.73rem', color: 'var(--text-muted)' }}>
             Enter value between 25 and 500 to interpolate scaling factors.
           </p>
         </div>
 
         {/* Loading District (Module 4) */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Deterministic District (CSA Table 30)</label>
+          <label>Deterministic District (CSA Table 30)</label>
           <select
-            className="form-select"
             value={district}
             onChange={(e) => setDistrict(e.target.value)}
           >
-            {Object.keys(deterministicMinimums).map(dist => (
-              <option key={dist} value={dist}>{dist} District</option>
+            {sortedDistricts.map((dist) => (
+              <option key={dist} value={dist}>
+                {dist} District
+              </option>
             ))}
           </select>
         </div>
 
         {/* Line Height Classification (Module 3) */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Line Height Profile (CSA 60826)</label>
+          <label>Line Height Profile (CSA 60826)</label>
           <select
-            className="form-select"
             value={isTransmission ? 'transmission' : 'distribution'}
             onChange={(e) => setIsTransmission(e.target.value === 'transmission')}
           >
-            <option value="transmission">Transmission (Mean Height ~30m, Kh=1.15)</option>
-            <option value="distribution">Distribution (Mean Height ~10m, Kh=1.00)</option>
+            {LINE_HEIGHT_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
           </select>
         </div>
 
         {/* Conductor Outer Diameter */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Bare Conductor Diameter (mm)</label>
+          <label>Bare Conductor Diameter (mm)</label>
           <input
             type="number"
+            className="mono"
             step="0.01"
-            className="form-input"
             value={conductorDiameter}
             onChange={(e) => setConductorDiameter(Number(e.target.value))}
-            style={{ fontVariantNumeric: 'tabular-nums' }}
           />
         </div>
 
         {/* Conductor Rated Tensile Strength (RTS) */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Conductor RTS (kN)</label>
+          <label>Conductor RTS (kN)</label>
           <input
             type="number"
+            className="mono"
             step="0.1"
-            className="form-input"
             value={rtsKn}
             onChange={(e) => setRtsKn(Number(e.target.value))}
-            style={{ fontVariantNumeric: 'tabular-nums' }}
           />
         </div>
 
         {/* Conductor Unit Mass/Weight */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Conductor Unit Weight (N/m)</label>
+          <label>Conductor Unit Weight (N/m)</label>
           <input
             type="number"
+            className="mono"
             step="0.1"
-            className="form-input"
             value={conductorWeightNm}
             onChange={(e) => setConductorWeightNm(Number(e.target.value))}
-            style={{ fontVariantNumeric: 'tabular-nums' }}
           />
         </div>
 
         {/* Design Ruling Span */}
         <div className="form-group">
-          <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-main)' }}>Design Ruling Span (m)</label>
+          <label>Design Ruling Span (m)</label>
           <input
             type="number"
-            className="form-input"
+            className="mono"
             value={rulingSpan}
             onChange={(e) => setRulingSpan(Number(e.target.value))}
-            style={{ fontVariantNumeric: 'tabular-nums' }}
           />
         </div>
       </div>
 
       {/* Baseline Summary Card for Selected City */}
       {activeStation && (
-        <div style={{
-          marginTop: '1.25rem',
-          padding: '1.15rem',
-          borderRadius: '12px',
-          background: 'var(--bg-inset)',
-          border: '1px solid var(--border-color)'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <span style={{ fontWeight: 600, color: 'var(--accent-cyan)', fontSize: '0.85rem' }}>
+        <div
+          className="glass-inset"
+          style={{
+            marginTop: '1.35rem',
+            padding: '1.15rem 1.25rem'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <span style={{ fontWeight: 650, color: 'var(--accent-cyan)', fontSize: '0.86rem' }}>
               📍 Geoclimatic Baseline Parameters — {activeStation.location} ({activeStation.province || selectedProvince})
             </span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+            <span className="mono" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
               {activeStation.latitude ? `Lat: ${activeStation.latitude}°N | Long: ${activeStation.longitude}°W | ` : ''}Elev: {activeStation.elevation}m
             </span>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-            gap: '0.75rem',
-            textAlign: 'center'
-          }}>
-            <div className="stat-card" style={{ background: 'var(--bg-card)', borderRadius: '10px', padding: '0.75rem', border: '1px solid var(--border-color)' }}>
-              <span className="stat-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Min January Temp (T_jan)</span>
-              <span className="stat-value" style={{ color: '#60a5fa', fontWeight: 700, fontSize: '1.25rem', fontVariantNumeric: 'tabular-nums', display: 'block', marginTop: '0.2rem' }}>{activeStation.min_temp} °C</span>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: '0.75rem',
+              textAlign: 'center'
+            }}
+          >
+            <div className="glass-panel" style={{ borderRadius: '16px', padding: '0.85rem' }}>
+              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 550 }}>Min January Temp (T_jan)</span>
+              <span className="mono" style={{ color: 'var(--accent-cyan)', fontWeight: 700, fontSize: '1.3rem', display: 'block', marginTop: '0.22rem' }}>
+                {activeStation.min_temp} °C
+              </span>
             </div>
-            <div className="stat-card" style={{ background: 'var(--bg-card)', borderRadius: '10px', padding: '0.75rem', border: '1px solid var(--border-color)' }}>
-              <span className="stat-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>50-Yr Ref Wind (W50)</span>
-              <span className="stat-value" style={{ color: 'var(--status-pass)', fontWeight: 700, fontSize: '1.25rem', fontVariantNumeric: 'tabular-nums', display: 'block', marginTop: '0.2rem' }}>{activeStation.wind_50yr} km/h</span>
+            <div className="glass-panel" style={{ borderRadius: '16px', padding: '0.85rem' }}>
+              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 550 }}>50-Yr Ref Wind (W50)</span>
+              <span className="mono" style={{ color: 'var(--status-pass)', fontWeight: 700, fontSize: '1.3rem', display: 'block', marginTop: '0.22rem' }}>
+                {activeStation.wind_50yr} km/h
+              </span>
             </div>
-            <div className="stat-card" style={{ background: 'var(--bg-card)', borderRadius: '10px', padding: '0.75rem', border: '1px solid var(--border-color)' }}>
-              <span className="stat-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>50-Yr Ref Ice (t50)</span>
-              <span className="stat-value" style={{ color: '#c084fc', fontWeight: 700, fontSize: '1.25rem', fontVariantNumeric: 'tabular-nums', display: 'block', marginTop: '0.2rem' }}>{activeStation.ice_50yr} mm</span>
+            <div className="glass-panel" style={{ borderRadius: '16px', padding: '0.85rem' }}>
+              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 550 }}>50-Yr Ref Ice (t50)</span>
+              <span className="mono" style={{ color: 'var(--accent-purple)', fontWeight: 700, fontSize: '1.3rem', display: 'block', marginTop: '0.22rem' }}>
+                {activeStation.ice_50yr} mm
+              </span>
             </div>
           </div>
         </div>
@@ -219,7 +230,7 @@ export default function Module1GeoDBForm({
 
       {/* Module 1 Explanation */}
       <details className="module-explainer">
-        <summary>Module 1 — Engineering Basis & CSA Reference</summary>
+        <summary>Module 1 — Engineering Basis &amp; CSA Reference</summary>
         <div className="explainer-body">
           <p>
             <strong>Module 1: Geoclimatic Data Vault</strong> retrieves baseline climatological parameters from
@@ -228,7 +239,7 @@ export default function Module1GeoDBForm({
           <p>Baseline parameters retrieved for each weather station include:</p>
           <ul>
             <li><strong>Elevation (z)</strong> — Altitude above mean sea level in metres.</li>
-            <li><strong>Minimum January Temperature (T_jan)</strong> — 1% exclusion limit for January hourly temperatures. Only 1% of January hours statistically fall below this value. This maps directly to the "Everyday Cold" tension case wire temperature in PLS-CADD.</li>
+            <li><strong>Minimum January Temperature (T_jan)</strong> — 1% exclusion limit for January hourly temperatures. Only 1% of January hours statistically fall below this value. This maps directly to the &quot;Everyday Cold&quot; tension case wire temperature in PLS-CADD.</li>
             <li><strong>Reference Wind Speed (W50)</strong> — 10-minute average wind speed with a 50-year return period at 10 m height in open terrain.</li>
             <li><strong>Reference Ice Thickness (t50)</strong> — Equivalent radial glaze ice thickness (δ = 900 kg/m³) on a standard 25 mm cylinder at 10 m height with a 50-year return period, derived via the Chaîné accretion model.</li>
           </ul>

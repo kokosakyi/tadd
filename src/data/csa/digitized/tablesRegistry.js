@@ -16,7 +16,7 @@ export const CSA_ALL_TABLES = [
       "A.7.6.1"
     ],
     "notes": {
-      "formula": "Horizontal deviation = factor × conductor sag",
+      "formula": "Horizontal deviation = factor \u00d7 conductor sag",
       "diameterUnit": "mm (d = diameter of conductor)",
       "massUnit": "kg/m (w = mass per unit length)",
       "partiallyShelteredDefinition": "A partially sheltered span is one that is protected (from swinging transversely in the wind) by objects such as buildings whose height is greater than or equal to wire or conductor height and that are within an effective distance (e.g., 30 m) of the wire or conductor. Trees are not generally considered to provide shelter.",
@@ -126,20 +126,20 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 1",
     "edition": "2020",
     "number": "Table 3",
-    "title": "Minimum vertical design clearances above waterways*, ac and dc†",
+    "title": "Minimum vertical design clearances above waterways*, ac and dc\u2020",
     "unit": "m",
     "evaluatedAt": null,
     "explicitRefs": [],
     "notes": {
       "1": "Voltages are rms line-to-ground.",
-      "2": "The formula used to calculate minimum clearances is as follows: Minimum vertical clearance = reference vessel height + 1.0 m buffer + safe electrical clearance where 1.0 m buffer = allowance for variation in boat height above water (due to different loading conditions) and for wave action; safe electrical clearance = safety margin + air gap flashover distance based on switching surge = 0.78 m + (0.01 m/kV × max. kV in each column)",
+      "2": "The formula used to calculate minimum clearances is as follows: Minimum vertical clearance = reference vessel height + 1.0 m buffer + safe electrical clearance where 1.0 m buffer = allowance for variation in boat height above water (due to different loading conditions) and for wave action; safe electrical clearance = safety margin + air gap flashover distance based on switching surge = 0.78 m + (0.01 m/kV \u00d7 max. kV in each column)",
       "3": "Vertical design clearance is based on the clearance needed for the vessel height that a waterway can support. If a waterway cannot support the referenced vessel height, the vertical clearance requirement may be reduced in accordance with the appropriate requirement."
     },
     "footnotes": {
       "*": "The clearance over a canal, river, or stream normally used to provide access for sailboats to a larger body of water shall be the same as that required for the larger body of water.",
-      "†": "Clearances are applicable to both ac and dc circuits. For dc circuits, the clearance requirements shall be the same as those for ac circuits having the same crest voltage-to-ground.",
-      "‡": "Reference vessel height refers to the overall height of the vessel, including the heights of antennas or other attachments.",
-      "§": "In Canada, clearances are specified by the Transport Canada office responsible for the coastal regions, Great Lakes system, Red River–Lake Winnipeg system, Mackenzie River, and interior lakes of British Columbia. Where tide water has an effect on a body of water being crossed, the vertical design clearance shall be increased by an amount that takes into account peak tide."
+      "\u2020": "Clearances are applicable to both ac and dc circuits. For dc circuits, the clearance requirements shall be the same as those for ac circuits having the same crest voltage-to-ground.",
+      "\u2021": "Reference vessel height refers to the overall height of the vessel, including the heights of antennas or other attachments.",
+      "\u00a7": "In Canada, clearances are specified by the Transport Canada office responsible for the coastal regions, Great Lakes system, Red River\u2013Lake Winnipeg system, Mackenzie River, and interior lakes of British Columbia. Where tide water has an effect on a body of water being crossed, the vertical design clearance shall be increased by an amount that takes into account peak tide."
     },
     "referencingClauses": [
       {
@@ -174,9 +174,9 @@ export const CSA_ALL_TABLES = [
     },
     "footnotes": {
       "*": "For dc voltages below 0.75 kV, use Columns II and III of Table 2.",
-      "†": "See Clause 5.3.1.1(d).",
-      "‡": "Add 0.005 m/kV for each kV over 500 kV to clearances in Column IX.",
-      "§": "These areas are generally adjacent to fences and accessible to small vehicles but are not likely to be travelled by high road vehicles or high farm machinery.",
+      "\u2020": "See Clause 5.3.1.1(d).",
+      "\u2021": "Add 0.005 m/kV for each kV over 500 kV to clearances in Column IX.",
+      "\u00a7": "These areas are generally adjacent to fences and accessible to small vehicles but are not likely to be travelled by high road vehicles or high farm machinery.",
       "**": "See Clause 5.3.1.1(c)."
     },
     "referencingClauses": [
@@ -226,7 +226,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_3_2_1",
         "clauseNumber": "5.3.2.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.3.2.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.3.2.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -261,14 +261,14 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_4_2",
         "clauseNumber": "5.4.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_4_3",
         "clauseNumber": "5.4.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -297,35 +297,35 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_4_3",
         "clauseNumber": "5.4.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_2",
         "clauseNumber": "5.5.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_3",
         "clauseNumber": "5.5.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_4",
         "clauseNumber": "5.5.4",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.4",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.4",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_5",
         "clauseNumber": "5.5.5",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.5",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.5",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -375,14 +375,14 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_7_2_1",
         "clauseNumber": "5.7.2.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.7.2.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.7.2.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_7_2_2",
         "clauseNumber": "5.7.2.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.7.2.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.7.2.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -709,7 +709,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 1",
     "edition": "2020",
     "number": "Table 15",
-    "title": "Clearances between conductors supported by different structures but not crossing each other — Clearance increments to be added to horizontal displacement",
+    "title": "Clearances between conductors supported by different structures but not crossing each other \u2014 Clearance increments to be added to horizontal displacement",
     "unit": "mm",
     "evaluatedAt": null,
     "explicitRefs": [
@@ -824,21 +824,21 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_9_1_1",
         "clauseNumber": "5.9.1.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_9_1_2",
         "clauseNumber": "5.9.1.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_9_1_3",
         "clauseNumber": "5.9.1.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -992,9 +992,9 @@ export const CSA_ALL_TABLES = [
       "footnoteDagger": "For voltages exceeding 50 kV, clearances shall be based on best engineering practices, but shall be not less than the separations specified for 50 kV.",
       "footnoteDblDagger": "Add 10 mm/kV over 22 kV.",
       "footnoteSection": "Add 5 mm/kV over 22 kV.",
-      "footnoteDblStar": "This clearance may be reduced to 0 mm for conductors and cables 0–750 V, provided that the conductors are attached to the surface of the structure and grounded or covered by material of adequate insulating and mechanical properties.",
+      "footnoteDblStar": "This clearance may be reduced to 0 mm for conductors and cables 0\u2013750 V, provided that the conductors are attached to the surface of the structure and grounded or covered by material of adequate insulating and mechanical properties.",
       "footnoteDaggerDagger": "Where this clearance cannot be achieved, adequate insulation shall be applied to the supply conductor.",
-      "footnoteDoubleDblDagger": "This clearance shall be increased to 300 mm for voltages 0.75–8 kV for a span wire or span guy wire running parallel to the supply conductor.",
+      "footnoteDoubleDblDagger": "This clearance shall be increased to 300 mm for voltages 0.75\u20138 kV for a span wire or span guy wire running parallel to the supply conductor.",
       "footnoteDoubleSection": "The clearance shall be not less than the separations specified in Clause 5.9.1."
     },
     "footnotes": null,
@@ -1009,7 +1009,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_9_1",
         "clauseNumber": "5.9.1",
-        "title": "Horizontal separations or separations within 45° of the horizontal of",
+        "title": "Horizontal separations or separations within 45\u00b0 of the horizontal of",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -1060,7 +1060,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_10_1_1",
         "clauseNumber": "5.10.1.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.1.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.1.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -1074,21 +1074,21 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_10_1_7",
         "clauseNumber": "5.10.1.7",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.1.7",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.1.7",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_10_6_2",
         "clauseNumber": "5.10.6.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.6.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.6.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_5_10_1",
         "clauseNumber": "A.5.10.1",
-        "title": "Vertical separations at the structure — Normal level arrangement and",
+        "title": "Vertical separations at the structure \u2014 Normal level arrangement and",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -1140,14 +1140,14 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_10_3_2",
         "clauseNumber": "5.10.3.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.3.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.3.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_10_3_3",
         "clauseNumber": "5.10.3.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.3.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.3.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -1228,7 +1228,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_5_11_1",
         "clauseNumber": "5.11.1",
-        "title": "Guy attachments — Joint-use structures",
+        "title": "Guy attachments \u2014 Joint-use structures",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -1292,7 +1292,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_6_3_2_1",
         "clauseNumber": "6.3.2.1",
-        "title": "6 Minimum grades of construction — Clause 6.3.2.1",
+        "title": "6 Minimum grades of construction \u2014 Clause 6.3.2.1",
         "section": "6 Minimum grades of construction",
         "standardId": "c22_3_no1"
       },
@@ -1313,21 +1313,21 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -1397,21 +1397,21 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -1480,21 +1480,21 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -1530,8 +1530,8 @@ export const CSA_ALL_TABLES = [
       "footnoteStar": "When large conductors are used in locations where high winds are prevalent, the loading on bare conductors should be assessed, as high winds can produce a transverse loading in excess of the wind and ice combinations.",
       "footnoteDagger": "On small conductors, the ice effect is more significant than on large conductors, as it constitutes a greater percentage of the total mass.",
       "footnoteDblDagger": "See Clause 7.2 and Annex C for geographic loading area boundaries across Canada.",
-      "windVelocityEquivalents": "400 N/m² corresponds to ~25 m/s (~90 km/h) hourly steady-state wind; 300 N/m² corresponds to ~21 m/s (~76 km/h).",
-      "iceDensity": "Ice density is assumed to be 900 kg/m³ per Clause 7.3.1(a)."
+      "windVelocityEquivalents": "400 N/m\u00b2 corresponds to ~25 m/s (~90 km/h) hourly steady-state wind; 300 N/m\u00b2 corresponds to ~21 m/s (~76 km/h).",
+      "iceDensity": "Ice density is assumed to be 900 kg/m\u00b3 per Clause 7.3.1(a)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -1545,14 +1545,14 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_7_3_1",
         "clauseNumber": "7.3.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.3.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.3.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_3_5",
         "clauseNumber": "7.3.5",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.3.5",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.3.5",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -1566,7 +1566,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_7_6_2_1",
         "clauseNumber": "7.6.2.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.6.2.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.6.2.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -1617,15 +1617,15 @@ export const CSA_ALL_TABLES = [
     ],
     "notes": {
       "note1": "Non-linear analysis, including stability (buckling) check, is the method of analysis of structures specified in this Standard.",
-      "note2": "Default COV values for pole and structure materials are:\n  a) steel — ≤ 10%;\n  b) concrete — 10% < COV < 15%; and\n  c) wood — ≥ 15%.",
-      "note3": "The selection of appropriate minimum load factors for steel, concrete, fibre-reinforced composite, laminated wood, and wood poles is based on the coefficient of variation (COV), for the given pole material as verified by the pole manufacturer. The lowest minimum load factors (steel pole default) may be used for concrete, laminated wood, and FRP composite structures if manufacturers verify COV ≤ 10%. The next lowest (concrete pole default) may be used if 10% < COV < 15%. The highest (wood default) shall be used if manufacturer is unable to verify COV < 15%."
+      "note2": "Default COV values for pole and structure materials are:\n  a) steel \u2014 \u2264 10%;\n  b) concrete \u2014 10% < COV < 15%; and\n  c) wood \u2014 \u2265 15%.",
+      "note3": "The selection of appropriate minimum load factors for steel, concrete, fibre-reinforced composite, laminated wood, and wood poles is based on the coefficient of variation (COV), for the given pole material as verified by the pole manufacturer. The lowest minimum load factors (steel pole default) may be used for concrete, laminated wood, and FRP composite structures if manufacturers verify COV \u2264 10%. The next lowest (concrete pole default) may be used if 10% < COV < 15%. The highest (wood default) shall be used if manufacturer is unable to verify COV < 15%."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_no1_cl_7_4_2",
         "clauseNumber": "7.4.2",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.4.2",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.4.2",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -1660,28 +1660,28 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_no1_cl_8_1_3",
         "clauseNumber": "8.1.3",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.1.3",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.1.3",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_8_3_10_1",
         "clauseNumber": "8.3.10.1",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.3.10.1",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.3.10.1",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_8_3_12_2",
         "clauseNumber": "8.3.12.2",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.3.12.2",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.3.12.2",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_4_2",
         "clauseNumber": "A.7.4.2",
-        "title": "Annex A (informative) — Clause A.7.4.2",
+        "title": "Annex A (informative) \u2014 Clause A.7.4.2",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       }
@@ -1704,7 +1704,7 @@ export const CSA_ALL_TABLES = [
     ],
     "notes": {
       "note1": "Some national regulations and/or codes of practice, sometimes impose, directly or indirectly, design requirements that may restrict the choice offered to designers.",
-      "note2": "Other values of T in the range of 50–500 years, such as 100, 200 and 400 years, can be used if justified by local conditions.",
+      "note2": "Other values of T in the range of 50\u2013500 years, such as 100, 200 and 400 years, can be used if justified by local conditions.",
       "temporaryLines": "For temporary lines, some wooden poles or lines of limited importance, return periods of about 25 years may be appropriate."
     },
     "footnotes": null,
@@ -1755,7 +1755,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       }
@@ -1768,7 +1768,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 11",
-    "title": "Strength factor ΦN related to the number N of components or elements subjected to the critical load intensity",
+    "title": "Strength factor \u03a6N related to the number N of components or elements subjected to the critical load intensity",
     "unit": "",
     "explicitRefs": [
       "7.2.1",
@@ -1776,15 +1776,15 @@ export const CSA_ALL_TABLES = [
       "Table A.5"
     ],
     "notes": {
-      "note1": "Values of ΦN are based on a normal distribution function. Values within brackets (lognormal) are based on the log-normal distribution function.",
-      "note2": "In the case of high values of vR and N (shaded cells where both normal and log-normal values are given), the value of ΦN is very sensitive to the choice of the distribution function."
+      "note1": "Values of \u03a6N are based on a normal distribution function. Values within brackets (lognormal) are based on the log-normal distribution function.",
+      "note2": "In the case of high values of vR and N (shaded cells where both normal and log-normal values are given), the value of \u03a6N is very sensitive to the choice of the distribution function."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -1811,7 +1811,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 12",
-    "title": "Values of ΦS2",
+    "title": "Values of \u03a6S2",
     "unit": "",
     "explicitRefs": [
       "7.2.2",
@@ -1819,14 +1819,14 @@ export const CSA_ALL_TABLES = [
       "Table A.4"
     ],
     "notes": {
-      "note1": "In the above table, R2 is the component designed more reliable than R1 (with 90% confidence that R2 will not fail before R1). A factor ΦS1 = 1.0 is applied to the first component to fail (R1)."
+      "note1": "In the above table, R2 is the component designed more reliable than R1 (with 90% confidence that R2 will not fail before R1). A factor \u03a6S1 = 1.0 is applied to the first component to fail (R1)."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -1871,7 +1871,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       }
@@ -1967,7 +1967,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -2070,7 +2070,7 @@ export const CSA_ALL_TABLES = [
       "Table 18"
     ],
     "notes": {
-      "formula": "Rc = (10%)R = (1 – u × vR) × R_mean; if R is assumed normally distributed, u = 1.28, or given in Table 19 for log-normal distribution function."
+      "formula": "Rc = (10%)R = (1 \u2013 u \u00d7 vR) \u00d7 R_mean; if R is assumed normally distributed, u = 1.28, or given in Table 19 for log-normal distribution function."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -2090,15 +2090,15 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 2",
-    "title": "Default γT factors for adjustment of climatic loads in relation to return period T vs. 50 years",
+    "title": "Default \u03b3T factors for adjustment of climatic loads in relation to return period T vs. 50 years",
     "unit": "",
     "explicitRefs": [
       "5.2.1",
       "Table CA.2"
     ],
     "notes": {
-      "note1": "The above γ values are sufficiently accurate for a COV of up to 0.16 for wind speed, 0.30 for ice thickness and 0.65 for unit ice weight and are derived from the Gumbel distribution function.",
-      "canadianDeviationNote": "In Canada, Clause 5.2.1 adds Table CA.2 (which provides γTw and γTi for T = 25, 50, 100, 150, 200, 400, and 500 years). See tableCA2.js."
+      "note1": "The above \u03b3 values are sufficiently accurate for a COV of up to 0.16 for wind speed, 0.30 for ice thickness and 0.65 for unit ice weight and are derived from the Gumbel distribution function.",
+      "canadianDeviationNote": "In Canada, Clause 5.2.1 adds Table CA.2 (which provides \u03b3Tw and \u03b3Ti for T = 25, 50, 100, 150, 200, 400, and 500 years). See tableCA2.js."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -2118,14 +2118,14 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 20",
-    "title": "Value of quality factor ΦQ for lattice towers",
+    "title": "Value of quality factor \u03a6Q for lattice towers",
     "unit": "",
     "explicitRefs": [
       "7.3.3",
       "IEC 60652"
     ],
     "notes": {
-      "canadianSimplifiedPhiR": "Per Clause 7.3.3 (Canadian Deviation): The following default (simplified) values may be used for lattice steel towers in the majority of lines: (a) suspension towers: ΦR = 0.9 for intact loading cases and ΦR = 1.0 for failure loading cases; and (b) angle and dead-end towers: intact ΦR = 0.8 and failed system ΦR = 0.9, where ΦR = ΦN ΦS ΦQ ΦC."
+      "canadianSimplifiedPhiR": "Per Clause 7.3.3 (Canadian Deviation): The following default (simplified) values may be used for lattice steel towers in the majority of lines: (a) suspension towers: \u03a6R = 0.9 for intact loading cases and \u03a6R = 1.0 for failure loading cases; and (b) angle and dead-end towers: intact \u03a6R = 0.8 and failed system \u03a6R = 0.9, where \u03a6R = \u03a6N \u03a6S \u03a6Q \u03a6C."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -2242,7 +2242,7 @@ export const CSA_ALL_TABLES = [
       "Table A.8"
     ],
     "notes": {
-      "usage": "In Table 4, the roughness factor KR represents a multiplier of the reference wind speed for conversion from one terrain category to another (VR = KR × VRB).",
+      "usage": "In Table 4, the roughness factor KR represents a multiplier of the reference wind speed for conversion from one terrain category to another (VR = KR \u00d7 VRB).",
       "canadianDeviation": "Per Clause 6.2.2 (Canadian Deviation): Terrain type B is representative of the majority of lines and should lead to acceptable results in all areas except in flat coastal areas, where a terrain type A should be used."
     },
     "footnotes": null,
@@ -2284,7 +2284,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 5",
-    "title": "Correction factor τ of dynamic reference wind pressure q0 due to altitude and temperatures",
+    "title": "Correction factor \u03c4 of dynamic reference wind pressure q0 due to altitude and temperatures",
     "unit": "",
     "explicitRefs": [
       "6.2.5",
@@ -2292,7 +2292,7 @@ export const CSA_ALL_TABLES = [
       "Table CB.1"
     ],
     "notes": {
-      "note1": "The reference value (τ = 1.00) corresponds to 0 m altitude and a temperature of 15 °C (air density μ = 1.225 kg/m³ at 101.3 kPa).",
+      "note1": "The reference value (\u03c4 = 1.00) corresponds to 0 m altitude and a temperature of 15 \u00b0C (air density \u03bc = 1.225 kg/m\u00b3 at 101.3 kPa).",
       "canadianDeviation": "Per Clause 6.2.5 (Canadian Deviation): The air density correction factor shall be 1.04 for wind conditions without ice and 1.1 for combined ice and wind. These factors may also be used for mountainous regions because the reduced temperature compensates for the altitude."
     },
     "footnotes": null,
@@ -2336,8 +2336,8 @@ export const CSA_ALL_TABLES = [
       "Figure 12"
     ],
     "notes": {
-      "note1": "In this table, the uppercase letters A, B, C, D, E, F (phase conductors) and X, Y (ground wires) represent conductors and spans loaded with 0.7 gR, while the lowercase letters a, b, c, d, e, f, x, y represent conductors and spans loaded with 0.4 × 0.7 gR (= 0.28 gR). Factors 0.7 and 0.4 are suggested and other values can be used as substantiated by experience.",
-      "canadianDeviation": "Per Clauses 6.3.6.3.1A and 6.3.6.3.1B (Canadian Deviation): Non-uniform ice loading examples where the structure is subjected to 70% of the design ice weight on the left or right spans while the other spans are loaded with 28% (40% of 70%) of the same design ice weight are illustrated in Figure 12 and Table 6. The unbalanced ice loading cases shall be calculated under: (a) temperature of –5 °C; (b) no wind; and (c) conductor in the final condition (after creep)."
+      "note1": "In this table, the uppercase letters A, B, C, D, E, F (phase conductors) and X, Y (ground wires) represent conductors and spans loaded with 0.7 gR, while the lowercase letters a, b, c, d, e, f, x, y represent conductors and spans loaded with 0.4 \u00d7 0.7 gR (= 0.28 gR). Factors 0.7 and 0.4 are suggested and other values can be used as substantiated by experience.",
+      "canadianDeviation": "Per Clauses 6.3.6.3.1A and 6.3.6.3.1B (Canadian Deviation): Non-uniform ice loading examples where the structure is subjected to 70% of the design ice weight on the left or right spans while the other spans are loaded with 28% (40% of 70%) of the same design ice weight are illustrated in Figure 12 and Table 6. The unbalanced ice loading cases shall be calculated under: (a) temperature of \u20135 \u00b0C; (b) no wind; and (c) conductor in the final condition (after creep)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -2396,7 +2396,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_6_4_1",
         "clauseNumber": "6.4.1",
-        "title": "Combined probabilities – Principle proposed",
+        "title": "Combined probabilities \u2013 Principle proposed",
         "section": "6 Loadings",
         "standardId": "c22_3_60826"
       },
@@ -2654,7 +2654,7 @@ export const CSA_ALL_TABLES = [
       "A.5.8.1"
     ],
     "notes": {
-      "noStatisticalDataFallback": "If only the maximum value gmax of ice load during a certain number of years is available (no statistical data), the mean value g_mean should be taken as 0.45 gmax and standard deviation σg as 0.5 g_mean."
+      "noStatisticalDataFallback": "If only the maximum value gmax of ice load during a certain number of years is available (no statistical data), the mean value g_mean should be taken as 0.45 gmax and standard deviation \u03c3g as 0.5 g_mean."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -2697,7 +2697,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_6_4_1",
         "clauseNumber": "6.4.1",
-        "title": "Combined probabilities – Principle proposed",
+        "title": "Combined probabilities \u2013 Principle proposed",
         "section": "6 Loadings",
         "standardId": "c22_3_60826"
       },
@@ -2810,7 +2810,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -2824,7 +2824,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_A_1_3_2",
         "clauseNumber": "A.1.3.2",
-        "title": "Methods for calculating strength coordination factors ΦΦ ΦΦ S",
+        "title": "Methods for calculating strength coordination factors \u03a6\u03a6 \u03a6\u03a6 S",
         "section": "Annex A (Climatic Data)",
         "standardId": "c22_3_60826"
       }
@@ -2837,7 +2837,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table A.4",
-    "title": "Values of central safety factor α and strength coordination factor ΦS required to insure that component R2 will fail after component R1 with a 90% probability",
+    "title": "Values of central safety factor \u03b1 and strength coordination factor \u03a6S required to insure that component R2 will fail after component R1 with a 90% probability",
     "unit": "",
     "explicitRefs": [
       "7.2.2",
@@ -2845,14 +2845,14 @@ export const CSA_ALL_TABLES = [
       "Table 12"
     ],
     "notes": {
-      "formula": "ΦS = (10%)R1 / (10%)R2 = (1 - 1.28 vR1) / [α (1 - 1.28 vR2)], where α = R2_mean / R1_mean."
+      "formula": "\u03a6S = (10%)R1 / (10%)R2 = (1 - 1.28 vR1) / [\u03b1 (1 - 1.28 vR2)], where \u03b1 = R2_mean / R1_mean."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -2872,7 +2872,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table A.5",
-    "title": "Strength factor ΦN related to N components in series subjected to the critical load",
+    "title": "Strength factor \u03a6N related to N components in series subjected to the critical load",
     "unit": "",
     "explicitRefs": [
       "7.2.1",
@@ -2882,14 +2882,14 @@ export const CSA_ALL_TABLES = [
     ],
     "notes": {
       "note1": "Values in parentheses refer to log-normal distribution; primary values refer to normal (Gaussian) distribution.",
-      "note2": "The range of values where the difference in ΦN between normal and log-normal is more than 10% is shown in italic characters in the standard."
+      "note2": "The range of values where the difference in \u03a6N between normal and log-normal is more than 10% is shown in italic characters in the standard."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -2917,7 +2917,7 @@ export const CSA_ALL_TABLES = [
       "A.2.1"
     ],
     "notes": {
-      "formula": "Φc = (1 - 1.28 vR) / (1 - ue vR), where (10%)R = Φc × Rc and Rc = R_mean (1 - ue vR)."
+      "formula": "\u03a6c = (1 - 1.28 vR) / (1 - ue vR), where (10%)R = \u03a6c \u00d7 Rc and Rc = R_mean (1 - ue vR)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3004,7 +3004,7 @@ export const CSA_ALL_TABLES = [
       "Table A.7"
     ],
     "notes": {
-      "powerLawFormula": "Vz = VR × (z / 10)^α, where z is height above ground (m) and α is the power law exponent in Table A.8."
+      "powerLawFormula": "Vz = VR \u00d7 (z / 10)^\u03b1, where z is height above ground (m) and \u03b1 is the power law exponent in Table A.8."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3053,7 +3053,7 @@ export const CSA_ALL_TABLES = [
       "Table B.1"
     ],
     "notes": {
-      "note1": "In Table A.9 the ratio VR / mV (where mV is the mean of yearly maximum wind velocities) is given for typical coefficients of variation vv when the number of years of observations is very large (n -> ∞). In other cases, refer to Clause B.2 / Table B.1."
+      "note1": "In Table A.9 the ratio VR / mV (where mV is the mean of yearly maximum wind velocities) is given for typical coefficients of variation vv when the number of years of observations is very large (n -> \u221e). In other cases, refer to Clause B.2 / Table B.1."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3091,7 +3091,7 @@ export const CSA_ALL_TABLES = [
       "Table C.1"
     ],
     "notes": {
-      "formula": "x(T) / x_mean = 1 + [(-ln(-ln(1 - 1/T)) - C2) / C1] × vx, where C1 and C2 are Gumbel sample size parameters from Table C.1."
+      "formula": "x(T) / x_mean = 1 + [(-ln(-ln(1 - 1/T)) - C2) / C1] \u00d7 vx, where C1 and C2 are Gumbel sample size parameters from Table C.1."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3188,7 +3188,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.3",
-    "title": "Statistical parameters U_mean and σu of wind span variation",
+    "title": "Statistical parameters U_mean and \u03c3u of wind span variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -3227,7 +3227,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.4",
-    "title": "Statistical parameters U_mean and σu of weight span variation",
+    "title": "Statistical parameters U_mean and \u03c3u of weight span variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -3266,7 +3266,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.5",
-    "title": "Values of use factor coefficient γu as a function of U_mean and N for vR = 0.10",
+    "title": "Values of use factor coefficient \u03b3u as a function of U_mean and N for vR = 0.10",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -3274,7 +3274,7 @@ export const CSA_ALL_TABLES = [
       "Table B.6"
     ],
     "notes": {
-      "formula": "γu = (10%)min_N(R) / (10%)min_N(R/U). Obtained by Monte-Carlo simulation for vR = 0.10."
+      "formula": "\u03b3u = (10%)min_N(R) / (10%)min_N(R/U). Obtained by Monte-Carlo simulation for vR = 0.10."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3302,7 +3302,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_B_4_4",
         "clauseNumber": "B.4.4",
-        "title": "Generalized results for use factor coefficients γγ γγu",
+        "title": "Generalized results for use factor coefficients \u03b3\u03b3 \u03b3\u03b3u",
         "section": "Annex B (Soil & Foundations)",
         "standardId": "c22_3_60826"
       }
@@ -3315,7 +3315,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.6",
-    "title": "Use factor coefficient γu for different strength coefficients of variation",
+    "title": "Use factor coefficient \u03b3u for different strength coefficients of variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -3337,7 +3337,7 @@ export const CSA_ALL_TABLES = [
       {
         "clauseId": "c22_3_60826_cl_B_4_4",
         "clauseNumber": "B.4.4",
-        "title": "Generalized results for use factor coefficients γγ γγu",
+        "title": "Generalized results for use factor coefficients \u03b3\u03b3 \u03b3\u03b3u",
         "section": "Annex B (Soil & Foundations)",
         "standardId": "c22_3_60826"
       }
@@ -3359,7 +3359,7 @@ export const CSA_ALL_TABLES = [
       "Figure C.3"
     ],
     "notes": {
-      "asymptoticValues": "For n = ∞, C1 = π / sqrt(6) ≈ 1.28255 and C2 = γ_Euler ≈ 0.57722."
+      "asymptoticValues": "For n = \u221e, C1 = \u03c0 / sqrt(6) \u2248 1.28255 and C2 = \u03b3_Euler \u2248 0.57722."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3463,7 +3463,7 @@ export const CSA_ALL_TABLES = [
       "footnoteStar": "The following are lowest January hourly temperatures to a 1% exclusion level. (One per cent of January hourly temperatures are at or lower than these values.)",
       "footnoteDagger": "10 minute average speed, 50-year return period.",
       "footnoteDblDagger": "Ice thickness from freezing precipitation, 50-year return period.",
-      "footnoteSection": "Wet snow thickness on a 40 mm conductor, 50-year return period is provided for regions where data were available at the time this Standard was prepared. The recommended coincident temperature is –5 °C. The corresponding density of the accreted snow is 350 kg/m³."
+      "footnoteSection": "Wet snow thickness on a 40 mm conductor, 50-year return period is provided for regions where data were available at the time this Standard was prepared. The recommended coincident temperature is \u20135 \u00b0C. The corresponding density of the accreted snow is 350 kg/m\u00b3."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -3518,7 +3518,7 @@ export const CSA_ALL_TABLES = [
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table CA.2",
-    "title": "Factors γT to modify the 50-year return period weather variable to any other return period T",
+    "title": "Factors \u03b3T to modify the 50-year return period weather variable to any other return period T",
     "unit": "",
     "explicitRefs": [
       "5.2.1",
@@ -3527,7 +3527,7 @@ export const CSA_ALL_TABLES = [
       "Table 2"
     ],
     "notes": {
-      "note1": "γTw applies to wind speed and γTi applies to ice thickness.",
+      "note1": "\u03b3Tw applies to wind speed and \u03b3Ti applies to ice thickness.",
       "interpolationRule": "Per Clause 5.2.1 (Canadian Deviation): If return periods other than those given in Table CA.2 are used, the corresponding weather variables may be deduced by direct interpolation between the values specified in Table CA.2."
     },
     "footnotes": null,
@@ -3929,6 +3929,927 @@ export const CSA_ALL_TABLES = [
         "standardId": "csa_o15"
       }
     ]
+  },
+  {
+    "id": "asce_10_15_table3_4_1",
+    "key": "table3_4_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table 3.4-1",
+    "title": "Slenderness Ratios and Effective Length (KL/r) Formulas for Angle Members (Curves 1\u20136)",
+    "unit": "Dimensionless (L/r, KL/r)",
+    "evaluatedAt": "Transition point L/r = 120 separates connection eccentricity governance (L/r <= 120) from end rotational restraint governance (L/r > 120)",
+    "explicitRefs": [
+      "3.4",
+      "3.6",
+      "3.7.4",
+      "3.7.4.1",
+      "3.7.4.2",
+      "3.7.4.3",
+      "3.7.4.4",
+      "3.7.4.5",
+      "3.16",
+      "5.1.8",
+      "C3.4",
+      "C3.7.4"
+    ],
+    "notes": [
+      "Curve numbers (Curves 1 through 6) correspond to Fig. C3-2 and ASCE Manual of Practice No. 52 (1988).",
+      "A single-bolt connection at either the end of a member or a point of intermediate support provides no restraint against rotation (Section 3.7.4.5).",
+      "A multiple-bolt connection made only on a gusset plate without also being framed to the restraining member provides no rotational restraint (Section 3.7.4.5)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_3_0",
+        "clauseNumber": "3.0",
+        "title": "Design of Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_4",
+        "clauseNumber": "3.4",
+        "title": "Slenderness Ratios",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_6",
+        "clauseNumber": "3.6",
+        "title": "Design Compression",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7",
+        "clauseNumber": "3.7",
+        "title": "Compression Members: Angles",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4",
+        "clauseNumber": "3.7.4",
+        "title": "Effective Lengths",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_1",
+        "clauseNumber": "3.7.4.1",
+        "title": "Leg Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_2",
+        "clauseNumber": "3.7.4.2",
+        "title": "Other Compression Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_3",
+        "clauseNumber": "3.7.4.3",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_4",
+        "clauseNumber": "3.7.4.4",
+        "title": "Unsupported Length with Varying Forces",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_5",
+        "clauseNumber": "3.7.4.5",
+        "title": "Joint Restraint",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_16",
+        "clauseNumber": "3.16",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_8",
+        "clauseNumber": "5.1.8",
+        "title": "Tension-Only Members",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_0",
+        "clauseNumber": "C3.0",
+        "title": "Commentary: Design of Members",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_4",
+        "clauseNumber": "C3.4",
+        "title": "Commentary: Slenderness Ratios & Aeolian Vibration",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_6",
+        "clauseNumber": "C3.6",
+        "title": "Commentary: Design Compression (SSRC & Euler)",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7",
+        "clauseNumber": "C3.7",
+        "title": "Commentary: Compression Members: Angles",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4",
+        "clauseNumber": "C3.7.4",
+        "title": "Commentary: Effective Lengths & Partial Joint Restraint Evaluation",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4_4",
+        "clauseNumber": "C3.7.4.4",
+        "title": "Commentary: Unsupported Length with Varying Forces",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_0",
+        "clauseNumber": "B.0",
+        "title": "Appendix B: Design Examples Overview",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_1",
+        "clauseNumber": "B.1",
+        "title": "Example 1: Equal Leg Angle with Symmetrical Bracing",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_2",
+        "clauseNumber": "B.2",
+        "title": "Example 2: Effect of End Connections on Member Capacity",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_3",
+        "clauseNumber": "B.3",
+        "title": "Example 3: Concentric Loading, Two-Angle Member",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_4",
+        "clauseNumber": "B.4",
+        "title": "Example 4: K-Bracing, Two-Angle Member with Varying Forces",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_5",
+        "clauseNumber": "B.5",
+        "title": "Example 5: Effect of Subdivided Panels and End Connections",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_6",
+        "clauseNumber": "B.6",
+        "title": "Example 6: Concentric Loading, Two-Angle Member, Subdivided Panels",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_7",
+        "clauseNumber": "B.7",
+        "title": "Example 7: X-Brace Systems with No Intermediate Redundant Supports",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_8",
+        "clauseNumber": "B.8",
+        "title": "Example 8: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 1",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_9",
+        "clauseNumber": "B.9",
+        "title": "Example 9: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 2",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_10",
+        "clauseNumber": "B.10",
+        "title": "Example 10: Cold-Formed Angle",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_2",
+        "clauseNumber": "C.2",
+        "title": "Slenderness Ratios in Existing Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_10",
+        "clauseNumber": "C.10",
+        "title": "Bars Used as Tension Hangers in Cross Arms",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_12",
+        "clauseNumber": "C.12",
+        "title": "Original Compression Formulas Used in Older Tower Designs",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  {
+    "id": "asce_10_15_table7_2_1",
+    "key": "table7_2_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table 7.2-1",
+    "title": "Coefficient of Friction (\u03bc) Values and Foundation Anchorage Design Criteria (Fig. 7-2)",
+    "unit": "Dimensionless (\u03bc), ksi (MPa)",
+    "evaluatedAt": "Design-factored foundation uplift (T), downthrust (D), and horizontal shear (V) loads",
+    "explicitRefs": [
+      "7.1",
+      "7.2",
+      "7.2.1",
+      "7.2.2",
+      "7.2.3",
+      "7.2.4",
+      "7.2.4.1",
+      "7.2.4.2",
+      "7.2.4.3",
+      "7.3",
+      "7.4",
+      "7.4.1",
+      "7.4.2",
+      "7.4.3",
+      "7.5",
+      "7.5.1",
+      "7.5.2",
+      "7.5.2.1",
+      "7.6",
+      "7.6.1",
+      "7.6.2",
+      "C7.0",
+      "C7.5"
+    ],
+    "notes": [
+      "When shear lugs are attached to the base assembly to transfer shear to the concrete, anchor bolt area need not be checked by Eqs. (7.4-2) and (7.4-4).",
+      "A combination of shear lugs and shear friction is not allowed (Section 7.4.2).",
+      "Steel exposed to corrosion at or below the ground level shall have a minimum thickness of 3/16 in. (4.8 mm) (Section 7.3)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_3_10_4",
+        "clauseNumber": "3.10.4",
+        "title": "Threaded Rods and Anchor Bolts",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_0",
+        "clauseNumber": "7.0",
+        "title": "Structural Members and Connections Used in Foundations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_1",
+        "clauseNumber": "7.1",
+        "title": "Introduction",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2",
+        "clauseNumber": "7.2",
+        "title": "General Considerations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_1",
+        "clauseNumber": "7.2.1",
+        "title": "Steel Grillages",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_2",
+        "clauseNumber": "7.2.2",
+        "title": "Pressed Plates",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_3",
+        "clauseNumber": "7.2.3",
+        "title": "Stub Angles in Concrete Piers",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4",
+        "clauseNumber": "7.2.4",
+        "title": "Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_1",
+        "clauseNumber": "7.2.4.1",
+        "title": "Smooth Bars with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_2",
+        "clauseNumber": "7.2.4.2",
+        "title": "Deformed Bars with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_3",
+        "clauseNumber": "7.2.4.3",
+        "title": "Smooth or Deformed Bars with Base Assembly Not in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_3",
+        "clauseNumber": "7.3",
+        "title": "Deterioration Considerations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4",
+        "clauseNumber": "7.4",
+        "title": "Design of Stub Angles and Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_1",
+        "clauseNumber": "7.4.1",
+        "title": "Stub Angles in Concrete",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_2",
+        "clauseNumber": "7.4.2",
+        "title": "Anchor Bolts with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_3",
+        "clauseNumber": "7.4.3",
+        "title": "Anchor Bolts with Base Plates on Leveling Nuts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5",
+        "clauseNumber": "7.5",
+        "title": "Design Requirements for Concrete and Reinforcing Steel",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_1",
+        "clauseNumber": "7.5.1",
+        "title": "Stub Angles",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_2",
+        "clauseNumber": "7.5.2",
+        "title": "Smooth Bar Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_2_1",
+        "clauseNumber": "7.5.2.1",
+        "title": "Minimum Embedment for Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6",
+        "clauseNumber": "7.6",
+        "title": "Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6_1",
+        "clauseNumber": "7.6.1",
+        "title": "Stud Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6_2",
+        "clauseNumber": "7.6.2",
+        "title": "Angle Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_0",
+        "clauseNumber": "C7.0",
+        "title": "Commentary: Structural Members and Connections Used in Foundations",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_2_2",
+        "clauseNumber": "C7.2.2",
+        "title": "Commentary: Pressed Plates",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_3",
+        "clauseNumber": "C7.3",
+        "title": "Commentary: Deterioration Considerations",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_5",
+        "clauseNumber": "C7.5",
+        "title": "Commentary: Concrete Side Cover & Pier Reinforcing (ACI 349)",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6",
+        "clauseNumber": "C7.6",
+        "title": "Commentary: Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6_1",
+        "clauseNumber": "C7.6.1",
+        "title": "Commentary: Stud Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6_2",
+        "clauseNumber": "C7.6.2",
+        "title": "Commentary: Angle Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  {
+    "id": "asce_10_15_tableC2_1",
+    "key": "tableC2_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C2-1",
+    "title": "Potential Horizontal Plan Bracing and Diaphragm Locations (Fig. C2-1)",
+    "unit": "ft (m)",
+    "evaluatedAt": "Self-Supporting Latticed Steel Transmission Towers (For towers > 200 ft [61 m] or heavy dead-end towers, max diaphragm interval = 75 ft [23 m])",
+    "explicitRefs": [
+      "2.0",
+      "2.3",
+      "3.7.4.3",
+      "3.7.4.4",
+      "C2.0",
+      "C2.3",
+      "C3.7.4.4"
+    ],
+    "notes": [
+      "Horizontal bracing in the face of the tower, with an internal diaphragm, provides rigidity and distributes shear and torsional forces.",
+      "For structures taller than 200 ft (61 m) or heavy dead-end towers, horizontal bracing with a diaphragm is suggested at intervals not exceeding 75 ft (23 m)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_2_0",
+        "clauseNumber": "2.0",
+        "title": "Loading, Geometry, and Analysis",
+        "section": "2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_2_3",
+        "clauseNumber": "2.3",
+        "title": "Geometric Configurations",
+        "section": "2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_3",
+        "clauseNumber": "3.7.4.3",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_4",
+        "clauseNumber": "3.7.4.4",
+        "title": "Unsupported Length with Varying Forces",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C2_0",
+        "clauseNumber": "C2.0",
+        "title": "Commentary: Loading, Geometry, and Analysis",
+        "section": "Commentary \u2014 C2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C2_3",
+        "clauseNumber": "C2.3",
+        "title": "Commentary: Geometric Configurations & Diaphragm Spacing",
+        "section": "Commentary \u2014 C2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4_4",
+        "clauseNumber": "C3.7.4.4",
+        "title": "Commentary: Unsupported Length with Varying Forces",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  {
+    "id": "asce_10_15_tableC4_1",
+    "key": "tableC4_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C4-1",
+    "title": "A394 Type 0 Bolt Connecting A36 Steel \u2014 End, Rolled Edge, and Center-to-Center Distances",
+    "unit": "in., ksi, kip",
+    "evaluatedAt": "Bolt diameter d = 0.75 in., Single shear through threads (16.65 kip), Nut point-to-point c = 1.3 in., A36 Fu = 58.0 ksi, Bearing stress = 1.5 Fu = 87.0 ksi",
+    "explicitRefs": [
+      "4.0",
+      "4.1",
+      "4.3",
+      "4.3.1",
+      "4.3.2",
+      "4.4",
+      "4.5",
+      "4.5.1",
+      "4.5.2",
+      "4.5.3",
+      "5.1.4",
+      "C4.0",
+      "C4.1",
+      "C4.3.2",
+      "C4.4",
+      "C4.5.1",
+      "C4.5.2",
+      "C4.5.3",
+      "C.3",
+      "C.5"
+    ],
+    "notes": [
+      "Eq. (4.5-1): e = 1.2 P / (Fu t) \u2014 governs for member thicknesses up through 5/16 in. (6.9 mm).",
+      "Eq. (4.5-2): e = 1.3 d \u2014 governs for member thicknesses from 3/8 in. (9.5 mm) through 9/16 in. (14.3 mm), and for drilled holes at 7/8 in. and above.",
+      "Eq. (4.5-3): e = t + d / 2 \u2014 governs punched holes for thicknesses from 5/8 in. (15.9 mm) through 13/16 in. (20.6 mm). Does not apply if holes are drilled.",
+      "Eq. (4.5-5): s_min = 1.2 P / (Fu t) + 0.6 d \u2014 center-to-center hole spacing along line of transmitted force.",
+      "Suggested erection spacing = nut point-to-point dimension c + 3/8 in. (0.375 in.) = 1.3 + 0.375 = 1.67 in.",
+      "Eq. (4.5-6): f_min = 0.85 e_min for a rolled edge (add 1/16 in. [1.6 mm] per Eq. 4.5-7 for a sheared or mechanically guided flame-cut edge)."
+    ],
+    "footnotes": {
+      "a": "P limited by single shear strength (through threads) of bolt (16.65 kip).",
+      "b": "t = 13/16 in. is the suggested maximum punching thickness (13/16-in. diameter hole in A36 steel). Distance shown for 7/8 in., 15/16 in., and 1 in. is for drilled holes."
+    },
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_4_0",
+        "clauseNumber": "4.0",
+        "title": "Design of Connections",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_1",
+        "clauseNumber": "4.1",
+        "title": "Introduction",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3",
+        "clauseNumber": "4.3",
+        "title": "Fasteners",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_1",
+        "clauseNumber": "4.3.1",
+        "title": "Materials",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_2",
+        "clauseNumber": "4.3.2",
+        "title": "Bolt Shear Capacity",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_4",
+        "clauseNumber": "4.4",
+        "title": "Design Bearing Stress",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5",
+        "clauseNumber": "4.5",
+        "title": "Minimum Distances",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_1",
+        "clauseNumber": "4.5.1",
+        "title": "End Distance",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_2",
+        "clauseNumber": "4.5.2",
+        "title": "Center-to-Center Bolt Hole Spacing",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_3",
+        "clauseNumber": "4.5.3",
+        "title": "Edge Distance",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_4",
+        "clauseNumber": "5.1.4",
+        "title": "Bolt Spacing",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_0",
+        "clauseNumber": "C4.0",
+        "title": "Commentary: Design of Connections",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_1",
+        "clauseNumber": "C4.1",
+        "title": "Commentary: Introduction (Tolerances & Nut Locking)",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_3",
+        "clauseNumber": "C4.3",
+        "title": "Commentary: Fasteners",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_3_2",
+        "clauseNumber": "C4.3.2",
+        "title": "Commentary: Bolt Shear Capacity",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_4",
+        "clauseNumber": "C4.4",
+        "title": "Commentary: Design Bearing Stress",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5",
+        "clauseNumber": "C4.5",
+        "title": "Commentary: Minimum Distances",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_1",
+        "clauseNumber": "C4.5.1",
+        "title": "Commentary: End Distance & Punching Thickness Guidelines",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_2",
+        "clauseNumber": "C4.5.2",
+        "title": "Commentary: Center-to-Center Bolt Hole Spacing",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_3",
+        "clauseNumber": "C4.5.3",
+        "title": "Commentary: Edge Distance",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_3",
+        "clauseNumber": "C.3",
+        "title": "Minimum Distances in Existing Connections",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_5",
+        "clauseNumber": "C.5",
+        "title": "Bearing Capacity of Bolts and Members",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  {
+    "id": "asce_10_15_tableC_11_1",
+    "key": "tableC_11_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C.11-1",
+    "title": "Current and Historical Structural Steel & Fastener Specifications in Transmission Towers (Sec. 3.2 & App. C.11)",
+    "unit": "ksi (MPa)",
+    "evaluatedAt": "Minimum guaranteed yield stress (Fy) and specified minimum tensile strength (Fu)",
+    "explicitRefs": [
+      "1.2",
+      "3.0",
+      "3.2",
+      "4.3",
+      "4.3.1",
+      "5.1.6",
+      "C3.0",
+      "C3.1",
+      "C3.2",
+      "C4.4",
+      "C.0",
+      "C.4",
+      "C.5",
+      "C.11"
+    ],
+    "notes": [
+      "Commentary C3.1 notes that ASCE 10-15 is suitable for steels with yield points up to 65 ksi (448 MPa).",
+      "Commentary C3.2 suggests a ratio of Fu / Fy >= 1.15 for steel used for members.",
+      "Per Appendix C.11, towers fabricated prior to 1960 in the U.S. likely used ASTM A7 steel; between 1960 and 1970 either A7 or A36; and after 1970 a minimum of A36 steel."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_1_2",
+        "clauseNumber": "1.2",
+        "title": "Applicable Documents",
+        "section": "1.0 General",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_0",
+        "clauseNumber": "3.0",
+        "title": "Design of Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_2",
+        "clauseNumber": "3.2",
+        "title": "Material",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3",
+        "clauseNumber": "4.3",
+        "title": "Fasteners",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_1",
+        "clauseNumber": "4.3.1",
+        "title": "Materials",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_6",
+        "clauseNumber": "5.1.6",
+        "title": "Material",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_0",
+        "clauseNumber": "C3.0",
+        "title": "Commentary: Design of Members",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_1",
+        "clauseNumber": "C3.1",
+        "title": "Commentary: Introduction & Scope Limits",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_2",
+        "clauseNumber": "C3.2",
+        "title": "Commentary: Material (Fu/Fy Ratio)",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_4",
+        "clauseNumber": "C4.4",
+        "title": "Commentary: Design Bearing Stress",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_0",
+        "clauseNumber": "C.0",
+        "title": "Appendix C: Guidelines for Existing Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_4",
+        "clauseNumber": "C.4",
+        "title": "Bolt Shear Capacity & Field Sampling (ASTM F606)",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_5",
+        "clauseNumber": "C.5",
+        "title": "Bearing Capacity of Bolts and Members",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_11",
+        "clauseNumber": "C.11",
+        "title": "ASTM and CSA Material Specifications Used in Older Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      }
+    ]
   }
 ];
 export const CSA_TABLES_MAP = {
@@ -3949,7 +4870,7 @@ export const CSA_TABLES_MAP = {
       "A.7.6.1"
     ],
     "notes": {
-      "formula": "Horizontal deviation = factor × conductor sag",
+      "formula": "Horizontal deviation = factor \u00d7 conductor sag",
       "diameterUnit": "mm (d = diameter of conductor)",
       "massUnit": "kg/m (w = mass per unit length)",
       "partiallyShelteredDefinition": "A partially sheltered span is one that is protected (from swinging transversely in the wind) by objects such as buildings whose height is greater than or equal to wire or conductor height and that are within an effective distance (e.g., 30 m) of the wire or conductor. Trees are not generally considered to provide shelter.",
@@ -4059,20 +4980,20 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 1",
     "edition": "2020",
     "number": "Table 3",
-    "title": "Minimum vertical design clearances above waterways*, ac and dc†",
+    "title": "Minimum vertical design clearances above waterways*, ac and dc\u2020",
     "unit": "m",
     "evaluatedAt": null,
     "explicitRefs": [],
     "notes": {
       "1": "Voltages are rms line-to-ground.",
-      "2": "The formula used to calculate minimum clearances is as follows: Minimum vertical clearance = reference vessel height + 1.0 m buffer + safe electrical clearance where 1.0 m buffer = allowance for variation in boat height above water (due to different loading conditions) and for wave action; safe electrical clearance = safety margin + air gap flashover distance based on switching surge = 0.78 m + (0.01 m/kV × max. kV in each column)",
+      "2": "The formula used to calculate minimum clearances is as follows: Minimum vertical clearance = reference vessel height + 1.0 m buffer + safe electrical clearance where 1.0 m buffer = allowance for variation in boat height above water (due to different loading conditions) and for wave action; safe electrical clearance = safety margin + air gap flashover distance based on switching surge = 0.78 m + (0.01 m/kV \u00d7 max. kV in each column)",
       "3": "Vertical design clearance is based on the clearance needed for the vessel height that a waterway can support. If a waterway cannot support the referenced vessel height, the vertical clearance requirement may be reduced in accordance with the appropriate requirement."
     },
     "footnotes": {
       "*": "The clearance over a canal, river, or stream normally used to provide access for sailboats to a larger body of water shall be the same as that required for the larger body of water.",
-      "†": "Clearances are applicable to both ac and dc circuits. For dc circuits, the clearance requirements shall be the same as those for ac circuits having the same crest voltage-to-ground.",
-      "‡": "Reference vessel height refers to the overall height of the vessel, including the heights of antennas or other attachments.",
-      "§": "In Canada, clearances are specified by the Transport Canada office responsible for the coastal regions, Great Lakes system, Red River–Lake Winnipeg system, Mackenzie River, and interior lakes of British Columbia. Where tide water has an effect on a body of water being crossed, the vertical design clearance shall be increased by an amount that takes into account peak tide."
+      "\u2020": "Clearances are applicable to both ac and dc circuits. For dc circuits, the clearance requirements shall be the same as those for ac circuits having the same crest voltage-to-ground.",
+      "\u2021": "Reference vessel height refers to the overall height of the vessel, including the heights of antennas or other attachments.",
+      "\u00a7": "In Canada, clearances are specified by the Transport Canada office responsible for the coastal regions, Great Lakes system, Red River\u2013Lake Winnipeg system, Mackenzie River, and interior lakes of British Columbia. Where tide water has an effect on a body of water being crossed, the vertical design clearance shall be increased by an amount that takes into account peak tide."
     },
     "referencingClauses": [
       {
@@ -4107,9 +5028,9 @@ export const CSA_TABLES_MAP = {
     },
     "footnotes": {
       "*": "For dc voltages below 0.75 kV, use Columns II and III of Table 2.",
-      "†": "See Clause 5.3.1.1(d).",
-      "‡": "Add 0.005 m/kV for each kV over 500 kV to clearances in Column IX.",
-      "§": "These areas are generally adjacent to fences and accessible to small vehicles but are not likely to be travelled by high road vehicles or high farm machinery.",
+      "\u2020": "See Clause 5.3.1.1(d).",
+      "\u2021": "Add 0.005 m/kV for each kV over 500 kV to clearances in Column IX.",
+      "\u00a7": "These areas are generally adjacent to fences and accessible to small vehicles but are not likely to be travelled by high road vehicles or high farm machinery.",
       "**": "See Clause 5.3.1.1(c)."
     },
     "referencingClauses": [
@@ -4159,7 +5080,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_3_2_1",
         "clauseNumber": "5.3.2.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.3.2.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.3.2.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -4194,14 +5115,14 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_4_2",
         "clauseNumber": "5.4.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_4_3",
         "clauseNumber": "5.4.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -4230,35 +5151,35 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_4_3",
         "clauseNumber": "5.4.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.4.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.4.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_2",
         "clauseNumber": "5.5.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_3",
         "clauseNumber": "5.5.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_4",
         "clauseNumber": "5.5.4",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.4",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.4",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_5_5",
         "clauseNumber": "5.5.5",
-        "title": "5 Clearances, separations, and spacings — Clause 5.5.5",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.5.5",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -4308,14 +5229,14 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_7_2_1",
         "clauseNumber": "5.7.2.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.7.2.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.7.2.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_7_2_2",
         "clauseNumber": "5.7.2.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.7.2.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.7.2.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -4642,7 +5563,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 1",
     "edition": "2020",
     "number": "Table 15",
-    "title": "Clearances between conductors supported by different structures but not crossing each other — Clearance increments to be added to horizontal displacement",
+    "title": "Clearances between conductors supported by different structures but not crossing each other \u2014 Clearance increments to be added to horizontal displacement",
     "unit": "mm",
     "evaluatedAt": null,
     "explicitRefs": [
@@ -4757,21 +5678,21 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_9_1_1",
         "clauseNumber": "5.9.1.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_9_1_2",
         "clauseNumber": "5.9.1.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_9_1_3",
         "clauseNumber": "5.9.1.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.9.1.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.9.1.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       }
@@ -4925,9 +5846,9 @@ export const CSA_TABLES_MAP = {
       "footnoteDagger": "For voltages exceeding 50 kV, clearances shall be based on best engineering practices, but shall be not less than the separations specified for 50 kV.",
       "footnoteDblDagger": "Add 10 mm/kV over 22 kV.",
       "footnoteSection": "Add 5 mm/kV over 22 kV.",
-      "footnoteDblStar": "This clearance may be reduced to 0 mm for conductors and cables 0–750 V, provided that the conductors are attached to the surface of the structure and grounded or covered by material of adequate insulating and mechanical properties.",
+      "footnoteDblStar": "This clearance may be reduced to 0 mm for conductors and cables 0\u2013750 V, provided that the conductors are attached to the surface of the structure and grounded or covered by material of adequate insulating and mechanical properties.",
       "footnoteDaggerDagger": "Where this clearance cannot be achieved, adequate insulation shall be applied to the supply conductor.",
-      "footnoteDoubleDblDagger": "This clearance shall be increased to 300 mm for voltages 0.75–8 kV for a span wire or span guy wire running parallel to the supply conductor.",
+      "footnoteDoubleDblDagger": "This clearance shall be increased to 300 mm for voltages 0.75\u20138 kV for a span wire or span guy wire running parallel to the supply conductor.",
       "footnoteDoubleSection": "The clearance shall be not less than the separations specified in Clause 5.9.1."
     },
     "footnotes": null,
@@ -4942,7 +5863,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_9_1",
         "clauseNumber": "5.9.1",
-        "title": "Horizontal separations or separations within 45° of the horizontal of",
+        "title": "Horizontal separations or separations within 45\u00b0 of the horizontal of",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -4993,7 +5914,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_10_1_1",
         "clauseNumber": "5.10.1.1",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.1.1",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.1.1",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -5007,21 +5928,21 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_10_1_7",
         "clauseNumber": "5.10.1.7",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.1.7",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.1.7",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_10_6_2",
         "clauseNumber": "5.10.6.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.6.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.6.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_5_10_1",
         "clauseNumber": "A.5.10.1",
-        "title": "Vertical separations at the structure — Normal level arrangement and",
+        "title": "Vertical separations at the structure \u2014 Normal level arrangement and",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -5073,14 +5994,14 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_10_3_2",
         "clauseNumber": "5.10.3.2",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.3.2",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.3.2",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_5_10_3_3",
         "clauseNumber": "5.10.3.3",
-        "title": "5 Clearances, separations, and spacings — Clause 5.10.3.3",
+        "title": "5 Clearances, separations, and spacings \u2014 Clause 5.10.3.3",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -5161,7 +6082,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_5_11_1",
         "clauseNumber": "5.11.1",
-        "title": "Guy attachments — Joint-use structures",
+        "title": "Guy attachments \u2014 Joint-use structures",
         "section": "5 Clearances, separations, and spacings",
         "standardId": "c22_3_no1"
       },
@@ -5225,7 +6146,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_6_3_2_1",
         "clauseNumber": "6.3.2.1",
-        "title": "6 Minimum grades of construction — Clause 6.3.2.1",
+        "title": "6 Minimum grades of construction \u2014 Clause 6.3.2.1",
         "section": "6 Minimum grades of construction",
         "standardId": "c22_3_no1"
       },
@@ -5246,21 +6167,21 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -5330,21 +6251,21 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -5413,21 +6334,21 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_7_8_2_4",
         "clauseNumber": "7.8.2.4",
-        "title": "Assumed longitudinal load — Wire and cable attachments not involved in",
+        "title": "Assumed longitudinal load \u2014 Wire and cable attachments not involved in",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_9_1",
         "clauseNumber": "7.9.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.9.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.9.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_8_2",
         "clauseNumber": "A.7.8.2",
-        "title": "Assumed longitudinal load — Without terminations or tension changes",
+        "title": "Assumed longitudinal load \u2014 Without terminations or tension changes",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       },
@@ -5463,8 +6384,8 @@ export const CSA_TABLES_MAP = {
       "footnoteStar": "When large conductors are used in locations where high winds are prevalent, the loading on bare conductors should be assessed, as high winds can produce a transverse loading in excess of the wind and ice combinations.",
       "footnoteDagger": "On small conductors, the ice effect is more significant than on large conductors, as it constitutes a greater percentage of the total mass.",
       "footnoteDblDagger": "See Clause 7.2 and Annex C for geographic loading area boundaries across Canada.",
-      "windVelocityEquivalents": "400 N/m² corresponds to ~25 m/s (~90 km/h) hourly steady-state wind; 300 N/m² corresponds to ~21 m/s (~76 km/h).",
-      "iceDensity": "Ice density is assumed to be 900 kg/m³ per Clause 7.3.1(a)."
+      "windVelocityEquivalents": "400 N/m\u00b2 corresponds to ~25 m/s (~90 km/h) hourly steady-state wind; 300 N/m\u00b2 corresponds to ~21 m/s (~76 km/h).",
+      "iceDensity": "Ice density is assumed to be 900 kg/m\u00b3 per Clause 7.3.1(a)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -5478,14 +6399,14 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_7_3_1",
         "clauseNumber": "7.3.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.3.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.3.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_7_3_5",
         "clauseNumber": "7.3.5",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.3.5",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.3.5",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -5499,7 +6420,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_7_6_2_1",
         "clauseNumber": "7.6.2.1",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.6.2.1",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.6.2.1",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -5550,15 +6471,15 @@ export const CSA_TABLES_MAP = {
     ],
     "notes": {
       "note1": "Non-linear analysis, including stability (buckling) check, is the method of analysis of structures specified in this Standard.",
-      "note2": "Default COV values for pole and structure materials are:\n  a) steel — ≤ 10%;\n  b) concrete — 10% < COV < 15%; and\n  c) wood — ≥ 15%.",
-      "note3": "The selection of appropriate minimum load factors for steel, concrete, fibre-reinforced composite, laminated wood, and wood poles is based on the coefficient of variation (COV), for the given pole material as verified by the pole manufacturer. The lowest minimum load factors (steel pole default) may be used for concrete, laminated wood, and FRP composite structures if manufacturers verify COV ≤ 10%. The next lowest (concrete pole default) may be used if 10% < COV < 15%. The highest (wood default) shall be used if manufacturer is unable to verify COV < 15%."
+      "note2": "Default COV values for pole and structure materials are:\n  a) steel \u2014 \u2264 10%;\n  b) concrete \u2014 10% < COV < 15%; and\n  c) wood \u2014 \u2265 15%.",
+      "note3": "The selection of appropriate minimum load factors for steel, concrete, fibre-reinforced composite, laminated wood, and wood poles is based on the coefficient of variation (COV), for the given pole material as verified by the pole manufacturer. The lowest minimum load factors (steel pole default) may be used for concrete, laminated wood, and FRP composite structures if manufacturers verify COV \u2264 10%. The next lowest (concrete pole default) may be used if 10% < COV < 15%. The highest (wood default) shall be used if manufacturer is unable to verify COV < 15%."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_no1_cl_7_4_2",
         "clauseNumber": "7.4.2",
-        "title": "7 Weather loads and assumed loads according to deterministic design — Clause 7.4.2",
+        "title": "7 Weather loads and assumed loads according to deterministic design \u2014 Clause 7.4.2",
         "section": "7 Weather loads and assumed loads according to deterministic design",
         "standardId": "c22_3_no1"
       },
@@ -5593,28 +6514,28 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_no1_cl_8_1_3",
         "clauseNumber": "8.1.3",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.1.3",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.1.3",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_8_3_10_1",
         "clauseNumber": "8.3.10.1",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.3.10.1",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.3.10.1",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_8_3_12_2",
         "clauseNumber": "8.3.12.2",
-        "title": "8 Strength of supporting systems according to deterministic design — Clause 8.3.12.2",
+        "title": "8 Strength of supporting systems according to deterministic design \u2014 Clause 8.3.12.2",
         "section": "8 Strength of supporting systems according to deterministic design",
         "standardId": "c22_3_no1"
       },
       {
         "clauseId": "c22_3_no1_cl_A_7_4_2",
         "clauseNumber": "A.7.4.2",
-        "title": "Annex A (informative) — Clause A.7.4.2",
+        "title": "Annex A (informative) \u2014 Clause A.7.4.2",
         "section": "Annex A (informative)",
         "standardId": "c22_3_no1"
       }
@@ -5637,7 +6558,7 @@ export const CSA_TABLES_MAP = {
     ],
     "notes": {
       "note1": "Some national regulations and/or codes of practice, sometimes impose, directly or indirectly, design requirements that may restrict the choice offered to designers.",
-      "note2": "Other values of T in the range of 50–500 years, such as 100, 200 and 400 years, can be used if justified by local conditions.",
+      "note2": "Other values of T in the range of 50\u2013500 years, such as 100, 200 and 400 years, can be used if justified by local conditions.",
       "temporaryLines": "For temporary lines, some wooden poles or lines of limited importance, return periods of about 25 years may be appropriate."
     },
     "footnotes": null,
@@ -5688,7 +6609,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       }
@@ -5701,7 +6622,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 11",
-    "title": "Strength factor ΦN related to the number N of components or elements subjected to the critical load intensity",
+    "title": "Strength factor \u03a6N related to the number N of components or elements subjected to the critical load intensity",
     "unit": "",
     "explicitRefs": [
       "7.2.1",
@@ -5709,15 +6630,15 @@ export const CSA_TABLES_MAP = {
       "Table A.5"
     ],
     "notes": {
-      "note1": "Values of ΦN are based on a normal distribution function. Values within brackets (lognormal) are based on the log-normal distribution function.",
-      "note2": "In the case of high values of vR and N (shaded cells where both normal and log-normal values are given), the value of ΦN is very sensitive to the choice of the distribution function."
+      "note1": "Values of \u03a6N are based on a normal distribution function. Values within brackets (lognormal) are based on the log-normal distribution function.",
+      "note2": "In the case of high values of vR and N (shaded cells where both normal and log-normal values are given), the value of \u03a6N is very sensitive to the choice of the distribution function."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -5744,7 +6665,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 12",
-    "title": "Values of ΦS2",
+    "title": "Values of \u03a6S2",
     "unit": "",
     "explicitRefs": [
       "7.2.2",
@@ -5752,14 +6673,14 @@ export const CSA_TABLES_MAP = {
       "Table A.4"
     ],
     "notes": {
-      "note1": "In the above table, R2 is the component designed more reliable than R1 (with 90% confidence that R2 will not fail before R1). A factor ΦS1 = 1.0 is applied to the first component to fail (R1)."
+      "note1": "In the above table, R2 is the component designed more reliable than R1 (with 90% confidence that R2 will not fail before R1). A factor \u03a6S1 = 1.0 is applied to the first component to fail (R1)."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -5804,7 +6725,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       }
@@ -5900,7 +6821,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -6003,7 +6924,7 @@ export const CSA_TABLES_MAP = {
       "Table 18"
     ],
     "notes": {
-      "formula": "Rc = (10%)R = (1 – u × vR) × R_mean; if R is assumed normally distributed, u = 1.28, or given in Table 19 for log-normal distribution function."
+      "formula": "Rc = (10%)R = (1 \u2013 u \u00d7 vR) \u00d7 R_mean; if R is assumed normally distributed, u = 1.28, or given in Table 19 for log-normal distribution function."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6023,15 +6944,15 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 2",
-    "title": "Default γT factors for adjustment of climatic loads in relation to return period T vs. 50 years",
+    "title": "Default \u03b3T factors for adjustment of climatic loads in relation to return period T vs. 50 years",
     "unit": "",
     "explicitRefs": [
       "5.2.1",
       "Table CA.2"
     ],
     "notes": {
-      "note1": "The above γ values are sufficiently accurate for a COV of up to 0.16 for wind speed, 0.30 for ice thickness and 0.65 for unit ice weight and are derived from the Gumbel distribution function.",
-      "canadianDeviationNote": "In Canada, Clause 5.2.1 adds Table CA.2 (which provides γTw and γTi for T = 25, 50, 100, 150, 200, 400, and 500 years). See tableCA2.js."
+      "note1": "The above \u03b3 values are sufficiently accurate for a COV of up to 0.16 for wind speed, 0.30 for ice thickness and 0.65 for unit ice weight and are derived from the Gumbel distribution function.",
+      "canadianDeviationNote": "In Canada, Clause 5.2.1 adds Table CA.2 (which provides \u03b3Tw and \u03b3Ti for T = 25, 50, 100, 150, 200, 400, and 500 years). See tableCA2.js."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6051,14 +6972,14 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 20",
-    "title": "Value of quality factor ΦQ for lattice towers",
+    "title": "Value of quality factor \u03a6Q for lattice towers",
     "unit": "",
     "explicitRefs": [
       "7.3.3",
       "IEC 60652"
     ],
     "notes": {
-      "canadianSimplifiedPhiR": "Per Clause 7.3.3 (Canadian Deviation): The following default (simplified) values may be used for lattice steel towers in the majority of lines: (a) suspension towers: ΦR = 0.9 for intact loading cases and ΦR = 1.0 for failure loading cases; and (b) angle and dead-end towers: intact ΦR = 0.8 and failed system ΦR = 0.9, where ΦR = ΦN ΦS ΦQ ΦC."
+      "canadianSimplifiedPhiR": "Per Clause 7.3.3 (Canadian Deviation): The following default (simplified) values may be used for lattice steel towers in the majority of lines: (a) suspension towers: \u03a6R = 0.9 for intact loading cases and \u03a6R = 1.0 for failure loading cases; and (b) angle and dead-end towers: intact \u03a6R = 0.8 and failed system \u03a6R = 0.9, where \u03a6R = \u03a6N \u03a6S \u03a6Q \u03a6C."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6175,7 +7096,7 @@ export const CSA_TABLES_MAP = {
       "Table A.8"
     ],
     "notes": {
-      "usage": "In Table 4, the roughness factor KR represents a multiplier of the reference wind speed for conversion from one terrain category to another (VR = KR × VRB).",
+      "usage": "In Table 4, the roughness factor KR represents a multiplier of the reference wind speed for conversion from one terrain category to another (VR = KR \u00d7 VRB).",
       "canadianDeviation": "Per Clause 6.2.2 (Canadian Deviation): Terrain type B is representative of the majority of lines and should lead to acceptable results in all areas except in flat coastal areas, where a terrain type A should be used."
     },
     "footnotes": null,
@@ -6217,7 +7138,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table 5",
-    "title": "Correction factor τ of dynamic reference wind pressure q0 due to altitude and temperatures",
+    "title": "Correction factor \u03c4 of dynamic reference wind pressure q0 due to altitude and temperatures",
     "unit": "",
     "explicitRefs": [
       "6.2.5",
@@ -6225,7 +7146,7 @@ export const CSA_TABLES_MAP = {
       "Table CB.1"
     ],
     "notes": {
-      "note1": "The reference value (τ = 1.00) corresponds to 0 m altitude and a temperature of 15 °C (air density μ = 1.225 kg/m³ at 101.3 kPa).",
+      "note1": "The reference value (\u03c4 = 1.00) corresponds to 0 m altitude and a temperature of 15 \u00b0C (air density \u03bc = 1.225 kg/m\u00b3 at 101.3 kPa).",
       "canadianDeviation": "Per Clause 6.2.5 (Canadian Deviation): The air density correction factor shall be 1.04 for wind conditions without ice and 1.1 for combined ice and wind. These factors may also be used for mountainous regions because the reduced temperature compensates for the altitude."
     },
     "footnotes": null,
@@ -6269,8 +7190,8 @@ export const CSA_TABLES_MAP = {
       "Figure 12"
     ],
     "notes": {
-      "note1": "In this table, the uppercase letters A, B, C, D, E, F (phase conductors) and X, Y (ground wires) represent conductors and spans loaded with 0.7 gR, while the lowercase letters a, b, c, d, e, f, x, y represent conductors and spans loaded with 0.4 × 0.7 gR (= 0.28 gR). Factors 0.7 and 0.4 are suggested and other values can be used as substantiated by experience.",
-      "canadianDeviation": "Per Clauses 6.3.6.3.1A and 6.3.6.3.1B (Canadian Deviation): Non-uniform ice loading examples where the structure is subjected to 70% of the design ice weight on the left or right spans while the other spans are loaded with 28% (40% of 70%) of the same design ice weight are illustrated in Figure 12 and Table 6. The unbalanced ice loading cases shall be calculated under: (a) temperature of –5 °C; (b) no wind; and (c) conductor in the final condition (after creep)."
+      "note1": "In this table, the uppercase letters A, B, C, D, E, F (phase conductors) and X, Y (ground wires) represent conductors and spans loaded with 0.7 gR, while the lowercase letters a, b, c, d, e, f, x, y represent conductors and spans loaded with 0.4 \u00d7 0.7 gR (= 0.28 gR). Factors 0.7 and 0.4 are suggested and other values can be used as substantiated by experience.",
+      "canadianDeviation": "Per Clauses 6.3.6.3.1A and 6.3.6.3.1B (Canadian Deviation): Non-uniform ice loading examples where the structure is subjected to 70% of the design ice weight on the left or right spans while the other spans are loaded with 28% (40% of 70%) of the same design ice weight are illustrated in Figure 12 and Table 6. The unbalanced ice loading cases shall be calculated under: (a) temperature of \u20135 \u00b0C; (b) no wind; and (c) conductor in the final condition (after creep)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6329,7 +7250,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_6_4_1",
         "clauseNumber": "6.4.1",
-        "title": "Combined probabilities – Principle proposed",
+        "title": "Combined probabilities \u2013 Principle proposed",
         "section": "6 Loadings",
         "standardId": "c22_3_60826"
       },
@@ -6587,7 +7508,7 @@ export const CSA_TABLES_MAP = {
       "A.5.8.1"
     ],
     "notes": {
-      "noStatisticalDataFallback": "If only the maximum value gmax of ice load during a certain number of years is available (no statistical data), the mean value g_mean should be taken as 0.45 gmax and standard deviation σg as 0.5 g_mean."
+      "noStatisticalDataFallback": "If only the maximum value gmax of ice load during a certain number of years is available (no statistical data), the mean value g_mean should be taken as 0.45 gmax and standard deviation \u03c3g as 0.5 g_mean."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6630,7 +7551,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_6_4_1",
         "clauseNumber": "6.4.1",
-        "title": "Combined probabilities – Principle proposed",
+        "title": "Combined probabilities \u2013 Principle proposed",
         "section": "6 Loadings",
         "standardId": "c22_3_60826"
       },
@@ -6743,7 +7664,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -6757,7 +7678,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_A_1_3_2",
         "clauseNumber": "A.1.3.2",
-        "title": "Methods for calculating strength coordination factors ΦΦ ΦΦ S",
+        "title": "Methods for calculating strength coordination factors \u03a6\u03a6 \u03a6\u03a6 S",
         "section": "Annex A (Climatic Data)",
         "standardId": "c22_3_60826"
       }
@@ -6770,7 +7691,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table A.4",
-    "title": "Values of central safety factor α and strength coordination factor ΦS required to insure that component R2 will fail after component R1 with a 90% probability",
+    "title": "Values of central safety factor \u03b1 and strength coordination factor \u03a6S required to insure that component R2 will fail after component R1 with a 90% probability",
     "unit": "",
     "explicitRefs": [
       "7.2.2",
@@ -6778,14 +7699,14 @@ export const CSA_TABLES_MAP = {
       "Table 12"
     ],
     "notes": {
-      "formula": "ΦS = (10%)R1 / (10%)R2 = (1 - 1.28 vR1) / [α (1 - 1.28 vR2)], where α = R2_mean / R1_mean."
+      "formula": "\u03a6S = (10%)R1 / (10%)R2 = (1 - 1.28 vR1) / [\u03b1 (1 - 1.28 vR2)], where \u03b1 = R2_mean / R1_mean."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_2",
         "clauseNumber": "7.2.2",
-        "title": "Strength factor ΦΦ ΦΦ S related to the coordination of strength",
+        "title": "Strength factor \u03a6\u03a6 \u03a6\u03a6 S related to the coordination of strength",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -6805,7 +7726,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table A.5",
-    "title": "Strength factor ΦN related to N components in series subjected to the critical load",
+    "title": "Strength factor \u03a6N related to N components in series subjected to the critical load",
     "unit": "",
     "explicitRefs": [
       "7.2.1",
@@ -6815,14 +7736,14 @@ export const CSA_TABLES_MAP = {
     ],
     "notes": {
       "note1": "Values in parentheses refer to log-normal distribution; primary values refer to normal (Gaussian) distribution.",
-      "note2": "The range of values where the difference in ΦN between normal and log-normal is more than 10% is shown in italic characters in the standard."
+      "note2": "The range of values where the difference in \u03a6N between normal and log-normal is more than 10% is shown in italic characters in the standard."
     },
     "footnotes": null,
     "referencingClauses": [
       {
         "clauseId": "c22_3_60826_cl_7_2_1",
         "clauseNumber": "7.2.1",
-        "title": "Values of strength factor ΦΦ ΦΦ N",
+        "title": "Values of strength factor \u03a6\u03a6 \u03a6\u03a6 N",
         "section": "7 Strength of components and limit states",
         "standardId": "c22_3_60826"
       },
@@ -6850,7 +7771,7 @@ export const CSA_TABLES_MAP = {
       "A.2.1"
     ],
     "notes": {
-      "formula": "Φc = (1 - 1.28 vR) / (1 - ue vR), where (10%)R = Φc × Rc and Rc = R_mean (1 - ue vR)."
+      "formula": "\u03a6c = (1 - 1.28 vR) / (1 - ue vR), where (10%)R = \u03a6c \u00d7 Rc and Rc = R_mean (1 - ue vR)."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6937,7 +7858,7 @@ export const CSA_TABLES_MAP = {
       "Table A.7"
     ],
     "notes": {
-      "powerLawFormula": "Vz = VR × (z / 10)^α, where z is height above ground (m) and α is the power law exponent in Table A.8."
+      "powerLawFormula": "Vz = VR \u00d7 (z / 10)^\u03b1, where z is height above ground (m) and \u03b1 is the power law exponent in Table A.8."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -6986,7 +7907,7 @@ export const CSA_TABLES_MAP = {
       "Table B.1"
     ],
     "notes": {
-      "note1": "In Table A.9 the ratio VR / mV (where mV is the mean of yearly maximum wind velocities) is given for typical coefficients of variation vv when the number of years of observations is very large (n -> ∞). In other cases, refer to Clause B.2 / Table B.1."
+      "note1": "In Table A.9 the ratio VR / mV (where mV is the mean of yearly maximum wind velocities) is given for typical coefficients of variation vv when the number of years of observations is very large (n -> \u221e). In other cases, refer to Clause B.2 / Table B.1."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -7024,7 +7945,7 @@ export const CSA_TABLES_MAP = {
       "Table C.1"
     ],
     "notes": {
-      "formula": "x(T) / x_mean = 1 + [(-ln(-ln(1 - 1/T)) - C2) / C1] × vx, where C1 and C2 are Gumbel sample size parameters from Table C.1."
+      "formula": "x(T) / x_mean = 1 + [(-ln(-ln(1 - 1/T)) - C2) / C1] \u00d7 vx, where C1 and C2 are Gumbel sample size parameters from Table C.1."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -7121,7 +8042,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.3",
-    "title": "Statistical parameters U_mean and σu of wind span variation",
+    "title": "Statistical parameters U_mean and \u03c3u of wind span variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -7160,7 +8081,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.4",
-    "title": "Statistical parameters U_mean and σu of weight span variation",
+    "title": "Statistical parameters U_mean and \u03c3u of weight span variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -7199,7 +8120,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.5",
-    "title": "Values of use factor coefficient γu as a function of U_mean and N for vR = 0.10",
+    "title": "Values of use factor coefficient \u03b3u as a function of U_mean and N for vR = 0.10",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -7207,7 +8128,7 @@ export const CSA_TABLES_MAP = {
       "Table B.6"
     ],
     "notes": {
-      "formula": "γu = (10%)min_N(R) / (10%)min_N(R/U). Obtained by Monte-Carlo simulation for vR = 0.10."
+      "formula": "\u03b3u = (10%)min_N(R) / (10%)min_N(R/U). Obtained by Monte-Carlo simulation for vR = 0.10."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -7235,7 +8156,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_B_4_4",
         "clauseNumber": "B.4.4",
-        "title": "Generalized results for use factor coefficients γγ γγu",
+        "title": "Generalized results for use factor coefficients \u03b3\u03b3 \u03b3\u03b3u",
         "section": "Annex B (Soil & Foundations)",
         "standardId": "c22_3_60826"
       }
@@ -7248,7 +8169,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table B.6",
-    "title": "Use factor coefficient γu for different strength coefficients of variation",
+    "title": "Use factor coefficient \u03b3u for different strength coefficients of variation",
     "unit": "",
     "explicitRefs": [
       "5.2.3",
@@ -7270,7 +8191,7 @@ export const CSA_TABLES_MAP = {
       {
         "clauseId": "c22_3_60826_cl_B_4_4",
         "clauseNumber": "B.4.4",
-        "title": "Generalized results for use factor coefficients γγ γγu",
+        "title": "Generalized results for use factor coefficients \u03b3\u03b3 \u03b3\u03b3u",
         "section": "Annex B (Soil & Foundations)",
         "standardId": "c22_3_60826"
       }
@@ -7292,7 +8213,7 @@ export const CSA_TABLES_MAP = {
       "Figure C.3"
     ],
     "notes": {
-      "asymptoticValues": "For n = ∞, C1 = π / sqrt(6) ≈ 1.28255 and C2 = γ_Euler ≈ 0.57722."
+      "asymptoticValues": "For n = \u221e, C1 = \u03c0 / sqrt(6) \u2248 1.28255 and C2 = \u03b3_Euler \u2248 0.57722."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -7396,7 +8317,7 @@ export const CSA_TABLES_MAP = {
       "footnoteStar": "The following are lowest January hourly temperatures to a 1% exclusion level. (One per cent of January hourly temperatures are at or lower than these values.)",
       "footnoteDagger": "10 minute average speed, 50-year return period.",
       "footnoteDblDagger": "Ice thickness from freezing precipitation, 50-year return period.",
-      "footnoteSection": "Wet snow thickness on a 40 mm conductor, 50-year return period is provided for regions where data were available at the time this Standard was prepared. The recommended coincident temperature is –5 °C. The corresponding density of the accreted snow is 350 kg/m³."
+      "footnoteSection": "Wet snow thickness on a 40 mm conductor, 50-year return period is provided for regions where data were available at the time this Standard was prepared. The recommended coincident temperature is \u20135 \u00b0C. The corresponding density of the accreted snow is 350 kg/m\u00b3."
     },
     "footnotes": null,
     "referencingClauses": [
@@ -7451,7 +8372,7 @@ export const CSA_TABLES_MAP = {
     "standardName": "CSA C22.3 No. 60826",
     "edition": "2010 (R2020)",
     "number": "Table CA.2",
-    "title": "Factors γT to modify the 50-year return period weather variable to any other return period T",
+    "title": "Factors \u03b3T to modify the 50-year return period weather variable to any other return period T",
     "unit": "",
     "explicitRefs": [
       "5.2.1",
@@ -7460,7 +8381,7 @@ export const CSA_TABLES_MAP = {
       "Table 2"
     ],
     "notes": {
-      "note1": "γTw applies to wind speed and γTi applies to ice thickness.",
+      "note1": "\u03b3Tw applies to wind speed and \u03b3Ti applies to ice thickness.",
       "interpolationRule": "Per Clause 5.2.1 (Canadian Deviation): If return periods other than those given in Table CA.2 are used, the corresponding weather variables may be deduced by direct interpolation between the values specified in Table CA.2."
     },
     "footnotes": null,
@@ -7860,6 +8781,927 @@ export const CSA_TABLES_MAP = {
         "title": "Shrinkage",
         "section": "Annex C (informative) Classification procedure for reinforcing stubs",
         "standardId": "csa_o15"
+      }
+    ]
+  },
+  "asce_10_15_table3_4_1": {
+    "id": "asce_10_15_table3_4_1",
+    "key": "table3_4_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table 3.4-1",
+    "title": "Slenderness Ratios and Effective Length (KL/r) Formulas for Angle Members (Curves 1\u20136)",
+    "unit": "Dimensionless (L/r, KL/r)",
+    "evaluatedAt": "Transition point L/r = 120 separates connection eccentricity governance (L/r <= 120) from end rotational restraint governance (L/r > 120)",
+    "explicitRefs": [
+      "3.4",
+      "3.6",
+      "3.7.4",
+      "3.7.4.1",
+      "3.7.4.2",
+      "3.7.4.3",
+      "3.7.4.4",
+      "3.7.4.5",
+      "3.16",
+      "5.1.8",
+      "C3.4",
+      "C3.7.4"
+    ],
+    "notes": [
+      "Curve numbers (Curves 1 through 6) correspond to Fig. C3-2 and ASCE Manual of Practice No. 52 (1988).",
+      "A single-bolt connection at either the end of a member or a point of intermediate support provides no restraint against rotation (Section 3.7.4.5).",
+      "A multiple-bolt connection made only on a gusset plate without also being framed to the restraining member provides no rotational restraint (Section 3.7.4.5)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_3_0",
+        "clauseNumber": "3.0",
+        "title": "Design of Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_4",
+        "clauseNumber": "3.4",
+        "title": "Slenderness Ratios",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_6",
+        "clauseNumber": "3.6",
+        "title": "Design Compression",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7",
+        "clauseNumber": "3.7",
+        "title": "Compression Members: Angles",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4",
+        "clauseNumber": "3.7.4",
+        "title": "Effective Lengths",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_1",
+        "clauseNumber": "3.7.4.1",
+        "title": "Leg Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_2",
+        "clauseNumber": "3.7.4.2",
+        "title": "Other Compression Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_3",
+        "clauseNumber": "3.7.4.3",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_4",
+        "clauseNumber": "3.7.4.4",
+        "title": "Unsupported Length with Varying Forces",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_5",
+        "clauseNumber": "3.7.4.5",
+        "title": "Joint Restraint",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_16",
+        "clauseNumber": "3.16",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_8",
+        "clauseNumber": "5.1.8",
+        "title": "Tension-Only Members",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_0",
+        "clauseNumber": "C3.0",
+        "title": "Commentary: Design of Members",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_4",
+        "clauseNumber": "C3.4",
+        "title": "Commentary: Slenderness Ratios & Aeolian Vibration",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_6",
+        "clauseNumber": "C3.6",
+        "title": "Commentary: Design Compression (SSRC & Euler)",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7",
+        "clauseNumber": "C3.7",
+        "title": "Commentary: Compression Members: Angles",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4",
+        "clauseNumber": "C3.7.4",
+        "title": "Commentary: Effective Lengths & Partial Joint Restraint Evaluation",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4_4",
+        "clauseNumber": "C3.7.4.4",
+        "title": "Commentary: Unsupported Length with Varying Forces",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_0",
+        "clauseNumber": "B.0",
+        "title": "Appendix B: Design Examples Overview",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_1",
+        "clauseNumber": "B.1",
+        "title": "Example 1: Equal Leg Angle with Symmetrical Bracing",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_2",
+        "clauseNumber": "B.2",
+        "title": "Example 2: Effect of End Connections on Member Capacity",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_3",
+        "clauseNumber": "B.3",
+        "title": "Example 3: Concentric Loading, Two-Angle Member",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_4",
+        "clauseNumber": "B.4",
+        "title": "Example 4: K-Bracing, Two-Angle Member with Varying Forces",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_5",
+        "clauseNumber": "B.5",
+        "title": "Example 5: Effect of Subdivided Panels and End Connections",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_6",
+        "clauseNumber": "B.6",
+        "title": "Example 6: Concentric Loading, Two-Angle Member, Subdivided Panels",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_7",
+        "clauseNumber": "B.7",
+        "title": "Example 7: X-Brace Systems with No Intermediate Redundant Supports",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_8",
+        "clauseNumber": "B.8",
+        "title": "Example 8: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 1",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_9",
+        "clauseNumber": "B.9",
+        "title": "Example 9: X-Brace Systems with Intermediate Redundant Supports \u2014 Case 2",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_B_10",
+        "clauseNumber": "B.10",
+        "title": "Example 10: Cold-Formed Angle",
+        "section": "Appendix B \u2014 Design Examples",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_2",
+        "clauseNumber": "C.2",
+        "title": "Slenderness Ratios in Existing Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_10",
+        "clauseNumber": "C.10",
+        "title": "Bars Used as Tension Hangers in Cross Arms",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_12",
+        "clauseNumber": "C.12",
+        "title": "Original Compression Formulas Used in Older Tower Designs",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  "asce_10_15_table7_2_1": {
+    "id": "asce_10_15_table7_2_1",
+    "key": "table7_2_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table 7.2-1",
+    "title": "Coefficient of Friction (\u03bc) Values and Foundation Anchorage Design Criteria (Fig. 7-2)",
+    "unit": "Dimensionless (\u03bc), ksi (MPa)",
+    "evaluatedAt": "Design-factored foundation uplift (T), downthrust (D), and horizontal shear (V) loads",
+    "explicitRefs": [
+      "7.1",
+      "7.2",
+      "7.2.1",
+      "7.2.2",
+      "7.2.3",
+      "7.2.4",
+      "7.2.4.1",
+      "7.2.4.2",
+      "7.2.4.3",
+      "7.3",
+      "7.4",
+      "7.4.1",
+      "7.4.2",
+      "7.4.3",
+      "7.5",
+      "7.5.1",
+      "7.5.2",
+      "7.5.2.1",
+      "7.6",
+      "7.6.1",
+      "7.6.2",
+      "C7.0",
+      "C7.5"
+    ],
+    "notes": [
+      "When shear lugs are attached to the base assembly to transfer shear to the concrete, anchor bolt area need not be checked by Eqs. (7.4-2) and (7.4-4).",
+      "A combination of shear lugs and shear friction is not allowed (Section 7.4.2).",
+      "Steel exposed to corrosion at or below the ground level shall have a minimum thickness of 3/16 in. (4.8 mm) (Section 7.3)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_3_10_4",
+        "clauseNumber": "3.10.4",
+        "title": "Threaded Rods and Anchor Bolts",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_0",
+        "clauseNumber": "7.0",
+        "title": "Structural Members and Connections Used in Foundations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_1",
+        "clauseNumber": "7.1",
+        "title": "Introduction",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2",
+        "clauseNumber": "7.2",
+        "title": "General Considerations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_1",
+        "clauseNumber": "7.2.1",
+        "title": "Steel Grillages",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_2",
+        "clauseNumber": "7.2.2",
+        "title": "Pressed Plates",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_3",
+        "clauseNumber": "7.2.3",
+        "title": "Stub Angles in Concrete Piers",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4",
+        "clauseNumber": "7.2.4",
+        "title": "Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_1",
+        "clauseNumber": "7.2.4.1",
+        "title": "Smooth Bars with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_2",
+        "clauseNumber": "7.2.4.2",
+        "title": "Deformed Bars with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_2_4_3",
+        "clauseNumber": "7.2.4.3",
+        "title": "Smooth or Deformed Bars with Base Assembly Not in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_3",
+        "clauseNumber": "7.3",
+        "title": "Deterioration Considerations",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4",
+        "clauseNumber": "7.4",
+        "title": "Design of Stub Angles and Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_1",
+        "clauseNumber": "7.4.1",
+        "title": "Stub Angles in Concrete",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_2",
+        "clauseNumber": "7.4.2",
+        "title": "Anchor Bolts with Base Assembly in Contact with Concrete or Grout",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_4_3",
+        "clauseNumber": "7.4.3",
+        "title": "Anchor Bolts with Base Plates on Leveling Nuts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5",
+        "clauseNumber": "7.5",
+        "title": "Design Requirements for Concrete and Reinforcing Steel",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_1",
+        "clauseNumber": "7.5.1",
+        "title": "Stub Angles",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_2",
+        "clauseNumber": "7.5.2",
+        "title": "Smooth Bar Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_5_2_1",
+        "clauseNumber": "7.5.2.1",
+        "title": "Minimum Embedment for Anchor Bolts",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6",
+        "clauseNumber": "7.6",
+        "title": "Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6_1",
+        "clauseNumber": "7.6.1",
+        "title": "Stud Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_7_6_2",
+        "clauseNumber": "7.6.2",
+        "title": "Angle Shear Connectors",
+        "section": "7.0 Structural Members and Connections Used in Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_0",
+        "clauseNumber": "C7.0",
+        "title": "Commentary: Structural Members and Connections Used in Foundations",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_2_2",
+        "clauseNumber": "C7.2.2",
+        "title": "Commentary: Pressed Plates",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_3",
+        "clauseNumber": "C7.3",
+        "title": "Commentary: Deterioration Considerations",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_5",
+        "clauseNumber": "C7.5",
+        "title": "Commentary: Concrete Side Cover & Pier Reinforcing (ACI 349)",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6",
+        "clauseNumber": "C7.6",
+        "title": "Commentary: Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6_1",
+        "clauseNumber": "C7.6.1",
+        "title": "Commentary: Stud Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C7_6_2",
+        "clauseNumber": "C7.6.2",
+        "title": "Commentary: Angle Shear Connectors",
+        "section": "Commentary \u2014 C7.0 Foundations",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  "asce_10_15_tableC2_1": {
+    "id": "asce_10_15_tableC2_1",
+    "key": "tableC2_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C2-1",
+    "title": "Potential Horizontal Plan Bracing and Diaphragm Locations (Fig. C2-1)",
+    "unit": "ft (m)",
+    "evaluatedAt": "Self-Supporting Latticed Steel Transmission Towers (For towers > 200 ft [61 m] or heavy dead-end towers, max diaphragm interval = 75 ft [23 m])",
+    "explicitRefs": [
+      "2.0",
+      "2.3",
+      "3.7.4.3",
+      "3.7.4.4",
+      "C2.0",
+      "C2.3",
+      "C3.7.4.4"
+    ],
+    "notes": [
+      "Horizontal bracing in the face of the tower, with an internal diaphragm, provides rigidity and distributes shear and torsional forces.",
+      "For structures taller than 200 ft (61 m) or heavy dead-end towers, horizontal bracing with a diaphragm is suggested at intervals not exceeding 75 ft (23 m)."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_2_0",
+        "clauseNumber": "2.0",
+        "title": "Loading, Geometry, and Analysis",
+        "section": "2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_2_3",
+        "clauseNumber": "2.3",
+        "title": "Geometric Configurations",
+        "section": "2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_3",
+        "clauseNumber": "3.7.4.3",
+        "title": "Redundant Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_7_4_4",
+        "clauseNumber": "3.7.4.4",
+        "title": "Unsupported Length with Varying Forces",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C2_0",
+        "clauseNumber": "C2.0",
+        "title": "Commentary: Loading, Geometry, and Analysis",
+        "section": "Commentary \u2014 C2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C2_3",
+        "clauseNumber": "C2.3",
+        "title": "Commentary: Geometric Configurations & Diaphragm Spacing",
+        "section": "Commentary \u2014 C2.0 Loading, Geometry, and Analysis",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_7_4_4",
+        "clauseNumber": "C3.7.4.4",
+        "title": "Commentary: Unsupported Length with Varying Forces",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  "asce_10_15_tableC4_1": {
+    "id": "asce_10_15_tableC4_1",
+    "key": "tableC4_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C4-1",
+    "title": "A394 Type 0 Bolt Connecting A36 Steel \u2014 End, Rolled Edge, and Center-to-Center Distances",
+    "unit": "in., ksi, kip",
+    "evaluatedAt": "Bolt diameter d = 0.75 in., Single shear through threads (16.65 kip), Nut point-to-point c = 1.3 in., A36 Fu = 58.0 ksi, Bearing stress = 1.5 Fu = 87.0 ksi",
+    "explicitRefs": [
+      "4.0",
+      "4.1",
+      "4.3",
+      "4.3.1",
+      "4.3.2",
+      "4.4",
+      "4.5",
+      "4.5.1",
+      "4.5.2",
+      "4.5.3",
+      "5.1.4",
+      "C4.0",
+      "C4.1",
+      "C4.3.2",
+      "C4.4",
+      "C4.5.1",
+      "C4.5.2",
+      "C4.5.3",
+      "C.3",
+      "C.5"
+    ],
+    "notes": [
+      "Eq. (4.5-1): e = 1.2 P / (Fu t) \u2014 governs for member thicknesses up through 5/16 in. (6.9 mm).",
+      "Eq. (4.5-2): e = 1.3 d \u2014 governs for member thicknesses from 3/8 in. (9.5 mm) through 9/16 in. (14.3 mm), and for drilled holes at 7/8 in. and above.",
+      "Eq. (4.5-3): e = t + d / 2 \u2014 governs punched holes for thicknesses from 5/8 in. (15.9 mm) through 13/16 in. (20.6 mm). Does not apply if holes are drilled.",
+      "Eq. (4.5-5): s_min = 1.2 P / (Fu t) + 0.6 d \u2014 center-to-center hole spacing along line of transmitted force.",
+      "Suggested erection spacing = nut point-to-point dimension c + 3/8 in. (0.375 in.) = 1.3 + 0.375 = 1.67 in.",
+      "Eq. (4.5-6): f_min = 0.85 e_min for a rolled edge (add 1/16 in. [1.6 mm] per Eq. 4.5-7 for a sheared or mechanically guided flame-cut edge)."
+    ],
+    "footnotes": {
+      "a": "P limited by single shear strength (through threads) of bolt (16.65 kip).",
+      "b": "t = 13/16 in. is the suggested maximum punching thickness (13/16-in. diameter hole in A36 steel). Distance shown for 7/8 in., 15/16 in., and 1 in. is for drilled holes."
+    },
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_4_0",
+        "clauseNumber": "4.0",
+        "title": "Design of Connections",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_1",
+        "clauseNumber": "4.1",
+        "title": "Introduction",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3",
+        "clauseNumber": "4.3",
+        "title": "Fasteners",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_1",
+        "clauseNumber": "4.3.1",
+        "title": "Materials",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_2",
+        "clauseNumber": "4.3.2",
+        "title": "Bolt Shear Capacity",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_4",
+        "clauseNumber": "4.4",
+        "title": "Design Bearing Stress",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5",
+        "clauseNumber": "4.5",
+        "title": "Minimum Distances",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_1",
+        "clauseNumber": "4.5.1",
+        "title": "End Distance",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_2",
+        "clauseNumber": "4.5.2",
+        "title": "Center-to-Center Bolt Hole Spacing",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_5_3",
+        "clauseNumber": "4.5.3",
+        "title": "Edge Distance",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_4",
+        "clauseNumber": "5.1.4",
+        "title": "Bolt Spacing",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_0",
+        "clauseNumber": "C4.0",
+        "title": "Commentary: Design of Connections",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_1",
+        "clauseNumber": "C4.1",
+        "title": "Commentary: Introduction (Tolerances & Nut Locking)",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_3",
+        "clauseNumber": "C4.3",
+        "title": "Commentary: Fasteners",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_3_2",
+        "clauseNumber": "C4.3.2",
+        "title": "Commentary: Bolt Shear Capacity",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_4",
+        "clauseNumber": "C4.4",
+        "title": "Commentary: Design Bearing Stress",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5",
+        "clauseNumber": "C4.5",
+        "title": "Commentary: Minimum Distances",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_1",
+        "clauseNumber": "C4.5.1",
+        "title": "Commentary: End Distance & Punching Thickness Guidelines",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_2",
+        "clauseNumber": "C4.5.2",
+        "title": "Commentary: Center-to-Center Bolt Hole Spacing",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_5_3",
+        "clauseNumber": "C4.5.3",
+        "title": "Commentary: Edge Distance",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_3",
+        "clauseNumber": "C.3",
+        "title": "Minimum Distances in Existing Connections",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_5",
+        "clauseNumber": "C.5",
+        "title": "Bearing Capacity of Bolts and Members",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      }
+    ]
+  },
+  "asce_10_15_tableC_11_1": {
+    "id": "asce_10_15_tableC_11_1",
+    "key": "tableC_11_1",
+    "standardId": "asce_10_15",
+    "standardName": "ASCE 10-15",
+    "edition": "2015",
+    "number": "Table C.11-1",
+    "title": "Current and Historical Structural Steel & Fastener Specifications in Transmission Towers (Sec. 3.2 & App. C.11)",
+    "unit": "ksi (MPa)",
+    "evaluatedAt": "Minimum guaranteed yield stress (Fy) and specified minimum tensile strength (Fu)",
+    "explicitRefs": [
+      "1.2",
+      "3.0",
+      "3.2",
+      "4.3",
+      "4.3.1",
+      "5.1.6",
+      "C3.0",
+      "C3.1",
+      "C3.2",
+      "C4.4",
+      "C.0",
+      "C.4",
+      "C.5",
+      "C.11"
+    ],
+    "notes": [
+      "Commentary C3.1 notes that ASCE 10-15 is suitable for steels with yield points up to 65 ksi (448 MPa).",
+      "Commentary C3.2 suggests a ratio of Fu / Fy >= 1.15 for steel used for members.",
+      "Per Appendix C.11, towers fabricated prior to 1960 in the U.S. likely used ASTM A7 steel; between 1960 and 1970 either A7 or A36; and after 1970 a minimum of A36 steel."
+    ],
+    "footnotes": null,
+    "referencingClauses": [
+      {
+        "clauseId": "asce_10_15_cl_1_2",
+        "clauseNumber": "1.2",
+        "title": "Applicable Documents",
+        "section": "1.0 General",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_0",
+        "clauseNumber": "3.0",
+        "title": "Design of Members",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_3_2",
+        "clauseNumber": "3.2",
+        "title": "Material",
+        "section": "3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3",
+        "clauseNumber": "4.3",
+        "title": "Fasteners",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_4_3_1",
+        "clauseNumber": "4.3.1",
+        "title": "Materials",
+        "section": "4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_5_1_6",
+        "clauseNumber": "5.1.6",
+        "title": "Material",
+        "section": "5.0 Detailing and Fabrication",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_0",
+        "clauseNumber": "C3.0",
+        "title": "Commentary: Design of Members",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_1",
+        "clauseNumber": "C3.1",
+        "title": "Commentary: Introduction & Scope Limits",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C3_2",
+        "clauseNumber": "C3.2",
+        "title": "Commentary: Material (Fu/Fy Ratio)",
+        "section": "Commentary \u2014 C3.0 Design of Members",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C4_4",
+        "clauseNumber": "C4.4",
+        "title": "Commentary: Design Bearing Stress",
+        "section": "Commentary \u2014 C4.0 Design of Connections",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_0",
+        "clauseNumber": "C.0",
+        "title": "Appendix C: Guidelines for Existing Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_4",
+        "clauseNumber": "C.4",
+        "title": "Bolt Shear Capacity & Field Sampling (ASTM F606)",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_5",
+        "clauseNumber": "C.5",
+        "title": "Bearing Capacity of Bolts and Members",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
+      },
+      {
+        "clauseId": "asce_10_15_cl_C_11",
+        "clauseNumber": "C.11",
+        "title": "ASTM and CSA Material Specifications Used in Older Towers",
+        "section": "Appendix C \u2014 Guidelines for Existing Towers",
+        "standardId": "asce_10_15"
       }
     ]
   }

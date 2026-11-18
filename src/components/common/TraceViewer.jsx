@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, ChevronDown, ChevronUp, Copy, Check, FileCode, Layers } from 'lucide-react';
+import { ShieldCheck, ChevronDown, ChevronUp, Copy, Check } from 'lucide-react';
 import ClauseCitation from './ClauseCitation';
 
 export default function TraceViewer({ trace, onOpenCitation }) {
@@ -21,17 +21,39 @@ export default function TraceViewer({ trace, onOpenCitation }) {
   const getOpBadge = (op) => {
     switch (op) {
       case 'lookup':
-        return <span className="badge badge-info text-xs">LOOKUP</span>;
+        return <span className="badge badge-info">LOOKUP</span>;
       case 'adder':
-        return <span className="badge badge-warning text-xs">ADDER</span>;
+        return <span className="badge badge-warning">ADDER</span>;
       case 'multiplier':
-        return <span className="badge text-xs" style={{ background: '#8b5cf6', color: '#fff' }}>FACTOR</span>;
+        return (
+          <span
+            className="badge"
+            style={{
+              background: 'rgba(168, 85, 247, 0.16)',
+              color: 'var(--accent-purple)',
+              border: '1px solid rgba(168, 85, 247, 0.35)'
+            }}
+          >
+            FACTOR
+          </span>
+        );
       case 'overlay':
-        return <span className="badge text-xs" style={{ background: '#ec4899', color: '#fff' }}>OVERLAY</span>;
+        return (
+          <span
+            className="badge"
+            style={{
+              background: 'rgba(244, 114, 182, 0.16)',
+              color: 'var(--accent-rose)',
+              border: '1px solid rgba(244, 114, 182, 0.35)'
+            }}
+          >
+            OVERLAY
+          </span>
+        );
       case 'formula':
-        return <span className="badge text-xs" style={{ background: '#10b981', color: '#fff' }}>FORMULA</span>;
+        return <span className="badge badge-pass">FORMULA</span>;
       default:
-        return <span className="badge text-xs" style={{ background: '#64748b', color: '#fff' }}>CALC</span>;
+        return <span className="badge badge-neutral">CALC</span>;
     }
   };
 
@@ -39,39 +61,46 @@ export default function TraceViewer({ trace, onOpenCitation }) {
     <div
       className="glass-panel"
       style={{
-        marginTop: '1.5rem',
-        borderRadius: '16px',
-        border: '1px solid var(--border-color)',
+        marginTop: '0.5rem',
         overflow: 'hidden'
       }}
     >
       {/* Trace Card Header */}
       <div
+        role="button"
+        tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setIsOpen(!isOpen);
+          }
+        }}
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0.85rem 1.25rem',
+          flexWrap: 'wrap',
+          gap: '0.65rem',
+          padding: '0.95rem 1.35rem',
           background: 'var(--bg-inset)',
           cursor: 'pointer',
-          borderBottom: isOpen ? '1px solid var(--border-color)' : 'none'
+          borderBottom: isOpen ? '1px solid var(--border-subtle)' : 'none',
+          outline: 'none'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
           <ShieldCheck size={18} color="var(--accent-cyan)" />
-          <span style={{ fontWeight: '600', fontSize: '0.95rem', color: 'var(--text-main)' }}>
+          <span style={{ fontWeight: 650, fontSize: '0.95rem', color: 'var(--text-main)' }}>
             Engineering Audit Trace
           </span>
-          <span className="badge badge-info" style={{ fontSize: '0.7rem', borderRadius: '6px', padding: '0.15rem 0.45rem' }}>
-            {trace.snapshotVersion}
-          </span>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+          <span className="badge badge-info">{trace.snapshotVersion}</span>
+          <span className="mono" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             {trace.calcId}
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <button
             type="button"
             onClick={(e) => {
@@ -79,7 +108,7 @@ export default function TraceViewer({ trace, onOpenCitation }) {
               handleCopy();
             }}
             className="btn-secondary"
-            style={{ padding: '0.25rem 0.6rem', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem', borderRadius: '8px' }}
+            style={{ padding: '0.3rem 0.72rem', fontSize: '0.75rem' }}
             title="Copy audit trace JSON"
           >
             {copied ? <Check size={14} color="var(--status-pass)" /> : <Copy size={14} />}
@@ -91,42 +120,52 @@ export default function TraceViewer({ trace, onOpenCitation }) {
 
       {/* Trace Content */}
       {isOpen && (
-        <div style={{ padding: '1.25rem' }}>
+        <div style={{ padding: '1.35rem' }}>
           {/* Step-by-Step Mathematical Trace */}
           <div style={{ marginBottom: '1.25rem' }}>
-            <h4 style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600, marginBottom: '0.65rem' }}>
-              Execution Sequence & Derivation
+            <h4
+              style={{
+                fontSize: '0.76rem',
+                color: 'var(--text-muted)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontWeight: 650,
+                marginBottom: '0.65rem'
+              }}
+            >
+              Execution Sequence &amp; Derivation
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {trace.steps?.map((step, idx) => (
                 <div
                   key={idx}
+                  className="glass-inset"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '0.55rem 0.75rem',
-                    borderRadius: '10px',
-                    background: 'var(--bg-inset)',
-                    border: '1px solid var(--border-color)',
-                    fontSize: '0.825rem'
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
+                    padding: '0.6rem 0.9rem',
+                    borderRadius: '14px',
+                    fontSize: '0.83rem'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontVariantNumeric: 'tabular-nums' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+                    <span className="mono" style={{ color: 'var(--text-muted)', fontSize: '0.74rem' }}>
                       #{idx + 1}
                     </span>
                     {getOpBadge(step.op)}
-                    <span style={{ fontWeight: '500', color: 'var(--text-main)' }}>
+                    <span style={{ fontWeight: 540, color: 'var(--text-main)' }}>
                       {step.description}
                     </span>
                     {step.ref && (
-                      <span style={{ color: 'var(--accent-cyan)', fontSize: '0.75rem' }}>
+                      <span className="mono" style={{ color: 'var(--accent-cyan)', fontSize: '0.74rem' }}>
                         [{step.ref}]
                       </span>
                     )}
                   </div>
-                  <div style={{ fontWeight: '600', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums' }}>
+                  <div className="mono" style={{ fontWeight: 650, color: 'var(--text-main)' }}>
                     {typeof step.value === 'object' ? JSON.stringify(step.value) : step.value} {step.unit}
                   </div>
                 </div>
@@ -137,7 +176,16 @@ export default function TraceViewer({ trace, onOpenCitation }) {
           {/* Governing Citations */}
           {trace.citations?.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.45rem' }}>
+              <h4
+                style={{
+                  fontSize: '0.76rem',
+                  color: 'var(--text-muted)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  fontWeight: 650,
+                  marginBottom: '0.5rem'
+                }}
+              >
                 Governing Code Citations
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -154,9 +202,19 @@ export default function TraceViewer({ trace, onOpenCitation }) {
 
           {/* Notes & Caveats */}
           {trace.notes?.length > 0 && (
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', borderTop: '1px solid var(--border-color)', paddingTop: '0.65rem' }}>
+            <div
+              style={{
+                fontSize: '0.8rem',
+                color: 'var(--text-muted)',
+                borderTop: '1px solid var(--border-subtle)',
+                paddingTop: '0.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.35rem'
+              }}
+            >
               {trace.notes.map((n, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.35rem' }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
                   <span>ℹ️</span>
                   <span>{n}</span>
                 </div>

@@ -455,6 +455,143 @@ export function BookCoverSvg({ standardId, width = '100%', height = '100%', styl
     );
   }
 
+  if (standardId === 'asce_10_15') {
+    return (
+      <svg
+        viewBox="0 0 320 440"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        style={{ width, height, display: 'block', borderRadius: 'inherit', ...style }}
+      >
+        <defs>
+          {/* Crimson / Structural Steel Slate Gradient */}
+          <linearGradient id="asce10_bg" x1="0" y1="0" x2="320" y2="440" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#2d0c18" />
+            <stop offset="45%" stopColor="#1c0811" />
+            <stop offset="100%" stopColor="#0d0308" />
+          </linearGradient>
+
+          <linearGradient id="asce10_spine" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.22" />
+            <stop offset="25%" stopColor="#ffffff" stopOpacity="0.08" />
+            <stop offset="70%" stopColor="#000000" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.04" />
+          </linearGradient>
+
+          <linearGradient id="asce10_rose_foil" x1="0" y1="0" x2="300" y2="200" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#fda4af" />
+            <stop offset="50%" stopColor="#fb7185" />
+            <stop offset="100%" stopColor="#e11d48" />
+          </linearGradient>
+
+          <pattern id="asce10_grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#fb7185" strokeWidth="0.5" strokeOpacity="0.08" />
+          </pattern>
+        </defs>
+
+        {/* Background */}
+        <rect width="320" height="440" rx="8" fill="url(#asce10_bg)" />
+        <rect width="320" height="440" rx="8" fill="url(#asce10_grid)" />
+
+        {/* Border */}
+        <rect x="18" y="18" width="284" height="404" rx="5" fill="none" stroke="url(#asce10_rose_foil)" strokeWidth="1.2" strokeOpacity="0.45" />
+        <rect x="22" y="22" width="276" height="396" rx="4" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.1" />
+
+        {/* Corner Accents */}
+        <path d="M 18 36 L 18 18 L 36 18" stroke="#fb7185" strokeWidth="2.5" />
+        <path d="M 302 36 L 302 18 L 284 18" stroke="#fb7185" strokeWidth="2.5" />
+        <path d="M 18 404 L 18 422 L 36 422" stroke="#fb7185" strokeWidth="2.5" />
+        <path d="M 302 404 L 302 422 L 284 422" stroke="#fb7185" strokeWidth="2.5" />
+
+        {/* Top Header Label */}
+        <g transform="translate(38, 42)">
+          <rect x="0" y="0" width="66" height="22" rx="4" fill="#e11d48" fillOpacity="0.35" stroke="#fb7185" strokeWidth="1" />
+          <text x="33" y="15" fill="#fff1f2" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="900" letterSpacing="1.2" textAnchor="middle">
+            ASCE/SEI
+          </text>
+          <text x="76" y="14" fill="#fecdd3" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="700" letterSpacing="0.8">
+            STRUCTURAL ENGINEERING STANDARD
+          </text>
+        </g>
+
+        {/* Standard Identifier */}
+        <text x="38" y="96" fill="#fb7185" fontSize="21" fontFamily="'Outfit', system-ui, sans-serif" fontWeight="800" letterSpacing="0.5">
+          ASCE 10-15
+        </text>
+
+        {/* Edition Pill */}
+        <g transform="translate(38, 108)">
+          <rect x="0" y="0" width="126" height="20" rx="10" fill="url(#asce10_rose_foil)" />
+          <text x="63" y="14" fill="#280510" fontSize="9.5" fontFamily="system-ui, sans-serif" fontWeight="800" textAnchor="middle">
+            STANDARD 10-15 (2015)
+          </text>
+        </g>
+
+        {/* Book Title */}
+        <text x="38" y="154" fill="#f8fafc" fontSize="20" fontFamily="'Outfit', system-ui, sans-serif" fontWeight="800">
+          Latticed Steel
+        </text>
+        <text x="38" y="176" fill="#f8fafc" fontSize="20" fontFamily="'Outfit', system-ui, sans-serif" fontWeight="800">
+          Transmission Structures
+        </text>
+        <text x="38" y="194" fill="#fecdd3" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">
+          Angles, Connections, Proof Testing & Foundations
+        </text>
+
+        {/* Separator */}
+        <line x1="38" y1="206" x2="282" y2="206" stroke="#fb7185" strokeOpacity="0.35" strokeWidth="1" />
+
+        {/* Center Latticed Tower & Bolted Angle Gusset Motif */}
+        <g transform="translate(160, 274)">
+          <circle cx="0" cy="0" r="54" fill="none" stroke="#fb7185" strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="3 3" />
+          <circle cx="0" cy="0" r="46" fill="#360d1d" fillOpacity="0.65" stroke="url(#asce10_rose_foil)" strokeWidth="1.5" />
+
+          {/* Truss Panel X-Bracing & K-Bracing */}
+          <line x1="-22" y1="32" x2="-10" y2="-30" stroke="#f8fafc" strokeWidth="2.2" />
+          <line x1="22" y1="32" x2="10" y2="-30" stroke="#f8fafc" strokeWidth="2.2" />
+          <line x1="-22" y1="32" x2="22" y2="32" stroke="#94a3b8" strokeWidth="1.5" />
+          <line x1="-18" y1="12" x2="18" y2="12" stroke="#fda4af" strokeWidth="1.4" />
+          <line x1="-14" y1="-10" x2="14" y2="-10" stroke="#fda4af" strokeWidth="1.4" />
+          <line x1="-10" y1="-30" x2="10" y2="-30" stroke="#fda4af" strokeWidth="1.4" />
+
+          {/* X-Braces */}
+          <line x1="-22" y1="32" x2="18" y2="12" stroke="#fb7185" strokeWidth="1.2" />
+          <line x1="22" y1="32" x2="-18" y2="12" stroke="#fb7185" strokeWidth="1.2" />
+          <line x1="-18" y1="12" x2="14" y2="-10" stroke="#fb7185" strokeWidth="1.2" />
+          <line x1="18" y1="12" x2="-14" y2="-10" stroke="#fb7185" strokeWidth="1.2" />
+          <line x1="-14" y1="-10" x2="0" y2="-30" stroke="#fb7185" strokeWidth="1.2" />
+          <line x1="14" y1="-10" x2="0" y2="-30" stroke="#fb7185" strokeWidth="1.2" />
+
+          {/* Angle Cross-Section Callout Badge */}
+          <g transform="translate(24, -22)">
+            <path d="M -8 -8 L -8 8 L 8 8 L 8 4 L -4 4 L -4 -8 Z" fill="#38bdf8" stroke="#f8fafc" strokeWidth="0.6" />
+          </g>
+        </g>
+
+        {/* Feature Badges Bottom */}
+        <g transform="translate(38, 345)">
+          <rect x="0" y="0" width="116" height="44" rx="6" fill="#240914" stroke="#5c1630" strokeWidth="1" />
+          <text x="12" y="19" fill="#fb7185" fontSize="14" fontFamily="system-ui, sans-serif" fontWeight="800">266</text>
+          <text x="12" y="33" fill="#fda4af" fontSize="8.5" fontFamily="system-ui, sans-serif" fontWeight="600">CLAUSES & EXAMPLES</text>
+
+          <rect x="128" y="0" width="116" height="44" rx="6" fill="#240914" stroke="#5c1630" strokeWidth="1" />
+          <text x="140" y="19" fill="#38bdf8" fontSize="14" fontFamily="system-ui, sans-serif" fontWeight="800">5</text>
+          <text x="140" y="33" fill="#fda4af" fontSize="8.5" fontFamily="system-ui, sans-serif" fontWeight="600">DESIGN TABLES</text>
+        </g>
+
+        {/* Bottom standard watermark */}
+        <text x="160" y="412" fill="#e11d48" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="1.1" textAnchor="middle">
+          HOT-ROLLED & COLD-FORMED STEEL TRANSMISSION TOWERS
+        </text>
+
+        {/* Left Book Spine 3D Shadow Overlay */}
+        <rect x="0" y="0" width="16" height="440" rx="4" fill="url(#asce10_spine)" />
+        <line x1="16" y1="0" x2="16" y2="440" stroke="#000000" strokeWidth="0.75" strokeOpacity="0.5" />
+      </svg>
+    );
+  }
+
   // CSA O15: Wood Utility Poles
   return (
     <svg

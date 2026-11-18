@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { Layers, Download, Printer, Filter, CheckCircle2 } from 'lucide-react';
+import { Layers, Download, Printer, Filter } from 'lucide-react';
 import { generateUnifiedLoadCaseMatrix, exportLoadCasesToCsv } from '../utils/loadCaseMatrixEngine.js';
+
+const FILTER_OPTIONS = [
+  { value: 'ALL', label: 'All Categories' },
+  { value: 'CLEARANCE', label: 'Clearance Only' },
+  { value: 'STRENGTH', label: 'Structural Strength Only' },
+  { value: 'TENSION', label: 'Tension / Uplift Only' }
+].sort((a, b) => a.label.localeCompare(b.label));
 
 export default function LoadCaseMatrixView({
   district = 'Heavy',
@@ -27,9 +34,10 @@ export default function LoadCaseMatrixView({
     grade
   });
 
-  const filteredCases = filterType === 'ALL'
-    ? loadCases
-    : loadCases.filter((c) => c.type.toUpperCase().includes(filterType));
+  const filteredCases =
+    filterType === 'ALL'
+      ? loadCases
+      : loadCases.filter((c) => c.type.toUpperCase().includes(filterType));
 
   const handleDownloadCsv = () => {
     const csvContent = exportLoadCasesToCsv(loadCases);
@@ -48,105 +56,101 @@ export default function LoadCaseMatrixView({
   };
 
   return (
-    <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px', marginTop: '1.5rem' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-          <div style={{
-            width: '36px',
-            height: '36px',
-            borderRadius: '10px',
-            background: 'linear-gradient(135deg, #a855f7, #6366f1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff'
-          }}>
-            <Layers size={20} />
+    <div className="glass-panel" style={{ padding: '1.45rem 1.65rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.15rem', flexWrap: 'wrap', gap: '0.85rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div
+            style={{
+              width: '38px',
+              height: '38px',
+              borderRadius: '13px',
+              background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.92), rgba(99, 102, 241, 0.88))',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#fff',
+              boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+            }}
+          >
+            <Layers size={19} />
           </div>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-main)', fontWeight: 600 }}>
+            <h3 style={{ margin: 0, fontSize: '1.08rem', color: 'var(--text-main)', fontWeight: 660 }}>
               CSA Unified Load Case Matrix (MVP A4)
             </h3>
-            <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-              Deterministic (No. 1) & Reliability-Based (No. 60826) load case envelope with traceable citations.
+            <p style={{ margin: '0.18rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              Deterministic (No. 1) &amp; Reliability-Based (No. 60826) load case envelope with traceable citations.
             </p>
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {/* Filter Dropdown */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Filter size={16} color="var(--text-muted)" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <Filter size={15} color="var(--text-muted)" />
             <select
-              className="form-select"
-              style={{ padding: '4px 8px', fontSize: '0.8rem' }}
+              style={{ width: 'auto', padding: '0.45rem 2.1rem 0.45rem 0.75rem', fontSize: '0.8rem', borderRadius: '9999px' }}
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
             >
-              <option value="ALL">All Categories</option>
-              <option value="STRENGTH">Structural Strength Only</option>
-              <option value="CLEARANCE">Clearance Only</option>
-              <option value="TENSION">Tension / Uplift Only</option>
+              {FILTER_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
             </select>
           </div>
 
-          <button
-            onClick={handleDownloadCsv}
-            className="btn-secondary"
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 12px', fontSize: '0.8rem' }}
-          >
+          <button type="button" onClick={handleDownloadCsv} className="btn-secondary" style={{ fontSize: '0.8rem', padding: '0.45rem 0.95rem' }}>
             <Download size={15} /> Export CSV
           </button>
 
-          <button
-            onClick={handlePrint}
-            className="btn-secondary"
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 12px', fontSize: '0.8rem' }}
-          >
+          <button type="button" onClick={handlePrint} className="btn-secondary" style={{ fontSize: '0.8rem', padding: '0.45rem 0.95rem' }}>
             <Printer size={15} /> Print Summary
           </button>
         </div>
       </div>
 
       {/* Table */}
-      <div style={{ overflowX: 'auto', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-        <table className="table-borderless" style={{ width: '100%', fontSize: '0.825rem' }}>
+      <div className="glass-inset" style={{ overflowX: 'auto' }}>
+        <table className="table-borderless" style={{ width: '100%', fontSize: '0.83rem' }}>
           <thead>
             <tr>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Case ID</th>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Code Citation</th>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Load Case Name</th>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Design Type</th>
-              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Radial Ice</th>
-              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Wind Press.</th>
-              <th style={{ textAlign: 'right', padding: '10px 12px' }}>Temp</th>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Factors / OCF</th>
-              <th style={{ textAlign: 'left', padding: '10px 12px' }}>Governing Application</th>
+              <th>Case ID</th>
+              <th>Code Citation</th>
+              <th>Load Case Name</th>
+              <th>Design Type</th>
+              <th style={{ textAlign: 'right' }}>Radial Ice</th>
+              <th style={{ textAlign: 'right' }}>Wind Press.</th>
+              <th style={{ textAlign: 'right' }}>Temp</th>
+              <th>Factors / OCF</th>
+              <th>Governing Application</th>
             </tr>
           </thead>
           <tbody>
             {filteredCases.map((c) => (
               <tr key={c.id}>
-                <td style={{ padding: '10px 12px', fontWeight: 600, color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums' }}>{c.id}</td>
-                <td style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{c.code}</td>
-                <td style={{ padding: '10px 12px', fontWeight: 500, color: 'var(--text-main)' }}>{c.name}</td>
-                <td style={{ padding: '10px 12px' }}>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    padding: '0.2rem 0.55rem',
-                    borderRadius: '6px',
-                    fontWeight: 600,
-                    background: c.type.includes('Strength') ? 'rgba(244, 63, 94, 0.12)' : 'rgba(56, 189, 248, 0.12)',
-                    color: c.type.includes('Strength') ? 'var(--status-violation)' : 'var(--accent-cyan)'
-                  }}>
+                <td className="mono" style={{ fontWeight: 650, color: 'var(--accent-cyan)' }}>
+                  {c.id}
+                </td>
+                <td style={{ color: 'var(--text-muted)' }}>{c.code}</td>
+                <td style={{ fontWeight: 550, color: 'var(--text-main)' }}>{c.name}</td>
+                <td>
+                  <span className={`badge ${c.type.includes('Strength') ? 'badge-fail' : 'badge-info'}`}>
                     {c.type}
                   </span>
                 </td>
-                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.iceMm} mm</td>
-                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.windPa} Pa</td>
-                <td style={{ textAlign: 'right', padding: '10px 12px', fontVariantNumeric: 'tabular-nums' }}>{c.tempC} °C</td>
-                <td style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{c.ocf}</td>
-                <td style={{ padding: '10px 12px', color: 'var(--text-main)' }}>{c.governingUse}</td>
+                <td className="mono" style={{ textAlign: 'right' }}>
+                  {c.iceMm} mm
+                </td>
+                <td className="mono" style={{ textAlign: 'right' }}>
+                  {c.windPa} Pa
+                </td>
+                <td className="mono" style={{ textAlign: 'right' }}>
+                  {c.tempC} °C
+                </td>
+                <td style={{ color: 'var(--text-muted)' }}>{c.ocf}</td>
+                <td style={{ color: 'var(--text-main)' }}>{c.governingUse}</td>
               </tr>
             ))}
           </tbody>

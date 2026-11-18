@@ -149,6 +149,8 @@ export default function LibraryHallView({
               ? '#c084fc' 
               : book.id === 'csa_o15'
               ? '#34d399'
+              : book.id === 'asce_10_15'
+              ? '#fb7185'
               : '#f59e0b';
 
             const calculatorTarget = book.id === 'c22_3_no1'
@@ -157,23 +159,23 @@ export default function LibraryHallView({
               ? { id: 'weather', label: 'Weather & PLS-CADD Criteria' }
               : book.id === 'csa_o15'
               ? { id: 'wood_pole', label: 'Wood Pole Structural Engine' }
+              : book.id === 'asce_10_15'
+              ? { id: 'wood_pole', label: 'Structural Loading Engine' }
               : { id: 'weather', label: 'AutoSag & Weather Criteria' };
 
             return (
               <div
                 key={book.id}
-                className="animate-stagger-item"
+                className="glass-panel animate-stagger-item"
                 onMouseEnter={() => setHoveredBookId(book.id)}
                 onMouseLeave={() => setHoveredBookId(null)}
                 style={{
                   '--stagger-index': bIdx,
                   display: 'flex',
                   flexDirection: 'column',
-                  background: 'var(--bg-secondary)',
-                  borderRadius: '16px',
-                  border: isHovered ? `1px solid ${accentColor}` : '1px solid var(--border-color)',
-                  boxShadow: isHovered ? `0 16px 32px -8px rgba(0, 0, 0, 0.6), 0 0 24px -4px ${accentColor}33` : '0 8px 20px -4px rgba(0, 0, 0, 0.4)',
-                  transition: 'translate 0.26s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.26s ease',
+                  borderColor: isHovered ? accentColor : undefined,
+                  boxShadow: isHovered ? `var(--shadow-glass-hover), 0 0 28px -4px ${accentColor}40` : undefined,
+                  transition: 'translate 0.42s var(--spring-easing), border-color 0.22s ease, box-shadow 0.3s ease',
                   translate: isHovered ? '0 -5px' : '0 0',
                   overflow: 'hidden'
                 }}
@@ -247,6 +249,7 @@ export default function LibraryHallView({
                       {book.id === 'c22_3_no1' && 'Deterministic loading, vertical/road ground clearances, crossing profiles, joint-use separations, and structural overload capacity factors.'}
                       {book.id === 'c22_3_60826' && 'Reliability-based limit states design (50–500 yr return periods), dynamic wind pressures, radial ice accretion, and Canadian National Annexes CA & CB.'}
                       {book.id === 'csa_o15' && 'Commercial wood pole species (Western Red Cedar, Douglas Fir, Lodgepole Pine), designated fiber stresses, dimensional classes H6 to 8, and stubs.'}
+                      {book.id === 'asce_10_15' && 'Design, detailing, fabrication, and proof testing of self-supporting and guyed latticed steel transmission towers: angle buckling (Curves 1–6), bolted connections, foundations, and 17 worked examples.'}
                       {book.id === 'pls_cadd_lessons' && 'Conversational Q&A dialogue between Alex Rivera, E.I.T. and Dan Miller, P.Eng. covering P&P drafting, AutoSag, Method 4 FEA, guy mechanics, and CSA compliance.'}
                     </p>
                   </div>
@@ -330,7 +333,7 @@ export default function LibraryHallView({
       <div className="library-shelf-platform" />
 
       {/* Bookmarked & Pinned Reference Shelf */}
-      <div className="glass-panel library-pinned-shelf" style={{ borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+      <div className="glass-panel library-pinned-shelf">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <Star size={18} fill="#f59e0b" color="#f59e0b" />
@@ -344,7 +347,7 @@ export default function LibraryHallView({
         </div>
 
         {bookmarks.length === 0 ? (
-          <div style={{ padding: '1.25rem', borderRadius: '10px', background: 'rgba(255,255,255,0.02)', border: '1px dashed var(--border-color)', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.84rem' }}>
+          <div className="glass-inset" style={{ padding: '1.25rem', border: '1px dashed var(--border-color)', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.84rem' }}>
             No clauses or tables pinned yet. Open any book volume above and click the <Star size={13} style={{ verticalAlign: 'middle', color: '#f59e0b' }} /> icon on frequently used clauses or tables to pin them to your reference shelf.
           </div>
         ) : (

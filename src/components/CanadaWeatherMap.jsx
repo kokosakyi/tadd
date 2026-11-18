@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
-import L from 'leaflet';
-import { MapPin, Navigation, Info, ExternalLink } from 'lucide-react';
+import { MapPin, Navigation } from 'lucide-react';
 import geoData from '../data/csaGeoDatabase.json';
 
 // Helper component to center map when selected station changes & invalidate size on viewport changes
@@ -33,9 +32,7 @@ function MapRecenter({ center, zoom }) {
 export default function CanadaWeatherMap({
   selectedProvince,
   selectedCity,
-  onSelectStation,
-  returnPeriod = 50,
-  district = 'Heavy'
+  onSelectStation
 }) {
   // Collect all stations with coordinates from geoData
   const allStations = useMemo(() => {
@@ -76,50 +73,66 @@ export default function CanadaWeatherMap({
   };
 
   return (
-    <div className="glass-panel" style={{ padding: '1rem', borderRadius: '16px', marginBottom: '1.5rem' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-          <div style={{
-            width: '32px',
-            height: '32px',
-            borderRadius: '8px',
-            background: 'linear-gradient(135deg, #0284c7, #38bdf8)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff'
-          }}>
+    <div className="glass-panel" style={{ padding: '1.25rem 1.45rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.9rem', flexWrap: 'wrap', gap: '0.65rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+          <div
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '12px',
+              background: 'var(--accent-primary)',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#fff',
+              boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+            }}
+          >
             <MapPin size={18} />
           </div>
           <div>
-            <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-main)', fontWeight: 600 }}>
+            <h4 style={{ margin: 0, fontSize: '1.02rem', color: 'var(--text-main)', fontWeight: 660 }}>
               CSA 60826 Geoclimatic Station Map
             </h4>
-            <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              Click any station pin across Canada or search to zoom & auto-fill criteria.
+            <p style={{ margin: 0, fontSize: '0.77rem', color: 'var(--text-muted)' }}>
+              Click any station pin across Canada or search to zoom &amp; auto-fill criteria.
             </p>
           </div>
         </div>
 
-        {/* Legend */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10b981' }} /> &lt;15 mm
+        {/* Frosted Legend Capsule */}
+        <div
+          className="glass-inset"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            padding: '0.4rem 0.85rem',
+            borderRadius: '9999px',
+            fontSize: '0.74rem',
+            color: 'var(--text-muted)'
+          }}
+        >
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#10b981' }} /> &lt;15 mm
           </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#38bdf8' }} /> 15–25 mm
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#38bdf8' }} /> 15–25 mm
           </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#f59e0b' }} /> 25–35 mm
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#f59e0b' }} /> 25–35 mm
           </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }} /> &ge;35 mm
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ef4444' }} /> &ge;35 mm
           </span>
         </div>
       </div>
 
       {/* Map Container - Expanded to at least 50% viewport height */}
-      <div style={{ height: 'max(52vh, 480px)', minHeight: '50vh', width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)', position: 'relative' }}>
+      <div style={{ height: 'max(52vh, 480px)', minHeight: '50vh', width: '100%', borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-color)', position: 'relative' }}>
         <MapContainer
           center={mapCenter}
           zoom={currentStation ? 7 : 4}
@@ -145,7 +158,7 @@ export default function CanadaWeatherMap({
                 radius={isSelected ? 9 : 5}
                 pathOptions={{
                   fillColor: color,
-                  fillOpacity: isSelected ? 1 : 0.8,
+                  fillOpacity: isSelected ? 1 : 0.82,
                   color: isSelected ? '#0284c7' : '#0f172a',
                   weight: isSelected ? 3 : 1
                 }}
@@ -169,37 +182,38 @@ export default function CanadaWeatherMap({
                       <tbody>
                         <tr>
                           <td style={{ padding: '2px 0', color: '#64748b' }}>50-yr Wind:</td>
-                          <td style={{ padding: '2px 0', fontWeight: '600', textAlign: 'right' }}>{station.wind_50yr} km/h</td>
+                          <td style={{ padding: '2px 0', fontWeight: 600, textAlign: 'right' }}>{station.wind_50yr} km/h</td>
                         </tr>
                         <tr>
                           <td style={{ padding: '2px 0', color: '#64748b' }}>50-yr Radial Ice:</td>
-                          <td style={{ padding: '2px 0', fontWeight: '600', textAlign: 'right' }}>{station.ice_50yr} mm</td>
+                          <td style={{ padding: '2px 0', fontWeight: 600, textAlign: 'right' }}>{station.ice_50yr} mm</td>
                         </tr>
                         <tr>
                           <td style={{ padding: '2px 0', color: '#64748b' }}>Min Jan Temp (1%):</td>
-                          <td style={{ padding: '2px 0', fontWeight: '600', textAlign: 'right' }}>{station.min_temp} °C</td>
+                          <td style={{ padding: '2px 0', fontWeight: 600, textAlign: 'right' }}>{station.min_temp} °C</td>
                         </tr>
                         {station.wet_snow_50yr && (
                           <tr>
                             <td style={{ padding: '2px 0', color: '#64748b' }}>50-yr Wet Snow:</td>
-                            <td style={{ padding: '2px 0', fontWeight: '600', textAlign: 'right' }}>{station.wet_snow_50yr} mm</td>
+                            <td style={{ padding: '2px 0', fontWeight: 600, textAlign: 'right' }}>{station.wet_snow_50yr} mm</td>
                           </tr>
                         )}
                       </tbody>
                     </table>
                     <button
+                      type="button"
                       onClick={() => onSelectStation && onSelectStation(station.province, station.location)}
                       style={{
                         marginTop: '8px',
                         width: '100%',
-                        padding: '4px 8px',
+                        padding: '5px 10px',
                         fontSize: '0.75rem',
                         backgroundColor: '#0284c7',
                         color: '#fff',
                         border: 'none',
-                        borderRadius: '4px',
+                        borderRadius: '9999px',
                         cursor: 'pointer',
-                        fontWeight: '500'
+                        fontWeight: 600
                       }}
                     >
                       Set Active Station
@@ -211,28 +225,32 @@ export default function CanadaWeatherMap({
           })}
         </MapContainer>
 
-        {/* Selected Station Banner Overlay */}
+        {/* Selected Station Frosted Glass Pill Overlay */}
         {currentStation && (
-          <div style={{
-            position: 'absolute',
-            bottom: '12px',
-            left: '12px',
-            zIndex: 1000,
-            background: 'var(--bg-card)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid var(--border-color)',
-            borderRadius: '8px',
-            padding: '8px 12px',
-            fontSize: '0.8rem',
-            color: 'var(--text-main)',
-            boxShadow: 'var(--shadow-md)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}>
-            <Navigation size={14} color="#38bdf8" />
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '14px',
+              left: '14px',
+              zIndex: 1000,
+              background: 'var(--bg-card-solid)',
+              backdropFilter: 'blur(20px) saturate(185%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(185%)',
+              border: '1px solid var(--border-strong)',
+              borderRadius: '9999px',
+              padding: '7px 14px',
+              fontSize: '0.79rem',
+              color: 'var(--text-main)',
+              boxShadow: 'var(--shadow-md)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            <Navigation size={14} color="var(--accent-cyan)" />
             <span>
-              Active: <strong>{currentStation.location}</strong> ({selectedProvince}) &bull; {currentStation.latitude.toFixed(2)}°N, {Math.abs(currentStation.longitude).toFixed(2)}°W
+              Active: <strong>{currentStation.location}</strong> ({selectedProvince}) &bull;{' '}
+              {currentStation.latitude.toFixed(2)}°N, {Math.abs(currentStation.longitude).toFixed(2)}°W
             </span>
           </div>
         )}

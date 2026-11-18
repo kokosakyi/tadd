@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { ProjectProvider } from './context/ProjectContext';
 import { UnitProvider } from './context/UnitContext';
-import Header from './components/common/Header';
+import Header, { MobileBottomTabBar } from './components/common/Header';
+import LiquidBackground from './components/common/LiquidBackground';
 import ProjectSetupModal from './components/project/ProjectSetupModal';
 import Dashboard from './components/dashboard/Dashboard';
 
@@ -12,10 +13,28 @@ const CodeLibraryBrowser = lazy(() => import('./components/codeLibrary/CodeLibra
 
 function ViewLoadingFallback() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', color: 'var(--text-muted)' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-        <div style={{ width: '28px', height: '28px', border: '3px solid var(--border-color)', borderTopColor: 'var(--accent-cyan)', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-        <span style={{ fontSize: '0.85rem' }}>Loading workspace module...</span>
+    <div
+      className="glass-panel"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '46vh',
+        color: 'var(--text-muted)'
+      }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem' }}>
+        <div
+          style={{
+            width: '32px',
+            height: '32px',
+            border: '3px solid var(--border-color)',
+            borderTopColor: 'var(--accent-cyan)',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite'
+          }}
+        />
+        <span style={{ fontSize: '0.88rem', fontWeight: 550 }}>Loading workspace module...</span>
       </div>
     </div>
   );
@@ -23,12 +42,25 @@ function ViewLoadingFallback() {
 
 function AppContent() {
   const [currentView, setCurrentView] = useState('dashboard');
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('linedesk_ca_theme');
+      if (saved === 'light' || saved === 'dark') return saved;
+    } catch {
+      /* ignore storage errors */
+    }
+    return 'dark';
+  });
   const mainViewRef = useRef(null);
 
-  // Synchronize document theme attribute
+  // Synchronize document theme attribute & persist user preference
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('linedesk_ca_theme', theme);
+    } catch {
+      /* ignore storage errors */
+    }
   }, [theme]);
 
   const [activeCitation, setActiveCitation] = useState(null);
@@ -70,56 +102,63 @@ function AppContent() {
   };
 
   return (
-    <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '1.25rem' }}>
-      
-      {/* LineDesk CA Global Navigation Header */}
-      <Header
-        currentView={currentView}
-        onNavigate={handleNavigate}
-        theme={theme}
-        setTheme={setTheme}
-      />
+    <>
+      {/* Ambient Soft Gradient & Floating Color Blobs */}
+      <LiquidBackground />
 
-      {/* Main Workspace Router */}
-      <main
-        ref={mainViewRef}
-        tabIndex={-1}
-        key={currentView}
-        className="animate-view-enter"
-        style={{ minHeight: '80vh', outline: 'none' }}
-      >
-        <Suspense fallback={<ViewLoadingFallback />}>
-          {currentView === 'dashboard' && (
-            <Dashboard onNavigate={handleNavigate} />
-          )}
+      <div className="app-shell">
+        {/* Desktop Floating Glass Sidebar & Mobile Glass Top Bar */}
+        <Header
+          currentView={currentView}
+          onNavigate={handleNavigate}
+          theme={theme}
+          setTheme={setTheme}
+        />
 
-          {currentView === 'clearance' && (
-            <ClearanceCalculatorView onOpenCitation={handleOpenCitation} />
-          )}
+        {/* Main Workspace Router */}
+        <main
+          ref={mainViewRef}
+          tabIndex={-1}
+          key={currentView}
+          className="workspace-main animate-view-enter"
+        >
+          <Suspense fallback={<ViewLoadingFallback />}>
+            {currentView === 'dashboard' && (
+              <Dashboard onNavigate={handleNavigate} />
+            )}
 
-          {currentView === 'weather' && (
-            <WeatherCriteriaView onOpenCitation={handleOpenCitation} />
-          )}
+            {currentView === 'clearance' && (
+              <ClearanceCalculatorView onOpenCitation={handleOpenCitation} />
+            )}
 
-          {currentView === 'wood_pole' && (
-            <WoodPoleCalculatorView onOpenCitation={handleOpenCitation} />
-          )}
+            {currentView === 'weather' && (
+              <WeatherCriteriaView onOpenCitation={handleOpenCitation} />
+            )}
 
-          {currentView === 'code_library' && (
-            <CodeLibraryBrowser
-              onOpenCalculator={handleNavigate}
-              initialCitation={activeCitation}
-              onClearCitation={() => setActiveCitation(null)}
-            />
-          )}
-        </Suspense>
-      </main>
+            {currentView === 'wood_pole' && (
+              <WoodPoleCalculatorView onOpenCitation={handleOpenCitation} />
+            )}
 
+            {currentView === 'code_library' && (
+              <CodeLibraryBrowser
+                onOpenCalculator={handleNavigate}
+                initialCitation={activeCitation}
+                onClearCitation={() => setActiveCitation(null)}
+              />
+            )}
+          </Suspense>
+        </main>
+
+        {/* Mobile Floating Glass Bottom Tab Bar (< 1024px) */}
+        <MobileBottomTabBar
+          currentView={currentView}
+          onNavigate={handleNavigate}
+        />
+      </div>
 
       {/* Global Project Setup Wizard Modal */}
       <ProjectSetupModal />
-
-    </div>
+    </>
   );
 }
 

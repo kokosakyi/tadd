@@ -91,6 +91,8 @@ export const CODE_EDITIONS = ALL_LIBRARY_BOOKS.map((s) => ({
     ? 'Reliability-based loading (wind, ice, combined), security, safety, Canadian annex.'
     : s.id === 'csa_o15'
     ? 'Pole classes, species, designated fiber stresses, dimensional tables.'
+    : s.id === 'asce_10_15'
+    ? 'Latticed steel transmission structures: compression/tension members, bolted connections, testing, and foundations.'
     : 'Drafting, AutoSag, Non-Linear FEA, Guy Mechanics, CSA Clearances, and Line Automation.',
   clauseCount: s.clauseCount,
   tableCount: s.tableCount

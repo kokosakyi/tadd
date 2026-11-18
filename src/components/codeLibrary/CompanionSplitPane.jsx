@@ -66,8 +66,7 @@ export default function CompanionSplitPane({
           className="glass-panel animate-split-pane companion-split-pane"
           aria-label={`Companion Inspector: ${tableData.number}`}
           style={{
-            border: '1px solid rgba(16, 185, 129, 0.45)',
-            background: 'var(--bg-secondary)'
+            borderColor: 'rgba(16, 185, 129, 0.45)'
           }}
         >
           {/* Top Inspector Bar */}
@@ -244,8 +243,7 @@ export default function CompanionSplitPane({
         className="glass-panel animate-split-pane companion-split-pane"
         aria-label={`Companion Inspector: Clause ${cl.clauseNumber}`}
         style={{
-          border: '1px solid rgba(56, 189, 248, 0.45)',
-          background: 'var(--bg-secondary)'
+          borderColor: 'rgba(56, 189, 248, 0.45)'
         }}
       >
         <div

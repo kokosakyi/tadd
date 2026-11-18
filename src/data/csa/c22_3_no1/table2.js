@@ -13,7 +13,7 @@
 export const TABLE_2_META = {
   id: 'csa-c22.3-no1/table2',
   standard: 'CSA C22.3 No. 1',
-  edition: 'TODO: confirm edition/year from source PDF',
+  edition: '2015',
   title: 'Minimum vertical design clearances above ground or rails, ac',
   unit: 'm',
   /** Clearances apply at maximum conductor sag (Cl. 5.2) */

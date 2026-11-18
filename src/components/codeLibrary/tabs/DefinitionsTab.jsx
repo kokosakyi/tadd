@@ -12,9 +12,7 @@ export default function DefinitionsTab({
           key={def.id} 
           className="glass-panel" 
           style={{ 
-            padding: '1.25rem', 
-            borderRadius: '12px', 
-            border: '1px solid var(--border-color)',
+            padding: '1.35rem', 
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between'

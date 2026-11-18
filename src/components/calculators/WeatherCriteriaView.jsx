@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Wind, Download, MapPin, FileSpreadsheet, Layers, ShieldCheck } from 'lucide-react';
+import { Wind, FileSpreadsheet } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 import geoData from '../../data/csaGeoDatabase.json';
 import {
@@ -96,28 +96,42 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
   };
 
   return (
-    <div style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      
+    <div style={{ maxWidth: '1320px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       {/* View Header */}
-      <div className="glass-panel" style={{ padding: '1.25rem 1.5rem', borderRadius: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
+      <div className="glass-panel" style={{ padding: '1.35rem 1.65rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.85rem' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Wind size={22} color="var(--accent-cyan)" />
-              <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-main)', margin: 0, letterSpacing: '-0.015em' }}>
-                Weather Criteria, Climatic Map & Load Case Matrix (A3 / A4 / M2)
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <div
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.92), rgba(5, 150, 105, 0.88))',
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+                }}
+              >
+                <Wind size={18} color="#ffffff" />
+              </div>
+              <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
+                Weather Criteria, Climatic Map &amp; Load Case Matrix (A3 / A4 / M2)
               </h2>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.25rem 0 0' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>
               682-station Canadian geoclimatic database, CSA C22.3 No. 60826 reliability scaling, and unified load cases.
             </p>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <button
+              type="button"
               onClick={handleExportCsv}
               className="btn-primary"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.825rem', borderRadius: '10px' }}
+              style={{ fontSize: '0.83rem' }}
               title="Download unified load case matrix as CSV"
             >
               <FileSpreadsheet size={16} />
@@ -171,8 +185,8 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
         setIsBundled={setIsBundled}
       />
 
-      {/* Analysis Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+      {/* Analysis Modules Stack */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.35rem' }}>
         <Module2RPScalingCard
           scalingResults={scalingResult}
           selectedCity={selectedCity}
@@ -213,7 +227,6 @@ export default function WeatherCriteriaView({ onOpenCitation }) {
 
       {/* Bottom: Engineering Audit Trace Card */}
       <TraceViewer trace={trace} onOpenCitation={onOpenCitation} />
-
     </div>
   );
 }

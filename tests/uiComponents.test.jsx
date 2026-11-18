@@ -112,6 +112,7 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     expect(screen.getAllByText('CSA C22.3 No. 1').length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText('CSA C22.3 No. 60826').length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText('CSA O15').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('ASCE 10-15').length).toBeGreaterThanOrEqual(1);
 
     // Verify SVG covers rendered
     const svgs = container.querySelectorAll('svg');
@@ -165,13 +166,13 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     expect(screen.getByText('CSA O15 Cl. 0')).toBeDefined();
   });
 
-  it('UniversalTableRenderer renders all 83 digitized tables completely with zero [object Object] or blank tables', async () => {
+  it('UniversalTableRenderer renders all 88 digitized tables completely with zero [object Object] or blank tables', async () => {
     const { ALL_TABLES } = await import('../src/core/code/codeLibraryRegistry');
     const { getTableDetails } = await import('../src/core/code/tableContentResolver');
 
     const { default: UniversalTableRenderer } = await import('../src/components/codeLibrary/UniversalTableRenderer.jsx');
 
-    expect(ALL_TABLES.length).toBe(83);
+    expect(ALL_TABLES.length).toBe(88);
 
     for (const tbl of ALL_TABLES) {
       const fullTable = getTableDetails(tbl.id);
@@ -295,5 +296,56 @@ describe('UI Component Test Suite - Code Library of Books & Cover Display', () =
     fireEvent.click(container.querySelector('.book-toc-backdrop'));
     expect(container.querySelector('.book-toc-backdrop')).toBeNull();
   });
+
+  it('renders LaTeX mathematical equations via KaTeX in both block and inline modes', async () => {
+    const { default: Latex } = await import('../src/components/common/Latex.jsx');
+    const { container: inlineContainer } = render(
+      <Latex math="S = \frac{C^3}{32\pi^2}" />
+    );
+    expect(inlineContainer.querySelector('.katex')).not.toBeNull();
+    expect(inlineContainer.querySelector('.katex-html')).not.toBeNull();
+    expect(inlineContainer.querySelector('annotation')?.textContent).toBe('S = \\frac{C^3}{32\\pi^2}');
+
+    const { container: blockContainer } = render(
+      <Latex block math="AF_{P\Delta} = \frac{1}{1 - V_L / P_{\text{cr}}}" />
+    );
+    expect(blockContainer.querySelector('.latex-block-eq')).not.toBeNull();
+    expect(blockContainer.querySelector('.katex-display')).not.toBeNull();
+  });
 });
+
+describe('UI Component Test Suite - iOS 26 Liquid Glass Shell & Navigation', () => {
+  it('renders ambient LiquidBackground with 4 floating blobs, Desktop Glass Sidebar, and Mobile Glass Bottom Tab Bar', async () => {
+    const { default: App } = await import('../src/App.jsx');
+    const { container } = render(<App />);
+
+    // Verify ambient soft gradient + floating blobs canvas
+    const liquidBg = screen.getByTestId('liquid-glass-background');
+    expect(liquidBg).toBeDefined();
+    expect(liquidBg.querySelectorAll('.liquid-blob').length).toBe(4);
+
+    // Verify Desktop Glass Sidebar and Mobile Glass Bottom Tab Bar are rendered
+    const desktopSidebar = screen.getByLabelText('Desktop Navigation Sidebar');
+    const mobileBottomBar = screen.getByLabelText('Mobile Bottom Tab Bar');
+    expect(desktopSidebar).toBeDefined();
+    expect(mobileBottomBar).toBeDefined();
+    expect(desktopSidebar.classList.contains('glass-sidebar')).toBe(true);
+    expect(mobileBottomBar.classList.contains('glass-bottom-tabbar')).toBe(true);
+
+    // Verify interactive navigation via Mobile Glass Bottom Tab Bar and Desktop Glass Sidebar
+    const mobileClearanceTab = mobileBottomBar.querySelectorAll('button')[1];
+    fireEvent.click(mobileClearanceTab);
+    expect(mobileClearanceTab.getAttribute('aria-current')).toBe('page');
+    expect(await screen.findByText(/Vertical Clearance Engine & Compliance/i)).toBeDefined();
+
+    const desktopWoodPoleBtn = desktopSidebar.querySelectorAll('.sidebar-nav-btn')[3];
+    fireEvent.click(desktopWoodPoleBtn);
+    expect(desktopWoodPoleBtn.getAttribute('aria-current')).toBe('page');
+    expect(await screen.findByText(/Wood Pole Loading & Structural Sizing/i)).toBeDefined();
+
+    // Verify workspace glass panels exist
+    expect(container.querySelectorAll('.glass-panel').length).toBeGreaterThan(2);
+  });
+});
+
 

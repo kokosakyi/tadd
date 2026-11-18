@@ -21,6 +21,7 @@ import {
   getAllAnsiSpecies
 } from '../../core/woodPole/woodPoleEngine';
 import TraceViewer from '../common/TraceViewer';
+import Latex from '../common/Latex';
 
 export default function WoodPoleCalculatorView({ onOpenCitation }) {
   const { activeProject } = useProject();
@@ -34,7 +35,9 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
   const csaSpeciesList = getAllO15Species().sort((a, b) => a.commonName.localeCompare(b.commonName));
   const ansiSpeciesList = getAllAnsiSpecies().sort((a, b) => a.commonName.localeCompare(b.commonName));
   const activeSpeciesList = standard === 'ANSI' ? ansiSpeciesList : csaSpeciesList;
-  const allPoleClasses = getAllO15PoleClasses();
+  const allPoleClasses = getAllO15PoleClasses().sort((a, b) =>
+    String(a.class).localeCompare(String(b.class))
+  );
 
   // Calculation State
   const [speciesCode, setSpeciesCode] = useState('WC');
@@ -299,16 +302,30 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
     <div style={{ maxWidth: '1360px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       
       {/* View Header & Standard Switcher */}
-      <div className="glass-panel" style={{ padding: '1.25rem 1.5rem', borderRadius: '16px' }}>
+      <div className="glass-panel" style={{ padding: '1.35rem 1.65rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <TreePine size={22} color="var(--accent-cyan)" />
-              <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-main)', margin: 0, letterSpacing: '-0.015em' }}>
-                Wood Pole Loading & Structural Sizing (A6 / M3)
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <div
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.88))',
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+                }}
+              >
+                <TreePine size={18} color="#ffffff" />
+              </div>
+              <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
+                Wood Pole Loading &amp; Structural Sizing (A6 / M3)
               </h2>
             </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.25rem 0 0' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>
               {isAnsi
                 ? 'ANSI O5.1-2017 & ASCE Manual of Practice 141 — Discretized Non-Linear P-Delta, 5% LEL & Height-Adjusted Capacity.'
                 : 'CSA C22.3 No. 1 Table 31 OCFs & CSA O15 Fiber Stress — Groundline & Multi-Segment Taper Check.'}
@@ -338,58 +355,46 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               type="button"
               onClick={isAnsi ? handleResetCsaDistribution : handleLoadAsceBenchmark}
               className="btn-secondary"
-              style={{ fontSize: '0.75rem', padding: '0.38rem 0.75rem', borderRadius: '9999px' }}
+              style={{ fontSize: '0.76rem', padding: '0.42rem 0.88rem' }}
               title="Switch between CSA 45ft Distribution and ASCE 141 75ft H1 Benchmark"
             >
               <Sparkles size={14} color="var(--accent-cyan)" />
               {isAnsi ? 'Load CSA 45ft Preset' : 'Load ASCE 75ft Benchmark'}
             </button>
 
-            <span className="badge badge-info" style={{ fontSize: '0.75rem', borderRadius: '8px', padding: '0.25rem 0.6rem' }}>
+            <span className="badge badge-info">
               {activeProject?.name || 'Standard'}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Main 2-Column Working Layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 450px) 1fr', gap: '1.5rem' }}>
-        
+      {/* Main Responsive 2-Column Working Layout */}
+      <div className="calc-workspace-grid-wide">
         {/* Left: Controls & Attachments */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', minWidth: 0 }}>
           {/* Structure Parameters Card */}
-          <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.65rem' }}>
+          <div className="glass-panel" style={{ padding: '1.4rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.7rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Sliders size={18} color="var(--accent-cyan)" />
-                <h3 style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-main)', margin: 0 }}>
-                  Pole Geometry & Material
+                <h3 style={{ fontSize: '0.96rem', fontWeight: 650, color: 'var(--text-main)', margin: 0 }}>
+                  Pole Geometry &amp; Material
                 </h3>
               </div>
-              <span className="badge badge-info" style={{ fontSize: '0.7rem' }}>
+              <span className="badge badge-info">
                 {isAnsi ? 'ANSI O5.1' : 'CSA O15'}
               </span>
             </div>
 
             {/* Species Selector (Alphabetically Sorted) */}
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '500', marginBottom: '0.35rem', color: 'var(--text-main)' }}>
+              <label>
                 Wood Species ({isAnsi ? 'ANSI O5.1 Table 1' : 'CSA O15 Table 3'})
               </label>
               <select
                 value={speciesCode}
                 onChange={(e) => setSpeciesCode(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '0.55rem 0.75rem',
-                  borderRadius: 'var(--radius-input, 10px)',
-                  border: '1px solid var(--border-color)',
-                  background: 'var(--bg-inset)',
-                  color: 'var(--text-main)',
-                  fontSize: '0.85rem',
-                  outline: 'none'
-                }}
               >
                 {activeSpeciesList.map((s) => (
                   <option key={s.id || s.speciesCode} value={s.speciesCode}>
@@ -400,24 +405,13 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             </div>
 
             {/* Class, Length, Grade / Phi */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.65rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(105px, 1fr))', gap: '0.65rem' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                  Pole Class
-                </label>
+                <label style={{ fontSize: '0.74rem' }}>Pole Class</label>
                 <select
                   value={poleClass}
                   onChange={(e) => setPoleClass(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '0.5rem 0.6rem',
-                    borderRadius: 'var(--radius-input, 10px)',
-                    border: '1px solid var(--border-color)',
-                    background: 'var(--bg-inset)',
-                    color: 'var(--text-main)',
-                    fontSize: '0.8rem',
-                    outline: 'none'
-                  }}
+                  style={{ padding: '0.52rem 1.85rem 0.52rem 0.65rem', fontSize: '0.8rem' }}
                 >
                   {allPoleClasses.map((c) => (
                     <option key={c.class} value={c.class}>
@@ -428,48 +422,26 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                  Total Length (m)
-                </label>
+                <label style={{ fontSize: '0.74rem' }}>Total Length (m)</label>
                 <input
                   type="number"
+                  className="mono"
                   step="0.5"
                   min="9"
                   max="35"
                   value={poleLengthM}
                   onChange={(e) => setPoleLengthM(parseFloat(e.target.value) || 12)}
-                  style={{
-                    width: '100%',
-                    padding: '0.5rem 0.6rem',
-                    borderRadius: 'var(--radius-input, 10px)',
-                    border: '1px solid var(--border-color)',
-                    background: 'var(--bg-inset)',
-                    color: 'var(--text-main)',
-                    fontSize: '0.8rem',
-                    fontVariantNumeric: 'tabular-nums',
-                    outline: 'none'
-                  }}
+                  style={{ padding: '0.52rem 0.65rem', fontSize: '0.82rem' }}
                 />
               </div>
 
               {!isAnsi ? (
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                    Construction Grade
-                  </label>
+                  <label style={{ fontSize: '0.74rem' }}>Construction Grade</label>
                   <select
                     value={grade}
                     onChange={(e) => setGrade(parseInt(e.target.value, 10))}
-                    style={{
-                      width: '100%',
-                      padding: '0.5rem 0.6rem',
-                      borderRadius: 'var(--radius-input, 10px)',
-                      border: '1px solid var(--border-color)',
-                      background: 'var(--bg-inset)',
-                      color: 'var(--text-main)',
-                      fontSize: '0.8rem',
-                      outline: 'none'
-                    }}
+                    style={{ padding: '0.52rem 1.85rem 0.52rem 0.65rem', fontSize: '0.8rem' }}
                   >
                     <option value={1}>Grade 1 (OCF 2.2x)</option>
                     <option value={2}>Grade 2 (OCF 1.65x)</option>
@@ -478,104 +450,90 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 </div>
               ) : (
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                    LRFD Factor (φ)
-                  </label>
+                  <label style={{ fontSize: '0.74rem' }}>LRFD Factor (φ)</label>
                   <input
                     type="number"
+                    className="mono"
                     step="0.01"
                     min="0.4"
                     max="1.0"
                     value={strengthFactorPhi}
                     onChange={(e) => setStrengthFactorPhi(parseFloat(e.target.value) || 0.671)}
-                    style={{
-                      width: '100%',
-                      padding: '0.5rem 0.6rem',
-                      borderRadius: 'var(--radius-input, 10px)',
-                      border: '1px solid var(--border-color)',
-                      background: 'var(--bg-inset)',
-                      color: 'var(--text-main)',
-                      fontSize: '0.8rem',
-                      fontVariantNumeric: 'tabular-nums'
-                    }}
+                    style={{ padding: '0.52rem 0.65rem', fontSize: '0.82rem' }}
                   />
                 </div>
               )}
             </div>
 
             {/* Non-Linear P-Delta & Height Adjustment Toggles */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem', padding: '0.65rem', background: 'var(--bg-inset)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', margin: 0, cursor: 'pointer', fontSize: '0.75rem', color: 'var(--text-main)' }}>
+            <div className="glass-inset" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '0.65rem', padding: '0.75rem 0.9rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, cursor: 'pointer', fontSize: '0.76rem', color: 'var(--text-main)' }}>
                 <input
                   type="checkbox"
                   checked={enablePDelta}
                   onChange={(e) => setEnablePDelta(e.target.checked)}
-                  style={{ width: '15px', height: '15px', accentColor: 'var(--accent-cyan)' }}
+                  style={{ width: '16px', height: '16px' }}
                 />
                 <span>Gere-Carter P-Delta (AF={results.buckling.amplificationFactor})</span>
               </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', margin: 0, cursor: 'pointer', fontSize: '0.75rem', color: 'var(--text-main)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, cursor: 'pointer', fontSize: '0.76rem', color: 'var(--text-main)' }}>
                 <input
                   type="checkbox"
                   checked={enableHeightAdjustment}
                   onChange={(e) => setEnableHeightAdjustment(e.target.checked)}
-                  style={{ width: '15px', height: '15px', accentColor: 'var(--accent-cyan)' }}
+                  style={{ width: '16px', height: '16px' }}
                 />
                 <span>Height MOR Reduction</span>
               </label>
             </div>
 
             {/* Environmental & Line Span Inputs */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', borderTop: '1px solid var(--border-color)', paddingTop: '0.85rem' }}>
+            <div className="grid-2" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '0.9rem' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                  Wind Pressure (Pa)
-                </label>
+                <label style={{ fontSize: '0.75rem' }}>Wind Pressure (Pa)</label>
                 <input
                   type="number"
+                  className="mono"
                   value={windPressurePa}
                   onChange={(e) => setWindPressurePa(parseFloat(e.target.value) || 0)}
-                  style={{ width: '100%', padding: '0.5rem 0.6rem', fontSize: '0.8rem' }}
+                  style={{ padding: '0.52rem 0.7rem', fontSize: '0.84rem' }}
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                  Radial Ice (mm)
-                </label>
+                <label style={{ fontSize: '0.75rem' }}>Radial Ice (mm)</label>
                 <input
                   type="number"
+                  className="mono"
                   value={iceThicknessMm}
                   onChange={(e) => setIceThicknessMm(parseFloat(e.target.value) || 0)}
-                  style={{ width: '100%', padding: '0.5rem 0.6rem', fontSize: '0.8rem' }}
+                  style={{ padding: '0.52rem 0.7rem', fontSize: '0.84rem' }}
                 />
               </div>
 
               {loadInputMode === 'line_physics' && (
                 <>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                      Wind Span (m)
-                    </label>
+                    <label style={{ fontSize: '0.75rem' }}>Wind Span (m)</label>
                     <input
                       type="number"
+                      className="mono"
                       value={windSpanM}
                       onChange={(e) => setWindSpanM(parseFloat(e.target.value) || 0)}
-                      style={{ width: '100%', padding: '0.5rem 0.6rem', fontSize: '0.8rem' }}
+                      style={{ padding: '0.52rem 0.7rem', fontSize: '0.84rem' }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', marginBottom: '0.25rem', color: 'var(--text-muted)' }}>
-                      Line Angle (degrees)
-                    </label>
+                    <label style={{ fontSize: '0.75rem' }}>Line Angle (degrees)</label>
                     <input
                       type="number"
+                      className="mono"
                       min="0"
                       max="90"
                       value={lineAngleDeg}
                       onChange={(e) => setLineAngleDeg(parseFloat(e.target.value) || 0)}
-                      style={{ width: '100%', padding: '0.5rem 0.6rem', fontSize: '0.8rem' }}
+                      style={{ padding: '0.52rem 0.7rem', fontSize: '0.84rem' }}
                     />
                   </div>
                 </>
@@ -584,22 +542,22 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
           </div>
 
           {/* Attachments Card with Load Mode Switcher */}
-          <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
+          <div className="glass-panel" style={{ padding: '1.4rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.9rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Layers size={18} color="var(--accent-cyan)" />
-                <h3 style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-main)', margin: 0 }}>
-                  Attachments & Cables ({attachments.length})
+                <h3 style={{ fontSize: '0.96rem', fontWeight: 650, color: 'var(--text-main)', margin: 0 }}>
+                  Attachments &amp; Cables ({attachments.length})
                 </h3>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
                 <div className="segmented-pill-bar">
                   <button
                     type="button"
                     className={`segmented-pill-btn ${loadInputMode === 'line_physics' ? 'active' : ''}`}
                     onClick={() => setLoadInputMode('line_physics')}
-                    style={{ fontSize: '0.7rem', padding: '0.22rem 0.55rem' }}
+                    style={{ fontSize: '0.72rem', padding: '0.24rem 0.6rem' }}
                   >
                     Line Physics
                   </button>
@@ -607,7 +565,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                     type="button"
                     className={`segmented-pill-btn ${loadInputMode === 'direct_loads' ? 'active' : ''}`}
                     onClick={() => setLoadInputMode('direct_loads')}
-                    style={{ fontSize: '0.7rem', padding: '0.22rem 0.55rem' }}
+                    style={{ fontSize: '0.72rem', padding: '0.24rem 0.6rem' }}
                   >
                     Direct 3D Loads
                   </button>
@@ -616,38 +574,48 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   type="button"
                   onClick={handleAddAttachment}
                   className="btn-secondary"
-                  style={{ fontSize: '0.72rem', padding: '0.3rem 0.55rem', borderRadius: '8px' }}
+                  style={{ fontSize: '0.74rem', padding: '0.32rem 0.7rem' }}
                 >
                   <Plus size={13} /> Add
                 </button>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
               {attachments.map((att) => (
                 <div
                   key={att.id}
+                  className="glass-inset"
                   style={{
-                    padding: '0.75rem',
-                    borderRadius: '12px',
-                    background: 'var(--bg-inset)',
-                    border: '1px solid var(--border-color)',
+                    padding: '0.85rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '0.5rem'
+                    gap: '0.55rem'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
                     <input
                       type="text"
                       value={att.name}
                       onChange={(e) => handleUpdateAttachment(att.id, 'name', e.target.value)}
-                      style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', fontSize: '0.85rem', fontWeight: '600', outline: 'none', width: '75%', padding: 0 }}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        boxShadow: 'none',
+                        backdropFilter: 'none',
+                        WebkitBackdropFilter: 'none',
+                        color: 'var(--text-main)',
+                        fontSize: '0.86rem',
+                        fontWeight: 650,
+                        outline: 'none',
+                        width: '82%',
+                        padding: 0
+                      }}
                     />
                     <button
                       type="button"
                       onClick={() => handleRemoveAttachment(att.id)}
-                      style={{ background: 'none', border: 'none', color: 'var(--status-violation)', cursor: 'pointer', padding: '0.2rem' }}
+                      style={{ background: 'none', border: 'none', boxShadow: 'none', color: 'var(--status-violation)', cursor: 'pointer', padding: '0.2rem' }}
                       title="Remove attachment"
                     >
                       <Trash2 size={15} />
@@ -655,87 +623,95 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                   </div>
 
                   {loadInputMode === 'line_physics' ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '0.45rem', fontSize: '0.75rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '0.45rem', fontSize: '0.74rem' }}>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Height (m)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="0.1"
                           value={att.heightM}
                           onChange={(e) => handleUpdateAttachment(att.id, 'heightM', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Count</span>
                         <input
                           type="number"
+                          className="mono"
                           value={att.count}
                           onChange={(e) => handleUpdateAttachment(att.id, 'count', parseInt(e.target.value, 10) || 1)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Diam (mm)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="0.5"
                           value={att.diameterMm}
                           onChange={(e) => handleUpdateAttachment(att.id, 'diameterMm', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Tension (N)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="100"
                           value={att.tensionN}
                           onChange={(e) => handleUpdateAttachment(att.id, 'tensionN', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                     </div>
                   ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '0.45rem', fontSize: '0.75rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '0.45rem', fontSize: '0.74rem' }}>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Dist Tip z (ft)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="0.5"
                           value={att.distFromTipFt}
                           onChange={(e) => handleUpdateAttachment(att.id, 'distFromTipFt', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Trans T (lbs)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="10"
                           value={att.transverseForceLbs}
                           onChange={(e) => handleUpdateAttachment(att.id, 'transverseForceLbs', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Vert V (lbs)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="10"
                           value={att.verticalForceLbs}
                           onChange={(e) => handleUpdateAttachment(att.id, 'verticalForceLbs', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                       <div>
                         <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '0.2rem' }}>Ecc e (ft)</span>
                         <input
                           type="number"
+                          className="mono"
                           step="0.5"
                           value={att.eccentricityFt}
                           onChange={(e) => handleUpdateAttachment(att.id, 'eccentricityFt', parseFloat(e.target.value) || 0)}
-                          style={{ width: '100%', padding: '0.35rem 0.45rem', fontSize: '0.75rem' }}
+                          style={{ padding: '0.38rem 0.48rem', fontSize: '0.76rem', borderRadius: '10px' }}
                         />
                       </div>
                     </div>
@@ -744,24 +720,21 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Right: Results Summary, Critical vs Groundline Comparison & Step-by-Step Math */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', minWidth: 0 }}>
           {/* Top 4 Key Metric Cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '1rem' }}>
-            
             {/* Factored Groundline Moment */}
-            <div className="glass-panel" style={{ padding: '1.15rem', borderRadius: '16px' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+            <div className="glass-panel" style={{ padding: '1.25rem' }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
                 Factored Moment (Mf)
               </div>
-              <div style={{ fontSize: '1.55rem', fontWeight: '700', color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums lining-nums', marginTop: '0.25rem' }}>
+              <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.28rem' }}>
                 {isAnsi ? `${results.moments.totalFactoredMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.totalFactoredMomentKNm)}
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem', fontVariantNumeric: 'tabular-nums' }}>
+              <div className="mono" style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                 {isAnsi
                   ? `AF_PΔ = ${results.buckling.amplificationFactor}× (${results.moments.totalFactoredMomentKNm} kN·m)`
                   : `Wind OCF: ${results.factors.ocfWind}x | AF_PΔ: ${results.buckling.amplificationFactor}x`}
@@ -769,35 +742,35 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             </div>
 
             {/* Resisting Moment Capacity */}
-            <div className="glass-panel" style={{ padding: '1.15rem', borderRadius: '16px' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+            <div className="glass-panel" style={{ padding: '1.25rem' }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
                 Resisting Capacity (Mr)
               </div>
-              <div style={{ fontSize: '1.55rem', fontWeight: '700', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums lining-nums', marginTop: '0.25rem' }}>
+              <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.28rem' }}>
                 {isAnsi ? `${results.moments.resistingMomentFtLbs.toLocaleString()} ft·lbs` : formatMoment(results.moments.resistingMomentKNm)}
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem', fontVariantNumeric: 'tabular-nums' }}>
+              <div className="mono" style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                 Groundline S: {isAnsi ? `${results.geometry.sectionModulusIn3} in³` : `${results.geometry.sectionModulusM3} m³`}
               </div>
             </div>
 
             {/* Governing Utilization Percentage */}
-            <div className="glass-panel" style={{ padding: '1.15rem', borderRadius: '16px' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+            <div className="glass-panel" style={{ padding: '1.25rem' }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
                 Utilization
               </div>
               <div
+                className="mono"
                 style={{
                   fontSize: '1.55rem',
-                  fontWeight: '700',
+                  fontWeight: 700,
                   color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)',
-                  fontVariantNumeric: 'tabular-nums lining-nums',
-                  marginTop: '0.25rem'
+                  marginTop: '0.28rem'
                 }}
               >
                 {results.utilization.percent}%
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontWeight: '600', marginTop: '0.35rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontWeight: 650, marginTop: '0.35rem' }}>
                 <span className={`status-dot ${isPassing ? 'pass' : 'violation'}`} />
                 <span style={{ color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)' }}>
                   {isPassing ? 'PASS (ADEQUATE)' : 'OVERLOADED'}
@@ -806,43 +779,42 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             </div>
 
             {/* Recommended Class */}
-            <div className="glass-panel" style={{ padding: '1.15rem', borderRadius: '16px' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+            <div className="glass-panel" style={{ padding: '1.25rem' }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650 }}>
                 Recommended Class
               </div>
-              <div style={{ fontSize: '1.35rem', fontWeight: '700', color: 'var(--accent-cyan)', marginTop: '0.35rem' }}>
+              <div style={{ fontSize: '1.38rem', fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.35rem' }}>
                 Class {results.classification.recommendedClass}
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                 Current: Class {poleClass} ({results.geometry.poleLengthFt} ft)
               </div>
             </div>
-
           </div>
 
           {/* Critical Section vs Groundline Section Comparison + Elevation Profile Curve */}
-          <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+          <div className="glass-panel" style={{ padding: '1.4rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Activity size={18} color="var(--accent-cyan)" />
-                <span style={{ fontWeight: '600', fontSize: '0.92rem', color: 'var(--text-main)' }}>
-                  Multi-Segment Stress Profile & Critical Elevation Analysis
+                <span style={{ fontWeight: 650, fontSize: '0.95rem', color: 'var(--text-main)' }}>
+                  Multi-Segment Stress Profile &amp; Critical Elevation Analysis
                 </span>
               </div>
-              <span style={{ fontVariantNumeric: 'tabular-nums', fontWeight: '700', fontSize: '0.85rem', color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)' }}>
+              <span className="mono" style={{ fontWeight: 700, fontSize: '0.85rem', color: isPassing ? 'var(--status-pass)' : 'var(--status-violation)' }}>
                 Max Usage: {results.utilization.criticalPercent}% at H = {critSeg.heightAboveGlFt} ft
               </span>
             </div>
 
             {/* Progress Bar */}
-            <div style={{ width: '100%', height: '8px', background: 'var(--bg-inset)', borderRadius: '9999px', overflow: 'hidden', marginBottom: '1rem' }}>
+            <div style={{ width: '100%', height: '9px', background: 'var(--bg-inset)', border: '1px solid var(--border-subtle)', borderRadius: '9999px', overflow: 'hidden', marginBottom: '1.05rem' }}>
               <div
                 style={{
                   width: `${Math.min(100, results.utilization.percent)}%`,
                   height: '100%',
                   background: isPassing ? 'var(--status-pass)' : 'var(--status-violation)',
                   borderRadius: '9999px',
-                  transition: 'width 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                  transition: 'width 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               />
             </div>
@@ -850,31 +822,32 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             {/* Side-by-Side Critical vs Groundline Cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
               {/* Critical Section Card */}
-              <div style={{
-                background: 'var(--bg-inset)',
-                padding: '0.95rem 1.1rem',
-                borderRadius: '12px',
-                border: results.utilization.isCriticalAboveGroundline ? '1px solid rgba(56, 189, 248, 0.45)' : '1px solid var(--border-color)'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--accent-cyan)' }}>
+              <div
+                className="glass-inset"
+                style={{
+                  padding: '1rem 1.15rem',
+                  borderColor: results.utilization.isCriticalAboveGroundline ? 'rgba(56, 189, 248, 0.45)' : undefined
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.73rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--accent-cyan)' }}>
                     Governing Critical Section
                   </span>
                   <span className="badge badge-info" style={{ fontSize: '0.68rem' }}>
                     z = {critSeg.distFromTipFt} ft ({critSeg.heightAboveGlFt} ft above GL)
                   </span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', fontSize: '0.78rem', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="mono" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', fontSize: '0.78rem' }}>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>Diameter / S</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>Diameter / S</div>
                     <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>{critSeg.diameterIn}&quot; / {critSeg.sectionModulusIn3} in³</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>Stress / Cap</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>Stress / Cap</div>
                     <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>{critSeg.combinedStressPsi} / {critSeg.allowableStressPsi} psi</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>Usage %</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>Usage %</div>
                     <div style={{ fontWeight: 700, color: critSeg.usagePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)' }}>
                       {critSeg.usagePercent}%
                     </div>
@@ -883,31 +856,26 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
               </div>
 
               {/* Groundline Section Card */}
-              <div style={{
-                background: 'var(--bg-inset)',
-                padding: '0.95rem 1.1rem',
-                borderRadius: '12px',
-                border: '1px solid var(--border-color)'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+              <div className="glass-inset" style={{ padding: '1rem 1.15rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.73rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)' }}>
                     Groundline Section (Base)
                   </span>
-                  <span className="badge" style={{ fontSize: '0.68rem', background: 'rgba(148,163,184,0.15)', color: 'var(--text-muted)' }}>
+                  <span className="badge badge-neutral" style={{ fontSize: '0.68rem' }}>
                     z = {glSeg.distFromTipFt} ft (H = 0.0 ft)
                   </span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', fontSize: '0.78rem', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="mono" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', fontSize: '0.78rem' }}>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>Diameter / S</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>Diameter / S</div>
                     <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>{glSeg.diameterIn}&quot; / {glSeg.sectionModulusIn3} in³</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>Stress / Cap</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>Stress / Cap</div>
                     <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>{glSeg.combinedStressPsi} / {glSeg.allowableStressPsi} psi</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>GL Usage %</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.69rem' }}>GL Usage %</div>
                     <div style={{ fontWeight: 700, color: results.utilization.groundlinePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)' }}>
                       {results.utilization.groundlinePercent}%
                     </div>
@@ -917,8 +885,8 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             </div>
 
             {/* Interactive SVG Utilization Profile Along Pole Shaft */}
-            <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '0.85rem 1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+            <div className="glass-inset" style={{ padding: '0.95rem 1.1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.55rem' }}>
                 <span>Shaft Elevation Utilization Curve (Tip z=0 ft → Groundline z={glSeg.distFromTipFt} ft)</span>
                 {results.utilization.isCriticalAboveGroundline && (
                   <span style={{ color: 'var(--accent-cyan)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -927,7 +895,6 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 )}
               </div>
               <svg viewBox="0 0 600 130" style={{ width: '100%', height: '130px', overflow: 'visible' }}>
-                {/* Grid lines */}
                 {[0, 25, 50, 75, 100].map((pct) => {
                   const y = 110 - (pct / 110) * 95;
                   return (
@@ -939,7 +906,6 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                     </g>
                   );
                 })}
-                {/* Usage Polyline */}
                 <polyline
                   fill="none"
                   stroke="var(--accent-cyan)"
@@ -952,7 +918,6 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                     })
                     .join(' ')}
                 />
-                {/* Critical Point Marker */}
                 {(() => {
                   const cx = 40 + (critSeg.distFromTipFt / Math.max(1, glSeg.distFromTipFt)) * 540;
                   const cy = 110 - (Math.min(115, critSeg.usagePercent) / 110) * 95;
@@ -965,7 +930,6 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                     </g>
                   );
                 })()}
-                {/* X-axis labels */}
                 <text x="40" y="124" fontSize="9" fill="var(--text-muted)">Tip (z=0)</text>
                 <text x="310" y="124" textAnchor="middle" fontSize="9" fill="var(--text-muted)">Mid-Shaft (z={(glSeg.distFromTipFt / 2).toFixed(1)} ft)</text>
                 <text x="580" y="124" textAnchor="end" fontSize="9" fill="var(--text-muted)">Groundline (z={glSeg.distFromTipFt} ft)</text>
@@ -973,37 +937,37 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
             </div>
 
             {/* Moment Breakdown Grid */}
-            <div style={{ marginTop: '1rem', borderTop: '1px solid var(--border-color)', paddingTop: '0.9rem' }}>
-              <h4 style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600, marginBottom: '0.6rem' }}>
+            <div style={{ marginTop: '1rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '0.95rem' }}>
+              <h4 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 650, marginBottom: '0.65rem' }}>
                 Groundline Moment &amp; Buckling Breakdown
               </h4>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(125px, 1fr))', gap: '0.65rem', fontSize: '0.78rem' }}>
-                <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', padding: '0.6rem 0.7rem', borderRadius: '10px' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Pole Shaft Wind</div>
-                  <div style={{ fontWeight: '700', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums', marginTop: '0.15rem' }}>{results.moments.factoredPoleWindKNm} kN·m</div>
+                <div className="glass-inset" style={{ padding: '0.65rem 0.75rem', borderRadius: '14px' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.71rem' }}>Pole Shaft Wind</div>
+                  <div className="mono" style={{ fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>{results.moments.factoredPoleWindKNm} kN·m</div>
                 </div>
-                <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', padding: '0.6rem 0.7rem', borderRadius: '10px' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Conductor Wind</div>
-                  <div style={{ fontWeight: '700', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums', marginTop: '0.15rem' }}>{results.moments.factoredWireWindKNm} kN·m</div>
+                <div className="glass-inset" style={{ padding: '0.65rem 0.75rem', borderRadius: '14px' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.71rem' }}>Conductor Wind</div>
+                  <div className="mono" style={{ fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>{results.moments.factoredWireWindKNm} kN·m</div>
                 </div>
-                <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', padding: '0.6rem 0.7rem', borderRadius: '10px' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Line-Angle Tension</div>
-                  <div style={{ fontWeight: '700', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums', marginTop: '0.15rem' }}>{results.moments.factoredWireAngleKNm} kN·m</div>
+                <div className="glass-inset" style={{ padding: '0.65rem 0.75rem', borderRadius: '14px' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.71rem' }}>Line-Angle Tension</div>
+                  <div className="mono" style={{ fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>{results.moments.factoredWireAngleKNm} kN·m</div>
                 </div>
-                <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', padding: '0.6rem 0.7rem', borderRadius: '10px' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Euler Buckling Pcr</div>
-                  <div style={{ fontWeight: '700', color: 'var(--accent-cyan)', fontVariantNumeric: 'tabular-nums', marginTop: '0.15rem' }}>{results.buckling.criticalBucklingLoadLbs.toLocaleString()} lbs</div>
+                <div className="glass-inset" style={{ padding: '0.65rem 0.75rem', borderRadius: '14px' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.71rem' }}>Euler Buckling Pcr</div>
+                  <div className="mono" style={{ fontWeight: 700, color: 'var(--accent-cyan)', marginTop: '0.18rem' }}>{results.buckling.criticalBucklingLoadLbs.toLocaleString()} lbs</div>
                 </div>
-                <div style={{ background: 'var(--bg-inset)', border: '1px solid var(--border-color)', padding: '0.6rem 0.7rem', borderRadius: '10px' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem' }}>Embedment Depth</div>
-                  <div style={{ fontWeight: '700', color: 'var(--text-main)', fontVariantNumeric: 'tabular-nums', marginTop: '0.15rem' }}>{results.geometry.embedmentM} m ({results.geometry.embedmentFt} ft)</div>
+                <div className="glass-inset" style={{ padding: '0.65rem 0.75rem', borderRadius: '14px' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.71rem' }}>Embedment Depth</div>
+                  <div className="mono" style={{ fontWeight: 700, color: 'var(--text-main)', marginTop: '0.18rem' }}>{results.geometry.embedmentM} m ({results.geometry.embedmentFt} ft)</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Step-by-Step Mathematical Derivation & Formula Sheet (MathML + Live Substitutions) */}
-          <div className="glass-panel" style={{ padding: '1.25rem', borderRadius: '16px' }}>
+          <div className="glass-panel" style={{ padding: '1.4rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
               <Calculator size={18} color="var(--accent-cyan)" />
               <h3 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)', margin: 0 }}>
@@ -1018,100 +982,261 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 {/* Stage 1: Tapered Shaft Geometry */}
                 <div className="calc-step">
                   <div className="calc-label">Step 1: Tapered Shaft Discretization &amp; Section Properties</div>
-                  <div className="calc-formula" style={{ margin: '0.35rem 0', color: 'var(--text-main)' }}>
-                    <math display="inline">
-                      <msub><mi>D</mi><mi>t</mi></msub><mo>=</mo><mfrac><msub><mi>C</mi><mi>t</mi></msub><mi>π</mi></mfrac><mspace width="1em"/>
-                      <msub><mi>D</mi><mi>b</mi></msub><mo>=</mo><mfrac><msub><mi>C</mi><mi>b</mi></msub><mi>π</mi></mfrac><mspace width="1em"/>
-                      <msub><mi>T</mi><mtext>taper</mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>D</mi><mi>b</mi></msub><mo>−</mo><msub><mi>D</mi><mi>t</mi></msub></mrow><mrow><mi>L</mi><mo>−</mo><mn>6</mn></mrow></mfrac><mspace width="1em"/>
-                      <mi>S</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>π</mi><mo>⋅</mo><mi>D</mi><msup><mrow><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mn>3</mn></msup></mrow><mn>32</mn></mfrac>
-                    </math>
+
+                  {/* General Governing Geometry Equations */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">D_t, D_b, T_taper, S(z)</span>
+                      <span className="calc-eq-purpose-label">Theoretical formulation for circular tapered cantilever section modulus</span>
+                    </div>
+                    <Latex block>
+                      {`D_t = \\frac{C_t}{\\pi}, \\quad D_b = \\frac{C_b}{\\pi}, \\quad T_{\\text{taper}} = \\frac{D_b - D_t}{L - 6\\text{ ft}}, \\quad S(z) = \\frac{\\pi [D(z)]^3}{32}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    D_t = {results.geometry.tipCircumferenceIn} / π = <span className="calc-result">{results.geometry.tipDiameterIn} in.</span> | D_b (at 6ft from butt) = {results.geometry.buttCircumference6ftIn} / π = <span className="calc-result">{results.geometry.buttDiameter6ftIn} in.</span>
+
+                  {/* Diameters Evaluation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">D_t &amp; D_b</span>
+                      <span className="calc-eq-purpose-label">Tip &amp; butt diameters converted from circumference (ANSI Table 2 / CSA Table 4)</span>
+                    </div>
+                    <Latex block>
+                      {`D_t = \\frac{${results.geometry.tipCircumferenceIn}}{\\pi} = ${results.geometry.tipDiameterIn}\\text{ in.}, \\quad D_b = \\frac{${results.geometry.buttCircumference6ftIn}}{\\pi} = ${results.geometry.buttDiameter6ftIn}\\text{ in.}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    T_taper = ({results.geometry.buttDiameter6ftIn} − {results.geometry.tipDiameterIn}) / ({results.geometry.poleLengthFt} − 6) = <span className="calc-result">{results.geometry.taperInPerFt} in./ft</span>
+
+                  {/* Taper Rate */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">T_taper</span>
+                      <span className="calc-eq-purpose-label">Shaft taper rate per foot of pole height</span>
+                    </div>
+                    <Latex block>
+                      {`T_{\\text{taper}} = \\frac{${results.geometry.buttDiameter6ftIn} - ${results.geometry.tipDiameterIn}}{${results.geometry.poleLengthFt} - 6} = ${results.geometry.taperInPerFt}\\text{ in./ft}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    D_GL (at z = {results.geometry.heightAboveGroundFt} ft) = {results.geometry.tipDiameterIn} + {results.geometry.taperInPerFt} × {results.geometry.heightAboveGroundFt} = <span className="calc-result">{results.geometry.groundlineDiameterIn} in.</span> → S_GL = <span className="calc-result">{results.geometry.sectionModulusIn3} in³ ({results.geometry.sectionModulusM3} m³)</span>
+
+                  {/* Groundline Diameter & Section Modulus */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">D_GL &amp; S_GL</span>
+                      <span className="calc-eq-purpose-label">Groundline base diameter &amp; section modulus at embedment transition</span>
+                    </div>
+                    <Latex block>
+                      {`D_{\\text{GL}} = ${results.geometry.tipDiameterIn} + (${results.geometry.taperInPerFt} \\times ${results.geometry.heightAboveGroundFt}) = ${results.geometry.groundlineDiameterIn}\\text{ in.} \\implies S_{\\text{GL}} = \\frac{\\pi (${results.geometry.groundlineDiameterIn})^3}{32} = ${results.geometry.sectionModulusIn3}\\text{ in.}^3 \\;(${results.geometry.sectionModulusM3}\\text{ m}^3)`}
+                    </Latex>
                   </div>
                 </div>
 
                 {/* Stage 2: Material Capacity Adjustments */}
                 <div className="calc-step">
                   <div className="calc-label">Step 2: Material Strength, 5% LEL &amp; Height-Adjustment Factor</div>
-                  <div className="calc-formula" style={{ margin: '0.35rem 0', color: 'var(--text-main)' }}>
-                    <math display="inline">
-                      <msub><mi>MOR</mi><mrow><mn>5</mn><mo>%</mo></mrow></msub><mo>=</mo><msub><mi>MOR</mi><mrow><mn>50</mn><mo>%</mo></mrow></msub><mo>⋅</mo><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mn>1.645</mn><mo>⋅</mo><mi>COV</mi><mo>)</mo></mrow><mspace width="1.2em"/>
-                      <msub><mi>k</mi><mtext>ht</mtext></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mo>max</mo><mrow><mo>(</mo><mn>0.85</mn><mo>,</mo><mspace width="0.3em"/><mn>1</mn><mo>−</mo><mi>α</mi><mo>⋅</mo><mfrac><mi>H</mi><msub><mi>H</mi><mi>GL</mi></msub></mfrac><mo>)</mo></mrow>
-                    </math>
+
+                  {/* Material Adjustment Formulation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_5% & k_ht(z)' : 'M_r(z)'}</span>
+                      <span className="calc-eq-purpose-label">{isAnsi ? '5th-percentile characteristic strength & ASCE 141 height factor' : 'Factored resisting moment capacity with species reduction'}</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `MOR_{5\\%} = MOR_{50\\%} \\cdot (1 - 1.645 \\cdot COV), \\quad k_{\\text{ht}}(z) = \\max\\left(0.85,\\, 1 - \\alpha \\frac{H(z)}{H_{\\text{GL}}}\\right)`
+                        : `M_r(z) = f_b \\cdot S(z) \\cdot k_{\\text{species}} \\cdot k_{\\text{ht}}(z)`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    Species: {results.species.commonName} ({results.species.code}) | Mean Fiber Stress = <span className="calc-result">{results.species.fiberStressPsi} psi ({results.species.fiberStressMPa} MPa)</span> | COV = {results.species.covPercent}%
+
+                  {/* Standard Base Fiber Stress */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_50% & COV' : 'f_b & k_species'}</span>
+                      <span className="calc-eq-purpose-label">{isAnsi ? 'Mean Modulus of Rupture & designated standard variance' : 'Code specified fiber stress & species factor'}</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `MOR_{50\\%} = ${results.species.fiberStressPsi}\\text{ psi} \\;(${results.species.fiberStressMPa}\\text{ MPa}), \\quad COV = ${results.species.covPercent}\\%`
+                        : `f_b = ${results.species.fiberStressMPa}\\text{ MPa} \\;(${results.species.fiberStressPsi}\\text{ psi}), \\quad k_{\\text{species}} = ${results.factors.speciesReductionFactor}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    5% LEL Strength: MOR_5% = {results.species.fiberStressPsi} × (1 − 1.645 × {(results.species.covPercent / 100).toFixed(2)}) = <span className="calc-result">{results.species.mor5PctPsi} psi ({results.species.mor5PctMPa} MPa)</span>
+
+                  {/* Lower Exclusion Limit Evaluation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">{isAnsi ? 'MOR_5%' : 'f_b (Factored)'}</span>
+                      <span className="calc-eq-purpose-label">{isAnsi ? '5% Lower Exclusion Limit fiber stress (LEL)' : 'Base factored allowable bending strength'}</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `MOR_{5\\%} = ${results.species.fiberStressPsi} \\times (1 - 1.645 \\times ${(results.species.covPercent / 100).toFixed(2)}) = ${results.species.mor5PctPsi}\\text{ psi} \\;(${results.species.mor5PctMPa}\\text{ MPa})`
+                        : `\\text{Base Factored } f_b = ${results.species.fiberStressMPa} \\times ${results.factors.speciesReductionFactor} = ${(results.species.fiberStressMPa * results.factors.speciesReductionFactor).toFixed(2)}\\text{ MPa}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    Critical Elevation Height Factor (at H = {critSeg.heightAboveGlFt} ft): k_ht = <span className="calc-result">{critSeg.heightAdjFactor}</span> → Allowable Stress = <span className="calc-result">{critSeg.allowableStressPsi} psi ({critSeg.allowableStressMPa} MPa)</span>
+
+                  {/* Critical Section Allowable Stress */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">k_ht &amp; σ_allow</span>
+                      <span className="calc-eq-purpose-label">Height factor &amp; final allowable design stress at governing critical elevation</span>
+                    </div>
+                    <Latex block>
+                      {`k_{\\text{ht}}(z_{\\text{crit}} = ${critSeg.distFromTipFt}\\text{ ft}) = ${critSeg.heightAdjFactor} \\implies \\sigma_{\\text{allow}} = ${critSeg.allowableStressPsi}\\text{ psi} \\;(${critSeg.allowableStressMPa}\\text{ MPa})`}
+                    </Latex>
                   </div>
                 </div>
 
                 {/* Stage 3: Primary Bending Moment Integration */}
                 <div className="calc-step">
                   <div className="calc-label">Step 3: Primary Load Integration &amp; Unamplified Bending Moments</div>
-                  <div className="calc-formula" style={{ margin: '0.35rem 0', color: 'var(--text-main)' }}>
-                    <math display="inline">
-                      <msub><mi>M</mi><mtext>prim</mtext></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo>
-                      <munder><mo>∑</mo><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>≤</mo><mi>z</mi></mrow></munder><mrow><mo>[</mo><msub><mi>T</mi><mi>i</mi></msub><mo>⋅</mo><mo>(</mo><mi>z</mi><mo>−</mo><msub><mi>z</mi><mi>i</mi></msub><mo>)</mo><mo>+</mo><msub><mi>V</mi><mi>i</mi></msub><mo>⋅</mo><msub><mi>e</mi><mi>i</mi></msub><mo>]</mo></mrow>
-                      <mo>+</mo><mfrac><mrow><msub><mi>q</mi><mi>w</mi></msub><mo>⋅</mo><msub><mi>C</mi><mi>d</mi></msub></mrow><mn>12</mn></mfrac><mrow><mo>(</mo><mfrac><mrow><msub><mi>D</mi><mi>t</mi></msub><msup><mi>z</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mo>+</mo><mfrac><mrow><msub><mi>T</mi><mtext>taper</mtext></msub><msup><mi>z</mi><mn>3</mn></msup></mrow><mn>6</mn></mfrac><mo>)</mo></mrow>
-                    </math>
+
+                  {/* Primary Moment Integration Equation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">M_prim(z)</span>
+                      <span className="calc-eq-purpose-label">Continuous integration of transverse attachment forces, eccentricities &amp; distributed pole wind</span>
+                    </div>
+                    <Latex block>
+                      {`M_{\\text{prim}}(z) = \\sum_{z_i \\le z} \\left[ T_i (z - z_i) + V_i \\cdot e_i \\right] + \\frac{q_w C_d}{12} \\left( \\frac{D_t z^2}{2} + \\frac{T_{\\text{taper}} z^3}{6} \\right)`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    At Critical Elevation (z = {critSeg.distFromTipFt} ft): M_prim = <span className="calc-result">{critSeg.primaryMomentFtLbs.toLocaleString()} ft·lbs ({critSeg.primaryMomentKNm} kN·m)</span>
+
+                  {/* Critical Section Moment */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">M_prim(z_crit)</span>
+                      <span className="calc-eq-purpose-label">Primary bending moment acting at the governing critical station</span>
+                    </div>
+                    <Latex block>
+                      {`M_{\\text{prim}}(z_{\\text{crit}} = ${critSeg.distFromTipFt}\\text{ ft}) = ${critSeg.primaryMomentFtLbs.toLocaleString()}\\text{ ft}\\cdot\\text{lbs} \\;(${critSeg.primaryMomentKNm}\\text{ kN}\\cdot\\text{m})`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    At Groundline (z = {glSeg.distFromTipFt} ft): M_prim = <span className="calc-result">{glSeg.primaryMomentFtLbs.toLocaleString()} ft·lbs ({results.moments.primaryGroundlineMomentKNm} kN·m)</span>
+
+                  {/* Groundline Primary Moment */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">M_prim(z_GL)</span>
+                      <span className="calc-eq-purpose-label">Primary bending moment at groundline base before P-Delta amplification</span>
+                    </div>
+                    <Latex block>
+                      {`M_{\\text{prim}}(z_{\\text{GL}} = ${glSeg.distFromTipFt}\\text{ ft}) = ${glSeg.primaryMomentFtLbs.toLocaleString()}\\text{ ft}\\cdot\\text{lbs} \\;(${results.moments.primaryGroundlineMomentKNm}\\text{ kN}\\cdot\\text{m})`}
+                    </Latex>
                   </div>
                 </div>
 
                 {/* Stage 4: Gere-Carter Buckling & P-Delta */}
                 <div className="calc-step">
                   <div className="calc-label">Step 4: Non-Linear Gere-Carter Column Buckling &amp; P-Delta Amplification</div>
-                  <div className="calc-formula" style={{ margin: '0.35rem 0', color: 'var(--text-main)' }}>
-                    <math display="inline">
-                      <msub><mi>D</mi><mtext>eff</mtext></msub><mo>=</mo><msqrt><mrow><msub><mi>D</mi><mi>t</mi></msub><mo>⋅</mo><msub><mi>D</mi><mi>GL</mi></msub></mrow></msqrt><mspace width="1em"/>
-                      <msubsup><mi>P</mi><mtext>cr</mtext><mo>′</mo></msubsup><mo>=</mo><mfrac><mrow><msup><mi>π</mi><mn>2</mn></msup><mo>⋅</mo><mi>MOE</mi><mo>⋅</mo><msub><mi>I</mi><mtext>eff</mtext></msub></mrow><mrow><mn>4</mn><mo>⋅</mo><msubsup><mi>H</mi><mi>GL</mi><mn>2</mn></msubsup><mo>⋅</mo><mn>144</mn></mrow></mfrac><mspace width="1em"/>
-                      <msup><mi>P</mi><mo>*</mo></msup><mo>=</mo><msup><mrow><mo>(</mo><mfrac><msub><mi>D</mi><mi>GL</mi></msub><msub><mi>D</mi><mi>t</mi></msub></mfrac><mo>)</mo></mrow><mn>2.7</mn></msup><mspace width="1em"/>
-                      <msub><mi>AF</mi><mrow><mi>P</mi><mi>Δ</mi></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><msub><mi>V</mi><mi>L</mi></msub><mo>/</mo><msub><mi>P</mi><mtext>cr</mtext></msub></mrow></mfrac>
-                    </math>
+
+                  {/* Effective Section Formulation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">D_eff, I_eff, P'_cr</span>
+                      <span className="calc-eq-purpose-label">Effective geometric diameter, second moment of area &amp; base Euler critical load</span>
+                    </div>
+                    <Latex block>
+                      {`D_{\\text{eff}} = \\sqrt{D_t \\cdot D_{\\text{GL}}}, \\quad I_{\\text{eff}} = \\frac{\\pi D_{\\text{eff}}^4}{64}, \\quad P'_{\\text{cr}} = \\frac{\\pi^2 \\cdot MOE \\cdot I_{\\text{eff}}}{4 H_{\\text{GL}}^2 \\cdot 144}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    D_eff = √({results.geometry.tipDiameterIn} × {results.geometry.groundlineDiameterIn}) = <span className="calc-result">{results.buckling.effectiveDiameterIn} in.</span> → I_eff = π × ({results.buckling.effectiveDiameterIn})⁴ / 64 = <span className="calc-result">{results.buckling.effectiveInertiaIn4} in⁴</span>
+
+                  {/* Gere-Carter Factor & Amplification Formulation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">P*, P_cr, AF_PΔ</span>
+                      <span className="calc-eq-purpose-label">Gere-Carter taper stiffness modifier &amp; non-linear second-order moment amplification</span>
+                    </div>
+                    <Latex block>
+                      {`P^* = \\left(\\frac{D_{\\text{GL}}}{D_t}\\right)^{2.7}, \\quad P_{\\text{cr}} = P'_{\\text{cr}} \\cdot P^*, \\quad AF_{P\\Delta} = \\frac{1}{1 - V_L / P_{\\text{cr}}}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    P&apos;_cr = {results.buckling.eulerCriticalLoadPrimeLbs.toLocaleString()} lbs × P*({results.buckling.taperFactorPStar}) → P_cr = <span className="calc-result">{results.buckling.criticalBucklingLoadLbs.toLocaleString()} lbs ({results.buckling.criticalBucklingLoadKN} kN)</span>
+
+                  {/* Effective Diameter & Inertia Evaluation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">D_eff &amp; I_eff</span>
+                      <span className="calc-eq-purpose-label">Computed equivalent cylindrical section properties</span>
+                    </div>
+                    <Latex block>
+                      {`D_{\\text{eff}} = \\sqrt{${results.geometry.tipDiameterIn} \\times ${results.geometry.groundlineDiameterIn}} = ${results.buckling.effectiveDiameterIn}\\text{ in.} \\implies I_{\\text{eff}} = \\frac{\\pi (${results.buckling.effectiveDiameterIn})^4}{64} = ${results.buckling.effectiveInertiaIn4}\\text{ in.}^4`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    Total Axial Load V_L = {results.buckling.totalGroundlineAxialLoadLbs.toLocaleString()} lbs → AF_PΔ = 1 / (1 − {results.buckling.totalGroundlineAxialLoadLbs} / {results.buckling.criticalBucklingLoadLbs}) = <span className="calc-result">{results.buckling.amplificationFactor}×</span>
+
+                  {/* Critical Buckling Load */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">P_cr</span>
+                      <span className="calc-eq-purpose-label">Gere-Carter adjusted elastic cantilever column stability threshold</span>
+                    </div>
+                    <Latex block>
+                      {`P'_{\\text{cr}} = ${results.buckling.eulerCriticalLoadPrimeLbs.toLocaleString()}\\text{ lbs}, \\quad P^* = (${(results.geometry.groundlineDiameterIn / Math.max(1, results.geometry.tipDiameterIn)).toFixed(3)})^{2.7} = ${results.buckling.taperFactorPStar} \\implies P_{\\text{cr}} = ${results.buckling.criticalBucklingLoadLbs.toLocaleString()}\\text{ lbs} \\;(${results.buckling.criticalBucklingLoadKN}\\text{ kN})`}
+                    </Latex>
+                  </div>
+
+                  {/* P-Delta Amplification Factor */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">AF_PΔ</span>
+                      <span className="calc-eq-purpose-label">Second-order deflection multiplier applied to primary bending moments</span>
+                    </div>
+                    <Latex block>
+                      {`V_L = ${results.buckling.totalGroundlineAxialLoadLbs.toLocaleString()}\\text{ lbs} \\implies AF_{P\\Delta} = \\frac{1}{1 - ${results.buckling.totalGroundlineAxialLoadLbs} / ${results.buckling.criticalBucklingLoadLbs}} = ${results.buckling.amplificationFactor}\\times`}
+                    </Latex>
                   </div>
                 </div>
 
                 {/* Stage 5 & 6: Combined Stress & Utilization */}
                 <div className="calc-step">
                   <div className="calc-label">Step 5 &amp; 6: Combined Stress Interaction &amp; Governing Utilization Check</div>
-                  <div className="calc-formula" style={{ margin: '0.35rem 0', color: 'var(--text-main)' }}>
-                    <math display="inline">
-                      <msub><mi>f</mi><mi>a</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mrow><mi>A</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mfrac><mspace width="1em"/>
-                      <msub><mi>f</mi><mi>b</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msub><mi>M</mi><mtext>prim</mtext></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>⋅</mo><msub><mi>AF</mi><mrow><mi>P</mi><mi>Δ</mi></mrow></msub><mo>⋅</mo><mn>12</mn></mrow><mrow><mi>S</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mfrac><mspace width="1em"/>
-                      <mi>U</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>+</mo><msub><mi>f</mi><mi>b</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mrow><mi>ϕ</mi><mo>⋅</mo><msub><mi>MOR</mi><mtext>adj</mtext></msub><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mfrac><mo>×</mo><mn>100</mn><mo>%</mo>
-                    </math>
+
+                  {/* Interaction Formulation */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">{isAnsi ? 'f_a, f_b, U(z)' : 'M_f, M_r, U(z)'}</span>
+                      <span className="calc-eq-purpose-label">{isAnsi ? 'Combined axial compression plus amplified bending interaction' : 'Factored moment vs resisting moment ratio'}</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `f_a(z) = \\frac{P(z)}{A(z)}, \\quad f_b(z) = \\frac{M_{\\text{prim}}(z) \\cdot AF_{P\\Delta} \\cdot 12}{S(z)}, \\quad U(z) = \\frac{f_a(z) + f_b(z)}{\\phi \\cdot MOR_{\\text{adj}}(z)} \\times 100\\%`
+                        : `M_f(z) = M_{\\text{prim}}(z) \\cdot AF_{P\\Delta}, \\quad M_r(z) = f_b \\cdot S(z) \\cdot k_{\\text{species}}, \\quad U(z) = \\frac{M_f(z)}{M_r(z)} \\times 100\\%`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    Critical Section (z = {critSeg.distFromTipFt} ft, H = {critSeg.heightAboveGlFt} ft): f_b = {critSeg.bendingStressPsi} psi + f_a = {critSeg.axialStressPsi} psi → Usage = ({critSeg.bendingStressPsi} + {critSeg.axialStressPsi}) / {critSeg.allowableStressPsi} = <span className="calc-result">{critSeg.usagePercent}%</span>
+
+                  {/* Stresses at Critical Section */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">{isAnsi ? 'f_b(z_crit) & f_a(z_crit)' : 'M_f(z_crit) & M_r(z_crit)'}</span>
+                      <span className="calc-eq-purpose-label">Internal forces and stress components evaluated at peak critical elevation</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `\\text{Critical Section }(z=${critSeg.distFromTipFt}\\text{ ft}): \\; f_b = \\frac{${critSeg.amplifiedMomentFtLbs.toLocaleString()} \\times 12}{${critSeg.sectionModulusIn3}} = ${critSeg.bendingStressPsi}\\text{ psi}, \\quad f_a = \\frac{${critSeg.accumAxialLoadLbs}}{${critSeg.areaIn2}} = ${critSeg.axialStressPsi}\\text{ psi}`
+                        : `\\text{Critical Section }(z=${critSeg.distFromTipFt}\\text{ ft}): \\; M_f = ${critSeg.amplifiedMomentKNm}\\text{ kN}\\cdot\\text{m}, \\quad M_r = ${critSeg.resistingMomentKNm}\\text{ kN}\\cdot\\text{m}`}
+                    </Latex>
                   </div>
-                  <div className="calc-formula">
-                    Groundline Section (z = {glSeg.distFromTipFt} ft, H = 0.0 ft): f_b = {glSeg.bendingStressPsi} psi + f_a = {glSeg.axialStressPsi} psi → Usage = <span className="calc-result">{results.utilization.groundlinePercent}%</span>
+
+                  {/* Critical Section Governing Utilization */}
+                  <div className="calc-eq-item" style={{ borderLeftColor: critSeg.usagePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)' }}>
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge" style={{ color: critSeg.usagePercent <= 100 ? 'var(--status-pass)' : 'var(--status-violation)', background: critSeg.usagePercent <= 100 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.12)', borderColor: critSeg.usagePercent <= 100 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.25)' }}>
+                        U(z_crit) — GOVERNING
+                      </span>
+                      <span className="calc-eq-purpose-label">Maximum structural capacity utilization across the entire pole shaft</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `U(z_{\\text{crit}}) = \\frac{${critSeg.bendingStressPsi} + ${critSeg.axialStressPsi}}{${critSeg.allowableStressPsi}} \\times 100\\% = ${critSeg.usagePercent}\\% \\quad \\mathbf{(GOVERNING)}`
+                        : `U(z_{\\text{crit}}) = \\frac{${critSeg.amplifiedMomentKNm}}{${critSeg.resistingMomentKNm}} \\times 100\\% = ${critSeg.usagePercent}\\% \\quad \\mathbf{(GOVERNING)}`}
+                    </Latex>
+                  </div>
+
+                  {/* Groundline Base Section Check */}
+                  <div className="calc-eq-item">
+                    <div className="calc-eq-meta">
+                      <span className="calc-eq-var-badge">U(z_GL)</span>
+                      <span className="calc-eq-purpose-label">Groundline base section comparison check</span>
+                    </div>
+                    <Latex block>
+                      {isAnsi
+                        ? `\\text{Groundline Section }(z=${glSeg.distFromTipFt}\\text{ ft}): \\; f_b = ${glSeg.bendingStressPsi}\\text{ psi}, \\quad f_a = ${glSeg.axialStressPsi}\\text{ psi} \\implies U(z_{\\text{GL}}) = ${results.utilization.groundlinePercent}\\%`
+                        : `\\text{Groundline Section }(z=${glSeg.distFromTipFt}\\text{ ft}): \\; M_f = ${results.moments.totalFactoredMomentKNm}\\text{ kN}\\cdot\\text{m}, \\quad M_r = ${results.moments.resistingMomentKNm}\\text{ kN}\\cdot\\text{m} \\implies U(z_{\\text{GL}}) = ${results.utilization.groundlinePercent}\\%`}
+                    </Latex>
                   </div>
                 </div>
 
@@ -1136,7 +1261,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                     URL.revokeObjectURL(url);
                   }}
                   className="btn-secondary"
-                  style={{ fontSize: '0.7rem', padding: '0.2rem 0.55rem', borderRadius: '6px' }}
+                  style={{ fontSize: '0.72rem', padding: '0.24rem 0.65rem' }}
                 >
                   Export CSV
                 </button>
@@ -1202,7 +1327,7 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 <p>
                   <strong>Why Maximum Pole Stress Often Occurs Above Groundline:</strong> While cantilever bending moment
                   increases monotonically toward the groundline, a round tapered pole&apos;s section modulus grows cubically with
-                  diameter (<code>S ∝ D³</code>). When the groundline circumference exceeds <code>1.5×</code> the circumference at
+                  diameter (<Latex math="S \propto D^3" />). When the groundline circumference exceeds <Latex math="1.5\times" /> the circumference at
                   the resultant load elevation (<strong>CSA O15 Clause B.1.3</strong>) or when height-dependent fiber stress
                   reductions apply (<strong>ANSI O5.1 Annex A / ASCE MOP 141</strong>), the critical stress zone shifts 15 to 30 ft
                   above the groundline.
@@ -1210,8 +1335,8 @@ export default function WoodPoleCalculatorView({ onOpenCitation }) {
                 <p>
                   <strong>Gere-Carter Non-Linear Buckling (P-Delta):</strong> Tapered wood cantilevers subjected to vertical
                   conductor, ice, and self-weight loads experience secondary lateral deflection moments. Using the Gere-Carter
-                  tapered Euler formulation (<code>P* = (D_GL / D_t)^2.7</code>), primary bending moments are amplified by
-                  <code>AF_PΔ = 1 / (1 − V_L / P_cr)</code>.
+                  tapered Euler formulation (<Latex math="P^* = (D_{\text{GL}} / D_t)^{2.7}" />), primary bending moments are amplified by{' '}
+                  <Latex math="AF_{P\Delta} = \frac{1}{1 - V_L / P_{\text{cr}}}" />.
                 </p>
               </div>
             </details>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ruler, Wind, TreePine, BookOpen, FolderPlus, ArrowRight, ShieldCheck, CheckCircle2, Layers } from 'lucide-react';
+import { Ruler, Wind, TreePine, BookOpen, FolderPlus, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 
 export default function Dashboard({ onNavigate }) {
@@ -10,67 +10,111 @@ export default function Dashboard({ onNavigate }) {
       id: 'clearance',
       phase: 'Phase 4: Clearances',
       title: 'Vertical Clearances & Compliance (A2 / M3)',
-      description: 'Evaluate minimum vertical & road clearances per CSA C22.3 No. 1 Table 2 with voltage adders, altitude adjustments, and owner safety buffers.',
+      description:
+        'Evaluate minimum vertical & road clearances per CSA C22.3 No. 1 Table 2 with voltage adders, altitude adjustments, and owner safety buffers.',
       icon: Ruler,
-      color: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
+      color: 'linear-gradient(135deg, rgba(14, 165, 233, 0.92), rgba(37, 99, 235, 0.88))',
+      glow: 'rgba(14, 165, 233, 0.36)'
     },
     {
       id: 'weather',
       phase: 'Phase 1: Criteria & Basis of Design',
       title: 'Weather Criteria & Load Case Matrix (A3 / A4 / M2)',
-      description: 'Query 682-station Canadian geoclimatic data, scale return periods (50–500 yr), apply legal minimums, and generate unified load matrices with CSV & .cri export.',
+      description:
+        'Query 682-station Canadian geoclimatic data, scale return periods (50–500 yr), apply legal minimums, and generate unified load matrices with CSV & .cri export.',
       icon: Wind,
-      color: 'linear-gradient(135deg, #10b981, #059669)'
+      color: 'linear-gradient(135deg, rgba(16, 185, 129, 0.92), rgba(5, 150, 105, 0.88))',
+      glow: 'rgba(16, 185, 129, 0.36)'
     },
     {
       id: 'wood_pole',
       phase: 'Phase 5: Structures & Framing',
       title: 'Wood Pole Loading & Structural Sizing (A6 / M3)',
-      description: 'Analyze groundline bending moments, wind on tapered pole, CSA C22.3 Table 31 OCF load factors, CSA O15 fiber stresses, and class recommendations.',
+      description:
+        'Analyze groundline bending moments, wind on tapered pole, CSA C22.3 Table 31 OCF load factors, CSA O15 fiber stresses, and class recommendations.',
       icon: TreePine,
-      color: 'linear-gradient(135deg, #f59e0b, #d97706)'
+      color: 'linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.88))',
+      glow: 'rgba(245, 158, 11, 0.36)'
     },
     {
       id: 'code_library',
       phase: 'Reference: Code-as-Data',
       title: 'Digitized Code Reference Library (A1 / §8.8)',
-      description: 'Interactive, searchable repository of CSA C22.3 No. 1, No. 60826, and CSA O15 clauses, digitized tables, footnotes, and topic cross-references.',
+      description:
+        'Interactive, searchable repository of CSA C22.3 No. 1, No. 60826, and CSA O15 clauses, digitized tables, footnotes, and topic cross-references.',
       icon: BookOpen,
-      color: 'linear-gradient(135deg, #8b5cf6, #6d28d9)'
+      color: 'linear-gradient(135deg, rgba(139, 92, 246, 0.92), rgba(109, 40, 217, 0.88))',
+      glow: 'rgba(139, 92, 246, 0.36)'
     }
   ];
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      
-      {/* Active Project Banner Card */}
-      <div
+    <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+      {/* Active Project Liquid Glass Hero Card */}
+      <section
         className="glass-panel"
         style={{
-          padding: '1.75rem',
-          borderRadius: '16px',
-          border: '1px solid var(--border-color)',
-          boxShadow: 'var(--shadow-glass)'
+          padding: 'clamp(1.4rem, 2.8vw, 2.15rem)',
+          position: 'relative',
+          overflow: 'hidden'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.25rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-              <span className="badge badge-info" style={{ fontSize: '0.75rem', borderRadius: '6px', padding: '0.2rem 0.55rem' }}>
-                ACTIVE DESIGN PROJECT
-              </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.25rem'
+          }}
+        >
+          <div style={{ flex: '1 1 420px', minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', flexWrap: 'wrap', marginBottom: '0.6rem' }}>
+              <span className="badge badge-info">ACTIVE DESIGN PROJECT</span>
+              <span
+                className="mono"
+                style={{
+                  fontSize: '0.78rem',
+                  color: 'var(--text-muted)',
+                  padding: '0.18rem 0.6rem',
+                  borderRadius: '9999px',
+                  background: 'var(--bg-inset)',
+                  border: '1px solid var(--border-subtle)'
+                }}
+              >
                 {activeProject?.code}
               </span>
             </div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-main)', margin: '0 0 0.5rem', letterSpacing: '-0.02em' }}>
+
+            <h1
+              style={{
+                fontSize: 'clamp(1.45rem, 2.6vw, 2rem)',
+                fontWeight: 700,
+                color: 'var(--text-main)',
+                margin: '0 0 0.85rem',
+                letterSpacing: '-0.028em'
+              }}
+            >
               {activeProject?.name}
             </h1>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              <div><strong style={{ color: 'var(--text-main)' }}>Facility:</strong> {activeProject?.facilityType} ({activeProject?.operatingVoltageKv} kV)</div>
-              <div><strong style={{ color: 'var(--text-main)' }}>Province:</strong> {activeProject?.province}</div>
-              <div><strong style={{ color: 'var(--text-main)' }}>Overlay:</strong> {activeProject?.ownerOverlayId?.replace('_', ' ').toUpperCase()}</div>
-              <div><strong style={{ color: 'var(--text-main)' }}>Snapshot:</strong> {activeProject?.pinnedSnapshot}</div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+              <div className="glass-inset" style={{ padding: '0.42rem 0.85rem', borderRadius: '9999px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                <strong style={{ color: 'var(--text-main)' }}>Facility:</strong> {activeProject?.facilityType} ({activeProject?.operatingVoltageKv} kV)
+              </div>
+              <div className="glass-inset" style={{ padding: '0.42rem 0.85rem', borderRadius: '9999px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                <strong style={{ color: 'var(--text-main)' }}>Province:</strong> {activeProject?.province}
+              </div>
+              <div className="glass-inset" style={{ padding: '0.42rem 0.85rem', borderRadius: '9999px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                <strong style={{ color: 'var(--text-main)' }}>Overlay:</strong> {activeProject?.ownerOverlayId?.replace('_', ' ').toUpperCase()}
+              </div>
+              <div
+                className="badge badge-pass"
+                style={{ padding: '0.42rem 0.85rem', fontSize: '0.78rem' }}
+              >
+                <ShieldCheck size={14} />
+                <span>{activeProject?.pinnedSnapshot}</span>
+              </div>
             </div>
           </div>
 
@@ -78,87 +122,124 @@ export default function Dashboard({ onNavigate }) {
             type="button"
             onClick={() => setIsProjectWizardOpen(true)}
             className="btn-primary"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.65rem 1.15rem', borderRadius: '10px' }}
+            style={{ padding: '0.7rem 1.35rem', alignSelf: 'center' }}
           >
             <FolderPlus size={18} />
             <span>Setup New Project</span>
           </button>
         </div>
-      </div>
+      </section>
 
-      {/* Overview Intro */}
-      <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.4rem', letterSpacing: '-0.015em' }}>
+      {/* Overview Header */}
+      <div style={{ padding: '0.15rem 0.25rem' }}>
+        <h2
+          style={{
+            fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
+            fontWeight: 700,
+            color: 'var(--text-main)',
+            marginBottom: '0.35rem',
+            letterSpacing: '-0.022em'
+          }}
+        >
           Engineering Workflow Modules
         </h2>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.5 }}>
-          Execute unit-aware, verified calculations conforming to the CSA C22.3 standards family. Every result produces an immutable audit trace record.
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, maxWidth: '760px', lineHeight: 1.55 }}>
+          Execute unit-aware, verified calculations conforming to the CSA C22.3 and CSA O15 standards family. Every result produces an immutable audit trace record.
         </p>
       </div>
 
-      {/* Modules Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+      {/* Liquid Glass Modules Grid */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 310px), 1fr))',
+          gap: '1.35rem'
+        }}
+      >
         {workflowModules.map((m, idx) => {
           const Icon = m.icon;
           return (
             <div
               key={m.id}
+              role="button"
+              tabIndex={0}
               onClick={() => onNavigate(m.id)}
-              className="glass-panel"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onNavigate(m.id);
+                }
+              }}
+              className="glass-panel glass-card-interactive animate-stagger-item"
               style={{
+                '--stagger-index': idx,
                 padding: '1.75rem',
-                borderRadius: '16px',
-                cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                border: '1px solid var(--border-color)',
                 position: 'relative',
-                transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.borderColor = 'var(--accent-cyan)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = 'var(--border-color)';
-                e.currentTarget.style.boxShadow = 'none';
+                outline: 'none'
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '0.75rem',
+                    marginBottom: '1.25rem'
+                  }}
+                >
                   <div
                     style={{
-                      width: '44px',
-                      height: '44px',
-                      borderRadius: '12px',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '15px',
                       background: m.color,
+                      border: '1px solid rgba(255, 255, 255, 0.42)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#fff',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                      flexShrink: 0,
+                      boxShadow: `inset 0 1.5px 0 0 rgba(255, 255, 255, 0.52), 0 8px 20px -4px ${m.glow}`
                     }}
                   >
                     <Icon size={22} />
                   </div>
-                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: 'var(--bg-inset)', color: 'var(--text-muted)', fontWeight: 500 }}>
+                  <span className="badge badge-neutral" style={{ fontSize: '0.72rem' }}>
                     {m.phase}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.65rem' }}>
+                <h3
+                  style={{
+                    fontSize: '1.14rem',
+                    fontWeight: 660,
+                    color: 'var(--text-main)',
+                    marginBottom: '0.6rem',
+                    letterSpacing: '-0.02em'
+                  }}
+                >
                   {m.title}
                 </h3>
 
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   {m.description}
                 </p>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.85rem' }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  color: 'var(--accent-cyan)',
+                  fontWeight: 650,
+                  fontSize: '0.85rem'
+                }}
+              >
                 <span>Launch Engine</span>
                 <ArrowRight size={16} />
               </div>
@@ -166,7 +247,6 @@ export default function Dashboard({ onNavigate }) {
           );
         })}
       </div>
-
     </div>
   );
 }

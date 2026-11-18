@@ -13,19 +13,21 @@ import { getTableDetails } from '../src/core/code/tableContentResolver';
 
 describe('Digitized CSA Code-as-Data Verification Test Suite', () => {
   it('verifies standard collections counts', () => {
-    expect(ALL_CLAUSES.length).toBe(792);
-    expect(ALL_TABLES.length).toBe(83);
-    expect(ALL_DEFINITIONS.length).toBeGreaterThanOrEqual(150);
+    expect(ALL_CLAUSES.length).toBe(1058);
+    expect(ALL_TABLES.length).toBe(88);
+    expect(ALL_DEFINITIONS.length).toBeGreaterThanOrEqual(190);
   });
 
-  it('verifies standard breakdown counts across C22.3 No. 1, 60826, and O15', () => {
+  it('verifies standard breakdown counts across C22.3 No. 1, 60826, O15, and ASCE 10-15', () => {
     const no1Count = ALL_CLAUSES.filter(c => c.standardId === 'c22_3_no1').length;
     const sixCount = ALL_CLAUSES.filter(c => c.standardId === 'c22_3_60826').length;
     const o15Count = ALL_CLAUSES.filter(c => c.standardId === 'csa_o15').length;
+    const asceCount = ALL_CLAUSES.filter(c => c.standardId === 'asce_10_15').length;
 
     expect(no1Count).toBe(500);
     expect(sixCount).toBe(206);
     expect(o15Count).toBe(86);
+    expect(asceCount).toBe(266);
   });
 
   it('verifies Forward Links (Clause -> Tables)', () => {
@@ -44,10 +46,14 @@ describe('Digitized CSA Code-as-Data Verification Test Suite', () => {
 
     const tblO15_3 = getTable('table3', 'csa_o15');
     expect(tblO15_3.referencingClauses.some(c => c.clauseNumber === '4.1.1')).toBe(true);
+
+    const tblAsceC4 = getTable('tableC4_1', 'asce_10_15');
+    expect(tblAsceC4).toBeDefined();
+    expect(tblAsceC4.referencingClauses.some(c => c.clauseNumber === '4.5.1')).toBe(true);
   });
 
-  it('verifies live table data resolution across all 83 tables in all 3 standards', () => {
-    expect(ALL_TABLES.length).toBe(83);
+  it('verifies live table data resolution across all 88 tables in all 4 standards', () => {
+    expect(ALL_TABLES.length).toBe(88);
 
     ALL_TABLES.forEach((tbl) => {
       const resolved = getTableDetails(tbl.id);

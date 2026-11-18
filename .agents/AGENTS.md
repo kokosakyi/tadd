@@ -37,6 +37,14 @@ This runs the full test suite (`vitest run`) and builds the production bundle (`
 - **Off-Canvas Drawers & Modal Sheets**: Sidebars (`BookTocSidebar`) and inspector panes (`CompanionSplitPane`) must never rely on rigid desktop split-pane widths on screens `< 1024px`. They must collapse into off-canvas sliding drawers or overlay sheets with backdrop dimming, header close buttons, and `Escape` key listeners.
 - **Touch-Friendly Tab Scrollers**: Multi-item tab or pill navigators ($\ge 4$ options) must support horizontal single-line touch scrolling (`overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none;`) to prevent vertical header distortion.
 - **3D Grid & Card Viewports**: Multi-card grids and 3D perspective shelves must use fluid breakpoint rules down to mobile viewports (320px–375px) without producing horizontal window blowout.
+- **Liquid Glass Shell Invariant**: On screens $\ge 1024$px, navigation must be anchored in the desktop floating `.glass-sidebar`. On screens $< 1024$px, the desktop sidebar must collapse, yielding to the compact `.glass-mobile-topbar` and floating capsule `.glass-bottom-tabbar` with `env(safe-area-inset-bottom)`.
+
+---
+
+## Liquid Glass UI & Design System Invariants
+- **Translucent Frosted Glass**: All cards, modals, and toolbars must utilize `.glass-panel` or `.glass-inset` with specular highlights (`inset 0 1px 0 0 var(--border-highlight)`), high blur (`backdrop-filter`), and generous corner radii (`24px`/`28px`). Never inject hardcoded opaque dark backgrounds (`rgba(15, 23, 42, ...)`), hardcoded dark shadows, or light-only colors inline that break theme switching.
+- **Physics Spring Isolation**: Multi-stop `linear()` spring curves (`--spring-easing`, `--spring-snappy`) must be applied exclusively to spatial transforms (`translate`, `scale`). Opacity must use non-overshooting ease curves.
+- **Asynchronous View Testing**: In Vitest / React Testing Library tests, navigating to lazy-loaded views (`React.lazy` + `Suspense`) must always be verified with `await screen.findByText(...)` rather than synchronous `screen.getByText(...)`.
 
 ---
 

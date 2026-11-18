@@ -8,11 +8,10 @@ export default function ClauseCitation({ citation, onClick, className = '' }) {
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border transition-colors ${className}`}
+      className={`badge badge-info mono ${className}`}
       style={{
-        background: 'rgba(56, 189, 248, 0.1)',
-        borderColor: 'rgba(56, 189, 248, 0.3)',
-        color: 'var(--accent-cyan, #38bdf8)',
+        padding: '0.28rem 0.68rem',
+        fontSize: '0.73rem',
         cursor: onClick ? 'pointer' : 'default',
         whiteSpace: 'nowrap'
       }}

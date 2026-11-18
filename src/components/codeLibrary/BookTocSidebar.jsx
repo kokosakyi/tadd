@@ -46,10 +46,10 @@ export function buildBookTocTree(clauses = [], tables = [], definitions = [], st
     sectionMap.get(secName).push(cl);
   }
 
-  // Sort sections naturally (numeric chapters 0, 1, 2... then Annexes A, B, C...)
+  // Sort sections naturally (numeric chapters 0, 1, 2... then Commentary/Annexes/Appendices...)
   const sortedSectionNames = Array.from(sectionMap.keys()).sort((a, b) => {
-    const isAnnexA = /^annex/i.test(a);
-    const isAnnexB = /^annex/i.test(b);
+    const isAnnexA = /^(?:annex|commentary|appendix)/i.test(a);
+    const isAnnexB = /^(?:annex|commentary|appendix)/i.test(b);
     if (isAnnexA !== isAnnexB) return isAnnexA ? 1 : -1;
     return a.localeCompare(b, undefined, { numeric: true });
   });
@@ -181,6 +181,8 @@ export default function BookTocSidebar({
     ? '#c084fc'
     : selectedStandard === 'csa_o15'
     ? '#34d399'
+    : selectedStandard === 'asce_10_15'
+    ? '#fb7185'
     : selectedStandard === 'pls_cadd_lessons'
     ? '#f59e0b'
     : 'var(--accent-cyan)';
@@ -208,7 +210,7 @@ export default function BookTocSidebar({
           style={{
             padding: '1rem 1.1rem',
             borderBottom: '1px solid var(--border-color)',
-            background: 'rgba(15, 23, 42, 0.55)',
+            background: 'var(--bg-inset)',
             display: 'flex',
             alignItems: 'center',
             gap: '0.85rem'
@@ -446,7 +448,7 @@ export default function BookTocSidebar({
 
                 {/* Expanded Major Subsections */}
                 {isSecExpanded && (
-                  <div className="animate-toc-expand" style={{ paddingLeft: '1.15rem', display: 'flex', flexDirection: 'column', gap: '0.15rem', marginTop: '0.15rem', marginBottom: '0.3rem', borderLeft: '1px solid rgba(255,255,255,0.07)', marginLeft: '0.85rem' }}>
+                  <div className="animate-toc-expand" style={{ paddingLeft: '1.15rem', display: 'flex', flexDirection: 'column', gap: '0.15rem', marginTop: '0.15rem', marginBottom: '0.3rem', borderLeft: '1px solid var(--border-subtle)', marginLeft: '0.85rem' }}>
                     {sec.subsections.map((sub) => {
                       const isSubExpanded = expandedSubsections.has(sub.key);
                       const isSubActive = selectedSubsectionPrefix === sub.key && activeTab === 'clauses';

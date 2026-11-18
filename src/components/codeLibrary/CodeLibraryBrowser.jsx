@@ -166,6 +166,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
   const standardOptions = useMemo(() => {
     const list = [
       { id: 'all', label: 'All Standards & Practice Guides' },
+      { id: 'asce_10_15', label: 'ASCE 10-15 — Design of Latticed Steel Transmission Structures' },
       { id: 'c22_3_no1', label: 'CSA C22.3 No. 1 — Overhead Systems' },
       { id: 'c22_3_60826', label: 'CSA C22.3 No. 60826 — Transmission Design Criteria' },
       { id: 'csa_o15', label: 'CSA O15 — Wood Utility Poles and Stubs' },
@@ -215,6 +216,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
       c22_3_no1: 0,
       c22_3_60826: 0,
       csa_o15: 0,
+      asce_10_15: 0,
       pls_cadd_lessons: 0
     };
     for (const c of globalRes.clauses) {
@@ -505,8 +507,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
       <div 
         className="glass-panel" 
         style={{ 
-            padding: '0.85rem 1.25rem', 
-          borderRadius: '12px', 
+          padding: '0.85rem 1.25rem', 
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'space-between',
@@ -559,6 +560,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                 { id: 'c22_3_no1', code: 'C22.3 No. 1', color: '#38bdf8' },
                 { id: 'c22_3_60826', code: '60826', color: '#c084fc' },
                 { id: 'csa_o15', code: 'CSA O15', color: '#34d399' },
+                { id: 'asce_10_15', code: 'ASCE 10-15', color: '#fb7185' },
                 { id: 'pls_cadd_lessons', code: 'PLS-CADD', color: '#f59e0b' }
               ].map(vol => {
                 const count = bookSearchMatchCounts[vol.id] || 0;
@@ -626,11 +628,8 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
             }}
             style={{
               width: '100%',
-              padding: '0.55rem 2.4rem 0.55rem 2.3rem',
-              borderRadius: '8px',
-              border: '1px solid var(--border-color)',
-              background: 'var(--bg-secondary)',
-              color: 'var(--text-main)',
+              padding: '0.58rem 2.45rem 0.58rem 2.35rem',
+              borderRadius: '9999px',
               fontSize: '0.88rem',
               boxSizing: 'border-box'
             }}
@@ -647,6 +646,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                 transform: 'translateY(-50%)',
                 background: 'transparent',
                 border: 'none',
+                boxShadow: 'none',
                 color: 'var(--text-muted)',
                 cursor: 'pointer',
                 padding: '4px',
@@ -805,9 +805,7 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
             <div 
               className="glass-panel" 
               style={{ 
-                padding: '1.25rem 1.5rem', 
-                borderRadius: '14px', 
-                border: '1px solid var(--border-color)',
+                padding: '1.35rem 1.5rem', 
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem'
@@ -873,11 +871,8 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                       }
                     }}
                     style={{
-                      padding: '0.35rem 0.65rem',
-                      borderRadius: '6px',
-                      border: '1px solid var(--border-color)',
-                      background: 'var(--bg-secondary)',
-                      color: 'var(--text-main)',
+                      width: 'auto',
+                      padding: '0.4rem 0.75rem',
                       fontSize: '0.8rem',
                       cursor: 'pointer'
                     }}
@@ -898,11 +893,8 @@ export default function CodeLibraryBrowser({ onOpenCalculator, initialCitation =
                       setClausePage(1);
                     }}
                     style={{
-                      padding: '0.35rem 0.65rem',
-                      borderRadius: '6px',
-                      border: '1px solid var(--border-color)',
-                      background: 'var(--bg-secondary)',
-                      color: 'var(--text-main)',
+                      width: 'auto',
+                      padding: '0.4rem 0.75rem',
                       fontSize: '0.8rem',
                       maxWidth: '280px',
                       cursor: 'pointer'
