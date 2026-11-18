@@ -10,6 +10,7 @@ export interface CalcStep {
   description: string;
   value: number | string | boolean | null;
   unit?: string;
+  latex?: string;
 }
 
 export interface TraceRecordParams {

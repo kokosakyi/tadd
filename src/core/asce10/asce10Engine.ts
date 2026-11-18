@@ -685,44 +685,66 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 3.7.3 Eq. (3.7-1)–(3.7-3)',
-        description: `Local buckling check: w/t = ${round(wOverT, 2)} vs (w/t)_lim = ${round(wOverTLim, 2)}`,
+        description: `Local buckling critical stress $F_{cr}$ ($w/t = ${round(wOverT, 2)}$ vs $(w/t)_{\\lim} = ${round(wOverTLim, 2)}$)`,
         value: round(fcrKsi, 2),
-        unit: 'ksi'
+        unit: 'ksi',
+        latex:
+          wOverT <= wOverTLim
+            ? `\\frac{w}{t} = \\frac{${round(flatWidthWIn, 3)}}{${thicknessIn}} = ${round(wOverT, 2)} \\le \\left(\\frac{w}{t}\\right)_{\\lim} = \\frac{80}{\\sqrt{${fyKsi}}} = ${round(wOverTLim, 2)} \\implies F_{cr} = F_y = ${round(fcrKsi, 2)}\\text{ ksi}`
+            : wOverT <= wOverTElasticLimit
+            ? `F_{cr} = \\left[1.677 - 0.677 \\left(\\frac{${round(wOverT, 2)}}{${round(wOverTLim, 2)}}\\right)\\right] \\times ${fyKsi} = ${round(fcrKsi, 2)}\\text{ ksi}`
+            : `F_{cr} = \\frac{0.0332 \\pi^2 (${eKsi})}{(${round(wOverT, 2)})^2} = ${round(fcrKsi, 2)}\\text{ ksi}`
       },
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 3.7.4 & Table 3.4-1',
-        description: `Effective slenderness ratio KL/r (${bracingCurve}, L/r = ${round(lOverR, 1)})`,
+        description: `Effective slenderness ratio $\\frac{KL}{r}$ (${bracingCurve}, $\\frac{L}{r} = ${round(lOverR, 1)}$)`,
         value: round(effectiveKLOverR, 1),
-        unit: ''
+        unit: '',
+        latex: `\\frac{L}{r} = \\frac{${unbracedLengthIn}}{${round(governingRadiusRIn, 3)}} \\times ${round(subpanelFactorKPrime, 2)} = ${round(lOverR, 1)} \\implies \\frac{KL}{r} = ${round(effectiveKLOverR, 1)}, \\quad C_c = \\pi\\sqrt{\\frac{2(${eKsi})}{${round(fcrKsi, 2)}}} = ${round(cc, 1)}`
       },
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 3.6 Eq. (3.6-1)–(3.6-3)',
-        description: `Design compressive stress Fa (${bucklingRegime}, Cc = ${round(cc, 1)}) and capacity Pa`,
+        description: `Design compressive stress $F_a = ${round(faKsi, 2)}\\text{ ksi}$ (${bucklingRegime}) and axial capacity $P_a = F_a A_e$`,
         value: round(capacityPaKip, 2),
-        unit: 'kip'
+        unit: 'kip',
+        latex:
+          effectiveKLOverR <= cc
+            ? `F_a = \\left[1 - \\frac{1}{2}\\left(\\frac{${round(effectiveKLOverR, 1)}}{${round(cc, 1)}}\\right)^2\\right] (${round(fcrKsi, 2)}) = ${round(faKsi, 2)}\\text{ ksi} \\implies P_a = ${round(faKsi, 2)} \\times ${round(effectiveAreaIn2, 3)} = ${round(capacityPaKip, 2)}\\text{ kips}`
+            : `F_a = \\frac{\\pi^2 (${eKsi})}{(${round(effectiveKLOverR, 1)})^2} = ${round(faKsi, 2)}\\text{ ksi} \\implies P_a = ${round(faKsi, 2)} \\times ${round(effectiveAreaIn2, 3)} = ${round(capacityPaKip, 2)}\\text{ kips}`
       },
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 3.10.2 Eq. (3.10-1)',
-        description: `Tension capacity (Net Section = ${round(netTensionCapacityKip, 1)} kip, Block Shear = ${round(blockShearCapacityKip, 1)} kip)`,
+        description: `Tension capacity $\\min(P_t, P_{bs})$ ($P_t = ${round(netTensionCapacityKip, 1)}\\text{ kip}$, $P_{bs} = ${round(blockShearCapacityKip, 1)}\\text{ kip}$)`,
         value: round(governingTensionCapacityKip, 2),
-        unit: 'kip'
+        unit: 'kip',
+        latex: `P_t = A_n F_t = (${round(netAreaAnIn2, 3)})(${round(designStressFtKsi, 2)}) = ${round(netTensionCapacityKip, 2)}\\text{ kips}, \\quad P_{bs} = 0.60(${round(netShearAreaAvIn2, 3)})(${fuKsi}) + (${round(netTensionAreaAtIn2, 3)})(${fyKsi}) = ${round(blockShearCapacityKip, 2)}\\text{ kips}`
+      },
+      {
+        op: 'formula',
+        ref: 'ASCE 10-15 Cl. 3.12–3.14 Eq. (3.12-1)–(3.14-11)',
+        description: `Combined axial + bending interaction ratio and lateral-torsional buckling moment $M_b$`,
+        value: round(governingInteractionRatio, 3),
+        unit: 'ratio',
+        latex: `\\frac{P}{P_a} + \\frac{C_m M_x}{M_{ax}(1 - P/P_{ex})} + \\frac{C_m M_y}{M_{ay}(1 - P/P_{ey})} = ${round(compressionStabilityRatio, 3)} \\le 1.0, \\quad M_b = ${round(lateralBucklingMomentMbInKip, 1)}\\text{ kip}\\cdot\\text{in.}`
       },
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 4.3–4.5 & Table C4-1',
-        description: `Bolted connection capacity (${numConnectionBolts} bolts, e_min = ${round(eMinGoverningIn, 2)} in., s_min = ${round(sMinGoverningIn, 2)} in.)`,
+        description: `Bolted connection capacity ($n = ${numConnectionBolts}$ bolts, $e_{\\min} = ${round(eMinGoverningIn, 2)}\\text{ in.}$, $s_{\\min} = ${round(sMinGoverningIn, 2)}\\text{ in.}$, $f_{\\min} = ${round(fMinGoverningIn, 2)}\\text{ in.}$)`,
         value: round(governingConnectionCapacityKip, 2),
-        unit: 'kip'
+        unit: 'kip',
+        latex: `V_{\\text{bolt}} = ${numConnectionBolts} \\times ${round(singleBoltShearCapacityKip, 2)} = ${round(totalBoltShearCapacityKip, 2)}\\text{ kips}, \\quad P_{\\text{brg}} = 1.5 n d t F_u = ${round(totalBearingCapacityKip, 2)}\\text{ kips}, \\quad F_{t(v)} = F_t\\sqrt{1 - (f_v/F_v)^2} = ${round(combinedAllowableTensionStressFtVKsi, 2)}\\text{ ksi}`
       },
       {
         op: 'formula',
         ref: 'ASCE 10-15 Cl. 7.4.2 & Table 7.2-1',
-        description: `Foundation anchor bolt required area As,req (mu = ${frictionCoeffMu}) vs provided As = ${round(anchorBoltTotalProvidedAreaIn2, 2)} in.^2`,
+        description: `Foundation anchor bolt required area $A_{s,\\text{req}}$ ($\\mu = ${frictionCoeffMu}$) vs provided $A_s = ${round(anchorBoltTotalProvidedAreaIn2, 2)}\\text{ in.}^2$`,
         value: round(anchorBoltGoverningRequiredAreaIn2, 2),
-        unit: 'in.^2'
+        unit: 'in.^2',
+        latex: `A_{s,\\text{uplift}} = \\frac{T}{F_y} + \\frac{V}{0.85 \\mu F_y} = \\frac{${foundationUpliftTKip}}{${anchorBoltFyKsi}} + \\frac{${foundationShearVKip}}{0.85(${frictionCoeffMu})(${anchorBoltFyKsi})} = ${round(anchorBoltRequiredAreaUpliftIn2, 2)}\\text{ in.}^2`
       }
     ],
     result: {
@@ -733,9 +755,9 @@ export function calculateAsce10Design(input: AsceDesignInput = {}): AsceDesignRe
     },
     citations,
     notes: [
-      `Compression regime: ${bucklingRegime.toUpperCase()} (KL/r = ${round(effectiveKLOverR, 1)} vs Cc = ${round(cc, 1)}).`,
-      `Required redundant bracing force Pr = ${round(redundantForcePrKip, 2)} kip (${round(redundantForcePrKN, 2)} kN) per Eq. (3.16-1).`,
-      `Minimum connection distances: e_min = ${round(eMinGoverningIn, 2)} in., s_min = ${round(sMinGoverningIn, 2)} in., f_min = ${round(fMinGoverningIn, 2)} in.`
+      `Compression regime: ${bucklingRegime.toUpperCase()} ($\\frac{KL}{r} = ${round(effectiveKLOverR, 1)}$ vs $C_c = ${round(cc, 1)}$).`,
+      `Required redundant bracing force $P_r = ${round(redundantForcePrKip, 2)}\\text{ kips}$ ($${round(redundantForcePrKN, 2)}\\text{ kN}$) per Eq. (3.16-1).`,
+      `Minimum connection distances: $e_{\\min} = ${round(eMinGoverningIn, 2)}\\text{ in.}$, $s_{\\min} = ${round(sMinGoverningIn, 2)}\\text{ in.}$, $f_{\\min} = ${round(fMinGoverningIn, 2)}\\text{ in.}$`
     ]
   });
 

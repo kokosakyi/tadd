@@ -13,7 +13,6 @@ import {
   LayoutDashboard
 } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
-import { useUnits } from '../../context/UnitContext';
 
 export const NAV_ITEMS = [
   { id: 'dashboard', label: 'Home', mobileLabel: 'Home', icon: LayoutDashboard },
@@ -49,7 +48,6 @@ export function MobileBottomTabBar({ currentView, onNavigate }) {
 
 export default function Header({ currentView, onNavigate, theme, setTheme }) {
   const { projects, activeProject, switchProject, setIsProjectWizardOpen } = useProject();
-  const { unit, setUnit } = useUnits();
 
   const sortedProjects = useMemo(
     () => [...projects].sort((a, b) => a.name.localeCompare(b.name)),
@@ -202,39 +200,28 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
             </select>
           </div>
 
-          {/* Unit Segmented Pill & Theme Button */}
+          {/* Theme Toggle Button */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <div
-              className="segmented-pill-bar"
-              style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr' }}
-            >
-              <button
-                type="button"
-                onClick={() => setUnit('metric')}
-                className={`segmented-pill-btn${unit === 'metric' ? ' active' : ''}`}
-                style={{ padding: '0.32rem 0.45rem', fontSize: '0.73rem' }}
-              >
-                Metric (m)
-              </button>
-              <button
-                type="button"
-                onClick={() => setUnit('imperial')}
-                className={`segmented-pill-btn${unit === 'imperial' ? ' active' : ''}`}
-                style={{ padding: '0.32rem 0.45rem', fontSize: '0.73rem' }}
-              >
-                Imperial (ft)
-              </button>
-            </div>
-
             <button
               type="button"
               onClick={toggleTheme}
               className="btn-secondary"
-              style={{ width: '36px', height: '36px', padding: 0, flexShrink: 0 }}
+              style={{
+                width: '100%',
+                height: '36px',
+                padding: '0 0.75rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                fontSize: '0.76rem',
+                fontWeight: 600
+              }}
               title="Toggle theme (Light / Dark)"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+              <span>{theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
             </button>
           </div>
         </div>
@@ -266,25 +253,6 @@ export default function Header({ currentView, onNavigate, theme, setTheme }) {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.38rem', flexShrink: 0 }}>
-            <div className="segmented-pill-bar" style={{ padding: '3px' }}>
-              <button
-                type="button"
-                onClick={() => setUnit('metric')}
-                className={`segmented-pill-btn${unit === 'metric' ? ' active' : ''}`}
-                style={{ padding: '0.22rem 0.5rem', fontSize: '0.7rem' }}
-              >
-                m
-              </button>
-              <button
-                type="button"
-                onClick={() => setUnit('imperial')}
-                className={`segmented-pill-btn${unit === 'imperial' ? ' active' : ''}`}
-                style={{ padding: '0.22rem 0.5rem', fontSize: '0.7rem' }}
-              >
-                ft
-              </button>
-            </div>
-
             <button
               type="button"
               onClick={() => setIsProjectWizardOpen(true)}

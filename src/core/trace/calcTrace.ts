@@ -30,7 +30,8 @@ export function createTraceRecord({
       ref: s.ref || '',
       description: s.description || '',
       value: s.value !== undefined ? s.value : null,
-      unit: s.unit || ''
+      unit: s.unit || '',
+      ...(s.latex ? { latex: s.latex } : {})
     })),
     result: { ...result },
     citations: [...citations],

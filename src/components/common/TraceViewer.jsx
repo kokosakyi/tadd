@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ShieldCheck, ChevronDown, ChevronUp, Copy, Check } from 'lucide-react';
 import ClauseCitation from './ClauseCitation';
+import HighlightMatches from '../codeLibrary/HighlightMatches';
+import Latex from './Latex';
 
 export default function TraceViewer({ trace, onOpenCitation }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -157,7 +159,7 @@ export default function TraceViewer({ trace, onOpenCitation }) {
                     </span>
                     {getOpBadge(step.op)}
                     <span style={{ fontWeight: 540, color: 'var(--text-main)' }}>
-                      {step.description}
+                      <HighlightMatches text={step.description} />
                     </span>
                     {step.ref && (
                       <span className="mono" style={{ color: 'var(--accent-cyan)', fontSize: '0.74rem' }}>
@@ -168,6 +170,11 @@ export default function TraceViewer({ trace, onOpenCitation }) {
                   <div className="mono" style={{ fontWeight: 650, color: 'var(--text-main)' }}>
                     {typeof step.value === 'object' ? JSON.stringify(step.value) : step.value} {step.unit}
                   </div>
+                  {step.latex && (
+                    <div style={{ width: '100%', marginTop: '0.2rem' }}>
+                      <Latex block math={step.latex} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -216,7 +223,9 @@ export default function TraceViewer({ trace, onOpenCitation }) {
               {trace.notes.map((n, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
                   <span>ℹ️</span>
-                  <span>{n}</span>
+                  <span>
+                    <HighlightMatches text={n} />
+                  </span>
                 </div>
               ))}
             </div>
